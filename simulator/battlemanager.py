@@ -56,3 +56,40 @@ class BattleState:
                     execute_burst_effect(state, shield_card)
             
             state.opponent.trash.append(shield_card)
+    
+    def check_block_legality(attacker, potential_blocker):
+        # Rule 13-1-6-1: High-Maneuver vs Blocker
+        if attacker.has_keyword(Keywords.HIGH_MANEUVER):
+            return False # Blocker cannot be activated
+        return potential_blocker.has_keyword(Keywords.BLOCKER) and potential_blocker.is_active
+
+    def calculate_damage_sequence(attacker, defender):
+        # Rule 13-1-5: First Strike Priority
+        if attacker.has_keyword(Keywords.FIRST_STRIKE) and not defender.has_keyword(Keywords.FIRST_STRIKE):
+            apply_damage(attacker, defender)
+            if defender.is_destroyed:
+                return # Defender dies before it can counter-attack
+        
+        # Simultaneous damage (Standard)
+        apply_damage(attacker, defender)
+        apply_damage(defender, attacker)
+    
+    def resolve_shield_damage(attacker, defender_player):
+        # Rule 13-1-7: Suppression (Dual-Shield Hit)
+        if attacker.has_keyword(Keywords.SUPPRESSION):
+            shields = defender_player.shield_area[:2] # Get first two
+            process_bursts_simultaneously(shields) 
+        else:
+            # Standard: Breach or Normal
+            target_shield = get_top_shield_or_base(defender_player)
+            apply_damage_to_shield(attacker, target_shield)
+
+    def on_unit_destroyed_in_battle(attacker, destroyed_unit):
+        # FAQ Rule: Resolve Breach BEFORE [Destroyed] (Active Player Priority)
+        if attacker.has_keyword(Keywords.BREACH):
+            amount = attacker.keywords[Keywords.BREACH]
+            deal_direct_shield_damage(destroyed_unit.owner, amount)
+        
+        # Now trigger the [Destroyed] ability
+        if destroyed_unit.has_ability("DESTROYED"):
+            trigger_ability(destroyed_unit.get_ability("DESTROYED"))

@@ -1,0 +1,25 @@
+{
+  "Name": "Athrun Zala",
+  "ID": "ST04-011",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】During this turn, this Unit may choose an active enemy Unit that is Lv.5 or lower as its attack target."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "ZAFT",
+    "Coordinator"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

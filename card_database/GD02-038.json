@@ -1,0 +1,26 @@
+{
+  "Name": "GQuuuuuuX (Omega Psycommu)",
+  "ID": "GD02-038",
+  "Effect": [
+    "【Deploy】Look at the top 3 cards of your deck. You may deploy 1 (Clan) Unit card that is Lv.4 or lower among them. Return the remaining cards randomly to the bottom of your deck."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Amate Yuzuriha (Machu)"
+  ],
+  "Set": "GD02"
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "Lady Luck",
+  "ID": "ST08-013",
+  "Effect": [
+    "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it. If a friendly (Mafty) Link Unit is in play, deal 2 damage instead."
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

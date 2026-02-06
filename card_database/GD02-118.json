@@ -1,0 +1,24 @@
+{
+  "Name": "Heart Set on Revenge",
+  "ID": "GD02-118",
+  "Effect": [
+    "【Action】Choose 1 enemy Unit with 4 or less HP battling a friendly Unit with <Blocker>. Return it to its owner's hand.",
+    "【Pilot】[Ein Dalton]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

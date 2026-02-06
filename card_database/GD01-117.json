@@ -1,0 +1,24 @@
+{
+  "Name": "The Witch and the Bride",
+  "ID": "GD01-117",
+  "Effect": [
+    "【Burst】Activate this card's 【Main】.",
+    "【Main】/【Action】Choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 5,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Undying Persistence",
+  "ID": "GD02-109",
+  "Effect": [
+    "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+    "【Pilot】[Shiiko Sugai]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Clan",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

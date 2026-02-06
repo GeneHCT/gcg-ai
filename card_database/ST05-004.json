@@ -1,0 +1,22 @@
+{
+  "Name": "Graze Custom",
+  "ID": "ST05-004",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

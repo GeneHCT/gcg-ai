@@ -1,0 +1,23 @@
+{
+  "Name": "Securing the Supply Line",
+  "ID": "GD01-102",
+  "Effect": [
+    "【Main】All friendly Units that are Lv.4 or lower recover 2 HP."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,21 @@
+{
+  "Name": "Leo",
+  "ID": "T-004",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

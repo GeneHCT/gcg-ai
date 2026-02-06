@@ -1,0 +1,25 @@
+{
+  "Name": "Underground Desert Base",
+  "ID": "GD01-126",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Maganac Corps",
+    "Stronghold"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

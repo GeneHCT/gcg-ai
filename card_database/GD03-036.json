@@ -1,0 +1,26 @@
+{
+  "Name": "Ξ Gundam (Flight Form)",
+  "ID": "GD03-036",
+  "Effect": [
+    "【When Linked】Deal 1 damage to all enemy Units."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Hathaway Noa"
+  ],
+  "Set": "GD03"
+}

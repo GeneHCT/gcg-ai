@@ -1,0 +1,25 @@
+{
+  "Name": "Allelujah Haptism",
+  "ID": "ST07-012",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "During your turn, while you have a (CB) Link Unit in play, this Unit can't receive battle damage from enemy Units with 3 or less AP."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "Super Soldier"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST07"
+}

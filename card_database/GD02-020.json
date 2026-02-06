@@ -1,0 +1,26 @@
+{
+  "Name": "Elmeth",
+  "ID": "GD02-020",
+  "Effect": [
+    "【Deploy】Look at the top 5 cards of your deck. You may reveal 1 green (Zeon) Pilot card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.",
+    "【During Link】 This Unit gets AP+2."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Lalah Sune"
+  ],
+  "Set": "GD02"
+}

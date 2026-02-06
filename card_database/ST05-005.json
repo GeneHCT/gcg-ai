@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Gusion Rebake",
+  "ID": "ST05-005",
+  "Effect": [
+    "【Destroyed】Choose 1 enemy Unit with 4 or less AP. Rest it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Akihiro Altland"
+  ],
+  "Set": "ST05"
+}

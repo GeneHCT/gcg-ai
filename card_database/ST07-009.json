@@ -1,0 +1,24 @@
+{
+  "Name": "Setsuna F. Seiei",
+  "ID": "ST07-009",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】This Unit gets AP+1 during this turn. If there are 7 or more (CB) cards in your trash, all your (CB) Units get AP+1 instead."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "CB"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST07"
+}

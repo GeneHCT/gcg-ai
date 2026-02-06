@@ -1,0 +1,22 @@
+{
+  "Name": "Amida's Hyakuren",
+  "ID": "GD02-062",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Teiwaz"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

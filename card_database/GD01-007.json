@@ -1,0 +1,25 @@
+{
+  "Name": "Noin's Aries",
+  "ID": "GD01-007",
+  "Effect": [
+    "【Destroyed】If you have another (OZ) Unit in play, draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 3,
+  "Cost": 3,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Lucrezia Noin"
+  ],
+  "Set": "GD01"
+}

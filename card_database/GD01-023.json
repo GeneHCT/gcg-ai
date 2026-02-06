@@ -1,0 +1,26 @@
+{
+  "Name": "Char's Gelgoog",
+  "ID": "GD01-023",
+  "Effect": [
+    "【Activate･Main】Discard 1 (Zeon)/(Neo Zeon) Unit card：If a Pilot is not paired with this Unit, choose 1 (Newtype) Pilot card that is Lv.3 or lower from your trash. Pair it with this Unit."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 4,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Char Aznable"
+  ],
+  "Set": "GD01"
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "Gundam AGE-1 Normal",
+  "ID": "GD02-029",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "AGE System"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

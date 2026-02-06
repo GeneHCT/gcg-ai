@@ -1,0 +1,25 @@
+{
+  "Name": "Valedictorian",
+  "ID": "GD02-105",
+  "Effect": [
+    "【Action】Choose 1 of your Unit tokens. It can't receive battle damage from enemy Units during this battle.",
+    "【Pilot】[Xavier Olivette]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon",
+    "Newtype"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

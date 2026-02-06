@@ -1,0 +1,23 @@
+{
+  "Name": "CGS Mobile Worker",
+  "ID": "ST05-003",
+  "Effect": [
+    "【Activate･Main】Rest this Unit：Choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

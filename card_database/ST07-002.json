@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Exia",
+  "ID": "ST07-002",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Setsuna F. Seiei"
+  ],
+  "Set": "ST07"
+}

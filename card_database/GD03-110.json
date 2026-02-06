@@ -1,0 +1,23 @@
+{
+  "Name": "Eliminate Target",
+  "ID": "GD03-110",
+  "Effect": [
+    "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it."
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 6,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

@@ -1,0 +1,22 @@
+{
+  "Name": "Demi Garrison",
+  "ID": "GD01-085",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

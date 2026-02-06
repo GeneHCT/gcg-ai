@@ -1,0 +1,24 @@
+{
+  "Name": "Infiltrator Present",
+  "ID": "GD03-111",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly (Mafty) Unit. It gets AP+3 during this turn.",
+    "【Pilot】[Emeralda Zubin]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam",
+  "ID": "GD01-013",
+  "Effect": [],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Amuro Ray"
+  ],
+  "Set": "GD01"
+}

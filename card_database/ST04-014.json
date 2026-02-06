@@ -1,0 +1,26 @@
+{
+  "Name": "The Magic Bullet of Dusk",
+  "ID": "ST04-014",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn.",
+    "(While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "【Pilot】[Miguel Ayman]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "ZAFT",
+    "Coordinator"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

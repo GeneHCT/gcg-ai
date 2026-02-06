@@ -1,0 +1,26 @@
+{
+  "Name": "GFreD",
+  "ID": "GD03-048",
+  "Effect": [
+    "【Burst】If there are 3 or less enemy Shields, deploy 1 rested [GFreD]((Zeon)･AP4･HP3) Unit token."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Nyaan"
+  ],
+  "Set": "GD03"
+}

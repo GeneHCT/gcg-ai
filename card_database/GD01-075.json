@@ -1,0 +1,24 @@
+{
+  "Name": "Darilbalde",
+  "ID": "GD01-075",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit with 1 HP. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

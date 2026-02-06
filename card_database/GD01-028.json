@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Sandrock",
+  "ID": "GD01-028",
+  "Effect": [
+    "【Deploy】You may deploy 1 (Maganac Corps) Unit card from your hand."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Quatre Raberba Winner"
+  ],
+  "Set": "GD01"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Duo's Leo",
+  "ID": "GD01-042",
+  "Effect": [
+    "This Unit may choose an active enemy Unit that is Lv.2 or lower as its attack target."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Duo Maxwell"
+  ],
+  "Set": "GD01"
+}

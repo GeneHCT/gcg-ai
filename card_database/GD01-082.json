@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Aerial (Mirasoul Flight Unit)",
+  "ID": "GD01-082",
+  "Effect": [
+    "【During Pair】【Activate･Action】【Once per Turn】②：Choose 1 enemy Unit. It gets AP-1 during this battle."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Suletta Mercury"
+  ],
+  "Set": "GD01"
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "Baqto",
+  "ID": "GD02-067",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "UE",
+    "Vagan"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Red Gundam",
+  "ID": "ST06-006",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Shuji Itō"
+  ],
+  "Set": "ST06"
+}

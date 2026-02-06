@@ -1,0 +1,26 @@
+{
+  "Name": "Sugai's Gelgoog (GQ)",
+  "ID": "GD02-041",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit that is Lv.5 or higher. Deal 2 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 4,
+  "Cost": 4,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Shiiko Sugai"
+  ],
+  "Set": "GD02"
+}

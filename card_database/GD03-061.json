@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Barbatos 6th Form",
+  "ID": "GD03-061",
+  "Effect": [
+    "While this Unit has 1 HP, it gains <Repair 3>. (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Mikazuki Augus"
+  ],
+  "Set": "GD03"
+}

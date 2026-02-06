@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Kyrios",
+  "ID": "GD03-022",
+  "Effect": [
+    "【During Link】During your turn, when this Unit destroys an enemy Unit with battle damage, deal 1 damage to all enemy Units that are Lv.3 or lower."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Allelujah Haptism",
+    "Hallelujah Haptism"
+  ],
+  "Set": "GD03"
+}

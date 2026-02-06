@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Exia",
+  "ID": "ST07-001",
+  "Effect": [
+    "At the end of your turn, if there are 7 or more (CB) cards in your trash, choose 1 of your Resources. Set it as active.",
+    "【When Paired】Place the top 2 cards of your deck into your trash. If you place a (CB) card with this effect, draw 1."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Setsuna F. Seiei"
+  ],
+  "Set": "ST07"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Penelope (Middle Form)",
+  "ID": "GD03-006",
+  "Effect": [
+    "【Deploy】Choose 1 to 2 enemy Units with 3 or less HP. Rest them."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Lane Aim"
+  ],
+  "Set": "GD03"
+}

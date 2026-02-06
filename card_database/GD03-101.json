@@ -1,0 +1,23 @@
+{
+  "Name": "A Healthy Curiosity",
+  "ID": "GD03-101",
+  "Effect": [
+    "【Main】Draw 1. Then, if there are 2 or more cards with \"A Healthy Curiosity\" in their card name in your trash, choose 1 enemy Unit with 4 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

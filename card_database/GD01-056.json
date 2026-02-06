@@ -1,0 +1,24 @@
+{
+  "Name": "Geara Doga (Sleeves)",
+  "ID": "GD01-056",
+  "Effect": [
+    "【Destroyed】Choose 1 enemy Unit with 5 or less AP. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

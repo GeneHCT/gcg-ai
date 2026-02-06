@@ -1,0 +1,27 @@
+{
+  "Name": "Graham's Union Flag Custom",
+  "ID": "GD03-069",
+  "Effect": [
+    "<High-Maneuver> (This Unit can't be blocked.)",
+    "【During Link】At the end of the turn when this Unit is paired with a Pilot, set it as active."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Superpower Bloc"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Graham Aker"
+  ],
+  "Set": "GD03"
+}

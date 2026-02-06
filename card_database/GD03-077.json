@@ -1,0 +1,25 @@
+{
+  "Name": "Justice Gundam (METEOR)",
+  "ID": "GD03-077",
+  "Effect": [
+    "【When Linked】Choose 1 to 3 enemy Units with 3 or less HP. Return them to their owners' hands."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 8,
+  "Cost": 7,
+  "Ap": 6,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Athrun Zala"
+  ],
+  "Set": "GD03"
+}

@@ -1,0 +1,22 @@
+{
+  "Name": "Messer Type-F02 Minelayer",
+  "ID": "ST08-005",
+  "Effect": [],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

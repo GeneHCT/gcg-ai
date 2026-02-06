@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam (MA Form)",
+  "ID": "ST01-002",
+  "Effect": [
+    "【When Paired･(White Base Team) Pilot】Draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Amuro Ray"
+  ],
+  "Set": "ST01"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "GQuuuuuuX (Omega Psycommu)",
+  "ID": "ST06-001",
+  "Effect": [
+    "【When Linked】If another friendly (Clan) Unit is in play, this gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)"
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Amate Yuzuriha (Machu)"
+  ],
+  "Set": "ST06"
+}

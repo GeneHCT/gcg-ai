@@ -1,0 +1,23 @@
+{
+  "Name": "Ball",
+  "ID": "GD01-015",
+  "Effect": [
+    "【Attack】Choose 1 of your Units. It recovers 1 HP."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

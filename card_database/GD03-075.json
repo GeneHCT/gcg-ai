@@ -1,0 +1,24 @@
+{
+  "Name": "Super Gundam",
+  "ID": "GD03-075",
+  "Effect": [
+    "【During Link】【Attack】Choose 1 enemy Unit with no paired Pilot. It gets AP-2 during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

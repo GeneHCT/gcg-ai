@@ -1,0 +1,24 @@
+{
+  "Name": "Gundam Airmaster",
+  "ID": "GD02-059",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Vulture"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

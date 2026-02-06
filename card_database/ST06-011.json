@@ -1,0 +1,24 @@
+{
+  "Name": "Ruthless Tactics",
+  "ID": "ST06-011",
+  "Effect": [
+    "【Main】/【Action】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+    "【Pilot】[Gaia (GQ)]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST06"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Immortal Colasour",
+  "ID": "GD03-120",
+  "Effect": [
+    "【Main】During this turn, if a friendly (Superpower Bloc)/(UN) Unit destroys an enemy Unit with battle damage, choose 1 rested friendly (Superpower Bloc)/(UN) Unit. Set it as active. It can't attack during this turn.",
+    "【Pilot】[Patrick Colasour]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Superpower Bloc",
+    "UN"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

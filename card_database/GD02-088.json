@@ -1,0 +1,26 @@
+{
+  "Name": "Flit Asuno",
+  "ID": "GD02-088",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Look at the top 3 cards of your deck. You may reveal 1 green (Earth Federation) Unit card/1 card with \"AGE Device\" in its card name among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Earth Federation",
+    "Asuno Family",
+    "X-Rounder"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

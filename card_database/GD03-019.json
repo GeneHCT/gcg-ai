@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam AGE-2 Normal",
+  "ID": "GD03-019",
+  "Effect": [
+    "【During Pair】Enemy Units choose this rested Unit as their attack target if possible when attacking.",
+    "【When Linked】Place 1 EX Resource."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Earth Federation",
+    "AGE System"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Asemu Asuno"
+  ],
+  "Set": "GD03"
+}

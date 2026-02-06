@@ -1,0 +1,22 @@
+{
+  "Name": "Genoace",
+  "ID": "GD02-030",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

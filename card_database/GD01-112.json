@@ -1,0 +1,25 @@
+{
+  "Name": "Extreme Hatred",
+  "ID": "GD01-112",
+  "Effect": [
+    "【Main】Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.",
+    "【Pilot】[Loni Garvey]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon",
+    "Newtype"
+  ],
+  "Level": 6,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

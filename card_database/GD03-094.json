@@ -1,0 +1,25 @@
+{
+  "Name": "Zeheart Galette",
+  "ID": "GD03-094",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】Place the top 2 cards of your deck into your trash. If you placed a (Vagan) card with this effect, choose 1 enemy Unit. It gets AP-2 during this turn."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Vagan",
+    "X-Rounder"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Virsago & Gundam Ashtaron",
+  "ID": "GD03-040",
+  "Effect": [
+    "【During Link】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)"
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Shagia Frost",
+    "Olba Frost"
+  ],
+  "Set": "GD03"
+}

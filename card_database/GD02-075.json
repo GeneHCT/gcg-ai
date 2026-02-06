@@ -1,0 +1,24 @@
+{
+  "Name": "Rick Dias (Red)",
+  "ID": "GD02-075",
+  "Effect": [
+    "【Attack】Choose 1 active friendly Base. Rest it. If you do, choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this battle."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

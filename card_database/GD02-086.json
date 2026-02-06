@@ -1,0 +1,24 @@
+{
+  "Name": "Jerid Messa",
+  "ID": "GD02-086",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "While you have another (Titans) Unit in play, this gets AP+1."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

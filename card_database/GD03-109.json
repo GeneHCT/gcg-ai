@@ -1,0 +1,24 @@
+{
+  "Name": "Improved Technique",
+  "ID": "GD03-109",
+  "Effect": [
+    "【Burst】Activate this card's 【Main】.",
+    "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. Deal 3 damage to it. If there are 2 or more cards with \"Improved Technique\" in their card name in your trash, choose 1 enemy Unit instead."
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 3,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

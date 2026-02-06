@@ -1,0 +1,22 @@
+{
+  "Name": "Lauda's Dilanza",
+  "ID": "GD02-084",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 1,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

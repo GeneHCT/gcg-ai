@@ -1,0 +1,25 @@
+{
+  "Name": "Hathaway Noa",
+  "ID": "ST08-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】If this is a (Mafty) Unit, choose 1 of your (Mafty) Units. During this turn, it may choose a damaged active enemy Unit as its attack target."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

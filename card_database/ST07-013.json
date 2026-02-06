@@ -1,0 +1,24 @@
+{
+  "Name": "Armed Intervention",
+  "ID": "ST07-013",
+  "Effect": [
+    "【Burst】Draw 1.",
+    "【Action】Choose 1 rested friendly (CB) Unit. Change the attack target of the battling enemy Unit to it."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST07"
+}

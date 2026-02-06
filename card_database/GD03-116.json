@@ -1,0 +1,23 @@
+{
+  "Name": "Towards Destiny",
+  "ID": "GD03-116",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

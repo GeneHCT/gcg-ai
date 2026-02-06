@@ -1,0 +1,24 @@
+{
+  "Name": "Messer Type-F02",
+  "ID": "GD03-043",
+  "Effect": [
+    "【When Paired】Choose 1 enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

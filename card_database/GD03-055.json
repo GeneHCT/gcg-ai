@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Hajiroboshi (2nd Form)",
+  "ID": "GD03-055",
+  "Effect": [
+    "【When Paired･Purple Pilot】Choose 1 enemy Unit that is Lv.2 or lower. Destroy it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Civilian",
+    "Gundam Frame"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Wistario Afam"
+  ],
+  "Set": "GD03"
+}

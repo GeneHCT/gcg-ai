@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam X Divider",
+  "ID": "GD03-051",
+  "Effect": [
+    "【When Linked】You may choose 1 Unit card that is Lv.4 or lower from your trash. Pay its cost to deploy it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Vulture"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Garrod Ran",
+    "Jamil Neate"
+  ],
+  "Set": "GD03"
+}

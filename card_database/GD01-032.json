@@ -1,0 +1,26 @@
+{
+  "Name": "Gyan",
+  "ID": "GD01-032",
+  "Effect": [
+    "【When Paired･(Zeon) Pilot】Choose 1 enemy Unit with <Blocker> that is Lv.2 or lower. Destroy it."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "M'Quve"
+  ],
+  "Set": "GD01"
+}

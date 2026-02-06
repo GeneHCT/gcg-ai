@@ -1,0 +1,25 @@
+{
+  "Name": "Yzak Jule",
+  "ID": "GD01-094",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Once per Turn】 When an enemy Link Unit is destroyed with damage while this Unit is attacking, draw 1."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "ZAFT",
+    "Coordinator"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

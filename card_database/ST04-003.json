@@ -1,0 +1,23 @@
+{
+  "Name": "Moebius Zero",
+  "ID": "ST04-003",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Mu La Flaga"
+  ],
+  "Set": "ST04"
+}

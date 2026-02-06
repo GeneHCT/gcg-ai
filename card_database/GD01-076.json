@@ -1,0 +1,24 @@
+{
+  "Name": "Michaelis",
+  "ID": "GD01-076",
+  "Effect": [
+    "While there are 4 or more Command cards in your trash, this Unit gets AP+1 and HP+1."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

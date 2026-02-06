@@ -1,0 +1,25 @@
+{
+  "Name": "Thoroughly Damaged",
+  "ID": "ST01-012",
+  "Effect": [
+    "【Main】Choose 1 rested enemy Unit. Deal 1 damage to it.",
+    "【Pilot】[Hayato Kobayashi]"
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

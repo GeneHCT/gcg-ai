@@ -1,0 +1,21 @@
+{
+  "Name": "Gundam Barbatos 4th Form",
+  "ID": "T-017",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

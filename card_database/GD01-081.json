@@ -1,0 +1,24 @@
+{
+  "Name": "M1 Astray",
+  "ID": "GD01-081",
+  "Effect": [
+    "While you have another (Triple Ship Alliance) Unit in play, this Unit gets AP+1 and <Blocker>. (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

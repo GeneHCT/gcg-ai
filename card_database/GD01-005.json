@@ -1,0 +1,26 @@
+{
+  "Name": "Unicorn Gundam (Unicorn Mode)",
+  "ID": "GD01-005",
+  "Effect": [
+    "【During Link】【Destroyed】Return this Unit's paired Pilot to its owner's hand. Then, discard 1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Civilian"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Banagher Links"
+  ],
+  "Set": "GD01"
+}

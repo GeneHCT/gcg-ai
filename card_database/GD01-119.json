@@ -1,0 +1,24 @@
+{
+  "Name": "Iron-Fisted Discipline",
+  "ID": "GD01-119",
+  "Effect": [
+    "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this turn.",
+    "【Pilot】[Chuatury Panlunch]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam",
+  "ID": "GD01-001",
+  "Effect": [
+    "All your (White Base Team) Units gain <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "【When Paired】If you have 2 or more other Units in play, draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Amuro Ray"
+  ],
+  "Set": "GD01"
+}

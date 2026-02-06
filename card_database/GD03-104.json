@@ -1,0 +1,25 @@
+{
+  "Name": "Reccoa's Shadow",
+  "ID": "GD03-104",
+  "Effect": [
+    "【Main】/【Action】Choose 1 enemy Unit with 3 or less HP. Rest it. If a friendly (Jupitris) Link Unit is in play, choose 1 to 2 enemy Units with 3 or less HP instead.",
+    "【Pilot】[Reccoa Londe]"
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Titans",
+    "Jupitris"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Zechs' Leo",
+  "ID": "GD01-012",
+  "Effect": [
+    "【When Paired】Choose 1 enemy Unit with 3 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

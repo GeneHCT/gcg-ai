@@ -1,0 +1,24 @@
+{
+  "Name": "Gundam Pharact",
+  "ID": "GD01-071",
+  "Effect": [
+    "【During Link】【Attack】Choose 1 enemy Unit. It gets AP-2 during this battle."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

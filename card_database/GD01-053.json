@@ -1,0 +1,24 @@
+{
+  "Name": "Geara Doga (Heavy Armed Type)",
+  "ID": "GD01-053",
+  "Effect": [
+    "【Activate･Main】【Once per Turn】①：Choose 1 enemy Unit with 2 or less AP. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

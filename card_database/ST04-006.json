@@ -1,0 +1,26 @@
+{
+  "Name": "Aegis Gundam",
+  "ID": "ST04-006",
+  "Effect": [
+    "【Attack】If this Unit has 5 or more AP, choose 1 enemy Unit that is Lv.5 or higher. Deal 3 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Athrun Zala"
+  ],
+  "Set": "ST04"
+}

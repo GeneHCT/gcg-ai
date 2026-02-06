@@ -1,0 +1,24 @@
+{
+  "Name": "Emma Sheen",
+  "ID": "GD03-099",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】【Destroyed】If a friendly white Base is in play, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

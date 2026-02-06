@@ -1,0 +1,23 @@
+{
+  "Name": "LaGOWE",
+  "ID": "GD01-050",
+  "Effect": [
+    "【Attack】If this Unit has 5 or more AP and it is attacking an enemy Unit, choose 1 enemy Unit. Deal 2 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

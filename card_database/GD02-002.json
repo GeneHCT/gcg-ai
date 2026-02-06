@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Epyon",
+  "ID": "GD02-002",
+  "Effect": [
+    "【During Link】【Once per Turn】During your turn, when one of your Units destroys an enemy Unit with battle damage, set this Unit as active."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "White Fang"
+  ],
+  "Level": 8,
+  "Cost": 7,
+  "Ap": 6,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Zechs Merquise"
+  ],
+  "Set": "GD02"
+}

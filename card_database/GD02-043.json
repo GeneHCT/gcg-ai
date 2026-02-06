@@ -1,0 +1,24 @@
+{
+  "Name": "Daughtress Weapon",
+  "ID": "GD02-043",
+  "Effect": [
+    "【Deploy】If you have another (New UNE) Unit in play, deploy 1 rested [Daughtress]((New UNE)･AP0･HP1) Unit token."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

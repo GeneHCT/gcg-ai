@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Barbatos Adapt",
+  "ID": "GD03-056",
+  "Effect": [
+    "【Deploy】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Mikazuki Augus"
+  ],
+  "Set": "GD03"
+}

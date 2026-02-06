@@ -1,0 +1,24 @@
+{
+  "Name": "Midair Modifications",
+  "ID": "GD01-121",
+  "Effect": [
+    "【Burst】Activate this card's 【Main】.",
+    "【Main】Choose 1 rested Unit with <Blocker>. Set it as active. It can't attack during this turn."
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

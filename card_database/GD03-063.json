@@ -1,0 +1,23 @@
+{
+  "Name": "0 Gundam",
+  "ID": "GD03-063",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

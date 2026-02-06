@@ -1,0 +1,27 @@
+{
+  "Name": "Wing Gundam",
+  "ID": "ST02-001",
+  "Effect": [
+    "<Breach 5> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "This Unit may choose an active enemy Unit that is Lv.4 or lower as its attack target."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Heero Yuy"
+  ],
+  "Set": "ST02"
+}

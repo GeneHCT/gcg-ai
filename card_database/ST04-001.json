@@ -1,0 +1,27 @@
+{
+  "Name": "Aile Strike Gundam",
+  "ID": "ST04-001",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "【When Paired･Lv.4 or Higher Pilot】Choose 1 enemy Unit with 4 or less HP. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Kira Yamato"
+  ],
+  "Set": "ST04"
+}

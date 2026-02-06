@@ -1,0 +1,22 @@
+{
+  "Name": "Zaku (Four Snake Eyes') [YETI] (GQ)",
+  "ID": "GD03-032",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

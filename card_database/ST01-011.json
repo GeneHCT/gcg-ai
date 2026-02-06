@@ -1,0 +1,24 @@
+{
+  "Name": "Suletta Mercury",
+  "ID": "ST01-011",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】【Once per Turn】Choose 1 of your Resources. Set it as active."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

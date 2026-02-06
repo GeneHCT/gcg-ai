@@ -1,0 +1,26 @@
+{
+  "Name": "Ptolemaios",
+  "ID": "ST07-015",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "While a rested friendly (CB) Unit is in play, this Base can't receive damage from enemy Units that are Lv.3 or lower, other than Unit tokens."
+  ],
+  "Color": "Purple",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "Warship"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "ST07"
+}

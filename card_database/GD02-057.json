@@ -1,0 +1,27 @@
+{
+  "Name": "Zedas",
+  "ID": "GD02-057",
+  "Effect": [
+    "【During Pair】【Attack】You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "UE",
+    "Vagan"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Desil Galette"
+  ],
+  "Set": "GD02"
+}

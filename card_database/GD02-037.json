@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Virsago",
+  "ID": "GD02-037",
+  "Effect": [
+    "<Breach 1> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "【Deploy】If there are 3 or less enemy Shields, choose 1 enemy Unit with 5 or less AP. Deal 2 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Shagia Frost"
+  ],
+  "Set": "GD02"
+}

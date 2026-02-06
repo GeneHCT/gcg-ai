@@ -1,0 +1,24 @@
+{
+  "Name": "Persistent and Fortudinous",
+  "ID": "GD02-119",
+  "Effect": [
+    "【Action】If you have a (Gjallarhorn) Link Unit in play, choose 1 enemy Unit. It gets AP-3 during this battle.",
+    "【Pilot】[Carta Issue]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

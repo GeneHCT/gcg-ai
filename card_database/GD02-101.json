@@ -1,0 +1,23 @@
+{
+  "Name": "Beneath the Mask",
+  "ID": "GD02-101",
+  "Effect": [
+    "【Main】/【Action】Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

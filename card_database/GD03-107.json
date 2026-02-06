@@ -1,0 +1,25 @@
+{
+  "Name": "Over the River and Through the Woods",
+  "ID": "GD03-107",
+  "Effect": [
+    "【Main】Choose 1 enemy Unit that is Lv.5 or lower. Deal damage to it equal to the number of friendly Unit tokens in play.",
+    "【Pilot】[Hardie Steiner]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon",
+    "Cyclops Team"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

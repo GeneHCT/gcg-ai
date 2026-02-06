@@ -1,0 +1,22 @@
+{
+  "Name": "Gundam Airmaster (Fighter Mode)",
+  "ID": "GD02-063",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Vulture"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

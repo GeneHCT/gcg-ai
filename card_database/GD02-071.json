@@ -1,0 +1,24 @@
+{
+  "Name": "Gundam Mk-II (AEUG)",
+  "ID": "GD02-071",
+  "Effect": [
+    "【Deploy】If a friendly white Base is in play, you may pair 1 (AEUG) Pilot card from your hand with this Unit."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

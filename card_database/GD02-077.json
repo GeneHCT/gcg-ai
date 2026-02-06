@@ -1,0 +1,22 @@
+{
+  "Name": "Ein's Schwalbe Graze",
+  "ID": "GD02-077",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

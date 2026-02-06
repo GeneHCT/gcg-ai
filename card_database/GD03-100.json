@@ -1,0 +1,26 @@
+{
+  "Name": "Soma Peries",
+  "ID": "GD03-100",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Destroyed】Choose 1 enemy Unit. It gets AP-3 during this turn."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Superpower Bloc",
+    "UN",
+    "Super Soldier"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

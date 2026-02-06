@@ -1,0 +1,25 @@
+{
+  "Name": "Ortega's Rick Dom (GQ)",
+  "ID": "ST06-007",
+  "Effect": [
+    "【Deploy】Choose 1 of your other (Clan) Units. During this turn, it may choose an active enemy Unit with 3 or less AP as its attack target."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Ortega"
+  ],
+  "Set": "ST06"
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "Strategic Arms",
+  "ID": "GD01-108",
+  "Effect": [
+    "【Main】Deal 2 damage to all Units with <Blocker>."
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 6,
+  "Cost": 6,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

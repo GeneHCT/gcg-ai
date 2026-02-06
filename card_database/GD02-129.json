@@ -1,0 +1,27 @@
+{
+  "Name": "Argama",
+  "ID": "GD02-129",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "This Base can't receive enemy effect damage."
+  ],
+  "Color": "White",
+  "Type": "BASE",
+  "Rarity": "R",
+  "Traits": [
+    "AEUG",
+    "Warship"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

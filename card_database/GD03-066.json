@@ -1,0 +1,24 @@
+{
+  "Name": "Gundam Barbatos 5th Form (Ground Type)",
+  "ID": "GD03-066",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Mikazuki Augus"
+  ],
+  "Set": "GD03"
+}

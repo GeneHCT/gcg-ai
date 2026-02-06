@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Ashtaron",
+  "ID": "GD02-040",
+  "Effect": [
+    "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+    "【Deploy】Choose 1 of your other (New UNE) Units. It can't receive battle damage from enemy Units with 2 or less HP during this turn."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

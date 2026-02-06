@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Kyrios (Flight Mode)",
+  "ID": "ST07-008",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Allelujah Haptism",
+    "Hallelujah Haptism"
+  ],
+  "Set": "ST07"
+}

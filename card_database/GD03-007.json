@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam NT-1 Full Armor",
+  "ID": "GD03-007",
+  "Effect": [
+    "【Destroyed】Choose 1 enemy Unit with 3 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Christina Mackenzie"
+  ],
+  "Set": "GD03"
+}

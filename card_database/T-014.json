@@ -1,0 +1,23 @@
+{
+  "Name": "Ad Balloon",
+  "ID": "T-014",
+  "Effect": [
+    "This Unit can't be set as active or paired with a Pilot."
+  ],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Civilian"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": null,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

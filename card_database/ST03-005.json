@@ -1,0 +1,21 @@
+{
+  "Name": "Dra-C (Sleeves)",
+  "ID": "ST03-005",
+  "Effect": [],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

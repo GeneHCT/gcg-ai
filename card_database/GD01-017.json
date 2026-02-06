@@ -1,0 +1,24 @@
+{
+  "Name": "Stark Jegan",
+  "ID": "GD01-017",
+  "Effect": [
+    "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

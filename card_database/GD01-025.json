@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Deathscythe",
+  "ID": "GD01-025",
+  "Effect": [
+    "【When Paired･(Operation Meteor) Pilot】Place 1 rested Resource. Then, this Unit gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Duo Maxwell"
+  ],
+  "Set": "GD01"
+}

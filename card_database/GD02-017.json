@@ -1,0 +1,26 @@
+{
+  "Name": "Delta Plus (Waverider Mode)",
+  "ID": "GD02-017",
+  "Effect": [
+    "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Riddhe Marcenas"
+  ],
+  "Set": "GD02"
+}

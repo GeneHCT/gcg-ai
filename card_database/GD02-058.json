@@ -1,0 +1,24 @@
+{
+  "Name": "Ryusei-Go (Graze Custom Ⅱ)",
+  "ID": "GD02-058",
+  "Effect": [
+    "【Deploy】Choose 1 of your Units. Deal 1 damage to it. If you do, draw 1. Then, discard 1."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Tekkadan"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Kimaris",
+  "ID": "GD02-070",
+  "Effect": [
+    "【Deploy】If there are 4 or more (Gjallarhorn) cards in your trash, draw 2. If you do, discard 2."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Gjallarhorn",
+    "Gundam Frame"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Gaelio Bauduin"
+  ],
+  "Set": "GD02"
+}

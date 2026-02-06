@@ -1,0 +1,27 @@
+{
+  "Name": "McGillis' Schwalbe Graze",
+  "ID": "ST05-007",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "【When Paired】Choose 1 enemy Unit that is Lv.3 or lower. It gets AP-2 during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "McGillis Fareed"
+  ],
+  "Set": "ST05"
+}

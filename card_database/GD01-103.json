@@ -1,0 +1,24 @@
+{
+  "Name": "The Stubborn Cog",
+  "ID": "GD01-103",
+  "Effect": [
+    "【Main】Choose 1 active friendly (Earth Federation) Unit and 1 active enemy Unit. Rest them.",
+    "【Pilot】[Daguza Mackle]"
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "A New Sign",
+  "ID": "GD02-117",
+  "Effect": [
+    "【Burst】Choose 1 (AEUG) Base card from your trash. Add it to your hand.",
+    "【Main】Draw 3. Then, discard 2."
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

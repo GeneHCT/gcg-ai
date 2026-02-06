@@ -1,0 +1,25 @@
+{
+  "Name": "Nyaan",
+  "ID": "GD03-092",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Place the top card of your deck into your trash. If you placed a (Zeon)/(Clan) card with this effect, choose 1 enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

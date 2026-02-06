@@ -1,0 +1,26 @@
+{
+  "Name": "Sayla's Light-Type Guncannon",
+  "ID": "GD02-046",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit token. Deal 2 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Sayla Mass"
+  ],
+  "Set": "GD02"
+}

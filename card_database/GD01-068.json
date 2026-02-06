@@ -1,0 +1,25 @@
+{
+  "Name": "Perfect Strike Gundam",
+  "ID": "GD01-068",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "【Deploy】Choose 1 enemy Unit with 1 HP. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

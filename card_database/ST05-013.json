@@ -1,0 +1,23 @@
+{
+  "Name": "With Iron and Blood",
+  "ID": "ST05-013",
+  "Effect": [
+    "【Main】/【Action】Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

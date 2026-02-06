@@ -1,0 +1,24 @@
+{
+  "Name": "Dramatic Turnabout",
+  "ID": "GD02-100",
+  "Effect": [
+    "【Burst】Draw 1.",
+    "【Main】Choose 1 friendly damaged Unit. It recovers 2 HP. Then, draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 5,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

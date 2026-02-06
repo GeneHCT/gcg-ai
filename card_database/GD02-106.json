@@ -1,0 +1,24 @@
+{
+  "Name": "White Wolf",
+  "ID": "GD02-106",
+  "Effect": [
+    "【Action】During this battle, your shield area cards can't receive damage from enemy Units that are Lv.3 or lower.",
+    "【Pilot】[Woolf Enneacle]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

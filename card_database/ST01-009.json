@@ -1,0 +1,25 @@
+{
+  "Name": "Zowort",
+  "ID": "ST01-009",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "This Unit can't choose the enemy player as its attack target."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

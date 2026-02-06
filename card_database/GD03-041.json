@@ -1,0 +1,26 @@
+{
+  "Name": "Patulia",
+  "ID": "GD03-041",
+  "Effect": [
+    "【Deploy】Deal 3 damage to all Bases."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "SRA"
+  ],
+  "Level": 7,
+  "Cost": 6,
+  "Ap": 5,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Carris Nautilus"
+  ],
+  "Set": "GD03"
+}

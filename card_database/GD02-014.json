@@ -1,0 +1,24 @@
+{
+  "Name": "Galbaldy Beta",
+  "ID": "GD02-014",
+  "Effect": [
+    "【Deploy】Choose 1 of your (Titans) Units. It gets AP+1 during this turn."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

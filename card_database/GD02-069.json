@@ -1,0 +1,26 @@
+{
+  "Name": "Zeta Gundam",
+  "ID": "GD02-069",
+  "Effect": [
+    "【During Link】【Activate･Main】【Once per Turn】Choose 1 active friendly Base. Rest it. If you do, set this Unit as active. It can't choose the enemy player as its attack target during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Kamille Bidan"
+  ],
+  "Set": "GD02"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Genoace Custom",
+  "ID": "GD02-026",
+  "Effect": [
+    "【Deploy】If you are Lv.7 or higher, choose 1 of your (AGE System) Units. It gets AP+2 during this turn."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Woolf Enneacle"
+  ],
+  "Set": "GD02"
+}

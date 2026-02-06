@@ -1,0 +1,24 @@
+{
+  "Name": "Gundam Aerial (Bit on Form)",
+  "ID": "ST01-007",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Suletta Mercury"
+  ],
+  "Set": "ST01"
+}

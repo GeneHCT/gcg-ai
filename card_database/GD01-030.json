@@ -1,0 +1,23 @@
+{
+  "Name": "Rick Dom",
+  "ID": "GD01-030",
+  "Effect": [
+    "<Breach 2> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

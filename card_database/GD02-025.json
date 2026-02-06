@@ -1,0 +1,23 @@
+{
+  "Name": "Gundam Heavyarms",
+  "ID": "GD02-025",
+  "Effect": [
+    "【Deploy】Look at the top card of your deck. Return it to the top or bottom of your deck."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

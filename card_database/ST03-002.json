@@ -1,0 +1,26 @@
+{
+  "Name": "Angelo's Geara Zulu",
+  "ID": "ST03-002",
+  "Effect": [
+    "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)"
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Angelo Sauper"
+  ],
+  "Set": "ST03"
+}

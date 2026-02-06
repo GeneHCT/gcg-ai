@@ -1,0 +1,25 @@
+{
+  "Name": "Gouf",
+  "ID": "ST03-009",
+  "Effect": [
+    "【Deploy】Deploy 1 rested [Zaku Ⅱ]((Zeon)･AP1･HP1) Unit token."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 3,
+  "Cost": 3,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Ramba Ral"
+  ],
+  "Set": "ST03"
+}

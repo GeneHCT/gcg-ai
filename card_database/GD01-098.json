@@ -1,0 +1,24 @@
+{
+  "Name": "Elan Ceres (Enhanced Person Number 4)",
+  "ID": "GD01-098",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Activate･Action】【Once per Turn】If an enemy Unit with 1 or less AP is in play, this Unit recovers 1 HP."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

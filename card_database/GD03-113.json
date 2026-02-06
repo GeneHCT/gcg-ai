@@ -1,0 +1,23 @@
+{
+  "Name": "Human Karma",
+  "ID": "GD03-113",
+  "Effect": [
+    "【Main】/【Action】Choose 1 active friendly Unit. Rest it. If you do, choose 1 enemy Unit whose Lv. is equal to or lower than the Unit rested with this ability. Deal 3 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

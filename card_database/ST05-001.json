@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Barbatos 4th Form",
+  "ID": "ST05-001",
+  "Effect": [
+    "【Deploy】Choose 1 of your other Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+    "While this is damaged, it gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)"
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Mikazuki Augus"
+  ],
+  "Set": "ST05"
+}

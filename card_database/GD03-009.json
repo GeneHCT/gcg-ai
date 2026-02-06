@@ -1,0 +1,27 @@
+{
+  "Name": "Palace Athene",
+  "ID": "GD03-009",
+  "Effect": [
+    "【Deploy】You may choose 2 (Titans) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit that is Lv.4 or lower. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Titans",
+    "Jupitris"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Reccoa Londe"
+  ],
+  "Set": "GD03"
+}

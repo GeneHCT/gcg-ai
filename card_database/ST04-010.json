@@ -1,0 +1,25 @@
+{
+  "Name": "Kira Yamato",
+  "ID": "ST04-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】Choose 1 enemy Unit. It gets AP-2 during this battle."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance",
+    "Coordinator"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

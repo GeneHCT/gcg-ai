@@ -1,0 +1,26 @@
+{
+  "Name": "Shenlong Gundam",
+  "ID": "GD01-029",
+  "Effect": [
+    "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "【Attack】Choose 1 enemy Unit with <Blocker> that is Lv.3 or lower. Destroy it."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Chang Wufei"
+  ],
+  "Set": "GD01"
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "Big Zam",
+  "ID": "GD01-027",
+  "Effect": [
+    "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "【Deploy】If there are 10 or more (Zeon)/(Neo Zeon) Unit cards in your trash, deal 4 damage to all Units with <Blocker>."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Dozle Zabi"
+  ],
+  "Set": "GD01"
+}

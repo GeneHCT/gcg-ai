@@ -1,0 +1,24 @@
+{
+  "Name": "Fierce Unity",
+  "ID": "ST06-013",
+  "Effect": [
+    "【Action】Choose 1 to 2 friendly (Clan) Units. They can't receive battle damage from enemy Units that are Lv.2 or lower during this turn.",
+    "【Pilot】[Ortega (GQ)]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST06"
+}

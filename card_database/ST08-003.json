@@ -1,0 +1,22 @@
+{
+  "Name": "Messer (Type-F Naked) (Commander Type)",
+  "ID": "ST08-003",
+  "Effect": [],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

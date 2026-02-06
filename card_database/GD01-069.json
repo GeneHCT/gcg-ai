@@ -1,0 +1,24 @@
+{
+  "Name": "Strike Rouge",
+  "ID": "GD01-069",
+  "Effect": [
+    "【Activate･Main】【Once per Turn】①：Choose 1 of your rested white Units with <Blocker>. Set it as active. It can't attack during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

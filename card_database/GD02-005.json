@@ -1,0 +1,24 @@
+{
+  "Name": "Tallgeese",
+  "ID": "GD02-005",
+  "Effect": [
+    "【During Link】【Attack】Choose 1 enemy Unit with 2 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

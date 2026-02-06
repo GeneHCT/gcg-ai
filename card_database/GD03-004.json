@@ -1,0 +1,26 @@
+{
+  "Name": "Hambrabi",
+  "ID": "GD03-004",
+  "Effect": [
+    "【Attack】If you have 2 or more other (Titans) Units in play, choose 1 enemy Unit with 5 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Yazan Gable"
+  ],
+  "Set": "GD03"
+}

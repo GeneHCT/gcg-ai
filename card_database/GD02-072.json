@@ -1,0 +1,28 @@
+{
+  "Name": "Hyaku-Shiki",
+  "ID": "GD02-072",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "While a friendly white Base is in play, this Unit gains <Repair 1>.",
+    "(At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Quattro Bajeena"
+  ],
+  "Set": "GD02"
+}

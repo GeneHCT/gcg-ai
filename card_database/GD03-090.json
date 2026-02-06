@@ -1,0 +1,25 @@
+{
+  "Name": "Mikhail Kaminsky",
+  "ID": "GD03-090",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】Choose 1 of your (Cyclops Team) Units. It gains <Breach 1> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon",
+    "Cyclops Team"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

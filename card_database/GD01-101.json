@@ -1,0 +1,24 @@
+{
+  "Name": "Deep Devotion",
+  "ID": "GD01-101",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly Link Unit. It recovers 3 HP.",
+    "【Pilot】[Lucrezia Noin]"
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

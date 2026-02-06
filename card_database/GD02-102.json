@@ -1,0 +1,24 @@
+{
+  "Name": "Mouar’s Determination",
+  "ID": "GD02-102",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly (Titans) Unit. It gets AP+2 during this turn.",
+    "【Pilot】[Mouar Pharaoh]"
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Duel Gundam (Assault Shroud)",
+  "ID": "GD03-042",
+  "Effect": [
+    "While this Unit has 5 or more AP, it may choose an active enemy Unit that is Lv.5 or lower as its attack target."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Yzak Jule"
+  ],
+  "Set": "GD03"
+}

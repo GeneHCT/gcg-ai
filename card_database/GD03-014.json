@@ -1,0 +1,24 @@
+{
+  "Name": "Hizack Custom",
+  "ID": "GD03-014",
+  "Effect": [
+    "While you have 2 or more (Titans) Units in play, this card in your hand gets cost -1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

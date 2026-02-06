@@ -1,0 +1,26 @@
+{
+  "Name": "Zanzibar",
+  "ID": "GD01-125",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, if it is your turn, you may deploy 1 (Zeon) Unit card that is Lv.4 or lower from your hand."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon",
+    "Warship"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

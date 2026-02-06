@@ -1,0 +1,27 @@
+{
+  "Name": "Red Gundam",
+  "ID": "ST06-005",
+  "Effect": [
+    "<Breach 1> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "【Attack】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Shuji Itō"
+  ],
+  "Set": "ST06"
+}

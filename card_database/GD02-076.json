@@ -1,0 +1,24 @@
+{
+  "Name": "Buster Gundam",
+  "ID": "GD02-076",
+  "Effect": [
+    "While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

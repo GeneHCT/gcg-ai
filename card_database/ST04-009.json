@@ -1,0 +1,26 @@
+{
+  "Name": "Miguel's Ginn",
+  "ID": "ST04-009",
+  "Effect": [
+    "【During Pair】【Destroyed】If you have another Link Unit in play, draw 1."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Miguel Ayman"
+  ],
+  "Set": "ST04"
+}

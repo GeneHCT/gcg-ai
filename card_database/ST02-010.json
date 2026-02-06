@@ -1,0 +1,24 @@
+{
+  "Name": "Heero Yuy",
+  "ID": "ST02-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】This Unit gets AP+1 and HP+1."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

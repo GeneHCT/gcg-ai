@@ -1,0 +1,24 @@
+{
+  "Name": "Riddhe Marcenas",
+  "ID": "GD01-089",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "While this Unit has <Repair>, it gets AP+1."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

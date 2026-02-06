@@ -1,0 +1,24 @@
+{
+  "Name": "Zedas R",
+  "ID": "GD03-059",
+  "Effect": [
+    "【Attack】You may choose 1 (Vagan) card from your trash. Exile it from the game. If you do, choose 1 of your (Vagan) Units. It gets AP+2 during this turn."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Vagan"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

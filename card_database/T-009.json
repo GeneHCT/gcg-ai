@@ -1,0 +1,23 @@
+{
+  "Name": "Launcher Strike Gundam",
+  "ID": "T-009",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "It's Name is Ryusei-Go",
+  "ID": "GD02-114",
+  "Effect": [
+    "【Main】/【Action】Choose 1 damaged friendly Unit. It gets AP+2 during this turn.",
+    "【Pilot】[Norba Shino]"
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Tekkadan",
+    "Alaya-Vijnana"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

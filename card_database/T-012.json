@@ -1,0 +1,21 @@
+{
+  "Name": "Daughtress",
+  "ID": "T-012",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": null,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

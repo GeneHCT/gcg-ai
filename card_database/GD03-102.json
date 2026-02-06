@@ -1,0 +1,24 @@
+{
+  "Name": "Privileged Position",
+  "ID": "GD03-102",
+  "Effect": [
+    "【Burst】Draw 1.",
+    "【Action】Choose 1 of your (Titans) Link Units battling an enemy Unit. Set it as active."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 6,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

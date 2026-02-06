@@ -1,0 +1,26 @@
+{
+  "Name": "Asticassia School of Technology, Earth House",
+  "ID": "ST01-016",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Activate･Main】Rest this Base：All friendly Link Units get AP+1 during this turn."
+  ],
+  "Color": "White",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Academy",
+    "Stronghold"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

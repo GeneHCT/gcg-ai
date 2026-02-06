@@ -1,0 +1,25 @@
+{
+  "Name": "Full Frontal",
+  "ID": "ST03-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】You may deploy 1 (Neo Zeon)/(Zeon) Unit card that is Lv.4 or lower from your hand."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Neo Zeon",
+    "Cyber-Newtype"
+  ],
+  "Level": 6,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

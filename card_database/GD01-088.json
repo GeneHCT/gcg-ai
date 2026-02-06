@@ -1,0 +1,25 @@
+{
+  "Name": "Banagher Links",
+  "ID": "GD01-088",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Civilian",
+    "Newtype"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

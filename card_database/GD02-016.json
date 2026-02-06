@@ -1,0 +1,24 @@
+{
+  "Name": "Barzam",
+  "ID": "GD02-016",
+  "Effect": [
+    "【Deploy】Choose 1 of your (Titans) Units. It gets AP+1 during this turn."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Yazan Gable",
+  "ID": "GD03-086",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】Choose 1 of your (Titans) Units whose Lv. is equal to or lower than this Unit. It gets AP+1 during this turn."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

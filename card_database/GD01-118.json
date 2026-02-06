@@ -1,0 +1,23 @@
+{
+  "Name": "Overflowing Affection",
+  "ID": "GD01-118",
+  "Effect": [
+    "【Main】Draw 2. Then, discard 1."
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

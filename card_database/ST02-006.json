@@ -1,0 +1,26 @@
+{
+  "Name": "Tallgeese",
+  "ID": "ST02-006",
+  "Effect": [
+    "【Activate･Main】【Once per Turn】④：Set this Unit as active."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Zechs Merquise"
+  ],
+  "Set": "ST02"
+}

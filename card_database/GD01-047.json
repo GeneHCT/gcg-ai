@@ -1,0 +1,23 @@
+{
+  "Name": "Shamblo",
+  "ID": "GD01-047",
+  "Effect": [
+    "【Attack】If 2 or more other rested friendly Units are in play, choose 1 enemy Unit. Deal 3 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 8,
+  "Cost": 7,
+  "Ap": 6,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

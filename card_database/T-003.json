@@ -1,0 +1,21 @@
+{
+  "Name": "Guntank",
+  "ID": "T-003",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "White Base Team"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

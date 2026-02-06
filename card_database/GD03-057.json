@@ -1,0 +1,25 @@
+{
+  "Name": "GN Armor (Type-E)",
+  "ID": "GD03-057",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

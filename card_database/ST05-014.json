@@ -1,0 +1,24 @@
+{
+  "Name": "Fatal Strike",
+  "ID": "ST05-014",
+  "Effect": [
+    "【Burst】Choose 1 enemy Unit. Deal 1 damage to it.",
+    "【Main】Choose 1 enemy Unit that is Lv.3 or lower. Destroy it."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

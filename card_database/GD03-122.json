@@ -1,0 +1,25 @@
+{
+  "Name": "Veteran Tactics",
+  "ID": "GD03-122",
+  "Effect": [
+    "【Action】Choose 1 enemy Unit that is Lv.3 or lower. Return it to its owner's hand.",
+    "【Pilot】[Sergei Smirnov]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Superpower Bloc",
+    "UN"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

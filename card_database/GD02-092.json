@@ -1,0 +1,24 @@
+{
+  "Name": "Shagia Frost",
+  "ID": "GD02-092",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】【Attack】Choose 1 of your (New UNE) Units. It gets AP+2 during this turn."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

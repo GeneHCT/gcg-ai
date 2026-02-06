@@ -1,0 +1,21 @@
+{
+  "Name": "GQuuuuuuX (Omega Psycommu)",
+  "ID": "T-019",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

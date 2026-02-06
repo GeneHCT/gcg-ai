@@ -1,0 +1,25 @@
+{
+  "Name": "Carris Nautilus",
+  "ID": "GD03-093",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "While no enemy Base is in play, this Unit gets AP+1."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "SRA",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

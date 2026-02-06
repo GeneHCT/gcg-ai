@@ -1,0 +1,25 @@
+{
+  "Name": "Akihiro Altland",
+  "ID": "ST05-011",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】During your turn, when this Unit destroys an enemy Unit with battle damage, choose 1 (Tekkadan) Unit card that is Lv.2 or lower from your trash. Add it to your hand."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan",
+    "Alaya-Vijnana"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

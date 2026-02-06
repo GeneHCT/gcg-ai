@@ -1,0 +1,24 @@
+{
+  "Name": "Azee Gurumin",
+  "ID": "GD03-095",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Once per Turn】When this Unit receives effect damage, choose 1 enemy Unit. It gets AP-1 during this turn."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Teiwaz"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

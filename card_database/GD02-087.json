@@ -1,0 +1,25 @@
+{
+  "Name": "Orga, Crot, and Shani",
+  "ID": "GD02-087",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】If this is a blue Unit, choose 1 enemy Unit with <Blocker>. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance",
+    "Biological CPU"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

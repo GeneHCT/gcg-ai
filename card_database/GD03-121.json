@@ -1,0 +1,25 @@
+{
+  "Name": "Unheralded Attack",
+  "ID": "GD03-121",
+  "Effect": [
+    "【Action】Choose 1 friendly Base and 1 enemy Unit with 3 or less HP. Rest them.",
+    "【Pilot】[Katz Kobayashi]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "AEUG",
+    "Newtype"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

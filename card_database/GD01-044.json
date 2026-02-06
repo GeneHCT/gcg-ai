@@ -1,0 +1,26 @@
+{
+  "Name": "Kshatriya",
+  "ID": "GD01-044",
+  "Effect": [
+    "【When Paired･(Cyber-Newtype)/(Newtype) Pilot】Choose 1 to 2 enemy Units. Deal 1 damage to them."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Marida Cruz"
+  ],
+  "Set": "GD01"
+}

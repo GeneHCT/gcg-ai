@@ -1,0 +1,27 @@
+{
+  "Name": "Farsia",
+  "ID": "GD03-058",
+  "Effect": [
+    "This card in your trash gets cost -1."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "UE",
+    "Vagan"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Yurin L'Ciel"
+  ],
+  "Set": "GD03"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Zaku Ⅱ",
+  "ID": "ST03-008",
+  "Effect": [
+    "【Attack】This Unit gets AP+2 during this turn."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

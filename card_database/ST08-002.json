@@ -1,0 +1,26 @@
+{
+  "Name": "Ξ Gundam",
+  "ID": "ST08-002",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Hathaway Noa"
+  ],
+  "Set": "ST08"
+}

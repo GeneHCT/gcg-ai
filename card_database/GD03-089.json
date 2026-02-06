@@ -1,0 +1,25 @@
+{
+  "Name": "Bernard Wiseman",
+  "ID": "GD03-089",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "Increase this Unit's AP by an amount equal to the number of (Cyclops Team) Pilot cards/Command cards with unique names in your trash."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon",
+    "Cyclops Team"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

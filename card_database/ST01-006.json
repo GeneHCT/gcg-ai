@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Aerial (Permet Score Six)",
+  "ID": "ST01-006",
+  "Effect": [
+    "【When Paired】Choose 1 enemy Unit that is Lv.5 or lower. It gets AP-3 during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Suletta Mercury"
+  ],
+  "Set": "ST01"
+}

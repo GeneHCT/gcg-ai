@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Deathscythe Hell",
+  "ID": "GD03-021",
+  "Effect": [
+    "【Deploy】Choose 1 of your (Operation Meteor)/(G Team) Units. During this turn, it may choose an active enemy Unit as its attack target."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "G Team"
+  ],
+  "Level": 8,
+  "Cost": 7,
+  "Ap": 6,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Duo Maxwell"
+  ],
+  "Set": "GD03"
+}

@@ -1,0 +1,22 @@
+{
+  "Name": "Graze",
+  "ID": "ST05-009",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

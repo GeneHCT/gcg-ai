@@ -1,0 +1,26 @@
+{
+  "Name": "Wing Gundam (Bird Mode)",
+  "ID": "ST02-002",
+  "Effect": [
+    "【Deploy】Place 1 EX Resource."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 3,
+  "Cost": 3,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Heero Yuy"
+  ],
+  "Set": "ST02"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Jegan",
+  "ID": "GD01-016",
+  "Effect": [
+    "While you have 2 or more (Earth Federation) Units in play, this card in your hand gets cost -1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

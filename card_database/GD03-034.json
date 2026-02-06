@@ -1,0 +1,28 @@
+{
+  "Name": "GQuuuuuuX (Omega Psycommu)",
+  "ID": "GD03-034",
+  "Effect": [
+    "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+    "【Deploy】Choose 1 enemy Unit. Deal 3 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 8,
+  "Cost": 7,
+  "Ap": 6,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Amate Yuzuriha (Machu)",
+    "Nyaan"
+  ],
+  "Set": "GD03"
+}

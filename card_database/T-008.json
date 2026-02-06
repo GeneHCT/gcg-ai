@@ -1,0 +1,23 @@
+{
+  "Name": "Aile Strike Gundam",
+  "ID": "T-008",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

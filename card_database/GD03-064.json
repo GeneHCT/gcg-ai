@@ -1,0 +1,25 @@
+{
+  "Name": "Defurse",
+  "ID": "GD03-064",
+  "Effect": [
+    "【Deploy】You may choose 1 (X-Rounder) card from your trash and add it to your hand. If you do, discard 1."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "UE",
+    "Vagan"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 2,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

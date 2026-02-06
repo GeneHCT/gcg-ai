@@ -1,0 +1,24 @@
+{
+  "Name": "Christina Mackenzie",
+  "ID": "GD03-085",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "When playing this card from your hand and pairing it with a Unit with \"Gundam NT-1\" in its card name, play this card as if it has 0 cost."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

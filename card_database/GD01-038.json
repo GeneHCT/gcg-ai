@@ -1,0 +1,23 @@
+{
+  "Name": "Adzam",
+  "ID": "GD01-038",
+  "Effect": [
+    "【Deploy】If 5 or more enemy Units are in play, deal 1 damage to all enemy Units."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 2,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

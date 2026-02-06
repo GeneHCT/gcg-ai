@@ -1,0 +1,21 @@
+{
+  "Name": "Hy-Gogg",
+  "ID": "T-013",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

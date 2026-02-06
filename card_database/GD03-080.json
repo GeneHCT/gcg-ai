@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Kimaris Trooper (Trooper Mode)",
+  "ID": "GD03-080",
+  "Effect": [
+    "【When Linked】Choose 1 (Gjallarhorn) Command card from your trash. Add it to your hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Gjallarhorn",
+    "Gundam Frame"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Gaelio Bauduin"
+  ],
+  "Set": "GD03"
+}

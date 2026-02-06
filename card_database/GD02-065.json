@@ -1,0 +1,21 @@
+{
+  "Name": "Jenice Custom",
+  "ID": "GD02-065",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Vulture"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

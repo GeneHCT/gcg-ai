@@ -1,0 +1,21 @@
+{
+  "Name": "GFreD",
+  "ID": "T-020",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

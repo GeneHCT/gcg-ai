@@ -1,0 +1,21 @@
+{
+  "Name": "Zaku Ⅱ",
+  "ID": "T-007",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

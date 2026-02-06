@@ -1,0 +1,26 @@
+{
+  "Name": "Messala",
+  "ID": "GD03-003",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Titans",
+    "Jupitris"
+  ],
+  "Level": 6,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+nohup.out
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Selenium/Browser
+*.png
+*.jpg
+*.jpeg
+chromedriver
+geckodriver
+.wdm/
+
+# Temporary scraping files
+card_ids*.json
+test_*.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,15 @@
+Name: Str
+ID: Str
+Effect: List[Str]
+Color: Str
+Type: Str
+Rarity: Str
+Traits: List[Str]
+Level: Int
+Cost: Int
+Ap: Int
+Hp: Int
+Block: Int
+Zones: List[Str]
+Link: [List[Str]]
+Set: Str

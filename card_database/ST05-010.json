@@ -1,0 +1,25 @@
+{
+  "Name": "Mikazuki Augus",
+  "ID": "ST05-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan",
+    "Alaya-Vijnana"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

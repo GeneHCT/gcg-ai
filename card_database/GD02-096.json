@@ -1,0 +1,25 @@
+{
+  "Name": "Desil Galette",
+  "ID": "GD02-096",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】You may choose 1 (Vagan) Unit card that is Lv.2 or lower from your trash. Pay its cost to deploy it."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Vagan",
+    "X-Rounder"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

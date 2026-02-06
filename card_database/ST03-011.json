@@ -1,0 +1,25 @@
+{
+  "Name": "Char Aznable",
+  "ID": "ST03-011",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】During this turn, this Unit gets AP+1 and, if it is a Link Unit, it gains <High-Maneuver>. (This Unit can't be blocked.)"
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon",
+    "Newtype"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

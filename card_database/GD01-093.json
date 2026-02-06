@@ -1,0 +1,25 @@
+{
+  "Name": "Marida Cruz",
+  "ID": "GD01-093",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】【Attack】Choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Neo Zeon",
+    "Cyber-Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Doritea",
+  "ID": "GD03-128",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Once per Turn】During your opponent's turn, when one of your Units is rested by one of your opponent's effects, choose 1 enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "New UNE",
+    "Warship"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

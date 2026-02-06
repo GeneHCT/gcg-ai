@@ -1,0 +1,25 @@
+{
+  "Name": "Jamil Neate",
+  "ID": "GD03-096",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】【Attack】You may discard 1. If you do, draw 1."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Vulture",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

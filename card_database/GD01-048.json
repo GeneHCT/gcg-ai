@@ -1,0 +1,25 @@
+{
+  "Name": "Zaku I Sniper Type",
+  "ID": "GD01-048",
+  "Effect": [
+    "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+    "【Deploy】Look at the top card of your deck. If it is a (Zeon)/(Neo Zeon) Unit card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

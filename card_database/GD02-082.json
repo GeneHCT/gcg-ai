@@ -1,0 +1,26 @@
+{
+  "Name": "Gaelio's Schwalbe Graze",
+  "ID": "GD02-082",
+  "Effect": [
+    "While you have another (Gjallarhorn) Unit in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Gaelio Bauduin"
+  ],
+  "Set": "GD02"
+}

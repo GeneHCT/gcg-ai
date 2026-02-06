@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Leopard",
+  "ID": "GD02-060",
+  "Effect": [
+    "【Deploy】If there are 7 or more cards in your trash, choose 1 enemy Unit that is Lv.4 or lower. Rest it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Vulture"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Roybea Loy"
+  ],
+  "Set": "GD02"
+}

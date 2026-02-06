@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Aerial",
+  "ID": "GD01-070",
+  "Effect": [
+    "While there are 4 or more Command cards in your trash, this card in your hand gets cost -2."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Suletta Mercury"
+  ],
+  "Set": "GD01"
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "Unicorn Gundam (Destroy Mode)",
+  "ID": "GD01-002",
+  "Effect": [
+    "When playing this card from your hand, you may destroy 1 of your Link Units with \"Unicorn Mode\" in its card name that is Lv.5. If you do, play this card as if it has 0 Lv. and cost.",
+    "【Attack】Choose 1 enemy Unit. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Civilian"
+  ],
+  "Level": 7,
+  "Cost": 6,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Banagher Links"
+  ],
+  "Set": "GD01"
+}

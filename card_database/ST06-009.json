@@ -1,0 +1,25 @@
+{
+  "Name": "Amate Yuzuriha (Machu)",
+  "ID": "ST06-009",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Look at the top card of your deck. If it is a (Clan) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST06"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Red Gundam",
+  "ID": "GD02-024",
+  "Effect": [
+    "【During Link】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

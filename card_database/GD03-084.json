@@ -1,0 +1,26 @@
+{
+  "Name": "Paptimus Scirocco",
+  "ID": "GD03-084",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Choose 1 of your other Units. It gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1. (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Titans",
+    "Jupitris",
+    "Newtype"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

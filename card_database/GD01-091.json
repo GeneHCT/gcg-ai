@@ -1,0 +1,24 @@
+{
+  "Name": "Chang Wufei",
+  "ID": "GD01-091",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "During your turn, while this Unit has <Breach>, it can't receive battle damage from enemy Units with 3 or less AP."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

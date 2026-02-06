@@ -1,0 +1,25 @@
+{
+  "Name": "Words for Hathaway",
+  "ID": "ST08-012",
+  "Effect": [
+    "【Main】Choose 1 friendly Link Unit. It gains <Breach 1> during this turn.",
+    "(When this Unit' s attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent' s shield area.)",
+    "【Pilot】[Gawman Nobile]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Dearka Elthman",
+  "ID": "GD01-095",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Discard 1. If you do, draw 1."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "ZAFT",
+    "Coordinator"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

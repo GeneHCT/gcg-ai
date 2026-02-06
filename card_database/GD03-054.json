@@ -1,0 +1,27 @@
+{
+  "Name": "Zeydra",
+  "ID": "GD03-054",
+  "Effect": [
+    "<High-Maneuver> (This Unit can't be blocked.)",
+    "【When Paired･(X-Rounder) Pilot】You may choose 4 (Vagan) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit that is Lv.4 or lower. Destroy it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Vagan"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 4,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Zeheart Galette"
+  ],
+  "Set": "GD03"
+}

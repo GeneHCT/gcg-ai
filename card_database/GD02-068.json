@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Barbatos 3rd Form",
+  "ID": "GD02-068",
+  "Effect": [
+    "【Deploy】Deal 2 damage to this Unit."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

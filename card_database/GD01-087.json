@@ -1,0 +1,26 @@
+{
+  "Name": "Sayla Mass",
+  "ID": "GD01-087",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "While this Unit is blue, it gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team",
+    "Newtype"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

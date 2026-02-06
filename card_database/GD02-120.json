@@ -1,0 +1,24 @@
+{
+  "Name": "Aspiring Pilot",
+  "ID": "GD02-120",
+  "Effect": [
+    "【Action】Choose 1 of your (AEUG) Units/Bases. It recovers 2 HP.",
+    "【Pilot】[Fa Yuiry]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

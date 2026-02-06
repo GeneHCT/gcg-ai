@@ -1,0 +1,25 @@
+{
+  "Name": "G-Sky Easy",
+  "ID": "GD01-014",
+  "Effect": [
+    "【During Link】【Activate･Action】【Once per Turn】Choose 1 Unit. It recovers 1 HP."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 1,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

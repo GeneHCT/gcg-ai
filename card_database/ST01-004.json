@@ -1,0 +1,27 @@
+{
+  "Name": "Guntank",
+  "ID": "ST01-004",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit with 2 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Hayato Kobayashi"
+  ],
+  "Set": "ST01"
+}

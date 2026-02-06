@@ -1,0 +1,25 @@
+{
+  "Name": "Alexandria",
+  "ID": "GD02-122",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 rested enemy Unit that is Lv.4 or lower. Deal 1 damage to it."
+  ],
+  "Color": "Blue",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Titans",
+    "Warship"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

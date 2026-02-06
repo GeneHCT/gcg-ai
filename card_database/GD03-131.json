@@ -1,0 +1,25 @@
+{
+  "Name": "Eternal",
+  "ID": "GD03-131",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, if you have 2 or more (Triple Ship Alliance) Units in play, choose 1 enemy Unit that is Lv.4 or lower. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "BASE",
+  "Rarity": "R",
+  "Traits": [
+    "Triple Ship Alliance",
+    "Warship"
+  ],
+  "Level": 5,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

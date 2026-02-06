@@ -1,0 +1,28 @@
+{
+  "Name": "The-O",
+  "ID": "GD03-002",
+  "Effect": [
+    "<Repair 3> (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "【During Pair】When one of your other Units with <Repair> attacks, choose 1 enemy Unit whose Lv. is equal to or lower than that Unit. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Titans",
+    "Jupitris"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Paptimus Scirocco"
+  ],
+  "Set": "GD03"
+}

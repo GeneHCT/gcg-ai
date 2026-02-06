@@ -1,0 +1,24 @@
+{
+  "Name": "Momentary Respite",
+  "ID": "GD02-112",
+  "Effect": [
+    "【Burst】Draw 1.",
+    "【Main】Choose 1 purple Pilot card from your trash. Add it to your hand."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

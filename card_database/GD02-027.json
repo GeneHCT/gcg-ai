@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam AGE-1 Titus",
+  "ID": "GD02-027",
+  "Effect": [
+    "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation",
+    "AGE System"
+  ],
+  "Level": 7,
+  "Cost": 4,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Flit Asuno"
+  ],
+  "Set": "GD02"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Psycho Gundam (MA Mode)",
+  "ID": "GD02-007",
+  "Effect": [
+    "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

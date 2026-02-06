@@ -1,0 +1,25 @@
+{
+  "Name": "Carta's Graze Ritter (Ground Type)",
+  "ID": "GD02-073",
+  "Effect": [
+    "During your opponent's turn, the enemy Unit battling this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)"
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Carta Issue"
+  ],
+  "Set": "GD02"
+}

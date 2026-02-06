@@ -1,0 +1,24 @@
+{
+  "Name": "Decisive Last Resort",
+  "ID": "GD02-111",
+  "Effect": [
+    "【Burst】Choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it.",
+    "【Main】Choose 6 purple Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Destroy it."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

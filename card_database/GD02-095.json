@@ -1,0 +1,24 @@
+{
+  "Name": "Lafter Frankland",
+  "ID": "GD02-095",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Attack】If this Unit is damaged and Lv.5 or lower, it gains <High-Maneuver> during this battle. (This Unit can't be blocked.)"
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "Teiwaz"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

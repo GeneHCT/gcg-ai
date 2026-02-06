@@ -1,0 +1,23 @@
+{
+  "Name": "ZuOOT",
+  "ID": "GD01-061",
+  "Effect": [
+    "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)"
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

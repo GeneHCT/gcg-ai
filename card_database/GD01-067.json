@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Aerial Rebuild",
+  "ID": "GD01-067",
+  "Effect": [
+    "【When Paired】Choose 1 Command card that is Lv.5 or lower from your trash. Add it to your hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Suletta Mercury"
+  ],
+  "Set": "GD01"
+}

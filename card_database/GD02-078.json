@@ -1,0 +1,24 @@
+{
+  "Name": "Gundam Pharact",
+  "ID": "GD02-078",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Elan Ceres"
+  ],
+  "Set": "GD02"
+}

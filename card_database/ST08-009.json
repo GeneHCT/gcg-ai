@@ -1,0 +1,23 @@
+{
+  "Name": "Jegan Ground Type-A (Man Hunter)",
+  "ID": "ST08-009",
+  "Effect": [
+    "【Deploy】Choose 1 rested enemy Unit that is Lv.2 or lower. It won' t be set as active during the start phase of your opponent' s next turn."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

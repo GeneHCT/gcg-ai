@@ -1,0 +1,23 @@
+{
+  "Name": "Awakened Power",
+  "ID": "GD02-110",
+  "Effect": [
+    "【Main】Choose 1 Unit card that is Lv.5 or lower from your trash. Pay its cost to deploy it."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 6,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Freedom Gundam",
+  "ID": "GD03-070",
+  "Effect": [
+    "While this Unit is rested, friendly Shields can't receive battle damage from enemy Units."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 4,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Kira Yamato"
+  ],
+  "Set": "GD03"
+}

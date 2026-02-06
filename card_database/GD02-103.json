@@ -1,0 +1,24 @@
+{
+  "Name": "AGE Device",
+  "ID": "GD02-103",
+  "Effect": [
+    "【Burst】Choose 1 (Asuno Family) Pilot card from your trash. Add it to your hand.",
+    "【Main】If you have an (AGE System) Unit in play, place 1 EX Resource."
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Taurus",
+  "ID": "GD02-018",
+  "Effect": [
+    "This Unit can't choose the enemy player as its attack target."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

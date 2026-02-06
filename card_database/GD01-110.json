@@ -1,0 +1,24 @@
+{
+  "Name": "Rasid's Orders",
+  "ID": "GD01-110",
+  "Effect": [
+    "【Main】/【Action】Choose 1 Unit that is Lv.4 or higher. During this turn, it may choose an active enemy Unit with 6 or less AP as its attack target.",
+    "【Pilot】[Rasid Kurama]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Maganac Corps"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "Mistral",
+  "ID": "GD01-078",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit. It gets AP-1 during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

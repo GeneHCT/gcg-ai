@@ -1,0 +1,23 @@
+{
+  "Name": "Resource",
+  "ID": "R-010",
+  "Effect": [
+    "(Rest a Resource when paying a cost.)"
+  ],
+  "Color": "-",
+  "Type": "RESOURCE",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

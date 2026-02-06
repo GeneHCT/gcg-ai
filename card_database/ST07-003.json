@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Virtue",
+  "ID": "ST07-003",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Tieria Erde"
+  ],
+  "Set": "ST07"
+}

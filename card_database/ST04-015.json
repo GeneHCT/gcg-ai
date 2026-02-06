@@ -1,0 +1,27 @@
+{
+  "Name": "Archangel",
+  "ID": "ST04-015",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Activate･Main】【Once per Turn】②：Choose 1 friendly Unit with <Blocker>. Set it as active. It can't attack during this turn."
+  ],
+  "Color": "White",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance",
+    "Warship"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

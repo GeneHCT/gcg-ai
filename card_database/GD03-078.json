@@ -1,0 +1,26 @@
+{
+  "Name": "Tieren High Mobility Type",
+  "ID": "GD03-078",
+  "Effect": [
+    "【During Link】【Destroyed】Return the card paired with this Unit to your hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Superpower Bloc"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Sergei Smirnov"
+  ],
+  "Set": "GD03"
+}

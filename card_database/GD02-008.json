@@ -1,0 +1,24 @@
+{
+  "Name": "Gabthley",
+  "ID": "GD02-008",
+  "Effect": [
+    "【When Linked】Choose 1 rested enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Titans"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

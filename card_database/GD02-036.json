@@ -1,0 +1,28 @@
+{
+  "Name": "Qubeley",
+  "ID": "GD02-036",
+  "Effect": [
+    "【When Linked】This Unit gains <Suppression> during this turn.",
+    "(Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+    "【During Pair･(Neo Zeon) Pilot】【Attack】Choose 1 damaged enemy Unit. Deal 2 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Haman Karn"
+  ],
+  "Set": "GD02"
+}

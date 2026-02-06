@@ -1,0 +1,26 @@
+{
+  "Name": "Clan Battle",
+  "ID": "ST06-014",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Activate･Main】Rest this Base：If a friendly (Clan) Link Unit is in play, choose 1 friendly Unit. It gets AP+2 during this turn."
+  ],
+  "Color": "Red",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Clan",
+    "Stronghold"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "ST06"
+}

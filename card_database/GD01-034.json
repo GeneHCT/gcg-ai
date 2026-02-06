@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Heavyarms",
+  "ID": "GD01-034",
+  "Effect": [
+    "【During Pair】This Unit gains <Breach 3>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Trowa Barton"
+  ],
+  "Set": "GD01"
+}

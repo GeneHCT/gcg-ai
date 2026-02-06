@@ -1,0 +1,24 @@
+{
+  "Name": "Duo Maxwell",
+  "ID": "GD01-090",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】This Unit's AP can't be reduced by enemy effects."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

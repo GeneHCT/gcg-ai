@@ -1,0 +1,27 @@
+{
+  "Name": "Graze Ein",
+  "ID": "GD03-073",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "【During Link】【Activate･Action】【Once per Turn】If there are 6 or more (Gjallarhorn) cards in your trash, choose 1 enemy Unit battling this Unit. It gets AP-3 during this battle."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 6,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Ein Dalton"
+  ],
+  "Set": "GD03"
+}

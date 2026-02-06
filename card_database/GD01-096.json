@@ -1,0 +1,24 @@
+{
+  "Name": "Cagalli Yula Athha",
+  "ID": "GD01-096",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "While this Unit is white, it gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Orb"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "Dopp",
+  "ID": "GD01-039",
+  "Effect": [
+    "【Deploy】Look at the top card of your deck. Return it to the top or bottom of your deck."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

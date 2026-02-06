@@ -1,0 +1,24 @@
+{
+  "Name": "First Contact",
+  "ID": "GD01-107",
+  "Effect": [
+    "【Burst】Place 1 EX Resource.",
+    "【Main】Place 1 rested Resource."
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 3,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

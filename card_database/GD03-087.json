@@ -1,0 +1,26 @@
+{
+  "Name": "Sarah Zabiarov",
+  "ID": "GD03-087",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Choose 1 enemy Unit that is Lv.3 or lower. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Titans",
+    "Jupitris",
+    "Newtype"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Graham Aker",
+  "ID": "GD03-098",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】When this rested Unit is set as active by an effect, choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Superpower Bloc",
+    "UN"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

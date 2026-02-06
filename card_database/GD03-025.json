@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Sandrock Custom",
+  "ID": "GD03-025",
+  "Effect": [
+    "Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "G Team"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Quatre Raberba Winner"
+  ],
+  "Set": "GD03"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Peacemillion",
+  "ID": "GD03-125",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Once per Turn】During your turn, when a friendly (Operation Meteor)/(G Team) Unit that is Lv.6 or higher destroys an enemy Unit with battle damage, that friendly Unit may recover 2 HP."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "U",
+  "Traits": [
+    "G Team",
+    "Warship"
+  ],
+  "Level": 6,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

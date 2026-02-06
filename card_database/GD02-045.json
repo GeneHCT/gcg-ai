@@ -1,0 +1,24 @@
+{
+  "Name": "GINN Long-Range Reconnaissance Type",
+  "ID": "GD02-045",
+  "Effect": [
+    "【Attack】If this Unit has 5 or more AP and it is attacking an enemy Unit, draw 1."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Ribo Colony",
+  "ID": "GD03-124",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Once per Turn】When you pair a Pilot that is Lv.3 or lower with one of your Units, choose 1 enemy Unit with 3 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "Stronghold"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

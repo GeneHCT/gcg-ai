@@ -1,0 +1,26 @@
+{
+  "Name": "Sodon",
+  "ID": "GD02-123",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 friendly Unit token. During this turn, it may choose an active enemy Unit with 5 or less AP as its attack target."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon",
+    "Warship"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

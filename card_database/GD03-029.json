@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Heavyarms Custom",
+  "ID": "GD03-029",
+  "Effect": [
+    "During your turn, when this Unit destroys an enemy Unit with battle damage, deal 2 damage to all enemy Units with <Blocker>."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "G Team"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 4,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Trowa Barton"
+  ],
+  "Set": "GD03"
+}

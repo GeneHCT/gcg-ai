@@ -1,0 +1,26 @@
+{
+  "Name": "Methuss",
+  "ID": "GD02-081",
+  "Effect": [
+    "【Deploy】If a friendly white Base is in play, choose 1 enemy Unit. It gets AP-2 during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Fa Yuiry"
+  ],
+  "Set": "GD02"
+}

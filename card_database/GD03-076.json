@@ -1,0 +1,25 @@
+{
+  "Name": "Freedom Gundam (METEOR)",
+  "ID": "GD03-076",
+  "Effect": [
+    "【Once per Turn】During your turn, when your (Triple Ship Alliance) Unit deals battle damage to an enemy Unit, you may return the enemy Unit to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 8,
+  "Cost": 6,
+  "Ap": 6,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Kira Yamato"
+  ],
+  "Set": "GD03"
+}

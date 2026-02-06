@@ -1,0 +1,24 @@
+{
+  "Name": "Zechs Merquise",
+  "ID": "ST02-011",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】During your turn, when this Unit destroys an enemy Unit with battle damage, draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

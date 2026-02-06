@@ -1,0 +1,21 @@
+{
+  "Name": "Gundam",
+  "ID": "T-001",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "White Base Team"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

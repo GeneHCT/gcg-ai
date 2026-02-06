@@ -1,0 +1,26 @@
+{
+  "Name": "Duel Gundam (Assault Shroud)",
+  "ID": "GD01-045",
+  "Effect": [
+    "【When Paired】Look at the top 3 cards of your deck. You may deploy 1 (ZAFT) Unit card that is Lv.4 or lower among them. Return the remaining cards randomly to the bottom of your deck."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Yzak Jule"
+  ],
+  "Set": "GD01"
+}

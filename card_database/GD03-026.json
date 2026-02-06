@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Dynames",
+  "ID": "GD03-026",
+  "Effect": [
+    "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Lockon Stratos"
+  ],
+  "Set": "GD03"
+}

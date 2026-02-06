@@ -1,0 +1,25 @@
+{
+  "Name": "The Desert Tiger",
+  "ID": "GD01-113",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly (ZAFT) Unit. It gets AP+3 during this turn.",
+    "【Pilot】[Andrew Waldfeld]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "ZAFT",
+    "Coordinator"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

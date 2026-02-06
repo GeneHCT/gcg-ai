@@ -1,0 +1,26 @@
+{
+  "Name": "Distant Reunion",
+  "ID": "GD03-115",
+  "Effect": [
+    "【Action】Choose 1 friendly Unit paired with an (X-Rounder) Pilot. It can't receive battle damage from enemy Units with 2 or less AP during this battle. If you are Lv.7 or higher, it can't receive battle damage from enemy Units with 5 or less AP instead.",
+    "【Pilot】[Yurin L'Ciel]"
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Civilian",
+    "Vagan",
+    "X-Rounder"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

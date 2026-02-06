@@ -1,0 +1,21 @@
+{
+  "Name": "Red Gundam",
+  "ID": "T-018",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

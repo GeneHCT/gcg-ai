@@ -1,0 +1,23 @@
+{
+  "Name": "Moebius",
+  "ID": "ST04-004",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)"
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "ST04"
+}

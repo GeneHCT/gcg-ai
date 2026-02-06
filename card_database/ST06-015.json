@@ -1,0 +1,26 @@
+{
+  "Name": "Kaneban Co., Ltd.",
+  "ID": "ST06-015",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Once per Turn】When a friendly (Clan) Unit links, it gains <Breach 3> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Clan",
+    "Stronghold"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "ST06"
+}

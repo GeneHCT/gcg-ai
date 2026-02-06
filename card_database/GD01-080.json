@@ -1,0 +1,25 @@
+{
+  "Name": "Cagalli's Skygrasper",
+  "ID": "GD01-080",
+  "Effect": [
+    "【Destroyed】Choose 1 enemy Unit that is Lv.2 or lower. Return it to its owner's hand."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Cagalli Yula Athha"
+  ],
+  "Set": "GD01"
+}

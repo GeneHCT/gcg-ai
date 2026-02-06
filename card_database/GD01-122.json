@@ -1,0 +1,24 @@
+{
+  "Name": "Covert Operative",
+  "ID": "GD01-122",
+  "Effect": [
+    "【Main】Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand. If you have a Link Unit in play, choose 1 enemy Unit with 4 or less HP instead.",
+    "【Pilot】[Shaddiq Zenelli]"
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

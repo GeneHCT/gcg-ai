@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Barbatos Lupus",
+  "ID": "GD03-050",
+  "Effect": [
+    "【Activate･Main】Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 7,
+  "Cost": 6,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Mikazuki Augus"
+  ],
+  "Set": "GD03"
+}

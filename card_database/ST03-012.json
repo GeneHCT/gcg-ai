@@ -1,0 +1,24 @@
+{
+  "Name": "Indignation",
+  "ID": "ST03-012",
+  "Effect": [
+    "【Main】/【Action】Choose 1 friendly Unit. It gets AP+2 during this turn.",
+    "【Pilot】[Angelo Sauper]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

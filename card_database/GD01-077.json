@@ -1,0 +1,24 @@
+{
+  "Name": "Strike Gundam",
+  "ID": "GD01-077",
+  "Effect": [],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Kira Yamato"
+  ],
+  "Set": "GD01"
+}

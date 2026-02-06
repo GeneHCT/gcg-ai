@@ -1,0 +1,24 @@
+{
+  "Name": "GQuuuuuuX",
+  "ID": "GD02-034",
+  "Effect": [
+    "【During Pair･Red Pilot】This Unit gets AP+2."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Cyclops Team",
+  "ID": "GD03-126",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "All friendly Unit tokens get AP+1 during your opponent's turn."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon",
+    "Cyclops Team"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

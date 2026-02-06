@@ -1,0 +1,23 @@
+{
+  "Name": "A Show of Resolve",
+  "ID": "GD01-100",
+  "Effect": [
+    "【Main】Draw 2."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

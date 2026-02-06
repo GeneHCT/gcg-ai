@@ -1,0 +1,22 @@
+{
+  "Name": "Zaku Ⅲ (Sleeves)",
+  "ID": "GD02-048",
+  "Effect": [],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

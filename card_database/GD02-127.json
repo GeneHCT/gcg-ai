@@ -1,0 +1,26 @@
+{
+  "Name": "Freeden",
+  "ID": "GD02-127",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Destroyed】Place the top 2 cards of your deck into your trash."
+  ],
+  "Color": "Purple",
+  "Type": "BASE",
+  "Rarity": "U",
+  "Traits": [
+    "Vulture",
+    "Warship"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

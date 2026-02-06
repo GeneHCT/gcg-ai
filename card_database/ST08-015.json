@@ -1,0 +1,26 @@
+{
+  "Name": "Davao",
+  "ID": "ST08-015",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Activate･Main】【Once per Turn】②：Choose 1 of your Units. It recovers 2 HP."
+  ],
+  "Color": "Blue",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "Stronghold"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

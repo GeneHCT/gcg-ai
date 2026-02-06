@@ -1,0 +1,23 @@
+{
+  "Name": "CGS Mobile Worker (Commander Type)",
+  "ID": "GD03-060",
+  "Effect": [
+    "【Once per Turn】During your turn, when this Unit receives effect damage, deploy 1 rested [CGS Mobile Worker]((Tekkadan)･AP1･HP1) Unit token."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Tekkadan"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

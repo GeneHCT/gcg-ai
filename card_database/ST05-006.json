@@ -1,0 +1,22 @@
+{
+  "Name": "Hyakuren",
+  "ID": "ST05-006",
+  "Effect": [],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Teiwaz"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "How Many Miles to the Battlefield?",
+  "ID": "GD03-108",
+  "Effect": [
+    "【Main】Deploy 1 [Hy-Gogg]((Cyclops Team)･AP2･HP1) Unit token.",
+    "【Pilot】[Gabriel Ramirez Garcia]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon",
+    "Cyclops Team"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

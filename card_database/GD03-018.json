@@ -1,0 +1,27 @@
+{
+  "Name": "Altron Gundam",
+  "ID": "GD03-018",
+  "Effect": [
+    "<Breach 5> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "【Attack】Choose 1 enemy Unit with <Blocker>. Deal 5 damage to it."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "G Team"
+  ],
+  "Level": 8,
+  "Cost": 6,
+  "Ap": 5,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Chang Wufei"
+  ],
+  "Set": "GD03"
+}

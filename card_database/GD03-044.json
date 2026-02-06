@@ -1,0 +1,24 @@
+{
+  "Name": "Daughtress Flyer",
+  "ID": "GD03-044",
+  "Effect": [
+    "【Deploy】Deploy 1 rested [Daughtress]((New UNE)･AP0･HP1) Unit token."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

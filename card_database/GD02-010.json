@@ -1,0 +1,24 @@
+{
+  "Name": "Raider Gundam",
+  "ID": "GD02-010",
+  "Effect": [
+    "【Once per Turn】When this Unit receives enemy effect damage, draw 1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Alliance"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

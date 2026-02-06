@@ -1,0 +1,27 @@
+{
+  "Name": "Diva",
+  "ID": "GD02-124",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "During your turn, while you are Lv.7 or higher, all friendly green (Earth Federation) Units get AP+1."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "Warship"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Kyrios",
+  "ID": "ST07-007",
+  "Effect": [
+    "During your turn, while you have a (CB) Pilot in play, this Unit gets AP+2."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Allelujah Haptism",
+    "Hallelujah Haptism"
+  ],
+  "Set": "ST07"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "White Gundam",
+  "ID": "GD02-032",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Char Aznable"
+  ],
+  "Set": "GD02"
+}

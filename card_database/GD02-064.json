@@ -1,0 +1,23 @@
+{
+  "Name": "Gundam Leopard",
+  "ID": "GD02-064",
+  "Effect": [
+    "During your turn, while there are 7 or more cards in your trash, this Unit can't receive effect damage from enemy Commands."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Vulture"
+  ],
+  "Level": 5,
+  "Cost": 4,
+  "Ap": 4,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

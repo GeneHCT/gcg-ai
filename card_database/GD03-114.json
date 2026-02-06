@@ -1,0 +1,24 @@
+{
+  "Name": "Look of Determination",
+  "ID": "GD03-114",
+  "Effect": [
+    "【Burst】Activate this card's 【Action】.",
+    "【Action】Choose 1 active enemy Unit that is Lv.2 or lower. Destroy it. If there are 10 or more cards in your trash, choose 1 active enemy Unit that is Lv.4 or lower instead."
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

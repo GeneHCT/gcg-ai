@@ -1,0 +1,25 @@
+{
+  "Name": "Valiant",
+  "ID": "ST08-014",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 of your Units. It gets AP+2 during this turn."
+  ],
+  "Color": "Red",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Mafty",
+    "Warship"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

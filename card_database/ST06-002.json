@@ -1,0 +1,26 @@
+{
+  "Name": "GQuuuuuuX (Omega Psycommu)",
+  "ID": "ST06-002",
+  "Effect": [
+    "【Deploy】If another friendly (Clan) Unit is in play, choose 1 enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Amate Yuzuriha (Machu)"
+  ],
+  "Set": "ST06"
+}

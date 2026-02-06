@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Gusion Rebake Full City",
+  "ID": "GD03-053",
+  "Effect": [
+    "<Blocker> (Rest this Unit to change the attack target to it.)",
+    "【During Pair】【Once per Turn】During your turn, when one of your (Tekkadan)/(Teiwaz) Units receives effect damage, choose 1 enemy Unit that is Lv.4 or lower. Rest it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 6,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Akihiro Altland"
+  ],
+  "Set": "GD03"
+}

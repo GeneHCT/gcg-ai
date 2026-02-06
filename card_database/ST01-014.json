@@ -1,0 +1,24 @@
+{
+  "Name": "Unforeseen Incident",
+  "ID": "ST01-014",
+  "Effect": [
+    "【Burst】Activate this card's 【Main】.",
+    "【Main】/【Action】Choose 1 enemy Unit. It gets AP-3 during this turn."
+  ],
+  "Color": "White",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

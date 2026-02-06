@@ -1,0 +1,25 @@
+{
+  "Name": "Tieria Erde",
+  "ID": "ST07-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【Destroyed】If it is your opponent's turn and this is a (CB) Unit, draw 1."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "CB",
+    "Innovade"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST07"
+}

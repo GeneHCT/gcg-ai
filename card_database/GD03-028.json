@@ -1,0 +1,24 @@
+{
+  "Name": "Auda's Maganac",
+  "ID": "GD03-028",
+  "Effect": [
+    "【Attack】If you are attacking an enemy Unit, this Unit gets AP+2 during this battle."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Maganac Corps"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

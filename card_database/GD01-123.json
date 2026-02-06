@@ -1,0 +1,26 @@
+{
+  "Name": "Nahel Argama",
+  "ID": "GD01-123",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 enemy Unit with 3 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "BASE",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation",
+    "Warship"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

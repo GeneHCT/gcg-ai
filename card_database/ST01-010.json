@@ -1,0 +1,26 @@
+{
+  "Name": "Amuro Ray",
+  "ID": "ST01-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】Choose 1 enemy Unit with 5 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

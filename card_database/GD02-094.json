@@ -1,0 +1,25 @@
+{
+  "Name": "Garrod Ran & Tiffa Adill",
+  "ID": "GD02-094",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】You may discard 1. If you do, look at the top 3 cards of your deck. You may reveal 1 (Vulture) Unit card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck."
+  ],
+  "Color": "Purple",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "Vulture",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

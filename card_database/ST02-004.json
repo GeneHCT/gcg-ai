@@ -1,0 +1,23 @@
+{
+  "Name": "Gundam Sandrock",
+  "ID": "ST02-004",
+  "Effect": [],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Quatre Raberba Winner"
+  ],
+  "Set": "ST02"
+}

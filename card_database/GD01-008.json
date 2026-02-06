@@ -1,0 +1,25 @@
+{
+  "Name": "Guntank",
+  "ID": "GD01-008",
+  "Effect": [
+    "【Deploy】Choose 1 rested enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

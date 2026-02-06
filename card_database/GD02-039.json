@@ -1,0 +1,26 @@
+{
+  "Name": "Haman Karn's Gaza C",
+  "ID": "GD02-039",
+  "Effect": [
+    "【When Paired】Choose 1 enemy Unit that is Lv.3 or lower. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Haman Karn"
+  ],
+  "Set": "GD02"
+}

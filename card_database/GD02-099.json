@@ -1,0 +1,24 @@
+{
+  "Name": "Gaelio Bauduin",
+  "ID": "GD02-099",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】If there are 4 or more (Gjallarhorn) cards in your trash, choose 1 enemy Unit. It gets AP-2 during this turn."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

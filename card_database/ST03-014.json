@@ -1,0 +1,24 @@
+{
+  "Name": "The Blue Giant",
+  "ID": "ST03-014",
+  "Effect": [
+    "【Action】Choose 1 friendly Unit. It can't receive battle damage from enemy Units with 2 or less AP during this battle.",
+    "【Pilot】[Ramba Ral]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST03"
+}

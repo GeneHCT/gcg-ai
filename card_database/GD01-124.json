@@ -1,0 +1,26 @@
+{
+  "Name": "Side 7",
+  "ID": "GD01-124",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand.",
+    "【Activate･Main】Rest this Base：Choose 1 friendly Unit. It recovers 1 HP."
+  ],
+  "Color": "Blue",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "Stronghold"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

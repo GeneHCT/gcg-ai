@@ -1,0 +1,24 @@
+{
+  "Name": "Peaceful Timbre",
+  "ID": "ST02-013",
+  "Effect": [
+    "【Action】During this battle, your shield area cards can't receive damage from enemy Units that are Lv.4 or lower.",
+    "【Pilot】[Quatre Raberba Winner]"
+  ],
+  "Color": "Green",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

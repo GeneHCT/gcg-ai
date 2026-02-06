@@ -1,0 +1,24 @@
+{
+  "Name": "Geara Zulu (Guards Type)",
+  "ID": "GD01-052",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit. Deal 1 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Neo Zeon"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

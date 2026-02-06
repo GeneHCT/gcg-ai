@@ -1,0 +1,24 @@
+{
+  "Name": "Siege Ploy",
+  "ID": "ST02-014",
+  "Effect": [
+    "【Burst】Activate this card's 【Main】.",
+    "【Main】/【Action】Choose 1 enemy Unit with 5 or less HP. Rest it."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

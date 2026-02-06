@@ -1,0 +1,24 @@
+{
+  "Name": "Battle of Aces",
+  "ID": "GD01-111",
+  "Effect": [
+    "【Burst】Choose 1 enemy Unit. Deal 2 damage to it.",
+    "【Main】/【Action】Choose 1 damaged enemy Unit. Deal 3 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "R",
+  "Traits": [
+    "-"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

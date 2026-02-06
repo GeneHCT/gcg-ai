@@ -1,0 +1,25 @@
+{
+  "Name": "Kai's Resolve",
+  "ID": "ST01-013",
+  "Effect": [
+    "【Main】Choose 1 friendly Unit. It recovers 3 HP.",
+    "【Pilot】[Kai Shiden]"
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "White Base Team"
+  ],
+  "Level": 3,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST01"
+}

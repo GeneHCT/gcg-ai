@@ -1,0 +1,26 @@
+{
+  "Name": "Dominion",
+  "ID": "GD02-121",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 friendly blue Unit. It recovers 2 HP."
+  ],
+  "Color": "Blue",
+  "Type": "BASE",
+  "Rarity": "U",
+  "Traits": [
+    "Earth Alliance",
+    "Warship"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

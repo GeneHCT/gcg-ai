@@ -1,0 +1,24 @@
+{
+  "Name": "Union Flag",
+  "ID": "GD03-082",
+  "Effect": [
+    "While you have 2 or more (Superpower Bloc)/(UN) Units in play, this card in your hand gets cost -1."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Superpower Bloc"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

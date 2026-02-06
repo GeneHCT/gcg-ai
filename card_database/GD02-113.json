@@ -1,0 +1,24 @@
+{
+  "Name": "Sisterly Care",
+  "ID": "GD02-113",
+  "Effect": [
+    "【Main】/【Action】If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.",
+    "【Pilot】[Amida Arca]"
+  ],
+  "Color": "Purple",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "Teiwaz"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

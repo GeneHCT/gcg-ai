@@ -1,0 +1,25 @@
+{
+  "Name": "Gaia's Rick Dom (GQ)",
+  "ID": "ST06-003",
+  "Effect": [
+    "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)"
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space"
+  ],
+  "Link": [
+    "Gaia"
+  ],
+  "Set": "ST06"
+}

@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Exia (Trans-Am)",
+  "ID": "GD03-049",
+  "Effect": [
+    "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+    "When this Unit destroys an enemy shield area card with battle damage, if there are 10 or more (CB) cards in your trash, choose 1 enemy Unit with the lowest HP. Destroy it."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 7,
+  "Cost": 6,
+  "Ap": 6,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Setsuna F. Seiei"
+  ],
+  "Set": "GD03"
+}

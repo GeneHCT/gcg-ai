@@ -1,0 +1,27 @@
+{
+  "Name": "Justice Gundam",
+  "ID": "GD01-066",
+  "Effect": [
+    "【Deploy】Deploy 1 [Fatum-00]((Triple Ship Alliance)･AP2･HP2･<Blocker>) Unit token.",
+    "【During Pair】【Attack】Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Triple Ship Alliance"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Athrun Zala"
+  ],
+  "Set": "GD01"
+}

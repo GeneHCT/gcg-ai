@@ -1,0 +1,27 @@
+{
+  "Name": "Wing Gundam Zero",
+  "ID": "GD01-024",
+  "Effect": [
+    "<High-Maneuver> (This Unit can't be blocked.)",
+    "【Deploy】Deal 3 damage to all Units that are Lv.5 or lower."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "G Team"
+  ],
+  "Level": 8,
+  "Cost": 8,
+  "Ap": 5,
+  "Hp": 7,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Heero Yuy"
+  ],
+  "Set": "GD01"
+}

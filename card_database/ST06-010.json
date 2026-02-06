@@ -1,0 +1,25 @@
+{
+  "Name": "Shuji Itō",
+  "ID": "ST06-010",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【During Link】【Attack】If you have a (Clan) Unit in play, look at the top card of your deck. Return it to the top or bottom of your deck."
+  ],
+  "Color": "Green",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Clan",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST06"
+}

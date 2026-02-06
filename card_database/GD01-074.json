@@ -1,0 +1,26 @@
+{
+  "Name": "Chuchu's Demi Trainer",
+  "ID": "GD01-074",
+  "Effect": [
+    "【Attack】Draw 1. Then, discard 1."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Academy"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Chuatury Panlunch"
+  ],
+  "Set": "GD01"
+}

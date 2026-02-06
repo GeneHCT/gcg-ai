@@ -1,0 +1,25 @@
+{
+  "Name": "Kamille Bidan",
+  "ID": "GD02-097",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "While there is a friendly white Base in play, this Unit gets AP+2."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "AEUG",
+    "Newtype"
+  ],
+  "Level": 5,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Delta Plus",
+  "ID": "GD01-006",
+  "Effect": [
+    "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "【During Link】This Unit gets HP+1."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

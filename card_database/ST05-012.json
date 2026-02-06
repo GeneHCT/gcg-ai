@@ -1,0 +1,24 @@
+{
+  "Name": "McGillis Fareed",
+  "ID": "ST05-012",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Paired】If you have 2 or more other (Gjallarhorn)/(Tekkadan) Units in play, choose 1 enemy Unit with 3 or less HP. Rest it."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST05"
+}

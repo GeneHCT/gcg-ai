@@ -1,0 +1,26 @@
+{
+  "Name": "Quattro Bajeena",
+  "ID": "GD02-098",
+  "Effect": [
+    "This card's name is also treated as [Char Aznable].",
+    "【Burst】Add this card to your hand.",
+    "【When Linked】If this is an (AEUG) Unit, draw 1. If you do, discard 1."
+  ],
+  "Color": "White",
+  "Type": "PILOT",
+  "Rarity": "U",
+  "Traits": [
+    "AEUG",
+    "Newtype"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

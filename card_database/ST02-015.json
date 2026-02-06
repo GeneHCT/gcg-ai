@@ -1,0 +1,25 @@
+{
+  "Name": "Saint Gabriel Institute",
+  "ID": "ST02-015",
+  "Effect": [
+    "【Burst】Deploy this card.",
+    "【Deploy】Add 1 of your Shields to your hand. Then, look at the top 2 cards of your deck and return 1 to the top and 1 to the bottom."
+  ],
+  "Color": "Green",
+  "Type": "BASE",
+  "Rarity": "C",
+  "Traits": [
+    "Academy",
+    "Stronghold"
+  ],
+  "Level": 2,
+  "Cost": 2,
+  "Ap": null,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

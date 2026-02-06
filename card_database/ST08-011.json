@@ -1,0 +1,24 @@
+{
+  "Name": "Lane Aim",
+  "ID": "ST08-011",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "When you draw with an effect, if this is a blue Unit, it gains <High-Maneuver> during this turn. (This Unit can' t be blocked.)"
+  ],
+  "Color": "Blue",
+  "Type": "PILOT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST08"
+}

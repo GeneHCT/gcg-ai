@@ -1,0 +1,24 @@
+{
+  "Name": "Field Directive",
+  "ID": "GD03-103",
+  "Effect": [
+    "【Burst】Choose 1 enemy Unit with 2 or less HP. Rest it.",
+    "【Main】If 3 or more enemy Units are in play, choose 1 rested enemy Unit. Deal 2 damage to it."
+  ],
+  "Color": "Blue",
+  "Type": "COMMAND",
+  "Rarity": "U",
+  "Traits": [
+    "-"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": null,
+  "Hp": null,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

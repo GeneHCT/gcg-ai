@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam AGE-1 Titus",
+  "ID": "GD02-031",
+  "Effect": [
+    "While you are Lv.7 or higher, this Unit gets AP+2."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Earth Federation",
+    "AGE System"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Flit Asuno"
+  ],
+  "Set": "GD02"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Heavyarms",
+  "ID": "ST02-003",
+  "Effect": [
+    "【During Pair】During your turn, when this Unit destroys an enemy Unit with battle damage, deal 1 damage to all enemy Units that are Lv.3 or lower."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 5,
+  "Cost": 3,
+  "Ap": 3,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Trowa Barton"
+  ],
+  "Set": "ST02"
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Penelope",
+  "ID": "ST08-006",
+  "Effect": [
+    "【During Pair】【Attack】【Once per Turn】If this Unit is attacking the enemy player, reveal 1 (Earth Federation) Unit card from your hand. Return it to the bottom of your deck. If you do, draw 2."
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Earth Federation"
+  ],
+  "Level": 7,
+  "Cost": 6,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Lane Aim"
+  ],
+  "Set": "ST08"
+}

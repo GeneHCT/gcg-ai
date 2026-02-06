@@ -1,0 +1,24 @@
+{
+  "Name": "Rau Le Creuset",
+  "ID": "GD03-091",
+  "Effect": [
+    "【Burst】Add this card to your hand.",
+    "【When Linked】Choose 1 (ZAFT) Base card from your trash. Add it to your hand."
+  ],
+  "Color": "Red",
+  "Type": "PILOT",
+  "Rarity": "R",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 4,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

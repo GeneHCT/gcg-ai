@@ -1,0 +1,26 @@
+{
+  "Name": "Full Armor Unicorn Gundam (Destroy Mode)",
+  "ID": "GD03-010",
+  "Effect": [
+    "<Repair 3> (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Blue",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Civilian"
+  ],
+  "Level": 8,
+  "Cost": 6,
+  "Ap": 6,
+  "Hp": 6,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Banagher Links"
+  ],
+  "Set": "GD03"
+}

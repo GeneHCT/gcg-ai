@@ -1,0 +1,27 @@
+{
+  "Name": "Providence Gundam",
+  "ID": "GD03-033",
+  "Effect": [
+    "【During Pair･(ZAFT) Pilot】During your turn, all your (ZAFT) Units get AP+2.",
+    "【Attack】Choose 1 enemy Unit. Deal 1 damage to it for each 4 AP this Unit has."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "ZAFT"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Rau Le Creuset"
+  ],
+  "Set": "GD03"
+}

@@ -1,0 +1,28 @@
+{
+  "Name": "Kämpfer",
+  "ID": "GD03-017",
+  "Effect": [
+    "【Burst】Choose 1 (Cyclops Team) Pilot card from your trash. Add it to your hand.",
+    "【When Paired･(Cyclops Team) Pilot】All your (Cyclops Team) Units may choose an active enemy Unit with 5 or less AP as their attack target during this turn."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Zeon",
+    "Cyclops Team"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Mikhail Kaminsky"
+  ],
+  "Set": "GD03"
+}

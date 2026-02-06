@@ -1,0 +1,26 @@
+{
+  "Name": "Gundam Ashtaron (MA Mode)",
+  "ID": "GD02-042",
+  "Effect": [
+    "【Deploy】Choose 1 of your (New UNE) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)"
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "New UNE"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Olba Frost"
+  ],
+  "Set": "GD02"
+}

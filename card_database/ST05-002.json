@@ -1,0 +1,27 @@
+{
+  "Name": "Gundam Barbatos 2nd Form",
+  "ID": "ST05-002",
+  "Effect": [
+    "While this Unit is damaged, it gets AP+2."
+  ],
+  "Color": "Purple",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan",
+    "Gundam Frame"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Mikazuki Augus"
+  ],
+  "Set": "ST05"
+}

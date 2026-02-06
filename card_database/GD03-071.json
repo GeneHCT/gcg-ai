@@ -1,0 +1,26 @@
+{
+  "Name": "Z Gundam (Biosensor)",
+  "ID": "GD03-071",
+  "Effect": [
+    "【Deploy】Choose 1 enemy Unit. For each (AEUG) Unit card in your trash, it gets AP-1 during this turn."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "AEUG"
+  ],
+  "Level": 7,
+  "Cost": 5,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Kamille Bidan"
+  ],
+  "Set": "GD03"
+}

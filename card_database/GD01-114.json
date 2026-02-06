@@ -1,0 +1,24 @@
+{
+  "Name": "Assault on Torrington Base",
+  "ID": "GD01-114",
+  "Effect": [
+    "【Action】Choose 2 friendly Units. They get AP+1 during this turn.",
+    "【Pilot】[Yonem Kirks]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 1,
+  "Cost": 1,
+  "Ap": 1,
+  "Hp": 0,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

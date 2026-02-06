@@ -1,0 +1,27 @@
+{
+  "Name": "Ξ Gundam",
+  "ID": "ST08-001",
+  "Effect": [
+    "While you have no Units that are Lv.6 or higher in play, this card in your hand gets Lv. -1 and cost -1 for each enemy Unit in play.",
+    "【When Paired】Choose 1 enemy Unit with the highest Lv. Deal 3 damage to it."
+  ],
+  "Color": "Red",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "Mafty"
+  ],
+  "Level": 9,
+  "Cost": 8,
+  "Ap": 5,
+  "Hp": 5,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Hathaway Noa"
+  ],
+  "Set": "ST08"
+}

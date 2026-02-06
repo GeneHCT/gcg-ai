@@ -1,0 +1,26 @@
+{
+  "Name": "Char's Zaku Ⅱ",
+  "ID": "GD01-026",
+  "Effect": [
+    "【During Pair】【Destroyed】Deploy 1 rested [Char's Zaku Ⅱ]((Zeon)･AP3･HP1) Unit token."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "R",
+  "Traits": [
+    "Zeon"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Char Aznable"
+  ],
+  "Set": "GD01"
+}

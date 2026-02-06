@@ -1,0 +1,28 @@
+{
+  "Name": "Gundam Dynames",
+  "ID": "ST07-005",
+  "Effect": [
+    "During your turn, when this Unit destroys an enemy Unit with battle damage, this Unit recovers 2 HP.",
+    "【During Link】This Unit gets AP+2."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "LR",
+  "Traits": [
+    "CB",
+    "GN Drive"
+  ],
+  "Level": 4,
+  "Cost": 3,
+  "Ap": 2,
+  "Hp": 4,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [
+    "Lockon Stratos"
+  ],
+  "Set": "ST07"
+}

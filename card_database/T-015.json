@@ -1,0 +1,21 @@
+{
+  "Name": "CGS Mobile Worker",
+  "ID": "T-015",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "Tekkadan"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 1,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD03"
+}

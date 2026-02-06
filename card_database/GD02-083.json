@@ -1,0 +1,23 @@
+{
+  "Name": "Graze Ritter (Ground Type)",
+  "ID": "GD02-083",
+  "Effect": [
+    "【Destroyed】If it is your opponent's turn, choose 1 of your (Gjallarhorn) Units. Set it as active."
+  ],
+  "Color": "White",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Gjallarhorn"
+  ],
+  "Level": 3,
+  "Cost": 2,
+  "Ap": 3,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

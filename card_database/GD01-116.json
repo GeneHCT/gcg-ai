@@ -1,0 +1,25 @@
+{
+  "Name": "Stealth Stratagem",
+  "ID": "GD01-116",
+  "Effect": [
+    "【Main】/【Action】Choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.",
+    "【Pilot】[Nicol Amarfi]"
+  ],
+  "Color": "Red",
+  "Type": "COMMAND",
+  "Rarity": "C",
+  "Traits": [
+    "ZAFT",
+    "Coordinator"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 0,
+  "Hp": 1,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "GD01"
+}

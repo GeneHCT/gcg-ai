@@ -1,0 +1,24 @@
+{
+  "Name": "Police Zaku (Armored RRU Type)",
+  "ID": "GD02-035",
+  "Effect": [
+    "This Unit can't choose the enemy player as its attack target."
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "C",
+  "Traits": [
+    "Side 6"
+  ],
+  "Level": 2,
+  "Cost": 1,
+  "Ap": 2,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Space",
+    "Earth"
+  ],
+  "Link": [],
+  "Set": "GD02"
+}

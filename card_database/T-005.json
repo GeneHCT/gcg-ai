@@ -1,0 +1,21 @@
+{
+  "Name": "Tallgeese",
+  "ID": "T-005",
+  "Effect": [],
+  "Color": "-",
+  "Type": "UNIT TOKEN",
+  "Rarity": "C",
+  "Traits": [
+    "OZ"
+  ],
+  "Level": null,
+  "Cost": null,
+  "Ap": 4,
+  "Hp": 2,
+  "Block": null,
+  "Zones": [
+    "-"
+  ],
+  "Link": [],
+  "Set": "ST02"
+}

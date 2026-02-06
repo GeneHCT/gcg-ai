@@ -1,0 +1,25 @@
+{
+  "Name": "Gundam Deathscythe",
+  "ID": "GD01-033",
+  "Effect": [
+    "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)"
+  ],
+  "Color": "Green",
+  "Type": "UNIT",
+  "Rarity": "U",
+  "Traits": [
+    "Operation Meteor"
+  ],
+  "Level": 4,
+  "Cost": 2,
+  "Ap": 4,
+  "Hp": 3,
+  "Block": null,
+  "Zones": [
+    "Earth"
+  ],
+  "Link": [
+    "Duo Maxwell"
+  ],
+  "Set": "GD01"
+}

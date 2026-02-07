@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-051",
+  "effects": [
+    {
+      "effect_id": "GD03-051-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Linked\u3011You may choose 1 Unit card that is Lv.4 or lower from your trash. Pay its cost to deploy it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

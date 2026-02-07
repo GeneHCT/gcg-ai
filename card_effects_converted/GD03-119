@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-119",
+  "effects": [
+    {
+      "effect_id": "GD03-119-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 rested friendly Base. Set it as active. If you do, all enemy Units get AP-1 during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "card_id": "GD03-118",
+  "effects": [
+    {
+      "effect_id": "GD03-118-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD03-118-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              },
+              "state": "RESTED"
+            }
+          },
+          "target_restrictions": {
+            "level": {
+              "operator": "<=",
+              "value": 4
+            }
+          },
+          "duration": "THIS_TURN",
+          "description": "Can choose additional units as attack targets"
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              },
+              "state": "RESTED"
+            }
+          }
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              },
+              "state": "RESTED"
+            }
+          },
+          "keyword": "BLOCKER",
+          "value": null,
+          "duration": "THIS_TURN"
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              },
+              "state": "RESTED"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010Action\u3011Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with \"Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

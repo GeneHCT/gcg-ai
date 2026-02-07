@@ -1,0 +1,57 @@
+{
+  "card_id": "GD03-089",
+  "effects": [
+    {
+      "effect_id": "GD03-089-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-089-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "Increase this Unit's AP by an amount equal to the number of (Cyclops Team) Pilot cards/Command cards with unique names in your trash.",
+      "modifiers": [
+        {
+          "type": "STAT_EQUALS_COUNT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "count_source": {
+            "zone": "TRASH",
+            "owner": "SELF",
+            "card_types": [
+              "PILOT",
+              "COMMAND"
+            ],
+            "traits": [
+              "Cyclops Team"
+            ],
+            "unique_names_only": true
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; Increase this Unit's AP by an amount equal to the number of (Cyclops Team) Pilot cards/Command cards with unique names in your trash.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

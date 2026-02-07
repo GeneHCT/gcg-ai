@@ -1,0 +1,57 @@
+{
+  "card_id": "GD03-052",
+  "effects": [
+    {
+      "effect_id": "GD03-052-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD03-052-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "PILOT",
+          "traits": [
+            "CB"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "context": "DAMAGED_UNIT"
+          }
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "SUPPORT",
+      "value": 2,
+      "description": null
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Activate\uff65Main\u3011<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.); When this Unit deals battle damage to an enemy Unit that is Lv.5 or lower, if you have a (CB) Pilot in play, destroy that enemy Unit.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "card_id": "ST03-006",
+  "effects": [
+    {
+      "effect_id": "ST03-006-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Destroyed\u3011Look at the top 3 cards of your deck. You may reveal 1 (Zeon)/(Neo Zeon) Unit card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-064",
+  "effects": [
+    {
+      "effect_id": "GD03-064-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011You may choose 1 (X-Rounder) card from your trash and add it to your hand. If you do, discard 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

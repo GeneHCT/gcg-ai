@@ -1,0 +1,38 @@
+{
+  "card_id": "GD02-039",
+  "effects": [
+    {
+      "effect_id": "GD02-039-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Paired\u3011Choose 1 enemy Unit that is Lv.3 or lower. Deal 1 damage to it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

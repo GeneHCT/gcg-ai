@@ -1,0 +1,51 @@
+{
+  "card_id": "GD03-108",
+  "effects": [
+    {
+      "effect_id": "GD03-108-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "token": {
+            "name": "Hy-Gogg",
+            "ap": 2,
+            "hp": 1,
+            "traits": [
+              "Cyclops Team"
+            ],
+            "keywords": []
+          },
+          "count": 1,
+          "state": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD03-108-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Gabriel Ramirez Garcia'",
+      "pilot_name": "Gabriel Ramirez Garcia",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Zeon",
+          "Cyclops Team"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Deploy 1 [Hy-Gogg]((Cyclops Team)\uff65AP2\uff65HP1) Unit token.; \u3010Pilot\u3011[Gabriel Ramirez Garcia]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

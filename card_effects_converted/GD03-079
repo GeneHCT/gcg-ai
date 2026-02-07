@@ -1,0 +1,28 @@
+{
+  "card_id": "GD03-079",
+  "effects": [
+    {
+      "effect_id": "GD03-079-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_REST_BASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REPLACE_REST_TARGET",
+          "original_target": "BASE",
+          "new_target": "SELF",
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "When you rest your Base with one of your Units' effects, you may rest this Unit instead.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

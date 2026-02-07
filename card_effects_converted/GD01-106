@@ -1,0 +1,50 @@
+{
+  "card_id": "GD01-106",
+  "effects": [
+    {
+      "effect_id": "GD01-106-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "token": {
+            "name": "Zaku \u2161",
+            "ap": 1,
+            "hp": 1,
+            "traits": [
+              "Zeon"
+            ],
+            "keywords": []
+          },
+          "count": 2,
+          "state": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-106-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Dozle Zabi'",
+      "pilot_name": "Dozle Zabi",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Zeon"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Deploy 2 [Zaku \u2161]((Zeon)\uff65AP1\uff65HP1) Unit tokens.; \u3010Pilot\u3011[Dozle Zabi]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

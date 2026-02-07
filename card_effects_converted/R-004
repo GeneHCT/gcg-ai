@@ -1,0 +1,11 @@
+{
+  "card_id": "R-004",
+  "effects": [],
+  "metadata": {
+    "original_text": "(Rest a Resource when paying a cost.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "RESOURCE"
+  }
+}

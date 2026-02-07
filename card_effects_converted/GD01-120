@@ -1,0 +1,59 @@
+{
+  "card_id": "GD01-120",
+  "effects": [
+    {
+      "effect_id": "GD01-120-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          },
+          "stat": "AP",
+          "value": -3,
+          "duration": "THIS_TURN"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-120-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "keywords": [
+                "BLOCKER"
+              ]
+            }
+          },
+          "stat": "AP",
+          "value": 3,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Choose 1 enemy Unit. It gets AP-3 during this turn.; \u3010Action\u3011Choose 1 friendly Unit with <Blocker>. It gets AP+3 during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

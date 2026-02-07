@@ -1,0 +1,66 @@
+{
+  "card_id": "GD02-123",
+  "effects": [
+    {
+      "effect_id": "GD02-123-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_SELF"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-123-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 5
+              },
+              "state": "ACTIVE"
+            }
+          },
+          "target_restrictions": {
+            "ap": {
+              "operator": "<=",
+              "value": 5
+            }
+          },
+          "duration": "THIS_TURN",
+          "description": "Can choose additional units as attack targets"
+        },
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_SHIELDS",
+            "count": 1
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Deploy this card.; \u3010Deploy\u3011Add 1 of your Shields to your hand. Then, choose 1 friendly Unit token. During this turn, it may choose an active enemy Unit with 5 or less AP as its attack target.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "BASE"
+  }
+}

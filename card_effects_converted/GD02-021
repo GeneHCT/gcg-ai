@@ -1,0 +1,39 @@
+{
+  "card_id": "GD02-021",
+  "effects": [
+    {
+      "effect_id": "GD02-021-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        },
+        {
+          "type": "DISCARD",
+          "target": "SELF",
+          "amount": 1,
+          "conditional_actions": [
+            {
+              "type": "DRAW",
+              "target": "SELF",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011You may discard 1 green (Earth Federation) Unit card. If you do, place 1 EX Resource. Then, if you are Lv.7 or higher, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

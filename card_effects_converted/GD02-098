@@ -1,0 +1,74 @@
+{
+  "card_id": "GD02-098",
+  "effects": [
+    {
+      "effect_id": "GD02-098-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-098-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_TRAIT",
+          "target": {
+            "selector": "LINKED_UNIT"
+          },
+          "required_traits": [
+            "AEUG"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1,
+          "conditional_actions": [
+            {
+              "type": "DISCARD",
+              "target": "SELF",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-098-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "This card's name is also treated as [Char Aznable].",
+      "modifiers": [
+        {
+          "type": "NAME_ALIAS",
+          "alias_name": "Char Aznable"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "This card's name is also treated as [Char Aznable].; \u3010Burst\u3011Add this card to your hand.; \u3010When Linked\u3011If this is an (AEUG) Unit, draw 1. If you do, discard 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

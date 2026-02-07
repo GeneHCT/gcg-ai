@@ -1,0 +1,58 @@
+{
+  "card_id": "GD01-094",
+  "effects": [
+    {
+      "effect_id": "GD01-094-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-094-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_UNIT_STATE",
+          "state": "ATTACKING"
+        },
+        {
+          "type": "CHECK_DESTROYED_UNIT",
+          "target": "ENEMY",
+          "is_link": true,
+          "destroyed_by": "DAMAGE"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010Once per Turn\u3011 When an enemy Link Unit is destroyed with damage while this Unit is attacking, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

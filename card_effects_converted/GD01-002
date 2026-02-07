@@ -1,0 +1,50 @@
+{
+  "card_id": "GD01-002",
+  "effects": [
+    {
+      "effect_id": "GD01-002-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLAY_FROM_HAND"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_NAME_SUBSTRING",
+          "substring": "Unicorn Mode"
+        }
+      ],
+      "actions": [
+        {
+          "type": "OVERRIDE_PLAY_COST",
+          "cost": 0,
+          "level": 0
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-002-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "When playing this card from your hand, you may destroy 1 of your Link Units with \"Unicorn Mode\" in its card name that is Lv.5. If you do, play this card as if it has 0 Lv. and cost.; \u3010Attack\u3011Choose 1 enemy Unit. Rest it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

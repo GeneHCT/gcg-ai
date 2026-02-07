@@ -1,0 +1,32 @@
+{
+  "card_id": "ST08-013",
+  "effects": [
+    {
+      "effect_id": "ST08-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 enemy Unit. Deal 1 damage to it. If a friendly (Mafty) Link Unit is in play, deal 2 damage instead.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

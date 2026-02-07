@@ -1,0 +1,31 @@
+{
+  "card_id": "ST03-008",
+  "effects": [
+    {
+      "effect_id": "ST03-008-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Attack\u3011This Unit gets AP+2 during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

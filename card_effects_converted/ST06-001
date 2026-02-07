@@ -1,0 +1,36 @@
+{
+  "card_id": "ST06-001",
+  "effects": [
+    {
+      "effect_id": "ST06-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_UNIT_STATE",
+          "state": "ATTACKING"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "FIRST",
+          "value": null,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Linked\u3011If another friendly (Clan) Unit is in play, this gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

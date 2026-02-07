@@ -1,0 +1,37 @@
+{
+  "card_id": "ST07-012",
+  "effects": [
+    {
+      "effect_id": "ST07-012-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST07-012-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "During your turn, while you have a (CB) Link Unit in play, this Unit can't receive battle damage from enemy Units with 3 or less AP.",
+      "modifiers": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; During your turn, while you have a (CB) Link Unit in play, this Unit can't receive battle damage from enemy Units with 3 or less AP.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

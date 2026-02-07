@@ -1,0 +1,38 @@
+{
+  "card_id": "GD02-110",
+  "effects": [
+    {
+      "effect_id": "GD02-110-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "source_zone": "TRASH",
+          "target": {
+            "selector": "SELF_TRASH",
+            "card_type": "UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          },
+          "pay_cost": true,
+          "destination": "BATTLE_AREA"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 Unit card that is Lv.5 or lower from your trash. Pay its cost to deploy it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

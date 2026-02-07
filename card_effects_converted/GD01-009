@@ -1,0 +1,39 @@
+{
+  "card_id": "GD01-009",
+  "effects": [
+    {
+      "effect_id": "GD01-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "White Base Team",
+                "This Unit can't be blocked."
+              ]
+            }
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011Choose 1 of your (White Base Team) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

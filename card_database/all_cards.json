@@ -5099,8 +5099,7 @@
     "ID": "GD02-072",
     "Effect": [
       "<Blocker> (Rest this Unit to change the attack target to it.)",
-      "While a friendly white Base is in play, this Unit gains <Repair 1>.",
-      "(At the end of your turn, this Unit recovers the specified number of HP.)"
+      "While a friendly white Base is in play, this Unit gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)"
     ],
     "Color": "White",
     "Type": "UNIT",
@@ -11263,8 +11262,7 @@
     "Name": "Simultaneous Fire",
     "ID": "ST02-012",
     "Effect": [
-      "【Main】Choose 1 of your Units. It gains <Breach 3> during this turn.",
-      "(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "【Main】Choose 1 of your Units. It gains <Breach 3> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
       "【Pilot】[Trowa Barton]"
     ],
     "Color": "Green",
@@ -11428,8 +11426,7 @@
     "Name": "Sinanju",
     "ID": "ST03-001",
     "Effect": [
-      "【During Pair】This Unit gains <High-Maneuver>.",
-      "(This Unit can't be blocked.)",
+      "【During Pair】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
       "During your turn, when this Unit destroys an enemy shield area card with battle damage, choose 1 enemy Unit. Deal 2 damage to it."
     ],
     "Color": "Red",
@@ -12179,8 +12176,7 @@
     "Name": "The Magic Bullet of Dusk",
     "ID": "ST04-014",
     "Effect": [
-      "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn.",
-      "(While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
       "【Pilot】[Miguel Ayman]"
     ],
     "Color": "Red",
@@ -13716,8 +13712,7 @@
     "Name": "Words for Hathaway",
     "ID": "ST08-012",
     "Effect": [
-      "【Main】Choose 1 friendly Link Unit. It gains <Breach 1> during this turn.",
-      "(When this Unit' s attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent' s shield area.)",
+      "【Main】Choose 1 friendly Link Unit. It gains <Breach 1> during this turn. (When this Unit' s attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent' s shield area.)",
       "【Pilot】[Gawman Nobile]"
     ],
     "Color": "Red",

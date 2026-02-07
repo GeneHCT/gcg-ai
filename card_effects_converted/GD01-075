@@ -1,0 +1,30 @@
+{
+  "card_id": "GD01-075",
+  "effects": [
+    {
+      "effect_id": "GD01-075-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

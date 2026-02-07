@@ -1,0 +1,31 @@
+{
+  "card_id": "ST08-006",
+  "effects": [
+    {
+      "effect_id": "ST08-006-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK",
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 2
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\u3011\u3010Attack\u3011\u3010Once per Turn\u3011If this Unit is attacking the enemy player, reveal 1 (Earth Federation) Unit card from your hand. Return it to the bottom of your deck. If you do, draw 2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

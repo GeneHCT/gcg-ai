@@ -1,0 +1,20 @@
+{
+  "card_id": "GD03-070",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-070-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While this Unit is rested, friendly Shields can't receive battle damage from enemy Units.",
+      "modifiers": [],
+      "condition_description": "While this Unit is rested, friendly Shields can't receive battle damage from enemy Units."
+    }
+  ],
+  "metadata": {
+    "original_text": "While this Unit is rested, friendly Shields can't receive battle damage from enemy Units.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

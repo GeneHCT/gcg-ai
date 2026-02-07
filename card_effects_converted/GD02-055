@@ -1,0 +1,39 @@
+{
+  "card_id": "GD02-055",
+  "effects": [
+    {
+      "effect_id": "GD02-055-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BLOCKER",
+      "value": null,
+      "description": "Rest this Unit to change the attack target to it."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); \u3010Deploy\u3011Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

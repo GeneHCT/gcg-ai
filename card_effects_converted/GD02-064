@@ -1,0 +1,39 @@
+{
+  "card_id": "GD02-064",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-064-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "During your turn, while there are 7 or more cards in your trash, this Unit can't receive effect damage from enemy Commands.",
+      "modifiers": [
+        {
+          "type": "PROTECTION",
+          "protection_type": "PREVENT_EFFECT_DAMAGE",
+          "source_filter": "ENEMY",
+          "source_card_type": "COMMAND",
+          "conditions": [
+            {
+              "type": "CHECK_TURN",
+              "turn_owner": "SELF"
+            },
+            {
+              "type": "COUNT_CARDS",
+              "zone": "TRASH",
+              "owner": "SELF",
+              "operator": ">=",
+              "value": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "During your turn, while there are 7 or more cards in your trash, this Unit can't receive effect damage from enemy Commands.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

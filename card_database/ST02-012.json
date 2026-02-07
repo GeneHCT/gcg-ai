@@ -2,8 +2,7 @@
   "Name": "Simultaneous Fire",
   "ID": "ST02-012",
   "Effect": [
-    "【Main】Choose 1 of your Units. It gains <Breach 3> during this turn.",
-    "(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "【Main】Choose 1 of your Units. It gains <Breach 3> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
     "【Pilot】[Trowa Barton]"
   ],
   "Color": "Green",

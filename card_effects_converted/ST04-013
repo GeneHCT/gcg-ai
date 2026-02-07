@@ -1,0 +1,50 @@
+{
+  "card_id": "ST04-013",
+  "effects": [
+    {
+      "effect_id": "ST04-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "ST04-013-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Mu La Flaga'",
+      "pilot_name": "Mu La Flaga",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Earth Alliance"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.; \u3010Pilot\u3011[Mu La Flaga]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

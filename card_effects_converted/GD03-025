@@ -1,0 +1,35 @@
+{
+  "card_id": "GD03-025",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-025-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking.",
+      "modifiers": [
+        {
+          "type": "FORCE_ATTACK_TARGET",
+          "target": {
+            "selector": "SELF"
+          },
+          "redirect_attacks_to": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Maganac Corps"
+              ],
+              "state": "RESTED"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

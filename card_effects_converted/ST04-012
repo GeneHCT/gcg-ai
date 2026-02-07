@@ -1,0 +1,59 @@
+{
+  "card_id": "ST04-012",
+  "effects": [
+    {
+      "effect_id": "ST04-012-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Earth Alliance",
+            "(Earth Alliance"
+          ],
+          "is_token": true,
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "actions": []
+    },
+    {
+      "effect_id": "ST04-012-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Earth Alliance",
+            "(Earth Alliance",
+            "(Earth Alliance"
+          ],
+          "is_token": true,
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Aile Strike Gundam]((Earth Alliance)\uff65AP3\uff65HP3\uff65<Blocker>) Unit token.; \u3010Main\u3011If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Sword Strike Gundam]((Earth Alliance)\uff65AP4\uff65HP2\uff65<Blocker>) or 1 [Launcher Strike Gundam]((Earth Alliance)\uff65AP2\uff65HP4\uff65<Blocker>) Unit token.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

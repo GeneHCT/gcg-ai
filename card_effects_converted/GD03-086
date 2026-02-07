@@ -1,0 +1,55 @@
+{
+  "card_id": "GD03-086",
+  "effects": [
+    {
+      "effect_id": "GD03-086-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD03-086-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Titans"
+              ]
+            }
+          },
+          "stat": "AP",
+          "value": 1,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010Attack\u3011Choose 1 of your (Titans) Units whose Lv. is equal to or lower than this Unit. It gets AP+1 during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

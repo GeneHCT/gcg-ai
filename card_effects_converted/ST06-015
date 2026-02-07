@@ -1,0 +1,60 @@
+{
+  "card_id": "ST06-015",
+  "effects": [
+    {
+      "effect_id": "ST06-015-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_SELF"
+        }
+      ]
+    },
+    {
+      "effect_id": "ST06-015-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_SHIELDS",
+            "count": 1
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST06-015-E3",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010Once per Turn\u3011When a friendly (Clan) Unit links, it gains <Breach 3> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Deploy this card.; \u3010Deploy\u3011Add 1 of your Shields to your hand.; \u3010Once per Turn\u3011When a friendly (Clan) Unit links, it gains <Breach 3> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "BASE"
+  }
+}

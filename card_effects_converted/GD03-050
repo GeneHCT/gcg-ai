@@ -1,0 +1,32 @@
+{
+  "card_id": "GD03-050",
+  "effects": [
+    {
+      "effect_id": "GD03-050-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          },
+          "amount": 2,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Activate\uff65Main\u3011Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

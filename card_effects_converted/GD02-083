@@ -1,0 +1,21 @@
+{
+  "card_id": "GD02-083",
+  "effects": [
+    {
+      "effect_id": "GD02-083-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Destroyed\u3011If it is your opponent's turn, choose 1 of your (Gjallarhorn) Units. Set it as active.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

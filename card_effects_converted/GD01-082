@@ -1,0 +1,19 @@
+{
+  "card_id": "GD01-082",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-082-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Pair\u3011\u3010Activate\uff65Action\u3011\u3010Once per Turn\u3011\u2461\uff1aChoose 1 enemy Unit. It gets AP-1 during this battle.",
+      "modifiers": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\u3011\u3010Activate\uff65Action\u3011\u3010Once per Turn\u3011\u2461\uff1aChoose 1 enemy Unit. It gets AP-1 during this battle.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

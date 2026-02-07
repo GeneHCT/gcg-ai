@@ -1,0 +1,55 @@
+{
+  "card_id": "ST06-011",
+  "effects": [
+    {
+      "effect_id": "ST06-011-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": {
+              "min": 1,
+              "max": 2
+            },
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Clan"
+              ]
+            }
+          },
+          "stat": "AP",
+          "value": 2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    },
+    {
+      "effect_id": "ST06-011-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Gaia (GQ)'",
+      "pilot_name": "Gaia (GQ)",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Clan"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.; \u3010Pilot\u3011[Gaia (GQ)]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

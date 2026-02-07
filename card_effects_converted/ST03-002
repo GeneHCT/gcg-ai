@@ -1,0 +1,28 @@
+{
+  "card_id": "ST03-002",
+  "effects": [
+    {
+      "effect_id": "ST03-002-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "SUPPORT",
+      "value": 2,
+      "description": null
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Activate\uff65Main\u3011<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

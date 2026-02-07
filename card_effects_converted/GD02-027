@@ -1,0 +1,18 @@
+{
+  "card_id": "GD02-027",
+  "effects": [],
+  "keywords": [
+    {
+      "keyword": "BREACH",
+      "value": 3,
+      "description": "When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

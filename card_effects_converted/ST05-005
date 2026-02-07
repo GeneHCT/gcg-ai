@@ -1,0 +1,36 @@
+{
+  "card_id": "ST05-005",
+  "effects": [
+    {
+      "effect_id": "ST05-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Destroyed\u3011Choose 1 enemy Unit with 4 or less AP. Rest it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

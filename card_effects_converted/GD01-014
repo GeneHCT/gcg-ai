@@ -1,0 +1,35 @@
+{
+  "card_id": "GD01-014",
+  "effects": [
+    {
+      "effect_id": "GD01-014-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED",
+        "ACTIVATE_ACTION"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "amount": 1
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011\u3010Activate\uff65Action\u3011\u3010Once per Turn\u3011Choose 1 Unit. It recovers 1 HP.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

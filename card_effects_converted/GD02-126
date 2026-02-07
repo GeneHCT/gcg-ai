@@ -1,0 +1,69 @@
+{
+  "card_id": "GD02-126",
+  "effects": [
+    {
+      "effect_id": "GD02-126-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_SELF"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-126-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_SHIELDS",
+            "count": 1
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-126-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Deploy this card.; \u3010Deploy\u3011Add 1 of your Shields to your hand.; \u3010Destroyed\u3011Choose 1 enemy Unit that is Lv.4 or lower. Deal 1 damage to it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "BASE"
+  }
+}

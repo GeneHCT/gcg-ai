@@ -1,0 +1,37 @@
+{
+  "card_id": "ST02-010",
+  "effects": [
+    {
+      "effect_id": "ST02-010-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST02-010-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Link\u3011This Unit gets AP+1 and HP+1.",
+      "modifiers": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010During Link\u3011This Unit gets AP+1 and HP+1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

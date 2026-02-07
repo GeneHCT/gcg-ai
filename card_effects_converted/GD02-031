@@ -1,0 +1,30 @@
+{
+  "card_id": "GD02-031",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-031-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While you are Lv.7 or higher, this Unit gets AP+2.",
+      "modifiers": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 2,
+          "condition": "While you are Lv.7 or higher"
+        }
+      ],
+      "condition_description": "While you are Lv.7 or higher, this Unit gets AP+2."
+    }
+  ],
+  "metadata": {
+    "original_text": "While you are Lv.7 or higher, this Unit gets AP+2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

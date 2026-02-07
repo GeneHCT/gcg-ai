@@ -1,0 +1,22 @@
+{
+  "card_id": "GD03-022",
+  "effects": [
+    {
+      "effect_id": "GD03-022-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED",
+        "ON_DESTROY_UNIT_WITH_BATTLE_DAMAGE"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011During your turn, when this Unit destroys an enemy Unit with battle damage, deal 1 damage to all enemy Units that are Lv.3 or lower.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

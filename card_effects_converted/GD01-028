@@ -1,0 +1,21 @@
+{
+  "card_id": "GD01-028",
+  "effects": [
+    {
+      "effect_id": "GD01-028-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011You may deploy 1 (Maganac Corps) Unit card from your hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "card_id": "GD01-068",
+  "effects": [
+    {
+      "effect_id": "GD01-068-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BLOCKER",
+      "value": null,
+      "description": "Rest this Unit to change the attack target to it."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); \u3010Deploy\u3011Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

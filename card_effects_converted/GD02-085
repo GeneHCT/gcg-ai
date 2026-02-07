@@ -1,0 +1,47 @@
+{
+  "card_id": "GD02-085",
+  "effects": [
+    {
+      "effect_id": "GD02-085-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-085-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010During Link\u3011\u3010Once per Turn\u3011During your turn, when this Unit recovers HP, if you have 4 or less cards in your hand, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

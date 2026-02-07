@@ -1,0 +1,48 @@
+{
+  "card_id": "ST06-005",
+  "effects": [
+    {
+      "effect_id": "ST06-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": {
+              "min": 1,
+              "max": 2
+            },
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Clan"
+              ]
+            }
+          },
+          "stat": "AP",
+          "value": 2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BREACH",
+      "value": 1,
+      "description": "When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 1> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); \u3010Attack\u3011Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

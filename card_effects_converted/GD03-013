@@ -1,0 +1,53 @@
+{
+  "card_id": "GD03-013",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-013-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While you have another (Jupitris) Unit in play, this Unit gets AP+1 and <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "REPAIR",
+          "value": 1,
+          "condition": "While you have another (Jupitris) Unit in play"
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 1,
+          "condition": "While you have another (Jupitris) Unit in play"
+        }
+      ],
+      "condition_description": "While you have another (Jupitris) Unit in play, this Unit gets AP+1 and <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Jupitris"
+          ],
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "While you have another (Jupitris) Unit in play, this Unit gets AP+1 and <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

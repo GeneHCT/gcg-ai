@@ -1,0 +1,42 @@
+{
+  "card_id": "GD01-107",
+  "effects": [
+    {
+      "effect_id": "GD01-107-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "resource_type": "EX",
+          "state": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-107-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "resource_type": "NORMAL",
+          "state": "RESTED"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Place 1 EX Resource.; \u3010Main\u3011Place 1 rested Resource.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

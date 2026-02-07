@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-044",
+  "effects": [
+    {
+      "effect_id": "GD03-044-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011Deploy 1 rested [Daughtress]((New UNE)\uff65AP0\uff65HP1) Unit token.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

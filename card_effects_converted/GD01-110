@@ -1,0 +1,59 @@
+{
+  "card_id": "GD01-110",
+  "effects": [
+    {
+      "effect_id": "GD01-110-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 6
+              },
+              "state": "ACTIVE"
+            }
+          },
+          "target_restrictions": {
+            "ap": {
+              "operator": "<=",
+              "value": 6
+            }
+          },
+          "duration": "THIS_TURN",
+          "description": "Can choose additional units as attack targets"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-110-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Rasid Kurama'",
+      "pilot_name": "Rasid Kurama",
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "Maganac Corps"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 Unit that is Lv.4 or higher. During this turn, it may choose an active enemy Unit with 6 or less AP as its attack target.; \u3010Pilot\u3011[Rasid Kurama]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

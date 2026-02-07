@@ -257,6 +257,14 @@ class ActionExecutor:
                 result = f"Deployed {card.name} (AP={unit.ap}, HP={unit.hp})"
                 if unit.keywords:
                     result += f" Keywords: {list(unit.keywords.keys())}"
+                
+                # Trigger Deploy effects
+                try:
+                    from simulator.effect_integration import EffectIntegration
+                    game_state = EffectIntegration.on_unit_deployed(game_state, unit)
+                except Exception as e:
+                    print(f"  [Effect Error] {e}")
+                
                 return game_state, result
             
             return game_state, "Failed: Cannot afford card"
@@ -264,6 +272,13 @@ class ActionExecutor:
         elif action.action_type == ActionType.ATTACK_PLAYER:
             # Attack player's shields or bases
             attacker = action.unit
+            
+            # Trigger Attack effects
+            try:
+                from simulator.effect_integration import EffectIntegration
+                game_state = EffectIntegration.on_unit_attacks(game_state, attacker, target="PLAYER")
+            except Exception as e:
+                print(f"  [Effect Error] {e}")
             
             # Rest the attacker
             attacker.is_rested = True
@@ -369,6 +384,13 @@ class ActionExecutor:
             if defender.is_destroyed:
                 result += " [DESTROYED]"
                 
+                # Trigger Destroyed effects
+                try:
+                    from simulator.effect_integration import EffectIntegration
+                    game_state = EffectIntegration.on_unit_destroyed(game_state, defender, "battle")
+                except Exception as e:
+                    print(f"  [Effect Error] {e}")
+                
                 # Breach damage
                 breach_value = attacker.get_keyword_value("breach")
                 if breach_value > 0:
@@ -388,6 +410,14 @@ class ActionExecutor:
             
             if attacker.is_destroyed:
                 result += f" (Attacker also destroyed!)"
+                
+                # Trigger Destroyed effects for attacker
+                try:
+                    from simulator.effect_integration import EffectIntegration
+                    game_state = EffectIntegration.on_unit_destroyed(game_state, attacker, "battle")
+                except Exception as e:
+                    print(f"  [Effect Error] {e}")
+                
                 if attacker in player.battle_area:
                     player.battle_area.remove(attacker)
                     player.trash.append(attacker.card_data)

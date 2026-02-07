@@ -1,21 +1,51 @@
 {
-  "trigger": "ON_DESTROYED",
-  "conditions": [
+  "card_id": "GD01-007",
+  "effects": [
     {
-      "type": "COUNT_CARDS",
-      "zone": "BATTLE_AREA",
-      "owner": "SELF",
-      "traits": ["OZ"],
-      "exclude_self": true,
-      "operator": ">=",
-      "value": 1
+      "effect_id": "GD01-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "OZ"
+          ],
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 1
+        },
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "OZ"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
     }
   ],
-  "actions": [
-    {
-      "type": "DRAW",
-      "target": "SELF",
-      "amount": 1
-    }
-  ]
+  "metadata": {
+    "original_text": "\u3010Destroyed\u3011If you have another (OZ) Unit in play, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
 }

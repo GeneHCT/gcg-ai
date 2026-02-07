@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-117",
+  "effects": [
+    {
+      "effect_id": "GD03-117-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011If 1 to 4 enemy Units are in play, deploy 1 [Graze Custom]((Tekkadan)\uff65AP2\uff65HP2) Unit token. If 5 or more are in play, deploy 1 [Gundam Barbatos 4th Form]((Tekkadan)\uff65AP4\uff65HP4) Unit token.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

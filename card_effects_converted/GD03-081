@@ -1,0 +1,25 @@
+{
+  "card_id": "GD03-081",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-081-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "This Unit can only attack during a turn when one of your (Superpower Bloc)/(UN) Units is deployed.",
+      "modifiers": [
+        {
+          "type": "RESTRICTION",
+          "restriction_type": "ATTACK_RESTRICTION",
+          "description": "This Unit can only attack during a turn when one of your (Superpower Bloc)/(UN) Units is deployed."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "This Unit can only attack during a turn when one of your (Superpower Bloc)/(UN) Units is deployed.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

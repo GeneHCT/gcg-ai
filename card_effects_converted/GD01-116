@@ -1,0 +1,53 @@
+{
+  "card_id": "GD01-116",
+  "effects": [
+    {
+      "effect_id": "GD01-116-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          },
+          "amount": 2,
+          "damage_type": "EFFECT"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-116-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Nicol Amarfi'",
+      "pilot_name": "Nicol Amarfi",
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "ZAFT",
+          "Coordinator"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.; \u3010Pilot\u3011[Nicol Amarfi]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

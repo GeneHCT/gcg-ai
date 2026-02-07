@@ -1,0 +1,70 @@
+{
+  "card_id": "GD01-124",
+  "effects": [
+    {
+      "effect_id": "GD01-124-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_SELF"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-124-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_SHIELDS",
+            "count": 1
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-124-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Deploy this card.; \u3010Deploy\u3011Add 1 of your Shields to your hand.; \u3010Activate\uff65Main\u3011Rest this Base\uff1aChoose 1 friendly Unit. It recovers 1 HP.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "BASE"
+  }
+}

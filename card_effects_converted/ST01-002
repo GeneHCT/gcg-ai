@@ -1,0 +1,35 @@
+{
+  "card_id": "ST01-002",
+  "effects": [
+    {
+      "effect_id": "ST01-002-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "required_traits": [
+            "White Base Team"
+          ],
+          "trait_operator": "ALL"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Paired\uff65(White Base Team) Pilot\u3011Draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

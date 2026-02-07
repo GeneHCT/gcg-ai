@@ -1,0 +1,44 @@
+{
+  "card_id": "GD02-001",
+  "effects": [
+    {
+      "effect_id": "GD02-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "required_traits": [
+            "Cyber-Newtype"
+          ],
+          "trait_operator": "ALL"
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "selector": "SELF"
+          },
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BREACH",
+      "value": 3,
+      "description": "When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); \u3010During Pair\uff65(Cyber-Newtype) Pilot\u3011When one of your (Titans) Units destroys an enemy shield area card with damage, this Unit recovers 2 HP.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

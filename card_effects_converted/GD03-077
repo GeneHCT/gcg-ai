@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-077",
+  "effects": [
+    {
+      "effect_id": "GD03-077-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Linked\u3011Choose 1 to 3 enemy Units with 3 or less HP. Return them to their owners' hands.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

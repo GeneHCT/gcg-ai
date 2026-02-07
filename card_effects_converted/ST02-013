@@ -1,0 +1,49 @@
+{
+  "card_id": "ST02-013",
+  "effects": [
+    {
+      "effect_id": "ST02-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE",
+        "DURING_BATTLE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": "SELF_SHIELDS",
+          "protection_type": "PREVENT_DAMAGE",
+          "source_filter": {
+            "level": {
+              "operator": "<=",
+              "value": 4
+            }
+          },
+          "duration": "THIS_BATTLE"
+        }
+      ]
+    },
+    {
+      "effect_id": "ST02-013-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Quatre Raberba Winner'",
+      "pilot_name": "Quatre Raberba Winner",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "Operation Meteor"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Action\u3011During this battle, your shield area cards can't receive damage from enemy Units that are Lv.4 or lower.; \u3010Pilot\u3011[Quatre Raberba Winner]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

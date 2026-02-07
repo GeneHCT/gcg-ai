@@ -1,0 +1,62 @@
+{
+  "card_id": "ST05-001",
+  "effects": [
+    {
+      "effect_id": "ST05-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "stat": "AP",
+          "value": 1,
+          "duration": "THIS_TURN"
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST05-001-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "While this is damaged, it gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "SUPPRESSION",
+          "value": null,
+          "condition": "While this is damaged"
+        }
+      ],
+      "condition_description": "While this is damaged, it gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)"
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011Choose 1 of your other Units. Deal 1 damage to it. It gets AP+1 during this turn.; While this is damaged, it gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

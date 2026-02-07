@@ -1,0 +1,61 @@
+{
+  "card_id": "GD03-084",
+  "effects": [
+    {
+      "effect_id": "GD03-084-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD03-084-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED",
+        "ON_END_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Jupitris"
+              ]
+            }
+          },
+          "keyword": "REPAIR",
+          "value": 2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010When Linked\u3011Choose 1 of your other Units. It gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

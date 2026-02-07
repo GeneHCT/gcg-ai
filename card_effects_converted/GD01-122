@@ -1,0 +1,50 @@
+{
+  "card_id": "GD01-122",
+  "effects": [
+    {
+      "effect_id": "GD01-122-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-122-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Shaddiq Zenelli'",
+      "pilot_name": "Shaddiq Zenelli",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Academy"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand. If you have a Link Unit in play, choose 1 enemy Unit with 4 or less HP instead.; \u3010Pilot\u3011[Shaddiq Zenelli]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "card_id": "GD02-010",
+  "effects": [
+    {
+      "effect_id": "GD02-010-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_RECEIVE_EFFECT_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_DAMAGE_SOURCE",
+          "damage_type": "EFFECT",
+          "source_owner": "ENEMY"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Once per Turn\u3011When this Unit receives enemy effect damage, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

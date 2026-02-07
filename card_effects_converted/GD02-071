@@ -1,0 +1,21 @@
+{
+  "card_id": "GD02-071",
+  "effects": [
+    {
+      "effect_id": "GD02-071-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011If a friendly white Base is in play, you may pair 1 (AEUG) Pilot card from your hand with this Unit.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

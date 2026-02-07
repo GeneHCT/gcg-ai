@@ -1,0 +1,26 @@
+{
+  "card_id": "GD03-029",
+  "effects": [
+    {
+      "effect_id": "GD03-029-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROY_UNIT_WITH_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "turn_owner": "SELF"
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "During your turn, when this Unit destroys an enemy Unit with battle damage, deal 2 damage to all enemy Units with <Blocker>.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

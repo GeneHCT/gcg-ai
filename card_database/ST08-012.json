@@ -2,8 +2,7 @@
   "Name": "Words for Hathaway",
   "ID": "ST08-012",
   "Effect": [
-    "【Main】Choose 1 friendly Link Unit. It gains <Breach 1> during this turn.",
-    "(When this Unit' s attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent' s shield area.)",
+    "【Main】Choose 1 friendly Link Unit. It gains <Breach 1> during this turn. (When this Unit' s attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent' s shield area.)",
     "【Pilot】[Gawman Nobile]"
   ],
   "Color": "Red",

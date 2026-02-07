@@ -1,0 +1,48 @@
+{
+  "card_id": "GD03-049",
+  "effects": [
+    {
+      "effect_id": "GD03-049-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROY_UNIT_WITH_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "traits": [
+            "CB"
+          ],
+          "operator": ">=",
+          "value": 10
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "SUPPRESSION",
+      "value": null,
+      "description": "Damage to Shields by an attack is dealt to the first 2 cards simultaneously."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.); When this Unit destroys an enemy shield area card with battle damage, if there are 10 or more (CB) cards in your trash, choose 1 enemy Unit with the lowest HP. Destroy it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

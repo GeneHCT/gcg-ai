@@ -1,0 +1,59 @@
+{
+  "card_id": "ST04-014",
+  "effects": [
+    {
+      "effect_id": "ST04-014-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_UNIT_STATE",
+          "state": "ATTACKING"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          },
+          "keyword": "FIRST",
+          "value": null,
+          "duration": "THIS_TURN"
+        }
+      ]
+    },
+    {
+      "effect_id": "ST04-014-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Miguel Ayman'",
+      "pilot_name": "Miguel Ayman",
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "ZAFT",
+          "Coordinator"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.); \u3010Pilot\u3011[Miguel Ayman]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

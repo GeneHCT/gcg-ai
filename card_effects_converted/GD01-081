@@ -1,0 +1,53 @@
+{
+  "card_id": "GD01-081",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-081-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While you have another (Triple Ship Alliance) Unit in play, this Unit gets AP+1 and <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null,
+          "condition": "While you have another (Triple Ship Alliance) Unit in play"
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 1,
+          "condition": "While you have another (Triple Ship Alliance) Unit in play"
+        }
+      ],
+      "condition_description": "While you have another (Triple Ship Alliance) Unit in play, this Unit gets AP+1 and <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Triple Ship Alliance"
+          ],
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "While you have another (Triple Ship Alliance) Unit in play, this Unit gets AP+1 and <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

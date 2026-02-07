@@ -1,0 +1,39 @@
+{
+  "card_id": "GD02-104",
+  "effects": [
+    {
+      "effect_id": "GD02-104-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "PILOT",
+          "traits": [
+            "Newtype"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Look at the top 3 cards of your deck and return 1 to the top. Return the remaining cards to the bottom of your deck. Then, if you have a (Newtype) Pilot in play, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

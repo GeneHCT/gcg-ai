@@ -1,0 +1,32 @@
+{
+  "card_id": "GD03-076",
+  "effects": [
+    {
+      "effect_id": "GD03-076-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_OTHER_FRIENDLY_UNIT_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "context": "DAMAGED_UNIT"
+          }
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Once per Turn\u3011During your turn, when your (Triple Ship Alliance) Unit deals battle damage to an enemy Unit, you may return the enemy Unit to its owner's hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "card_id": "GD02-005",
+  "effects": [
+    {
+      "effect_id": "GD02-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK",
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011\u3010Attack\u3011Choose 1 enemy Unit with 2 or less HP. Rest it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

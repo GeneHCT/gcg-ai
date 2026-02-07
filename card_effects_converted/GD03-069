@@ -1,0 +1,28 @@
+{
+  "card_id": "GD03-069",
+  "effects": [
+    {
+      "effect_id": "GD03-069-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "HIGH_MANEUVER",
+      "value": null,
+      "description": "This Unit can't be blocked."
+    }
+  ],
+  "metadata": {
+    "original_text": "<High-Maneuver> (This Unit can't be blocked.); \u3010During Link\u3011At the end of the turn when this Unit is paired with a Pilot, set it as active.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

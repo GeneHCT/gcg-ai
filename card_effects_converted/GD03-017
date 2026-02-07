@@ -1,0 +1,53 @@
+{
+  "card_id": "GD03-017",
+  "effects": [
+    {
+      "effect_id": "GD03-017-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD03-017-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "required_traits": [
+            "Cyclops Team"
+          ],
+          "trait_operator": "ALL"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "SELF"
+          },
+          "target_restrictions": {
+            "ap": {
+              "operator": "<=",
+              "value": 5
+            }
+          },
+          "duration": "THIS_TURN",
+          "description": "Can choose additional units as attack targets"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Choose 1 (Cyclops Team) Pilot card from your trash. Add it to your hand.; \u3010When Paired\uff65(Cyclops Team) Pilot\u3011All your (Cyclops Team) Units may choose an active enemy Unit with 5 or less AP as their attack target during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

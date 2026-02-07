@@ -1,0 +1,47 @@
+{
+  "card_id": "GD01-103",
+  "effects": [
+    {
+      "effect_id": "GD01-103-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-103-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Daguza Mackle'",
+      "pilot_name": "Daguza Mackle",
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "Earth Federation"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 active friendly (Earth Federation) Unit and 1 active enemy Unit. Rest them.; \u3010Pilot\u3011[Daguza Mackle]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

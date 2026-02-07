@@ -1,0 +1,49 @@
+{
+  "card_id": "ST04-001",
+  "effects": [
+    {
+      "effect_id": "ST04-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_LEVEL",
+          "operator": ">=",
+          "value": 4
+        }
+      ],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BLOCKER",
+      "value": null,
+      "description": "Rest this Unit to change the attack target to it."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); \u3010When Paired\uff65Lv.4 or Higher Pilot\u3011Choose 1 enemy Unit with 4 or less HP. Return it to its owner's hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

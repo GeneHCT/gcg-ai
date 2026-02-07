@@ -1,0 +1,41 @@
+{
+  "card_id": "GD03-055",
+  "effects": [
+    {
+      "effect_id": "GD03-055-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_COLOR"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_COLOR",
+          "required_color": "purple"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Paired\uff65Purple Pilot\u3011Choose 1 enemy Unit that is Lv.2 or lower. Destroy it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "card_id": "GD02-074",
+  "effects": [],
+  "keywords": [
+    {
+      "keyword": "HIGH_MANEUVER",
+      "value": null,
+      "description": "This Unit can't be blocked."
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-074-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Pair\u3011While there are 4 or more Command cards in your trash, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "<High-Maneuver> (This Unit can't be blocked.); \u3010During Pair\u3011While there are 4 or more Command cards in your trash, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

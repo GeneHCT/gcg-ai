@@ -1,0 +1,36 @@
+{
+  "card_id": "GD02-034",
+  "effects": [
+    {
+      "effect_id": "GD02-034-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_COLOR"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_COLOR",
+          "required_color": "red"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\uff65Red Pilot\u3011This Unit gets AP+2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

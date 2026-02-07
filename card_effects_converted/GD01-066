@@ -1,0 +1,51 @@
+{
+  "card_id": "GD01-066",
+  "effects": [
+    {
+      "effect_id": "GD01-066-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "token": {
+            "name": "Fatum-00",
+            "ap": 2,
+            "hp": 2,
+            "traits": [
+              "Triple Ship Alliance"
+            ],
+            "keywords": [
+              {
+                "keyword": "BLOCKER",
+                "value": null
+              }
+            ]
+          },
+          "count": 1,
+          "state": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-066-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK",
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011Deploy 1 [Fatum-00]((Triple Ship Alliance)\uff65AP2\uff65HP2\uff65<Blocker>) Unit token.; \u3010During Pair\u3011\u3010Attack\u3011Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "card_id": "GD02-056",
+  "effects": [
+    {
+      "effect_id": "GD02-056-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_TRAIT",
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "required_traits": [
+            "Vulture"
+          ],
+          "trait_operator": "ALL"
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\uff65(Vulture) Pilot\u3011\u3010Destroyed\u3011Choose 1 (Vulture) Unit card that is Lv.5 or higher from your trash. Add it to your hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

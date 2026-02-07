@@ -1,0 +1,36 @@
+{
+  "card_id": "GD01-058",
+  "effects": [
+    {
+      "effect_id": "GD01-058-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_ACTION"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "stat": "AP",
+          "value": 1,
+          "duration": "THIS_BATTLE"
+        }
+      ],
+      "restrictions": {
+        "once_per_turn": true
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Activate\uff65Action\u3011\u3010Once per Turn\u3011\u2460\uff1aChoose 1 Unit that is Lv.4 or higher. It gets AP+1 during this battle.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

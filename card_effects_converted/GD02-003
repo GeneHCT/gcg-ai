@@ -1,0 +1,28 @@
+{
+  "card_id": "GD02-003",
+  "effects": [
+    {
+      "effect_id": "GD02-003-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED",
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DISCARD",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\uff65Lv.3 or Lower Pilot\u3011\u3010Destroyed\u3011You may discard 1 Unit card. If you do, return the card paired with this Unit to your hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

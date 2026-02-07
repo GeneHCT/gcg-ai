@@ -1,0 +1,31 @@
+{
+  "card_id": "GD01-015",
+  "effects": [
+    {
+      "effect_id": "GD01-015-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Attack\u3011Choose 1 of your Units. It recovers 1 HP.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

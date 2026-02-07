@@ -1,0 +1,50 @@
+{
+  "card_id": "GD02-113",
+  "effects": [
+    {
+      "effect_id": "GD02-113-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-113-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Amida Arca'",
+      "pilot_name": "Amida Arca",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "Teiwaz"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.; \u3010Pilot\u3011[Amida Arca]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

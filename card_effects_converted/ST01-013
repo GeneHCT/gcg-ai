@@ -1,0 +1,46 @@
+{
+  "card_id": "ST01-013",
+  "effects": [
+    {
+      "effect_id": "ST01-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "effect_id": "ST01-013-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Kai Shiden'",
+      "pilot_name": "Kai Shiden",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Earth Federation",
+          "White Base Team"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 friendly Unit. It recovers 3 HP.; \u3010Pilot\u3011[Kai Shiden]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

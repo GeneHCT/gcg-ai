@@ -1,0 +1,27 @@
+{
+  "card_id": "GD01-100",
+  "effects": [
+    {
+      "effect_id": "GD01-100-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Draw 2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

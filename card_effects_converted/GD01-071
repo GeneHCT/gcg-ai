@@ -1,0 +1,34 @@
+{
+  "card_id": "GD01-071",
+  "effects": [
+    {
+      "effect_id": "GD01-071-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK",
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          },
+          "stat": "AP",
+          "value": -2,
+          "duration": "THIS_BATTLE"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011\u3010Attack\u3011Choose 1 enemy Unit. It gets AP-2 during this battle.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

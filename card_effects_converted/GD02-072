@@ -1,0 +1,37 @@
+{
+  "card_id": "GD02-072",
+  "effects": [],
+  "keywords": [
+    {
+      "keyword": "BLOCKER",
+      "value": null,
+      "description": "Rest this Unit to change the attack target to it."
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-072-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While a friendly white Base is in play, this Unit gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "REPAIR",
+          "value": 1,
+          "condition": "While a friendly white Base is in play"
+        }
+      ],
+      "condition_description": "While a friendly white Base is in play, this Unit gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)"
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); While a friendly white Base is in play, this Unit gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "card_id": "GD02-044",
+  "effects": [
+    {
+      "effect_id": "GD02-044-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "New UNE",
+            "(New UNE"
+          ],
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 1
+        },
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "New UNE",
+            "(New UNE"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Destroyed\u3011If you have another (New UNE) Unit in play, deploy 1 rested [Daughtress]((New UNE)\uff65AP0\uff65HP1) Unit token.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

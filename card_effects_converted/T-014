@@ -1,0 +1,28 @@
+{
+  "card_id": "T-014",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "T-014-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "This Unit can't be set as active or paired with a Pilot.",
+      "modifiers": [
+        {
+          "type": "RESTRICTION",
+          "restriction_type": "CANNOT_BE_ACTIVE"
+        },
+        {
+          "type": "RESTRICTION",
+          "restriction_type": "CANNOT_BE_PAIRED"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "This Unit can't be set as active or paired with a Pilot.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT TOKEN"
+  }
+}

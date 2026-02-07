@@ -1,0 +1,70 @@
+{
+  "card_id": "ST07-001",
+  "effects": [
+    {
+      "effect_id": "ST07-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_END_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "traits": [
+            "CB"
+          ],
+          "operator": ">=",
+          "value": 7
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "FRIENDLY_RESOURCE",
+            "count": 1,
+            "selection_method": "CHOOSE"
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "ST07-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_MILLED_TRAITS",
+          "traits": [
+            "CB"
+          ],
+          "count": ">=1"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MILL",
+          "target": "SELF",
+          "amount": 2,
+          "destination": "TRASH"
+        },
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "At the end of your turn, if there are 7 or more (CB) cards in your trash, choose 1 of your Resources. Set it as active.; \u3010When Paired\u3011Place the top 2 cards of your deck into your trash. If you place a (CB) card with this effect, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

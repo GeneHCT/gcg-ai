@@ -1,0 +1,34 @@
+{
+  "card_id": "GD03-005",
+  "effects": [
+    {
+      "effect_id": "GD03-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "REPAIR",
+      "value": 1,
+      "description": "At the end of your turn, this Unit recovers the specified number of HP."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.); \u3010Deploy\u3011Draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

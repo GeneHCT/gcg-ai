@@ -1,0 +1,28 @@
+{
+  "card_id": "GD01-027",
+  "effects": [
+    {
+      "effect_id": "GD01-027-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BREACH",
+      "value": 4,
+      "description": "When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); \u3010Deploy\u3011If there are 10 or more (Zeon)/(Neo Zeon) Unit cards in your trash, deal 4 damage to all Units with <Blocker>.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

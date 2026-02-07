@@ -1,0 +1,45 @@
+{
+  "card_id": "GD01-043",
+  "effects": [
+    {
+      "effect_id": "GD01-043-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 4
+              },
+              "state": "ACTIVE"
+            }
+          },
+          "target_restrictions": {
+            "ap": {
+              "operator": "<=",
+              "value": 4
+            }
+          },
+          "duration": "THIS_TURN",
+          "description": "Can choose additional units as attack targets"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011Choose 1 of your green Units. During this turn, it may choose an active enemy Unit with 4 or less AP as its attack target.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

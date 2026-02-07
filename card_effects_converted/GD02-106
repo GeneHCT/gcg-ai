@@ -1,0 +1,49 @@
+{
+  "card_id": "GD02-106",
+  "effects": [
+    {
+      "effect_id": "GD02-106-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE",
+        "DURING_BATTLE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": "SELF_SHIELDS",
+          "protection_type": "PREVENT_DAMAGE",
+          "source_filter": {
+            "level": {
+              "operator": "<=",
+              "value": 3
+            }
+          },
+          "duration": "THIS_BATTLE"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-106-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Woolf Enneacle'",
+      "pilot_name": "Woolf Enneacle",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Earth Federation"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Action\u3011During this battle, your shield area cards can't receive damage from enemy Units that are Lv.3 or lower.; \u3010Pilot\u3011[Woolf Enneacle]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

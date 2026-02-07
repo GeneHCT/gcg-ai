@@ -10,6 +10,7 @@ from typing import TextIO, Optional
 
 from simulator.game_manager import GameManager, TurnManager, Phase, GameResult
 from simulator.random_agent import RandomAgent, LegalActionGenerator, ActionExecutor, Action, ActionType
+from simulator.effect_integration import EffectIntegration, patch_turn_manager
 
 
 class GameLogger:
@@ -257,6 +258,12 @@ def run_simulation(log_filename: str = "game_simulation.log",
     # Open log file
     with open(log_filename, 'w') as log_file:
         logger = GameLogger(log_file)
+        
+        # Initialize effect system
+        logger.log("Initializing effect system...")
+        EffectIntegration.initialize()
+        patch_turn_manager()
+        logger.log("")
         
         # Create game manager
         manager = GameManager(seed=seed)

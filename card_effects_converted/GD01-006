@@ -1,0 +1,26 @@
+{
+  "card_id": "GD01-006",
+  "effects": [],
+  "keywords": [
+    {
+      "keyword": "REPAIR",
+      "value": 1,
+      "description": "At the end of your turn, this Unit recovers the specified number of HP."
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-006-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Link\u3011This Unit gets HP+1.",
+      "modifiers": []
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.); \u3010During Link\u3011This Unit gets HP+1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

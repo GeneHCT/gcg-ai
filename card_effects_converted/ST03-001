@@ -1,0 +1,54 @@
+{
+  "card_id": "ST03-001",
+  "effects": [
+    {
+      "effect_id": "ST03-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROY_UNIT_WITH_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "turn_owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT"
+          },
+          "amount": 2,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST03-001-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Pair\u3011This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\u3011This Unit gains <High-Maneuver>. (This Unit can't be blocked.); During your turn, when this Unit destroys an enemy shield area card with battle damage, choose 1 enemy Unit. Deal 2 damage to it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "card_id": "ST07-005",
+  "effects": [
+    {
+      "effect_id": "ST07-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROY_UNIT_WITH_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "turn_owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "selector": "SELF"
+          },
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST07-005-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Link\u3011This Unit gets AP+2.",
+      "modifiers": []
+    }
+  ],
+  "metadata": {
+    "original_text": "During your turn, when this Unit destroys an enemy Unit with battle damage, this Unit recovers 2 HP.; \u3010During Link\u3011This Unit gets AP+2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

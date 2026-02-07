@@ -1,0 +1,44 @@
+{
+  "card_id": "GD03-018",
+  "effects": [
+    {
+      "effect_id": "GD03-018-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "keywords": [
+                "BLOCKER"
+              ]
+            }
+          },
+          "amount": 5,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BREACH",
+      "value": 5,
+      "description": "When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 5> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); \u3010Attack\u3011Choose 1 enemy Unit with <Blocker>. Deal 5 damage to it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

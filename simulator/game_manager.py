@@ -80,7 +80,7 @@ class Player:
     battle_area: List[UnitInstance] = field(default_factory=list)
     resource_area: List[Card] = field(default_factory=list)
     shield_area: List[Card] = field(default_factory=list)
-    bases: List[EXBase] = field(default_factory=list)
+    bases: List = field(default_factory=list)  # Can be EXBase or BaseInstance
     trash: List[Card] = field(default_factory=list)
     banished: List[Card] = field(default_factory=list)
     
@@ -358,9 +358,9 @@ class TurnManager:
         game_state.current_phase = Phase.START
         player = game_state.players[game_state.turn_player]
         
-        # Reset all units to active
-        for unit in player.battle_area:
-            unit.is_rested = False
+        # Reset all units, resources, and bases to active using RestManager
+        from simulator.rest_mechanics import RestManager
+        RestManager.reset_all_cards(game_state, game_state.turn_player)
         
         # Reset per-turn counters
         player.cards_drawn_this_turn = 0

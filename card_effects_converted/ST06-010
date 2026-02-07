@@ -1,0 +1,51 @@
+{
+  "card_id": "ST06-010",
+  "effects": [
+    {
+      "effect_id": "ST06-010-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    },
+    {
+      "effect_id": "ST06-010-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK",
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Clan"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; \u3010During Link\u3011\u3010Attack\u3011If you have a (Clan) Unit in play, look at the top card of your deck. Return it to the top or bottom of your deck.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

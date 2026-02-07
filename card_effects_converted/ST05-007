@@ -1,0 +1,46 @@
+{
+  "card_id": "ST05-007",
+  "effects": [
+    {
+      "effect_id": "ST05-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          },
+          "stat": "AP",
+          "value": -2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "BLOCKER",
+      "value": null,
+      "description": "Rest this Unit to change the attack target to it."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); \u3010When Paired\u3011Choose 1 enemy Unit that is Lv.3 or lower. It gets AP-2 during this turn.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

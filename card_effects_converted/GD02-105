@@ -1,0 +1,36 @@
+{
+  "card_id": "GD02-105",
+  "effects": [
+    {
+      "effect_id": "GD02-105-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD02-105-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Xavier Olivette'",
+      "pilot_name": "Xavier Olivette",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Zeon",
+          "Newtype"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Action\u3011Choose 1 of your Unit tokens. It can't receive battle damage from enemy Units during this battle.; \u3010Pilot\u3011[Xavier Olivette]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

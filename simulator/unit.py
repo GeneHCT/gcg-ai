@@ -79,11 +79,22 @@ class UnitInstance:
     
     @property
     def is_linked(self) -> bool:
-        """Check if unit is linked with appropriate pilot"""
+        """
+        Check if unit is linked with appropriate pilot.
+        
+        A unit is LINKED when:
+        1. It has a paired pilot, AND
+        2. The pilot satisfies the unit's link conditions
+        
+        Linking is separate from pairing - any pilot can pair,
+        but only pilots meeting link conditions create a Link Unit.
+        """
         if not self.paired_pilot:
             return False
-        # Check if pilot name matches link requirements
-        return self.paired_pilot.card_data.name in self.card_data.link
+        
+        # Use LinkManager to check if pilot satisfies link conditions
+        from simulator.link_system import LinkManager
+        return LinkManager.check_link_condition(self.card_data, self.paired_pilot.card_data)
     
     def has_keyword(self, keyword: str) -> bool:
         """Check if unit has a specific keyword"""

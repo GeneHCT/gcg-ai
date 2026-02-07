@@ -1,0 +1,32 @@
+{
+  "card_id": "GD02-011",
+  "effects": [
+    {
+      "effect_id": "GD02-011-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_ACTION"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "amount": 6,
+          "damage_type": "EFFECT"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Activate\uff65Action\u3011Destroy this Unit\uff1aChoose 1 enemy Base/enemy Shield this Unit is battling. Deal 6 damage to it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

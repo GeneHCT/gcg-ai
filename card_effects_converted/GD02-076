@@ -1,0 +1,41 @@
+{
+  "card_id": "GD02-076",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-076-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null,
+          "condition": "While this Unit has 5 or more AP"
+        }
+      ],
+      "condition_description": "While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "operator": ">=",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

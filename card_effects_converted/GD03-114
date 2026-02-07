@@ -1,0 +1,55 @@
+{
+  "card_id": "GD03-114",
+  "effects": [
+    {
+      "effect_id": "GD03-114-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST",
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD03-114-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "operator": ">=",
+          "value": 10
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 2
+              },
+              "state": "ACTIVE"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Activate this card's \u3010Action\u3011.; \u3010Action\u3011Choose 1 active enemy Unit that is Lv.2 or lower. Destroy it. If there are 10 or more cards in your trash, choose 1 active enemy Unit that is Lv.4 or lower instead.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

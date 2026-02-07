@@ -1,0 +1,43 @@
+{
+  "card_id": "GD01-004",
+  "effects": [
+    {
+      "effect_id": "GD01-004-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "REPAIR",
+      "value": 1,
+      "description": "At the end of your turn, this Unit recovers the specified number of HP."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.); \u3010When Paired\u3011Choose 1 enemy Unit with 2 or less HP. Rest it.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

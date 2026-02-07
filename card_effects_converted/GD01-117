@@ -1,0 +1,46 @@
+{
+  "card_id": "GD01-117",
+  "effects": [
+    {
+      "effect_id": "GD01-117-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST",
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD01-117-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Activate this card's \u3010Main\u3011.; \u3010Main\u3011/\u3010Action\u3011Choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

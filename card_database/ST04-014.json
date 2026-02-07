@@ -2,8 +2,7 @@
   "Name": "The Magic Bullet of Dusk",
   "ID": "ST04-014",
   "Effect": [
-    "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn.",
-    "(While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
     "【Pilot】[Miguel Ayman]"
   ],
   "Color": "Red",

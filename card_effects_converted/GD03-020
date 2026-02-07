@@ -1,0 +1,41 @@
+{
+  "card_id": "GD03-020",
+  "effects": [
+    {
+      "effect_id": "GD03-020-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "traits": [
+            "Cyclops Team"
+          ],
+          "operator": ">=",
+          "value": 4
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-020-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "While you have a Unit with \"Ad Balloon\" in its card name in play, this Unit can't receive enemy battle damage.",
+      "modifiers": [],
+      "condition_description": "While you have a Unit with \"Ad Balloon\" in its card name in play, this Unit can't receive enemy battle damage."
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Paired\u3011If there are 4 or more (Cyclops Team) cards in your trash, deploy 2 rested [Ad Balloon]((Civilian)\uff65AP0\uff65HP1\uff65This Unit can't be set as active or paired with a Pilot) Unit tokens.; While you have a Unit with \"Ad Balloon\" in its card name in play, this Unit can't receive enemy battle damage.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

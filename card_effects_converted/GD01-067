@@ -1,0 +1,21 @@
+{
+  "card_id": "GD01-067",
+  "effects": [
+    {
+      "effect_id": "GD01-067-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Paired\u3011Choose 1 Command card that is Lv.5 or lower from your trash. Add it to your hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

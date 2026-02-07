@@ -1,0 +1,28 @@
+{
+  "card_id": "ST01-001",
+  "effects": [
+    {
+      "effect_id": "ST01-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "REPAIR",
+      "value": 2,
+      "description": "At the end of your turn, this Unit recovers the specified number of HP."
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.); \u3010During Pair\u3011During your turn, all your Units get AP+1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

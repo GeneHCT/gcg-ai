@@ -1,0 +1,28 @@
+{
+  "card_id": "GD03-008",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-008-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Pair\u3011This Unit gains <Repair 2>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "REPAIR",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\u3011This Unit gains <Repair 2>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "card_id": "GD03-107",
+  "effects": [
+    {
+      "effect_id": "GD03-107-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD03-107-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Hardie Steiner'",
+      "pilot_name": "Hardie Steiner",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "Zeon",
+          "Cyclops Team"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 enemy Unit that is Lv.5 or lower. Deal damage to it equal to the number of friendly Unit tokens in play.; \u3010Pilot\u3011[Hardie Steiner]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

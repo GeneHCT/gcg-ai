@@ -1,0 +1,61 @@
+{
+  "card_id": "GD01-112",
+  "effects": [
+    {
+      "effect_id": "GD01-112-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE"
+            }
+          },
+          "amount": 3,
+          "damage_type": "EFFECT"
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "GD01-112-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Loni Garvey'",
+      "pilot_name": "Loni Garvey",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Zeon",
+          "Newtype"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.; \u3010Pilot\u3011[Loni Garvey]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

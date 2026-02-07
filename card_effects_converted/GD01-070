@@ -1,0 +1,29 @@
+{
+  "card_id": "GD01-070",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-070-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While there are 4 or more Command cards in your trash, this card in your hand gets cost -2.",
+      "modifiers": [
+        {
+          "type": "MODIFY_COST",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": -2,
+          "condition": "While there are 4 or more Command cards in your trash"
+        }
+      ],
+      "condition_description": "While there are 4 or more Command cards in your trash, this card in your hand gets cost -2."
+    }
+  ],
+  "metadata": {
+    "original_text": "While there are 4 or more Command cards in your trash, this card in your hand gets cost -2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

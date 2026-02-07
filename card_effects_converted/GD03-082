@@ -1,0 +1,29 @@
+{
+  "card_id": "GD03-082",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-082-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While you have 2 or more (Superpower Bloc)/(UN) Units in play, this card in your hand gets cost -1.",
+      "modifiers": [
+        {
+          "type": "MODIFY_COST",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": -1,
+          "condition": "While you have 2 or more (Superpower Bloc)/(UN) Units in play"
+        }
+      ],
+      "condition_description": "While you have 2 or more (Superpower Bloc)/(UN) Units in play, this card in your hand gets cost -1."
+    }
+  ],
+  "metadata": {
+    "original_text": "While you have 2 or more (Superpower Bloc)/(UN) Units in play, this card in your hand gets cost -1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

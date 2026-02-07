@@ -1,0 +1,37 @@
+{
+  "card_id": "GD03-037",
+  "effects": [
+    {
+      "effect_id": "GD03-037-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED",
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_UNIT_STATE",
+          "state": "ATTACKING"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "FIRST",
+          "value": null,
+          "duration": "PERMANENT"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011During your turn, while this Unit is battling an enemy Unit with a \u3010Destroyed\u3011 effect, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

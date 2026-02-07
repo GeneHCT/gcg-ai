@@ -1,0 +1,21 @@
+{
+  "card_id": "GD03-048",
+  "effects": [
+    {
+      "effect_id": "GD03-048-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011If there are 3 or less enemy Shields, deploy 1 rested [GFreD]((Zeon)\uff65AP4\uff65HP3) Unit token.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

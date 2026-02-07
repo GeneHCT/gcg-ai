@@ -1,0 +1,28 @@
+{
+  "card_id": "GD03-040",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-040-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "\u3010During Link\u3011This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

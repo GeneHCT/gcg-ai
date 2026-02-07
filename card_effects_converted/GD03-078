@@ -1,0 +1,22 @@
+{
+  "card_id": "GD03-078",
+  "effects": [
+    {
+      "effect_id": "GD03-078-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED",
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Link\u3011\u3010Destroyed\u3011Return the card paired with this Unit to your hand.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

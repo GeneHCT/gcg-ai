@@ -1,0 +1,29 @@
+{
+  "card_id": "GD01-102",
+  "effects": [
+    {
+      "effect_id": "GD01-102-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "selector": "SELF"
+          },
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011All friendly Units that are Lv.4 or lower recover 2 HP.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

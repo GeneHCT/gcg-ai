@@ -1,0 +1,47 @@
+{
+  "card_id": "GD03-024",
+  "effects": [
+    {
+      "effect_id": "GD03-024-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Cyclops Team",
+            "(Cyclops Team"
+          ],
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 1
+        },
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Cyclops Team",
+            "(Cyclops Team"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010When Linked\u3011If you have another (Cyclops Team) Unit in play, deploy 1 rested [Hy-Gogg]((Cyclops Team)\uff65AP2\uff65HP1) Unit token.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

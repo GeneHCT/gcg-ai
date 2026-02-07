@@ -1,0 +1,59 @@
+{
+  "card_id": "GD01-001",
+  "effects": [
+    {
+      "effect_id": "GD01-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-001-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "All your (White Base Team) Units gain <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "White Base Team"
+              ]
+            }
+          },
+          "keyword": "REPAIR",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "All your (White Base Team) Units gain <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.); \u3010When Paired\u3011If you have 2 or more other Units in play, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

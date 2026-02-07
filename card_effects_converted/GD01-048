@@ -1,0 +1,37 @@
+{
+  "card_id": "GD01-048",
+  "effects": [
+    {
+      "effect_id": "GD01-048-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD01-048-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": []
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "SUPPORT",
+      "value": 1,
+      "description": null
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Activate\uff65Main\u3011<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.); \u3010Deploy\u3011Look at the top card of your deck. If it is a (Zeon)/(Neo Zeon) Unit card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

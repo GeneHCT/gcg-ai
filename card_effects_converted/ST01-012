@@ -1,0 +1,50 @@
+{
+  "card_id": "ST01-012",
+  "effects": [
+    {
+      "effect_id": "ST01-012-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
+        }
+      ]
+    },
+    {
+      "effect_id": "ST01-012-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Hayato Kobayashi'",
+      "pilot_name": "Hayato Kobayashi",
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 1,
+        "original_type": "COMMAND",
+        "traits": [
+          "Earth Federation",
+          "White Base Team"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011Choose 1 rested enemy Unit. Deal 1 damage to it.; \u3010Pilot\u3011[Hayato Kobayashi]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "card_id": "GD02-070",
+  "effects": [
+    {
+      "effect_id": "GD02-070-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "traits": [
+            "Gjallarhorn"
+          ],
+          "operator": ">=",
+          "value": 4
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 2,
+          "conditional_actions": [
+            {
+              "type": "DISCARD",
+              "target": "SELF",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Deploy\u3011If there are 4 or more (Gjallarhorn) cards in your trash, draw 2. If you do, discard 2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

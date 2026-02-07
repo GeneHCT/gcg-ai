@@ -1,0 +1,62 @@
+{
+  "card_id": "GD02-086",
+  "effects": [
+    {
+      "effect_id": "GD02-086-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-086-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "While you have another (Titans) Unit in play, this gets AP+1.",
+      "modifiers": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 1,
+          "condition": "While you have another (Titans) Unit in play"
+        }
+      ],
+      "condition_description": "While you have another (Titans) Unit in play, this gets AP+1.",
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "Titans"
+          ],
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; While you have another (Titans) Unit in play, this gets AP+1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

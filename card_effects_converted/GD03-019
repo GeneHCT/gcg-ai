@@ -1,0 +1,36 @@
+{
+  "card_id": "GD03-019",
+  "effects": [
+    {
+      "effect_id": "GD03-019-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD03-019-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "resource_type": "EX",
+          "state": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\u3011Enemy Units choose this rested Unit as their attack target if possible when attacking.; \u3010When Linked\u3011Place 1 EX Resource.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

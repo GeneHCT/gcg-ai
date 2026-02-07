@@ -1,0 +1,28 @@
+{
+  "card_id": "ST04-009",
+  "effects": [
+    {
+      "effect_id": "ST04-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED",
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010During Pair\u3011\u3010Destroyed\u3011If you have another Link Unit in play, draw 1.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

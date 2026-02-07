@@ -1,0 +1,48 @@
+{
+  "card_id": "GD02-114",
+  "effects": [
+    {
+      "effect_id": "GD02-114-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "FRIENDLY_UNIT"
+          },
+          "stat": "AP",
+          "value": 2,
+          "duration": "THIS_TURN"
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-114-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Norba Shino'",
+      "pilot_name": "Norba Shino",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Tekkadan",
+          "Alaya-Vijnana"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Main\u3011/\u3010Action\u3011Choose 1 damaged friendly Unit. It gets AP+2 during this turn.; \u3010Pilot\u3011[Norba Shino]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

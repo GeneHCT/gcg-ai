@@ -1,0 +1,30 @@
+{
+  "card_id": "ST07-004",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "ST07-004-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "While you have a (CB) Pilot in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null,
+          "condition": "While you have a (CB) Pilot in play"
+        }
+      ],
+      "condition_description": "While you have a (CB) Pilot in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+    }
+  ],
+  "metadata": {
+    "original_text": "While you have a (CB) Pilot in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

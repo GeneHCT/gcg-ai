@@ -1,0 +1,31 @@
+{
+  "card_id": "GD01-059",
+  "effects": [
+    {
+      "effect_id": "GD01-059-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 2,
+          "duration": "THIS_BATTLE"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Attack\u3011If you are attacking the enemy player, this Unit gets AP+2 during this battle.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

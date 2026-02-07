@@ -1,0 +1,19 @@
+{
+  "card_id": "GD02-018",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-018-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "This Unit can't choose the enemy player as its attack target.",
+      "modifiers": []
+    }
+  ],
+  "metadata": {
+    "original_text": "This Unit can't choose the enemy player as its attack target.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "UNIT"
+  }
+}

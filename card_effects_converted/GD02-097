@@ -1,0 +1,48 @@
+{
+  "card_id": "GD02-097",
+  "effects": [
+    {
+      "effect_id": "GD02-097-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          },
+          "source": "SHIELDS"
+        }
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-097-E2",
+      "effect_type": "CONTINUOUS",
+      "description": "While there is a friendly white Base in play, this Unit gets AP+2.",
+      "modifiers": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "stat": "AP",
+          "value": 2,
+          "condition": "While there is a friendly white Base in play"
+        }
+      ],
+      "condition_description": "While there is a friendly white Base in play, this Unit gets AP+2."
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Add this card to your hand.; While there is a friendly white Base in play, this Unit gets AP+2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "PILOT"
+  }
+}

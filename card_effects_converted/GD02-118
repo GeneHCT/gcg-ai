@@ -1,0 +1,53 @@
+{
+  "card_id": "GD02-118",
+  "effects": [
+    {
+      "effect_id": "GD02-118-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "count": 1,
+            "selection_method": "CHOOSE",
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              },
+              "keywords": [
+                "BLOCKER"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "effect_id": "GD02-118-E2",
+      "effect_type": "PILOT_ABILITY",
+      "description": "This card can be played as a Pilot named 'Ein Dalton'",
+      "pilot_name": "Ein Dalton",
+      "pilot_stats": {
+        "ap": 1,
+        "hp": 0,
+        "original_type": "COMMAND",
+        "traits": [
+          "Gjallarhorn"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Action\u3011Choose 1 enemy Unit with 4 or less HP battling a friendly Unit with <Blocker>. Return it to its owner's hand.; \u3010Pilot\u3011[Ein Dalton]",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

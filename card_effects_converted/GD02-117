@@ -1,0 +1,41 @@
+{
+  "card_id": "GD02-117",
+  "effects": [
+    {
+      "effect_id": "GD02-117-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD02-117-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 3
+        },
+        {
+          "type": "DISCARD",
+          "target": "SELF",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Choose 1 (AEUG) Base card from your trash. Add it to your hand.; \u3010Main\u3011Draw 3. Then, discard 2.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

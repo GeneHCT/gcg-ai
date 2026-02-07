@@ -1,0 +1,42 @@
+{
+  "card_id": "GD02-103",
+  "effects": [
+    {
+      "effect_id": "GD02-103-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "effect_id": "GD02-103-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "traits": [
+            "AGE System"
+          ],
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "metadata": {
+    "original_text": "\u3010Burst\u3011Choose 1 (Asuno Family) Pilot card from your trash. Add it to your hand.; \u3010Main\u3011If you have an (AGE System) Unit in play, place 1 EX Resource.",
+    "complexity_score": 2,
+    "parsing_version": "1.1",
+    "last_updated": "2026-02-08",
+    "card_type": "COMMAND"
+  }
+}

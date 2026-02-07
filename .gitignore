@@ -4,49 +4,31 @@ __pycache__/
 *$py.class
 *.so
 .Python
-venv/
-env/
-ENV/
 *.egg-info/
 dist/
 build/
 
-# IDEs
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
+# Game simulation logs
 *.log
-nohup.out
+game_simulation*.log
+game_*.log
+
+# macOS
+.DS_Store
 
 # Testing
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Jupyter
-.ipynb_checkpoints/
-
-# Selenium/Browser
-*.png
-*.jpg
-*.jpeg
-chromedriver
-geckodriver
-.wdm/
-
-# Temporary scraping files
-card_ids*.json
-test_*.json
-
-# Temporary files
-tmp/
-temp/
-*.tmp
+# Virtual environments
+venv/
+env/
+ENV/

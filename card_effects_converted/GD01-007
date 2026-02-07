@@ -1,0 +1,21 @@
+{
+  "trigger": "ON_DESTROYED",
+  "conditions": [
+    {
+      "type": "COUNT_CARDS",
+      "zone": "BATTLE_AREA",
+      "owner": "SELF",
+      "traits": ["OZ"],
+      "exclude_self": true,
+      "operator": ">=",
+      "value": 1
+    }
+  ],
+  "actions": [
+    {
+      "type": "DRAW",
+      "target": "SELF",
+      "amount": 1
+    }
+  ]
+}

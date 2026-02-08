@@ -47,6 +47,13 @@ class EXBase:
     hp: int = 3
     current_hp: int = 3
     owner_id: int = 0
+    is_rested: bool = False
+    
+    def __init__(self, owner_id: int = 0):
+        """Initialize EX Base"""
+        self.owner_id = owner_id
+        self.is_rested = False
+        self.current_hp = 3
     
     def take_damage(self, amount: int) -> bool:
         """
@@ -54,6 +61,14 @@ class EXBase:
         """
         self.current_hp -= amount
         return self.current_hp <= 0
+    
+    def rest(self):
+        """Rest this base"""
+        self.is_rested = True
+    
+    def set_active(self):
+        """Set this base to active"""
+        self.is_rested = False
     
     def to_feature_vector(self) -> np.ndarray:
         """Convert to feature vector for RL"""
@@ -87,14 +102,29 @@ class Player:
     # Special resources
     ex_resources: int = 0
     
+    # Resource state tracking (for rested/active)
+    _rested_resource_indices: set = field(default_factory=set)
+    
     # State tracking
     cards_drawn_this_turn: int = 0
     units_deployed_this_turn: int = 0
     
-    def get_active_resources(self) -> int:
-        """Get count of active (untapped) resources"""
-        # For now, all resources are active (we'll add rested state later)
-        return len(self.resource_area)
+    def get_active_resources(self, game_state: Optional['GameState'] = None) -> int:
+        """
+        Get count of active (untapped) resources.
+        
+        Args:
+            game_state: Game state (required for accurate count with ResourceManager)
+            
+        Returns:
+            Number of active resources
+        """
+        if game_state is None:
+            # Fallback: assume all resources are active
+            return len(self.resource_area)
+        
+        from simulator.resource_manager import ResourceManager
+        return ResourceManager.count_active_resources(game_state, self.player_id)
     
     def get_total_resources(self) -> int:
         """Get total resource count (for Lv condition)"""
@@ -152,6 +182,11 @@ class GameState:
     battle_attacker: Optional[UnitInstance] = None
     battle_defender: Optional[UnitInstance] = None
     battle_phase: Optional[BattlePhase] = None
+    
+    # Action step tracking (NEW)
+    in_action_step: bool = False  # True during action steps
+    action_step_priority_player: int = 0  # Player with current priority
+    action_step_consecutive_passes: int = 0  # Track passes for ending
     
     # Game state
     game_result: GameResult = GameResult.ONGOING
@@ -362,6 +397,10 @@ class TurnManager:
         from simulator.rest_mechanics import RestManager
         RestManager.reset_all_cards(game_state, game_state.turn_player)
         
+        # Reset all resources to active using ResourceManager
+        from simulator.resource_manager import ResourceManager
+        ResourceManager.reset_all_resources(game_state, game_state.turn_player)
+        
         # Reset per-turn counters
         player.cards_drawn_this_turn = 0
         player.units_deployed_this_turn = 0
@@ -559,7 +598,7 @@ class ObservationGenerator:
         # Resources (count and features)
         obs['my_resources'] = np.array([
             float(player.get_total_resources()),
-            float(player.get_active_resources()),
+            float(player.get_active_resources(game_state)),
             float(player.ex_resources),
             float(len(player.resource_area)),
         ], dtype=np.float32)
@@ -593,7 +632,7 @@ class ObservationGenerator:
         # Opponent resources
         obs['opp_resources'] = np.array([
             float(opponent.get_total_resources()),
-            float(opponent.get_active_resources()),
+            float(opponent.get_active_resources(game_state)),
             float(opponent.ex_resources),
         ], dtype=np.float32)
         

@@ -30,6 +30,13 @@ class ActionExecutor:
             # Check for conditional_next
             if "conditional_next" in action:
                 ActionExecutor._handle_conditional_next(context, action, result)
+            
+            # Check for conditional_actions (If you do) - run if primary succeeded
+            if "conditional_actions" in action:
+                if "No valid" not in result and "failed" not in result.lower():
+                    for cond_action in action["conditional_actions"]:
+                        cond_result = ActionExecutor.execute(context, cond_action)
+                        results.append(cond_result)
         
         return results
     
@@ -103,7 +110,8 @@ class ActionExecutor:
         elif action_type == "GRANT_ATTACK_TARGETING":
             return ActionExecutor._execute_grant_attack_targeting(context, action)
         
-        # Add more action types as needed
+        elif action_type == "DISCARD":
+            return ActionExecutor._execute_discard(context, action)
         
         return f"Unknown action type: {action_type}"
     
@@ -136,6 +144,39 @@ class ActionExecutor:
                 break
         
         return f"Player {player_id} drew {drawn} card(s)"
+    
+    @staticmethod
+    def _execute_discard(context: EffectContext, action: Dict) -> str:
+        """
+        Execute DISCARD action - place cards from hand into trash.
+        Per gamerules 5-11: Discard = placing a card from the hand into the trash.
+        """
+        target = action.get("target", "SELF")
+        amount = action.get("amount", 1)
+        
+        if target == "SELF":
+            player_id = context.source_player_id
+        else:
+            player_id = 1 - context.source_player_id
+        
+        game_state = context.game_state
+        player = game_state.players[player_id]
+        
+        # Clamp amount to hand size
+        to_discard = min(amount, len(player.hand))
+        if to_discard <= 0:
+            return f"Player {player_id} has no cards to discard"
+        
+        # Move cards from hand to trash (take from end - no agent for "choose")
+        discarded = []
+        for _ in range(to_discard):
+            if player.hand:
+                card = player.hand.pop(-1)
+                player.trash.append(card)
+                name = card.name if hasattr(card, 'name') else getattr(card, 'id', str(card))
+                discarded.append(name)
+        
+        return f"Player {player_id} discarded {len(discarded)} card(s)"
     
     @staticmethod
     def _execute_damage_unit(context: EffectContext, action: Dict) -> str:
@@ -626,8 +667,11 @@ class ActionExecutor:
         
         # Check if can pay cost
         if pay_cost:
-            if player.get_active_resources() < selected_card.cost:
+            from simulator.resource_manager import ResourceManager
+            if not ResourceManager.can_pay_cost(context.game_state, player.player_id, selected_card.cost):
                 return f"Cannot pay cost of {selected_card.cost}"
+            # Pay the cost
+            ResourceManager.pay_cost(context.game_state, player.player_id, selected_card.cost)
         
         # Remove from source zone
         zone.remove(selected_card)

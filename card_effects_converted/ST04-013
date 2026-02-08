@@ -5,6 +5,7 @@
       "effect_id": "ST04-013-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
+        "MAIN_PHASE",
         "ACTION_PHASE"
       ],
       "conditions": [],

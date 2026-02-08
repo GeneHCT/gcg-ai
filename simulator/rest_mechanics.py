@@ -228,25 +228,35 @@ class RestCostManager:
     """
     
     @staticmethod
-    def can_pay_rest_cost(player: 'Player', cost: int) -> bool:
+    def can_pay_rest_cost(player: 'Player', cost: int, game_state: 'GameState' = None) -> bool:
         """
         Check if player can pay a cost by resting resources.
+        
+        DEPRECATED: Use ResourceManager.can_pay_cost() instead.
         
         Args:
             player: Player to check
             cost: Cost to pay
+            game_state: Game state (required for accurate check)
             
         Returns:
             True if player has enough active resources
         """
-        # Count active resources (in current implementation, all are active unless spent)
-        active_resources = player.get_active_resources()
-        return active_resources >= cost
+        if game_state is None:
+            # Fallback to old behavior
+            active_resources = player.get_active_resources()
+            return active_resources >= cost
+        
+        # Use ResourceManager for accurate check
+        from simulator.resource_manager import ResourceManager
+        return ResourceManager.can_pay_cost(game_state, player.player_id, cost)
     
     @staticmethod
     def pay_rest_cost(game_state: 'GameState', player_id: int, cost: int) -> bool:
         """
         Pay a cost by resting resources.
+        
+        DEPRECATED: Use ResourceManager.pay_cost() instead.
         
         Args:
             game_state: Current game state
@@ -256,17 +266,9 @@ class RestCostManager:
         Returns:
             True if cost was paid successfully
         """
-        player = game_state.players[player_id]
-        
-        if not RestCostManager.can_pay_rest_cost(player, cost):
-            return False
-        
-        # In current implementation, we track this at player level
-        # Resources are "used" implicitly
-        # TODO: Add explicit rest tracking for individual resources
-        
-        print(f"  Paid cost of {cost} (rested {cost} resources)")
-        return True
+        # Delegate to ResourceManager
+        from simulator.resource_manager import ResourceManager
+        return ResourceManager.pay_cost(game_state, player_id, cost)
     
     @staticmethod
     def rest_unit_as_cost(unit: 'UnitInstance', effect_description: str = "") -> bool:

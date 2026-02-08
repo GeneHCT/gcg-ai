@@ -11,6 +11,7 @@ from typing import TextIO, Optional
 from simulator.game_manager import GameManager, TurnManager, Phase, GameResult
 from simulator.random_agent import RandomAgent, LegalActionGenerator, ActionExecutor, Action, ActionType
 from simulator.effect_integration import EffectIntegration, patch_turn_manager
+from simulator.action_step_manager import ActionStepManager
 
 
 class GameLogger:
@@ -88,7 +89,7 @@ class GameLogger:
         player = game_state.players[game_state.turn_player]
         self.log(f"Active Player: Player {game_state.turn_player}")
         self.log(f"  Hand: {len(player.hand)} cards", 1)
-        self.log(f"  Resources: {player.get_total_resources()} (Active: {player.get_active_resources()}, EX: {player.ex_resources})", 1)
+        self.log(f"  Resources: {player.get_total_resources()} (Active: {player.get_active_resources(game_state)}, EX: {player.ex_resources})", 1)
         self.log(f"  Battle Area: {len(player.battle_area)} units", 1)
         
         # Show base status
@@ -351,7 +352,7 @@ def run_simulation(log_filename: str = "game_simulation.log",
             
             # Main phase action loop
             main_phase_actions = 0
-            max_main_phase_actions = 20  # Prevent infinite loops
+            max_main_phase_actions = 50  # Prevent infinite loops, but keep sufficient moves for players
             
             while main_phase_actions < max_main_phase_actions:
                 # Get legal actions
@@ -374,14 +375,40 @@ def run_simulation(log_filename: str = "game_simulation.log",
                     # Could allow multiple passes, but let's end phase for simplicity
                     break
                 
-                # Execute action
-                game_state, result = ActionExecutor.execute_action(game_state, chosen_action)
-                logger.log_action_result(result)
-                
-                # Check win condition
-                if game_state.is_terminal():
-                    logger.log("GAME OVER after action!", 1)
-                    break
+                # Handle battle actions specially (need agent access for block/action steps)
+                if chosen_action.action_type in [ActionType.ATTACK_PLAYER, ActionType.ATTACK_UNIT]:
+                    from simulator.battlemanager import BattleManager
+                    
+                    attacker = chosen_action.unit
+                    target = "PLAYER" if chosen_action.action_type == ActionType.ATTACK_PLAYER else "UNIT"
+                    target_unit = chosen_action.target if target == "UNIT" else None
+                    
+                    # Run complete battle sequence with agent access
+                    game_state, battle_logs = BattleManager.run_complete_battle(
+                        game_state=game_state,
+                        attacker=attacker,
+                        target=target,
+                        target_unit=target_unit,
+                        agents=[agent_0, agent_1]
+                    )
+                    
+                    # Log all battle events
+                    for log in battle_logs:
+                        logger.log(f"  {log}", 1)
+                    
+                    # Check game over
+                    if game_state.is_terminal():
+                        logger.log("GAME OVER after battle!", 1)
+                        break
+                else:
+                    # Normal action execution
+                    game_state, result = ActionExecutor.execute_action(game_state, chosen_action)
+                    logger.log_action_result(result)
+                    
+                    # Check win condition
+                    if game_state.is_terminal():
+                        logger.log("GAME OVER after action!", 1)
+                        break
                 
                 main_phase_actions += 1
             
@@ -393,6 +420,48 @@ def run_simulation(log_filename: str = "game_simulation.log",
             # END PHASE
             logger.log_phase_transition(game_state, "END PHASE")
             game_state = TurnManager.end_phase(game_state)
+            
+            # ACTION STEP (Rule 9-1: during end phase)
+            logger.log(">>> Action Step (End Phase)", 1)
+            game_state = ActionStepManager.enter_action_step(game_state, is_battle=False)
+            
+            action_step_iterations = 0
+            max_action_step_iterations = 20  # Safety limit
+            
+            while action_step_iterations < max_action_step_iterations:
+                # Get legal actions for player with priority
+                legal_actions = ActionStepManager.get_action_step_legal_actions(game_state)
+                
+                priority_player_id = game_state.action_step_priority_player
+                priority_agent = agents[priority_player_id]
+                
+                logger.log(f"  Priority Player: {priority_player_id}", 2)
+                
+                # Agent chooses action
+                chosen_action = priority_agent.choose_action(game_state, legal_actions)
+                logger.log(f"  Action: {chosen_action}", 2)
+                
+                # Handle pass
+                if chosen_action.action_type == ActionType.PASS:
+                    game_state, continues = ActionStepManager.handle_action_step_action(
+                        game_state, chosen_action
+                    )
+                    
+                    if not continues:
+                        logger.log("  Both players passed - Action Step ends", 2)
+                        break
+                else:
+                    # Execute action
+                    game_state, result = ActionExecutor.execute_action(game_state, chosen_action)
+                    logger.log(f"  Result: {result}", 2)
+                    
+                    game_state, continues = ActionStepManager.handle_action_step_action(
+                        game_state, chosen_action
+                    )
+                
+                action_step_iterations += 1
+            
+            game_state = ActionStepManager.exit_action_step(game_state)
             
             # Repair
             player = game_state.players[current_player]

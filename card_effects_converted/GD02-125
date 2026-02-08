@@ -31,11 +31,6 @@
           "source": "SHIELDS"
         },
         {
-          "type": "DRAW",
-          "target": "SELF",
-          "amount": 1
-        },
-        {
           "type": "DISCARD",
           "target": "SELF",
           "amount": 1,

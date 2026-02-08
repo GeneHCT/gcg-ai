@@ -10,11 +10,6 @@
       "conditions": [],
       "actions": [
         {
-          "type": "DRAW",
-          "target": "SELF",
-          "amount": 1
-        },
-        {
           "type": "DAMAGE_UNIT",
           "target": {
             "count": 1,
@@ -22,7 +17,19 @@
             "selector": "FRIENDLY_UNIT"
           },
           "amount": 1,
-          "damage_type": "EFFECT"
+          "damage_type": "EFFECT",
+          "conditional_actions": [
+            {
+              "type": "DRAW",
+              "target": "SELF",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "type": "DISCARD",
+          "target": "SELF",
+          "amount": 1
         }
       ]
     }

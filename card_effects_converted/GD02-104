@@ -5,7 +5,7 @@
       "effect_id": "GD02-104-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "MAIN_PHASE"
       ],
       "conditions": [
         {

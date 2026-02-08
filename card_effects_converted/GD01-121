@@ -6,7 +6,7 @@
       "effect_type": "TRIGGERED",
       "triggers": [
         "BURST",
-        "ACTION_PHASE"
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": []
@@ -15,7 +15,7 @@
       "effect_id": "GD01-121-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": []

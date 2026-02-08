@@ -10,21 +10,9 @@
       "conditions": [],
       "actions": [
         {
-          "type": "DRAW",
-          "target": "SELF",
-          "amount": 1
-        },
-        {
           "type": "DISCARD",
           "target": "SELF",
-          "amount": 1,
-          "conditional_actions": [
-            {
-              "type": "DRAW",
-              "target": "SELF",
-              "amount": 1
-            }
-          ]
+          "amount": 1
         }
       ]
     }

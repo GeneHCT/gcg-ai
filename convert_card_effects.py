@@ -159,17 +159,21 @@ class CardEffectConverter:
         # Extract triggers
         triggers = self._extract_triggers(text)
         if not triggers:
-            # VALIDATION FIX: For Command cards, check if we should have a trigger
-            # Command cards with action text but no trigger likely have 【Main】or 【Action】
+            # VALIDATION FIX: For Command cards, infer trigger from 【Main】/【Action】in text
             if card_data.get("Type") == "COMMAND":
-                # If it has action-like text (Choose, Deal, Draw, etc.) it needs a trigger
                 import re
                 if re.search(r'\b(Choose|Deal|Draw|Rest|Destroy|Place|Deploy)', text):
-                    # Default to ACTION_PHASE for Command cards
-                    triggers = ["ACTION_PHASE"]
+                    has_dual = '【Main】/【Action】' in text or '【Action】/【Main】' in text
+                    if has_dual:
+                        triggers = ["MAIN_PHASE", "ACTION_PHASE"]
+                    elif re.search(r'【Main[^】]*】', text):
+                        triggers = ["MAIN_PHASE"]
+                    elif re.search(r'【Action[^】]*】', text):
+                        triggers = ["ACTION_PHASE"]
+                    else:
+                        triggers = ["ACTION_PHASE"]  # last resort
                     effect["triggers"] = triggers
                 else:
-                    # If no triggers found and no action text, might be a continuous effect we missed
                     return None
             else:
                 # If no triggers found, might be a continuous effect we missed
@@ -837,8 +841,7 @@ class CardEffectConverter:
         import re
         
         # VALIDATION FIX: Better handling for Command card triggers
-        # Command cards with 【Main】or 【Action】should have ACTION_PHASE trigger
-        # This must be checked before other trigger patterns to ensure Command cards work
+        # 【Main】maps to MAIN_PHASE, 【Action】maps to ACTION_PHASE, 【Main】/【Action】to both
         
         # FIX 1: MULTIPLE TRIGGERS PER LINE
         # Extract ALL trigger brackets from the text, not just the first one
@@ -893,6 +896,17 @@ class CardEffectConverter:
             
             # DON'T RETURN YET - check for additional triggers after this one
         
+        # IMPORTANT: Check for dual-timing pattern FIRST before individual triggers
+        # This prevents "【Main】" and "【Action】" from being added separately
+        has_dual_timing = '【Main】/【Action】' in text or '【Action】/【Main】' in text
+        
+        if has_dual_timing:
+            # Card can be played at EITHER timing, so add BOTH triggers
+            if "MAIN_PHASE" not in triggers:
+                triggers.append("MAIN_PHASE")
+            if "ACTION_PHASE" not in triggers:
+                triggers.append("ACTION_PHASE")
+        
         # FIX 1: MULTIPLE TRIGGERS - Now extract ALL standard triggers from the text
         # This handles cases like "【During Pair】【Attack】" or "【During Pair･Lv.3 or Lower Pilot】【Destroyed】"
         trigger_map = {
@@ -900,7 +914,7 @@ class CardEffectConverter:
             "【Destroyed】": "ON_DESTROYED",
             "【Attack】": "ON_ATTACK",
             "【Burst】": "BURST",
-            "【Main】": "ACTION_PHASE",
+            "【Main】": "MAIN_PHASE",
             "【Action】": "ACTION_PHASE",
             "【When Paired】": "ON_PAIRED",
             "【When Linked】": "ON_LINKED",
@@ -912,6 +926,10 @@ class CardEffectConverter:
         
         # Search for ALL trigger brackets in the text (not just the first one)
         for bracket_text, trigger_name in trigger_map.items():
+            # Skip individual 【Main】 or 【Action】 if we already handled dual-timing
+            if has_dual_timing and bracket_text in ["【Main】", "【Action】"]:
+                continue
+            
             if bracket_text in text:
                 # Only add if not already added (avoid duplicates from pilot-conditional handling above)
                 if trigger_name not in triggers:
@@ -921,13 +939,8 @@ class CardEffectConverter:
         # This helps with Command cards that may have variations in spacing or format
         if not triggers:
             if re.search(r'【Main[^】]*】', text):
-                triggers.append("ACTION_PHASE")
+                triggers.append("MAIN_PHASE")
             elif re.search(r'【Action[^】]*】', text):
-                triggers.append("ACTION_PHASE")
-        
-        # NEW: Handle 【Main】/【Action】 pattern (either/or syntax)
-        if '【Main】/【Action】' in text or '【Action】/【Main】' in text:
-            if "ACTION_PHASE" not in triggers:
                 triggers.append("ACTION_PHASE")
         
         # Check for "At the end of your turn"
@@ -1570,16 +1583,19 @@ class CardEffectConverter:
                 "type": "DEPLOY_SELF"
             })
         
-        # Draw cards
+        # Draw cards (skip if draw is inside "If you do" - handled as conditional_actions)
         if "draw" in text.lower() or "Draw" in text:
             match = re.search(r'[Dd]raw (\d+)', text)
             if match:
-                amount = int(match.group(1))
-                actions.append({
-                    "type": "DRAW",
-                    "target": "SELF",
-                    "amount": amount
-                })
+                if_you_do_pos = text.find("If you do")
+                draw_pos = match.start()
+                if if_you_do_pos == -1 or draw_pos < if_you_do_pos:
+                    amount = int(match.group(1))
+                    actions.append({
+                        "type": "DRAW",
+                        "target": "SELF",
+                        "amount": amount
+                    })
         
         # Deal damage
         if "Deal" in text and "damage" in text:
@@ -1691,19 +1707,31 @@ class CardEffectConverter:
                         "amount": int(match.group(1))
                     })
         
-        # Handle "If you do" conditional chains
-        # According to game rules 5-20-1: If the preceding action fails, the succeeding action cannot be resolved
+        # Handle "If you do" and "Then" chains
+        # Rule 5-20-1: "If you do" - succeeding only if preceding resolves
+        # Rule 5-20-2: "Then" - succeeding runs even if preceding fails
         if "If you do" in text:
-            # Split text by "If you do" to separate primary and conditional actions
             parts = text.split("If you do")
             if len(parts) == 2:
-                # Parse the conditional part
                 conditional_text = parts[1].strip().rstrip('.')
-                
-                # Check what the conditional action is
+                primary_text = parts[0].strip()
+
+                # Split by "Then," - part after "Then" always runs (Rule 5-20-2)
+                then_actions = []
+                if " Then," in conditional_text or " then," in conditional_text:
+                    then_match = re.search(r'\s+[Tt]hen,?\s*(.+)$', conditional_text)
+                    if then_match:
+                        then_part = then_match.group(1).strip()
+                        conditional_text = conditional_text[:then_match.start()].strip()
+                        discard_match = re.search(r'discard (\d+)', then_part, re.IGNORECASE)
+                        if discard_match:
+                            then_actions.append({
+                                "type": "DISCARD",
+                                "target": "SELF",
+                                "amount": int(discard_match.group(1))
+                            })
+
                 conditional_actions = []
-                
-                # Mill
                 if "place the top card of your deck into your trash" in conditional_text.lower():
                     conditional_actions.append({
                         "type": "MILL",
@@ -1711,19 +1739,7 @@ class CardEffectConverter:
                         "source": "DECK",
                         "destination": "TRASH"
                     })
-                
-                # Discard
-                elif "discard" in conditional_text.lower():
-                    match = re.search(r'discard (\d+)', conditional_text, re.IGNORECASE)
-                    if match:
-                        conditional_actions.append({
-                            "type": "DISCARD",
-                            "target": "SELF",
-                            "amount": int(match.group(1))
-                        })
-                
-                # Draw
-                elif "draw" in conditional_text.lower():
+                if "draw" in conditional_text.lower():
                     match = re.search(r'draw (\d+)', conditional_text, re.IGNORECASE)
                     if match:
                         conditional_actions.append({
@@ -1731,16 +1747,17 @@ class CardEffectConverter:
                             "target": "SELF",
                             "amount": int(match.group(1))
                         })
-                
-                # If we found conditional actions, find the action that precedes "If you do"
-                # and attach the conditional actions to it
+                if "discard" in conditional_text.lower() and not then_actions:
+                    match = re.search(r'discard (\d+)', conditional_text, re.IGNORECASE)
+                    if match:
+                        conditional_actions.append({
+                            "type": "DISCARD",
+                            "target": "SELF",
+                            "amount": int(match.group(1))
+                        })
+
                 if conditional_actions:
-                    # Find the action that was just before "If you do" in the text
-                    primary_text = parts[0].strip()
-                    
-                    # The primary action could be "you may rest this Base"
                     if "rest this base" in primary_text.lower():
-                        # Create a REST_CARD action as the primary action
                         actions.append({
                             "type": "REST_CARD",
                             "target": {"selector": "SELF"},
@@ -1748,16 +1765,20 @@ class CardEffectConverter:
                             "conditional_actions": conditional_actions
                         })
                     else:
-                        # Match actions to the primary text
                         for i in range(len(actions) - 1, -1, -1):
-                            action = actions[i]
-                            # Check if this action matches the primary text
-                            if action["type"] == "DRAW" and "draw" in primary_text.lower():
-                                action["conditional_actions"] = conditional_actions
+                            act = actions[i]
+                            if act["type"] == "DAMAGE_UNIT" and "deal" in primary_text.lower():
+                                act["conditional_actions"] = conditional_actions
                                 break
-                            elif action["type"] == "DISCARD" and "discard" in primary_text.lower():
-                                action["conditional_actions"] = conditional_actions
+                            elif act["type"] == "DRAW" and "draw" in primary_text.lower():
+                                act["conditional_actions"] = conditional_actions
                                 break
+                            elif act["type"] == "DISCARD" and "discard" in primary_text.lower():
+                                act["conditional_actions"] = conditional_actions
+                                break
+
+                for ta in then_actions:
+                    actions.append(ta)
         
         # NEW ACTIONS FOR REMAINING 18 CARDS
         

@@ -22,6 +22,7 @@
       "effect_id": "GD03-112-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
+        "MAIN_PHASE",
         "ACTION_PHASE"
       ],
       "conditions": [],

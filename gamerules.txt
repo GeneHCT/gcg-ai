@@ -69,11 +69,13 @@ Ex: If you are instructed to rest a Unit that is currently rested, since the Uni
 2-8-4. HP modifiers appear on Pilot cards and Command cards with Pilot effects.  These modifiers are added to Units when they are paired. 
 2-9. Lv. (Level) 
 2-9-1. The number of resources that are required when playing a card. This  condition is satisfied when the number of resources in your resource area is  equal to or greater than the card’s level. Whether a Resource is active or  rested makes no difference. 
-2-9-2. With the exception of Resource cards and tokens, all cards have a Lv. 2-9-3. Treat the Lv of a token as zero when referring to it. 
+2-9-2. With the exception of Resource cards and tokens, all cards have a Lv. 
+2-9-3. Treat the Lv of a token as zero when referring to it. 
 2-9-4. Treat the Lv of a player as the current number of Resources that player has  (including EX Resources) when referring to it. 
 2-10. Cost 
 2-10-1. The cost paid when playing a card. You can pay this cost by resting the  necessary number of active Resources in your resource area. 
-2-10-2. With the exception of Resource cards and tokens, all cards have a cost. 2-10-3. Treat the cost of a token as zero when referring to it. 
+2-10-2. With the exception of Resource cards and tokens, all cards have a cost.
+2-10-3. Treat the cost of a token as zero when referring to it. 
 2-11. Card Text 
 2-11-1. The specific effects that a particular card has. 
 2-11-2. Unless instructed otherwise, card text on Unit and Base cards only takes  effect in the battle or shield area. 
@@ -158,18 +160,22 @@ Ex: If you are instructed to rest a Unit that is currently rested, since the Uni
 4-4. Resource Area 
 4-4-1. This is where you place Resources from your resource deck. 
 4-4-2. You may have up to 15 Resources in your resource area. 
-4-4-2-1. You may have up to five EX Resources in your resource area. 4-4-3. Your resource area is public. Both players are free to view cards in this  location. 
+4-4-2-1. You may have up to five EX Resources in your resource area. 
+4-4-3. Your resource area is public. Both players are free to view cards in this  location. 
 4-5. Battle Area 
 4-5-1. This is where you place Units and Pilots. 
 4-5-2. Units are placed face up when they are deployed. 
-4-5-3. Pilots are placed face up beneath Units when they are paired. 4-5-4. You may have up to six Units at a time in your battle area. 
-4-5-5. Your battle area is public. Both players are free to view cards in this location. 4-6. Shield Area 
+4-5-3. Pilots are placed face up beneath Units when they are paired. 
+4-5-4. You may have up to six Units at a time in your battle area. 
+4-5-5. Your battle area is public. Both players are free to view cards in this location. 
+4-6. Shield Area 
 4-6-1. This location is checked when the player is attacked. 
 4-6-2. Within the shield area there is a section to place Shields and a section to  place a Base. 
 4-6-3. You may have up to one Base placed face up in your base section. 4-6-3-1. The base section is public. Both players are free to view cards in this  location. 
 4-6-4. The cards that become your Shields are placed face down in the shield section. 
 4-6-4-1. Your shield section is private. Unless specified otherwise, cards in  this area are placed face down and neither player is allowed to view the  contents or order of the cards, nor are they allowed to change the  order of the cards. Unless specified otherwise, when moving a card  from your shield section to a different location, choose the top card. 
-4-6-4-2. Cards in the shield section are treated as Shields with 1 HP each. 4-7. Removal Area 
+4-6-4-2. Cards in the shield section are treated as Shields with 1 HP each. 
+4-7. Removal Area 
 4-7-1. This is where you place removed cards. 
 4-7-2. Your removal area is public. Both players are free to view cards in this  location, and you are free to reorder them. 
 4-8. Hand 
@@ -277,7 +283,8 @@ Ex: If you are instructed to rest a Unit that is currently rested, since the Uni
 6-2-1-6-1. If you decide to redraw, return your entire hand to the bottom  of your deck and draw five new cards, which will become your new starting hand. Then, shuffle your deck. 
 6-2-1-7. After Player One has announced whether or not they will redraw,  Player Two may redraw according to the same rules explained in 6-2- 1-6-1 above. 
 6-2-2. Each player takes the top six cards of their deck, one at a time, and places  them face down into their shield section without looking at them. When  doing so, place each card so it overlaps the previous one, starting with the  card nearest to you. 
-6-2-3. Each player places one active EX Base token card into their base section. 6-2-4. Player Two places one active EX Resource token card into their resource area. 
+6-2-3. Each player places one active EX Base token card into their base section. 
+6-2-4. Player Two places one active EX Resource token card into their resource area. 
 6-2-5. The game begins with Player One’s turn. 
 7) Game Progression  
 7-1. Turn Flow 
@@ -341,7 +348,8 @@ Ex: If you are instructed to rest a Unit that is currently rested, since the Uni
 8-5-2-4. If there is a Base in the enemy shield area, the attacking Unit deals an  amount of battle damage equal to its AP to the Base targeted for attack. 8-5-2-4-1. Use counters to track dealt damage. A Base whose HP  becomes zero is destroyed and placed into the trash. 
 8-5-2-4-2. If the attacking Unit has <First Strike>, it deals battle damage  to the enemy Base before normal battle damage is managed. (See 12-1-5. <First Strike>) 
 8-5-3. Attack on a Unit 
-8-5-3-1. If an attack on a Unit succeeds, deal damage between the two Units. 8-5-3-2. The attacking Unit deals damage equal to its AP to the Unit targeted  for attack simultaneously as the Unit targeted for attack deals damage equal to its AP to the Attacking Unit. 
+8-5-3-1. If an attack on a Unit succeeds, deal damage between the two Units.
+8-5-3-2. The attacking Unit deals damage equal to its AP to the Unit targeted  for attack simultaneously as the Unit targeted for attack deals damage equal to its AP to the Attacking Unit. 
 8-5-3-2-1. Use counters to track dealt damage. A Unit whose HP  becomes zero is destroyed and placed into the trash. 
 8-5-3-2-2. If the attacking Unit has <First Strike>, it deals battle damage  to the enemy Unit before normal battle damage is managed. (See 13-1-5. <First Strike>) 
 8-5-3-2-3. If both battling Units are destroyed, their destruction is  treated as happening simultaneously. 
@@ -401,9 +409,11 @@ Ex: If you are instructed to rest a Unit that is currently rested, since the Uni
 10-3-1-1. If conditions are required to activate the effect, they must be  fulfilled, otherwise the effect cannot be activated. 
 10-3-1-2. Declare you are activating the effect. If the effect is on a card in your  hand and can be activated at that time, reveal the card. 
 10-3-1-3. Activate the declared effect. 
-10-3-1-4. Resolve all events which occur in response to activating the effect. 10-3-2. If the effect you wish to activate is on a Command card, present the card and perform the effect listed on it. 
+10-3-1-4. Resolve all events which occur in response to activating the effect.
+10-3-2. If the effect you wish to activate is on a Command card, present the card and perform the effect listed on it. 
 10-3-3. When a Command card is played or a triggered effect is triggered and its  effect instructs you to “choose (something)” or “you may choose  (something),” those targets are chosen at the point in time when the  instructions appear in the effect. 
-10-3-3-1. If an effect’s target cannot be chosen, that effect does not activate. 10-3-4. If the text of an effect does not specifically indicate choosing a card or  player and the effect is meant to target a card, the card generating the effect  is indicated. If the effect is meant to target a player, the player who owns the  card generating the effect is indicated. 
+10-3-3-1. If an effect’s target cannot be chosen, that effect does not activate.
+10-3-4. If the text of an effect does not specifically indicate choosing a card or player and the effect is meant to target a card, the card generating the effect  is indicated. If the effect is meant to target a player, the player who owns the  card generating the effect is indicated. 
 10-3-5. When choosing a card from the deck, confirm the top of the deck, then  choose the specified card from it. 
 11) Rules Management  
 11-1. Rules Management Fundamentals 

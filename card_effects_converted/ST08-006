@@ -9,13 +9,7 @@
         "WHILE_PAIRED"
       ],
       "conditions": [],
-      "actions": [
-        {
-          "type": "DRAW",
-          "target": "SELF",
-          "amount": 2
-        }
-      ],
+      "actions": [],
       "restrictions": {
         "once_per_turn": true
       }

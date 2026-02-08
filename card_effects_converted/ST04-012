@@ -28,7 +28,7 @@
       "effect_id": "ST04-012-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "MAIN_PHASE"
       ],
       "conditions": [
         {

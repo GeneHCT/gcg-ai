@@ -264,8 +264,9 @@ class TriggerManager:
         
         if cost_type == "RESOURCE":
             amount = cost.get("amount", 0)
-            player = game_state.players[player_id]
-            return player.get_active_resources() >= amount
+            # Use ResourceManager for accurate check
+            from simulator.resource_manager import ResourceManager
+            return ResourceManager.can_pay_cost(game_state, player_id, amount)
         
         elif cost_type == "EXILE":
             exile_req = cost.get("exile_requirements", {})
@@ -326,17 +327,13 @@ class TriggerManager:
         
         if cost_type == "RESOURCE":
             amount = cost.get("amount", 0)
-            # Rest resources
-            rested = 0
-            for resource in player.resource_area:
-                if not resource.is_rested and rested < amount:
-                    resource.is_rested = True
-                    rested += 1
+            # Use ResourceManager to pay cost
+            from simulator.resource_manager import ResourceManager
             
-            if rested < amount:
-                return f"Not enough resources ({rested}/{amount})"
-            
-            return "SUCCESS"
+            if ResourceManager.pay_cost(game_state, player_id, amount):
+                return "SUCCESS"
+            else:
+                return f"Not enough resources (need {amount})"
         
         elif cost_type == "EXILE":
             exile_req = cost.get("exile_requirements", {})

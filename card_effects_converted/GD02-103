@@ -14,7 +14,7 @@
       "effect_id": "GD02-103-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "MAIN_PHASE"
       ],
       "conditions": [
         {

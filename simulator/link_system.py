@@ -144,6 +144,10 @@ class LinkManager:
         # Pair pilot with unit
         unit.paired_pilot = pilot_instance
         
+        # Rule 3-3-8-1: Pilot AP/HP are modifiers (+1, +2, etc.) - applied via unit.ap/hp properties
+        # Rule 3-3-9-2: "Below name" text (e.g. 【During Link】AP+1 HP+1) gained by Unit while paired
+        LinkManager._apply_pilot_bonuses_to_unit(unit, pilot_card)
+        
         # Check if this creates a Link Unit
         is_linked = LinkManager.check_link_condition(unit.card_data, pilot_card)
         
@@ -166,6 +170,43 @@ class LinkManager:
                 print(f"  [Pair/Link Effect Error] {e}")
         
         return True
+    
+    @staticmethod
+    def _apply_pilot_bonuses_to_unit(unit: 'UnitInstance', pilot_card: 'Card') -> None:
+        """
+        Apply Pilot's "Unit gains" bonuses to the paired Unit.
+        Rule 3-3-9-2: Text below Pilot name is gained by the Unit while paired.
+        
+        Parses effects containing 【During Link】for AP+X and HP+Y bonuses.
+        Examples: "【During Link】This Unit gets AP+1 and HP+1"
+        """
+        if not pilot_card.effect:
+            return
+        
+        ap_bonus = 0
+        hp_bonus = 0
+        
+        for effect_str in pilot_card.effect:
+            effect_text = str(effect_str)
+            if "【During Link】" not in effect_text and "【During Pair】" not in effect_text:
+                continue
+            
+            # Parse AP+X (e.g. AP+1, AP+2)
+            ap_match = re.search(r'AP\+(\d+)', effect_text, re.IGNORECASE)
+            if ap_match:
+                ap_bonus += int(ap_match.group(1))
+            
+            # Parse HP+X (e.g. HP+1, HP+2)
+            hp_match = re.search(r'HP\+(\d+)', effect_text, re.IGNORECASE)
+            if hp_match:
+                hp_bonus += int(hp_match.group(1))
+        
+        if ap_bonus > 0:
+            unit.add_keyword("pilot_ap_bonus", ap_bonus, f"During Link from {pilot_card.name}")
+        if hp_bonus > 0:
+            unit.add_keyword("pilot_hp_bonus", hp_bonus, f"During Link from {pilot_card.name}")
+            # Also increase current_hp when max HP increases (unit "gains" HP)
+            unit.current_hp = min(unit.current_hp + hp_bonus, unit.hp)
     
     @staticmethod
     def can_link_unit_attack(unit: 'UnitInstance', current_turn: int) -> bool:
@@ -228,6 +269,11 @@ class LinkManager:
         
         pilot_card = unit.paired_pilot.card_data
         unit.paired_pilot = None
+        
+        # Remove pilot-derived bonuses (During Link AP/HP)
+        for kw in ["pilot_ap_bonus", "pilot_hp_bonus"]:
+            if kw in unit.keywords:
+                unit.remove_keyword(kw)
         
         print(f"  Unpaired pilot {pilot_card.name} from {unit.card_data.name}")
         

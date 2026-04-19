@@ -161,6 +161,13 @@ class Player:
             if card in self.hand:
                 self.hand.remove(card)
                 self.trash.append(card)
+    
+    def decide_burst_activation(self, shield_card: Any, game_state: 'GameState') -> bool:
+        """
+        Decide whether to activate a [Burst] effect when shield is destroyed.
+        Used by damage resolution. Default returns True; RL agents override via legal actions.
+        """
+        return True
 
 
 @dataclass
@@ -183,10 +190,19 @@ class GameState:
     battle_defender: Optional[UnitInstance] = None
     battle_phase: Optional[BattlePhase] = None
     
-    # Action step tracking (NEW)
+    # Action step tracking
     in_action_step: bool = False  # True during action steps
     action_step_priority_player: int = 0  # Player with current priority
     action_step_consecutive_passes: int = 0  # Track passes for ending
+    
+    # Battle sub-state (set during battle for unified get_legal_actions)
+    battle_state: Optional[Any] = None  # BattleState when in_battle
+    
+    # Burst decision (set when shield with Burst is destroyed - defender chooses)
+    pending_burst_decision: Optional[Dict[str, Any]] = None  # {"card": card, "player_id": int}
+    
+    # Current decision-maker (overrides turn_player for block/burst steps)
+    decision_player_id: Optional[int] = None
     
     # Game state
     game_result: GameResult = GameResult.ONGOING
@@ -686,10 +702,10 @@ class ObservationGenerator:
             if i < len(cards):
                 card = cards[i]
                 card_features = [
-                    float(card.level),
-                    float(card.cost),
-                    float(card.ap),
-                    float(card.hp),
+                    float(card.level if card.level is not None else 0),
+                    float(card.cost if card.cost is not None else 0),
+                    float(card.ap if card.ap is not None else 0),
+                    float(card.hp if card.hp is not None else 0),
                     # Color encoding (simplified)
                     float(card.color == 'Blue'),
                     float(card.color == 'Red'),
@@ -852,3 +868,18 @@ class GameManager:
     def is_deterministic(self) -> bool:
         """Check if game is running with deterministic seed"""
         return self.seed is not None
+    
+    def get_legal_actions(self, player_id: Optional[int] = None) -> List[Any]:
+        """
+        Get legal actions for the current decision point.
+        
+        Args:
+            player_id: Optional player ID; when None, infers from game state.
+            
+        Returns:
+            List of Action objects
+        """
+        if self.game_state is None:
+            raise ValueError("Game not set up. Call setup_game() first.")
+        from simulator.random_agent import LegalActionGenerator
+        return LegalActionGenerator.get_legal_actions(self.game_state, player_id)

@@ -4,3 +4,6 @@ lxml==5.1.0
 selenium==4.16.0
 webdriver-manager==4.0.1
 requests-html==0.10.0
+
+# Optional: for RL training
+# gymnasium>=0.29.0

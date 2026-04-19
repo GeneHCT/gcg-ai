@@ -121,6 +121,35 @@ Create `.txt` files in `decks/` folder:
 - Attack enemy units
 - End phase / Pass
 
+### Gymnasium Environment
+
+```python
+from simulator.gym_env import make_gcg_env
+
+env = make_gcg_env(seed=42)
+obs, info = env.reset()
+action_mask = info["action_mask"]  # 1 = legal, 0 = illegal
+legal_actions = info["legal_actions"]
+
+# Agent picks action index (0 to len(legal_actions)-1)
+action = 0
+obs, reward, terminated, truncated, info = env.step(action)
+```
+
+The action is an integer index into `legal_actions`. Use `action_mask` for policy masking.
+Optional: `pip install gymnasium` for `env.observation_space` and `env.action_space`.
+
+### Action Space (RL Masking)
+
+```python
+from simulator.action_space import get_legal_actions, get_action_mask, decode_action
+
+mask, legal_actions = get_action_mask(game_state, max_actions=512)
+# mask[i] = 1.0 if legal, 0.0 if illegal
+action_idx = 0  # Agent selects index
+action = decode_action(legal_actions, action_idx)
+```
+
 ### Example RL Training Loop
 
 ```python
@@ -203,6 +232,8 @@ simulator/
 ├── keyword_interpreter.py   # Keyword mechanics
 ├── unit.py                  # Unit/Card classes
 ├── random_agent.py          # Agent & actions
+├── action_space.py          # Action encode/decode for RL masking
+├── gym_env.py               # Gymnasium environment wrapper
 ├── deck_loader.py           # Deck file reader
 ├── card_keyword_parser.py   # Keyword parsing
 ├── keywords.py              # Constants

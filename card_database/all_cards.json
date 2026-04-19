@@ -25,7 +25,8 @@
     "Link": [
       "Amuro Ray"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-001.webp"
   },
   {
     "Name": "Unicorn Gundam (Destroy Mode)",
@@ -52,7 +53,8 @@
     "Link": [
       "Banagher Links"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-002.webp"
   },
   {
     "Name": "Unicorn Gundam 02 Banshee (Destroy Mode)",
@@ -78,7 +80,8 @@
     "Link": [
       "Marida Cruz"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-003.webp"
   },
   {
     "Name": "Guncannon",
@@ -104,7 +107,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-004.webp"
   },
   {
     "Name": "Unicorn Gundam (Unicorn Mode)",
@@ -130,7 +134,8 @@
     "Link": [
       "Banagher Links"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-005.webp"
   },
   {
     "Name": "Delta Plus",
@@ -155,7 +160,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-006.webp"
   },
   {
     "Name": "Noin's Aries",
@@ -180,7 +186,8 @@
     "Link": [
       "Lucrezia Noin"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-007.webp"
   },
   {
     "Name": "Guntank",
@@ -205,7 +212,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-008.webp"
   },
   {
     "Name": "G-Fighter",
@@ -230,7 +238,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-009.webp"
   },
   {
     "Name": "Unicorn Gundam 02 Banshee (Unicorn Mode)",
@@ -254,7 +263,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-010.webp"
   },
   {
     "Name": "Loto",
@@ -276,7 +286,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-011.webp"
   },
   {
     "Name": "Zechs' Leo",
@@ -300,7 +311,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-012.webp"
   },
   {
     "Name": "Gundam",
@@ -325,7 +337,8 @@
     "Link": [
       "Amuro Ray"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-013.webp"
   },
   {
     "Name": "G-Sky Easy",
@@ -350,7 +363,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-014.webp"
   },
   {
     "Name": "Ball",
@@ -373,7 +387,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-015.webp"
   },
   {
     "Name": "Jegan",
@@ -397,7 +412,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-016.webp"
   },
   {
     "Name": "Stark Jegan",
@@ -421,7 +437,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-017.webp"
   },
   {
     "Name": "ReZEL",
@@ -443,7 +460,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-018.webp"
   },
   {
     "Name": "Byarlant Custom",
@@ -467,7 +485,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-019.webp"
   },
   {
     "Name": "Anksha",
@@ -490,7 +509,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-020.webp"
   },
   {
     "Name": "Pisces",
@@ -511,7 +531,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-021.webp"
   },
   {
     "Name": "Cancer",
@@ -532,7 +553,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-022.webp"
   },
   {
     "Name": "Char's Gelgoog",
@@ -558,7 +580,8 @@
     "Link": [
       "Char Aznable"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-023.webp"
   },
   {
     "Name": "Wing Gundam Zero",
@@ -585,7 +608,8 @@
     "Link": [
       "Heero Yuy"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-024.webp"
   },
   {
     "Name": "Gundam Deathscythe",
@@ -610,7 +634,8 @@
     "Link": [
       "Duo Maxwell"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-025.webp"
   },
   {
     "Name": "Char's Zaku Ⅱ",
@@ -636,7 +661,8 @@
     "Link": [
       "Char Aznable"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-026.webp"
   },
   {
     "Name": "Big Zam",
@@ -663,7 +689,8 @@
     "Link": [
       "Dozle Zabi"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-027.webp"
   },
   {
     "Name": "Gundam Sandrock",
@@ -688,7 +715,8 @@
     "Link": [
       "Quatre Raberba Winner"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-028.webp"
   },
   {
     "Name": "Shenlong Gundam",
@@ -714,7 +742,8 @@
     "Link": [
       "Chang Wufei"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-029.webp"
   },
   {
     "Name": "Rick Dom",
@@ -737,7 +766,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-030.webp"
   },
   {
     "Name": "Gelgoog",
@@ -759,7 +789,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-031.webp"
   },
   {
     "Name": "Gyan",
@@ -785,7 +816,8 @@
     "Link": [
       "M'Quve"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-032.webp"
   },
   {
     "Name": "Gundam Deathscythe",
@@ -810,7 +842,8 @@
     "Link": [
       "Duo Maxwell"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-033.webp"
   },
   {
     "Name": "Gundam Heavyarms",
@@ -835,7 +868,8 @@
     "Link": [
       "Trowa Barton"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-034.webp"
   },
   {
     "Name": "Zaku Ⅱ",
@@ -857,7 +891,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-035.webp"
   },
   {
     "Name": "Gouf",
@@ -878,7 +913,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-036.webp"
   },
   {
     "Name": "Gogg",
@@ -899,7 +935,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-037.webp"
   },
   {
     "Name": "Adzam",
@@ -922,7 +959,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-038.webp"
   },
   {
     "Name": "Dopp",
@@ -945,7 +983,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-039.webp"
   },
   {
     "Name": "Wing Gundam",
@@ -969,7 +1008,8 @@
     "Link": [
       "Heero Yuy"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-040.webp"
   },
   {
     "Name": "Shenlong Gundam",
@@ -994,7 +1034,8 @@
     "Link": [
       "Chang Wufei"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-041.webp"
   },
   {
     "Name": "Duo's Leo",
@@ -1020,7 +1061,8 @@
     "Link": [
       "Duo Maxwell"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-042.webp"
   },
   {
     "Name": "Rasid's Maganac",
@@ -1044,7 +1086,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-043.webp"
   },
   {
     "Name": "Kshatriya",
@@ -1070,7 +1113,8 @@
     "Link": [
       "Marida Cruz"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-044.webp"
   },
   {
     "Name": "Duel Gundam (Assault Shroud)",
@@ -1096,7 +1140,8 @@
     "Link": [
       "Yzak Jule"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-045.webp"
   },
   {
     "Name": "Buster Gundam",
@@ -1123,7 +1168,8 @@
     "Link": [
       "Dearka Elthman"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-046.webp"
   },
   {
     "Name": "Shamblo",
@@ -1146,7 +1192,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-047.webp"
   },
   {
     "Name": "Zaku I Sniper Type",
@@ -1171,7 +1218,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-048.webp"
   },
   {
     "Name": "Blitz Gundam",
@@ -1197,7 +1245,8 @@
     "Link": [
       "Nicol Amarfi"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-049.webp"
   },
   {
     "Name": "LaGOWE",
@@ -1220,7 +1269,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-050.webp"
   },
   {
     "Name": "Kshatriya",
@@ -1242,7 +1292,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-051.webp"
   },
   {
     "Name": "Geara Zulu (Guards Type)",
@@ -1266,7 +1317,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-052.webp"
   },
   {
     "Name": "Geara Doga (Heavy Armed Type)",
@@ -1290,7 +1342,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-053.webp"
   },
   {
     "Name": "Duel Gundam",
@@ -1314,7 +1367,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-054.webp"
   },
   {
     "Name": "BuCUE",
@@ -1337,7 +1391,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-055.webp"
   },
   {
     "Name": "Geara Doga (Sleeves)",
@@ -1361,7 +1416,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-056.webp"
   },
   {
     "Name": "Dreissen (Sleeves)",
@@ -1383,7 +1439,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-057.webp"
   },
   {
     "Name": "Galluss-K",
@@ -1407,7 +1464,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-058.webp"
   },
   {
     "Name": "Zee Zulu",
@@ -1430,7 +1488,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-059.webp"
   },
   {
     "Name": "Zaku Mariner",
@@ -1451,7 +1510,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-060.webp"
   },
   {
     "Name": "ZuOOT",
@@ -1474,7 +1534,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-061.webp"
   },
   {
     "Name": "GOOhN",
@@ -1495,7 +1556,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-062.webp"
   },
   {
     "Name": "ZnO",
@@ -1518,7 +1580,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-063.webp"
   },
   {
     "Name": "DINN",
@@ -1539,7 +1602,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-064.webp"
   },
   {
     "Name": "Freedom Gundam",
@@ -1566,7 +1630,8 @@
     "Link": [
       "Kira Yamato"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-065.webp"
   },
   {
     "Name": "Justice Gundam",
@@ -1593,7 +1658,8 @@
     "Link": [
       "Athrun Zala"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-066.webp"
   },
   {
     "Name": "Gundam Aerial Rebuild",
@@ -1619,7 +1685,8 @@
     "Link": [
       "Suletta Mercury"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-067.webp"
   },
   {
     "Name": "Perfect Strike Gundam",
@@ -1644,7 +1711,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-068.webp"
   },
   {
     "Name": "Strike Rouge",
@@ -1668,7 +1736,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-069.webp"
   },
   {
     "Name": "Gundam Aerial",
@@ -1694,7 +1763,8 @@
     "Link": [
       "Suletta Mercury"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-070.webp"
   },
   {
     "Name": "Gundam Pharact",
@@ -1718,7 +1788,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-071.webp"
   },
   {
     "Name": "Launcher Strike Gundam",
@@ -1742,7 +1813,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-072.webp"
   },
   {
     "Name": "Sword Strike Gundam",
@@ -1766,7 +1838,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-073.webp"
   },
   {
     "Name": "Chuchu's Demi Trainer",
@@ -1792,7 +1865,8 @@
     "Link": [
       "Chuatury Panlunch"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-074.webp"
   },
   {
     "Name": "Darilbalde",
@@ -1816,7 +1890,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-075.webp"
   },
   {
     "Name": "Michaelis",
@@ -1840,7 +1915,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-076.webp"
   },
   {
     "Name": "Strike Gundam",
@@ -1864,7 +1940,8 @@
     "Link": [
       "Kira Yamato"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-077.webp"
   },
   {
     "Name": "Mistral",
@@ -1887,7 +1964,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-078.webp"
   },
   {
     "Name": "Skygrasper",
@@ -1908,7 +1986,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-079.webp"
   },
   {
     "Name": "Cagalli's Skygrasper",
@@ -1933,7 +2012,8 @@
     "Link": [
       "Cagalli Yula Athha"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-080.webp"
   },
   {
     "Name": "M1 Astray",
@@ -1957,7 +2037,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-081.webp"
   },
   {
     "Name": "Gundam Aerial (Mirasoul Flight Unit)",
@@ -1983,7 +2064,8 @@
     "Link": [
       "Suletta Mercury"
     ],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-082.webp"
   },
   {
     "Name": "Guel's Dilanza",
@@ -2005,7 +2087,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-083.webp"
   },
   {
     "Name": "Beguir-Pente",
@@ -2027,7 +2110,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-084.webp"
   },
   {
     "Name": "Demi Garrison",
@@ -2049,7 +2133,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-085.webp"
   },
   {
     "Name": "Gundam Lfrith",
@@ -2073,7 +2158,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-086.webp"
   },
   {
     "Name": "Sayla Mass",
@@ -2099,7 +2185,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-087.webp"
   },
   {
     "Name": "Banagher Links",
@@ -2124,7 +2211,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-088.webp"
   },
   {
     "Name": "Riddhe Marcenas",
@@ -2148,7 +2236,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-089.webp"
   },
   {
     "Name": "Duo Maxwell",
@@ -2172,7 +2261,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-090.webp"
   },
   {
     "Name": "Chang Wufei",
@@ -2196,7 +2286,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-091.webp"
   },
   {
     "Name": "M'Quve",
@@ -2220,7 +2311,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-092.webp"
   },
   {
     "Name": "Marida Cruz",
@@ -2245,7 +2337,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-093.webp"
   },
   {
     "Name": "Yzak Jule",
@@ -2270,7 +2363,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-094.webp"
   },
   {
     "Name": "Dearka Elthman",
@@ -2295,7 +2389,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-095.webp"
   },
   {
     "Name": "Cagalli Yula Athha",
@@ -2319,7 +2414,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-096.webp"
   },
   {
     "Name": "Guel Jeturk",
@@ -2343,7 +2439,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-097.webp"
   },
   {
     "Name": "Elan Ceres (Enhanced Person Number 4)",
@@ -2367,7 +2464,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-098.webp"
   },
   {
     "Name": "Intercept Orders",
@@ -2391,7 +2489,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-099.webp"
   },
   {
     "Name": "A Show of Resolve",
@@ -2414,7 +2513,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-100.webp"
   },
   {
     "Name": "Deep Devotion",
@@ -2438,7 +2538,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-101.webp"
   },
   {
     "Name": "Securing the Supply Line",
@@ -2461,7 +2562,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-102.webp"
   },
   {
     "Name": "The Stubborn Cog",
@@ -2485,7 +2587,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-103.webp"
   },
   {
     "Name": "Signs of a Revolution",
@@ -2509,7 +2612,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-104.webp"
   },
   {
     "Name": "Citizens, Take a Stand!",
@@ -2533,7 +2637,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-105.webp"
   },
   {
     "Name": "Fortress Defense",
@@ -2557,7 +2662,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-106.webp"
   },
   {
     "Name": "First Contact",
@@ -2581,7 +2687,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-107.webp"
   },
   {
     "Name": "Strategic Arms",
@@ -2604,7 +2711,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-108.webp"
   },
   {
     "Name": "The Path to Victory or Defeat",
@@ -2627,7 +2735,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-109.webp"
   },
   {
     "Name": "Rasid's Orders",
@@ -2651,7 +2760,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-110.webp"
   },
   {
     "Name": "Battle of Aces",
@@ -2675,7 +2785,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-111.webp"
   },
   {
     "Name": "Extreme Hatred",
@@ -2700,7 +2811,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-112.webp"
   },
   {
     "Name": "The Desert Tiger",
@@ -2725,7 +2837,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-113.webp"
   },
   {
     "Name": "Assault on Torrington Base",
@@ -2749,7 +2862,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-114.webp"
   },
   {
     "Name": "Zeon Remnant Forces",
@@ -2772,7 +2886,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-115.webp"
   },
   {
     "Name": "Stealth Stratagem",
@@ -2797,7 +2912,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-116.webp"
   },
   {
     "Name": "The Witch and the Bride",
@@ -2821,7 +2937,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-117.webp"
   },
   {
     "Name": "Overflowing Affection",
@@ -2844,7 +2961,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-118.webp"
   },
   {
     "Name": "Iron-Fisted Discipline",
@@ -2868,7 +2986,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-119.webp"
   },
   {
     "Name": "Naval Bombardment",
@@ -2892,7 +3011,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-120.webp"
   },
   {
     "Name": "Midair Modifications",
@@ -2916,7 +3036,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-121.webp"
   },
   {
     "Name": "Covert Operative",
@@ -2940,7 +3061,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-122.webp"
   },
   {
     "Name": "Nahel Argama",
@@ -2966,7 +3088,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-123.webp"
   },
   {
     "Name": "Side 7",
@@ -2992,7 +3115,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-124.webp"
   },
   {
     "Name": "Zanzibar",
@@ -3018,7 +3142,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-125.webp"
   },
   {
     "Name": "Underground Desert Base",
@@ -3043,7 +3168,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-126.webp"
   },
   {
     "Name": "Gamow",
@@ -3069,7 +3195,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-127.webp"
   },
   {
     "Name": "Mining Asteroid Palau",
@@ -3094,7 +3221,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-128.webp"
   },
   {
     "Name": "Kusanagi",
@@ -3119,7 +3247,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-129.webp"
   },
   {
     "Name": "13th Tactical Testing Sector",
@@ -3145,7 +3274,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/GD01-130.webp"
   },
   {
     "Name": "Fatum-00",
@@ -3168,7 +3298,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/T-011.webp"
   },
   {
     "Name": "Resource",
@@ -3191,7 +3322,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-002.webp"
   },
   {
     "Name": "Resource",
@@ -3214,7 +3346,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-003.webp"
   },
   {
     "Name": "Resource",
@@ -3237,7 +3370,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-004.webp"
   },
   {
     "Name": "Resource",
@@ -3260,7 +3394,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-005.webp"
   },
   {
     "Name": "Resource",
@@ -3283,7 +3418,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-006.webp"
   },
   {
     "Name": "Resource",
@@ -3306,7 +3442,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-007.webp"
   },
   {
     "Name": "Resource",
@@ -3329,7 +3466,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-008.webp"
   },
   {
     "Name": "Resource",
@@ -3352,7 +3490,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD01"
+    "Set": "GD01",
+    "ImagePath": "images/R-009.webp"
   },
   {
     "Name": "Psycho Gundam",
@@ -3379,7 +3518,8 @@
     "Link": [
       "Four Murasame"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-001.webp"
   },
   {
     "Name": "Gundam Epyon",
@@ -3405,7 +3545,8 @@
     "Link": [
       "Zechs Merquise"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-002.webp"
   },
   {
     "Name": "Gundam Mk-II (Titans)",
@@ -3429,7 +3570,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-003.webp"
   },
   {
     "Name": "Byarlant",
@@ -3455,7 +3597,8 @@
     "Link": [
       "Jerid Messa"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-004.webp"
   },
   {
     "Name": "Tallgeese",
@@ -3479,7 +3622,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-005.webp"
   },
   {
     "Name": "Forbidden Gundam",
@@ -3504,7 +3648,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-006.webp"
   },
   {
     "Name": "Psycho Gundam (MA Mode)",
@@ -3528,7 +3673,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-007.webp"
   },
   {
     "Name": "Gabthley",
@@ -3552,7 +3698,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-008.webp"
   },
   {
     "Name": "Calamity Gundam",
@@ -3576,7 +3723,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-009.webp"
   },
   {
     "Name": "Raider Gundam",
@@ -3600,7 +3748,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-010.webp"
   },
   {
     "Name": "Moebius (Peacemaker Team)",
@@ -3623,7 +3772,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-011.webp"
   },
   {
     "Name": "Core Booster",
@@ -3646,7 +3796,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-012.webp"
   },
   {
     "Name": "Hizack",
@@ -3668,7 +3819,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-013.webp"
   },
   {
     "Name": "Galbaldy Beta",
@@ -3692,7 +3844,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-014.webp"
   },
   {
     "Name": "Marasai",
@@ -3714,7 +3867,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-015.webp"
   },
   {
     "Name": "Barzam",
@@ -3738,7 +3892,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-016.webp"
   },
   {
     "Name": "Delta Plus (Waverider Mode)",
@@ -3764,7 +3919,8 @@
     "Link": [
       "Riddhe Marcenas"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-017.webp"
   },
   {
     "Name": "Taurus",
@@ -3788,7 +3944,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-018.webp"
   },
   {
     "Name": "Raider Gundam (MA Mode)",
@@ -3810,7 +3967,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-019.webp"
   },
   {
     "Name": "Elmeth",
@@ -3836,7 +3994,8 @@
     "Link": [
       "Lalah Sune"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-020.webp"
   },
   {
     "Name": "Gundam AGE-1 Normal",
@@ -3861,7 +4020,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-021.webp"
   },
   {
     "Name": "G-Exes",
@@ -3887,7 +4047,8 @@
     "Link": [
       "Woolf Enneacle"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-022.webp"
   },
   {
     "Name": "Gundam AGE-1 Spallow",
@@ -3914,7 +4075,8 @@
     "Link": [
       "Flit Asuno"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-023.webp"
   },
   {
     "Name": "Red Gundam",
@@ -3938,7 +4100,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-024.webp"
   },
   {
     "Name": "Gundam Heavyarms",
@@ -3961,7 +4124,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-025.webp"
   },
   {
     "Name": "Genoace Custom",
@@ -3987,7 +4151,8 @@
     "Link": [
       "Woolf Enneacle"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-026.webp"
   },
   {
     "Name": "Gundam AGE-1 Titus",
@@ -4014,7 +4179,8 @@
     "Link": [
       "Flit Asuno"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-027.webp"
   },
   {
     "Name": "Abdul's Maganac",
@@ -4036,7 +4202,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-028.webp"
   },
   {
     "Name": "Gundam AGE-1 Normal",
@@ -4059,7 +4226,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-029.webp"
   },
   {
     "Name": "Genoace",
@@ -4081,7 +4249,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-030.webp"
   },
   {
     "Name": "Gundam AGE-1 Titus",
@@ -4108,7 +4277,8 @@
     "Link": [
       "Flit Asuno"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-031.webp"
   },
   {
     "Name": "White Gundam",
@@ -4132,7 +4302,8 @@
     "Link": [
       "Char Aznable"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-032.webp"
   },
   {
     "Name": "Kikeroga (MA Mode) (GQ)",
@@ -4157,7 +4328,8 @@
     "Link": [
       "Challia Bull"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-033.webp"
   },
   {
     "Name": "GQuuuuuuX",
@@ -4181,7 +4353,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-034.webp"
   },
   {
     "Name": "Police Zaku (Armored RRU Type)",
@@ -4205,7 +4378,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-035.webp"
   },
   {
     "Name": "Qubeley",
@@ -4232,7 +4406,8 @@
     "Link": [
       "Haman Karn"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-036.webp"
   },
   {
     "Name": "Gundam Virsago",
@@ -4259,7 +4434,8 @@
     "Link": [
       "Shagia Frost"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-037.webp"
   },
   {
     "Name": "GQuuuuuuX (Omega Psycommu)",
@@ -4285,7 +4461,8 @@
     "Link": [
       "Amate Yuzuriha (Machu)"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-038.webp"
   },
   {
     "Name": "Haman Karn's Gaza C",
@@ -4311,7 +4488,8 @@
     "Link": [
       "Haman Karn"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-039.webp"
   },
   {
     "Name": "Gundam Ashtaron",
@@ -4336,7 +4514,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-040.webp"
   },
   {
     "Name": "Sugai's Gelgoog (GQ)",
@@ -4362,7 +4541,8 @@
     "Link": [
       "Shiiko Sugai"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-041.webp"
   },
   {
     "Name": "Gundam Ashtaron (MA Mode)",
@@ -4388,7 +4568,8 @@
     "Link": [
       "Olba Frost"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-042.webp"
   },
   {
     "Name": "Daughtress Weapon",
@@ -4412,7 +4593,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-043.webp"
   },
   {
     "Name": "Daughtress Command",
@@ -4436,7 +4618,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-044.webp"
   },
   {
     "Name": "GINN Long-Range Reconnaissance Type",
@@ -4460,7 +4643,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-045.webp"
   },
   {
     "Name": "Sayla's Light-Type Guncannon",
@@ -4486,7 +4670,8 @@
     "Link": [
       "Sayla Mass"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-046.webp"
   },
   {
     "Name": "Gaza C",
@@ -4510,7 +4695,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-047.webp"
   },
   {
     "Name": "Zaku Ⅲ (Sleeves)",
@@ -4532,7 +4718,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-048.webp"
   },
   {
     "Name": "Daughtress",
@@ -4556,7 +4743,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-049.webp"
   },
   {
     "Name": "Ga-Zowmn (Sleeves)",
@@ -4578,7 +4766,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-050.webp"
   },
   {
     "Name": "01 Gundam",
@@ -4600,7 +4789,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-051.webp"
   },
   {
     "Name": "Guncannon (GQ)",
@@ -4622,7 +4812,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-052.webp"
   },
   {
     "Name": "Gundam X",
@@ -4649,7 +4840,8 @@
     "Link": [
       "Garrod Ran"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-053.webp"
   },
   {
     "Name": "Gundam Barbatos 1st Form",
@@ -4676,7 +4868,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-054.webp"
   },
   {
     "Name": "Gundam Gusion Rebake",
@@ -4704,7 +4897,8 @@
     "Link": [
       "Akihiro Altland"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-055.webp"
   },
   {
     "Name": "Gundam X",
@@ -4730,7 +4924,8 @@
     "Link": [
       "Garrod Ran"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-056.webp"
   },
   {
     "Name": "Zedas",
@@ -4757,7 +4952,8 @@
     "Link": [
       "Desil Galette"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-057.webp"
   },
   {
     "Name": "Ryusei-Go (Graze Custom Ⅱ)",
@@ -4781,7 +4977,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-058.webp"
   },
   {
     "Name": "Gundam Airmaster",
@@ -4805,7 +5002,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-059.webp"
   },
   {
     "Name": "Gundam Leopard",
@@ -4831,7 +5029,8 @@
     "Link": [
       "Roybea Loy"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-060.webp"
   },
   {
     "Name": "Hyakuri",
@@ -4854,7 +5053,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-061.webp"
   },
   {
     "Name": "Amida's Hyakuren",
@@ -4876,7 +5076,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-062.webp"
   },
   {
     "Name": "Gundam Airmaster (Fighter Mode)",
@@ -4898,7 +5099,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-063.webp"
   },
   {
     "Name": "Gundam Leopard",
@@ -4921,7 +5123,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-064.webp"
   },
   {
     "Name": "Jenice Custom",
@@ -4942,7 +5145,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-065.webp"
   },
   {
     "Name": "Gafran",
@@ -4967,7 +5171,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-066.webp"
   },
   {
     "Name": "Baqto",
@@ -4990,7 +5195,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-067.webp"
   },
   {
     "Name": "Gundam Barbatos 3rd Form",
@@ -5015,7 +5221,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-068.webp"
   },
   {
     "Name": "Zeta Gundam",
@@ -5041,7 +5248,8 @@
     "Link": [
       "Kamille Bidan"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-069.webp"
   },
   {
     "Name": "Gundam Kimaris",
@@ -5068,7 +5276,8 @@
     "Link": [
       "Gaelio Bauduin"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-070.webp"
   },
   {
     "Name": "Gundam Mk-II (AEUG)",
@@ -5092,7 +5301,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-071.webp"
   },
   {
     "Name": "Hyaku-Shiki",
@@ -5119,7 +5329,8 @@
     "Link": [
       "Quattro Bajeena"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-072.webp"
   },
   {
     "Name": "Carta's Graze Ritter (Ground Type)",
@@ -5144,7 +5355,8 @@
     "Link": [
       "Carta Issue"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-073.webp"
   },
   {
     "Name": "Gundam Aerial Rebuild",
@@ -5171,7 +5383,8 @@
     "Link": [
       "Suletta Mercury"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-074.webp"
   },
   {
     "Name": "Rick Dias (Red)",
@@ -5195,7 +5408,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-075.webp"
   },
   {
     "Name": "Buster Gundam",
@@ -5219,7 +5433,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-076.webp"
   },
   {
     "Name": "Ein's Schwalbe Graze",
@@ -5241,7 +5456,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-077.webp"
   },
   {
     "Name": "Gundam Pharact",
@@ -5265,7 +5481,8 @@
     "Link": [
       "Elan Ceres"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-078.webp"
   },
   {
     "Name": "Rick Dias",
@@ -5289,7 +5506,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-079.webp"
   },
   {
     "Name": "Nemo",
@@ -5311,7 +5529,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-080.webp"
   },
   {
     "Name": "Methuss",
@@ -5337,7 +5556,8 @@
     "Link": [
       "Fa Yuiry"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-081.webp"
   },
   {
     "Name": "Gaelio's Schwalbe Graze",
@@ -5363,7 +5583,8 @@
     "Link": [
       "Gaelio Bauduin"
     ],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-082.webp"
   },
   {
     "Name": "Graze Ritter (Ground Type)",
@@ -5386,7 +5607,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-083.webp"
   },
   {
     "Name": "Lauda's Dilanza",
@@ -5408,7 +5630,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-084.webp"
   },
   {
     "Name": "Four Murasame",
@@ -5433,7 +5656,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-085.webp"
   },
   {
     "Name": "Jerid Messa",
@@ -5457,7 +5681,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-086.webp"
   },
   {
     "Name": "Orga, Crot, and Shani",
@@ -5482,7 +5707,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-087.webp"
   },
   {
     "Name": "Flit Asuno",
@@ -5508,7 +5734,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-088.webp"
   },
   {
     "Name": "Lalah Sune",
@@ -5533,7 +5760,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-089.webp"
   },
   {
     "Name": "Challia Bull (GQ)",
@@ -5558,7 +5786,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-090.webp"
   },
   {
     "Name": "Haman Karn",
@@ -5583,7 +5812,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-091.webp"
   },
   {
     "Name": "Shagia Frost",
@@ -5607,7 +5837,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-092.webp"
   },
   {
     "Name": "Olba Frost",
@@ -5631,7 +5862,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-093.webp"
   },
   {
     "Name": "Garrod Ran & Tiffa Adill",
@@ -5656,7 +5888,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-094.webp"
   },
   {
     "Name": "Lafter Frankland",
@@ -5680,7 +5913,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-095.webp"
   },
   {
     "Name": "Desil Galette",
@@ -5705,7 +5939,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-096.webp"
   },
   {
     "Name": "Kamille Bidan",
@@ -5730,7 +5965,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-097.webp"
   },
   {
     "Name": "Quattro Bajeena",
@@ -5756,7 +5992,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-098.webp"
   },
   {
     "Name": "Gaelio Bauduin",
@@ -5780,7 +6017,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-099.webp"
   },
   {
     "Name": "Dramatic Turnabout",
@@ -5804,7 +6042,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-100.webp"
   },
   {
     "Name": "Beneath the Mask",
@@ -5827,7 +6066,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-101.webp"
   },
   {
     "Name": "Mouar’s Determination",
@@ -5851,7 +6091,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-102.webp"
   },
   {
     "Name": "AGE Device",
@@ -5875,7 +6116,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-103.webp"
   },
   {
     "Name": "Turning Point of History",
@@ -5898,7 +6140,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-104.webp"
   },
   {
     "Name": "Valedictorian",
@@ -5923,7 +6166,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-105.webp"
   },
   {
     "Name": "White Wolf",
@@ -5947,7 +6191,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-106.webp"
   },
   {
     "Name": "All-Range Attack",
@@ -5971,7 +6216,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-107.webp"
   },
   {
     "Name": "That One Looks A Lot Stronger?",
@@ -5994,7 +6240,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-108.webp"
   },
   {
     "Name": "Undying Persistence",
@@ -6019,7 +6266,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-109.webp"
   },
   {
     "Name": "Awakened Power",
@@ -6042,7 +6290,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-110.webp"
   },
   {
     "Name": "Decisive Last Resort",
@@ -6066,7 +6315,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-111.webp"
   },
   {
     "Name": "Momentary Respite",
@@ -6090,7 +6340,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-112.webp"
   },
   {
     "Name": "Sisterly Care",
@@ -6114,7 +6365,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-113.webp"
   },
   {
     "Name": "It's Name is Ryusei-Go",
@@ -6139,7 +6391,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-114.webp"
   },
   {
     "Name": "Familial Devotion",
@@ -6163,7 +6416,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-115.webp"
   },
   {
     "Name": "Comrades Come First",
@@ -6187,7 +6441,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-116.webp"
   },
   {
     "Name": "A New Sign",
@@ -6211,7 +6466,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-117.webp"
   },
   {
     "Name": "Heart Set on Revenge",
@@ -6235,7 +6491,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-118.webp"
   },
   {
     "Name": "Persistent and Fortudinous",
@@ -6259,7 +6516,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-119.webp"
   },
   {
     "Name": "Aspiring Pilot",
@@ -6283,7 +6541,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-120.webp"
   },
   {
     "Name": "Dominion",
@@ -6309,7 +6568,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-121.webp"
   },
   {
     "Name": "Alexandria",
@@ -6334,7 +6594,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-122.webp"
   },
   {
     "Name": "Sodon",
@@ -6360,7 +6621,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-123.webp"
   },
   {
     "Name": "Diva",
@@ -6387,7 +6649,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-124.webp"
   },
   {
     "Name": "Gwadan",
@@ -6412,7 +6675,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-125.webp"
   },
   {
     "Name": "Shuji's Hideout",
@@ -6438,7 +6702,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-126.webp"
   },
   {
     "Name": "Freeden",
@@ -6464,7 +6729,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-127.webp"
   },
   {
     "Name": "Hammerhead",
@@ -6489,7 +6755,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-128.webp"
   },
   {
     "Name": "Argama",
@@ -6516,7 +6783,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-129.webp"
   },
   {
     "Name": "Sleipnir",
@@ -6541,7 +6809,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/GD02-130.webp"
   },
   {
     "Name": "Daughtress",
@@ -6562,7 +6831,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/T-012.webp"
   },
   {
     "Name": "Resource",
@@ -6585,7 +6855,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-010.webp"
   },
   {
     "Name": "Resource",
@@ -6608,7 +6879,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-011.webp"
   },
   {
     "Name": "Resource",
@@ -6631,7 +6903,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-012.webp"
   },
   {
     "Name": "Resource",
@@ -6654,7 +6927,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-013.webp"
   },
   {
     "Name": "Resource",
@@ -6677,7 +6951,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-014.webp"
   },
   {
     "Name": "Resource",
@@ -6700,7 +6975,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-015.webp"
   },
   {
     "Name": "Resource",
@@ -6723,7 +6999,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-016.webp"
   },
   {
     "Name": "Resource",
@@ -6746,7 +7023,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-017.webp"
   },
   {
     "Name": "Resource",
@@ -6769,7 +7047,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-018.webp"
   },
   {
     "Name": "Resource",
@@ -6792,7 +7071,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD02"
+    "Set": "GD02",
+    "ImagePath": "images/R-019.webp"
   },
   {
     "Name": "Gundam NT-1",
@@ -6820,7 +7100,8 @@
       "Christina Mackenzie",
       "Amuro Ray"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-001.webp"
   },
   {
     "Name": "The-O",
@@ -6848,7 +7129,8 @@
     "Link": [
       "Paptimus Scirocco"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-002.webp"
   },
   {
     "Name": "Messala",
@@ -6874,7 +7156,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-003.webp"
   },
   {
     "Name": "Hambrabi",
@@ -6900,7 +7183,8 @@
     "Link": [
       "Yazan Gable"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-004.webp"
   },
   {
     "Name": "Kshatriya Besserung",
@@ -6927,7 +7211,8 @@
     "Link": [
       "Marida Cruz"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-005.webp"
   },
   {
     "Name": "Penelope (Middle Form)",
@@ -6953,7 +7238,8 @@
     "Link": [
       "Lane Aim"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-006.webp"
   },
   {
     "Name": "Gundam NT-1 Full Armor",
@@ -6979,7 +7265,8 @@
     "Link": [
       "Christina Mackenzie"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-007.webp"
   },
   {
     "Name": "Bolinoak Sammahn",
@@ -7004,7 +7291,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-008.webp"
   },
   {
     "Name": "Palace Athene",
@@ -7031,7 +7319,8 @@
     "Link": [
       "Reccoa Londe"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-009.webp"
   },
   {
     "Name": "Full Armor Unicorn Gundam (Destroy Mode)",
@@ -7057,7 +7346,8 @@
     "Link": [
       "Banagher Links"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-010.webp"
   },
   {
     "Name": "GM Sniper II",
@@ -7079,7 +7369,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-011.webp"
   },
   {
     "Name": "Messala (MA Mode)",
@@ -7104,7 +7395,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-012.webp"
   },
   {
     "Name": "Hizack",
@@ -7129,7 +7421,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-013.webp"
   },
   {
     "Name": "Hizack Custom",
@@ -7153,7 +7446,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-014.webp"
   },
   {
     "Name": "Baund Doc",
@@ -7179,7 +7473,8 @@
     "Link": [
       "Jerid Messa"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-015.webp"
   },
   {
     "Name": "Full Armor Unicorn Gundam (Unicorn Mode)",
@@ -7203,7 +7498,8 @@
     "Link": [
       "Banagher Links"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-016.webp"
   },
   {
     "Name": "Kämpfer",
@@ -7231,7 +7527,8 @@
     "Link": [
       "Mikhail Kaminsky"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-017.webp"
   },
   {
     "Name": "Altron Gundam",
@@ -7258,7 +7555,8 @@
     "Link": [
       "Chang Wufei"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-018.webp"
   },
   {
     "Name": "Gundam AGE-2 Normal",
@@ -7286,7 +7584,8 @@
     "Link": [
       "Asemu Asuno"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-019.webp"
   },
   {
     "Name": "Zaku Ⅱ FZ",
@@ -7314,7 +7613,8 @@
     "Link": [
       "Bernard Wiseman"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-020.webp"
   },
   {
     "Name": "Gundam Deathscythe Hell",
@@ -7340,7 +7640,8 @@
     "Link": [
       "Duo Maxwell"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-021.webp"
   },
   {
     "Name": "Gundam Kyrios",
@@ -7368,7 +7669,8 @@
       "Allelujah Haptism",
       "Hallelujah Haptism"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-022.webp"
   },
   {
     "Name": "G-Bouncer",
@@ -7392,7 +7694,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-023.webp"
   },
   {
     "Name": "Hy-Gogg",
@@ -7416,7 +7719,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-024.webp"
   },
   {
     "Name": "Gundam Sandrock Custom",
@@ -7442,7 +7746,8 @@
     "Link": [
       "Quatre Raberba Winner"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-025.webp"
   },
   {
     "Name": "Gundam Dynames",
@@ -7469,7 +7774,8 @@
     "Link": [
       "Lockon Stratos"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-026.webp"
   },
   {
     "Name": "Z’Gok E",
@@ -7491,7 +7797,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-027.webp"
   },
   {
     "Name": "Auda's Maganac",
@@ -7515,7 +7822,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-028.webp"
   },
   {
     "Name": "Gundam Heavyarms Custom",
@@ -7541,7 +7849,8 @@
     "Link": [
       "Trowa Barton"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-029.webp"
   },
   {
     "Name": "Gundam Kyrios (Tail Unit Flight Mode)",
@@ -7569,7 +7878,8 @@
       "Allelujah Haptism",
       "Hallelujah Haptism"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-030.webp"
   },
   {
     "Name": "Gundam AGE-1 Flat",
@@ -7592,7 +7902,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-031.webp"
   },
   {
     "Name": "Zaku (Four Snake Eyes') [YETI] (GQ)",
@@ -7614,7 +7925,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-032.webp"
   },
   {
     "Name": "Providence Gundam",
@@ -7641,7 +7953,8 @@
     "Link": [
       "Rau Le Creuset"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-033.webp"
   },
   {
     "Name": "GQuuuuuuX (Omega Psycommu)",
@@ -7669,7 +7982,8 @@
       "Amate Yuzuriha (Machu)",
       "Nyaan"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-034.webp"
   },
   {
     "Name": "GFreD",
@@ -7696,7 +8010,8 @@
     "Link": [
       "Nyaan"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-035.webp"
   },
   {
     "Name": "Ξ Gundam (Flight Form)",
@@ -7722,7 +8037,8 @@
     "Link": [
       "Hathaway Noa"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-036.webp"
   },
   {
     "Name": "Bertigo",
@@ -7746,7 +8062,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-037.webp"
   },
   {
     "Name": "GuAIZ (Commander Type)",
@@ -7773,7 +8090,8 @@
     "Link": [
       "Rau Le Creuset"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-038.webp"
   },
   {
     "Name": "Red Gundam",
@@ -7797,7 +8115,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-039.webp"
   },
   {
     "Name": "Gundam Virsago & Gundam Ashtaron",
@@ -7824,7 +8143,8 @@
       "Shagia Frost",
       "Olba Frost"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-040.webp"
   },
   {
     "Name": "Patulia",
@@ -7850,7 +8170,8 @@
     "Link": [
       "Carris Nautilus"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-041.webp"
   },
   {
     "Name": "Duel Gundam (Assault Shroud)",
@@ -7876,7 +8197,8 @@
     "Link": [
       "Yzak Jule"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-042.webp"
   },
   {
     "Name": "Messer Type-F02",
@@ -7900,7 +8222,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-043.webp"
   },
   {
     "Name": "Daughtress Flyer",
@@ -7924,7 +8247,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-044.webp"
   },
   {
     "Name": "Balient",
@@ -7948,7 +8272,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-045.webp"
   },
   {
     "Name": "CGUE",
@@ -7970,7 +8295,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-046.webp"
   },
   {
     "Name": "DINN (Commander Type)",
@@ -7994,7 +8320,8 @@
     "Link": [
       "Rau Le Creuset"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-047.webp"
   },
   {
     "Name": "GFreD",
@@ -8020,7 +8347,8 @@
     "Link": [
       "Nyaan"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-048.webp"
   },
   {
     "Name": "Gundam Exia (Trans-Am)",
@@ -8048,7 +8376,8 @@
     "Link": [
       "Setsuna F. Seiei"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-049.webp"
   },
   {
     "Name": "Gundam Barbatos Lupus",
@@ -8075,7 +8404,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-050.webp"
   },
   {
     "Name": "Gundam X Divider",
@@ -8102,7 +8432,8 @@
       "Garrod Ran",
       "Jamil Neate"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-051.webp"
   },
   {
     "Name": "Gundam Virtue",
@@ -8130,7 +8461,8 @@
     "Link": [
       "Tieria Erde"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-052.webp"
   },
   {
     "Name": "Gundam Gusion Rebake Full City",
@@ -8158,7 +8490,8 @@
     "Link": [
       "Akihiro Altland"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-053.webp"
   },
   {
     "Name": "Zeydra",
@@ -8185,7 +8518,8 @@
     "Link": [
       "Zeheart Galette"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-054.webp"
   },
   {
     "Name": "Gundam Hajiroboshi (2nd Form)",
@@ -8212,7 +8546,8 @@
     "Link": [
       "Wistario Afam"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-055.webp"
   },
   {
     "Name": "Gundam Barbatos Adapt",
@@ -8239,7 +8574,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-056.webp"
   },
   {
     "Name": "GN Armor (Type-E)",
@@ -8264,7 +8600,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-057.webp"
   },
   {
     "Name": "Farsia",
@@ -8291,7 +8628,8 @@
     "Link": [
       "Yurin L'Ciel"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-058.webp"
   },
   {
     "Name": "Zedas R",
@@ -8315,7 +8653,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-059.webp"
   },
   {
     "Name": "CGS Mobile Worker (Commander Type)",
@@ -8338,7 +8677,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-060.webp"
   },
   {
     "Name": "Gundam Barbatos 6th Form",
@@ -8365,7 +8705,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-061.webp"
   },
   {
     "Name": "GX-Bit",
@@ -8390,7 +8731,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-062.webp"
   },
   {
     "Name": "0 Gundam",
@@ -8413,7 +8755,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-063.webp"
   },
   {
     "Name": "Defurse",
@@ -8438,7 +8781,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-064.webp"
   },
   {
     "Name": "Zedas M",
@@ -8460,7 +8804,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-065.webp"
   },
   {
     "Name": "Gundam Barbatos 5th Form (Ground Type)",
@@ -8484,7 +8829,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-066.webp"
   },
   {
     "Name": "Rouei",
@@ -8508,7 +8854,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-067.webp"
   },
   {
     "Name": "Gundam Hajiroboshi",
@@ -8535,7 +8882,8 @@
     "Link": [
       "Wistario Afam"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-068.webp"
   },
   {
     "Name": "Graham's Union Flag Custom",
@@ -8562,7 +8910,8 @@
     "Link": [
       "Graham Aker"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-069.webp"
   },
   {
     "Name": "Freedom Gundam",
@@ -8588,7 +8937,8 @@
     "Link": [
       "Kira Yamato"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-070.webp"
   },
   {
     "Name": "Z Gundam (Biosensor)",
@@ -8614,7 +8964,8 @@
     "Link": [
       "Kamille Bidan"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-071.webp"
   },
   {
     "Name": "Aile Strike Gundam",
@@ -8641,7 +8992,8 @@
     "Link": [
       "Mu La Flaga"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-072.webp"
   },
   {
     "Name": "Graze Ein",
@@ -8668,7 +9020,8 @@
     "Link": [
       "Ein Dalton"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-073.webp"
   },
   {
     "Name": "Tieren Taozi",
@@ -8692,7 +9045,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-074.webp"
   },
   {
     "Name": "Super Gundam",
@@ -8716,7 +9070,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-075.webp"
   },
   {
     "Name": "Freedom Gundam (METEOR)",
@@ -8741,7 +9096,8 @@
     "Link": [
       "Kira Yamato"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-076.webp"
   },
   {
     "Name": "Justice Gundam (METEOR)",
@@ -8766,7 +9122,8 @@
     "Link": [
       "Athrun Zala"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-077.webp"
   },
   {
     "Name": "Tieren High Mobility Type",
@@ -8792,7 +9149,8 @@
     "Link": [
       "Sergei Smirnov"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-078.webp"
   },
   {
     "Name": "G-Defenser",
@@ -8816,7 +9174,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-079.webp"
   },
   {
     "Name": "Gundam Kimaris Trooper (Trooper Mode)",
@@ -8843,7 +9202,8 @@
     "Link": [
       "Gaelio Bauduin"
     ],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-080.webp"
   },
   {
     "Name": "AEU Enact Demonstration Color",
@@ -8867,7 +9227,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-081.webp"
   },
   {
     "Name": "Union Flag",
@@ -8891,7 +9252,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-082.webp"
   },
   {
     "Name": "AEU Hellion",
@@ -8915,7 +9277,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-083.webp"
   },
   {
     "Name": "Paptimus Scirocco",
@@ -8941,7 +9304,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-084.webp"
   },
   {
     "Name": "Christina Mackenzie",
@@ -8965,7 +9329,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-085.webp"
   },
   {
     "Name": "Yazan Gable",
@@ -8989,7 +9354,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-086.webp"
   },
   {
     "Name": "Sarah Zabiarov",
@@ -9015,7 +9381,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-087.webp"
   },
   {
     "Name": "Asemu Asuno",
@@ -9040,7 +9407,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-088.webp"
   },
   {
     "Name": "Bernard Wiseman",
@@ -9065,7 +9433,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-089.webp"
   },
   {
     "Name": "Mikhail Kaminsky",
@@ -9090,7 +9459,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-090.webp"
   },
   {
     "Name": "Rau Le Creuset",
@@ -9114,7 +9484,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-091.webp"
   },
   {
     "Name": "Nyaan",
@@ -9139,7 +9510,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-092.webp"
   },
   {
     "Name": "Carris Nautilus",
@@ -9164,7 +9536,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-093.webp"
   },
   {
     "Name": "Zeheart Galette",
@@ -9189,7 +9562,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-094.webp"
   },
   {
     "Name": "Azee Gurumin",
@@ -9213,7 +9587,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-095.webp"
   },
   {
     "Name": "Jamil Neate",
@@ -9238,7 +9613,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-096.webp"
   },
   {
     "Name": "Wistario Afam",
@@ -9262,7 +9638,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-097.webp"
   },
   {
     "Name": "Graham Aker",
@@ -9287,7 +9664,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-098.webp"
   },
   {
     "Name": "Emma Sheen",
@@ -9311,7 +9689,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-099.webp"
   },
   {
     "Name": "Soma Peries",
@@ -9337,7 +9716,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-100.webp"
   },
   {
     "Name": "A Healthy Curiosity",
@@ -9360,7 +9740,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-101.webp"
   },
   {
     "Name": "Privileged Position",
@@ -9384,7 +9765,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-102.webp"
   },
   {
     "Name": "Field Directive",
@@ -9408,7 +9790,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-103.webp"
   },
   {
     "Name": "Reccoa's Shadow",
@@ -9433,7 +9816,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-104.webp"
   },
   {
     "Name": "Bridge Crew",
@@ -9457,7 +9841,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-105.webp"
   },
   {
     "Name": "M.A.V. Tactics",
@@ -9480,7 +9865,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-106.webp"
   },
   {
     "Name": "Over the River and Through the Woods",
@@ -9505,7 +9891,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-107.webp"
   },
   {
     "Name": "How Many Miles to the Battlefield?",
@@ -9530,7 +9917,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-108.webp"
   },
   {
     "Name": "Improved Technique",
@@ -9554,7 +9942,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-109.webp"
   },
   {
     "Name": "Eliminate Target",
@@ -9577,7 +9966,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-110.webp"
   },
   {
     "Name": "Infiltrator Present",
@@ -9601,7 +9991,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-111.webp"
   },
   {
     "Name": "Warped Intent",
@@ -9625,7 +10016,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-112.webp"
   },
   {
     "Name": "Human Karma",
@@ -9648,7 +10040,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-113.webp"
   },
   {
     "Name": "Look of Determination",
@@ -9672,7 +10065,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-114.webp"
   },
   {
     "Name": "Distant Reunion",
@@ -9698,7 +10092,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-115.webp"
   },
   {
     "Name": "Towards Destiny",
@@ -9721,7 +10116,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-116.webp"
   },
   {
     "Name": "Orga's Order",
@@ -9744,7 +10140,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-117.webp"
   },
   {
     "Name": "Awakened Potential",
@@ -9768,7 +10165,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-118.webp"
   },
   {
     "Name": "Awkward Approach",
@@ -9791,7 +10189,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-119.webp"
   },
   {
     "Name": "Immortal Colasour",
@@ -9816,7 +10215,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-120.webp"
   },
   {
     "Name": "Unheralded Attack",
@@ -9841,7 +10241,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-121.webp"
   },
   {
     "Name": "Veteran Tactics",
@@ -9866,7 +10267,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-122.webp"
   },
   {
     "Name": "Jupitris",
@@ -9892,7 +10294,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-123.webp"
   },
   {
     "Name": "Ribo Colony",
@@ -9918,7 +10321,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-124.webp"
   },
   {
     "Name": "Peacemillion",
@@ -9944,7 +10348,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-125.webp"
   },
   {
     "Name": "Cyclops Team",
@@ -9970,7 +10375,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-126.webp"
   },
   {
     "Name": "Jachin Due",
@@ -9995,7 +10401,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-127.webp"
   },
   {
     "Name": "Doritea",
@@ -10021,7 +10428,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-128.webp"
   },
   {
     "Name": "Hotarubi",
@@ -10047,7 +10455,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-129.webp"
   },
   {
     "Name": "Downes",
@@ -10072,7 +10481,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-130.webp"
   },
   {
     "Name": "Eternal",
@@ -10097,7 +10507,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-131.webp"
   },
   {
     "Name": "Radish",
@@ -10123,7 +10534,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/GD03-132.webp"
   },
   {
     "Name": "Hy-Gogg",
@@ -10144,7 +10556,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-013.webp"
   },
   {
     "Name": "Ad Balloon",
@@ -10167,7 +10580,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-014.webp"
   },
   {
     "Name": "CGS Mobile Worker",
@@ -10188,7 +10602,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-015.webp"
   },
   {
     "Name": "Graze Custom",
@@ -10209,7 +10624,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-016.webp"
   },
   {
     "Name": "Gundam Barbatos 4th Form",
@@ -10230,7 +10646,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-017.webp"
   },
   {
     "Name": "Red Gundam",
@@ -10251,7 +10668,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-018.webp"
   },
   {
     "Name": "GQuuuuuuX (Omega Psycommu)",
@@ -10272,7 +10690,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-019.webp"
   },
   {
     "Name": "GFreD",
@@ -10293,7 +10712,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/T-020.webp"
   },
   {
     "Name": "Resource",
@@ -10316,7 +10736,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-020.webp"
   },
   {
     "Name": "Resource",
@@ -10339,7 +10760,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-021.webp"
   },
   {
     "Name": "Resource",
@@ -10362,7 +10784,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-022.webp"
   },
   {
     "Name": "Resource",
@@ -10385,7 +10808,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-023.webp"
   },
   {
     "Name": "Resource",
@@ -10408,7 +10832,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-024.webp"
   },
   {
     "Name": "Resource",
@@ -10431,7 +10856,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-025.webp"
   },
   {
     "Name": "Resource",
@@ -10454,7 +10880,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-026.webp"
   },
   {
     "Name": "Resource",
@@ -10477,7 +10904,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-027.webp"
   },
   {
     "Name": "Resource",
@@ -10500,7 +10928,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-028.webp"
   },
   {
     "Name": "Resource",
@@ -10523,7 +10952,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "GD03"
+    "Set": "GD03",
+    "ImagePath": "images/R-029.webp"
   },
   {
     "Name": "Gundam",
@@ -10551,7 +10981,8 @@
     "Link": [
       "Amuro Ray"
     ],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-001.webp"
   },
   {
     "Name": "Gundam (MA Form)",
@@ -10577,7 +11008,8 @@
     "Link": [
       "Amuro Ray"
     ],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-002.webp"
   },
   {
     "Name": "Guncannon",
@@ -10602,7 +11034,8 @@
     "Link": [
       "Kai Shiden"
     ],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-003.webp"
   },
   {
     "Name": "Guntank",
@@ -10629,7 +11062,8 @@
     "Link": [
       "Hayato Kobayashi"
     ],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-004.webp"
   },
   {
     "Name": "GM",
@@ -10651,7 +11085,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-005.webp"
   },
   {
     "Name": "Gundam Aerial (Permet Score Six)",
@@ -10677,7 +11112,8 @@
     "Link": [
       "Suletta Mercury"
     ],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-006.webp"
   },
   {
     "Name": "Gundam Aerial (Bit on Form)",
@@ -10701,7 +11137,8 @@
     "Link": [
       "Suletta Mercury"
     ],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-007.webp"
   },
   {
     "Name": "Demi Trainer",
@@ -10725,7 +11162,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-008.webp"
   },
   {
     "Name": "Zowort",
@@ -10750,7 +11188,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-009.webp"
   },
   {
     "Name": "Amuro Ray",
@@ -10776,7 +11215,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-010.webp"
   },
   {
     "Name": "Suletta Mercury",
@@ -10800,7 +11240,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-011.webp"
   },
   {
     "Name": "Thoroughly Damaged",
@@ -10825,7 +11266,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-012.webp"
   },
   {
     "Name": "Kai's Resolve",
@@ -10850,7 +11292,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-013.webp"
   },
   {
     "Name": "Unforeseen Incident",
@@ -10874,7 +11317,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-014.webp"
   },
   {
     "Name": "White Base",
@@ -10902,7 +11346,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-015.webp"
   },
   {
     "Name": "Asticassia School of Technology, Earth House",
@@ -10928,7 +11373,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/ST01-016.webp"
   },
   {
     "Name": "Gundam",
@@ -10949,7 +11395,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/T-001.webp"
   },
   {
     "Name": "Guncannon",
@@ -10970,7 +11417,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/T-002.webp"
   },
   {
     "Name": "Guntank",
@@ -10991,7 +11439,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST01"
+    "Set": "ST01",
+    "ImagePath": "images/T-003.webp"
   },
   {
     "Name": "Wing Gundam",
@@ -11018,7 +11467,8 @@
     "Link": [
       "Heero Yuy"
     ],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-001.webp"
   },
   {
     "Name": "Wing Gundam (Bird Mode)",
@@ -11044,7 +11494,8 @@
     "Link": [
       "Heero Yuy"
     ],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-002.webp"
   },
   {
     "Name": "Gundam Heavyarms",
@@ -11069,7 +11520,8 @@
     "Link": [
       "Trowa Barton"
     ],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-003.webp"
   },
   {
     "Name": "Gundam Sandrock",
@@ -11092,7 +11544,8 @@
     "Link": [
       "Quatre Raberba Winner"
     ],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-004.webp"
   },
   {
     "Name": "Maganac",
@@ -11114,7 +11567,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-005.webp"
   },
   {
     "Name": "Tallgeese",
@@ -11140,7 +11594,8 @@
     "Link": [
       "Zechs Merquise"
     ],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-006.webp"
   },
   {
     "Name": "Leo",
@@ -11162,7 +11617,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-007.webp"
   },
   {
     "Name": "Aries",
@@ -11185,7 +11641,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-008.webp"
   },
   {
     "Name": "Tragos",
@@ -11208,7 +11665,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-009.webp"
   },
   {
     "Name": "Heero Yuy",
@@ -11232,7 +11690,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-010.webp"
   },
   {
     "Name": "Zechs Merquise",
@@ -11256,7 +11715,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-011.webp"
   },
   {
     "Name": "Simultaneous Fire",
@@ -11280,7 +11740,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-012.webp"
   },
   {
     "Name": "Peaceful Timbre",
@@ -11304,7 +11765,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-013.webp"
   },
   {
     "Name": "Siege Ploy",
@@ -11328,7 +11790,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-014.webp"
   },
   {
     "Name": "Saint Gabriel Institute",
@@ -11353,7 +11816,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-015.webp"
   },
   {
     "Name": "Corsica Base",
@@ -11378,7 +11842,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/ST02-016.webp"
   },
   {
     "Name": "Leo",
@@ -11399,7 +11864,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/T-004.webp"
   },
   {
     "Name": "Tallgeese",
@@ -11420,7 +11886,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST02"
+    "Set": "ST02",
+    "ImagePath": "images/T-005.webp"
   },
   {
     "Name": "Sinanju",
@@ -11447,7 +11914,8 @@
     "Link": [
       "Full Frontal"
     ],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-001.webp"
   },
   {
     "Name": "Angelo's Geara Zulu",
@@ -11473,7 +11941,8 @@
     "Link": [
       "Angelo Sauper"
     ],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-002.webp"
   },
   {
     "Name": "Geara Zulu",
@@ -11495,7 +11964,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-003.webp"
   },
   {
     "Name": "Gaza D (Sleeves)",
@@ -11519,7 +11989,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-004.webp"
   },
   {
     "Name": "Dra-C (Sleeves)",
@@ -11540,7 +12011,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-005.webp"
   },
   {
     "Name": "Char's Zaku Ⅱ",
@@ -11566,7 +12038,8 @@
     "Link": [
       "Char Aznable"
     ],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-006.webp"
   },
   {
     "Name": "Zaku Ⅰ",
@@ -11588,7 +12061,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-007.webp"
   },
   {
     "Name": "Zaku Ⅱ",
@@ -11612,7 +12086,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-008.webp"
   },
   {
     "Name": "Gouf",
@@ -11637,7 +12112,8 @@
     "Link": [
       "Ramba Ral"
     ],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-009.webp"
   },
   {
     "Name": "Full Frontal",
@@ -11662,7 +12138,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-010.webp"
   },
   {
     "Name": "Char Aznable",
@@ -11687,7 +12164,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-011.webp"
   },
   {
     "Name": "Indignation",
@@ -11711,7 +12189,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-012.webp"
   },
   {
     "Name": "Close Combat",
@@ -11735,7 +12214,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-013.webp"
   },
   {
     "Name": "The Blue Giant",
@@ -11759,7 +12239,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-014.webp"
   },
   {
     "Name": "Rewloola",
@@ -11784,7 +12265,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-015.webp"
   },
   {
     "Name": "Falmel",
@@ -11809,7 +12291,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/ST03-016.webp"
   },
   {
     "Name": "Char's Zaku Ⅱ",
@@ -11830,7 +12313,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/T-006.webp"
   },
   {
     "Name": "Zaku Ⅱ",
@@ -11851,7 +12335,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST03"
+    "Set": "ST03",
+    "ImagePath": "images/T-007.webp"
   },
   {
     "Name": "Aile Strike Gundam",
@@ -11878,7 +12363,8 @@
     "Link": [
       "Kira Yamato"
     ],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-001.webp"
   },
   {
     "Name": "Strike Gundam",
@@ -11904,7 +12390,8 @@
     "Link": [
       "Kira Yamato"
     ],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-002.webp"
   },
   {
     "Name": "Moebius Zero",
@@ -11927,7 +12414,8 @@
     "Link": [
       "Mu La Flaga"
     ],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-003.webp"
   },
   {
     "Name": "Moebius",
@@ -11950,7 +12438,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-004.webp"
   },
   {
     "Name": "Strike Dagger",
@@ -11972,7 +12461,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-005.webp"
   },
   {
     "Name": "Aegis Gundam",
@@ -11998,7 +12488,8 @@
     "Link": [
       "Athrun Zala"
     ],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-006.webp"
   },
   {
     "Name": "Aegis Gundam (MA Mode)",
@@ -12024,7 +12515,8 @@
     "Link": [
       "Athrun Zala"
     ],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-007.webp"
   },
   {
     "Name": "Ginn",
@@ -12046,7 +12538,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-008.webp"
   },
   {
     "Name": "Miguel's Ginn",
@@ -12072,7 +12565,8 @@
     "Link": [
       "Miguel Ayman"
     ],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-009.webp"
   },
   {
     "Name": "Kira Yamato",
@@ -12097,7 +12591,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-010.webp"
   },
   {
     "Name": "Athrun Zala",
@@ -12122,7 +12617,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-011.webp"
   },
   {
     "Name": "Striker Pack",
@@ -12146,7 +12642,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-012.webp"
   },
   {
     "Name": "Hawk of Endymion",
@@ -12170,7 +12667,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-013.webp"
   },
   {
     "Name": "The Magic Bullet of Dusk",
@@ -12195,7 +12693,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-014.webp"
   },
   {
     "Name": "Archangel",
@@ -12222,7 +12721,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-015.webp"
   },
   {
     "Name": "Vesalius",
@@ -12248,7 +12748,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/ST04-016.webp"
   },
   {
     "Name": "Aile Strike Gundam",
@@ -12271,7 +12772,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/T-008.webp"
   },
   {
     "Name": "Launcher Strike Gundam",
@@ -12294,7 +12796,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/T-009.webp"
   },
   {
     "Name": "Sword Strike Gundam",
@@ -12317,7 +12820,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST04"
+    "Set": "ST04",
+    "ImagePath": "images/T-010.webp"
   },
   {
     "Name": "Gundam Barbatos 4th Form",
@@ -12345,7 +12849,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-001.webp"
   },
   {
     "Name": "Gundam Barbatos 2nd Form",
@@ -12372,7 +12877,8 @@
     "Link": [
       "Mikazuki Augus"
     ],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-002.webp"
   },
   {
     "Name": "CGS Mobile Worker",
@@ -12395,7 +12901,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-003.webp"
   },
   {
     "Name": "Graze Custom",
@@ -12417,7 +12924,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-004.webp"
   },
   {
     "Name": "Gundam Gusion Rebake",
@@ -12444,7 +12952,8 @@
     "Link": [
       "Akihiro Altland"
     ],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-005.webp"
   },
   {
     "Name": "Hyakuren",
@@ -12466,7 +12975,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-006.webp"
   },
   {
     "Name": "McGillis' Schwalbe Graze",
@@ -12493,7 +13003,8 @@
     "Link": [
       "McGillis Fareed"
     ],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-007.webp"
   },
   {
     "Name": "Graze Commander Type",
@@ -12517,7 +13028,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-008.webp"
   },
   {
     "Name": "Graze",
@@ -12539,7 +13051,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-009.webp"
   },
   {
     "Name": "Mikazuki Augus",
@@ -12564,7 +13077,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-010.webp"
   },
   {
     "Name": "Akihiro Altland",
@@ -12589,7 +13103,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-011.webp"
   },
   {
     "Name": "McGillis Fareed",
@@ -12613,7 +13128,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-012.webp"
   },
   {
     "Name": "With Iron and Blood",
@@ -12636,7 +13152,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-013.webp"
   },
   {
     "Name": "Fatal Strike",
@@ -12660,7 +13177,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-014.webp"
   },
   {
     "Name": "Isaribi",
@@ -12686,7 +13204,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST05"
+    "Set": "ST05",
+    "ImagePath": "images/ST05-015.webp"
   },
   {
     "Name": "GQuuuuuuX (Omega Psycommu)",
@@ -12712,7 +13231,8 @@
     "Link": [
       "Amate Yuzuriha (Machu)"
     ],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-001.webp"
   },
   {
     "Name": "GQuuuuuuX (Omega Psycommu)",
@@ -12738,7 +13258,8 @@
     "Link": [
       "Amate Yuzuriha (Machu)"
     ],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-002.webp"
   },
   {
     "Name": "Gaia's Rick Dom (GQ)",
@@ -12763,7 +13284,8 @@
     "Link": [
       "Gaia"
     ],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-003.webp"
   },
   {
     "Name": "Gelgoog (GQ)",
@@ -12785,7 +13307,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-004.webp"
   },
   {
     "Name": "Red Gundam",
@@ -12812,7 +13335,8 @@
     "Link": [
       "Shuji Itō"
     ],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-005.webp"
   },
   {
     "Name": "Red Gundam",
@@ -12836,7 +13360,8 @@
     "Link": [
       "Shuji Itō"
     ],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-006.webp"
   },
   {
     "Name": "Ortega's Rick Dom (GQ)",
@@ -12861,7 +13386,8 @@
     "Link": [
       "Ortega"
     ],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-007.webp"
   },
   {
     "Name": "Sugai's Gelgoog (GQ)",
@@ -12883,7 +13409,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-008.webp"
   },
   {
     "Name": "Amate Yuzuriha (Machu)",
@@ -12908,7 +13435,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-009.webp"
   },
   {
     "Name": "Shuji Itō",
@@ -12933,7 +13461,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-010.webp"
   },
   {
     "Name": "Ruthless Tactics",
@@ -12957,7 +13486,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-011.webp"
   },
   {
     "Name": "Schoolgirl and Smuggler",
@@ -12980,7 +13510,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-012.webp"
   },
   {
     "Name": "Fierce Unity",
@@ -13004,7 +13535,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-013.webp"
   },
   {
     "Name": "Clan Battle",
@@ -13030,7 +13562,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-014.webp"
   },
   {
     "Name": "Kaneban Co., Ltd.",
@@ -13056,7 +13589,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST06"
+    "Set": "ST06",
+    "ImagePath": "images/ST06-015.webp"
   },
   {
     "Name": "Gundam Exia",
@@ -13084,7 +13618,8 @@
     "Link": [
       "Setsuna F. Seiei"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-001.webp"
   },
   {
     "Name": "Gundam Exia",
@@ -13109,7 +13644,8 @@
     "Link": [
       "Setsuna F. Seiei"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-002.webp"
   },
   {
     "Name": "Gundam Virtue",
@@ -13134,7 +13670,8 @@
     "Link": [
       "Tieria Erde"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-003.webp"
   },
   {
     "Name": "Gundam Virtue",
@@ -13161,7 +13698,8 @@
     "Link": [
       "Tieria Erde"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-004.webp"
   },
   {
     "Name": "Gundam Dynames",
@@ -13189,7 +13727,8 @@
     "Link": [
       "Lockon Stratos"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-005.webp"
   },
   {
     "Name": "Gundam Dynames",
@@ -13214,7 +13753,8 @@
     "Link": [
       "Lockon Stratos"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-006.webp"
   },
   {
     "Name": "Gundam Kyrios",
@@ -13242,7 +13782,8 @@
       "Allelujah Haptism",
       "Hallelujah Haptism"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-007.webp"
   },
   {
     "Name": "Gundam Kyrios (Flight Mode)",
@@ -13268,7 +13809,8 @@
       "Allelujah Haptism",
       "Hallelujah Haptism"
     ],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-008.webp"
   },
   {
     "Name": "Setsuna F. Seiei",
@@ -13292,7 +13834,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-009.webp"
   },
   {
     "Name": "Tieria Erde",
@@ -13317,7 +13860,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-010.webp"
   },
   {
     "Name": "Lockon Stratos (Neil)",
@@ -13341,7 +13885,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-011.webp"
   },
   {
     "Name": "Allelujah Haptism",
@@ -13366,7 +13911,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-012.webp"
   },
   {
     "Name": "Armed Intervention",
@@ -13390,7 +13936,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-013.webp"
   },
   {
     "Name": "Tactical Visionary",
@@ -13413,7 +13960,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-014.webp"
   },
   {
     "Name": "Ptolemaios",
@@ -13439,7 +13987,8 @@
       "Space"
     ],
     "Link": [],
-    "Set": "ST07"
+    "Set": "ST07",
+    "ImagePath": "images/ST07-015.webp"
   },
   {
     "Name": "Ξ Gundam",
@@ -13466,7 +14015,8 @@
     "Link": [
       "Hathaway Noa"
     ],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-001.webp"
   },
   {
     "Name": "Ξ Gundam",
@@ -13492,7 +14042,8 @@
     "Link": [
       "Hathaway Noa"
     ],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-002.webp"
   },
   {
     "Name": "Messer (Type-F Naked) (Commander Type)",
@@ -13514,7 +14065,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-003.webp"
   },
   {
     "Name": "Messer Type-F01",
@@ -13538,7 +14090,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-004.webp"
   },
   {
     "Name": "Messer Type-F02 Minelayer",
@@ -13560,7 +14113,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-005.webp"
   },
   {
     "Name": "Penelope",
@@ -13586,7 +14140,8 @@
     "Link": [
       "Lane Aim"
     ],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-006.webp"
   },
   {
     "Name": "Penelope",
@@ -13610,7 +14165,8 @@
     "Link": [
       "Lane Aim"
     ],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-007.webp"
   },
   {
     "Name": "Gustav Karl Type-00",
@@ -13634,7 +14190,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-008.webp"
   },
   {
     "Name": "Jegan Ground Type-A (Man Hunter)",
@@ -13657,7 +14214,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-009.webp"
   },
   {
     "Name": "Hathaway Noa",
@@ -13682,7 +14240,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-010.webp"
   },
   {
     "Name": "Lane Aim",
@@ -13706,7 +14265,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-011.webp"
   },
   {
     "Name": "Words for Hathaway",
@@ -13730,7 +14290,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-012.webp"
   },
   {
     "Name": "Lady Luck",
@@ -13753,7 +14314,8 @@
       "-"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-013.webp"
   },
   {
     "Name": "Valiant",
@@ -13778,7 +14340,8 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-014.webp"
   },
   {
     "Name": "Davao",
@@ -13804,6 +14367,7 @@
       "Earth"
     ],
     "Link": [],
-    "Set": "ST08"
+    "Set": "ST08",
+    "ImagePath": "images/ST08-015.webp"
   }
 ]

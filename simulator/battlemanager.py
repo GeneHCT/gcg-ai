@@ -2,7 +2,7 @@
 Battle Manager for Gundam Card Game
 Handles the complete 5-step battle sequence according to game rules 8-1 through 8-6
 """
-from typing import Optional, Tuple, List
+from typing import Optional, Tuple, List, Any
 from dataclasses import dataclass, field
 from enum import Enum
 
@@ -240,9 +240,15 @@ class BattleManager:
         return game_state, logs
     
     @staticmethod
-    def execute_damage_step(game_state: GameState, battle_state: BattleState) -> Tuple[GameState, List[str]]:
+    def execute_damage_step(game_state: GameState, battle_state: BattleState,
+                           agents: Optional[List] = None) -> Tuple[GameState, List[str]]:
         """
         Execute Damage Step (Rule 8-5).
+        
+        Args:
+            game_state: Current game state
+            battle_state: Active battle state
+            agents: Optional list [agent0, agent1] for Burst decision; if None, uses random
         
         Returns:
             Tuple of (updated game_state, list of log messages)
@@ -253,7 +259,7 @@ class BattleManager:
         if battle_state.original_target == "PLAYER":
             # Rule 8-5-2: Attack on Player
             game_state, damage_logs = BattleManager._resolve_player_attack(
-                game_state, attacker
+                game_state, attacker, agents=agents
             )
             logs.extend(damage_logs)
         else:
@@ -267,8 +273,9 @@ class BattleManager:
         return game_state, logs
     
     @staticmethod
-    def _resolve_player_attack(game_state: GameState, attacker: UnitInstance) -> Tuple[GameState, List[str]]:
-        """Resolve attack on player (shields/base)"""
+    def _resolve_player_attack(game_state: GameState, attacker: UnitInstance,
+                             agents: Optional[List] = None) -> Tuple[GameState, List[str]]:
+        """Resolve attack on player (shields/base). Agents used for Burst decisions."""
         logs = []
         opponent_id = 1 - attacker.owner_id
         opponent = game_state.players[opponent_id]
@@ -289,10 +296,7 @@ class BattleManager:
                 if base.current_hp <= 0:
                     logs.append("  Base DESTROYED!")
                     opponent.bases.remove(base)
-                    
-                    # Check win condition
-                    from simulator.game_manager import WinConditionChecker
-                    game_state = WinConditionChecker.check_win_conditions(game_state)
+                    # Do not check win here: damage went to base, not player. Next attack with no shields/base will defeat.
                 
                 return game_state, logs
         
@@ -317,19 +321,33 @@ class BattleManager:
                 shield = opponent.shield_area.pop(0)
                 shields_destroyed.append(shield)
                 
-                # Rule 8-5-2-3-1: Check for Burst
+                # Rule 8-5-2-3-1: Check for Burst - agent decides whether to activate
                 has_burst = BattleManager._check_burst(shield)
                 if has_burst:
-                    # TODO: Agent decides whether to activate
-                    # For now, simplified: check randomly
-                    import random
-                    if random.random() < 0.5:
+                    activate_burst = False
+                    if agents and opponent_id < len(agents):
+                        # Wire Burst decision to agent
+                        game_state.pending_burst_decision = {
+                            "card": shield,
+                            "player_id": opponent_id
+                        }
+                        game_state.decision_player_id = opponent_id
+                        from simulator.random_agent import LegalActionGenerator, ActionType
+                        legal_actions = LegalActionGenerator.get_legal_actions(game_state)
+                        burst_agent = agents[opponent_id]
+                        chosen_action = burst_agent.choose_action(game_state, legal_actions)
+                        game_state.pending_burst_decision = None
+                        game_state.decision_player_id = None
+                        activate_burst = (chosen_action.action_type == ActionType.BURST_ACTIVATE)
+                    else:
+                        # No agents: fall back to random
+                        import random
+                        activate_burst = random.random() < 0.5
+                    if activate_burst:
                         burst_activated.append(shield.name)
-                        # Execute burst effect
                         try:
                             from simulator.trigger_manager import get_trigger_manager
-                            trigger_manager = get_trigger_manager()
-                            trigger_manager.trigger_event(
+                            get_trigger_manager().trigger_event(
                                 event_type="BURST",
                                 game_state=game_state,
                                 source_card=shield,
@@ -346,9 +364,8 @@ class BattleManager:
         if burst_activated:
             logs.append(f"  Burst activated: {', '.join(burst_activated)}")
         
-        # Check win condition
-        from simulator.game_manager import WinConditionChecker
-        game_state = WinConditionChecker.check_win_conditions(game_state)
+        # Do not check win here: damage went to shield(s), not player (Rule 8-5-2).
+        # Player loses only when they receive battle damage with no shields/base.
         
         return game_state, logs
     
@@ -490,13 +507,18 @@ class BattleManager:
         
         # Step 2: Block Step (only if attacking unit)
         if battle_state.original_target == "UNIT":
+            battle_state.current_step = BattleStep.BLOCK
+            game_state.battle_state = battle_state
+            game_state.decision_player_id = 1 - game_state.turn_player
+            
             legal_actions = BattleManager.get_block_legal_actions(game_state, battle_state)
             
-            # Standby player chooses
             standby_player_id = 1 - game_state.turn_player
             standby_agent = agents[standby_player_id]
             
             chosen_action = standby_agent.choose_action(game_state, legal_actions)
+            
+            game_state.decision_player_id = None
             
             if chosen_action.action_type == ActionType.BLOCK:
                 game_state, log = BattleManager.execute_block(
@@ -526,13 +548,19 @@ class BattleManager:
             all_logs.append(log)
             return game_state, all_logs
         
-        # Step 4: Damage Step
-        game_state, damage_logs = BattleManager.execute_damage_step(game_state, battle_state)
+        # Step 4: Damage Step (pass agents for Burst decision)
+        game_state, damage_logs = BattleManager.execute_damage_step(
+            game_state, battle_state, agents=agents
+        )
         all_logs.extend(damage_logs)
         
         # Step 5: Battle End Step
         game_state, log = BattleManager.execute_battle_end_step(game_state, battle_state)
         all_logs.append(log)
         all_logs.append(f"=== BATTLE END ===")
+        
+        # Clear battle state from game_state
+        game_state.battle_state = None
+        game_state.decision_player_id = None
         
         return game_state, all_logs

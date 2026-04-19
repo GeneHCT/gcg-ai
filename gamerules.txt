@@ -181,7 +181,8 @@ Ex: If you are instructed to rest a Unit that is currently rested, since the Uni
 4-8. Hand 
 4-8-1. Your hand is where you place cards drawn from your deck. 
 4-8-2. Your hand is a private location, but each player may freely view or reorder  the cards in their own hand. 
-4-8-3. Unless specified otherwise, you may not view the other player’s hand. 4-8-4. A hand is limited to no more than ten cards. Players may have any number  of cards in their hand, but if your hand exceeds the limit during your end  phase, you must discard cards until the limit is reached. 
+4-8-3. Unless specified otherwise, you may not view the other player’s hand. 
+4-8-4. A hand is limited to no more than ten cards. Players may have any number  of cards in their hand, but if your hand exceeds the limit during your end  phase, you must discard cards until the limit is reached. 
 4-9. Trash 
 4-9-1. Destroyed Unit, Pilot, and Base cards, and Command cards whose abilities  have finished activating, go into the trash. 
 4-9-2. Your trash is public. Cards within it are placed face up in a stack, and both  players are free to view their contents. You are free to reorder the cards in  your trash. 

@@ -86,6 +86,9 @@ class ActionExecutor:
         elif action_type == "SHIELD_TO_HAND":
             return ActionExecutor._execute_shield_to_hand(context, action)
         
+        elif action_type == "ADD_TO_HAND":
+            return ActionExecutor._execute_add_to_hand(context, action)
+        
         elif action_type == "CONDITIONAL_BRANCH":
             return ActionExecutor._execute_conditional_branch(context, action)
         
@@ -508,6 +511,43 @@ class ActionExecutor:
                 taken += 1
         
         return f"Added {taken} Shield(s) to hand"
+    
+    @staticmethod
+    def _execute_add_to_hand(context: EffectContext, action: Dict) -> str:
+        """
+        Execute ADD_TO_HAND action - Add cards from a zone (e.g. SHIELDS) to hand.
+        Used by converted effects (e.g. Jupitris 【Deploy】: Add 1 of your Shields to your hand).
+        """
+        source = action.get("source", "SHIELDS")
+        target_spec = action.get("target", {})
+        if isinstance(target_spec, dict):
+            count = target_spec.get("count", 1)
+        else:
+            count = 1
+        
+        game_state = context.game_state
+        player = game_state.players[context.source_player_id]
+        
+        if source == "SHIELDS":
+            taken = 0
+            for _ in range(count):
+                if player.shield_area:
+                    card = player.shield_area.pop(0)
+                    player.hand.append(card)
+                    taken += 1
+            return f"Added {taken} card(s) from shields to hand"
+        
+        if source == "TRASH":
+            # Target may specify SELF_TRASH; take from player trash
+            taken = 0
+            for _ in range(count):
+                if player.trash:
+                    card = player.trash.pop()
+                    player.hand.append(card)
+                    taken += 1
+            return f"Added {taken} card(s) from trash to hand"
+        
+        return f"Unknown source for ADD_TO_HAND: {source}"
     
     @staticmethod
     def _execute_conditional_branch(context: EffectContext, action: Dict) -> str:

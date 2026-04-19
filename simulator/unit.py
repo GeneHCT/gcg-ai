@@ -52,16 +52,24 @@ class UnitInstance:
             
     @property
     def ap(self) -> int:
-        """Get current AP (can be modified by Support, effects, etc.)"""
+        """Get current AP (can be modified by Support, Pilot bonuses, effects, etc.)"""
         base_ap = self.card_data.ap
-        # Add support bonus if applicable
         support_bonus = self.keywords.get("support", 0)
-        return base_ap + support_bonus
+        # Rule 3-3-8-1: Pilot AP/HP added to paired Unit
+        pilot_ap = self.paired_pilot.card_data.ap if self.paired_pilot else 0
+        # During Link effect bonuses (e.g. "This Unit gets AP+1")
+        during_link_ap = self.keywords.get("pilot_ap_bonus", 0)
+        return base_ap + support_bonus + pilot_ap + during_link_ap
     
     @property
     def hp(self) -> int:
-        """Get max HP"""
-        return self.card_data.hp
+        """Get max HP (including Pilot bonuses)"""
+        base_hp = self.card_data.hp
+        # Rule 3-3-8-1: Pilot AP/HP added to paired Unit
+        pilot_hp = self.paired_pilot.card_data.hp if self.paired_pilot else 0
+        # During Link effect bonuses (e.g. "This Unit gets HP+1")
+        during_link_hp = self.keywords.get("pilot_hp_bonus", 0)
+        return base_hp + pilot_hp + during_link_hp
     
     @property
     def is_destroyed(self) -> bool:
@@ -122,8 +130,8 @@ class UnitInstance:
             source: Description of the source (for tracking)
         """
         # Additive keywords sum their values
-        if keyword in ["repair", "breach", "support"]:
-            self.keywords[keyword] = self.keywords.get(keyword, 0) + value
+        if keyword in ["repair", "breach", "support", "pilot_ap_bonus", "pilot_hp_bonus"]:
+            self.keywords[keyword] = self.keywords.get(keyword, 0) + (value if isinstance(value, (int, float)) else 0)
         else:
             # Boolean keywords are just set to True
             self.keywords[keyword] = True

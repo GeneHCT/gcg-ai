@@ -6,20 +6,26 @@ Scrapes card data from https://www.gundam-gcg.com/en/cards/
 
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 import json
 import os
 import re
 import time
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
+
+# XPath for card image on detail page (e.g. GD01-001 from gundam-gcg.com/en/cards/)
+CARD_IMAGE_XPATH = "/html/body/main/article/div[1]/div[3]/div/div/div/img"
 
 
 class OfficialGundamScraper:
     """Scraper for official Gundam Card Game website"""
     
-    def __init__(self):
+    def __init__(self, output_dir: str = "card_database"):
         self.base_url = "https://www.gundam-gcg.com"
         self.cards_url = f"{self.base_url}/en/cards/"
         self.detail_url = f"{self.base_url}/en/cards/detail.php"
+        self.output_dir = output_dir
+        self.images_dir = os.path.join(output_dir, "images")
         self.cards = []
         self.session = requests.Session()
         self.session.headers.update({
@@ -135,6 +141,48 @@ class OfficialGundamScraper:
             print(f"  Error: {e}")
             return []
     
+    def _download_card_image(self, soup: BeautifulSoup, card_id: str, detail_page_url: str) -> Optional[str]:
+        """Find and download card image from detail page. Returns relative path e.g. images/GD01-001.webp."""
+        try:
+            # Use CARD_IMAGE_XPATH structure: article > div[0] > div[2] > ... > img (div[3] is 1-indexed)
+            article = soup.find("main")
+            if article:
+                article = article.find("article")
+            if not article:
+                return None
+            
+            img = article.find("img")
+            if not img:
+                return None
+            
+            src = img.get("src") or img.get("data-src")
+            if not src:
+                return None
+            
+            # Resolve relative URL (e.g. ../images/cards/card/GD01-001.webp)
+            image_url = urljoin(detail_page_url, src)
+            # Strip query string for clean filename
+            image_url_base = image_url.split("?")[0]
+            ext = os.path.splitext(image_url_base)[1] or ".webp"
+            if ext not in (".webp", ".jpg", ".jpeg", ".png"):
+                ext = ".webp"
+            
+            # Download image
+            os.makedirs(self.images_dir, exist_ok=True)
+            safe_id = card_id.replace("/", "-").replace("_", "-")
+            filename = f"{safe_id}{ext}"
+            filepath = os.path.join(self.images_dir, filename)
+            
+            resp = self.session.get(image_url, timeout=15)
+            resp.raise_for_status()
+            with open(filepath, "wb") as f:
+                f.write(resp.content)
+            
+            return os.path.join("images", filename)
+        except Exception as e:
+            print(f"    (Image download failed for {card_id}: {e})")
+            return None
+    
     def scrape_card_detail(self, card_id: str, card_name: str, set_name: str) -> Dict[str, Any]:
         """Scrape detailed card information"""
         url = f"{self.detail_url}?detailSearch={card_id}"
@@ -144,9 +192,10 @@ class OfficialGundamScraper:
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # Initialize card data with known info
+            normalized_id = card_id.replace('_', '-')
             card_data = {
                 "Name": card_name,
-                "ID": card_id.replace('_', '-'),  # Normalize ID format
+                "ID": normalized_id,  # Normalize ID format
                 "Effect": [],
                 "Color": "",
                 "Type": "",
@@ -159,7 +208,8 @@ class OfficialGundamScraper:
                 "Block": None,
                 "Zones": [],
                 "Link": [],
-                "Set": set_name.split('[')[1].rstrip(']') if '[' in set_name else ""
+                "Set": set_name.split('[')[1].rstrip(']') if '[' in set_name else "",
+                "ImagePath": None,
             }
             
             # Get all text from the page with newlines preserved
@@ -271,6 +321,11 @@ class OfficialGundamScraper:
             if card_data["Effect"]:
                 card_data["Effect"] = self.fix_effect_array(card_data["Effect"])
             
+            # Download card image and add path to JSON
+            image_path = self._download_card_image(soup, normalized_id, url)
+            if image_path:
+                card_data["ImagePath"] = image_path
+            
             return card_data
             
         except Exception as e:
@@ -337,8 +392,9 @@ class OfficialGundamScraper:
         print(f"{'='*60}")
         return self.cards
     
-    def save_to_json(self, output_dir: str = "card_database"):
+    def save_to_json(self, output_dir: str = None):
         """Save scraped cards to JSON files"""
+        output_dir = output_dir or self.output_dir
         os.makedirs(output_dir, exist_ok=True)
         
         if not self.cards:

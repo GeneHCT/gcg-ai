@@ -1,0 +1,13 @@
+.git
+.pytest_cache
+__pycache__
+*.pyc
+*.log
+game_*.log
+game_simulation*.log
+.DS_Store
+venv
+env
+ENV
+logs
+card_effects_exburst

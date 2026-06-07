@@ -1,0 +1,32 @@
+services:
+  simulator:
+    build: .
+    image: gcg-ai-simulator:latest
+    working_dir: /app
+    volumes:
+      - .:/app
+    env_file:
+      - .credentials
+    environment:
+      PYTHONPATH: /app
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-deepseek/deepseek-chat-v3-0324}
+      OPENROUTER_BASE_URL: ${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      OPENROUTER_TIMEOUT_SECONDS: ${OPENROUTER_TIMEOUT_SECONDS:-60}
+      OPENROUTER_MAX_RETRIES: ${OPENROUTER_MAX_RETRIES:-1}
+    command: python -m pytest tests/test_exburst_effect_roadmap.py tests/test_exburst_card_data.py
+
+  exburst-llm:
+    build: .
+    image: gcg-ai-simulator:latest
+    working_dir: /app
+    volumes:
+      - .:/app
+    env_file:
+      - .credentials
+    environment:
+      PYTHONPATH: /app
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-deepseek/deepseek-chat-v3-0324}
+      OPENROUTER_BASE_URL: ${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      OPENROUTER_TIMEOUT_SECONDS: ${OPENROUTER_TIMEOUT_SECONDS:-60}
+      OPENROUTER_MAX_RETRIES: ${OPENROUTER_MAX_RETRIES:-1}
+    command: python convert_card_effects.py --exburst --use-llm --llm-timeout 60 --llm-max-retries 1 GD01-001

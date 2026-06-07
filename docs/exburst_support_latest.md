@@ -1,0 +1,654 @@
+# ExBurst Support Status
+
+- Generated: `2026-06-07T17:24:51.829804+00:00`
+- Output: `card_effects_exburst`
+- Selected IDs: `GD04-117`
+
+## Counts
+
+- Supported: 618
+- Partial: 7
+- Unsupported: 3
+- Unknown: 0
+- Missing Effect Outputs: 0
+
+## Unsupported Cards
+
+- `EB01-044` - Justice Gundam (EX) (2 issue(s))
+- `GD02-098` - Quattro Bajeena (1 issue(s))
+- `GD04-075` - GN-X (1 issue(s))
+
+## Partial Cards
+
+- `GD01-002` - Unicorn Gundam (Destroy Mode) (2 issue(s))
+- `GD03-107` - Over the River and Through the Woods (1 issue(s))
+- `GD03-120` - Immortal Colasour (1 issue(s))
+- `GD04-021` - Gundam Lfrith Thorn (1 issue(s))
+- `GD04-057` - Gundam Nadleeh (1 issue(s))
+- `GD04-070` - Al-Saachez's AEU Enact Custom Moralia Development Experiment Type (1 issue(s))
+- `ST10-014` - Unlocking the Development Diagram (1 issue(s))
+
+## Supported Cards
+
+- `EB01-001` - Gundam Astray Red Frame Custom (EX)
+- `EB01-005` - Zeta Gundam Ⅲ P2 Type
+- `EB01-006` - Gundam Astray Gold Frame Amatsu
+- `EB01-008` - Gundam Delta Kai
+- `EB01-009` - Gundam Full Armor (Thunderbolt) (EX)
+- `EB01-017` - Haro
+- `EB01-021` - Build Strike Gundam (Full Package) (EX)
+- `EB01-022` - Gundam Exia (EX)
+- `EB01-023` - Le Cygne (EX)
+- `EB01-024` - GQuuuuuuX (Omega Psycommu)
+- `EB01-025` - Tallgeese II
+- `EB01-027` - Tallgeese
+- `EB01-028` - Gundam Plutone
+- `EB01-034` - Gundam Lfrith Ur
+- `EB01-035` - Gundam Lfrith Thorn
+- `EB01-036` - Darilbalde
+- `EB01-040` - Gundam Epyon
+- `EB01-041` - Strike Freedom Gundam (EX)
+- `EB01-043` - Blue Destiny Unit-1 (EX)
+- `EB01-045` - Psycho Zaku (EX)
+- `EB01-046` - Striker Custom (EX)
+- `EB01-047` - Casval's Gundam
+- `EB01-050` - Saikoro Gundam
+- `EB01-052` - Hildolfr
+- `EB01-054` - Gaplant TR-5 "Hrairoo" Unit 1
+- `EB01-055` - Dom Gross Beil
+- `EB01-061` - Ellis Claude
+- `EB01-063` - Io Fleming
+- `EB01-064` - Rondo Gina Sahaku
+- `EB01-065` - Meir Siva
+- `EB01-066` - Reiji
+- `EB01-067` - Asuna Elmarit
+- `EB01-068` - Chall Acustica
+- `EB01-070` - Daryl Lorenz
+- `EB01-071` - Ittou Tsurugi
+- `EB01-072` - Yuu Kajima
+- `EB01-075` - Fierce Enemy Assault
+- `EB01-076` - Gerbera Strait
+- `EB01-078` - Premium Unit Assembly
+- `EB01-079` - Modification
+- `EB01-084` - 30cm Cannon (APFSDS Round)
+- `EB01-086` - Kycilia Zabi & Gwazine
+- `EB01-089` - Lacus Clyne & Eternal
+- `EB01-090` - Tiffa Adil & Freeden
+- `Eb01-014` - Gouf Vijayanta
+- `GD01-001` - Gundam
+- `GD01-003` - Unicorn Gundam 02 Banshee (Destroy Mode)
+- `GD01-004` - Guncannon
+- `GD01-005` - Unicorn Gundam (Unicorn Mode)
+- `GD01-006` - Delta Plus
+- `GD01-007` - Noin's Aries
+- `GD01-008` - Guntank
+- `GD01-009` - G-Fighter
+- `GD01-010` - Unicorn Gundam 02 Banshee (Unicorn Mode)
+- `GD01-012` - Zechs' Leo
+- `GD01-014` - G-Sky Easy
+- `GD01-015` - Ball
+- `GD01-016` - Jegan
+- `GD01-017` - Stark Jegan
+- `GD01-019` - Byarlant Custom
+- `GD01-020` - Anksha
+- `GD01-023` - Char's Gelgoog
+- `GD01-024` - Wing Gundam Zero
+- `GD01-025` - Gundam Deathscythe
+- `GD01-026` - Char's Zaku Ⅱ
+- `GD01-027` - Big Zam
+- `GD01-028` - Gundam Sandrock
+- `GD01-029` - Shenlong Gundam
+- `GD01-030` - Rick Dom
+- `GD01-032` - Gyan
+- `GD01-033` - Gundam Deathscythe
+- `GD01-034` - Gundam Heavyarms
+- `GD01-038` - Adzam
+- `GD01-039` - Dopp
+- `GD01-041` - Shenlong Gundam
+- `GD01-042` - Duo's Leo
+- `GD01-043` - Rasid's Maganac
+- `GD01-044` - Kshatriya
+- `GD01-045` - Duel Gundam (Assault Shroud)
+- `GD01-046` - Buster Gundam
+- `GD01-047` - Shamblo
+- `GD01-048` - Zaku I Sniper Type
+- `GD01-049` - Blitz Gundam
+- `GD01-050` - LaGOWE
+- `GD01-052` - Geara Zulu (Guards Type)
+- `GD01-053` - Geara Doga (Heavy Armed Type)
+- `GD01-054` - Duel Gundam
+- `GD01-055` - BuCUE
+- `GD01-056` - Geara Doga (Sleeves)
+- `GD01-058` - Galluss-K
+- `GD01-059` - Zee Zulu
+- `GD01-061` - ZuOOT
+- `GD01-063` - ZnO
+- `GD01-065` - Freedom Gundam
+- `GD01-066` - Justice Gundam
+- `GD01-067` - Gundam Aerial Rebuild
+- `GD01-068` - Perfect Strike Gundam
+- `GD01-069` - Strike Rouge
+- `GD01-070` - Gundam Aerial
+- `GD01-071` - Gundam Pharact
+- `GD01-072` - Launcher Strike Gundam
+- `GD01-073` - Sword Strike Gundam
+- `GD01-074` - Chuchu's Demi Trainer
+- `GD01-075` - Darilbalde
+- `GD01-076` - Michaelis
+- `GD01-078` - Mistral
+- `GD01-080` - Cagalli's Skygrasper
+- `GD01-081` - M1 Astray
+- `GD01-082` - Gundam Aerial (Mirasoul Flight Unit)
+- `GD01-086` - Gundam Lfrith
+- `GD01-087` - Sayla Mass
+- `GD01-088` - Banagher Links
+- `GD01-089` - Riddhe Marcenas
+- `GD01-090` - Duo Maxwell
+- `GD01-091` - Chang Wufei
+- `GD01-092` - M'Quve
+- `GD01-093` - Marida Cruz
+- `GD01-094` - Yzak Jule
+- `GD01-095` - Dearka Elthman
+- `GD01-096` - Cagalli Yula Athha
+- `GD01-097` - Guel Jeturk
+- `GD01-098` - Elan Ceres (Enhanced Person Number 4)
+- `GD01-099` - Intercept Orders
+- `GD01-100` - A Show of Resolve
+- `GD01-101` - Deep Devotion
+- `GD01-102` - Securing the Supply Line
+- `GD01-103` - The Stubborn Cog
+- `GD01-104` - Signs of a Revolution
+- `GD01-105` - Citizens, Take a Stand!
+- `GD01-106` - Fortress Defense
+- `GD01-107` - First Contact
+- `GD01-108` - Strategic Arms
+- `GD01-109` - The Path to Victory or Defeat
+- `GD01-110` - Rasid's Orders
+- `GD01-111` - Battle of Aces
+- `GD01-112` - Extreme Hatred
+- `GD01-113` - The Desert Tiger
+- `GD01-114` - Assault on Torrington Base
+- `GD01-115` - Zeon Remnant Forces
+- `GD01-116` - Stealth Stratagem
+- `GD01-117` - The Witch and the Bride
+- `GD01-118` - Overflowing Affection
+- `GD01-119` - Iron-Fisted Discipline
+- `GD01-120` - Naval Bombardment
+- `GD01-121` - Midair Modifications
+- `GD01-122` - Covert Operative
+- `GD01-123` - Nahel Argama
+- `GD01-124` - Side 7
+- `GD01-125` - Zanzibar
+- `GD01-126` - Underground Desert Base
+- `GD01-127` - Gamow
+- `GD01-128` - Mining Asteroid Palau
+- `GD01-129` - Kusanagi
+- `GD01-130` - 13th Tactical Testing Sector
+- `GD02-001` - Psycho Gundam
+- `GD02-002` - Gundam Epyon
+- `GD02-003` - Gundam Mk-II (Titans)
+- `GD02-004` - Byarlant
+- `GD02-005` - Tallgeese
+- `GD02-006` - Forbidden Gundam
+- `GD02-007` - Psycho Gundam (MA Mode)
+- `GD02-008` - Gabthley
+- `GD02-009` - Calamity Gundam
+- `GD02-010` - Raider Gundam
+- `GD02-011` - Moebius (Peacemaker Team)
+- `GD02-014` - Galbaldy Beta
+- `GD02-016` - Barzam
+- `GD02-017` - Delta Plus (Waverider Mode)
+- `GD02-018` - Taurus
+- `GD02-020` - Elmeth
+- `GD02-021` - Gundam AGE-1 Normal
+- `GD02-022` - G-Exes
+- `GD02-023` - Gundam AGE-1 Spallow
+- `GD02-024` - Red Gundam
+- `GD02-025` - Gundam Heavyarms
+- `GD02-026` - Genoace Custom
+- `GD02-027` - Gundam AGE-1 Titus
+- `GD02-031` - Gundam AGE-1 Titus
+- `GD02-033` - Kikeroga (MA Mode) (GQ)
+- `GD02-034` - GQuuuuuuX
+- `GD02-035` - Police Zaku (Armored RRU Type)
+- `GD02-036` - Qubeley
+- `GD02-037` - Gundam Virsago
+- `GD02-038` - GQuuuuuuX (Omega Psycommu)
+- `GD02-039` - Haman Karn's Gaza C
+- `GD02-040` - Gundam Ashtaron
+- `GD02-041` - Sugai's Gelgoog (GQ)
+- `GD02-042` - Gundam Ashtaron (MA Mode)
+- `GD02-043` - Daughtress Weapon
+- `GD02-044` - Daughtress Command
+- `GD02-045` - GINN Long-Range Reconnaissance Type
+- `GD02-046` - Sayla's Light-Type Guncannon
+- `GD02-047` - Gaza C
+- `GD02-049` - Daughtress
+- `GD02-053` - Gundam X
+- `GD02-054` - Gundam Barbatos 1st Form
+- `GD02-055` - Gundam Gusion Rebake
+- `GD02-056` - Gundam X
+- `GD02-057` - Zedas
+- `GD02-058` - Ryusei-Go (Graze Custom Ⅱ)
+- `GD02-059` - Gundam Airmaster
+- `GD02-060` - Gundam Leopard
+- `GD02-061` - Hyakuri
+- `GD02-064` - Gundam Leopard
+- `GD02-066` - Gafran
+- `GD02-068` - Gundam Barbatos 3rd Form
+- `GD02-069` - Zeta Gundam
+- `GD02-070` - Gundam Kimaris
+- `GD02-071` - Gundam Mk-II (AEUG)
+- `GD02-072` - Hyaku-Shiki
+- `GD02-073` - Carta's Graze Ritter (Ground Type)
+- `GD02-074` - Gundam Aerial Rebuild
+- `GD02-075` - Rick Dias (Red)
+- `GD02-076` - Buster Gundam
+- `GD02-079` - Rick Dias
+- `GD02-081` - Methuss
+- `GD02-082` - Gaelio's Schwalbe Graze
+- `GD02-083` - Graze Ritter (Ground Type)
+- `GD02-085` - Four Murasame
+- `GD02-086` - Jerid Messa
+- `GD02-087` - Orga, Crot, and Shani
+- `GD02-088` - Flit Asuno
+- `GD02-089` - Lalah Sune
+- `GD02-090` - Challia Bull (GQ)
+- `GD02-091` - Haman Karn
+- `GD02-092` - Shagia Frost
+- `GD02-093` - Olba Frost
+- `GD02-094` - Garrod Ran & Tiffa Adill
+- `GD02-095` - Lafter Frankland
+- `GD02-096` - Desil Galette
+- `GD02-097` - Kamille Bidan
+- `GD02-099` - Gaelio Bauduin
+- `GD02-100` - Dramatic Turnabout
+- `GD02-101` - Beneath the Mask
+- `GD02-102` - Mouar’s Determination
+- `GD02-103` - AGE Device
+- `GD02-104` - Turning Point of History
+- `GD02-105` - Valedictorian
+- `GD02-106` - White Wolf
+- `GD02-107` - All-Range Attack
+- `GD02-108` - That One Looks A Lot Stronger?
+- `GD02-109` - Undying Persistence
+- `GD02-110` - Awakened Power
+- `GD02-111` - Decisive Last Resort
+- `GD02-112` - Momentary Respite
+- `GD02-113` - Sisterly Care
+- `GD02-114` - It's Name is Ryusei-Go
+- `GD02-115` - Familial Devotion
+- `GD02-116` - Comrades Come First
+- `GD02-117` - A New Sign
+- `GD02-118` - Heart Set on Revenge
+- `GD02-119` - Persistent and Fortudinous
+- `GD02-120` - Aspiring Pilot
+- `GD02-121` - Dominion
+- `GD02-122` - Alexandria
+- `GD02-123` - Sodon
+- `GD02-124` - Diva
+- `GD02-125` - Gwadan
+- `GD02-126` - Shuji's Hideout
+- `GD02-127` - Freeden
+- `GD02-128` - Hammerhead
+- `GD02-129` - Argama
+- `GD02-130` - Sleipnir
+- `GD03-001` - Gundam NT-1
+- `GD03-002` - The-O
+- `GD03-003` - Messala
+- `GD03-004` - Hambrabi
+- `GD03-005` - Kshatriya Besserung
+- `GD03-006` - Penelope (Middle Form)
+- `GD03-007` - Gundam NT-1 Full Armor
+- `GD03-008` - Bolinoak Sammahn
+- `GD03-009` - Palace Athene
+- `GD03-010` - Full Armor Unicorn Gundam (Destroy Mode)
+- `GD03-012` - Messala (MA Mode)
+- `GD03-013` - Hizack
+- `GD03-014` - Hizack Custom
+- `GD03-015` - Baund Doc
+- `GD03-017` - Kämpfer
+- `GD03-018` - Altron Gundam
+- `GD03-019` - Gundam AGE-2 Normal
+- `GD03-020` - Zaku Ⅱ FZ
+- `GD03-021` - Gundam Deathscythe Hell
+- `GD03-022` - Gundam Kyrios
+- `GD03-023` - G-Bouncer
+- `GD03-024` - Hy-Gogg
+- `GD03-025` - Gundam Sandrock Custom
+- `GD03-026` - Gundam Dynames
+- `GD03-028` - Auda's Maganac
+- `GD03-029` - Gundam Heavyarms Custom
+- `GD03-030` - Gundam Kyrios (Tail Unit Flight Mode)
+- `GD03-033` - Providence Gundam
+- `GD03-034` - GQuuuuuuX (Omega Psycommu)
+- `GD03-035` - GFreD
+- `GD03-036` - Ξ Gundam (Flight Form)
+- `GD03-037` - Bertigo
+- `GD03-038` - GuAIZ (Commander Type)
+- `GD03-039` - Red Gundam
+- `GD03-040` - Gundam Virsago & Gundam Ashtaron
+- `GD03-041` - Patulia
+- `GD03-042` - Duel Gundam (Assault Shroud)
+- `GD03-043` - Messer Type-F02
+- `GD03-044` - Daughtress Flyer
+- `GD03-045` - Balient
+- `GD03-048` - GFreD
+- `GD03-049` - Gundam Exia (Trans-Am)
+- `GD03-050` - Gundam Barbatos Lupus
+- `GD03-051` - Gundam X Divider
+- `GD03-052` - Gundam Virtue
+- `GD03-053` - Gundam Gusion Rebake Full City
+- `GD03-054` - Zeydra
+- `GD03-055` - Gundam Hajiroboshi (2nd Form)
+- `GD03-056` - Gundam Barbatos Adapt
+- `GD03-057` - GN Armor (Type-E)
+- `GD03-058` - Farsia
+- `GD03-059` - Zedas R
+- `GD03-060` - CGS Mobile Worker (Commander Type)
+- `GD03-061` - Gundam Barbatos 6th Form
+- `GD03-062` - GX-Bit
+- `GD03-064` - Defurse
+- `GD03-067` - Rouei
+- `GD03-068` - Gundam Hajiroboshi
+- `GD03-069` - Graham's Union Flag Custom
+- `GD03-070` - Freedom Gundam
+- `GD03-071` - Z Gundam (Biosensor)
+- `GD03-072` - Aile Strike Gundam
+- `GD03-073` - Graze Ein
+- `GD03-074` - Tieren Taozi
+- `GD03-075` - Super Gundam
+- `GD03-076` - Freedom Gundam (METEOR)
+- `GD03-077` - Justice Gundam (METEOR)
+- `GD03-078` - Tieren High Mobility Type
+- `GD03-079` - G-Defenser
+- `GD03-080` - Gundam Kimaris Trooper (Trooper Mode)
+- `GD03-081` - AEU Enact Demonstration Color
+- `GD03-082` - Union Flag
+- `GD03-083` - AEU Hellion
+- `GD03-084` - Paptimus Scirocco
+- `GD03-085` - Christina Mackenzie
+- `GD03-086` - Yazan Gable
+- `GD03-087` - Sarah Zabiarov
+- `GD03-088` - Asemu Asuno
+- `GD03-089` - Bernard Wiseman
+- `GD03-090` - Mikhail Kaminsky
+- `GD03-091` - Rau Le Creuset
+- `GD03-092` - Nyaan
+- `GD03-093` - Carris Nautilus
+- `GD03-094` - Zeheart Galette
+- `GD03-095` - Azee Gurumin
+- `GD03-096` - Jamil Neate
+- `GD03-097` - Wistario Afam
+- `GD03-098` - Graham Aker
+- `GD03-099` - Emma Sheen
+- `GD03-100` - Soma Peries
+- `GD03-101` - A Healthy Curiosity
+- `GD03-102` - Privileged Position
+- `GD03-103` - Field Directive
+- `GD03-104` - Reccoa's Shadow
+- `GD03-105` - Bridge Crew
+- `GD03-106` - M.A.V. Tactics
+- `GD03-108` - How Many Miles to the Battlefield?
+- `GD03-109` - Improved Technique
+- `GD03-110` - Eliminate Target
+- `GD03-111` - Infiltrator Present
+- `GD03-112` - Warped Intent
+- `GD03-113` - Human Karma
+- `GD03-114` - Look of Determination
+- `GD03-115` - Distant Reunion
+- `GD03-116` - Towards Destiny
+- `GD03-117` - Orga's Order
+- `GD03-118` - Awakened Potential
+- `GD03-119` - Awkward Approach
+- `GD03-121` - Unheralded Attack
+- `GD03-122` - Veteran Tactics
+- `GD03-123` - Jupitris
+- `GD03-124` - Ribo Colony
+- `GD03-125` - Peacemillion
+- `GD03-126` - Cyclops Team
+- `GD03-127` - Jachin Due
+- `GD03-128` - Doritea
+- `GD03-129` - Hotarubi
+- `GD03-130` - Downes
+- `GD03-131` - Eternal
+- `GD03-132` - Radish
+- `GD04-001` - Gundam
+- `GD04-002` - Penelope (Flight Form)
+- `GD04-003` - Victory Gundam
+- `GD04-004` - Psycho Gundam Mk-Ⅱ
+- `GD04-006` - V-Dash Gundam
+- `GD04-007` - Victory Gundam Hexa
+- `GD04-008` - Gundam
+- `GD04-009` - Guncannon (108) & Guncannon (109)
+- `GD04-011` - Victory Gundam
+- `GD04-013` - Core Fighter
+- `GD04-015` - Gun EZ
+- `GD04-016` - Zoloat (League Militaire)
+- `GD04-017` - Zeong
+- `GD04-018` - Gundam Pharact
+- `GD04-019` - GN Armor Type-D (Trans-Am)
+- `GD04-020` - Gundam Lfrith Ur
+- `GD04-022` - Kikeroga (MS Mode) (GQ)
+- `GD04-023` - Gundam Kyrios (Tail Booster)
+- `GD04-024` - Gundam Aerial Rebuild
+- `GD04-025` - Gundvölva
+- `GD04-026` - Garma's Dopp
+- `GD04-028` - Zakrello
+- `GD04-029` - Gundam Dynames (GN Full Shield)
+- `GD04-030` - Chuchu's Demi Trainer
+- `GD04-033` - Neo Zeong
+- `GD04-034` - Gundam Kyrios
+- `GD04-035` - Ξ Gundam
+- `GD04-036` - Gundam Throne Eins
+- `GD04-037` - Gundam Kyrios (Trans-Am)
+- `GD04-038` - Gundam Exia
+- `GD04-039` - Rozen Zulu
+- `GD04-041` - Gundam Throne Drei
+- `GD04-042` - Psycho Gundam (GQ)
+- `GD04-043` - Zssa (Sleeves)
+- `GD04-044` - Gadeel
+- `GD04-045` - Gundam Throne Zwei
+- `GD04-046` - Gundam Dynames
+- `GD04-049` - Gundam DX
+- `GD04-050` - Destiny Gundam
+- `GD04-051` - Gundam Airmaster Burst
+- `GD04-052` - Gundam Leopard Destroy
+- `GD04-053` - Rey's Blaze Zaku Phantom
+- `GD04-054` - Gundam Virtue (Trans-Am)
+- `GD04-056` - Sword Impulse Gundam
+- `GD04-058` - Jamil's Gundam X
+- `GD04-060` - Esperansa
+- `GD04-061` - G-Falcon
+- `GD04-063` - GN Armor Type-E
+- `GD04-065` - Unicorn Gundam 02 Banshee Norn (Destroy Mode)
+- `GD04-066` - Unicorn Gundam (Awakened)
+- `GD04-067` - ∀ Gundam
+- `GD04-068` - Silver Bullet
+- `GD04-069` - ∀ Gundam
+- `GD04-071` - Graham's Union Flag Custom Ⅱ (GN Flag)
+- `GD04-072` - Unicorn Gundam 02 Banshee Norn (Unicorn Mode)
+- `GD04-073` - ∀ Gundam
+- `GD04-074` - Kapool
+- `GD04-077` - Flat (Militia)
+- `GD04-080` - Alvatore
+- `GD04-081` - Üso Ewin
+- `GD04-082` - Rosamia Badam
+- `GD04-083` - Marbet Fingerhat
+- `GD04-084` - Sleggar Law
+- `GD04-085` - Suletta Mercury
+- `GD04-086` - Garma Zabi
+- `GD04-087` - Elan Ceres (Enhanced Person Number 5)
+- `GD04-088` - Tokwan
+- `GD04-089` - Nena Trinity
+- `GD04-090` - Hallelujah Haptism
+- `GD04-091` - Deux Murasame
+- `GD04-092` - Michael Trinity
+- `GD04-093` - Rey Za Burrel
+- `GD04-094` - Pala Sys
+- `GD04-095` - Lunamaria Hawke
+- `GD04-096` - Ennil El
+- `GD04-097` - Loran Cehack
+- `GD04-098` - Riddhe Marcenas
+- `GD04-099` - Ali al-Saachez
+- `GD04-100` - Sochie Heim
+- `GD04-101` - Kindhearted
+- `GD04-102` - Moment of Rest
+- `GD04-103` - Spiritual Support
+- `GD04-104` - Shrike Team's Bulwark
+- `GD04-105` - Encounter
+- `GD04-106` - Indiscriminate Violence
+- `GD04-107` - Destined Battle
+- `GD04-108` - Witches from Earth
+- `GD04-109` - Overwhelming Pressure
+- `GD04-110` - Financier
+- `GD04-111` - Trinity
+- `GD04-112` - Inspector
+- `GD04-113` - Damage Control
+- `GD04-114` - Reformationist
+- `GD04-115` - Backup
+- `GD04-116` - Reliable Big Brother
+- `GD04-117` - Graceful Demeanor
+- `GD04-118` - World Distortion
+- `GD04-119` - Fighting Alone
+- `GD04-120` - Machine Doll Squad
+- `GD04-121` - Reineforce Jr.
+- `GD04-122` - Jaburo
+- `GD04-123` - A Baoa Qu
+- `GD04-124` - 9th Tactical Testing Sector
+- `GD04-125` - Trinity Warship
+- `GD04-126` - Izuma Colony
+- `GD04-127` - Freeden Ⅱ
+- `GD04-128` - Armory One
+- `GD04-129` - Willgem
+- `GD04-130` - Industrial 7
+- `ST01-001` - Gundam
+- `ST01-002` - Gundam (MA Form)
+- `ST01-004` - Guntank
+- `ST01-006` - Gundam Aerial (Permet Score Six)
+- `ST01-008` - Demi Trainer
+- `ST01-009` - Zowort
+- `ST01-010` - Amuro Ray
+- `ST01-011` - Suletta Mercury
+- `ST01-012` - Thoroughly Damaged
+- `ST01-013` - Kai's Resolve
+- `ST01-014` - Unforeseen Incident
+- `ST01-015` - White Base
+- `ST01-016` - Asticassia School of Technology, Earth House
+- `ST02-001` - Wing Gundam
+- `ST02-002` - Wing Gundam (Bird Mode)
+- `ST02-003` - Gundam Heavyarms
+- `ST02-006` - Tallgeese
+- `ST02-008` - Aries
+- `ST02-009` - Tragos
+- `ST02-010` - Heero Yuy
+- `ST02-011` - Zechs Merquise
+- `ST02-012` - Simultaneous Fire
+- `ST02-013` - Peaceful Timbre
+- `ST02-014` - Siege Ploy
+- `ST02-015` - Saint Gabriel Institute
+- `ST02-016` - Corsica Base
+- `ST03-001` - Sinanju
+- `ST03-002` - Angelo's Geara Zulu
+- `ST03-004` - Gaza D (Sleeves)
+- `ST03-006` - Char's Zaku Ⅱ
+- `ST03-008` - Zaku Ⅱ
+- `ST03-009` - Gouf
+- `ST03-010` - Full Frontal
+- `ST03-011` - Char Aznable
+- `ST03-012` - Indignation
+- `ST03-013` - Close Combat
+- `ST03-014` - The Blue Giant
+- `ST03-015` - Rewloola
+- `ST03-016` - Falmel
+- `ST04-001` - Aile Strike Gundam
+- `ST04-002` - Strike Gundam
+- `ST04-004` - Moebius
+- `ST04-006` - Aegis Gundam
+- `ST04-007` - Aegis Gundam (MA Mode)
+- `ST04-009` - Miguel's Ginn
+- `ST04-010` - Kira Yamato
+- `ST04-011` - Athrun Zala
+- `ST04-012` - Striker Pack
+- `ST04-013` - Hawk of Endymion
+- `ST04-014` - The Magic Bullet of Dusk
+- `ST04-015` - Archangel
+- `ST04-016` - Vesalius
+- `ST05-001` - Gundam Barbatos 4th Form
+- `ST05-002` - Gundam Barbatos 2nd Form
+- `ST05-003` - CGS Mobile Worker
+- `ST05-005` - Gundam Gusion Rebake
+- `ST05-007` - McGillis' Schwalbe Graze
+- `ST05-008` - Graze Commander Type
+- `ST05-010` - Mikazuki Augus
+- `ST05-011` - Akihiro Altland
+- `ST05-012` - McGillis Fareed
+- `ST05-013` - With Iron and Blood
+- `ST05-014` - Fatal Strike
+- `ST05-015` - Isaribi
+- `ST06-001` - GQuuuuuuX (Omega Psycommu)
+- `ST06-002` - GQuuuuuuX (Omega Psycommu)
+- `ST06-003` - Gaia's Rick Dom (GQ)
+- `ST06-005` - Red Gundam
+- `ST06-007` - Ortega's Rick Dom (GQ)
+- `ST06-009` - Amate Yuzuriha (Machu)
+- `ST06-010` - Shuji Itō
+- `ST06-011` - Ruthless Tactics
+- `ST06-012` - Schoolgirl and Smuggler
+- `ST06-013` - Fierce Unity
+- `ST06-014` - Clan Battle
+- `ST06-015` - Kaneban Co., Ltd.
+- `ST07-001` - Gundam Exia
+- `ST07-004` - Gundam Virtue
+- `ST07-005` - Gundam Dynames
+- `ST07-007` - Gundam Kyrios
+- `ST07-009` - Setsuna F. Seiei
+- `ST07-010` - Tieria Erde
+- `ST07-011` - Lockon Stratos (Neil)
+- `ST07-012` - Allelujah Haptism
+- `ST07-013` - Armed Intervention
+- `ST07-014` - Tactical Visionary
+- `ST07-015` - Ptolemaios
+- `ST08-001` - Ξ Gundam
+- `ST08-002` - Ξ Gundam
+- `ST08-004` - Messer Type-F01
+- `ST08-006` - Penelope
+- `ST08-008` - Gustav Karl Type-00
+- `ST08-009` - Jegan Ground Type-A (Man Hunter)
+- `ST08-010` - Hathaway Noa
+- `ST08-011` - Lane Aim
+- `ST08-012` - Words for Hathaway
+- `ST08-013` - Lady Luck
+- `ST08-014` - Valiant
+- `ST08-015` - Davao
+- `ST09-001` - Impulse Gundam
+- `ST09-002` - Force Impulse Gundam
+- `ST09-003` - Saviour Gundam
+- `ST09-004` - Freedom Gundam
+- `ST09-006` - Sword Impulse Gundam
+- `ST09-007` - Blast Impulse Gundam
+- `ST09-008` - Shinn Asuka
+- `ST09-009` - Giant Killing
+- `ST09-010` - Minerva
+- `ST10-001` - Zeta Gundam (EX)
+- `ST10-004` - Super Gundam
+- `ST10-006` - Phoenix Gundam (Power Unleashed) (EX)
+- `ST10-007` - Gundam Barbatos 4th Form
+- `ST10-008` - Gundam Barbatos 1st Form
+- `ST10-010` - Mobile Worker (Tekkadan)
+- `ST10-011` - Kamille Bidan
+- `ST10-012` - Mark Guilder
+- `ST10-013` - Tactical Training
+- `ST10-015` - Diffuse Beam Cannon
+- `ST10-016` - Luna Mana & Carry Base
+- `T-008` - Aile Strike Gundam
+- `T-009` - Launcher Strike Gundam
+- `T-010` - Sword Strike Gundam
+- `T-011` - Fatum-00
+- `T-014` - Ad Balloon
+- `T-021` - Parts
+- `T-022` - Wire-Guided Arm
+
+## Unknown Cards
+
+- None

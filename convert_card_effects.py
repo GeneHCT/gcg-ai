@@ -3,9 +3,23 @@ Batch card effect converter
 Converts card effects from text to JSON schema format
 """
 import json
+import logging
 import os
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Any, Optional
+from simulator.card_data import load_simulator_cards
+from simulator.effect_discovery import (
+    GameEffect,
+    ParsedCard,
+    load_openrouter_config,
+    parsed_card_to_ir,
+    parse_normalized_card_offline,
+    screen_card,
+)
+from simulator.ir_validator import validate_ir_effect_data
 
 
 class CardEffectConverter:
@@ -2015,8 +2029,529 @@ class CardEffectConverter:
         print(f"  Skipped: {skipped}")
 
 
+class ExBurstEffectConverter:
+    """Converts normalized ExBurst card effects into candidate IR."""
+
+    def __init__(
+        self,
+        output_dir: str = "card_effects_exburst",
+        card_database_path: Optional[str] = None,
+        use_llm: bool = False,
+        model: Optional[str] = None,
+        log_file: str = "logs/exburst_conversion.log",
+        llm_timeout: Optional[float] = None,
+        llm_max_retries: Optional[int] = None,
+        max_workers: Optional[int] = None,
+        skip_existing: bool = True,
+    ):
+        self.output_dir = output_dir
+        self.card_database_path = card_database_path
+        self.use_llm = use_llm
+        self.model = model
+        self.log_file = log_file
+        self.llm_timeout = llm_timeout
+        self.llm_max_retries = llm_max_retries
+        self.max_workers = max_workers
+        self.skip_existing = skip_existing
+        self.logger = _setup_exburst_logger(log_file)
+        Path(self.output_dir).mkdir(parents=True, exist_ok=True)
+
+    def convert_all(self, card_ids: Optional[List[str]] = None) -> Dict[str, Any]:
+        started_at = time.monotonic()
+        run_started_at = datetime.now(timezone.utc).isoformat()
+        cards = load_simulator_cards(self.card_database_path)
+        selected_ids = set(card_ids or [])
+        max_workers = self._worker_count()
+        summary = {
+            "converted": 0,
+            "ignored": 0,
+            "skipped": 0,
+            "no_effect": 0,
+            "output_dir": self.output_dir,
+            "audit": {"supported": 0, "partial": 0, "unsupported": 0, "issues": []},
+        }
+        self.logger.info(
+            "conversion_start use_llm=%s selected=%s total_cards=%s output_dir=%s workers=%s skip_existing=%s",
+            self.use_llm,
+            sorted(selected_ids) if selected_ids else "ALL",
+            len(cards),
+            self.output_dir,
+            max_workers,
+            self.skip_existing,
+        )
+
+        pending_cards = []
+        for card in cards:
+            card_id = card["ID"]
+            if selected_ids and card_id not in selected_ids:
+                continue
+            if _should_ignore_exburst_card(card):
+                summary["ignored"] += 1
+                self.logger.info(
+                    "card_skip_ignored card_id=%s name=%s type=%s",
+                    card_id,
+                    card.get("Name", ""),
+                    card.get("Type", ""),
+                )
+                continue
+            if not card.get("Effect"):
+                summary["no_effect"] += 1
+                self.logger.info("card_skip_no_effect card_id=%s name=%s", card_id, card.get("Name", ""))
+                continue
+            if self.skip_existing and self._output_path(card_id).exists():
+                summary["skipped"] += 1
+                self.logger.info("card_skip_existing card_id=%s path=%s", card_id, self._output_path(card_id))
+                continue
+            pending_cards.append(card)
+
+        if max_workers == 1:
+            for card in pending_cards:
+                report = self._convert_save_and_validate(card)
+                summary["converted"] += 1
+                summary["audit"][report.support_status] += 1
+                summary["audit"]["issues"].extend(report.issues)
+        else:
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                future_to_card = {
+                    executor.submit(self._convert_save_and_validate, card): card
+                    for card in pending_cards
+                }
+                try:
+                    for future in as_completed(future_to_card):
+                        report = future.result()
+                        summary["converted"] += 1
+                        summary["audit"][report.support_status] += 1
+                        summary["audit"]["issues"].extend(report.issues)
+                except KeyboardInterrupt:
+                    for future in future_to_card:
+                        future.cancel()
+                    self.logger.warning("conversion_interrupted")
+                    raise
+
+        status_snapshot = self._write_support_status_reports(
+            cards=cards,
+            selected_ids=sorted(selected_ids) if selected_ids else [],
+            run_started_at=run_started_at,
+            summary=summary,
+        )
+        summary["support_status_report"] = status_snapshot["reports"]
+        self.logger.info(
+            "conversion_complete converted=%s ignored=%s skipped=%s no_effect=%s supported=%s partial=%s unsupported=%s elapsed=%.2fs report=%s history=%s",
+            summary["converted"],
+            summary["ignored"],
+            summary["skipped"],
+            summary["no_effect"],
+            summary["audit"]["supported"],
+            summary["audit"]["partial"],
+            summary["audit"]["unsupported"],
+            time.monotonic() - started_at,
+            status_snapshot["reports"]["json"],
+            status_snapshot["reports"]["history"],
+        )
+        return summary
+
+    def _convert_save_and_validate(self, card: Dict[str, Any]):
+        card_id = card["ID"]
+        try:
+            effect_data = self.convert_card(card)
+            self.save_effect(card_id, effect_data)
+            return validate_ir_effect_data(effect_data)
+        except KeyboardInterrupt:
+            self.logger.warning("conversion_interrupted card_id=%s", card_id)
+            raise
+        except Exception:
+            self.logger.exception("card_conversion_failed card_id=%s name=%s", card_id, card.get("Name", ""))
+            raise
+
+    def _worker_count(self) -> int:
+        if self.max_workers is not None:
+            return max(1, self.max_workers)
+        env_value = os.getenv("EXBURST_CONVERT_WORKERS")
+        if env_value:
+            try:
+                return max(1, int(env_value))
+            except ValueError:
+                pass
+        return 4 if self.use_llm else 1
+
+    def convert_card(self, card: Dict[str, Any]) -> Dict[str, Any]:
+        card_id = card["ID"]
+        started_at = time.monotonic()
+        self.logger.info(
+            "card_start card_id=%s name=%s type=%s effects=%s use_llm=%s",
+            card_id,
+            card.get("Name", ""),
+            card.get("Type", ""),
+            len(card.get("Effect", [])),
+            self.use_llm,
+        )
+        if self.use_llm:
+            config = load_openrouter_config()
+            if self.model:
+                config = type(config)(
+                    api_key=config.api_key,
+                    model=self.model,
+                    base_url=config.base_url,
+                    timeout_seconds=config.timeout_seconds,
+                    max_retries=config.max_retries,
+                )
+            if self.llm_timeout is not None:
+                config = type(config)(
+                    api_key=config.api_key,
+                    model=config.model,
+                    base_url=config.base_url,
+                    timeout_seconds=self.llm_timeout,
+                    max_retries=config.max_retries,
+                )
+            if self.llm_max_retries is not None:
+                config = type(config)(
+                    api_key=config.api_key,
+                    model=config.model,
+                    base_url=config.base_url,
+                    timeout_seconds=config.timeout_seconds,
+                    max_retries=self.llm_max_retries,
+                )
+            model = config.model
+            prompt = _format_card_for_llm(card)
+            self.logger.info(
+                "llm_request card_id=%s model=%s timeout=%.1fs max_retries=%s prompt_chars=%s",
+                card_id,
+                config.model,
+                config.timeout_seconds,
+                config.max_retries,
+                len(prompt),
+            )
+            llm_started_at = time.monotonic()
+            try:
+                parsed = screen_card(prompt, config=config)
+            except Exception as error:
+                self.logger.exception(
+                    "llm_request_failed card_id=%s model=%s elapsed=%.2fs",
+                    card_id,
+                    config.model,
+                    time.monotonic() - llm_started_at,
+                )
+                parsed = _unsupported_parse_for_llm_error(card, error)
+                self.logger.warning(
+                    "llm_fallback_unsupported card_id=%s reason=%s",
+                    card_id,
+                    str(error),
+                )
+            self.logger.info(
+                "llm_response card_id=%s model=%s parsed_effects=%s elapsed=%.2fs",
+                card_id,
+                config.model,
+                len(parsed.effects),
+                time.monotonic() - llm_started_at,
+            )
+            parser_source = "llm"
+        else:
+            parsed = parse_normalized_card_offline(card)
+            model = None
+            parser_source = "offline"
+
+        effect_data = parsed_card_to_ir(
+            card["ID"],
+            parsed,
+            raw_effects=card.get("Effect", []),
+            metadata={"llm_model": model, "parser_source": parser_source},
+        )
+        self.logger.info(
+            "card_complete card_id=%s support_status=%s validation_issues=%s elapsed=%.2fs",
+            card_id,
+            effect_data.get("metadata", {}).get("support_status"),
+            len(effect_data.get("metadata", {}).get("validation_issues", [])),
+            time.monotonic() - started_at,
+        )
+        for issue in effect_data.get("metadata", {}).get("validation_issues", []):
+            self.logger.warning(
+                "validation_issue card_id=%s path=%s kind=%s value=%s message=%s",
+                card_id,
+                issue.get("path"),
+                issue.get("kind"),
+                issue.get("value"),
+                issue.get("message"),
+            )
+        return effect_data
+
+    def save_effect(self, card_id: str, effect_data: Dict[str, Any]) -> None:
+        output_path = self._output_path(card_id)
+        output_path.write_text(json.dumps(effect_data, indent=2, ensure_ascii=False), encoding="utf-8")
+        self.logger.info("card_saved card_id=%s path=%s", card_id, output_path)
+
+    def _output_path(self, card_id: str) -> Path:
+        return Path(self.output_dir) / card_id
+
+    def _write_support_status_reports(
+        self,
+        *,
+        cards: List[Dict[str, Any]],
+        selected_ids: List[str],
+        run_started_at: str,
+        summary: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        output_path = Path(self.output_dir)
+        docs_dir = output_path.parent / "docs"
+        docs_dir.mkdir(parents=True, exist_ok=True)
+        latest_json_path = docs_dir / "exburst_support_latest.json"
+        latest_md_path = docs_dir / "exburst_support_latest.md"
+        history_path = docs_dir / "exburst_support_history.jsonl"
+
+        cards_by_id = {str(card.get("ID") or ""): card for card in cards}
+        status_cards = self._collect_support_status_cards(cards_by_id)
+        counts = {status: len(entries) for status, entries in status_cards.items()}
+        missing = self._missing_effect_outputs(cards)
+        snapshot = {
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "run_started_at": run_started_at,
+            "output_dir": str(output_path),
+            "selected_ids": selected_ids,
+            "use_llm": self.use_llm,
+            "model": self.model,
+            "run_summary": {
+                "converted": summary["converted"],
+                "ignored": summary["ignored"],
+                "skipped": summary["skipped"],
+                "no_effect": summary["no_effect"],
+            },
+            "counts": counts,
+            "cards": status_cards,
+            "missing_effect_outputs": missing,
+            "reports": {
+                "json": str(latest_json_path),
+                "markdown": str(latest_md_path),
+                "history": str(history_path),
+            },
+        }
+
+        latest_json_path.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False), encoding="utf-8")
+        latest_md_path.write_text(_format_support_status_markdown(snapshot), encoding="utf-8")
+        with history_path.open("a", encoding="utf-8") as history_file:
+            history_file.write(json.dumps(snapshot, ensure_ascii=False) + "\n")
+        self.logger.info(
+            "support_status_report_written latest=%s markdown=%s history=%s supported=%s partial=%s unsupported=%s",
+            latest_json_path,
+            latest_md_path,
+            history_path,
+            counts.get("supported", 0),
+            counts.get("partial", 0),
+            counts.get("unsupported", 0),
+        )
+        return snapshot
+
+    def _collect_support_status_cards(self, cards_by_id: Dict[str, Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+        status_cards: Dict[str, List[Dict[str, Any]]] = {
+            "supported": [],
+            "partial": [],
+            "unsupported": [],
+            "unknown": [],
+        }
+        output_path = Path(self.output_dir)
+        for effect_path in sorted(path for path in output_path.iterdir() if path.is_file()):
+            try:
+                effect_data = json.loads(effect_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                continue
+            card_id = str(effect_data.get("card_id") or effect_path.name)
+            source_card = cards_by_id.get(card_id)
+            if source_card and (_should_ignore_exburst_card(source_card) or not source_card.get("Effect")):
+                continue
+            if not source_card and _is_ignored_exburst_card_id(card_id):
+                continue
+            report = validate_ir_effect_data(effect_data)
+            status = report.support_status if report.support_status in status_cards else "unknown"
+            status_cards[status].append(
+                {
+                    "id": card_id,
+                    "name": str(source_card.get("Name") or "") if source_card else "",
+                    "issue_count": len(report.issues),
+                    "issues": [
+                        {
+                            "path": issue.path,
+                            "kind": issue.kind,
+                            "value": issue.value,
+                            "message": issue.message,
+                        }
+                        for issue in report.issues
+                    ],
+                }
+            )
+        return status_cards
+
+    def _missing_effect_outputs(self, cards: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+        output_path = Path(self.output_dir)
+        missing = []
+        for card in cards:
+            card_id = str(card.get("ID") or "")
+            if _should_ignore_exburst_card(card) or not card.get("Effect") or not card_id:
+                continue
+            if not (output_path / card_id).exists():
+                missing.append({"id": card_id, "name": str(card.get("Name") or "")})
+        return missing
+
+
+def _format_card_for_llm(card: Dict[str, Any]) -> str:
+    return "\n".join(
+        [
+            f"Name: {card.get('Name', '')}",
+            f"ID: {card.get('ID', '')}",
+            f"Type: {card.get('Type', '')}",
+            f"Color: {card.get('Color', '')}",
+            f"Cost: {card.get('Cost', '')}",
+            "Effects:",
+            *[f"- {line}" for line in card.get("Effect", [])],
+        ]
+    )
+
+
+def _format_support_status_markdown(snapshot: Dict[str, Any]) -> str:
+    lines = [
+        "# ExBurst Support Status",
+        "",
+        f"- Generated: `{snapshot['generated_at']}`",
+        f"- Output: `{snapshot['output_dir']}`",
+        f"- Selected IDs: `{', '.join(snapshot['selected_ids']) if snapshot['selected_ids'] else 'ALL'}`",
+        "",
+        "## Counts",
+        "",
+        f"- Supported: {snapshot['counts'].get('supported', 0)}",
+        f"- Partial: {snapshot['counts'].get('partial', 0)}",
+        f"- Unsupported: {snapshot['counts'].get('unsupported', 0)}",
+        f"- Unknown: {snapshot['counts'].get('unknown', 0)}",
+        f"- Missing Effect Outputs: {len(snapshot.get('missing_effect_outputs', []))}",
+        "",
+    ]
+
+    for status in ("unsupported", "partial", "supported", "unknown"):
+        cards = snapshot["cards"].get(status, [])
+        lines.extend([f"## {status.title()} Cards", ""])
+        if not cards:
+            lines.extend(["- None", ""])
+            continue
+        for card in cards:
+            suffix = f" ({card['issue_count']} issue(s))" if card.get("issue_count") else ""
+            lines.append(f"- `{card['id']}` - {card['name']}{suffix}")
+        lines.append("")
+
+    missing = snapshot.get("missing_effect_outputs", [])
+    if missing:
+        lines.extend(["## Missing Effect Outputs", ""])
+        for card in missing:
+            lines.append(f"- `{card['id']}` - {card['name']}")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+def _should_ignore_exburst_card(card: Dict[str, Any]) -> bool:
+    card_id = str(card.get("ID") or card.get("OriginalID") or "").upper()
+    if _is_ignored_exburst_card_id(card_id):
+        return True
+
+    name = str(card.get("Name") or "").strip().upper()
+    card_type = str(card.get("Type") or "").strip().upper()
+    return (name, card_type) in {
+        ("EX BASE", "BASE"),
+        ("EX RESOURCE", "UNIT"),
+        ("RESOURCE", "RESOURCE"),
+        ("RESOURCE", "UNIT"),
+        ("RP - RESOURCE", "UNIT"),
+    }
+
+
+def _is_ignored_exburst_card_id(card_id: str) -> bool:
+    return card_id.upper().startswith(("EXB-", "EXBP-", "EXR-", "EXRP-", "R-", "RP-"))
+
+
+def _unsupported_parse_for_llm_error(card: Dict[str, Any], error: Exception) -> ParsedCard:
+    explanation = f"LLM parser failed: {type(error).__name__}: {error}"
+    effects = [
+        GameEffect(
+            raw_text=line,
+            is_supported=False,
+            unhandled_explanation=explanation,
+        )
+        for line in card.get("Effect", [])
+    ]
+    return ParsedCard(
+        name=str(card.get("Name") or ""),
+        card_type=str(card.get("Type") or "UNIT"),
+        cost=card.get("Cost"),
+        color=str(card.get("Color") or "-"),
+        effects=effects,
+    )
+
+
+def _setup_exburst_logger(log_file: str) -> logging.Logger:
+    logger = logging.getLogger("exburst_conversion")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    log_path = Path(log_file)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    for handler in list(logger.handlers):
+        logger.removeHandler(handler)
+
+    formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+    file_handler = logging.FileHandler(log_path, encoding="utf-8")
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(logging.Formatter("%(message)s"))
+    logger.addHandler(stream_handler)
+    return logger
+
+
+def run_exburst_cli(argv: List[str]) -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Convert ExBurst cards to candidate IR")
+    parser.add_argument("card_ids", nargs="*", help="Optional canonical card IDs to convert")
+    parser.add_argument("--cards", dest="card_database_path", default=None, help="Raw or normalized ExBurst card JSON")
+    parser.add_argument("--output-dir", default="card_effects_exburst", help="Candidate IR output directory")
+    parser.add_argument("--use-llm", action="store_true", help="Use OpenRouter/instructor parser instead of offline conservative parser")
+    parser.add_argument("--model", default=None, help="OpenRouter model name")
+    parser.add_argument("--log-file", default="logs/exburst_conversion.log", help="Conversion log file")
+    parser.add_argument("--llm-timeout", type=float, default=None, help="OpenRouter request timeout in seconds")
+    parser.add_argument("--llm-max-retries", type=int, default=None, help="Instructor/OpenAI retry count")
+    parser.add_argument("--workers", type=int, default=None, help="Parallel conversion workers. Defaults to 4 with --use-llm, otherwise 1")
+    parser.add_argument("--force", action="store_true", help="Regenerate cards even when output files already exist")
+    args = parser.parse_args(argv)
+
+    converter = ExBurstEffectConverter(
+        output_dir=args.output_dir,
+        card_database_path=args.card_database_path,
+        use_llm=args.use_llm,
+        model=args.model,
+        log_file=args.log_file,
+        llm_timeout=args.llm_timeout,
+        llm_max_retries=args.llm_max_retries,
+        max_workers=args.workers,
+        skip_existing=not args.force,
+    )
+    summary = converter.convert_all(args.card_ids or None)
+    print("\n✓ ExBurst conversion complete:")
+    print(f"  Converted: {summary['converted']}")
+    print(f"  Ignored: {summary['ignored']}")
+    print(f"  Skipped existing: {summary['skipped']}")
+    print(f"  No effect: {summary['no_effect']}")
+    print(f"  Output: {summary['output_dir']}")
+    print(f"  Supported: {summary['audit']['supported']}")
+    print(f"  Partial: {summary['audit']['partial']}")
+    print(f"  Unsupported: {summary['audit']['unsupported']}")
+    if "support_status_report" in summary:
+        print(f"  Latest status: {summary['support_status_report']['markdown']}")
+        print(f"  Status history: {summary['support_status_report']['history']}")
+    print(f"  Log: {args.log_file}")
+
+
 if __name__ == "__main__":
     import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "--exburst":
+        run_exburst_cli(sys.argv[2:])
+        raise SystemExit(0)
     
     converter = CardEffectConverter()
     

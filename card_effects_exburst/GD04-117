@@ -1,0 +1,73 @@
+{
+  "card_id": "GD04-117",
+  "effects": [
+    {
+      "effect_id": "GD04-117-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RESOLVE_COMMAND_EFFECT",
+          "timing": "ACTION_PHASE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Activate this card's 【Action】.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-117-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "selector": "ENEMY_UNIT",
+          "min_amount": 1,
+          "max_amount": 2,
+          "filters": {
+            "level": {
+              "operator": "<=",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 to 2 enemy Units that are Lv.3 or lower. Return them to their owners' hands.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Activate this card's 【Action】.; 【Action】Choose 1 to 2 enemy Units that are Lv.3 or lower. Return them to their owners' hands.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

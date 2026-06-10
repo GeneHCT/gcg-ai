@@ -29,11 +29,19 @@
       "triggers": [
         "WHILE_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "type": "MODIFY_STAT",
           "target": {
             "selector": "SELF"
@@ -41,7 +49,7 @@
         },
         {
           "stat": "HP",
-          "modification": 1,
+          "modification": "+1",
           "type": "MODIFY_STAT",
           "target": {
             "selector": "SELF"

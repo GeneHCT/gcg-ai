@@ -16,21 +16,21 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "card_type": [
-                  "UNIT",
-                  "PILOT"
-                ],
-                "traits": [
-                  [
-                    "Operation Meteor",
-                    "G Team"
-                  ]
-                ]
-              },
               "type": "SELECT_LOOKED_AT_CARD",
               "target": {
-                "selector": "LOOKED_AT_CARD"
+                "selector": "LOOKED_AT_CARD",
+                "filters": {
+                  "card_type": [
+                    "UNIT",
+                    "PILOT"
+                  ],
+                  "traits": [
+                    [
+                      "Operation Meteor",
+                      "G Team"
+                    ]
+                  ]
+                }
               }
             },
             {

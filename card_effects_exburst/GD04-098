@@ -27,15 +27,16 @@
       "effect_id": "GD04-098-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
+        "ON_RECEIVE_EFFECT_DAMAGE",
         "ON_LINKED"
       ],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "RECEIVING_EFFECT_DAMAGE",
+          "type": "CHECK_TARGET",
           "target": {
             "selector": "SELF"
-          }
+          },
+          "event": "RECEIVING_EFFECT_DAMAGE"
         },
         {
           "type": "CHECK_TRAIT",
@@ -45,15 +46,24 @@
           "traits": [
             null
           ]
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
         {
           "type": "MODIFY_STAT",
-          "selector": "SELF",
           "stat": "HP",
           "modification": "+2",
-          "duration": "THIS_TURN"
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

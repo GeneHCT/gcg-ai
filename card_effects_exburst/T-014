@@ -6,22 +6,7 @@
       "effect_id": "T-014-E1",
       "effect_type": "CONTINUOUS",
       "triggers": [],
-      "conditions": [
-        {
-          "type": "CHECK_CARD_STATE",
-          "state": "CANNOT_BE_ACTIVE",
-          "target": {
-            "selector": "SELF"
-          }
-        },
-        {
-          "type": "CHECK_CARD_STATE",
-          "state": "CANNOT_BE_PAIRED",
-          "target": {
-            "selector": "SELF"
-          }
-        }
-      ],
+      "conditions": [],
       "actions": [],
       "is_supported": true,
       "unhandled_explanation": "",

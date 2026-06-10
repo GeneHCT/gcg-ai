@@ -33,34 +33,42 @@
         {
           "type": "CHECK_LINK_STATUS",
           "value": true
-        },
-        {
-          "type": "CHECK_CARD_STATE",
-          "filters": {
-            "color": "White"
-          },
-          "target": {
-            "selector": "FRIENDLY_BASE"
-          },
-          "state": true
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "SELECT_LOOKED_AT_CARD",
-          "selector": "ENEMY_UNIT",
-          "filters": {
-            "level": {
-              "operator": "<=",
-              "value": "SELF.level"
+          "amount": 1,
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": "SELF.level"
+              }
             }
-          },
-          "amount": 1
+          }
         },
         {
           "type": "ADD_TO_HAND",
-          "selector": "SELECTED_CARD",
-          "owner": "OPPONENT"
+          "owner": "OPPONENT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

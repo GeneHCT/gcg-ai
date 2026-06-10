@@ -66,12 +66,14 @@
         {
           "type": "CHECK_COLOR",
           "operator": "==",
-          "value": "Green"
+          "color": "Green"
         },
         {
           "type": "CHECK_TRAIT",
           "operator": "==",
-          "value": "Earth Federation"
+          "traits": [
+            "Earth Federation"
+          ]
         }
       ],
       "actions": [

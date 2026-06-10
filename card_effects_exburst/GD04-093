@@ -33,14 +33,30 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
           "card_type": "LINK_UNIT",
           "traits": [
             "ZAFT"
-          ]
+          ],
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "ZAFT"
+              ],
+              "is_linked": true
+            }
+          }
+        },
         {
           "stat": "DAMAGE_REDUCTION",
           "modification": "+2",

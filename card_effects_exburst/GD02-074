@@ -15,6 +15,13 @@
           "operator": ">=",
           "value": 4,
           "owner": "SELF"
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
@@ -24,8 +31,7 @@
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,
@@ -47,8 +53,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "HIGH_MANEUVER",
-          "value": null
+          "keyword": "HIGH_MANEUVER"
         }
       ],
       "is_supported": true,

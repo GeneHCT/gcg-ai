@@ -15,15 +15,22 @@
       ],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "Gjallarhorn"
-            ],
-            "amount": 1
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Gjallarhorn"
+              ]
+            }
+          }
+        },
+        {
           "type": "SET_ACTIVE",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

@@ -11,7 +11,8 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_CARD_STATE",
@@ -28,6 +29,13 @@
           "target": {
             "selector": "ENEMY_UNIT"
           }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [

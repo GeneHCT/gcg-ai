@@ -5,7 +5,8 @@
       "effect_id": "GD04-110-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [],
       "actions": [
@@ -29,7 +30,8 @@
       "effect_id": "GD04-110-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": [

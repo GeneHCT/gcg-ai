@@ -29,7 +29,15 @@
       "triggers": [
         "WHILE_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
           "type": "MODIFY_STAT",

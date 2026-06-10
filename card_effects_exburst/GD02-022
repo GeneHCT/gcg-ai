@@ -20,11 +20,26 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "AGE System"
+              ]
+            }
+          }
+        },
+        {
           "type": "GRANT_KEYWORD",
-          "selector": "OTHER_FRIENDLY_UNIT",
           "keyword": "BREACH",
           "value": 2,
-          "duration": "THIS_TURN"
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

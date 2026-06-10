@@ -9,11 +9,9 @@
       ],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "FROM_TRASH",
-          "target": {
-            "selector": "SELF"
-          }
+          "type": "CHECK_TARGET",
+          "source_zone": "TRASH",
+          "event": "DEPLOY_SOURCE"
         }
       ],
       "actions": [

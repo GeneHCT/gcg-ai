@@ -74,15 +74,32 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "ZAFT"
+              ]
+            }
+          }
+        },
+        {
           "type": "REST_UNIT",
-          "selector": "SELF"
+          "target": {
+            "selector": "SELF"
+          }
         },
         {
           "type": "GRANT_KEYWORD",
-          "selector": "OTHER_FRIENDLY_UNIT",
           "keyword": "BREACH",
           "value": 3,
-          "duration": "THIS_BATTLE"
+          "duration": "THIS_BATTLE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

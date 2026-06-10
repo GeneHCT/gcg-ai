@@ -25,28 +25,42 @@
       "effect_id": "ST06-011-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Clan"
+          "traits": [
+            "Clan"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
+            "filters": {
+              "traits": [
+                "Clan"
+              ]
+            }
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "stat": "AP",
           "modification": "+2",
-          "target": "FRIENDLY_UNIT",
-          "duration": "THIS_TURN",
-          "filters": {
-            "traits": [
-              "Clan"
-            ],
-            "min_targets": 1,
-            "max_targets": 2
-          }
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "duration": "THIS_TURN"
         }
       ],
       "is_supported": true,

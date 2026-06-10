@@ -10,11 +10,13 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "G Generation",
           "operator": "==",
           "target": {
             "selector": "OTHER_FRIENDLY_UNIT"
-          }
+          },
+          "traits": [
+            "G Generation"
+          ]
         },
         {
           "type": "CHECK_STAT",
@@ -29,10 +31,12 @@
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "SELF",
           "keyword": "BREACH",
           "value": 1,
-          "duration": "THIS_TURN"
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

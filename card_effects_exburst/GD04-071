@@ -10,12 +10,14 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "ENEMY_UNIT",
           "operator": ">=",
           "value": 1,
           "traits": [
             "CB"
-          ]
+          ],
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
@@ -42,34 +44,43 @@
       "conditions": [],
       "actions": [
         {
-          "type": "EXILE_CARDS",
-          "filters": {
-            "count": 1,
-            "traits": [
-              "Superpower Bloc"
-            ]
-          },
+          "type": "SELECT_TARGET",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Superpower Bloc",
+                "UN"
+              ]
+            }
           }
         },
         {
           "type": "EXILE_CARDS",
-          "filters": {
-            "count": 1,
-            "traits": [
-              "UN"
-            ]
+          "target": {
+            "selector": "SELECTED_CARD"
           },
-          "target": {
-            "selector": "SELF_TRASH"
-          }
-        },
-        {
-          "type": "SET_ACTIVE",
-          "target": {
-            "selector": "SELF"
-          }
+          "next_if_success": [
+            {
+              "type": "EXILE_CARDS",
+              "target": {
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "UN"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "SET_ACTIVE",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

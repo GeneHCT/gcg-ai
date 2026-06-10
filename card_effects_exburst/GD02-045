@@ -10,15 +10,12 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "SELF",
           "stat": "AP",
           "operator": ">=",
-          "value": 5
-        },
-        {
-          "type": "CHECK_CARD_STATE",
-          "target_selector": "BATTLING_UNIT",
-          "state": "ENEMY"
+          "value": 5,
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [

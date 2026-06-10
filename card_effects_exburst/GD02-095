@@ -52,10 +52,11 @@
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "SELF",
-          "keyword": "HIGH-MANEUVER",
+          "keyword": "HIGH_MANEUVER",
           "duration": "THIS_BATTLE",
-          "value": null
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

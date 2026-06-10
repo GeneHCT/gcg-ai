@@ -29,20 +29,32 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Titans",
-          "target": "FRIENDLY_UNIT"
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Titans"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Titans"
               ]
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

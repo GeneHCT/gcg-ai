@@ -55,6 +55,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "REST_UNIT",
           "target": {
             "selector": "SELF"
@@ -62,11 +70,11 @@
         },
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

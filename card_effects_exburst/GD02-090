@@ -41,10 +41,12 @@
       "actions": [
         {
           "type": "MODIFY_STAT",
-          "selector": "SELF",
           "stat": "AP",
-          "modification": 1,
-          "duration": "PERMANENT"
+          "modification": "+1",
+          "duration": "PERMANENT",
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

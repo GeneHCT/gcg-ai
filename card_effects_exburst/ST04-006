@@ -10,22 +10,28 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "SELF",
           "stat": "AP",
           "operator": ">=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
-          "filters": {
-            "level": 5,
-            "operator": ">="
-          },
           "amount": 3,
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

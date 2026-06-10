@@ -12,18 +12,24 @@
         {
           "conditions": [
             {
-              "condition_type": "CHECK_CARD_STATE",
               "card_type": "COMMAND",
               "level": {
                 "operator": "<=",
                 "value": 5
-              }
+              },
+              "type": "CHECK_CARD_STATE"
             }
           ],
           "amount": 1,
           "type": "ADD_TO_HAND",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
           }
         }
       ],

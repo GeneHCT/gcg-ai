@@ -28,18 +28,43 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_BASE",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          },
+          "append": true
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_STAT",
               "stat": "HP",
-              "selector": "ENEMY_UNIT",
               "operator": "<=",
-              "value": 3
+              "value": 3,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
             }
           ],
           "type": "REST_UNIT",
           "target": {
-            "selector": "FRIENDLY_BASE"
+            "selector": "SELECTED_CARD"
           }
         },
         {
@@ -53,13 +78,7 @@
           ],
           "type": "REST_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "hp": {
-                "operator": "<=",
-                "value": 3
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

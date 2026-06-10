@@ -33,7 +33,8 @@
       "effect_id": "GD01-066-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_ATTACK"
       ],
       "conditions": [
         {
@@ -45,17 +46,36 @@
           "traits": [
             "Triple Ship Alliance"
           ]
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
         {
-          "keyword": "HIGH-MANEUVERS",
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Triple Ship Alliance"
+              ]
+            }
+          }
+        },
+        {
+          "keyword": "HIGH_MANEUVER",
           "duration": "THIS_TURN",
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELECTED_CARD"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

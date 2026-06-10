@@ -19,18 +19,18 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "traits": [
-                  "Clan"
-                ],
-                "card_type": [
-                  "UNIT",
-                  "PILOT"
-                ]
-              },
               "type": "SELECT_LOOKED_AT_CARD",
               "target": {
-                "selector": "LOOKED_AT_CARD"
+                "selector": "LOOKED_AT_CARD",
+                "filters": {
+                  "traits": [
+                    "Clan"
+                  ],
+                  "card_type": [
+                    "UNIT",
+                    "PILOT"
+                  ]
+                }
               }
             },
             {

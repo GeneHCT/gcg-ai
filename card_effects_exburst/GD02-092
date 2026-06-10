@@ -36,16 +36,35 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "value": "New UNE",
-          "target": "OTHER_FRIENDLY_UNIT"
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
+            "New UNE"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "New UNE"
+              ]
+            }
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "stat": "AP",
           "modification": "+2",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
           "duration": "THIS_TURN"
         }
       ],

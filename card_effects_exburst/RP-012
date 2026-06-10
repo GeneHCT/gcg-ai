@@ -1,35 +1,15 @@
 {
   "card_id": "RP-012",
   "effects": [],
-  "continuous_effects": [
-    {
-      "effect_id": "RP-012-E1",
-      "effect_type": "CONTINUOUS",
-      "triggers": [],
-      "conditions": [],
-      "actions": [],
-      "is_supported": false,
-      "unhandled_explanation": "requires cost replacement hook",
-      "metadata": {
-        "raw_text": "(Rest a Resource when paying a cost.)",
-        "source": "llm"
-      }
-    }
-  ],
+  "continuous_effects": [],
   "metadata": {
     "original_text": "(Rest a Resource when paying a cost.)",
     "parsing_version": "exburst-discovery-v1",
     "card_type": "UNIT",
-    "llm_model": "deepseek/deepseek-chat-v3-0324",
-    "parser_source": "llm",
-    "support_status": "unsupported",
-    "validation_issues": [
-      {
-        "path": "continuous_effects[0]",
-        "kind": "unsupported_llm_effect",
-        "value": "RP-012-E1",
-        "message": "requires cost replacement hook"
-      }
-    ]
+    "parser_source": "essential_cosmetic",
+    "support_status": "supported",
+    "essential_cosmetic": true,
+    "validation_issues": [],
+    "note": "Game-essential cosmetic card. Setup and payment behavior is handled by engine rules, not parsed card-effect IR."
   }
 }

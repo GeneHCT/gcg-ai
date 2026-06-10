@@ -5,7 +5,8 @@
       "effect_id": "GD01-003-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_LINKED"
+        "ON_LINKED",
+        "ON_ATTACK"
       ],
       "conditions": [
         {
@@ -15,32 +16,41 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 12
+          }
+        },
+        {
           "type": "ADD_TO_HAND",
           "amount": 12,
           "target": {
-            "selector": "SELF_TRASH"
-          }
-        },
-        {
-          "type": "RETURN_LOOKED_TO_TOP",
-          "target": {
-            "selector": "SELF_DECK"
-          }
-        },
-        {
-          "type": "SET_ACTIVE",
-          "target": {
-            "selector": "SELF"
-          }
-        },
-        {
-          "type": "GRANT_KEYWORD",
-          "keyword": "FIRST_STRIKE",
-          "duration": "THIS_TURN",
-          "target": {
-            "selector": "SELF"
+            "selector": "SELECTED_CARD"
           },
-          "value": null
+          "next_if_success": [
+            {
+              "type": "RETURN_LOOKED_TO_TOP",
+              "target": {
+                "selector": "SELF_DECK"
+              }
+            },
+            {
+              "type": "SET_ACTIVE",
+              "target": {
+                "selector": "SELF"
+              }
+            },
+            {
+              "type": "GRANT_KEYWORD",
+              "keyword": "FIRST_STRIKE",
+              "duration": "THIS_TURN",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

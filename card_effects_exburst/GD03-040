@@ -13,6 +13,13 @@
             "selector": "SELF"
           },
           "state": "LINKED"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "modifiers": [
@@ -21,8 +28,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "HIGH_MANEUVER",
-          "value": null
+          "keyword": "HIGH_MANEUVER"
         }
       ],
       "is_supported": true,

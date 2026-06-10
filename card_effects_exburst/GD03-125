@@ -59,7 +59,9 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "target": "BATTLING_UNIT",
+          "target": {
+            "selector": "BATTLING_UNIT"
+          },
           "traits": [
             [
               "Operation Meteor",
@@ -69,7 +71,9 @@
         },
         {
           "type": "CHECK_STAT",
-          "target": "BATTLING_UNIT",
+          "target": {
+            "selector": "BATTLING_UNIT"
+          },
           "stat": "LEVEL",
           "operator": ">=",
           "value": 6
@@ -81,7 +85,9 @@
           "optional_actions": [
             {
               "type": "RECOVER_HP",
-              "target": "BATTLING_UNIT",
+              "target": {
+                "selector": "BATTLING_UNIT"
+              },
               "amount": 2
             }
           ]

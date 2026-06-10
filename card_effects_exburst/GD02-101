@@ -5,49 +5,7 @@
       "effect_id": "GD02-101-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
-      ],
-      "conditions": [
-        {
-          "type": "CHECK_STAT",
-          "stat": "LEVEL",
-          "operator": "<=",
-          "value": 2,
-          "target": {
-            "selector": "SELECTED_CARD"
-          }
-        }
-      ],
-      "actions": [
-        {
-          "type": "REST_UNIT",
-          "amount": 2,
-          "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "level": {
-                "operator": "<=",
-                "value": 2
-              }
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 2
-            }
-          }
-        }
-      ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "GD02-101-E2",
-      "effect_type": "TRIGGERED",
-      "triggers": [
+        "MAIN_PHASE",
         "ACTION_PHASE"
       ],
       "conditions": [
@@ -63,20 +21,78 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "amount": 2,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 2
               }
-            },
+            }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-101-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE",
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
             "variable_count": {
               "min": 1,
               "max": 2
+            },
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

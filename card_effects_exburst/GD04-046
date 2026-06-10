@@ -10,6 +10,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "actions": [
             {
               "type": "REST_UNIT",
@@ -24,7 +38,9 @@
               "conditions": [
                 {
                   "type": "CHECK_STAT",
-                  "target": "ENEMY_UNIT",
+                  "target": {
+                    "selector": "ENEMY_UNIT"
+                  },
                   "stat": "LEVEL",
                   "operator": "<=",
                   "value": 3
@@ -46,6 +62,14 @@
           "target": {
             "selector": "SELF"
           }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "amount": 2,
+          "damage_type": "EFFECT"
         }
       ],
       "is_supported": true,

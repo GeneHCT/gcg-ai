@@ -10,10 +10,12 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
           "amount": 2,
           "operator": ">=",
-          "card_state": "RESTED"
+          "card_state": "RESTED",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [

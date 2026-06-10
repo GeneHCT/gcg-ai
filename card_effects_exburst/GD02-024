@@ -7,16 +7,23 @@
       "triggers": [
         "WHILE_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
-          "keyword": "HIGH-MANEUVER",
+          "keyword": "HIGH_MANEUVER",
           "duration": "PERMANENT",
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

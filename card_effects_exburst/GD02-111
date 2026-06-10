@@ -20,12 +20,24 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
-          "selector": "ENEMY_UNIT",
           "amount": 2,
-          "filters": {
-            "operator": "<=",
-            "level": 3
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -45,18 +57,41 @@
       "conditions": [],
       "actions": [
         {
-          "type": "EXILE_CARDS",
-          "selector": "SELF_TRASH",
-          "amount": 6,
-          "filters": {
-            "color": "Purple",
-            "card_type": "UNIT"
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 6,
+            "filters": {
+              "color": "Purple",
+              "card_type": "UNIT"
+            }
           }
         },
         {
-          "type": "DESTROY_CARD",
-          "selector": "ENEMY_UNIT",
-          "amount": 1
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          },
+          "append": true
+        },
+        {
+          "type": "EXILE_CARDS",
+          "amount": 6,
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "next_if_success": [
+            {
+              "type": "DESTROY_CARD",
+              "amount": 1,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

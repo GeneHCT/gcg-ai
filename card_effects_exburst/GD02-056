@@ -16,21 +16,19 @@
       "actions": [
         {
           "type": "ADD_TO_HAND",
-          "filters": [
-            {
-              "value": "Vulture",
-              "card_type": "CHECK_TRAIT"
-            },
-            {
-              "stat": "LEVEL",
-              "operator": ">=",
-              "value": 5,
-              "card_type": "CHECK_STAT"
-            }
-          ],
           "amount": 1,
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "level": {
+                "operator": ">=",
+                "value": 5
+              },
+              "traits": [
+                "Vulture"
+              ],
+              "card_type": "UNIT"
+            }
           }
         }
       ],

@@ -28,7 +28,8 @@
       "effect_id": "GD04-101-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [],
       "actions": [

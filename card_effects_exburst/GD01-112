@@ -28,27 +28,46 @@
       "conditions": [],
       "actions": [
         {
-          "amount": 2,
-          "conditions": [
-            {
-              "type": "CHECK_CARD_STATE",
-              "value": "ACTIVE"
-            }
-          ],
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 2,
             "filters": {
               "state": "ACTIVE"
             }
           }
         },
         {
-          "amount": 3,
-          "type": "DAMAGE_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
-            "selector": "ENEMY_UNIT"
-          }
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          },
+          "append": true
+        },
+        {
+          "amount": 2,
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "state": "ACTIVE"
+            }
+          ],
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "next_if_success": [
+            {
+              "amount": 3,
+              "type": "DAMAGE_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

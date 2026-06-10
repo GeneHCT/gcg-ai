@@ -10,20 +10,24 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target": "SELF_TRASH",
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "traits": [
+                "Zeon",
+                "Neo Zeon"
+              ],
+              "card_type": "UNIT"
+            }
+          },
           "operator": ">=",
-          "value": 10,
-          "filters": {
-            "traits": [
-              "Zeon",
-              "Neo Zeon"
-            ],
-            "card_type": "UNIT"
-          }
+          "value": 10
         },
         {
           "type": "CHECK_KEYWORD",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "keyword": "BLOCKER"
         }
       ],
@@ -64,7 +68,8 @@
       "metadata": {
         "raw_text": "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

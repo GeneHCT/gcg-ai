@@ -34,24 +34,36 @@
           "type": "COUNT_CARDS",
           "value": 2,
           "operator": ">=",
-          "filters": {
-            "traits": [
-              "Gjallarhorn",
-              "Tekkadan"
-            ]
-          },
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Gjallarhorn",
+                "Tekkadan"
+              ]
+            }
           }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "type": "REST_UNIT",
-          "selector": "ENEMY_UNIT",
-          "filters": {
-            "hp": 3,
-            "operator": "<="
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

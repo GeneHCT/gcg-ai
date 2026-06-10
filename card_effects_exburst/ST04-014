@@ -23,24 +23,42 @@
       "effect_id": "ST04-014-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_STAT",
           "stat": "LEVEL",
-          "target": "FRIENDLY_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
           "operator": "<=",
           "value": 2
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        },
+        {
           "type": "GRANT_KEYWORD",
           "keyword": "FIRST_STRIKE",
-          "target": "SELECTED_CARD",
-          "duration": "THIS_TURN",
-          "value": null
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "duration": "THIS_TURN"
         }
       ],
       "is_supported": true,

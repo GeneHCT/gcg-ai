@@ -1,7 +1,7 @@
 # TODO List
 
 ## To be checked
-- Main phase: is it properly implemented according to GAME_RULES_QUICK_REFERENCE.md lines:79-84 and gamerules.txt lines :299-312
+- Main phase: is it properly implemented according to gamerules.txt lines 299-312
 - battle logs show all effects , i.e. ryusego deploy effect should show 1 damage dealt to which unit, what is the card drawn from the effect, and which card is discarded to the trash
 - ryusego hp is paid but no effect (no trash)
 

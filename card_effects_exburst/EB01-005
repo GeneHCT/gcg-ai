@@ -13,7 +13,7 @@
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "RESTED"
+              "state": "RESTED"
             }
           ],
           "type": "SET_ACTIVE",

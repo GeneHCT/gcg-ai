@@ -13,7 +13,9 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "trait": "X-Rounder"
+              "traits": [
+                "X-Rounder"
+              ]
             }
           ],
           "optional_actions": [
@@ -36,7 +38,12 @@
           ],
           "type": "OPTIONAL_ACTION",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "traits": [
+                "X-Rounder"
+              ]
+            }
           }
         }
       ],

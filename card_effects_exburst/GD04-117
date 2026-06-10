@@ -40,15 +40,28 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "type": "RETURN_TO_HAND",
-          "selector": "ENEMY_UNIT",
           "min_amount": 1,
           "max_amount": 2,
-          "filters": {
-            "level": {
-              "operator": "<=",
-              "value": 3
-            }
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

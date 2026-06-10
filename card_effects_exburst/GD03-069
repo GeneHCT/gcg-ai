@@ -11,6 +11,13 @@
         {
           "type": "CHECK_PAIRED_PILOT_TRAIT",
           "value": "Pilot"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
@@ -41,8 +48,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "HIGH_MANEUVER",
-          "value": null
+          "keyword": "HIGH_MANEUVER"
         }
       ],
       "is_supported": true,

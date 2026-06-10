@@ -10,13 +10,17 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
-          "filters": {
-            "trait": "Earth Alliance",
-            "is_token": true
-          },
           "operator": "==",
-          "value": 0
+          "value": 0,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "is_token": true,
+              "traits": [
+                "Earth Alliance"
+              ]
+            }
+          }
         }
       ],
       "actions": [
@@ -49,13 +53,17 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
-          "filters": {
-            "trait": "Earth Alliance",
-            "is_token": true
-          },
           "operator": "==",
-          "value": 0
+          "value": 0,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "is_token": true,
+              "traits": [
+                "Earth Alliance"
+              ]
+            }
+          }
         }
       ],
       "actions": [

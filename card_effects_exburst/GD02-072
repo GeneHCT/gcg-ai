@@ -7,11 +7,12 @@
       "triggers": [],
       "conditions": [
         {
-          "condition_type": "CHECK_COLOR",
-          "target_selector": "FRIENDLY_BASE",
           "color": "White",
           "operator": "==",
-          "type": "CHECK_COLOR"
+          "type": "CHECK_COLOR",
+          "target": {
+            "selector": "FRIENDLY_BASE"
+          }
         }
       ],
       "actions": [
@@ -44,8 +45,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,
@@ -53,7 +53,8 @@
       "metadata": {
         "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

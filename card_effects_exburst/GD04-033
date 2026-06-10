@@ -10,17 +10,29 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "SELF",
-          "value": "Neo Zeon",
-          "operator": "=="
+          "operator": "==",
+          "target": {
+            "selector": "SELF"
+          },
+          "traits": [
+            "Neo Zeon"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
           "amount": 3,
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -37,11 +49,19 @@
       "triggers": [
         "WHILE_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "keyword": "Neo Zeon",
+          "keyword": "NEO_ZEON",
           "duration": "PERMANENT",
           "target": {
             "selector": "FRIENDLY_UNIT"

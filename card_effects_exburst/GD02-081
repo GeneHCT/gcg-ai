@@ -10,18 +10,28 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "target_selector": "FRIENDLY_BASE",
-          "value": "White",
-          "operator": "=="
+          "operator": "==",
+          "target": {
+            "selector": "FRIENDLY_BASE"
+          },
+          "color": "White"
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
         {
           "type": "MODIFY_STAT",
           "stat": "AP",
           "duration": "THIS_TURN",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "modification": "-2"
         }

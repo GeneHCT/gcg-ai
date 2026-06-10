@@ -11,33 +11,27 @@
         {
           "type": "COUNT_CARDS",
           "zone": "TRASH",
-          "target_selector": "SELECTED_CARD",
-          "filters": {
-            "has_keyword": [
-              "REPAIR",
-              "BREACH",
-              "FIRST_STRIKE",
-              "SUPPORT",
-              "HIGH_MANEUVER",
-              "SUPPRESSION",
-              "BLOCKER"
-            ]
-          },
           "operator": ">=",
           "value": 1,
-          "owner": "SELF"
+          "owner": "SELF",
+          "target": {
+            "selector": "SELECTED_CARD",
+            "filters": {
+              "has_keyword": "['repair',_'breach',_'first_strike',_'support',_'high_maneuver',_'suppression',_'blocker']"
+            }
+          }
         }
       ],
       "actions": [
         {
           "type": "DEPLOY_FROM_ZONE",
-          "source_zone": "SELF_TRASH",
-          "filters": {
-            "has_keyword": "['repair',_'breach',_'first_strike',_'support',_'high_maneuver',_'suppression',_'blocker']"
-          },
+          "source_zone": "TRASH",
           "max_targets": 1,
           "target": {
-            "selector": "SELECTED_CARD"
+            "selector": "SELECTED_CARD",
+            "filters": {
+              "has_keyword": "['repair',_'breach',_'first_strike',_'support',_'high_maneuver',_'suppression',_'blocker']"
+            }
           }
         },
         {
@@ -51,15 +45,7 @@
         },
         {
           "type": "GRANT_KEYWORD",
-          "keyword": [
-            "REPAIR",
-            "BREACH",
-            "FIRST_STRIKE",
-            "SUPPORT",
-            "HIGH_MANEUVER",
-            "SUPPRESSION",
-            "BLOCKER"
-          ],
+          "keyword": "['REPAIR',_'BREACH',_'FIRST_STRIKE',_'SUPPORT',_'HIGH_MANEUVER',_'SUPPRESSION',_'BLOCKER']",
           "duration": "THIS_TURN",
           "copy_from": "SELECTED_CARD",
           "target": {

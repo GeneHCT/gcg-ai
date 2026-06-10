@@ -10,6 +10,7 @@ from typing import Any, Dict, Iterable, List
 import requests
 
 from simulator.effect_discovery import load_openrouter_config
+from simulator.exburst_essential_cards import is_essential_cosmetic_card_id
 from simulator.ir_validator import validate_ir_effect_data
 from tools.semantic_exburst_audit import audit_card_semantics
 
@@ -41,6 +42,8 @@ def build_issue_batches(
         if issue.get("kind") not in group_set:
             continue
         if issue.get("severity") == "validation":
+            continue
+        if is_essential_cosmetic_card_id(str(issue.get("card_id") or "")):
             continue
         issue_groups[issue["kind"]][issue["card_id"]].append(issue)
 

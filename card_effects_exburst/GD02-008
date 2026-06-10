@@ -10,20 +10,30 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "selector": "ENEMY_UNIT",
-              "state": "RESTED"
+              "state": "RESTED",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
             }
           ],
           "amount": 1,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "state": "RESTED"
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

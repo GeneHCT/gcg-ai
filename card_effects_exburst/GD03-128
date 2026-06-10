@@ -56,15 +56,24 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "OPPONENT_TURN"
+          "value": "OPPONENT_TURN",
+          "turn_owner": "OPPONENT"
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": 1,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

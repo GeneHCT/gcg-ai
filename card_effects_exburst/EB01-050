@@ -10,6 +10,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": 1,
           "type": "MILL",
           "target": {
@@ -36,10 +44,20 @@
               "type": "MODIFY_STAT",
               "target": {
                 "selector": "ENEMY_UNIT"
-              }
+              },
+              "modification": "-2"
             }
           ],
           "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "stat": "AP",
+          "modification": "-2",
+          "duration": "THIS_BATTLE"
         }
       ],
       "is_supported": true,

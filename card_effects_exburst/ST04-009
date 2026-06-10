@@ -5,18 +5,28 @@
       "effect_id": "ST04-009-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_DESTROYED"
       ],
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
           "operator": ">=",
           "value": 1,
-          "filters": {
-            "card_type": "UNIT",
-            "has_keyword": "LINK"
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "card_type": "UNIT",
+              "has_keyword": "link"
+            }
           }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
@@ -41,13 +51,22 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
           "operator": ">=",
           "value": 1,
-          "filters": {
-            "card_type": "UNIT",
-            "has_keyword": "LINK"
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "card_type": "UNIT",
+              "has_keyword": "link"
+            }
           }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [

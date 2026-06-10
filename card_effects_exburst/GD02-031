@@ -15,9 +15,11 @@
       "actions": [
         {
           "type": "MODIFY_STAT",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "stat": "AP",
-          "modification": 2
+          "modification": "+2"
         }
       ],
       "is_supported": true,

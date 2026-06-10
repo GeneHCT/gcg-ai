@@ -15,14 +15,16 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "value": "Dawn of Fold",
           "target": {
             "selector": "SELECTED_CARD"
-          }
+          },
+          "traits": [
+            "Dawn of Fold"
+          ]
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "ACTIVATED",
+          "type": "CHECK_TARGET",
+          "event": "ACTIVATED",
           "target": {
             "selector": "SELECTED_CARD"
           }
@@ -40,7 +42,7 @@
           "optional_actions": [
             {
               "paired_with": "FRIENDLY_UNIT",
-              "type": "ON_PAIR_PILOT",
+              "type": "PAIR_PILOT",
               "target": {
                 "selector": "SELECTED_CARD"
               }
@@ -77,7 +79,8 @@
       "metadata": {
         "raw_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

@@ -21,14 +21,17 @@
       ],
       "actions": [
         {
-          "filters": {
-            "sort_by": "HP",
-            "sort_order": "ASC",
-            "limit": 1
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "DESTROY_CARD",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -51,8 +54,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "SUPPRESSION",
-          "value": null
+          "keyword": "SUPPRESSION"
         }
       ],
       "is_supported": true,
@@ -60,7 +62,8 @@
       "metadata": {
         "raw_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

@@ -10,16 +10,32 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
+            "filters": {
+              "traits": [
+                "Clan"
+              ]
+            }
+          }
+        },
+        {
           "filter": {
             "trait": "Clan",
             "count": "1-2"
           },
           "stat": "AP",
-          "modification": 2,
+          "modification": "+2",
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

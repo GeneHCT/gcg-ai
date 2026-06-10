@@ -7,11 +7,11 @@
       "triggers": [],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
+          "type": "CHECK_TARGET",
           "target": {
             "selector": "FRIENDLY_BASE"
           },
-          "state": "IN_PLAY"
+          "exists": true
         }
       ],
       "actions": [
@@ -21,8 +21,7 @@
           "duration": "PERMANENT",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

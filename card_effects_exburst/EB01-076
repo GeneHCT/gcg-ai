@@ -25,20 +25,29 @@
       "effect_id": "EB01-076-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [],
       "actions": [
         {
-          "type": "RECOVER_HP",
-          "amount": 3,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "G Generation"
               ]
             }
+          }
+        },
+        {
+          "type": "RECOVER_HP",
+          "amount": 3,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -53,20 +62,29 @@
       "effect_id": "EB01-076-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": [
         {
-          "type": "RECOVER_HP",
-          "amount": 3,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "G Generation"
               ]
             }
+          }
+        },
+        {
+          "type": "RECOVER_HP",
+          "amount": 3,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

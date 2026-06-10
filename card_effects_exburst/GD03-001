@@ -10,17 +10,11 @@
       "conditions": [],
       "actions": [
         {
-          "conditions": [
-            {
-              "type": "CHECK_CARD_STATE",
-              "selector": "ENEMY_UNIT",
-              "value": "RESTED"
-            }
-          ],
-          "amount": 1,
-          "type": "DAMAGE_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "RESTED"
             }
@@ -29,8 +23,26 @@
         {
           "conditions": [
             {
+              "type": "CHECK_CARD_STATE",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
+              "state": "RESTED"
+            }
+          ],
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "conditions": [
+            {
               "type": "ON_UNIT_DESTROYED_BY_DAMAGE",
-              "selector": "ENEMY_UNIT"
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
             }
           ],
           "amount": 1,
@@ -68,7 +80,8 @@
       "metadata": {
         "raw_text": "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

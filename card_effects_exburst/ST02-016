@@ -42,7 +42,8 @@
           "conditions": [
             {
               "type": "CHECK_TURN",
-              "owner": "SELF"
+              "owner": "SELF",
+              "turn_owner": "SELF"
             },
             {
               "type": "COUNT_CARDS",
@@ -69,7 +70,8 @@
               "conditions": [
                 {
                   "type": "CHECK_TURN",
-                  "owner": "SELF"
+                  "owner": "SELF",
+                  "turn_owner": "SELF"
                 }
               ],
               "actions": [

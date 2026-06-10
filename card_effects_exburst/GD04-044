@@ -10,10 +10,12 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "HP",
           "operator": "<",
-          "value": "base"
+          "value": "base",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

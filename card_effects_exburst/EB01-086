@@ -55,8 +55,12 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "G Generation",
-          "target": "FRIENDLY_UNIT"
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "G Generation"
+          ]
         }
       ],
       "actions": [

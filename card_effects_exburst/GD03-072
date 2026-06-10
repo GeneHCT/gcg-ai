@@ -10,12 +10,14 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
           "operator": ">=",
           "value": 1,
           "traits": [
             "Triple Ship Alliance"
-          ]
+          ],
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [
@@ -53,8 +55,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

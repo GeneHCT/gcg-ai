@@ -166,7 +166,11 @@ def _validate_action(card_id: str, path: str, action: Dict[str, Any], report: IR
     if duration is not None and duration not in SUPPORTED_DURATIONS:
         _add_issue(report, f"{path}.duration", "unknown_duration", duration, "Duration is not in runtime vocabulary")
 
-    for key in ("conditional_actions", "optional_actions", "next_if_success", "else_actions"):
+    for index, condition in enumerate(_as_list(action.get("conditions"))):
+        if isinstance(condition, dict):
+            _validate_condition(card_id, f"{path}.conditions[{index}]", condition, report)
+
+    for key in ("conditional_actions", "optional_actions", "next_if_success", "else_actions", "actions", "true_actions", "success_actions", "false_actions"):
         for index, nested in enumerate(_as_list(action.get(key))):
             if isinstance(nested, dict):
                 _validate_action(card_id, f"{path}.{key}[{index}]", nested, report)

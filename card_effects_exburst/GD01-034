@@ -7,7 +7,15 @@
       "triggers": [
         "WHILE_PAIRED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
         {
           "type": "GRANT_KEYWORD",

@@ -25,14 +25,23 @@
       "effect_id": "ST01-014-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",
@@ -50,14 +59,23 @@
       "effect_id": "ST01-014-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

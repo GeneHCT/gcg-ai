@@ -11,23 +11,38 @@
         {
           "type": "CHECK_STAT",
           "stat": "LEVEL",
-          "op": "<=",
           "value": 4,
-          "card_filters": {
-            "card_type": "UNIT"
-          },
           "target": {
-            "selector": "SELF_TRASH"
-          }
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "UNIT"
+            }
+          },
+          "operator": "<="
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "card_type": "UNIT",
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
         {
           "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
               "type": "DEPLOY_FROM_ZONE",
-              "source_zone": "SELF_TRASH",
+              "source_zone": "TRASH",
               "target_zone": "FIELD",
               "filters": {
                 "card_type": "UNIT",
@@ -36,9 +51,16 @@
                   "value": 4
                 }
               },
-              "require_cost_payment": true
+              "pay_cost": true
             }
           ]
+        },
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "source_zone": "TRASH"
         }
       ],
       "is_supported": true,

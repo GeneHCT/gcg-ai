@@ -8,10 +8,12 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "SELF",
           "stat": "AP",
           "operator": ">=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [
@@ -20,8 +22,7 @@
           "keyword": "BLOCKER",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

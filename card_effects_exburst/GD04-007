@@ -5,7 +5,8 @@
       "effect_id": "GD04-007-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_ATTACK"
       ],
       "conditions": [
         {
@@ -14,6 +15,13 @@
           "target": {
             "selector": "SELF"
           }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [

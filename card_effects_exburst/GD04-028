@@ -10,23 +10,32 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        },
+        {
           "keyword": "BLOCKER",
           "duration": "THIS_TURN",
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "selector": "ENEMY_UNIT",
-              "state": "ACTIVE"
+              "state": "ACTIVE",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
             }
           ],
           "type": "GRANT_KEYWORD",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "state": "ACTIVE"
-            }
-          },
-          "value": null
+            "selector": "SELECTED_CARD"
+          }
         },
         {
           "optional_actions": [
@@ -42,8 +51,10 @@
               "conditions": [
                 {
                   "type": "CHECK_CARD_STATE",
-                  "selector": "ENEMY_UNIT",
-                  "state": "ACTIVE"
+                  "state": "ACTIVE",
+                  "target": {
+                    "selector": "ENEMY_UNIT"
+                  }
                 }
               ],
               "type": "GRANT_ATTACK_TARGETING",

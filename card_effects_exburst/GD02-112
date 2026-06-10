@@ -33,14 +33,14 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "card_type": "PILOT",
-            "color": "Purple"
-          },
           "amount": 1,
           "type": "ADD_TO_HAND",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "PILOT",
+              "color": "Purple"
+            }
           }
         }
       ],

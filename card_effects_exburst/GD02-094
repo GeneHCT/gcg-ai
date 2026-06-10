@@ -49,15 +49,15 @@
             {
               "optional_actions": [
                 {
-                  "filters": {
-                    "card_type": "UNIT",
-                    "traits": [
-                      "Vulture"
-                    ]
-                  },
                   "type": "SELECT_LOOKED_AT_CARD",
                   "target": {
-                    "selector": "LOOKED_AT_CARD"
+                    "selector": "LOOKED_AT_CARD",
+                    "filters": {
+                      "card_type": "UNIT",
+                      "traits": [
+                        "Vulture"
+                      ]
+                    }
                   }
                 },
                 {

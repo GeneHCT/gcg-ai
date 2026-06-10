@@ -10,43 +10,44 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Mafty"
+              ]
+            }
+          }
+        },
+        {
+          "keyword": "TRIGGER_ON_UNIT_DESTROYED_BY_DAMAGE",
+          "duration": "THIS_TURN",
           "conditions": [
             {
-              "type": "CHECK_TRAIT",
-              "selector": "OTHER_FRIENDLY_UNIT",
-              "trait": "Mafty",
-              "operator": "==",
-              "value": true
+              "type": "COUNT_CARDS",
+              "operator": "<=",
+              "value": 3,
+              "target": {
+                "selector": "SELF_HAND"
+              }
             }
           ],
           "actions": [
             {
-              "keyword": "TRIGGER_ON_UNIT_DESTROYED_BY_DAMAGE",
-              "duration": "THIS_TURN",
-              "conditions": [
-                {
-                  "type": "COUNT_CARDS",
-                  "selector": "SELF_HAND",
-                  "operator": "<=",
-                  "value": 3
-                }
-              ],
-              "actions": [
-                {
-                  "amount": 1,
-                  "type": "DRAW",
-                  "target": {
-                    "selector": "FRIENDLY_PLAYER"
-                  }
-                }
-              ],
-              "type": "GRANT_KEYWORD",
+              "amount": 1,
+              "type": "DRAW",
               "target": {
-                "selector": "OTHER_FRIENDLY_UNIT"
+                "selector": "FRIENDLY_PLAYER"
               }
             }
           ],
-          "type": "CONDITIONAL_BRANCH"
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

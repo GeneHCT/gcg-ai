@@ -11,28 +11,31 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_TRAIT",
-          "value": "Dawn of Fold",
           "target": {
             "selector": "SELECTED_CARD"
-          }
+          },
+          "traits": [
+            "Dawn of Fold"
+          ]
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "ACTIVATED",
+          "type": "CHECK_TARGET",
+          "event": "ACTIVATED",
           "target": {
             "selector": "SELECTED_CARD"
           }
         },
         {
           "type": "CHECK_COLOR",
-          "value": "COMMAND",
           "target": {
             "selector": "SELECTED_CARD"
-          }
+          },
+          "color": "COMMAND"
         }
       ],
       "actions": [

@@ -17,6 +17,20 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
           "type": "DISCARD",
           "conditions": [
             {
@@ -35,6 +49,12 @@
                 "value": 4
               }
             }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -57,8 +77,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,
@@ -66,7 +85,8 @@
       "metadata": {
         "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

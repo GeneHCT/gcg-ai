@@ -12,15 +12,15 @@
         {
           "stat": "AP",
           "modification": "+1",
-          "filters": {
-            "traits": [
-              "Earth Federation"
-            ]
-          },
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Earth Federation"
+              ]
+            }
           }
         }
       ],
@@ -40,27 +40,30 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "Earth Federation"
-            ]
-          },
           "keyword": "ON_UNIT_DESTROYED_BY_DAMAGE",
           "actions": [
             {
-              "filters": {
-                "max_hp": 5
-              },
               "type": "REST_UNIT",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "hp": {
+                    "operator": "<=",
+                    "value": 5
+                  }
+                }
               }
             }
           ],
           "duration": "THIS_TURN",
           "type": "GRANT_KEYWORD",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Earth Federation"
+              ]
+            }
           },
           "value": null
         }

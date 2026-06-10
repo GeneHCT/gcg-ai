@@ -32,6 +32,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
           "amount": 1,
           "conditions": [],
           "type": "SHIELD_TO_HAND",
@@ -45,13 +59,13 @@
               "type": "COUNT_CARDS",
               "operator": ">=",
               "value": 2,
-              "filters": {
-                "traits": [
-                  "Triple Ship Alliance"
-                ]
-              },
               "target": {
-                "selector": "FRIENDLY_UNIT"
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "traits": [
+                    "Triple Ship Alliance"
+                  ]
+                }
               }
             }
           ],
@@ -71,11 +85,23 @@
               ],
               "type": "ADD_TO_HAND",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  }
+                }
               }
             }
           ],
           "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

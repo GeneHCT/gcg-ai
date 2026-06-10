@@ -48,6 +48,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": null,
           "duration": null,
           "type": "REST_UNIT",
@@ -60,7 +68,7 @@
           "duration": null,
           "type": "RECOVER_HP",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

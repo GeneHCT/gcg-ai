@@ -15,11 +15,13 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "trait": "Zeon",
               "link_status": "LINKED",
               "target": {
                 "selector": "OTHER_FRIENDLY_UNIT"
-              }
+              },
+              "traits": [
+                "Zeon"
+              ]
             }
           ],
           "type": "GRANT_KEYWORD",

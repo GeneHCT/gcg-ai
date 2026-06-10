@@ -33,13 +33,24 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "damaged": true
+            }
+          }
+        },
+        {
           "target_filters": {
             "is_damaged": true
           },
           "amount": 2,
           "type": "RECOVER_HP",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         },
         {

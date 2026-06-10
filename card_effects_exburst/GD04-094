@@ -32,24 +32,24 @@
       "conditions": [],
       "actions": [
         {
-          "filters": [
-            {
-              "value": "Purple",
-              "card_type": "CHECK_COLOR"
-            },
-            {
-              "value": "Suppression",
-              "card_type": "CHECK_KEYWORD"
-            },
-            {
-              "value": "Unit",
-              "card_type": "CHECK_CARD_STATE"
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "card_type": "UNIT",
+              "color": "Purple",
+              "has_keyword": "suppression"
             }
-          ],
+          }
+        },
+        {
           "amount": 1,
           "type": "ADD_TO_HAND",
+          "source": "SELECTED_CARD",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

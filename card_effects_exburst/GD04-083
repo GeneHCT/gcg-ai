@@ -32,11 +32,18 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "League Militaire"
+          "traits": [
+            "League Militaire"
+          ]
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "is_token"
+          "type": "CHECK_TARGET",
+          "target": {
+            "selector": "SELF",
+            "filters": {
+              "is_token": true
+            }
+          }
         }
       ],
       "actions": [

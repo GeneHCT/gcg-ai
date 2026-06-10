@@ -21,7 +21,7 @@ from simulator.ir_vocabulary import (
 
 PROMPT_VERSION = "exburst-discovery-v1"
 DEFAULT_OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-DEFAULT_OPENROUTER_MODEL = "deepseek/deepseek-chat-v3-0324"
+DEFAULT_OPENROUTER_MODEL = "deepseek/deepseek-chat-v3.1"
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 LLM_DURATION_ALIASES = {
@@ -52,6 +52,7 @@ SELECTOR_ALIASES = {
 
 CONDITION_ALIASES = {
     "CHECK_CARD_TRAIT": "CHECK_TRAIT",
+    "CHECK_DAMAGED": "CHECK_DAMAGE",
     "CHECK_PAIRING": "CHECK_PAIR_STATUS",
     "HAS_KEYWORD": "CHECK_KEYWORD",
     "IS_PAIRED": "CHECK_PAIR_STATUS",
@@ -265,7 +266,10 @@ class GameEffect(BaseModel):
 
     @model_validator(mode="after")
     def normalize_keyword_grants(self) -> "GameEffect":
-        self.actions = [_normalize_keyword_grant_action(action, self.raw_text) for action in self.actions]
+        self.actions = [
+            _normalize_keyword_grant_action(_canonicalize_action_shape(action), self.raw_text)
+            for action in self.actions
+        ]
         return self
 
 
@@ -561,7 +565,15 @@ def _normalize_llm_action_aliases(value: Any) -> Any:
         return [_normalize_llm_action_aliases(item) for item in value]
     if isinstance(value, dict):
         normalized = {
-            key: _normalize_duration(item) if key == "duration" else _normalize_llm_action_aliases(item)
+            key: (
+                _normalize_duration(item)
+                if key == "duration"
+                else _normalize_target_spec(item)
+                if key == "target" and isinstance(item, dict)
+                else _normalize_filters(item)
+                if key == "filters"
+                else _normalize_llm_action_aliases(item)
+            )
             for key, item in value.items()
         }
         if "type" not in normalized and "action_type" in normalized:
@@ -586,7 +598,7 @@ def _normalize_llm_action_aliases(value: Any) -> Any:
             normalized["selector"] = _normalize_selector(normalized["selector"])
         if "filters" in normalized:
             normalized["filters"] = _normalize_filters(normalized["filters"])
-        return normalized
+        return _canonicalize_action_shape(normalized)
     return value
 
 
@@ -633,6 +645,10 @@ def _normalize_llm_condition_aliases(value: Any) -> Any:
         normalized.setdefault("target", {"selector": "SELF"})
         state = str(normalized.get("state") or normalized.get("status") or "PAIRED").upper()
         normalized["state"] = "LINKED" if state == "LINKED" else "PAIRED"
+    if normalized.get("type") == "CHECK_DAMAGE":
+        normalized.setdefault("target", {"selector": "SELF"})
+        normalized.setdefault("operator", ">")
+        normalized.setdefault("value", 0)
 
     if "comparison" in normalized and "operator" not in normalized:
         normalized["operator"] = _normalize_comparison(normalized.pop("comparison"))
@@ -658,7 +674,7 @@ def _normalize_llm_condition_aliases(value: Any) -> Any:
 
 
 def _normalize_keyword_grant_action(action: Dict[str, Any], raw_text: str) -> Dict[str, Any]:
-    normalized = dict(action)
+    normalized = _canonicalize_action_shape(action)
     keyword = _extract_keyword_grant(raw_text)
     action_type = str(normalized.get("type") or "")
     stat_type = str(normalized.get("stat_type") or "").upper()
@@ -680,20 +696,29 @@ def _normalize_keyword_grant_action(action: Dict[str, Any], raw_text: str) -> Di
         normalized["type"] = "MODIFY_COST"
         normalized["stat"] = "LEVEL" if stat in {"LEVEL", "LV"} else "COST"
 
-    if action_type == "MODIFY_STAT" and stat_type and stat_type not in {"AP", "HP"} and keyword:
+    if action_type == "MODIFY_STAT" and stat not in {"AP", "HP"} and keyword:
         normalized["type"] = "GRANT_KEYWORD"
+        normalized.pop("stat", None)
+        normalized.pop("modification", None)
         normalized.pop("stat_type", None)
 
     if normalized.get("type") == "GRANT_KEYWORD":
         if not normalized.get("keyword"):
             normalized["keyword"] = stat_type or (keyword[0] if keyword else None)
+        if normalized.get("keyword"):
+            normalized["keyword"] = _normalize_keyword_name(normalized["keyword"])
         if "value" not in normalized:
             normalized["value"] = normalized.get("amount")
         if normalized.get("value") is None and keyword:
             normalized["value"] = keyword[1]
+        if normalized.get("keyword") in {"BLOCKER", "FIRST_STRIKE", "HIGH_MANEUVER", "SUPPRESSION"}:
+            normalized.pop("value", None)
         normalized.pop("amount", None)
         normalized.pop("stat_type", None)
     elif normalized.get("type") == "MODIFY_STAT":
+        printed_stat_modifier = _printed_stat_modifier(raw_text, normalized.get("stat"))
+        if printed_stat_modifier:
+            normalized["stat"], normalized["modification"] = printed_stat_modifier
         if not normalized.get("stat") and stat_type in {"AP", "HP"}:
             normalized["stat"] = stat_type
             normalized.pop("stat_type", None)
@@ -714,6 +739,8 @@ def _normalize_keyword_grant_action(action: Dict[str, Any], raw_text: str) -> Di
             mod_type = str(normalized.pop("modification_type")).upper()
             if mod_type in {"REDUCE", "SUBTRACT"} and str(normalized["modification"]).lstrip("+-").isdigit():
                 normalized["modification"] = f"-{str(normalized['modification']).lstrip('+-')}"
+        if normalized.get("stat"):
+            normalized["stat"] = str(normalized["stat"]).upper()
     elif normalized.get("type") == "MODIFY_COST":
         if "modification" not in normalized and isinstance(normalized.get("amount"), int):
             amount = normalized.pop("amount")
@@ -735,6 +762,95 @@ def _normalize_keyword_grant_action(action: Dict[str, Any], raw_text: str) -> Di
             normalized["timing"] = "ACTION_PHASE" if "【Action】" in raw_text else "MAIN_PHASE"
 
     return normalized
+
+
+def _canonicalize_action_shape(action: Dict[str, Any]) -> Dict[str, Any]:
+    """Normalize legacy LLM action fields into the runtime target/action shape."""
+    normalized = dict(action)
+    if "type" not in normalized and "action_type" in normalized:
+        normalized["type"] = normalized.pop("action_type")
+    if normalized.get("type"):
+        normalized["type"] = _normalize_action_type(normalized["type"])
+
+    target = normalized.get("target")
+    if isinstance(target, str):
+        target = {"selector": _normalize_selector(target)}
+    elif isinstance(target, dict):
+        target = _normalize_target_spec(target)
+    elif "target_selector" in normalized:
+        target = {"selector": _normalize_selector(normalized.pop("target_selector"))}
+    elif "selector" in normalized:
+        target = {"selector": _normalize_selector(normalized.pop("selector"))}
+
+    if isinstance(target, dict):
+        if "target_selector" in normalized and "selector" not in target:
+            target["selector"] = _normalize_selector(normalized.pop("target_selector"))
+        if "selector" in normalized and "selector" not in target:
+            target["selector"] = _normalize_selector(normalized.pop("selector"))
+        if "filters" in normalized:
+            merged_filters = _merge_filter_specs(target.get("filters", {}), normalized.pop("filters"))
+            if merged_filters:
+                target["filters"] = merged_filters
+        normalized["target"] = _normalize_target_spec(target)
+
+    if normalized.get("type") == "MODIFY_STAT":
+        stat = normalized.get("stat") or normalized.get("stat_type")
+        if stat:
+            normalized["stat"] = str(stat).upper()
+            normalized.pop("stat_type", None)
+        if isinstance(normalized.get("modification"), int):
+            amount = normalized["modification"]
+            normalized["modification"] = f"+{amount}" if amount >= 0 else str(amount)
+    elif normalized.get("type") == "MODIFY_COST":
+        if isinstance(normalized.get("modification"), int):
+            amount = normalized["modification"]
+            normalized["modification"] = f"+{amount}" if amount >= 0 else str(amount)
+        normalized.setdefault("scope", "PLAY")
+
+    return normalized
+
+
+def _merge_filter_specs(*filter_specs: Any) -> Dict[str, Any]:
+    merged: Dict[str, Any] = {}
+    for filters in filter_specs:
+        normalized = _filters_to_dict(filters)
+        for key, value in normalized.items():
+            merged[key] = value
+    return merged
+
+
+def _filters_to_dict(filters: Any) -> Dict[str, Any]:
+    if not filters:
+        return {}
+    if isinstance(filters, list):
+        merged: Dict[str, Any] = {}
+        for item in filters:
+            merged.update(_filters_to_dict(item))
+        return merged
+    if not isinstance(filters, dict):
+        return {}
+
+    normalized = _normalize_filters(filters)
+    stat = str(normalized.get("stat") or normalized.get("stat_type") or "").upper()
+    if stat in {"LEVEL", "LV", "AP", "HP"} and "operator" in normalized and "value" in normalized:
+        key = "level" if stat in {"LEVEL", "LV"} else stat.lower()
+        return {key: {"operator": normalized["operator"], "value": normalized["value"]}}
+    return normalized
+
+
+def _printed_stat_modifier(raw_text: str, requested_stat: Any = None) -> Optional[tuple[str, str]]:
+    matches = [
+        (match.group(1).upper(), f"{match.group(2)}{match.group(3)}")
+        for match in re.finditer(r"\b(AP|HP)\s*([+-])\s*(\d+)", raw_text, flags=re.IGNORECASE)
+    ]
+    if not matches:
+        return None
+    stat = str(requested_stat or "").upper()
+    if stat:
+        for match_stat, modification in matches:
+            if match_stat == stat:
+                return match_stat, modification
+    return matches[0] if len(matches) == 1 else None
 
 
 def _extract_keyword_grant(text: str) -> Optional[tuple[str, Optional[int]]]:
@@ -835,6 +951,8 @@ def _infer_condition_type_from_fields(condition: Dict[str, Any]) -> str:
         return "CHECK_COLOR"
     if "keyword" in condition or "has_keyword" in condition:
         return "CHECK_KEYWORD"
+    if "damaged" in condition or "damage" in condition:
+        return "CHECK_DAMAGE"
     return str(condition.get("type") or "")
 
 
@@ -864,8 +982,56 @@ def _normalize_filters(filters: Any) -> Any:
         normalized["card_type"] = normalized.pop("type")
     if "trait" in normalized and "traits" not in normalized:
         normalized["traits"] = [normalized.pop("trait")]
+    if normalized.pop("is_active", False):
+        normalized["state"] = "ACTIVE"
+    if "state" in normalized and isinstance(normalized["state"], str):
+        normalized["state"] = normalized["state"].upper()
     if "has_keyword" in normalized:
         normalized["has_keyword"] = _normalize_keyword_name(normalized["has_keyword"]).lower()
+    if "keyword" in normalized and "has_keyword" not in normalized:
+        normalized["has_keyword"] = _normalize_keyword_name(normalized.pop("keyword")).lower()
+    else:
+        normalized.pop("keyword", None)
+    if normalized.get("card_type") == "CHECK_TRAIT" and "value" in normalized:
+        normalized["traits"] = [normalized.pop("value")]
+        normalized.pop("card_type", None)
+    if "card_state" in normalized and "state" not in normalized:
+        normalized["state"] = str(normalized.pop("card_state")).upper()
+    else:
+        normalized.pop("card_state", None)
+    if "level_operator" in normalized and "level" in normalized and not isinstance(normalized["level"], dict):
+        normalized["level"] = {"operator": normalized.pop("level_operator"), "value": normalized["level"]}
+    normalized.pop("level_operator", None)
+    for unsupported_key in (
+        "amount",
+        "can_target_player",
+        "condition",
+        "conditions",
+        "count",
+        "limit",
+        "most_units_owner",
+        "owner",
+        "paired_with_pilot_trait",
+        "quantity",
+        "sort_by",
+        "sort_order",
+        "stat_filters",
+        "target",
+        "value",
+    ):
+        normalized.pop(unsupported_key, None)
+    stat = str(normalized.get("stat") or normalized.get("stat_type") or "").upper()
+    if stat in {"LEVEL", "LV", "AP", "HP"} and "operator" in normalized and "value" in normalized:
+        key = "level" if stat in {"LEVEL", "LV"} else stat.lower()
+        return {key: {"operator": normalized["operator"], "value": normalized["value"]}}
+    for key in ("level", "ap", "hp"):
+        value_key = f"{key}_value"
+        if value_key in normalized and isinstance(normalized.get(key), str) and normalized[key] in {"<=", ">=", "==", "!=", "<", ">"}:
+            normalized[key] = {"operator": normalized.pop(key), "value": normalized.pop(value_key)}
+        elif value_key in normalized and "operator" in normalized:
+            normalized[key] = {"operator": normalized.pop("operator"), "value": normalized.pop(value_key)}
+        elif key in normalized and "operator" in normalized and not isinstance(normalized[key], dict):
+            normalized[key] = {"operator": normalized.pop("operator"), "value": normalized[key]}
     return normalized
 
 
@@ -889,13 +1055,15 @@ def _infer_stat_from_text(text: str) -> Optional[str]:
 
 
 def _parse_effect_line_offline(text: str) -> GameEffect:
-    trigger = _extract_trigger(text)
+    triggers = _extract_triggers(text)
+    trigger = triggers[0] if triggers else None
     action = _extract_simple_action(text)
     conditions = _extract_supported_conditions(text)
     unsupported = _unsupported_reason(text, trigger, action, conditions)
     return GameEffect(
         raw_text=text,
         trigger=trigger,
+        triggers=triggers,
         action_type=action.get("type") if action else None,
         target_selector=_target_selector(action.get("target")) if action else None,
         amount=action.get("amount") if action else None,
@@ -909,6 +1077,11 @@ def _parse_effect_line_offline(text: str) -> GameEffect:
 
 
 def _extract_trigger(text: str) -> Optional[str]:
+    triggers = _extract_triggers(text)
+    return triggers[0] if triggers else None
+
+
+def _extract_triggers(text: str) -> List[str]:
     trigger_map = {
         "【Deploy】": "ON_DEPLOY",
         "【Attack】": "ON_ATTACK",
@@ -922,11 +1095,8 @@ def _extract_trigger(text: str) -> Optional[str]:
         "【Activate･Action】": "ACTIVATE_ACTION",
     }
     if "【Main】/【Action】" in text or "【Action】/【Main】" in text:
-        return "MAIN_PHASE"
-    for marker, trigger in trigger_map.items():
-        if marker in text:
-            return trigger
-    return None
+        return ["MAIN_PHASE", "ACTION_PHASE"]
+    return [trigger for marker, trigger in trigger_map.items() if marker in text]
 
 
 def _extract_simple_action(text: str) -> Optional[Dict[str, Any]]:
@@ -1125,7 +1295,8 @@ Condition mapping:
 - Trait requirements like "friendly (Zeon) Unit", "this Unit is (Earth Federation)", or "Pilot has trait X" -> CHECK_TRAIT or CHECK_PAIRED_PILOT_TRAIT.
 - Color requirements -> CHECK_COLOR or paired color triggers when available.
 - Keyword requirements -> CHECK_KEYWORD.
-- Active/rested/paired/linked state -> CHECK_CARD_STATE or CHECK_LINK_STATUS.
+- Active/rested/paired/linked/destroyed/attacking state -> CHECK_CARD_STATE or CHECK_LINK_STATUS.
+- Damaged cards -> CHECK_DAMAGE with target, operator, and value 0; do not encode damaged as CHECK_CARD_STATE.
 - "You have N or more cards/Units/resources/shields/trash" -> COUNT_CARDS with zone, owner, operator, value, and filters.
 - Level/AP/HP/cost comparisons -> CHECK_STAT or CHECK_PLAYER_LEVEL when referring to player level.
 - Turn conditions like "during your turn" or "during your opponent's turn" -> CHECK_TURN.

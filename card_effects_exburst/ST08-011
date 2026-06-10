@@ -40,13 +40,12 @@
       ],
       "actions": [
         {
-          "keyword": "HIGH-MANEUVER",
+          "keyword": "HIGH_MANEUVER",
           "duration": "THIS_TURN",
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

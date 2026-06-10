@@ -23,7 +23,8 @@
       "effect_id": "GD02-114-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
@@ -38,9 +39,20 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "damaged": true
+            }
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",
@@ -58,7 +70,8 @@
       "effect_id": "GD02-114-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
@@ -73,9 +86,20 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "damaged": true
+            }
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

@@ -32,10 +32,27 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "stat": "AP",
-          "modification": -1,
+          "modification": "-1",
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT"
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "stat": "AP",
+          "modification": "-1",
+          "duration": "THIS_TURN"
         }
       ],
       "is_supported": true,

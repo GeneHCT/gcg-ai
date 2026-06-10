@@ -10,37 +10,47 @@
       "conditions": [],
       "actions": [
         {
-          "conditions": [
-            {
-              "type": "CHECK_CARD_STATE",
-              "value": "RESTED"
-            }
-          ],
-          "type": "SET_ACTIVE",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_BASE",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "RESTED"
             }
           }
         },
         {
-          "stat": "AP",
-          "duration": "THIS_TURN",
           "conditions": [
             {
-              "type": "CONDITIONAL_BRANCH",
-              "condition": {
-                "type": "CHECK_ACTION_SUCCESS",
-                "action_index": 0
-              }
+              "type": "CHECK_CARD_STATE",
+              "state": "RESTED"
             }
           ],
-          "type": "MODIFY_STAT",
+          "type": "SET_ACTIVE",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
-          "modification": "-1"
+          "next_if_success": [
+            {
+              "stat": "AP",
+              "duration": "THIS_TURN",
+              "conditions": [
+                {
+                  "type": "CONDITIONAL_BRANCH",
+                  "condition": {
+                    "type": "CHECK_ACTION_SUCCESS",
+                    "action_index": 0
+                  }
+                }
+              ],
+              "type": "MODIFY_STAT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
+              "modification": "-1"
+            }
+          ]
         }
       ],
       "is_supported": true,

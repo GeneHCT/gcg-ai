@@ -53,22 +53,28 @@
       "conditions": [
         {
           "type": "CHECK_CARD_STATE",
-          "target_selector": "FRIENDLY_UNIT",
-          "state": "RESTED"
+          "state": "RESTED",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         },
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "FRIENDLY_UNIT",
           "traits": [
             "Zeon"
-          ]
+          ],
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "LV",
           "operator": "<=",
-          "value": 4
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

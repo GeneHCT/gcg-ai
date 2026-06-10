@@ -1,65 +1,15 @@
 {
   "card_id": "EXRP-004",
-  "effects": [
-    {
-      "effect_id": "EXRP-004-E1",
-      "effect_type": "TRIGGERED",
-      "triggers": [
-        "ON_PLACE_EX_RESOURCE"
-      ],
-      "conditions": [],
-      "actions": [
-        {
-          "type": "PLACE_RESOURCE",
-          "amount": 1,
-          "target": {
-            "selector": "ENEMY_PLAYER"
-          }
-        }
-      ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "At the start of the game, the second-turn player places 1 active EX Resource into their resource area.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "EXRP-004-E2",
-      "effect_type": "ACTIVATED",
-      "triggers": [
-        "ACTIVATE_ACTION"
-      ],
-      "conditions": [
-        {
-          "type": "CHECK_CARD_STATE",
-          "condition": "RESTED"
-        }
-      ],
-      "actions": [
-        {
-          "type": "EXILE_CARDS",
-          "target": {
-            "selector": "SELF"
-          }
-        }
-      ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
-        "source": "llm"
-      }
-    }
-  ],
+  "effects": [],
   "continuous_effects": [],
   "metadata": {
     "original_text": "(At the start of the game, the second-turn player places 1 active EX Resource into their resource area.) (Rest an EX Resource then exile it from the game when paying a cost.)",
     "parsing_version": "exburst-discovery-v1",
     "card_type": "UNIT",
-    "llm_model": "deepseek/deepseek-chat-v3-0324",
-    "parser_source": "llm",
+    "parser_source": "essential_cosmetic",
     "support_status": "supported",
-    "validation_issues": []
+    "essential_cosmetic": true,
+    "validation_issues": [],
+    "note": "Game-essential cosmetic card. Setup and payment behavior is handled by engine rules, not parsed card-effect IR."
   }
 }

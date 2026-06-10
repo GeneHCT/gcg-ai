@@ -32,16 +32,18 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "ENEMY_BASE",
           "operator": "==",
-          "value": 0
+          "value": 0,
+          "target": {
+            "selector": "ENEMY_BASE"
+          }
         }
       ],
       "actions": [
         {
           "type": "MODIFY_STAT",
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "PERMANENT",
           "target": {
             "selector": "SELF"

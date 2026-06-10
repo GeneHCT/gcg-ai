@@ -40,6 +40,13 @@
           "operator": "<=",
           "value": 4,
           "owner": "SELF"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [

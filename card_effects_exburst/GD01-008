@@ -10,15 +10,21 @@
       "conditions": [],
       "actions": [
         {
-          "type": "DAMAGE_UNIT",
-          "amount": 1,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
-            "count": 1,
             "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "RESTED"
             }
+          }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 1,
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "damage_type": "EFFECT"
         }

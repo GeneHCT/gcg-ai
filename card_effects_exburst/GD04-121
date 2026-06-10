@@ -43,14 +43,17 @@
             {
               "type": "CHECK_TURN",
               "operator": "==",
-              "value": "YOUR_TURN"
+              "value": "YOUR_TURN",
+              "turn_owner": "SELF"
             },
             {
               "type": "CHECK_TRAIT",
-              "value": "League Militaire",
               "target": {
                 "selector": "FRIENDLY_UNIT"
-              }
+              },
+              "traits": [
+                "League Militaire"
+              ]
             }
           ],
           "token_traits": [

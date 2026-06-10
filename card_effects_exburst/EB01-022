@@ -10,8 +10,10 @@
       "conditions": [
         {
           "type": "CHECK_CARD_STATE",
-          "target_selector": "ENEMY_UNIT",
-          "state": "DESTROYED"
+          "state": "DESTROYED",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

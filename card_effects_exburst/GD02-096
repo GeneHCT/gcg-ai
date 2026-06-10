@@ -32,13 +32,33 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Vagan"
+              ],
+              "card_type": "UNIT",
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        },
+        {
           "optional_actions": [
             {
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "Vagan",
-                  "operator": "=="
+                  "operator": "==",
+                  "traits": [
+                    "Vagan"
+                  ]
                 },
                 {
                   "type": "CHECK_STAT",
@@ -49,11 +69,29 @@
               ],
               "type": "DEPLOY_FROM_ZONE",
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "Vagan"
+                  ],
+                  "card_type": "UNIT",
+                  "level": {
+                    "operator": "<=",
+                    "value": 2
+                  }
+                },
+                "card_type": "UNIT"
               }
             }
           ],
           "type": "OPTIONAL_ACTION"
+        },
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "source_zone": "TRASH"
         }
       ],
       "is_supported": true,

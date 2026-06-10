@@ -41,7 +41,8 @@
                 "value": 6
               }
             }
-          }
+          },
+          "modification": "-COUNT_RESULT"
         }
       ],
       "is_supported": true,

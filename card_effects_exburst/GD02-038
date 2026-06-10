@@ -22,8 +22,10 @@
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "Clan",
-                  "operator": "=="
+                  "operator": "==",
+                  "traits": [
+                    "Clan"
+                  ]
                 },
                 {
                   "type": "CHECK_STAT",

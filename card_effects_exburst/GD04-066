@@ -5,16 +5,26 @@
       "effect_id": "GD04-066-E2",
       "effect_type": "ACTIVATED",
       "triggers": [
-        "ACTIVATE_MAIN"
+        "ACTIVATE_MAIN",
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
         {
           "stat": "AP",
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "modification": "-2"
         }
@@ -38,8 +48,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "SUPPRESSION",
-          "value": null
+          "keyword": "SUPPRESSION"
         }
       ],
       "is_supported": true,

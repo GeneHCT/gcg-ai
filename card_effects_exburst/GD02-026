@@ -15,17 +15,32 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "FRIENDLY_UNIT",
           "traits": [
             "AGE System"
-          ]
+          ],
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "AGE System"
+              ]
+            }
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "stat": "AP",
-          "modification": 2,
+          "modification": "+2",
           "duration": "THIS_TURN",
           "target": {
             "selector": "SELECTED_CARD"

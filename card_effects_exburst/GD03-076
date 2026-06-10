@@ -16,8 +16,12 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "target": "OTHER_FRIENDLY_UNIT",
-          "value": "Triple Ship Alliance"
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Triple Ship Alliance"
+          ]
         }
       ],
       "actions": [

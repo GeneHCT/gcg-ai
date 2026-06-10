@@ -10,24 +10,24 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              [
-                "Operation Meteor",
-                "G Team"
-              ]
-            ]
-          },
-          "duration": "THIS_TURN",
-          "type": "GRANT_ATTACK_TARGETING",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Operation Meteor",
                 "G Team"
               ]
             }
+          }
+        },
+        {
+          "duration": "THIS_TURN",
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

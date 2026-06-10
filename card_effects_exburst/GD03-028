@@ -9,16 +9,16 @@
       ],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
-          "target_selector": "ENEMY_UNIT",
-          "state": "BATTLING_UNIT"
+          "type": "CHECK_TARGET",
+          "target_type": "UNIT",
+          "event": "BATTLE_TARGET"
         }
       ],
       "actions": [
         {
           "type": "MODIFY_STAT",
           "stat": "AP",
-          "modification": 2,
+          "modification": "+2",
           "target": {
             "selector": "SELF"
           }

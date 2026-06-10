@@ -10,16 +10,16 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "filters": {
-            "traits": [
-              "UN",
-              "Superpower Bloc"
-            ]
-          },
           "operator": ">=",
           "value": 1,
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "UN",
+                "Superpower Bloc"
+              ]
+            }
           }
         }
       ],

@@ -28,19 +28,6 @@
               }
             }
           ],
-          "success_actions": [
-            {
-              "token_data": {
-                "name": "Graze Custom",
-                "traits": [
-                  "Tekkadan"
-                ],
-                "ap": 2,
-                "hp": 2
-              },
-              "type": "DEPLOY_TOKEN"
-            }
-          ],
           "fail_actions": [
             {
               "conditions": [
@@ -69,7 +56,20 @@
               "type": "CONDITIONAL_BRANCH"
             }
           ],
-          "type": "CONDITIONAL_BRANCH"
+          "type": "CONDITIONAL_BRANCH",
+          "true_actions": [
+            {
+              "token_data": {
+                "name": "Graze Custom",
+                "traits": [
+                  "Tekkadan"
+                ],
+                "ap": 2,
+                "hp": 2
+              },
+              "type": "DEPLOY_TOKEN"
+            }
+          ]
         }
       ],
       "is_supported": true,

@@ -32,12 +32,18 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "SELF",
-          "value": "CB"
+          "target": {
+            "selector": "SELF"
+          },
+          "traits": [
+            "CB"
+          ]
         },
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "LV",
           "operator": "<=",
           "value": {
@@ -50,19 +56,10 @@
       "actions": [
         {
           "type": "GRANT_ATTACK_TARGETING",
-          "target": "SELF",
-          "filters": {
-            "owner": "OPPONENT",
-            "card_state": "ACTIVE",
-            "stat_filters": {
-              "LV": {
-                "operator": "<=",
-                "value": {
-                  "type": "CHECK_STAT",
-                  "target": "SELF",
-                  "stat": "LV"
-                }
-              }
+          "target": {
+            "selector": "SELF",
+            "filters": {
+              "state": "ACTIVE"
             }
           },
           "duration": "THIS_TURN"

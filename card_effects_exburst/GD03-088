@@ -35,13 +35,20 @@
           "traits": [
             "AGE System"
           ]
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
         {
           "type": "MODIFY_STAT",
           "stat": "AP",
-          "modification": 1
+          "modification": "+1"
         },
         {
           "type": "GRANT_KEYWORD",

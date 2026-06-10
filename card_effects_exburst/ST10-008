@@ -26,14 +26,14 @@
           "optional_actions": [
             {
               "amount": 2,
-              "filters": {
-                "traits": [
-                  "G Generation"
-                ]
-              },
               "type": "EXILE_CARDS",
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "G Generation"
+                  ]
+                }
               }
             }
           ],

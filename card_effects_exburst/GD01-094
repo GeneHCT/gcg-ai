@@ -32,16 +32,20 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "ENEMY_UNIT",
           "operator": "==",
           "traits": [
             "Link"
-          ]
+          ],
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         },
         {
           "type": "CHECK_CARD_STATE",
-          "target_selector": "SELF",
-          "state": "ACTIVE"
+          "state": "ACTIVE",
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [
@@ -49,7 +53,10 @@
           "type": "DRAW",
           "amount": 1,
           "target": {
-            "selector": "SELF"
+            "selector": "SELF",
+            "filters": {
+              "state": "ACTIVE"
+            }
           }
         }
       ],

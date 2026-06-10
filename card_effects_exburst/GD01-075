@@ -20,14 +20,31 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "ADD_TO_HAND",
-          "selector": "ENEMY_UNIT",
-          "filters": {
-            "stat": "HP",
-            "operator": "==",
-            "value": 1
-          },
-          "owner": "OPPONENT"
+          "owner": "OPPONENT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "==",
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

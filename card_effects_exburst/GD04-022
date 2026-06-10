@@ -7,7 +7,15 @@
       "triggers": [
         "ON_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
           "value": false,
@@ -21,7 +29,9 @@
             {
               "type": "CHECK_TRAIT",
               "operator": "!=",
-              "value": "Unit Token"
+              "traits": [
+                "Unit Token"
+              ]
             }
           ],
           "type": "SET_ACTIVE",
@@ -46,7 +56,9 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Unit Token"
+          "traits": [
+            "Unit Token"
+          ]
         }
       ],
       "actions": [

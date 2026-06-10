@@ -28,17 +28,30 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Link",
           "target": {
             "selector": "FRIENDLY_UNIT"
-          }
+          },
+          "traits": [
+            "Link"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "is_linked": true
+            }
+          }
+        },
+        {
           "type": "GRANT_KEYWORD",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "keyword": "BREACH",

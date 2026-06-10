@@ -28,7 +28,9 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "FRIENDLY_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
           "state": "ACTIVE",
           "traits": [
             "Earth Federation"
@@ -37,20 +39,41 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE",
+              "traits": [
+                "Earth Federation"
+              ]
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE"
+            }
+          },
+          "append": true
+        },
+        {
           "type": "REST_UNIT",
-          "target": "FRIENDLY_UNIT",
-          "filters": {
-            "state": "ACTIVE",
-            "traits": [
-              "Earth Federation"
-            ]
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         },
         {
           "type": "REST_UNIT",
-          "target": "ENEMY_UNIT",
-          "filters": {
-            "state": "ACTIVE"
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

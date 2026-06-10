@@ -10,19 +10,50 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE",
+              "traits": [
+                "League Militaire"
+              ]
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          },
+          "append": true
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "ACTIVE"
+              "state": "ACTIVE"
             },
             {
               "type": "CHECK_TRAIT",
-              "value": "League Militaire"
+              "traits": [
+                "League Militaire"
+              ]
             }
           ],
           "type": "REST_UNIT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         },
         {
@@ -36,17 +67,7 @@
           ],
           "type": "REST_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "state": "ACTIVE",
-              "traits": [
-                "League Militaire"
-              ],
-              "level": {
-                "operator": "<=",
-                "value": 3
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

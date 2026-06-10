@@ -32,6 +32,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -49,13 +63,7 @@
           ],
           "type": "REST_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "hp": {
-                "operator": "<=",
-                "value": 3
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

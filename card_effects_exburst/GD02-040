@@ -49,11 +49,19 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "New UNE"
-            ]
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "New UNE"
+              ]
+            }
+          }
+        },
+        {
           "protection_filters": {
             "target": "ENEMY_UNIT",
             "stat": "HP",
@@ -63,7 +71,7 @@
           "duration": "THIS_TURN",
           "type": "GRANT_PROTECTION",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

@@ -10,7 +10,9 @@
       "conditions": [
         {
           "type": "CHECK_KEYWORD",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "keyword": "BLOCKER",
           "value": null,
           "operator": "=="
@@ -18,13 +20,21 @@
       ],
       "actions": [
         {
-          "type": "DAMAGE_UNIT",
-          "amount": 5,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "has_keyword": "blocker"
             }
+          }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 5,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

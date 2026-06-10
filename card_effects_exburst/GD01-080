@@ -10,7 +10,9 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "LEVEL",
           "operator": "<=",
           "value": 2
@@ -18,11 +20,21 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        },
+        {
           "type": "ADD_TO_HAND",
-          "filters": {
-            "level": 2,
-            "operator": "<="
-          },
           "target": {
             "selector": "ENEMY_UNIT",
             "filters": {
@@ -31,6 +43,12 @@
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

@@ -16,20 +16,21 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "card_type": "UNIT",
-                "level": {
-                  "operator": "<=",
-                  "value": 4
-                },
-                "traits": [
-                  "ZAFT"
-                ]
-              },
               "amount": 1,
               "type": "DEPLOY_FROM_ZONE",
               "target": {
-                "selector": "LOOKED_AT_CARD"
+                "selector": "LOOKED_AT_CARD",
+                "filters": {
+                  "card_type": "UNIT",
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  },
+                  "traits": [
+                    "ZAFT"
+                  ]
+                },
+                "card_type": "UNIT"
               }
             }
           ],

@@ -33,7 +33,9 @@
         {
           "type": "CHECK_KEYWORD",
           "keyword": "REPAIR",
-          "target": "SELF"
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [
@@ -41,7 +43,9 @@
           "type": "MODIFY_STAT",
           "stat": "AP",
           "modification": "+1",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "duration": "PERMANENT"
         }
       ],

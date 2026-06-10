@@ -27,23 +27,28 @@
       "effect_id": "ST10-013-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "FRIENDLY_UNIT",
           "operator": "==",
           "traits": [
             "G Generation"
-          ]
+          ],
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "FRIENDLY_UNIT",
           "stat": "LEVEL",
           "operator": ">=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [
@@ -75,23 +80,28 @@
       "effect_id": "ST10-013-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "FRIENDLY_UNIT",
           "operator": "==",
           "traits": [
             "G Generation"
-          ]
+          ],
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "FRIENDLY_UNIT",
           "stat": "LEVEL",
           "operator": ">=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [

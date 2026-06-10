@@ -34,8 +34,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

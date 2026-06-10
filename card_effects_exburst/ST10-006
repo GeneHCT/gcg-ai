@@ -14,13 +14,36 @@
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "HP",
           "operator": "<=",
-          "value": 3
+          "value": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
         {
           "type": "ADD_TO_HAND",
           "owner": "OPPONENT",
@@ -32,6 +55,12 @@
                 "value": 3
               }
             }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

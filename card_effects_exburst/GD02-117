@@ -10,8 +10,10 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "AEUG",
-          "card_type": "BASE"
+          "card_type": "BASE",
+          "traits": [
+            "AEUG"
+          ]
         }
       ],
       "actions": [
@@ -19,7 +21,13 @@
           "type": "ADD_TO_HAND",
           "amount": 1,
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "traits": [
+                "AEUG"
+              ],
+              "card_type": "BASE"
+            }
           }
         }
       ],

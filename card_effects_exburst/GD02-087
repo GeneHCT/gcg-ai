@@ -32,19 +32,29 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "value": "Blue",
           "operator": "==",
           "target": {
             "selector": "SELF"
-          }
+          },
+          "color": "Blue"
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "has_keyword": "blocker"
+            }
+          }
+        },
+        {
           "type": "REST_UNIT",
-          "selector": "ENEMY_UNIT",
-          "filters": {
-            "has_keyword": "blocker"
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

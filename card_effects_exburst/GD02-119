@@ -39,12 +39,20 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "stat": "AP",
           "modification": "-3",
           "duration": "THIS_BATTLE",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

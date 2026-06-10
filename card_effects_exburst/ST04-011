@@ -35,7 +35,7 @@
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "ACTIVE"
+              "state": "ACTIVE"
             },
             {
               "type": "CHECK_STAT",

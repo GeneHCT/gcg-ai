@@ -32,7 +32,9 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "SELECTED_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
           "traits": [
             "Academy"
           ]
@@ -46,6 +48,13 @@
           },
           "operator": "==",
           "value": 0
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [

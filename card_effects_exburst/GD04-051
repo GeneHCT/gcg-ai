@@ -10,8 +10,12 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Vulture",
-          "target_selector": "PAIRED_PILOT"
+          "target": {
+            "selector": "PAIRED_PILOT"
+          },
+          "traits": [
+            "Vulture"
+          ]
         },
         {
           "type": "COUNT_CARDS",
@@ -21,24 +25,21 @@
           "owner": "SELF"
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "ACTIVE",
-          "target_selector": "ENEMY_UNIT"
-        },
-        {
           "type": "CHECK_KEYWORD",
-          "target_selector": "ENEMY_UNIT"
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
         {
           "type": "GRANT_ATTACK_TARGETING",
-          "filters": {
-            "has_keyword": "true",
-            "is_active": true
-          },
           "target": {
-            "selector": "SELF"
+            "selector": "SELF",
+            "filters": {
+              "has_keyword": "true",
+              "state": "ACTIVE"
+            }
           }
         }
       ],

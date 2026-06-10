@@ -5,19 +5,44 @@
       "effect_id": "GD04-050-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_ATTACK"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Minerva Squad"
+              ],
+              "card_type": "UNIT"
+            }
+          }
+        },
         {
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "Minerva Squad"
+              "traits": [
+                "Minerva Squad"
+              ]
             },
             {
               "type": "CHECK_CARD_STATE",
-              "value": "UNIT"
+              "state": "UNIT"
             }
           ],
           "optional_actions": [
@@ -31,7 +56,7 @@
           ],
           "type": "OPTIONAL_ACTION",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -54,8 +79,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "HIGH_MANEUVER",
-          "value": null
+          "keyword": "HIGH_MANEUVER"
         }
       ],
       "is_supported": true,
@@ -63,7 +87,8 @@
       "metadata": {
         "raw_text": "<High-Maneuver> (This Unit can't be blocked.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

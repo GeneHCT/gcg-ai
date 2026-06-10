@@ -42,6 +42,19 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "X-Rounder"
+              ]
+            }
+          }
+        },
+        {
           "type": "GRANT_PROTECTION",
           "selector": "FRIENDLY_UNIT",
           "conditions": [
@@ -54,7 +67,7 @@
           ],
           "duration": "THIS_BATTLE",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

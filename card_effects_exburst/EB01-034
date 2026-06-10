@@ -19,16 +19,16 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "traits": [
-                  "G Generation"
-                ],
-                "card_type": "UNIT",
-                "level": 3
-              },
               "type": "SELECT_LOOKED_AT_CARD",
               "target": {
-                "selector": "LOOKED_AT_CARD"
+                "selector": "LOOKED_AT_CARD",
+                "filters": {
+                  "traits": [
+                    "G Generation"
+                  ],
+                  "card_type": "UNIT",
+                  "level": 3
+                }
               }
             },
             {

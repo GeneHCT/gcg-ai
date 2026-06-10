@@ -12,6 +12,13 @@
           "type": "CHECK_PLAYER_LEVEL",
           "operator": ">=",
           "value": 7
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
@@ -20,8 +27,7 @@
           "keyword": "FIRST_STRIKE",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

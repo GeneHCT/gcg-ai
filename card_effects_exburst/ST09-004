@@ -9,20 +9,21 @@
       ],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "PLAY",
+          "type": "CHECK_TARGET",
           "target": {
             "selector": "FRIENDLY_BASE"
-          }
+          },
+          "exists": true
         }
       ],
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "SELF",
           "keyword": "SUPPRESSION",
           "duration": "PERMANENT",
-          "value": null
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,
@@ -44,8 +45,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,
@@ -53,7 +53,8 @@
       "metadata": {
         "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

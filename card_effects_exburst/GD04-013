@@ -15,8 +15,13 @@
           ]
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "token"
+          "type": "CHECK_TARGET",
+          "target": {
+            "selector": "SELF",
+            "filters": {
+              "is_token": true
+            }
+          }
         }
       ],
       "actions": [
@@ -26,8 +31,7 @@
             "selector": "FRIENDLY_UNIT"
           },
           "duration": "PERMANENT",
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

@@ -10,11 +10,19 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": 1,
           "optional": true,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         },
         {
@@ -56,8 +64,7 @@
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

@@ -1,54 +1,15 @@
 {
   "card_id": "EXRP-012",
   "effects": [],
-  "continuous_effects": [
-    {
-      "effect_id": "EXRP-012-E1",
-      "effect_type": "CONTINUOUS",
-      "triggers": [],
-      "conditions": [],
-      "actions": [],
-      "is_supported": false,
-      "unhandled_explanation": "Game start setup effects are not supported by the simulator",
-      "metadata": {
-        "raw_text": "At the start of the game, the second-turn player places 1 active EX Resource into their resource area.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "EXRP-012-E2",
-      "effect_type": "CONTINUOUS",
-      "triggers": [],
-      "conditions": [],
-      "actions": [],
-      "is_supported": false,
-      "unhandled_explanation": "Cost payment mechanics are not supported by the simulator",
-      "metadata": {
-        "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
-        "source": "llm"
-      }
-    }
-  ],
+  "continuous_effects": [],
   "metadata": {
     "original_text": "(At the start of the game, the second-turn player places 1 active EX Resource into their resource area.) (Rest an EX Resource then exile it from the game when paying a cost.)",
     "parsing_version": "exburst-discovery-v1",
     "card_type": "UNIT",
-    "llm_model": "deepseek/deepseek-chat-v3-0324",
-    "parser_source": "llm",
-    "support_status": "unsupported",
-    "validation_issues": [
-      {
-        "path": "continuous_effects[0]",
-        "kind": "unsupported_llm_effect",
-        "value": "EXRP-012-E1",
-        "message": "Game start setup effects are not supported by the simulator"
-      },
-      {
-        "path": "continuous_effects[1]",
-        "kind": "unsupported_llm_effect",
-        "value": "EXRP-012-E2",
-        "message": "Cost payment mechanics are not supported by the simulator"
-      }
-    ]
+    "parser_source": "essential_cosmetic",
+    "support_status": "supported",
+    "essential_cosmetic": true,
+    "validation_issues": [],
+    "note": "Game-essential cosmetic card. Setup and payment behavior is handled by engine rules, not parsed card-effect IR."
   }
 }

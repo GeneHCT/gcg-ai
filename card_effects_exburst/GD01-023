@@ -46,23 +46,42 @@
       "actions": [
         {
           "type": "DISCARD",
-          "selector": "SELF_HAND",
           "trait": [
             "Zeon",
             "Neo Zeon"
           ],
           "card_type": "UNIT",
-          "amount": 1
+          "amount": 1,
+          "target": {
+            "selector": "SELF_HAND"
+          }
         },
         {
-          "type": "DEPLOY_FROM_ZONE",
-          "selector": "SELF_TRASH",
-          "trait": "Newtype",
-          "card_type": "PILOT",
-          "level": 3,
-          "operator": "<=",
-          "target": "SELF",
-          "pair": true
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "card_type": "PILOT",
+              "traits": [
+                "Newtype"
+              ],
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
+          "type": "PAIR_PILOT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "paired_with": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

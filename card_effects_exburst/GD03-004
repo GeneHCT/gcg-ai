@@ -12,13 +12,13 @@
           "type": "COUNT_CARDS",
           "value": 2,
           "operator": ">=",
-          "filters": {
-            "traits": [
-              "Titans"
-            ]
-          },
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Titans"
+              ]
+            }
           }
         },
         {
@@ -33,20 +33,23 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "filters": {
-            "stat": "HP",
-            "value": 5,
-            "operator": "<="
-          },
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 5
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

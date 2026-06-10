@@ -23,12 +23,15 @@
       "effect_id": "GD01-116-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "AP",
           "operator": "<=",
           "value": 2
@@ -36,16 +39,24 @@
       ],
       "actions": [
         {
-          "type": "DAMAGE_UNIT",
-          "amount": 2,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "ap": {
                 "operator": "<=",
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

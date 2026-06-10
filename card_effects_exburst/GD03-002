@@ -10,26 +10,45 @@
       "conditions": [
         {
           "type": "CHECK_KEYWORD",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
           "value": "REPAIR",
           "operator": ">="
         },
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "LEVEL",
           "value": {
             "target": "OTHER_FRIENDLY_UNIT",
             "stat": "LEVEL"
           },
           "operator": "<="
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "REST_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -64,7 +83,8 @@
       "metadata": {
         "raw_text": "<Repair 3> (At the end of your turn, this Unit recovers the specified number of HP.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

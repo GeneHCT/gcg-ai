@@ -17,15 +17,23 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -45,6 +53,17 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        },
+        {
           "type": "CONDITIONAL_BRANCH",
           "conditions": [
             {
@@ -56,7 +75,7 @@
               }
             }
           ],
-          "success_actions": [
+          "true_actions": [
             {
               "type": "DAMAGE_UNIT",
               "amount": 2,
@@ -67,10 +86,21 @@
                 }
               ],
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "state": "RESTED"
+                }
               }
             }
           ]
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "amount": 2,
+          "damage_type": "EFFECT"
         }
       ],
       "is_supported": true,

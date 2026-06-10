@@ -33,7 +33,8 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_CARD_STATE",
@@ -41,6 +42,13 @@
           "target": {
             "selector": "SELF"
           }
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [

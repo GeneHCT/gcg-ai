@@ -10,6 +10,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "target_filters": {
             "level": {
               "operator": "<=",
@@ -20,13 +34,7 @@
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "level": {
-                "operator": "<=",
-                "value": 3
-              }
-            }
+            "selector": "SELECTED_CARD"
           },
           "modification": "-2"
         }
@@ -50,8 +58,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

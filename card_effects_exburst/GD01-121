@@ -46,7 +46,6 @@
           "type": "CHECK_CARD_STATE",
           "state": "RESTED",
           "operator": "==",
-          "value": true,
           "target": {
             "selector": "FRIENDLY_UNIT"
           }

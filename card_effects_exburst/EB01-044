@@ -19,15 +19,24 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "SELECT_LOOKED_AT_CARD",
-          "selector": "ENEMY_UNIT",
-          "filters": {
-            "most_units_owner": true
+          "target": {
+            "selector": "ENEMY_UNIT"
           }
         },
         {
           "type": "RETURN_TO_HAND",
-          "selector": "SELECTED_CARD"
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": false,
@@ -51,8 +60,7 @@
             "selector": "SELF"
           },
           "duration": "PERMANENT",
-          "keyword": null,
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

@@ -10,9 +10,6 @@
         {
           "amount": 0,
           "duration": "PERMANENT",
-          "filters": {
-            "can_target_player": false
-          },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
             "selector": "SELF"

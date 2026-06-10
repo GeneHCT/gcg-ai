@@ -10,20 +10,30 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
           "operator": ">=",
           "value": 2,
-          "filters": {
-            "state": "RESTED"
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
           }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": 3,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

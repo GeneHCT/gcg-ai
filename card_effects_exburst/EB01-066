@@ -17,12 +17,10 @@
             "filters": {
               "traits": [
                 "G Generation"
-              ]
+              ],
+              "has_keyword": "blocker",
+              "state": "ACTIVE"
             }
-          },
-          "filters": {
-            "has_keyword": "blocker",
-            "state": "ACTIVE"
           }
         }
       ],

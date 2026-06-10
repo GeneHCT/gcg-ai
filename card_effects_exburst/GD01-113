@@ -23,24 +23,35 @@
       "effect_id": "GD01-113-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "ZAFT"
+          "traits": [
+            "ZAFT"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "ZAFT"
               ]
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

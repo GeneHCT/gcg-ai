@@ -55,10 +55,12 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "AP",
           "operator": "<=",
-          "value": 3
+          "value": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

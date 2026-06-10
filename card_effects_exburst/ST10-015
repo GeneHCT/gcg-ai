@@ -28,20 +28,32 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "FRIENDLY_UNIT",
-          "value": "G Generation",
           "operator": ">=",
-          "amount": 1
+          "amount": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "G Generation"
+          ]
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
         {
           "type": "MODIFY_STAT",
           "stat": "AP",
           "modification": "-3",
           "duration": "THIS_BATTLE",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

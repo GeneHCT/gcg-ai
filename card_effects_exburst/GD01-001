@@ -21,7 +21,9 @@
       "actions": [
         {
           "type": "DRAW",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "amount": 1
         }
       ],

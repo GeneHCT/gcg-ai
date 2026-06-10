@@ -10,9 +10,11 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "ENEMY_UNIT",
           "operator": ">=",
-          "value": 4
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
@@ -22,8 +24,7 @@
           "duration": "PERMANENT",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

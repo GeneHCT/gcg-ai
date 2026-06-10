@@ -25,16 +25,20 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "MODIFY_STAT",
-          "filters": {
-            "battling": true,
-            "battling_unit": "SELF"
-          },
           "stat": "AP",
-          "modification": -3,
+          "modification": "-3",
           "duration": "THIS_BATTLE",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -60,8 +64,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

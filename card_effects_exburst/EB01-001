@@ -10,69 +10,68 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "SELF_TRASH",
-          "filters": {
-            "card_type": "COMMAND"
-          },
           "operator": ">=",
-          "value": 2
+          "value": 2,
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "COMMAND"
+            }
+          }
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
-          "filters": {
-            "damaged": true,
-            "level": "<=",
-            "level_value": 7
-          },
-          "operator": "exists"
+          "operator": "exists",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "damaged": true,
+              "level": {
+                "operator": "<=",
+                "value": 7
+              }
+            }
+          }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 7
+              },
+              "damaged": true
+            }
+          }
+        },
+        {
           "type": "EXILE_CARDS",
           "amount": 2,
-          "filters": {
-            "card_type": "COMMAND"
-          },
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "COMMAND"
+            }
           }
         },
         {
           "type": "REST_UNIT",
-          "filters": {
-            "damaged": true,
-            "level": "<=",
-            "level_value": 7
-          },
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "level": {
-                "operator": "<=",
-                "value": 7
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         },
         {
           "type": "GRANT_PROTECTION",
-          "filters": {
-            "damaged": true,
-            "level": "<=",
-            "level_value": 7
-          },
           "protection_type": "SET_ACTIVE",
           "duration": "THIS_TURN",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "level": {
-                "operator": "<=",
-                "value": 7
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

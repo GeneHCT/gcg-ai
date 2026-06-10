@@ -19,7 +19,9 @@
         },
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "LEVEL",
           "operator": "<=",
           "value": 3
@@ -28,16 +30,15 @@
       "actions": [
         {
           "amount": 1,
-          "filters": [
-            {
-              "stat": "LEVEL",
-              "operator": "<=",
-              "value": 3
-            }
-          ],
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
           }
         }
       ],

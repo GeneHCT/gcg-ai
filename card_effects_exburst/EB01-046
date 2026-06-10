@@ -5,7 +5,8 @@
       "effect_id": "EB01-046-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_ATTACK"
       ],
       "conditions": [
         {
@@ -14,19 +15,36 @@
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "LEVEL",
           "operator": ">=",
-          "value": 4
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
         {
           "stat": "AP",
           "duration": "THIS_BATTLE",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "modification": "-2"
         }

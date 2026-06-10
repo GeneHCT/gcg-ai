@@ -30,13 +30,19 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "FRIENDLY_UNIT",
-          "value": "Clan",
-          "operator": "=="
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "operator": "==",
+          "traits": [
+            "Clan"
+          ]
         },
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "LEVEL",
           "value": 2,
           "operator": "<="
@@ -44,28 +50,28 @@
       ],
       "actions": [
         {
-          "type": "GRANT_PROTECTION",
-          "amount": 1,
-          "duration": "THIS_TURN",
-          "protection_type": "BATTLE_DAMAGE",
-          "filters": {
-            "min_units": 1,
-            "max_units": 2,
-            "traits": [
-              "Clan"
-            ]
-          },
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
             "filters": {
               "traits": [
                 "Clan"
               ]
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 2
             }
+          }
+        },
+        {
+          "type": "GRANT_PROTECTION",
+          "amount": 1,
+          "duration": "THIS_TURN",
+          "protection_type": "BATTLE_DAMAGE",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

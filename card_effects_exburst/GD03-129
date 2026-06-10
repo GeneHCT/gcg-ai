@@ -61,8 +61,10 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
-          "value": [
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
             "Tekkadan",
             "Teiwaz"
           ]

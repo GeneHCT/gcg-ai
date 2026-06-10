@@ -38,7 +38,9 @@
         },
         {
           "type": "CHECK_PAIRED_PILOT_TRAIT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "value": "Newtype"
         }
       ],

@@ -8,6 +8,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
+from simulator.exburst_essential_cards import is_essential_cosmetic_card_id as _is_ignored_ex_resource
+
 
 CREDIT_PATTERNS = ("Error code: 402", "Insufficient credits")
 
@@ -118,10 +120,6 @@ def _message_theme(message: str) -> str:
 def _is_credit_issue(issue: Dict[str, str]) -> bool:
     haystack = f"{issue.get('value', '')} {issue.get('message', '')}"
     return any(pattern in haystack for pattern in CREDIT_PATTERNS)
-
-
-def _is_ignored_ex_resource(card_id: str) -> bool:
-    return card_id.upper().startswith(("EXB-", "EXBP-", "EXR-", "EXRP-", "R-", "RP-"))
 
 
 def main() -> None:

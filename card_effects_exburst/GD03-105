@@ -32,9 +32,14 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "quantity": 1
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "grant_filters": {
             "conditions": [
               {
@@ -53,7 +58,7 @@
           "duration": "THIS_TURN",
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

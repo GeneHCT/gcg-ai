@@ -42,7 +42,9 @@
         {
           "type": "GRANT_KEYWORD",
           "keyword": "BREACH",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "duration": "PERMANENT",
           "value": 1
         }

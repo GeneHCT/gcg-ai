@@ -10,10 +10,23 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
-          "selector": "ENEMY_UNIT",
           "amount": 1,
-          "damage_type": "EFFECT"
+          "damage_type": "EFFECT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

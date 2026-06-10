@@ -19,10 +19,12 @@
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "BATTLING_UNIT",
           "keyword": "BREACH",
           "value": 2,
-          "duration": "THIS_BATTLE"
+          "duration": "THIS_BATTLE",
+          "target": {
+            "selector": "BATTLING_UNIT"
+          }
         }
       ],
       "is_supported": true,

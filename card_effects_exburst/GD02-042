@@ -10,24 +10,35 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "New UNE",
           "target": {
             "selector": "OTHER_FRIENDLY_UNIT"
-          }
+          },
+          "traits": [
+            "New UNE"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "New UNE"
+              ]
+            }
+          }
+        },
+        {
           "type": "GRANT_KEYWORD",
-          "keyword": "HIGH-MANEUVER",
-          "target": "OTHER_FRIENDLY_UNIT",
-          "duration": "THIS_TURN",
-          "filters": {
-            "traits": [
-              "New UNE"
-            ]
+          "keyword": "HIGH_MANEUVER",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
-          "value": null
+          "duration": "THIS_TURN"
         }
       ],
       "is_supported": true,

@@ -10,9 +10,22 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "paired_with_pilot_trait": "Super Soldier"
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Super Soldier"
+              ],
+              "paired_pilot_traits": [
+                "Super Soldier"
+              ]
+            }
+          }
+        },
+        {
           "duration": "THIS_TURN",
           "target_limitations": {
             "selector": "ENEMY_UNIT",
@@ -23,12 +36,7 @@
           },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "Super Soldier"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

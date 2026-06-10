@@ -16,9 +16,11 @@
         {
           "type": "CHECK_STAT",
           "stat": "LEVEL",
-          "target_selector": "ENEMY_UNIT",
           "operator": "<=",
-          "value": 2
+          "value": 2,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
@@ -49,8 +51,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,

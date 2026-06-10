@@ -10,13 +10,19 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Cyber-Newtype",
-          "target": "PAIRED_PILOT"
+          "target": {
+            "selector": "PAIRED_PILOT"
+          },
+          "traits": [
+            "Cyber-Newtype"
+          ]
         },
         {
           "type": "CHECK_COLOR",
-          "value": "Blue",
-          "target": "SELF"
+          "target": {
+            "selector": "SELF"
+          },
+          "color": "Blue"
         }
       ],
       "actions": [
@@ -59,7 +65,8 @@
       "metadata": {
         "raw_text": "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

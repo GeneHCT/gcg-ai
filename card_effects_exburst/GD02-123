@@ -32,6 +32,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -42,30 +50,14 @@
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "is_token",
-              "operator": "=="
+              "operator": "==",
+              "state": "IS_TOKEN"
             }
           ],
           "duration": "THIS_TURN",
-          "filters": {
-            "target": "ENEMY_UNIT",
-            "conditions": [
-              {
-                "type": "CHECK_CARD_STATE",
-                "value": "active",
-                "operator": "=="
-              },
-              {
-                "type": "CHECK_STAT",
-                "stat": "AP",
-                "operator": "<=",
-                "value": 5
-              }
-            ]
-          },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

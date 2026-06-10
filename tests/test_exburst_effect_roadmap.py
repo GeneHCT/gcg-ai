@@ -51,7 +51,7 @@ def test_offline_discovery_marks_simple_draw_supported():
     report = validate_ir_effect_data(effect_data)
 
     assert parsed.effects[0].is_supported is True
-    assert effect_data["effects"][0]["actions"] == [{"type": "DRAW", "target": "SELF", "amount": 1}]
+    assert effect_data["effects"][0]["actions"] == [{"type": "DRAW", "target": {"selector": "SELF"}, "amount": 1}]
     assert report.is_supported is True
 
 
@@ -272,12 +272,15 @@ def test_exburst_converter_ignores_ex_resource_cards_but_keeps_tokens(tmp_path):
 
     assert summary["ignored"] == 6
     assert summary["converted"] == 2
-    assert (output_dir / "EXB-001").exists()
-    assert not (output_dir / "EXRP-001").exists()
-    assert not (output_dir / "EXBP-001").exists()
-    assert not (output_dir / "EXR-001").exists()
-    assert not (output_dir / "R-001").exists()
-    assert not (output_dir / "RP-001").exists()
+    essential_ids = ("EXB-001", "EXRP-001", "EXBP-001", "EXR-001", "R-001", "RP-001")
+    for card_id in essential_ids:
+        assert (output_dir / card_id).exists()
+        essential_data = json.loads((output_dir / card_id).read_text(encoding="utf-8"))
+        assert essential_data["metadata"]["support_status"] == "supported"
+        assert essential_data["metadata"]["essential_cosmetic"] is True
+        assert essential_data["metadata"]["parser_source"] == "essential_cosmetic"
+    exb_data = json.loads((output_dir / "EXB-001").read_text(encoding="utf-8"))
+    assert exb_data["continuous_effects"] == []
     assert (output_dir / "T-001").exists()
     assert (output_dir / "GD99-001").exists()
     report_data = json.loads((tmp_path / "docs" / "exburst_support_latest.json").read_text(encoding="utf-8"))
@@ -441,6 +444,57 @@ def test_llm_underscored_main_action_trigger_is_normalized():
     )
 
     assert effect.triggers == ["MAIN_PHASE", "ACTION_PHASE"]
+
+
+def test_select_target_binds_selected_card_for_follow_up_action():
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    source = UnitInstance(Card("Source", "GD99-001", "UNIT", "Blue", 1, 1, 1, 3), owner_id=0)
+    active_enemy = UnitInstance(Card("Active Enemy", "E1", "UNIT", "Red", 1, 1, 1, 3), owner_id=1)
+    rested_enemy = UnitInstance(Card("Rested Enemy", "E2", "UNIT", "Red", 1, 1, 1, 3), owner_id=1, is_rested=True)
+    game_state.players[1].battle_area = [active_enemy, rested_enemy]
+    context = EffectContext(
+        game_state=game_state,
+        source_card=source,
+        source_player_id=0,
+        trigger_event="ON_DEPLOY",
+        trigger_data={},
+    )
+
+    ActionExecutor.execute_actions(
+        context,
+        [
+            {
+                "type": "SELECT_TARGET",
+                "target": {"selector": "ENEMY_UNIT", "count": 1, "filters": {"state": "RESTED"}},
+            },
+            {"type": "DAMAGE_UNIT", "target": {"selector": "SELECTED_CARD"}, "amount": 1},
+        ],
+        strict=True,
+    )
+
+    assert active_enemy.current_hp == 3
+    assert rested_enemy.current_hp == 2
+
+
+def test_check_damage_condition_uses_received_damage():
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    source = UnitInstance(Card("Damaged Source", "GD99-002", "UNIT", "Blue", 1, 1, 1, 4), owner_id=0)
+    source.current_hp = 2
+    context = EffectContext(
+        game_state=game_state,
+        source_card=source,
+        source_player_id=0,
+        trigger_event="ON_ATTACK",
+        trigger_data={},
+    )
+
+    assert ConditionEvaluator.evaluate(
+        context,
+        {"type": "CHECK_DAMAGE", "target": {"selector": "SELF"}, "operator": ">", "value": 0},
+        strict=True,
+    )
 
 
 def test_llm_condition_type_alias_replaces_blank_type():

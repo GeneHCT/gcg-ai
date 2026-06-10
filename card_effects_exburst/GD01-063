@@ -11,14 +11,17 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "LEVEL",
           "operator": "<=",
-          "value": 2
+          "value": 2,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
@@ -28,8 +31,7 @@
           "duration": "THIS_BATTLE",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

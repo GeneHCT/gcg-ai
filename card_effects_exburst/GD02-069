@@ -15,31 +15,38 @@
       ],
       "actions": [
         {
-          "filters": {
-            "state": "active"
-          },
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_BASE",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "ACTIVE"
             }
           }
         },
         {
-          "duration": "THIS_TURN",
-          "type": "SET_ACTIVE",
+          "type": "REST_UNIT",
           "target": {
-            "selector": "SELF"
-          }
-        },
-        {
-          "duration": "THIS_TURN",
-          "can_target_player": false,
-          "type": "GRANT_ATTACK_TARGETING",
-          "target": {
-            "selector": "SELF"
-          }
+            "selector": "SELECTED_CARD"
+          },
+          "next_if_success": [
+            {
+              "duration": "THIS_TURN",
+              "type": "SET_ACTIVE",
+              "target": {
+                "selector": "SELF"
+              }
+            },
+            {
+              "duration": "THIS_TURN",
+              "can_target_player": false,
+              "type": "GRANT_ATTACK_TARGETING",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

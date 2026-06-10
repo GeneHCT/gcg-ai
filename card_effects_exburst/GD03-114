@@ -30,6 +30,37 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE",
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE",
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          },
+          "append": true
+        },
+        {
           "conditions": [
             {
               "type": "COUNT_CARDS",
@@ -39,35 +70,43 @@
               "value": 10
             }
           ],
-          "on_true": [
+          "type": "CONDITIONAL_BRANCH",
+          "true_actions": [
             {
-              "filters": {
-                "is_active": true,
-                "level": {
-                  "<=": 4
-                }
-              },
               "type": "DESTROY_CARD",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  },
+                  "state": "ACTIVE"
+                }
               }
             }
           ],
-          "on_false": [
+          "false_actions": [
             {
-              "filters": {
-                "is_active": true,
-                "level": {
-                  "<=": 2
-                }
-              },
               "type": "DESTROY_CARD",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 2
+                  },
+                  "state": "ACTIVE"
+                }
               }
             }
-          ],
-          "type": "CONDITIONAL_BRANCH"
+          ]
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

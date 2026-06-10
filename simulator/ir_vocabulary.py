@@ -48,7 +48,9 @@ SUPPORTED_TRIGGER_TYPES = {
 SUPPORTED_ACTION_TYPES = {
     "ADD_TO_HAND",
     "ADD_TO_SHIELDS",
+    "ADD_NAME_ALIAS",
     "CONDITIONAL_BRANCH",
+    "COUNT_CARDS",
     "DAMAGE_UNIT",
     "DEPLOY_FROM_ZONE",
     "DEPLOY_TOKEN",
@@ -64,7 +66,9 @@ SUPPORTED_ACTION_TYPES = {
     "MODIFY_COST",
     "MODIFY_STAT",
     "OPTIONAL_ACTION",
+    "PAIR_PILOT",
     "PLACE_RESOURCE",
+    "PREVENT_SET_ACTIVE",
     "RECOVER_HP",
     "REDUCE_DAMAGE",
     "RESOLVE_COMMAND_EFFECT",
@@ -73,6 +77,7 @@ SUPPORTED_ACTION_TYPES = {
     "RETURN_LOOKED_TO_TOP",
     "REST_UNIT",
     "SELECT_LOOKED_AT_CARD",
+    "SELECT_TARGET",
     "SET_ACTIVE",
     "SHIELD_TO_HAND",
 }
@@ -80,6 +85,7 @@ SUPPORTED_ACTION_TYPES = {
 SUPPORTED_CONDITION_TYPES = {
     "CHECK_CARD_STATE",
     "CHECK_COLOR",
+    "CHECK_DAMAGE",
     "CHECK_KEYWORD",
     "CHECK_LINK_STATUS",
     "CHECK_MILLED_TRAITS",
@@ -91,7 +97,11 @@ SUPPORTED_CONDITION_TYPES = {
     "CHECK_TARGET",
     "CHECK_TURN",
     "CHECK_TRAIT",
+    "ACTION_COMPLETED",
+    "CHECK_ACTION_SUCCESS",
+    "CONDITIONAL_BRANCH",
     "COUNT_CARDS",
+    "ON_UNIT_DESTROYED_BY_DAMAGE",
 }
 
 SUPPORTED_SELECTOR_TYPES = {
@@ -125,11 +135,14 @@ SUPPORTED_FILTER_KEYS = {
     "ap",
     "card_type",
     "color",
+    "damaged",
     "has_keyword",
     "hp",
+    "is_linked",
     "is_token",
     "level",
     "name_contains",
+    "paired_pilot_traits",
     "state",
     "text_contains",
     "trait_operator",
@@ -145,6 +158,7 @@ SUPPORTED_MODIFIER_TYPES = {
 
 SUPPORTED_DURATIONS = {
     "PERMANENT",
+    "NEXT_OPPONENT_START_PHASE",
     "THIS_BATTLE",
     "THIS_TURN",
 }

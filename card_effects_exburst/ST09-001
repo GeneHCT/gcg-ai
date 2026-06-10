@@ -13,28 +13,38 @@
           "stat": "LEVEL",
           "operator": ">=",
           "value": 4,
-          "filters": {
-            "name_contains": "Impulse Gundam",
-            "card_type": "UNIT"
-          },
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "name_contains": "Impulse Gundam",
+              "card_type": "UNIT"
+            }
           }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "card_type": "UNIT"
+            }
+          }
+        },
+        {
           "type": "DEPLOY_FROM_ZONE",
-          "selector": "SELF_TRASH",
-          "filters": {
-            "name_contains": "Impulse Gundam",
-            "card_type": "UNIT",
-            "level": 4
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         },
         {
           "type": "RETURN_LOOKED_TO_BOTTOM",
-          "selector": "SELF"
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

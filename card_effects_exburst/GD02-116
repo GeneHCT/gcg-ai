@@ -36,12 +36,20 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Vulture"
+              ]
+            }
+          }
+        },
+        {
           "type": "GRANT_ATTACK_TARGETING",
-          "filters": {
-            "traits": [
-              "Vulture"
-            ]
-          },
           "duration": "THIS_TURN",
           "attack_target_filters": {
             "selector": "ENEMY_UNIT",
@@ -52,12 +60,7 @@
             }
           },
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "Vulture"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

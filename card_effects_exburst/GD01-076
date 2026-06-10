@@ -20,13 +20,17 @@
       "actions": [
         {
           "type": "MODIFY_STAT",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "stat": "AP",
           "modification": "+1"
         },
         {
           "type": "MODIFY_STAT",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "stat": "HP",
           "modification": "+1"
         }

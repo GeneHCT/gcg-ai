@@ -11,7 +11,9 @@
         {
           "type": "CHECK_CARD_STATE",
           "condition": "damaged",
-          "target": "SELF"
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [

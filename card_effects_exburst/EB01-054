@@ -10,9 +10,10 @@
         {
           "type": "GRANT_KEYWORD",
           "keyword": "BLOCKER",
-          "target": "SELF",
-          "duration": "PERMANENT",
-          "value": null
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT"
         }
       ],
       "is_supported": true,

@@ -15,19 +15,26 @@
         {
           "type": "CHECK_PAIRED_PILOT_TRAIT",
           "value": false,
-          "target_selector": "ENEMY_UNIT",
-          "filters": {
-            "has_paired_pilot": false
+          "target": {
+            "selector": "ENEMY_UNIT"
           }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "stat": "AP",
           "duration": "THIS_TURN",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "modification": "-2"
         }

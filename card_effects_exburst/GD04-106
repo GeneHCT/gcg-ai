@@ -28,6 +28,36 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          },
+          "append": true
+        },
+        {
           "target_filters": {
             "trait": "Academy"
           },
@@ -36,31 +66,34 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "target": "ENEMY_UNIT",
-              "trait": "Academy",
-              "operator": "=="
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
+              "operator": "==",
+              "traits": [
+                "Academy"
+              ]
             },
             {
               "type": "CHECK_STAT",
-              "target": "ENEMY_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
               "stat": "AP",
               "operator": "<=",
               "value": 5
             },
             {
               "type": "CHECK_CARD_STATE",
-              "target": "ENEMY_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
               "state": "ACTIVE"
             }
           ],
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "Academy"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         },
         {
@@ -72,20 +105,28 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "target": "ENEMY_UNIT",
-              "trait": "Academy",
-              "operator": "=="
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
+              "operator": "==",
+              "traits": [
+                "Academy"
+              ]
             },
             {
               "type": "CHECK_STAT",
-              "target": "ENEMY_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
               "stat": "AP",
               "operator": "<=",
               "value": 5
             },
             {
               "type": "CHECK_CARD_STATE",
-              "target": "ENEMY_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              },
               "state": "ACTIVE"
             },
             {
@@ -99,12 +140,7 @@
           "optional_actions": true,
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "Academy"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

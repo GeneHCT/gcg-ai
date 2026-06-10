@@ -35,15 +35,23 @@
       ],
       "actions": [
         {
-          "type": "RETURN_TO_HAND",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 3
               }
             }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

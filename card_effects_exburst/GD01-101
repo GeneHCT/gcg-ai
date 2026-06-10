@@ -29,12 +29,32 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Link"
+          "traits": [
+            "Link"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "is_linked": true
+            }
+          }
+        },
+        {
           "type": "RECOVER_HP",
+          "amount": 3
+        },
+        {
+          "type": "RECOVER_HP",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
           "amount": 3
         }
       ],

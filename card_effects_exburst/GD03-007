@@ -10,28 +10,33 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "HP",
           "operator": "<=",
-          "value": 3
+          "value": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "filters": {
-            "stat": "HP",
-            "operator": "<=",
-            "value": 3
-          },
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 3
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

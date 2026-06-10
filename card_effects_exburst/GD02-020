@@ -16,16 +16,16 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "color": "Green",
-                "traits": [
-                  "Zeon"
-                ],
-                "card_type": "PILOT"
-              },
               "type": "SELECT_LOOKED_AT_CARD",
               "target": {
-                "selector": "LOOKED_AT_CARD"
+                "selector": "LOOKED_AT_CARD",
+                "filters": {
+                  "color": "Green",
+                  "traits": [
+                    "Zeon"
+                  ],
+                  "card_type": "PILOT"
+                }
               }
             },
             {
@@ -58,7 +58,15 @@
       "triggers": [
         "WHILE_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
           "type": "MODIFY_STAT",

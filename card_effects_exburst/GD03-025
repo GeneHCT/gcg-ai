@@ -22,10 +22,18 @@
       "actions": [
         {
           "type": "GRANT_ATTACK_TARGETING",
-          "selector": "FRIENDLY_UNIT",
           "filter": {
             "trait": "Maganac Corps",
             "state": "RESTED"
+          },
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "state": "RESTED",
+              "traits": [
+                "Maganac Corps"
+              ]
+            }
           }
         }
       ],

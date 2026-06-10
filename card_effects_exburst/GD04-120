@@ -23,29 +23,42 @@
       "effect_id": "GD04-120-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Militia"
+          "traits": [
+            "Militia"
+          ]
         },
         {
           "type": "CHECK_TRAIT",
-          "value": "Dianna Counter"
+          "traits": [
+            "Dianna Counter"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Militia",
                 "Dianna Counter"
               ]
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",
@@ -63,29 +76,42 @@
       "effect_id": "GD04-120-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Militia"
+          "traits": [
+            "Militia"
+          ]
         },
         {
           "type": "CHECK_TRAIT",
-          "value": "Dianna Counter"
+          "traits": [
+            "Dianna Counter"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Militia",
                 "Dianna Counter"
               ]
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

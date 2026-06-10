@@ -16,14 +16,16 @@
         },
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
-          "filters": {
-            "traits": [
-              "Dawn of Fold"
-            ]
-          },
           "operator": ">=",
-          "value": 1
+          "value": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Dawn of Fold"
+              ]
+            }
+          }
         }
       ],
       "actions": [

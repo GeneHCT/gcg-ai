@@ -10,12 +10,28 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "OPPONENT_SHIELDS",
           "operator": "<=",
-          "value": 3
+          "value": 3,
+          "target": {
+            "selector": "OPPONENT_SHIELDS"
+          }
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        },
         {
           "target_filters": {
             "stats": {
@@ -28,13 +44,7 @@
           "amount": 2,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "ap": {
-                "operator": "<=",
-                "value": 5
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

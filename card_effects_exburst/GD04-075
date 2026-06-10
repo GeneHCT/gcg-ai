@@ -7,9 +7,29 @@
       "effect_type": "CONTINUOUS",
       "triggers": [],
       "conditions": [],
-      "actions": [],
-      "is_supported": false,
-      "unhandled_explanation": "requires cost reduction based on trash card count with trait filter",
+      "actions": [
+        {
+          "type": "MODIFY_COST",
+          "target": {
+            "selector": "SELF"
+          },
+          "zone": "HAND",
+          "scope": "PLAY",
+          "modification": "-COUNT_CARDS",
+          "count_target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "COMMAND",
+              "traits": [
+                "UN",
+                "Superpower Bloc"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
       "metadata": {
         "raw_text": "Reduce the cost of this card in your hand by an amount equal to the number of (UN)/(Superpower Bloc) Command cards in your trash.",
         "source": "llm"
@@ -22,14 +42,7 @@
     "card_type": "UNIT",
     "llm_model": "deepseek/deepseek-chat-v3-0324",
     "parser_source": "llm",
-    "support_status": "unsupported",
-    "validation_issues": [
-      {
-        "path": "continuous_effects[0]",
-        "kind": "unsupported_llm_effect",
-        "value": "GD04-075-E1",
-        "message": "requires cost reduction based on trash card count with trait filter"
-      }
-    ]
+    "support_status": "supported",
+    "validation_issues": []
   }
 }

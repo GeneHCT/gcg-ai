@@ -42,25 +42,27 @@
           "conditions": [
             {
               "type": "CHECK_TURN",
-              "owner": "SELF"
+              "owner": "SELF",
+              "turn_owner": "SELF"
             }
           ],
           "optional_actions": [
             {
-              "filters": {
-                "level": {
-                  "operator": "<=",
-                  "value": 4
-                },
-                "card_type": "UNIT",
-                "traits": [
-                  "Zeon"
-                ]
-              },
               "amount": 1,
               "type": "DEPLOY_FROM_ZONE",
               "target": {
-                "selector": "SELF_HAND"
+                "selector": "SELF_HAND",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  },
+                  "card_type": "UNIT",
+                  "traits": [
+                    "Zeon"
+                  ]
+                },
+                "card_type": "UNIT"
               }
             }
           ],

@@ -54,11 +54,13 @@
         {
           "type": "CHECK_CARD_STATE",
           "state": "RESTED",
-          "filters": {
-            "trait": "CB"
-          },
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "CB"
+              ]
+            }
           }
         },
         {
@@ -66,11 +68,11 @@
           "stat": "LEVEL",
           "operator": "<=",
           "value": 3,
-          "filters": {
-            "is_token": false
-          },
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "is_token": false
+            }
           }
         }
       ],
@@ -79,14 +81,14 @@
           "type": "GRANT_PROTECTION",
           "selector": "SELF",
           "duration": "PERMANENT",
-          "filters": {
-            "stat": "LEVEL",
-            "operator": "<=",
-            "value": 3,
-            "is_token": false
-          },
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
           }
         }
       ],

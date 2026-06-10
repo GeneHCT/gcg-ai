@@ -10,13 +10,13 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "filters": {
-            "is_token": true
-          },
           "operator": ">=",
           "value": 1,
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "is_token": true
+            }
           }
         }
       ],

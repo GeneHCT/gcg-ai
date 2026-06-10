@@ -21,7 +21,7 @@
         {
           "type": "MODIFY_STAT",
           "stat": "COST",
-          "modification": -2,
+          "modification": "-2",
           "duration": "PERMANENT",
           "target": {
             "selector": "SELF"

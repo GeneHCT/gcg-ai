@@ -17,15 +17,23 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 5
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -40,7 +48,8 @@
       "effect_id": "GD01-099-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
@@ -52,19 +61,26 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 3
               }
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 2
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -79,7 +95,8 @@
       "effect_id": "GD01-099-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
@@ -91,19 +108,26 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 3
               }
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 2
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

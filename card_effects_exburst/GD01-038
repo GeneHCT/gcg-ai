@@ -10,9 +10,11 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "ENEMY_UNIT",
           "operator": ">=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

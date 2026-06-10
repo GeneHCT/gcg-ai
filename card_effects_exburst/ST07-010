@@ -33,12 +33,17 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "OPPONENT_TURN"
+          "value": "OPPONENT_TURN",
+          "turn_owner": "OPPONENT"
         },
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "SELF",
-          "value": "CB"
+          "target": {
+            "selector": "SELF"
+          },
+          "traits": [
+            "CB"
+          ]
         }
       ],
       "actions": [

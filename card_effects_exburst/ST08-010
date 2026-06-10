@@ -32,13 +32,28 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "SELF",
           "traits": [
             "Mafty"
-          ]
+          ],
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Mafty"
+              ]
+            }
+          }
+        },
         {
           "duration": "THIS_TURN",
           "target_filters": {
@@ -52,7 +67,7 @@
           },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

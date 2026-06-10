@@ -10,7 +10,9 @@
       "conditions": [
         {
           "type": "CHECK_CARD_STATE",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "state": "ATTACKING"
         }
       ],
@@ -39,7 +41,9 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "PAIRED_PILOT",
+          "target": {
+            "selector": "PAIRED_PILOT"
+          },
           "traits": [
             "G Generation"
           ]

@@ -11,12 +11,15 @@
         {
           "type": "CHECK_TURN",
           "owner": "SELF",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_KEYWORD",
-          "target_selector": "ENEMY_UNIT",
-          "keyword": "BLOCKER"
+          "keyword": "BLOCKER",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

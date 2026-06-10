@@ -38,11 +38,6 @@
       "actions": [
         {
           "type": "OPTIONAL_ACTION",
-          "filters": {
-            "traits": [
-              "Academy"
-            ]
-          },
           "optional_actions": [
             {
               "type": "GRANT_PROTECTION",
@@ -54,7 +49,12 @@
             }
           ],
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
           }
         }
       ],

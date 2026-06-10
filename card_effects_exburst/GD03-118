@@ -32,21 +32,11 @@
       "conditions": [],
       "actions": [
         {
-          "conditions": [
-            {
-              "type": "CHECK_CARD_STATE",
-              "value": "RESTED"
-            },
-            {
-              "type": "CHECK_STAT",
-              "stat": "LEVEL",
-              "operator": "<=",
-              "value": 4
-            }
-          ],
-          "type": "DISCARD",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "RESTED",
               "level": {
@@ -57,26 +47,71 @@
           }
         },
         {
-          "conditions": [
-            {
-              "type": "COUNT_CARDS",
-              "zone": "SELF_TRASH",
-              "text_contains": "Awakened Potential",
-              "operator": ">=",
-              "value": 2
-            }
-          ],
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          },
+          "append": true
+        },
+        {
+          "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
-              "keyword": "BLOCKER",
-              "duration": "THIS_TURN",
-              "type": "GRANT_KEYWORD",
+              "conditions": [
+                {
+                  "type": "CHECK_CARD_STATE",
+                  "state": "RESTED"
+                },
+                {
+                  "type": "CHECK_STAT",
+                  "stat": "LEVEL",
+                  "operator": "<=",
+                  "value": 4
+                }
+              ],
+              "type": "DISCARD",
               "target": {
-                "selector": "FRIENDLY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "state": "RESTED",
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  }
+                }
               }
+            },
+            {
+              "conditions": [
+                {
+                  "type": "COUNT_CARDS",
+                  "zone": "SELF_TRASH",
+                  "text_contains": "Awakened Potential",
+                  "operator": ">=",
+                  "value": 2
+                }
+              ],
+              "optional_actions": [
+                {
+                  "keyword": "BLOCKER",
+                  "duration": "THIS_TURN",
+                  "type": "GRANT_KEYWORD",
+                  "target": {
+                    "selector": "FRIENDLY_UNIT"
+                  }
+                }
+              ],
+              "type": "CONDITIONAL_BRANCH"
             }
-          ],
-          "type": "CONDITIONAL_BRANCH"
+          ]
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

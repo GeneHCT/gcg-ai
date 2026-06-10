@@ -32,7 +32,9 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "operator": "==",
           "traits": [
             "Minerva Squad"

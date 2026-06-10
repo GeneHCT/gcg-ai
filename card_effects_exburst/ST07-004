@@ -12,19 +12,20 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "trait": "CB",
               "card_type": "PILOT",
               "target": {
                 "selector": "FRIENDLY_UNIT"
-              }
+              },
+              "traits": [
+                "CB"
+              ]
             }
           ],
           "duration": "PERMANENT",
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

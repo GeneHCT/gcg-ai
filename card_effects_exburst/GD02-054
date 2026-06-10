@@ -10,10 +10,12 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "SELF",
           "stat": "HP",
           "operator": "<",
-          "value": 3
+          "value": 3,
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [

@@ -22,13 +22,17 @@
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "trait": "Zeon",
-                  "operator": "=="
+                  "operator": "==",
+                  "traits": [
+                    "Zeon"
+                  ]
                 },
                 {
                   "type": "CHECK_TRAIT",
-                  "trait": "Neo Zeon",
-                  "operator": "=="
+                  "operator": "==",
+                  "traits": [
+                    "Neo Zeon"
+                  ]
                 },
                 {
                   "type": "CHECK_CARD_STATE",

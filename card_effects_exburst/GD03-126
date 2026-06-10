@@ -61,14 +61,14 @@
       "actions": [
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "THIS_TURN",
-          "filters": {
-            "is_token": true
-          },
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "is_token": true
+            }
           }
         }
       ],

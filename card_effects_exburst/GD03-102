@@ -42,17 +42,31 @@
           ]
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "BATTLING",
-          "target": {
-            "selector": "FRIENDLY_UNIT"
-          }
+          "type": "CHECK_TARGET",
+          "target_type": "UNIT",
+          "event": "BATTLE_TARGET"
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Titans"
+              ],
+              "is_linked": true
+            }
+          }
+        },
+        {
           "type": "SET_ACTIVE",
-          "selector": "SELECTED_CARD"
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

@@ -10,10 +10,10 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "value": "Red",
           "target": {
             "selector": "PAIRED_PILOT"
-          }
+          },
+          "color": "Red"
         }
       ],
       "actions": [

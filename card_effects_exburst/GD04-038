@@ -19,20 +19,24 @@
       ],
       "actions": [
         {
-          "filters": {
-            "level": 2,
-            "operator": "<="
-          },
-          "amount": 2,
-          "type": "DAMAGE_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "amount": 2,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

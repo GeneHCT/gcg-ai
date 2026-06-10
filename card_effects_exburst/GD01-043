@@ -10,10 +10,18 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_COLOR",
-              "value": "Green"
+              "color": "Green"
             }
           ],
           "amount": 1,
@@ -28,7 +36,7 @@
           },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

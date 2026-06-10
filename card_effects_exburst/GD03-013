@@ -10,12 +10,14 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
           "operator": ">=",
           "value": 1,
           "traits": [
             "Jupitris"
-          ]
+          ],
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [

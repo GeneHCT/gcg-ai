@@ -10,11 +10,19 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "Clan"
-            ]
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Clan"
+              ]
+            }
+          }
+        },
+        {
           "duration": "THIS_TURN",
           "additional_condition": {
             "type": "CHECK_STAT",
@@ -30,12 +38,7 @@
           },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "Clan"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

@@ -10,13 +10,15 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "filters": {
-            "trait": "New UNE"
-          },
           "operator": ">=",
           "value": 1,
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "New UNE"
+              ]
+            }
           }
         }
       ],

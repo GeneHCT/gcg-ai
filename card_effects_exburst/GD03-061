@@ -21,10 +21,12 @@
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "SELF",
           "keyword": "REPAIR",
           "value": 3,
-          "duration": "PERMANENT"
+          "duration": "PERMANENT",
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

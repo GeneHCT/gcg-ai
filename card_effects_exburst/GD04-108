@@ -23,12 +23,15 @@
       "effect_id": "GD04-108-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "FRIENDLY_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
           "traits": [
             "Academy"
           ]
@@ -36,18 +39,40 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          }
+        },
+        {
           "type": "CONDITIONAL_BRANCH",
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "target": "SELF",
+              "target": {
+                "selector": "SELF"
+              },
               "state": "USED_EX_RESOURCE"
             }
           ],
           "true_actions": [
             {
               "type": "REDUCE_DAMAGE",
-              "target": "FRIENDLY_UNIT",
+              "target": {
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "traits": [
+                    "Academy"
+                  ]
+                }
+              },
               "amount": 4,
               "duration": "THIS_TURN"
             }
@@ -55,11 +80,27 @@
           "false_actions": [
             {
               "type": "REDUCE_DAMAGE",
-              "target": "FRIENDLY_UNIT",
+              "target": {
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "traits": [
+                    "Academy"
+                  ]
+                }
+              },
               "amount": 2,
               "duration": "THIS_TURN"
             }
           ]
+        },
+        {
+          "type": "REDUCE_DAMAGE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "amount": 2,
+          "duration": "THIS_TURN",
+          "uses": 1
         }
       ],
       "is_supported": true,

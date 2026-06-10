@@ -5,47 +5,7 @@
       "effect_id": "ST09-009-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
-      ],
-      "conditions": [
-        {
-          "type": "CHECK_CARD_STATE",
-          "operator": "==",
-          "state": "ACTIVE"
-        },
-        {
-          "type": "CHECK_STAT",
-          "stat": "AP",
-          "value": 4,
-          "operator": "<="
-        }
-      ],
-      "actions": [
-        {
-          "type": "DESTROY_CARD",
-          "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "state": "ACTIVE",
-              "ap": {
-                "operator": "<=",
-                "value": 4
-              }
-            }
-          }
-        }
-      ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "ST09-009-E2",
-      "effect_type": "TRIGGERED",
-      "triggers": [
+        "MAIN_PHASE",
         "ACTION_PHASE"
       ],
       "conditions": [
@@ -63,9 +23,11 @@
       ],
       "actions": [
         {
-          "type": "DESTROY_CARD",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "ACTIVE",
               "ap": {
@@ -73,6 +35,62 @@
                 "value": 4
               }
             }
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST09-009-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE",
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "operator": "==",
+          "state": "ACTIVE"
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "value": 4,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE",
+              "ap": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

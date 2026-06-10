@@ -10,12 +10,16 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "SELF_TRASH",
-          "filters": {
-            "trait": "G Generation"
-          },
           "operator": ">=",
-          "value": 2
+          "value": 2,
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "traits": [
+                "G Generation"
+              ]
+            }
+          }
         }
       ],
       "actions": [
@@ -25,29 +29,29 @@
             {
               "type": "EXILE_CARDS",
               "amount": 2,
-              "filters": {
-                "traits": [
-                  "G Generation"
-                ]
-              },
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "G Generation"
+                  ]
+                }
               }
             }
           ],
           "next_if_success": [
             {
               "type": "GRANT_KEYWORD",
-              "filters": {
-                "traits": [
-                  "G Generation"
-                ]
-              },
               "keyword": "BREACH",
               "value": 1,
               "duration": "THIS_TURN",
               "target": {
-                "selector": "FRIENDLY_UNIT"
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "traits": [
+                    "G Generation"
+                  ]
+                }
               }
             }
           ]

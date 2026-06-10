@@ -32,9 +32,13 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "SELF",
-          "value": "League Militaire",
-          "operator": "=="
+          "operator": "==",
+          "target": {
+            "selector": "SELF"
+          },
+          "traits": [
+            "League Militaire"
+          ]
         }
       ],
       "actions": [

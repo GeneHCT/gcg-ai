@@ -5,15 +5,10 @@
       "effect_id": "EB01-017-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE",
         "ON_DESTROYED"
       ],
-      "conditions": [
-        {
-          "type": "CHECK_CARD_STATE",
-          "target": "SELF",
-          "state": "DESTROYED_BY_BATTLE_DAMAGE"
-        }
-      ],
+      "conditions": [],
       "actions": [
         {
           "amount": 1,

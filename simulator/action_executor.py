@@ -38,6 +38,13 @@ class ActionExecutor:
                     for cond_action in action["conditional_actions"]:
                         cond_result = ActionExecutor.execute(context, cond_action, strict=strict)
                         results.append(cond_result)
+            
+            # Check for next_if_success (If you do) - same contract as conditional_actions
+            if "next_if_success" in action:
+                if "No valid" not in result and "failed" not in result.lower():
+                    for next_action in action["next_if_success"]:
+                        next_result = ActionExecutor.execute(context, next_action, strict=strict)
+                        results.append(next_result)
         
         return results
     
@@ -102,14 +109,23 @@ class ActionExecutor:
         elif action_type == "PLACE_RESOURCE":
             return ActionExecutor._execute_place_resource(context, action)
         
+        elif action_type == "PREVENT_SET_ACTIVE":
+            return ActionExecutor._execute_prevent_set_active(context, action)
+        
         elif action_type == "SHIELD_TO_HAND":
             return ActionExecutor._execute_shield_to_hand(context, action)
         
         elif action_type == "ADD_TO_HAND":
             return ActionExecutor._execute_add_to_hand(context, action)
         
+        elif action_type == "ADD_NAME_ALIAS":
+            return ActionExecutor._execute_add_name_alias(context, action)
+        
         elif action_type == "CONDITIONAL_BRANCH":
             return ActionExecutor._execute_conditional_branch(context, action)
+        
+        elif action_type == "COUNT_CARDS":
+            return ActionExecutor._execute_count_cards(context, action)
         
         elif action_type == "MILL":
             return ActionExecutor._execute_mill(context, action)
@@ -125,6 +141,9 @@ class ActionExecutor:
         
         elif action_type == "SELECT_LOOKED_AT_CARD":
             return ActionExecutor._execute_select_looked_at_card(context, action)
+
+        elif action_type == "SELECT_TARGET":
+            return ActionExecutor._execute_select_target(context, action)
         
         elif action_type == "RETURN_LOOKED_TO_BOTTOM":
             return ActionExecutor._execute_return_looked_to_deck(context, action, bottom=True)
@@ -143,6 +162,9 @@ class ActionExecutor:
         
         elif action_type == "GRANT_ATTACK_TARGETING":
             return ActionExecutor._execute_grant_attack_targeting(context, action)
+        
+        elif action_type == "PAIR_PILOT":
+            return ActionExecutor._execute_pair_pilot(context, action)
         
         elif action_type == "DISCARD":
             return ActionExecutor._execute_discard(context, action)
@@ -239,6 +261,10 @@ class ActionExecutor:
         # Calculate damage amount
         if calculation:
             damage_amount = ActionExecutor._calculate_damage(context, calculation)
+        elif amount == "COUNT_RESULT":
+            damage_amount = int(context.trigger_data.get("count_result", 0))
+        elif amount == "COUNT_SELECTED":
+            damage_amount = len(context.trigger_data.get("selected_cards", []))
         else:
             damage_amount = amount or 0
         
@@ -250,7 +276,7 @@ class ActionExecutor:
                 actual_damage = ActionExecutor._apply_damage_reduction(target, damage_amount, action)
                 old_hp = target.current_hp
                 target.current_hp = max(0, target.current_hp - actual_damage)
-                target.damage_reductions = original_reductions
+                target.damage_reductions = ActionExecutor._consume_damage_reductions(original_reductions, action)
                 results.append(f"{target.card_data.name} took {actual_damage} damage ({old_hp} -> {target.current_hp} HP)")
                 
                 # Check if destroyed
@@ -355,11 +381,90 @@ class ActionExecutor:
         results = []
         for target in targets:
             if hasattr(target, 'is_rested'):
+                if ActionExecutor._is_set_active_prevented(target):
+                    results.append(f"{target.card_data.name} cannot be set active")
+                    continue
                 if target.is_rested:
                     target.is_rested = False
                     results.append(f"Set {target.card_data.name} active")
         
         return "; ".join(results) if results else "No units set active"
+
+    @staticmethod
+    def _execute_prevent_set_active(context: EffectContext, action: Dict) -> str:
+        target_spec = action.get("target")
+        targets = TargetResolver.resolve_target(context, target_spec)
+        if not targets:
+            return "No valid targets for set-active prevention"
+        for target in targets:
+            if not hasattr(target, "set_active_restrictions"):
+                target.set_active_restrictions = []
+            target.set_active_restrictions.append(
+                {
+                    "duration": action.get("duration", "NEXT_OPPONENT_START_PHASE"),
+                    "source": getattr(getattr(context.source_card, "card_data", context.source_card), "id", None),
+                }
+            )
+        return f"Prevented {len(targets)} target(s) from being set active"
+
+    @staticmethod
+    def _is_set_active_prevented(target: Any) -> bool:
+        return bool(getattr(target, "set_active_restrictions", []))
+
+    @staticmethod
+    def _execute_pair_pilot(context: EffectContext, action: Dict) -> str:
+        """Pair a Pilot card from a zone with a friendly Unit."""
+        pilot_spec = action.get("target") or {"selector": "SELF_HAND", "filters": {"card_type": "PILOT"}}
+        unit_spec = action.get("paired_with") or action.get("unit") or {"selector": "SELF"}
+        if isinstance(unit_spec, str):
+            unit_spec = {"selector": unit_spec}
+
+        pilots = TargetResolver.resolve_target(context, pilot_spec)
+        units = TargetResolver.resolve_target(context, unit_spec)
+        if not pilots:
+            return "No valid Pilot to pair"
+        if not units:
+            return "No valid Unit to pair with"
+
+        player = context.game_state.players[context.source_player_id]
+        pilot_card = getattr(pilots[0], "card_data", pilots[0])
+        unit = next((candidate for candidate in units if getattr(candidate, "paired_pilot", None) is None), None)
+        if unit is None:
+            return "No unpaired Unit available"
+        if getattr(pilot_card, "type", "") not in {"PILOT", "COMMAND"}:
+            return "Chosen card cannot be paired as a Pilot"
+
+        removed = False
+        for zone in (player.hand, player.trash):
+            if pilot_card in zone:
+                zone.remove(pilot_card)
+                removed = True
+                break
+        if not removed and pilot_card not in context.trigger_data.get("selected_cards", []):
+            return "Pilot card is not in a pairable zone"
+
+        from simulator.link_system import LinkManager
+        from simulator.unit import PilotInstance
+
+        pilot_instance = PilotInstance(card_data=pilot_card, owner_id=context.source_player_id)
+        unit.paired_pilot = pilot_instance
+        pilot_instance.paired_unit = unit
+
+        pilot_hp_bonus = getattr(pilot_card, "hp", 0) or 0
+        if pilot_hp_bonus > 0:
+            unit.current_hp = min(unit.current_hp + pilot_hp_bonus, unit.hp)
+        LinkManager._apply_pilot_bonuses_to_unit(unit, pilot_card)
+
+        try:
+            from simulator.effect_integration import EffectIntegration
+
+            EffectIntegration.on_unit_paired(context.game_state, unit)
+            if unit.is_linked:
+                EffectIntegration.on_unit_linked(context.game_state, unit)
+        except Exception:
+            pass
+
+        return f"Paired {pilot_card.name} with {unit.card_data.name}"
     
     @staticmethod
     def _execute_modify_stat(context: EffectContext, action: Dict) -> str:
@@ -367,6 +472,8 @@ class ActionExecutor:
         target_spec = action.get("target")
         stat = action.get("stat")
         modification = action.get("modification")
+        if isinstance(action.get("modifier"), dict):
+            modification = ActionExecutor._calculate_stat_modification(context, action["modifier"])
         duration = action.get("duration", "PERMANENT")
         source_id = action.get("source_id")
         if not source_id:
@@ -421,6 +528,22 @@ class ActionExecutor:
             # TODO: Implement duration tracking for temporary modifications
         
         return "; ".join(results) if results else "No modifications applied"
+
+    @staticmethod
+    def _calculate_stat_modification(context: EffectContext, modifier: Dict) -> str:
+        operation = str(modifier.get("operation") or "ADD").upper()
+        value = modifier.get("value")
+        amount = 0
+        if isinstance(value, int):
+            amount = value
+        elif isinstance(value, dict) and value.get("source") == "COUNT_CARDS":
+            target = {"selector": value.get("zone", "SELF_TRASH"), "filters": value.get("filters", {})}
+            amount = len(TargetResolver.resolve_target(context, target))
+        if operation in {"SUBTRACT", "MINUS"}:
+            return f"-{amount}"
+        if operation == "SET":
+            return f"={amount}"
+        return f"+{amount}"
     
     @staticmethod
     def _execute_recover_hp(context: EffectContext, action: Dict) -> str:
@@ -458,6 +581,7 @@ class ActionExecutor:
             "duration": action.get("duration", "PERMANENT"),
             "target": action.get("target"),
             "filters": action.get("filters", {}),
+            "count_target": action.get("count_target"),
             "scope": action.get("scope", "PLAY"),
             "source": context.source_card,
         }
@@ -481,6 +605,7 @@ class ActionExecutor:
                     "duration": action.get("duration", "THIS_TURN"),
                     "damage_type": action.get("damage_type", "ANY"),
                     "source_filter": action.get("source_filter", {}),
+                    "uses": action.get("uses"),
                 }
             )
         return f"Granted damage reduction {amount} to {len(targets)} target(s)"
@@ -624,6 +749,26 @@ class ActionExecutor:
             if reduction_type in {"ANY", damage_type}:
                 total_reduction += int(reduction.get("amount", 0) or 0)
         return max(0, amount - total_reduction)
+
+    @staticmethod
+    def _consume_damage_reductions(reductions: List[Dict], action: Dict) -> List[Dict]:
+        damage_type = str(action.get("damage_type", "EFFECT")).upper()
+        remaining = []
+        for reduction in reductions:
+            reduction_type = str(reduction.get("damage_type", "ANY")).upper()
+            if reduction_type not in {"ANY", damage_type}:
+                remaining.append(reduction)
+                continue
+            uses = reduction.get("uses")
+            if uses is None:
+                remaining.append(reduction)
+                continue
+            next_uses = int(uses) - 1
+            if next_uses > 0:
+                updated = dict(reduction)
+                updated["uses"] = next_uses
+                remaining.append(updated)
+        return remaining
     
     @staticmethod
     def _execute_deploy_token(context: EffectContext, action: Dict) -> str:
@@ -684,6 +829,24 @@ class ActionExecutor:
                 results.append(f"Battle area full, cannot deploy {token_card.name} token")
         
         return "; ".join(results)
+
+    @staticmethod
+    def _execute_add_name_alias(context: EffectContext, action: Dict) -> str:
+        """Add an alternate card name to the target card data."""
+        alias = action.get("alias") or action.get("name")
+        if not alias:
+            return "Invalid name alias"
+        target_spec = action.get("target", {"selector": "SELF"})
+        targets = TargetResolver.resolve_target(context, target_spec)
+        if not targets:
+            targets = [context.source_card]
+        for target in targets:
+            card_data = getattr(target, "card_data", target)
+            aliases = list(getattr(card_data, "name_aliases", []))
+            if alias not in aliases:
+                aliases.append(alias)
+            setattr(card_data, "name_aliases", aliases)
+        return f"Added name alias {alias} to {len(targets)} card(s)"
     
     @staticmethod
     def _execute_place_resource(context: EffectContext, action: Dict) -> str:
@@ -732,6 +895,8 @@ class ActionExecutor:
         """
         source = action.get("source", "SHIELDS")
         target_spec = action.get("target", {})
+        if isinstance(target_spec, dict) and target_spec.get("selector") == "SELECTED_CARD" and "source" not in action:
+            source = "SELECTED_CARD"
         if isinstance(target_spec, dict):
             count = target_spec.get("count", 1)
         else:
@@ -767,6 +932,10 @@ class ActionExecutor:
             for card in selected_cards[:count]:
                 if card in player.main_deck:
                     player.main_deck.remove(card)
+                if card in player.trash:
+                    player.trash.remove(card)
+                if card in player.hand:
+                    continue
                 if card not in player.hand:
                     player.hand.append(card)
                 moved += 1
@@ -778,22 +947,44 @@ class ActionExecutor:
     @staticmethod
     def _execute_conditional_branch(context: EffectContext, action: Dict) -> str:
         """Execute CONDITIONAL_BRANCH action"""
-        conditions_list = action.get("conditions", [])
-        
-        results = []
-        
-        for branch in conditions_list:
-            condition = branch.get("if")
-            then_action = branch.get("then")
-            
-            # Evaluate condition
-            if ConditionEvaluator.evaluate(context, condition):
-                # Execute then action
-                result = ActionExecutor.execute(context, then_action)
-                results.append(result)
-                break  # Only execute first matching branch
-        
-        return "; ".join(results) if results else "No branch conditions met"
+        conditions = action.get("conditions", [])
+
+        if conditions and all(isinstance(condition, dict) and "if" in condition for condition in conditions):
+            results = []
+            for branch in conditions:
+                condition = branch.get("if")
+                then_action = branch.get("then")
+                if ConditionEvaluator.evaluate(context, condition):
+                    results.extend(ActionExecutor.execute_actions(context, [then_action]))
+                    break
+            return "; ".join(results) if results else "No branch conditions met"
+
+        passed = ConditionEvaluator.evaluate_all(context, conditions)
+        selected_actions = (
+            action.get("true_actions")
+            or action.get("success_actions")
+            or action.get("actions")
+            or action.get("then_actions")
+            or []
+        ) if passed else (
+            action.get("false_actions")
+            or action.get("else_actions")
+            or []
+        )
+        if isinstance(selected_actions, dict):
+            selected_actions = [selected_actions]
+        results = ActionExecutor.execute_actions(context, selected_actions)
+        if results:
+            return "; ".join(results)
+        return "Branch conditions met" if passed else "No branch conditions met"
+
+    @staticmethod
+    def _execute_count_cards(context: EffectContext, action: Dict) -> str:
+        """Count matching cards and store the result for follow-up actions."""
+        target_spec = action.get("target") or {"selector": action.get("zone", "SELF_TRASH")}
+        count = len(TargetResolver.resolve_target(context, target_spec))
+        context.trigger_data["count_result"] = count
+        return f"Counted {count} card(s)"
     
     @staticmethod
     def _handle_conditional_next(context: EffectContext, action: Dict, result: str):
@@ -882,7 +1073,7 @@ class ActionExecutor:
         """
         source_zone = action.get("source_zone", "TRASH")
         target_spec = action.get("target", {})
-        pay_cost = action.get("pay_cost", False)
+        pay_cost = action.get("pay_cost", action.get("pay_costs", action.get("require_cost_payment", False)))
         destination = action.get("destination", "BATTLE_AREA")
         
         player = context.game_state.players[context.source_player_id]
@@ -897,32 +1088,31 @@ class ActionExecutor:
         else:
             return f"Unknown source zone: {source_zone}"
         
-        # Find matching cards in zone
-        matching_cards = []
-        card_type = target_spec.get("card_type", "UNIT")
-        filters = target_spec.get("filters", {})
-        
-        for card in zone:
-            if card.type != card_type:
-                continue
-            
-            # Apply filters
-            if "level" in filters:
-                level_check = filters["level"]
-                operator = level_check.get("operator", "==")
-                value = level_check.get("value", 0)
-                
-                if operator == "<=":
-                    if not (card.level <= value):
-                        continue
-                elif operator == ">=":
-                    if not (card.level >= value):
-                        continue
-                elif operator == "==":
-                    if not (card.level == value):
-                        continue
-            
-            matching_cards.append(card)
+        if not isinstance(target_spec, dict):
+            target_spec = {"selector": target_spec}
+        if target_spec.get("selector") == "SELECTED_CARD":
+            matching_cards = [
+                getattr(card, "card_data", card)
+                for card in context.trigger_data.get("selected_cards", [])
+                if getattr(card, "card_data", card) in zone
+            ]
+        else:
+            resolved = TargetResolver.resolve_target(context, target_spec)
+            matching_cards = [
+                getattr(card, "card_data", card)
+                for card in resolved
+                if getattr(card, "card_data", card) in zone
+            ]
+
+        if not matching_cards and target_spec.get("selector") in {None, "SELF_TRASH", "SELF_DECK"}:
+            card_type = target_spec.get("card_type", target_spec.get("filters", {}).get("card_type", "UNIT"))
+            filters = target_spec.get("filters", {})
+            matching_cards = [
+                card
+                for card in zone
+                if str(getattr(card, "type", "")).upper() == str(card_type).upper()
+                and TargetResolver._matches_filters(card, filters, context)
+            ]
         
         if not matching_cards:
             return f"No valid targets in {source_zone}"
@@ -1031,6 +1221,27 @@ class ActionExecutor:
         selected = matching[:count]
         context.trigger_data["selected_cards"] = selected
         return f"Selected {len(selected)} looked-at card(s)"
+
+    @staticmethod
+    def _execute_select_target(context: EffectContext, action: Dict) -> str:
+        """Choose public targets and bind them for later SELECTED_CARD actions."""
+        target_spec = action.get("target")
+        if not isinstance(target_spec, dict):
+            return "No target spec for selection"
+
+        targets = TargetResolver.resolve_target(context, target_spec)
+        variable_count = target_spec.get("variable_count") if isinstance(target_spec, dict) else None
+        if isinstance(variable_count, dict):
+            count = int(variable_count.get("max", target_spec.get("count", 1)) or 1)
+        else:
+            count = int(target_spec.get("count", action.get("count", 1)) or 1)
+        count = max(0, count)
+        selected = targets[:count]
+        if action.get("append"):
+            context.trigger_data["selected_cards"] = [*context.trigger_data.get("selected_cards", []), *selected]
+        else:
+            context.trigger_data["selected_cards"] = selected
+        return f"Selected {len(selected)} target(s)"
     
     @staticmethod
     def _execute_return_looked_to_deck(context: EffectContext, action: Dict, *, bottom: bool) -> str:
@@ -1179,6 +1390,18 @@ class ActionExecutor:
         card_type = target_spec.get("card_type", "UNIT")
         filters = target_spec.get("filters", {})
         count = target_spec.get("count", 1)
+        if selector == "SELECTED_CARD":
+            cards_to_exile = [
+                getattr(card, "card_data", card)
+                for card in context.trigger_data.get("selected_cards", [])
+                if getattr(card, "card_data", card) in zone
+            ]
+            if not cards_to_exile:
+                return "No selected cards to exile"
+            for card in cards_to_exile:
+                zone.remove(card)
+                player.banished.append(card)
+            return f"Exiled {len(cards_to_exile)} card(s) from {source_zone}"
         
         # Find matching cards
         matching_cards = []

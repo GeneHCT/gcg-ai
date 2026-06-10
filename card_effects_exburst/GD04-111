@@ -23,28 +23,38 @@
       "effect_id": "GD04-111-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "CB"
+          "traits": [
+            "CB"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 3
+            },
             "filters": {
               "traits": [
                 "CB"
               ]
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 3
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

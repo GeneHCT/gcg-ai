@@ -7,22 +7,29 @@
       "triggers": [
         "ON_PAIRED"
       ],
-      "conditions": [
-        {
-          "type": "CHECK_CARD_STATE",
-          "state": "RESTED"
-        },
-        {
-          "type": "CHECK_STAT",
-          "stat": "HP",
-          "operator": "<=",
-          "value": 3
-        }
-      ],
+      "conditions": [],
       "actions": [
         {
-          "type": "SET_ACTIVE",
-          "value": false
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED",
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
+          "type": "PREVENT_SET_ACTIVE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "duration": "NEXT_OPPONENT_START_PHASE"
         }
       ],
       "is_supported": true,

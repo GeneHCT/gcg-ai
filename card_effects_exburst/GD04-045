@@ -10,11 +10,19 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "CB"
-            ]
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "CB"
+              ]
+            }
+          }
+        },
+        {
           "duration": "THIS_TURN",
           "targeting_override": {
             "filters": {
@@ -27,12 +35,7 @@
           },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "CB"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

@@ -32,15 +32,19 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "target": "SELF",
-          "value": "Blue",
-          "operator": "=="
+          "target": {
+            "selector": "SELF"
+          },
+          "operator": "==",
+          "color": "Blue"
         }
       ],
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "keyword": "REPAIR",
           "value": 1,
           "duration": "PERMANENT"

@@ -58,34 +58,35 @@
           "keyword": "BLOCKER",
           "operator": "==",
           "value": true,
-          "target_selector": "FRIENDLY_UNIT"
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [
         {
-          "type": "SET_ACTIVE",
-          "filters": {
-            "has_keyword": "blocker"
-          },
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "has_keyword": "blocker"
             }
           }
         },
         {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
           "type": "GRANT_KEYWORD",
           "keyword": "CANNOT_ATTACK",
-          "filters": {
-            "has_keyword": "blocker"
-          },
           "duration": "THIS_TURN",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "has_keyword": "blocker"
-            }
+            "selector": "SELECTED_CARD"
           },
           "value": null
         }

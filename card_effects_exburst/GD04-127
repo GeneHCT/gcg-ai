@@ -32,6 +32,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -44,30 +58,37 @@
               "type": "COUNT_CARDS",
               "operator": ">=",
               "value": 7,
-              "filters": {
-                "traits": [
-                  "Vulture"
-                ]
-              },
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "Vulture"
+                  ]
+                }
               }
             }
           ],
           "actions": [
             {
-              "filters": {
-                "stat": "AP",
-                "operator": "<=",
-                "value": 2
-              },
               "type": "DESTROY_CARD",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "ap": {
+                    "operator": "<=",
+                    "value": 2
+                  }
+                }
               }
             }
           ],
           "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

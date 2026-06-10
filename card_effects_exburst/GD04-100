@@ -32,7 +32,9 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "stat": "COST_PAID",
           "operator": ">=",
           "value": 1
@@ -44,7 +46,9 @@
           "optional_actions": [
             {
               "type": "MODIFY_STAT",
-              "target": "SELF",
+              "target": {
+                "selector": "SELF"
+              },
               "stat": "AP",
               "modification": "+COST_PAID",
               "duration": "THIS_TURN"

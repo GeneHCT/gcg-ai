@@ -8,11 +8,15 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
           "operator": ">=",
           "value": 2,
-          "filters": {
-            "trait": "Earth Federation"
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Earth Federation"
+              ]
+            }
           }
         }
       ],
@@ -20,7 +24,7 @@
         {
           "type": "MODIFY_STAT",
           "stat": "COST",
-          "modification": -1,
+          "modification": "-1",
           "duration": "PERMANENT",
           "target": {
             "selector": "SELF"

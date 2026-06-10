@@ -32,9 +32,11 @@
       "conditions": [
         {
           "type": "CHECK_TARGET",
-          "target_selector": "PAIRED_PILOT",
           "filter": {
             "name_contains": "Gundam NT-1"
+          },
+          "target": {
+            "selector": "PAIRED_PILOT"
           }
         }
       ],

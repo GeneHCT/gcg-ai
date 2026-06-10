@@ -5,38 +5,7 @@
       "effect_id": "GD03-110-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
-      ],
-      "conditions": [
-        {
-          "type": "CHECK_STAT",
-          "stat": "LEVEL",
-          "operator": "<=",
-          "value": 5,
-          "target": {
-            "selector": "ENEMY_UNIT"
-          }
-        }
-      ],
-      "actions": [
-        {
-          "type": "DESTROY_CARD",
-          "target": {
-            "selector": "PAIRED_PILOT"
-          }
-        }
-      ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "GD03-110-E2",
-      "effect_type": "TRIGGERED",
-      "triggers": [
+        "MAIN_PHASE",
         "ACTION_PHASE"
       ],
       "conditions": [
@@ -52,9 +21,70 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "PAIRED_PILOT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        },
+        {
           "type": "DESTROY_CARD",
           "target": {
-            "selector": "PAIRED_PILOT"
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-110-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE",
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 5,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "PAIRED_PILOT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

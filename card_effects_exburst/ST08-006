@@ -14,27 +14,36 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "value": "Earth Federation",
           "card_type": "UNIT",
           "count": 1,
           "operator": ">=",
           "target": {
             "selector": "SELF_HAND"
-          }
+          },
+          "traits": [
+            "Earth Federation"
+          ]
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
         {
           "type": "LOOK_AT_DECK",
           "amount": 1,
-          "filters": {
-            "card_type": "UNIT",
-            "traits": [
-              "Earth Federation"
-            ]
-          },
           "target": {
-            "selector": "SELF_HAND"
+            "selector": "SELF_HAND",
+            "filters": {
+              "card_type": "UNIT",
+              "traits": [
+                "Earth Federation"
+              ]
+            }
           }
         },
         {

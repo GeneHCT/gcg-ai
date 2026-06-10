@@ -9,11 +9,9 @@
       ],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "BATTLING",
-          "target": {
-            "selector": "SELF"
-          }
+          "type": "CHECK_TARGET",
+          "target_type": "UNIT",
+          "event": "BATTLE_TARGET"
         }
       ],
       "actions": [

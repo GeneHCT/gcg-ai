@@ -14,7 +14,9 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
           "traits": [
             "Academy"
           ]

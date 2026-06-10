@@ -30,39 +30,67 @@
       "effect_id": "GD03-109-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "LEVEL",
           "operator": "<=",
-          "value": 4
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         },
         {
           "type": "COUNT_CARDS",
-          "target_selector": "SELF_TRASH",
           "operator": ">=",
           "value": 2,
-          "filters": {
-            "text_contains": "Improved Technique"
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "text_contains": "Improved Technique"
+            }
           }
         }
       ],
       "actions": [
         {
-          "amount": 3,
-          "duration": null,
-          "type": "DAMAGE_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 4
               }
             }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          },
+          "append": true
+        },
+        {
+          "amount": 3,
+          "duration": null,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -77,39 +105,67 @@
       "effect_id": "GD03-109-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "LEVEL",
           "operator": "<=",
-          "value": 4
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         },
         {
           "type": "COUNT_CARDS",
-          "target_selector": "SELF_TRASH",
           "operator": ">=",
           "value": 2,
-          "filters": {
-            "text_contains": "Improved Technique"
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "text_contains": "Improved Technique"
+            }
           }
         }
       ],
       "actions": [
         {
-          "amount": 3,
-          "duration": null,
-          "type": "DAMAGE_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 4
               }
             }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          },
+          "append": true
+        },
+        {
+          "amount": 3,
+          "duration": null,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

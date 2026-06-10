@@ -10,15 +10,23 @@
       "conditions": [],
       "actions": [
         {
-          "type": "REST_UNIT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "hp": {
                 "operator": "<=",
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -50,7 +58,8 @@
       "metadata": {
         "raw_text": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

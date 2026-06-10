@@ -10,20 +10,29 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Ali al-Saachez",
           "text_contains": "Ali al-Saachez",
           "target": {
             "selector": "SELF_HAND"
-          }
+          },
+          "traits": [
+            "Ali al-Saachez"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "ON_PAIR_PILOT",
-          "selector": "SELF_HAND",
-          "filters": {
-            "text_contains": "Ali al-Saachez"
-          }
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "PAIR_PILOT",
+              "target": {
+                "selector": "SELF_HAND",
+                "filters": {
+                  "text_contains": "Ali al-Saachez"
+                }
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

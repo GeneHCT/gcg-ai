@@ -23,25 +23,38 @@
       "effect_id": "GD03-111-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Mafty",
-          "target": "FRIENDLY_UNIT"
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Mafty"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Mafty"
               ]
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",
@@ -59,25 +72,38 @@
       "effect_id": "GD03-111-E3",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Mafty",
-          "target": "FRIENDLY_UNIT"
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Mafty"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Mafty"
               ]
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_TURN",
           "stat": "AP",

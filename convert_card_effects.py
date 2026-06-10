@@ -19,6 +19,11 @@ from simulator.effect_discovery import (
     parse_normalized_card_offline,
     screen_card,
 )
+from simulator.exburst_essential_cards import (
+    essential_cosmetic_effect_data_from_card,
+    is_essential_cosmetic_card,
+    is_essential_cosmetic_card_id,
+)
 from simulator.ir_validator import validate_ir_effect_data
 
 
@@ -2085,10 +2090,13 @@ class ExBurstEffectConverter:
             card_id = card["ID"]
             if selected_ids and card_id not in selected_ids:
                 continue
-            if _should_ignore_exburst_card(card):
+            if is_essential_cosmetic_card(card):
                 summary["ignored"] += 1
+                effect_data = essential_cosmetic_effect_data_from_card(card)
+                self.save_effect(card_id, effect_data)
+                summary["audit"]["supported"] += 1
                 self.logger.info(
-                    "card_skip_ignored card_id=%s name=%s type=%s",
+                    "card_essential_cosmetic card_id=%s name=%s type=%s",
                     card_id,
                     card.get("Name", ""),
                     card.get("Type", ""),
@@ -2354,9 +2362,9 @@ class ExBurstEffectConverter:
                 continue
             card_id = str(effect_data.get("card_id") or effect_path.name)
             source_card = cards_by_id.get(card_id)
-            if source_card and (_should_ignore_exburst_card(source_card) or not source_card.get("Effect")):
+            if source_card and (is_essential_cosmetic_card(source_card) or not source_card.get("Effect")):
                 continue
-            if not source_card and _is_ignored_exburst_card_id(card_id):
+            if not source_card and is_essential_cosmetic_card_id(card_id):
                 continue
             report = validate_ir_effect_data(effect_data)
             status = report.support_status if report.support_status in status_cards else "unknown"
@@ -2383,7 +2391,7 @@ class ExBurstEffectConverter:
         missing = []
         for card in cards:
             card_id = str(card.get("ID") or "")
-            if _should_ignore_exburst_card(card) or not card.get("Effect") or not card_id:
+            if is_essential_cosmetic_card(card) or not card.get("Effect") or not card_id:
                 continue
             if not (output_path / card_id).exists():
                 missing.append({"id": card_id, "name": str(card.get("Name") or "")})
@@ -2441,26 +2449,6 @@ def _format_support_status_markdown(snapshot: Dict[str, Any]) -> str:
         lines.append("")
 
     return "\n".join(lines)
-
-
-def _should_ignore_exburst_card(card: Dict[str, Any]) -> bool:
-    card_id = str(card.get("ID") or card.get("OriginalID") or "").upper()
-    if _is_ignored_exburst_card_id(card_id):
-        return True
-
-    name = str(card.get("Name") or "").strip().upper()
-    card_type = str(card.get("Type") or "").strip().upper()
-    return (name, card_type) in {
-        ("EX BASE", "BASE"),
-        ("EX RESOURCE", "UNIT"),
-        ("RESOURCE", "RESOURCE"),
-        ("RESOURCE", "UNIT"),
-        ("RP - RESOURCE", "UNIT"),
-    }
-
-
-def _is_ignored_exburst_card_id(card_id: str) -> bool:
-    return card_id.upper().startswith(("EXB-", "EXBP-", "EXR-", "EXRP-", "R-", "RP-"))
 
 
 def _unsupported_parse_for_llm_error(card: Dict[str, Any], error: Exception) -> ParsedCard:

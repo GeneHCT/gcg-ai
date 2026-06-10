@@ -10,14 +10,18 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "PAIRED_PILOT",
+          "target": {
+            "selector": "PAIRED_PILOT"
+          },
           "traits": [
             "Cyber-Newtype"
           ]
         },
         {
           "type": "CHECK_TRAIT",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
           "traits": [
             "Titans"
           ]

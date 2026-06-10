@@ -33,7 +33,7 @@
       "actions": [
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "THIS_TURN",
           "conditions": [
             {
@@ -56,7 +56,7 @@
         },
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "THIS_TURN",
           "conditions": [
             {
@@ -73,7 +73,9 @@
             },
             {
               "type": "CHECK_TRAIT",
-              "trait": "CB"
+              "traits": [
+                "CB"
+              ]
             }
           ],
           "type": "MODIFY_STAT",

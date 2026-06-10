@@ -63,7 +63,8 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_STAT",

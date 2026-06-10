@@ -32,6 +32,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED",
+              "traits": [
+                "G Generation"
+              ]
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -41,27 +55,13 @@
         {
           "type": "SET_ACTIVE",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "state": "RESTED",
-              "color": "White",
-              "traits": [
-                "G Generation"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         },
         {
           "type": "GRANT_PROTECTION",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "state": "RESTED",
-              "color": "White",
-              "traits": [
-                "G Generation"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           },
           "protection_type": "ATTACK",
           "duration": "THIS_TURN"

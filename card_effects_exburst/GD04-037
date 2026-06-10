@@ -23,8 +23,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "FIRST_STRIKE",
-          "value": null
+          "keyword": "FIRST_STRIKE"
         }
       ],
       "is_supported": true,

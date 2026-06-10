@@ -34,18 +34,21 @@
         },
         {
           "type": "CHECK_TARGET",
-          "target": "BATTLING_UNIT",
-          "filters": {
-            "owner": "FRIENDLY_PLAYER",
-            "has_keyword": "BLOCKER"
+          "target": {
+            "selector": "BATTLING_UNIT",
+            "filters": {
+              "has_keyword": "blocker"
+            }
           }
         }
       ],
       "actions": [
         {
-          "type": "RETURN_TO_HAND",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "hp": {
                 "operator": "<=",
@@ -53,6 +56,12 @@
               },
               "has_keyword": "blocker"
             }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

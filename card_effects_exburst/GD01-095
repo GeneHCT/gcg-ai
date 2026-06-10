@@ -42,9 +42,11 @@
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "selector": "SELF_HAND",
               "operator": "==",
-              "value": 1
+              "value": 1,
+              "target": {
+                "selector": "SELF_HAND"
+              }
             }
           ],
           "next_if_success": [

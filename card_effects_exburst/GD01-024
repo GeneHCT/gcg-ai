@@ -44,8 +44,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "HIGH_MANEUVER",
-          "value": null
+          "keyword": "HIGH_MANEUVER"
         }
       ],
       "is_supported": true,

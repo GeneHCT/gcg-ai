@@ -10,21 +10,11 @@
       "conditions": [],
       "actions": [
         {
-          "type": "DESTROY_CARD",
-          "filters": [
-            {
-              "keyword": "BLOCKER",
-              "card_type": "CHECK_KEYWORD"
-            },
-            {
-              "stat": "LEVEL",
-              "operator": "<=",
-              "value": 3,
-              "card_type": "CHECK_STAT"
-            }
-          ],
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
@@ -32,6 +22,12 @@
               },
               "has_keyword": "blocker"
             }
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -63,7 +59,8 @@
       "metadata": {
         "raw_text": "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

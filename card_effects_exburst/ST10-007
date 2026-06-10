@@ -26,25 +26,29 @@
           "optional_actions": [
             {
               "type": "EXILE_CARDS",
-              "selector": "SELF_TRASH",
               "amount": 2,
-              "filters": {
-                "traits": [
-                  "G Generation"
-                ]
+              "target": {
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "G Generation"
+                  ]
+                }
               }
             }
           ],
           "next_if_success": [
             {
               "type": "ADD_TO_HAND",
-              "selector": "SELF_TRASH",
               "amount": 1,
-              "filters": {
-                "card_type": "COMMAND",
-                "level": {
-                  "operator": "<=",
-                  "value": 4
+              "target": {
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "card_type": "COMMAND",
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  }
                 }
               }
             }

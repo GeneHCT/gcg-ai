@@ -10,24 +10,25 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "ZAFT"
-            ],
-            "stats": {
-              "AP": {
-                "operator": ">=",
-                "value": 5
-              }
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "ZAFT"
+              ]
             }
-          },
+          }
+        },
+        {
           "keyword": "FIRST_STRIKE",
           "duration": "THIS_TURN",
           "type": "GRANT_KEYWORD",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
-          },
-          "value": null
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

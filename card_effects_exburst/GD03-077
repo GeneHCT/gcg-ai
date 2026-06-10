@@ -10,29 +10,36 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 3
+            },
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "conditions": [
             {
-              "condition_type": "CHECK_STAT",
               "stat": "HP",
               "operator": "<=",
-              "value": 3
+              "value": 3,
+              "type": "CHECK_STAT"
             }
           ],
           "amount": 3,
           "min": 1,
           "type": "RETURN_TO_HAND",
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "hp": {
-                "operator": "<=",
-                "value": 3
-              }
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 3
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

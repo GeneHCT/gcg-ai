@@ -24,13 +24,20 @@
           "traits": [
             "Vulture"
           ]
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
         {
           "type": "MODIFY_STAT",
           "stat": "AP",
-          "modification": 2
+          "modification": "+2"
         }
       ],
       "is_supported": true,
@@ -52,8 +59,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "SUPPRESSION",
-          "value": null
+          "keyword": "SUPPRESSION"
         }
       ],
       "is_supported": true,

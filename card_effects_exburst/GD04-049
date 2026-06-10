@@ -5,54 +5,102 @@
       "effect_id": "GD04-049-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_ATTACK"
       ],
       "conditions": [
         {
           "type": "CHECK_TARGET",
-          "target_selector": "ENEMY_PLAYER",
-          "operator": "=="
+          "operator": "==",
+          "target": {
+            "selector": "ENEMY_PLAYER"
+          }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 7,
+            "filters": {
+              "traits": [
+                "Vulture"
+              ]
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 8
+              }
+            }
+          },
+          "append": true
+        },
         {
           "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
               "type": "EXILE_CARDS",
-              "filters": {
-                "traits": [
-                  "Vulture"
-                ]
-              },
               "amount": 7,
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "Vulture"
+                  ]
+                }
               }
             }
           ],
           "next_if_success": [
             {
               "type": "DESTROY_CARD",
-              "filters": {
-                "level": 8,
-                "operator": "<="
-              },
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 8
+                  }
+                }
               }
             },
             {
               "type": "DESTROY_CARD",
-              "filters": {
-                "level": 8,
-                "operator": "<="
-              },
               "target": {
-                "selector": "ENEMY_BASE"
+                "selector": "ENEMY_BASE",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 8
+                  }
+                }
               }
             }
           ]
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,
@@ -74,8 +122,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "SUPPRESSION",
-          "value": null
+          "keyword": "SUPPRESSION"
         }
       ],
       "is_supported": true,
@@ -83,7 +130,8 @@
       "metadata": {
         "raw_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

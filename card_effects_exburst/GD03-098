@@ -32,29 +32,56 @@
       "conditions": [
         {
           "type": "CHECK_CARD_STATE",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "state": "RESTED"
         },
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "HP",
           "operator": "<=",
           "value": 3
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "type": "SET_ACTIVE",
-          "target": "SELF"
+          "target": {
+            "selector": "SELF",
+            "filters": {
+              "state": "RESTED"
+            }
+          }
         },
         {
           "type": "ADD_TO_HAND",
-          "target": "ENEMY_UNIT",
-          "filters": {
-            "stat": "HP",
-            "operator": "<=",
-            "value": 3
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

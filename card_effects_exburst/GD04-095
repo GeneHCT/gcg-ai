@@ -32,17 +32,25 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "Minerva Squad"
-            ]
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Minerva Squad"
+              ]
+            }
+          }
+        },
+        {
           "protect_from": "BATTLE_DAMAGE",
           "redirect_to": "SELF",
           "duration": "THIS_TURN",
           "type": "GRANT_PROTECTION",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

@@ -40,39 +40,55 @@
         {
           "type": "CHECK_TURN",
           "player": "FRIENDLY"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
         {
-          "type": "LOOK_AT_DECK",
-          "amount": 1,
-          "zone": "SELF_DECK"
-        },
-        {
-          "type": "CONDITIONAL_BRANCH",
-          "conditions": [
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
             {
-              "type": "CHECK_TRAIT",
-              "selector": "LOOKED_AT_CARD",
-              "trait": "CB"
-            }
-          ],
-          "success": [
+              "type": "LOOK_AT_DECK",
+              "amount": 1,
+              "zone": "SELF_DECK"
+            },
             {
-              "type": "OPTIONAL_ACTION",
-              "actions": [
+              "type": "CONDITIONAL_BRANCH",
+              "conditions": [
                 {
-                  "type": "ADD_TO_HAND",
+                  "type": "CHECK_TRAIT",
                   "target": {
                     "selector": "LOOKED_AT_CARD"
-                  }
+                  },
+                  "traits": [
+                    "CB"
+                  ]
+                }
+              ],
+              "success": [
+                {
+                  "type": "OPTIONAL_ACTION",
+                  "actions": [
+                    {
+                      "type": "ADD_TO_HAND",
+                      "target": {
+                        "selector": "LOOKED_AT_CARD"
+                      }
+                    }
+                  ]
                 }
               ]
+            },
+            {
+              "type": "RETURN_LOOKED_TO_BOTTOM"
             }
           ]
-        },
-        {
-          "type": "RETURN_LOOKED_TO_BOTTOM"
         }
       ],
       "is_supported": true,

@@ -10,11 +10,19 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "Academy"
-            ]
-          },
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          }
+        },
+        {
           "granted_target_selector": "ENEMY_UNIT",
           "granted_filters": {
             "state": "ACTIVE",
@@ -26,7 +34,7 @@
           "duration": "THIS_TURN",
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

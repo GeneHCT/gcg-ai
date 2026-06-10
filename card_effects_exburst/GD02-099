@@ -32,22 +32,34 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "SELF_TRASH",
-          "filters": {
-            "trait": "Gjallarhorn"
-          },
           "operator": ">=",
-          "value": 4
+          "value": 4,
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
+              "traits": [
+                "Gjallarhorn"
+              ]
+            }
+          }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "MODIFY_STAT",
           "stat": "AP",
-          "modification": -2,
+          "modification": "-2",
           "duration": "THIS_TURN",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

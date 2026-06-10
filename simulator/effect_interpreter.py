@@ -117,6 +117,8 @@ class TargetResolver:
         
         # Apply filters
         filtered = TargetResolver._apply_filters(candidates, filters, context)
+        if selector == "SELECTED_CARD" and "count" not in target_spec and not variable_count:
+            count = len(filtered)
         
         # Select targets based on count and method
         selected = TargetResolver._select_targets(
@@ -241,7 +243,7 @@ class TargetResolver:
             card_data = target.card_data if hasattr(target, 'card_data') else target
             if not hasattr(card_data, 'type'):
                 return False
-            if card_data.type != filters["card_type"]:
+            if str(card_data.type).upper() != str(filters["card_type"]).upper():
                 return False
         
         # Color filter
@@ -255,24 +257,23 @@ class TargetResolver:
         # Name/text filters
         if "name_contains" in filters:
             card_data = target.card_data if hasattr(target, 'card_data') else target
-            if str(filters["name_contains"]).lower() not in str(getattr(card_data, 'name', '')).lower():
+            names = TargetResolver._card_names(card_data)
+            if not any(str(filters["name_contains"]).lower() in name.lower() for name in names):
                 return False
 
         if "text_contains" in filters:
             card_data = target.card_data if hasattr(target, 'card_data') else target
             effect_text = " ".join(getattr(card_data, 'effect', []) or [])
-            if str(filters["text_contains"]).lower() not in effect_text.lower():
+            searchable_text = f"{getattr(card_data, 'name', '')} {effect_text}".lower()
+            if str(filters["text_contains"]).lower() not in searchable_text:
                 return False
         
         # Traits filter
         if "traits" in filters:
             required_traits = filters["traits"]
             trait_operator = filters.get("trait_operator", "ANY")
-            
-            if not hasattr(target, 'card_data'):
-                return False
-            
-            target_traits = target.card_data.traits if hasattr(target.card_data, 'traits') else []
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            target_traits = card_data.traits if hasattr(card_data, 'traits') else []
             
             if trait_operator == "ANY":
                 # At least one trait must match
@@ -286,13 +287,17 @@ class TargetResolver:
         # Level filter
         if "level" in filters:
             level_filter = filters["level"]
-            operator = level_filter["operator"]
-            value = level_filter["value"]
+            if isinstance(level_filter, dict):
+                operator = level_filter.get("operator", "==")
+                value = level_filter.get("value")
+            else:
+                operator = "=="
+                value = level_filter
             
-            if not hasattr(target, 'card_data'):
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            if not hasattr(card_data, 'level'):
                 return False
-            
-            target_level = target.card_data.level
+            target_level = card_data.level
             
             if not TargetResolver._compare(target_level, operator, value):
                 return False
@@ -300,8 +305,12 @@ class TargetResolver:
         # HP filter
         if "hp" in filters:
             hp_filter = filters["hp"]
-            operator = hp_filter["operator"]
-            value = hp_filter["value"]
+            if isinstance(hp_filter, dict):
+                operator = hp_filter.get("operator", "==")
+                value = hp_filter.get("value")
+            else:
+                operator = "=="
+                value = hp_filter
             
             if not hasattr(target, 'current_hp'):
                 return False
@@ -312,8 +321,12 @@ class TargetResolver:
         # AP filter
         if "ap" in filters:
             ap_filter = filters["ap"]
-            operator = ap_filter["operator"]
-            value = ap_filter["value"]
+            if isinstance(ap_filter, dict):
+                operator = ap_filter.get("operator", "==")
+                value = ap_filter.get("value")
+            else:
+                operator = "=="
+                value = ap_filter
             
             if not hasattr(target, 'ap'):
                 return False
@@ -333,15 +346,39 @@ class TargetResolver:
             elif required_state == "ACTIVE" and target.is_rested:
                 return False
         
+        # Damage/link/pilot filters used for printed target qualifications.
+        if "damaged" in filters:
+            is_damaged = hasattr(target, 'current_hp') and hasattr(target, 'hp') and target.current_hp < target.hp
+            if is_damaged != filters["damaged"]:
+                return False
+        
+        if "is_linked" in filters:
+            is_linked = bool(getattr(target, 'is_linked', False))
+            if is_linked != filters["is_linked"]:
+                return False
+        
+        if "paired_pilot_traits" in filters:
+            required_traits = filters["paired_pilot_traits"]
+            if isinstance(required_traits, str):
+                required_traits = [required_traits]
+            pilot = getattr(target, 'paired_pilot', None)
+            if not required_traits:
+                if pilot is None:
+                    return False
+                return True
+            pilot_card = getattr(pilot, 'card_data', None)
+            pilot_traits = getattr(pilot_card, 'traits', []) if pilot_card else []
+            if not any(trait in pilot_traits for trait in required_traits):
+                return False
+        
         # Token filter
         if "is_token" in filters:
             is_token_required = filters["is_token"]
             
-            if not hasattr(target, 'card_data'):
-                return False
-            
-            # Check if card ID contains "TOKEN" or has a token flag
-            is_token = "TOKEN" in target.card_data.id.upper()
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            card_id = str(getattr(card_data, "id", "")).upper()
+            card_type = str(getattr(card_data, "type", "")).upper()
+            is_token = bool(getattr(card_data, "is_token", False)) or "TOKEN" in card_id or "TOKEN" in card_type or card_id.startswith("T-")
             
             if is_token != is_token_required:
                 return False
@@ -357,6 +394,24 @@ class TargetResolver:
                 return False
         
         return True
+
+    @staticmethod
+    def _card_names(card_data: Any) -> list[str]:
+        names = [str(getattr(card_data, "name", ""))]
+        names.extend(str(alias) for alias in getattr(card_data, "name_aliases", []) if alias)
+        card_id = getattr(card_data, "id", None)
+        if card_id:
+            try:
+                effect_data = EffectLoader.load_effect(str(card_id))
+            except Exception:
+                effect_data = None
+            for effect in (effect_data or {}).get("continuous_effects", []):
+                for action in [*effect.get("actions", []), *effect.get("modifiers", effect.get("modifications", []))]:
+                    if isinstance(action, dict) and action.get("type") == "ADD_NAME_ALIAS":
+                        alias = action.get("alias") or action.get("name")
+                        if alias:
+                            names.append(str(alias))
+        return names
     
     @staticmethod
     def _compare(value: int, operator: str, target: int) -> bool:
@@ -456,6 +511,9 @@ class ConditionEvaluator:
         
         elif condition_type == "CHECK_CARD_STATE":
             return ConditionEvaluator._evaluate_check_card_state(context, condition)
+
+        elif condition_type == "CHECK_DAMAGE":
+            return ConditionEvaluator._evaluate_check_damage(context, condition)
         
         elif condition_type == "CHECK_TRAIT":
             return ConditionEvaluator._evaluate_check_trait(context, condition)
@@ -487,6 +545,12 @@ class ConditionEvaluator:
         elif condition_type == "CHECK_PAIRED_PILOT_TRAIT":
             return ConditionEvaluator._evaluate_check_paired_pilot_trait(context, condition)
         
+        elif condition_type in {"ACTION_COMPLETED", "CHECK_ACTION_SUCCESS", "CONDITIONAL_BRANCH"}:
+            return True
+        
+        elif condition_type == "ON_UNIT_DESTROYED_BY_DAMAGE":
+            return bool(context.trigger_data.get("destroyed_by_damage", True))
+        
         # Add more condition types as needed
         
         return True  # Unknown condition types pass by default outside strict validation
@@ -494,6 +558,15 @@ class ConditionEvaluator:
     @staticmethod
     def _evaluate_count_cards(context: EffectContext, condition: Dict) -> bool:
         """Evaluate COUNT_CARDS condition"""
+        if condition.get("target") or condition.get("selector") or condition.get("filters"):
+            target_spec = condition.get("target") or {"selector": condition.get("selector", condition.get("zone", "SELF_TRASH"))}
+            if isinstance(target_spec, str):
+                target_spec = {"selector": target_spec}
+            if condition.get("filters"):
+                target_spec = dict(target_spec)
+                target_spec["filters"] = condition["filters"]
+            count = len(TargetResolver.resolve_target(context, target_spec))
+            return TargetResolver._compare(count, condition.get("operator", ">="), condition.get("value", 1))
         zone = condition.get("zone")
         owner = condition.get("owner", "SELF")
         card_type = condition.get("card_type")
@@ -655,8 +728,19 @@ class ConditionEvaluator:
     def _condition_targets(context: EffectContext, condition: Dict) -> List[Any]:
         target_spec = condition.get("target")
         if target_spec:
-            return TargetResolver.resolve_target(context, target_spec)
+            return ConditionEvaluator._resolve_condition_targets(context, target_spec)
         return [context.source_card]
+
+    @staticmethod
+    def _resolve_condition_targets(context: EffectContext, target_spec: Any) -> List[Any]:
+        if isinstance(target_spec, str):
+            normalized_target = {"selector": target_spec}
+        elif isinstance(target_spec, dict):
+            normalized_target = dict(target_spec)
+        else:
+            return []
+        normalized_target.setdefault("count", 999)
+        return TargetResolver.resolve_target(context, normalized_target)
 
     @staticmethod
     def _target_has_traits(target: Any, traits: List[str], trait_operator: str) -> bool:
@@ -673,30 +757,52 @@ class ConditionEvaluator:
     def _evaluate_check_card_state(context: EffectContext, condition: Dict) -> bool:
         """Evaluate CHECK_CARD_STATE condition"""
         target_spec = condition.get("target")
-        state = condition.get("state")
+        state = condition.get("state") or condition.get("value")
         
         # Resolve target
         if target_spec:
-            targets = TargetResolver.resolve_target(context, target_spec)
+            targets = ConditionEvaluator._resolve_condition_targets(context, target_spec)
         else:
             targets = [context.source_card]
         
         if not targets:
             return False
         
-        target = targets[0]
+        def matches(target: Any) -> bool:
+            if state == "ACTIVE":
+                return not target.is_rested if hasattr(target, 'is_rested') else False
+            if state == "RESTED":
+                return target.is_rested if hasattr(target, 'is_rested') else False
+            if state == "PAIRED":
+                return target.paired_pilot is not None if hasattr(target, 'paired_pilot') else False
+            if state == "LINKED":
+                return target.is_linked if hasattr(target, 'is_linked') else False
+            if state == "DESTROYED":
+                return target.is_destroyed if hasattr(target, 'is_destroyed') else False
+            if state == "ATTACKING":
+                return context.trigger_event == "ON_ATTACK" and target == context.source_card
+            return False
+
+        if state in {"ACTIVE", "RESTED", "PAIRED", "LINKED", "DESTROYED", "ATTACKING"}:
+            return any(matches(target) for target in targets)
         
-        # Check state
-        if state == "ACTIVE":
-            return not target.is_rested if hasattr(target, 'is_rested') else False
-        elif state == "RESTED":
-            return target.is_rested if hasattr(target, 'is_rested') else False
-        elif state == "PAIRED":
-            return target.paired_pilot is not None if hasattr(target, 'paired_pilot') else False
-        elif state == "LINKED":
-            return target.is_linked if hasattr(target, 'is_linked') else False
-        
-        return True
+        return False
+
+    @staticmethod
+    def _evaluate_check_damage(context: EffectContext, condition: Dict) -> bool:
+        target_spec = condition.get("target")
+        operator = condition.get("operator", ">")
+        value = condition.get("value", 0)
+        targets = ConditionEvaluator._resolve_condition_targets(context, target_spec) if target_spec else [context.source_card]
+        if not targets:
+            return False
+        for target in targets:
+            if not hasattr(target, "current_hp") or not hasattr(target, "hp"):
+                continue
+            damage = max(0, target.hp - target.current_hp)
+            if TargetResolver._compare(damage, operator, value):
+                return True
+        return False
     
     @staticmethod
     def _evaluate_check_player_level(context: EffectContext, condition: Dict) -> bool:
@@ -799,6 +905,55 @@ class ConditionEvaluator:
     
     @staticmethod
     def _evaluate_check_target(context: EffectContext, condition: Dict) -> bool:
+        target_spec = condition.get("target")
+        filters = condition.get("filters", {})
+        if target_spec or filters or condition.get("exists") is not None:
+            targets = ConditionEvaluator._resolve_condition_targets(context, target_spec or {"selector": "SELF"})
+            if filters:
+                targets = [target for target in targets if TargetResolver._matches_filters(target, filters, context)]
+            exists = bool(targets)
+            if condition.get("exists") is not None:
+                return exists == bool(condition.get("exists"))
+            if filters:
+                return exists
+
+        event = str(condition.get("event") or "").upper()
+        if event == "DEPLOY_SOURCE":
+            expected_zone = str(condition.get("source_zone") or "").upper()
+            actual_zone = str(
+                context.trigger_data.get("source_zone")
+                or context.trigger_data.get("from_zone")
+                or context.trigger_data.get("deployed_from")
+                or ""
+            ).upper()
+            return bool(expected_zone) and actual_zone == expected_zone
+        if event == "USED_EX_RESOURCE":
+            return bool(
+                context.trigger_data.get("used_ex_resource")
+                or context.trigger_data.get("paid_with_ex_resource")
+                or context.trigger_data.get("ex_resource_used")
+            )
+        if event == "ACTIVATED":
+            return bool(context.trigger_data.get("activated", True))
+        if event == "RECEIVING_EFFECT_DAMAGE":
+            return context.trigger_event == "ON_RECEIVE_EFFECT_DAMAGE"
+        if event == "BATTLE_TARGET":
+            actual_target = (
+                context.trigger_data.get("target")
+                or context.trigger_data.get("attack_target")
+                or context.trigger_data.get("battle_target")
+                or context.trigger_data.get("battling_unit")
+                or context.trigger_data.get("defender")
+            )
+            return hasattr(actual_target, "card_data")
+        if event == "BLOCKING_UNIT":
+            actual_target = (
+                context.trigger_data.get("blocker")
+                or context.trigger_data.get("blocking_unit")
+                or context.trigger_data.get("defender")
+            )
+            return hasattr(actual_target, "card_data")
+
         expected = str(
             condition.get("target_type")
             or condition.get("target_selector")

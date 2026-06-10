@@ -29,14 +29,18 @@
           "actions": [
             {
               "type": "DISCARD",
-              "selector": "FRIENDLY_UNIT",
-              "amount": 1
+              "amount": 1,
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
             }
           ],
           "next_if_success": [
             {
               "type": "ADD_TO_HAND",
-              "selector": "PAIRED_PILOT"
+              "target": {
+                "selector": "PAIRED_PILOT"
+              }
             }
           ]
         }

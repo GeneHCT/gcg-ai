@@ -32,9 +32,11 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "OPPONENT_HAND",
           "operator": ">=",
-          "value": 8
+          "value": 8,
+          "target": {
+            "selector": "OPPONENT_HAND"
+          }
         }
       ],
       "actions": [

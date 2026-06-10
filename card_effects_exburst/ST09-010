@@ -43,10 +43,12 @@
           "conditions": [
             {
               "type": "CHECK_TURN",
-              "owner": "SELF"
+              "owner": "SELF",
+              "turn_owner": "SELF"
             }
           ],
-          "success_actions": [
+          "type": "CONDITIONAL_BRANCH",
+          "true_actions": [
             {
               "amount": 2,
               "conditions": [],
@@ -69,8 +71,7 @@
                 "selector": "SELF_DECK"
               }
             }
-          ],
-          "type": "CONDITIONAL_BRANCH"
+          ]
         }
       ],
       "is_supported": true,

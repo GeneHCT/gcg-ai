@@ -5,9 +5,18 @@
       "effect_id": "GD01-026-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_PAIRED"
+        "ON_PAIRED",
+        "ON_DESTROYED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
         {
           "amount": 1,
@@ -36,7 +45,15 @@
       "triggers": [
         "ON_DESTROYED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
         {
           "amount": 1,

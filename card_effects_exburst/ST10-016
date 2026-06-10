@@ -43,7 +43,9 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "G Generation"
+              "traits": [
+                "G Generation"
+              ]
             }
           ],
           "type": "RECOVER_HP",

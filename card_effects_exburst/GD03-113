@@ -5,15 +5,39 @@
       "effect_id": "GD03-113-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED"
+            }
+          },
+          "append": true
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "ACTIVE"
+              "state": "ACTIVE"
             }
           ],
           "actions": [
@@ -54,6 +78,12 @@
               "state": "ACTIVE"
             }
           }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,
@@ -67,15 +97,39 @@
       "effect_id": "GD03-113-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED"
+            }
+          },
+          "append": true
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "ACTIVE"
+              "state": "ACTIVE"
             }
           ],
           "actions": [
@@ -115,6 +169,12 @@
             "filters": {
               "state": "ACTIVE"
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

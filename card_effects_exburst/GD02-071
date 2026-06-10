@@ -7,31 +7,21 @@
       "triggers": [
         "ON_DEPLOY"
       ],
-      "conditions": [
-        {
-          "type": "CHECK_CARD_STATE",
-          "filters": {
-            "color": "White"
-          },
-          "operator": "==",
-          "target": {
-            "selector": "FRIENDLY_BASE"
-          },
-          "state": true
-        }
-      ],
+      "conditions": [],
       "actions": [
         {
           "type": "OPTIONAL_ACTION",
           "actions": [
             {
-              "type": "ON_PAIR_PILOT",
-              "selector": "SELF_HAND",
-              "filters": {
-                "traits": [
-                  "AEUG"
-                ],
-                "card_type": "PILOT"
+              "type": "PAIR_PILOT",
+              "target": {
+                "selector": "SELF_HAND",
+                "filters": {
+                  "traits": [
+                    "AEUG"
+                  ],
+                  "card_type": "PILOT"
+                }
               }
             }
           ]

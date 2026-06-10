@@ -10,6 +10,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "amount": 1,
           "optional_actions": [
             {
@@ -21,7 +29,7 @@
             },
             {
               "stat": "AP",
-              "modification": 1,
+              "modification": "+1",
               "duration": "THIS_TURN",
               "type": "MODIFY_STAT",
               "target": {
@@ -33,6 +41,14 @@
           "target": {
             "selector": "FRIENDLY_UNIT"
           }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "amount": 1,
+          "damage_type": "EFFECT"
         }
       ],
       "is_supported": true,

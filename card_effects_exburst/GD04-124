@@ -55,26 +55,36 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "FRIENDLY_UNIT",
           "operator": "==",
           "traits": [
             "Academy"
-          ]
+          ],
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          }
+        },
         {
           "stat": "AP",
           "modification": "+2",
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "traits": [
-                "Academy"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

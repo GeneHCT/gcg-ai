@@ -15,14 +15,20 @@
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "G Generation",
-                  "target": "SELECTED_CARD"
+                  "target": {
+                    "selector": "SELECTED_CARD"
+                  },
+                  "traits": [
+                    "G Generation"
+                  ]
                 },
                 {
                   "type": "COUNT_CARDS",
                   "value": 1,
                   "operator": "==",
-                  "target": "SELECTED_CARD"
+                  "target": {
+                    "selector": "SELECTED_CARD"
+                  }
                 }
               ],
               "type": "DISCARD",
@@ -33,9 +39,9 @@
           ],
           "next_if_success": [
             {
-              "amount": -2,
               "type": "MODIFY_COST",
-              "scope": "PLAY"
+              "scope": "PLAY",
+              "modification": "-2"
             }
           ],
           "type": "OPTIONAL_ACTION"

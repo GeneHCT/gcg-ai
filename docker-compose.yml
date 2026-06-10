@@ -9,7 +9,7 @@ services:
       - .credentials
     environment:
       PYTHONPATH: /app
-      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-deepseek/deepseek-chat-v3-0324}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-deepseek/deepseek-chat-v3.1}
       OPENROUTER_BASE_URL: ${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
       OPENROUTER_TIMEOUT_SECONDS: ${OPENROUTER_TIMEOUT_SECONDS:-60}
       OPENROUTER_MAX_RETRIES: ${OPENROUTER_MAX_RETRIES:-1}
@@ -25,7 +25,7 @@ services:
       - .credentials
     environment:
       PYTHONPATH: /app
-      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-deepseek/deepseek-chat-v3-0324}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-deepseek/deepseek-chat-v3.1}
       OPENROUTER_BASE_URL: ${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
       OPENROUTER_TIMEOUT_SECONDS: ${OPENROUTER_TIMEOUT_SECONDS:-60}
       OPENROUTER_MAX_RETRIES: ${OPENROUTER_MAX_RETRIES:-1}

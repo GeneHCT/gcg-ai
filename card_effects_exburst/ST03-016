@@ -42,7 +42,8 @@
           "conditions": [
             {
               "type": "CHECK_TURN",
-              "owner": "SELF"
+              "owner": "SELF",
+              "turn_owner": "SELF"
             }
           ],
           "amount": 1,

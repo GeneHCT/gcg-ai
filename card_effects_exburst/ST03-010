@@ -32,11 +32,11 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": [
+          "operator": "==",
+          "traits": [
             "Neo Zeon",
             "Zeon"
-          ],
-          "operator": "=="
+          ]
         },
         {
           "type": "CHECK_STAT",
@@ -52,16 +52,18 @@
             {
               "type": "DEPLOY_FROM_ZONE",
               "source_zone": "SELF_HAND",
-              "filters": {
-                "traits": [
-                  "Neo Zeon",
-                  "Zeon"
-                ],
-                "level": 4,
-                "level_operator": "<="
-              },
               "target": {
-                "selector": "SELECTED_CARD"
+                "selector": "SELECTED_CARD",
+                "filters": {
+                  "traits": [
+                    "Neo Zeon",
+                    "Zeon"
+                  ],
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  }
+                }
               }
             }
           ]

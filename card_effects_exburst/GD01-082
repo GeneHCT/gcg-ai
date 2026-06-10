@@ -3,16 +3,32 @@
   "effects": [
     {
       "effect_id": "GD01-082-E1",
-      "effect_type": "TRIGGERED",
+      "effect_type": "ACTIVATED",
       "triggers": [
-        "WHILE_PAIRED"
+        "ACTIVATE_ACTION"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
         {
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "duration": "THIS_BATTLE",
           "stat": "AP",

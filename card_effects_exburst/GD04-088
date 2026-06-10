@@ -40,8 +40,9 @@
           }
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "BLOCKING",
+          "type": "CHECK_TARGET",
+          "target_type": "UNIT",
+          "event": "BLOCKING_UNIT",
           "target": {
             "selector": "ENEMY_UNIT"
           }
@@ -50,9 +51,11 @@
       "actions": [
         {
           "type": "GRANT_PROTECTION",
-          "selector": "SELF",
           "protection_type": "BATTLE_DAMAGE",
-          "duration": "THIS_BATTLE"
+          "duration": "THIS_BATTLE",
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

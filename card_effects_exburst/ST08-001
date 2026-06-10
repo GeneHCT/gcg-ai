@@ -10,22 +10,24 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_UNIT",
-          "filters": {
-            "level": {
-              "operator": ">=",
-              "value": 6
-            }
-          },
           "operator": "==",
-          "value": 0
+          "value": 0,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "level": {
+                "operator": ">=",
+                "value": 6
+              }
+            }
+          }
         }
       ],
       "actions": [
         {
           "type": "MODIFY_STAT",
           "stat": "LEVEL",
-          "modification": -1,
+          "modification": "-1",
           "amount": {
             "type": "COUNT_CARDS",
             "target": {
@@ -39,7 +41,7 @@
         {
           "type": "MODIFY_STAT",
           "stat": "COST",
-          "modification": -1,
+          "modification": "-1",
           "amount": {
             "type": "COUNT_CARDS",
             "target": {
@@ -67,22 +69,18 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
-          "filters": {
-            "level": {
-              "operator": "==",
-              "value": {
-                "type": "MAX_STAT",
-                "stat": "LEVEL",
-                "target": {
-                  "selector": "ENEMY_UNIT"
-                }
-              }
-            }
-          },
           "amount": 3,
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

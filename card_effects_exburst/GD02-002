@@ -5,17 +5,21 @@
       "effect_id": "GD02-002-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE",
         "ON_LINKED"
       ],
       "conditions": [
         {
           "type": "CHECK_TURN",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
-          "type": "CHECK_CARD_STATE",
-          "state": "DESTROYED_BY_BATTLE_DAMAGE",
-          "target_selector": "ENEMY_UNIT"
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [

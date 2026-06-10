@@ -32,9 +32,11 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "target_selector": "FRIENDLY_RESOURCE",
           "operator": "==",
-          "value": 0
+          "value": 0,
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
         },
         {
           "type": "CHECK_LINK_STATUS",

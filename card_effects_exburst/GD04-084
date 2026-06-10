@@ -32,18 +32,33 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "White Base Team"
+              ]
+            }
+          }
+        },
+        {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "THIS_TURN",
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "White Base Team"
+              "traits": [
+                "White Base Team"
+              ]
             }
           ],
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

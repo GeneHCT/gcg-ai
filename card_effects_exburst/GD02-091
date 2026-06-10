@@ -32,31 +32,28 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "target": "SELF",
-          "value": "Red",
-          "operator": "=="
+          "target": {
+            "selector": "SELF"
+          },
+          "operator": "==",
+          "color": "Red"
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
-          "filters": [
-            {
-              "target": "ENEMY_UNIT",
-              "stat": "LEVEL",
-              "operator": "<=",
-              "value": {
-                "type": "CHECK_STAT",
-                "target": "SELF",
-                "stat": "LEVEL"
-              },
-              "card_type": "CHECK_STAT"
-            }
-          ],
           "amount": 1,
           "damage_type": "EFFECT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

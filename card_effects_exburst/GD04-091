@@ -32,6 +32,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "conditions": [
             {
               "type": "CHECK_STAT",
@@ -43,7 +51,7 @@
           "amount": 1,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

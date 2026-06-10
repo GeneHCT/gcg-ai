@@ -8,7 +8,8 @@
       "conditions": [
         {
           "type": "CHECK_TURN",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "COUNT_CARDS",
@@ -21,7 +22,9 @@
       "actions": [
         {
           "type": "GRANT_PROTECTION",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "damage_type": "EFFECT",
           "source_filter": {
             "card_type": "COMMAND",

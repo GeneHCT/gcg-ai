@@ -41,11 +41,13 @@
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "G Generation"
+                  "traits": [
+                    "G Generation"
+                  ]
                 },
                 {
                   "type": "CHECK_CARD_STATE",
-                  "value": "UNIT"
+                  "state": "UNIT"
                 }
               ],
               "amount": 1,

@@ -13,7 +13,9 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "G Generation"
+              "traits": [
+                "G Generation"
+              ]
             }
           ],
           "optional_actions": [
@@ -43,20 +45,21 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "G Generation",
           "operator": ">=",
-          "amount": 1
+          "amount": 1,
+          "traits": [
+            "G Generation"
+          ]
         }
       ],
       "actions": [
         {
-          "keyword": "HIGH-MANEUVER",
+          "keyword": "HIGH_MANEUVER",
           "duration": "THIS_TURN",
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

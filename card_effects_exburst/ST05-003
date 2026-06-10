@@ -10,6 +10,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "REST_UNIT",
           "target": {
             "selector": "SELF"
@@ -19,7 +27,7 @@
           "amount": 1,
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         },
         {

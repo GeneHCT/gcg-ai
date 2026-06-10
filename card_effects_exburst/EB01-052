@@ -19,14 +19,21 @@
       ],
       "actions": [
         {
-          "type": "DISCARD",
-          "filters": [
-            {
-              "stat": "HP",
-              "operator": "<=",
-              "value": 2
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
             }
-          ],
+          }
+        },
+        {
+          "type": "DISCARD",
           "amount": 1,
           "target": {
             "selector": "ENEMY_UNIT",
@@ -36,6 +43,12 @@
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

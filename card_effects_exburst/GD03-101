@@ -10,6 +10,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "DRAW",
           "target": {
@@ -31,19 +45,25 @@
           ],
           "actions": [
             {
-              "filters": {
-                "HP": {
-                  "operator": "<=",
-                  "value": 4
-                }
-              },
               "type": "REST_UNIT",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "hp": {
+                    "operator": "<=",
+                    "value": 4
+                  }
+                }
               }
             }
           ],
           "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

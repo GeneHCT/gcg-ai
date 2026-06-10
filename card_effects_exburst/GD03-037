@@ -13,6 +13,13 @@
             "selector": "SELF"
           },
           "state": "LINKED"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "modifiers": [
@@ -21,8 +28,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "FIRST_STRIKE",
-          "value": null
+          "keyword": "FIRST_STRIKE"
         }
       ],
       "is_supported": true,
@@ -30,7 +36,10 @@
       "metadata": {
         "raw_text": "【During Link】During your turn, while this Unit is battling an enemy Unit with a 【Destroyed】 effect, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": [
+        "ON_DESTROYED"
+      ]
     }
   ],
   "metadata": {

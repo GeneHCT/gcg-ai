@@ -41,49 +41,58 @@
       "conditions": [],
       "actions": [
         {
-          "amount": 1,
-          "type": "LOOK_AT_DECK",
-          "target": {
-            "selector": "SELF_DECK"
-          }
-        },
-        {
-          "conditions": [
-            {
-              "type": "CHECK_TRAIT",
-              "trait": "Zeon",
-              "operator": "==",
-              "target": {
-                "selector": "LOOKED_AT_CARD"
-              }
-            },
-            {
-              "type": "CHECK_TRAIT",
-              "trait": "Neo Zeon",
-              "operator": "==",
-              "target": {
-                "selector": "LOOKED_AT_CARD"
-              }
-            }
-          ],
+          "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
-              "type": "SELECT_LOOKED_AT_CARD"
+              "amount": 1,
+              "type": "LOOK_AT_DECK",
+              "target": {
+                "selector": "SELF_DECK"
+              }
             },
             {
-              "type": "ADD_TO_HAND",
+              "conditions": [
+                {
+                  "type": "CHECK_TRAIT",
+                  "operator": "==",
+                  "target": {
+                    "selector": "LOOKED_AT_CARD"
+                  },
+                  "traits": [
+                    "Zeon"
+                  ]
+                },
+                {
+                  "type": "CHECK_TRAIT",
+                  "operator": "==",
+                  "target": {
+                    "selector": "LOOKED_AT_CARD"
+                  },
+                  "traits": [
+                    "Neo Zeon"
+                  ]
+                }
+              ],
+              "optional_actions": [
+                {
+                  "type": "SELECT_LOOKED_AT_CARD"
+                },
+                {
+                  "type": "ADD_TO_HAND",
+                  "target": {
+                    "selector": "SELECTED_CARD"
+                  }
+                }
+              ],
+              "type": "CONDITIONAL_BRANCH"
+            },
+            {
+              "type": "RETURN_LOOKED_TO_BOTTOM",
               "target": {
-                "selector": "SELECTED_CARD"
+                "selector": "SELF_DECK"
               }
             }
-          ],
-          "type": "CONDITIONAL_BRANCH"
-        },
-        {
-          "type": "RETURN_LOOKED_TO_BOTTOM",
-          "target": {
-            "selector": "SELF_DECK"
-          }
+          ]
         }
       ],
       "is_supported": true,

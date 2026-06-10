@@ -32,17 +32,34 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Cyclops Team"
+              ]
+            }
+          }
+        },
+        {
           "duration": "THIS_TURN",
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "Cyclops Team",
-              "selector": "OTHER_FRIENDLY_UNIT"
+              "target": {
+                "selector": "OTHER_FRIENDLY_UNIT"
+              },
+              "traits": [
+                "Cyclops Team"
+              ]
             }
           ],
           "type": "GRANT_KEYWORD",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "keyword": "BREACH",
           "value": 1

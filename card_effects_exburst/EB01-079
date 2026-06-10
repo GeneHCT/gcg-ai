@@ -10,14 +10,22 @@
       "conditions": [],
       "actions": [
         {
-          "type": "GRANT_PROTECTION",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "G Generation"
               ]
             }
+          }
+        },
+        {
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "protection_conditions": [
             {

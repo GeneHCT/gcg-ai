@@ -29,8 +29,7 @@
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "ENEMY_UNIT"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

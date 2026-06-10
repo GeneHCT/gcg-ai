@@ -14,10 +14,10 @@
         },
         {
           "type": "CHECK_COLOR",
-          "value": "Blue",
           "target": {
             "selector": "PAIRED_PILOT"
-          }
+          },
+          "color": "Blue"
         }
       ],
       "actions": [
@@ -26,11 +26,11 @@
           "actions": [
             {
               "type": "ADD_TO_HAND",
-              "filters": {
-                "color": "Blue"
-              },
               "target": {
-                "selector": "PAIRED_PILOT"
+                "selector": "PAIRED_PILOT",
+                "filters": {
+                  "color": "Blue"
+                }
               }
             }
           ]

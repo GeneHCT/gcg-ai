@@ -11,36 +11,36 @@
       "actions": [
         {
           "amount": 1,
-          "filters": {
-            "name_contains": "GQuuuuuuX (Omega Psycommu)",
-            "is_token": true,
-            "traits": [
-              "Clan"
-            ],
-            "ap": 3,
-            "hp": 2
-          },
           "state": "RESTED",
           "type": "DEPLOY_TOKEN",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "name_contains": "GQuuuuuuX (Omega Psycommu)",
+              "is_token": true,
+              "traits": [
+                "Clan"
+              ],
+              "ap": 3,
+              "hp": 2
+            }
           }
         },
         {
           "amount": 1,
-          "filters": {
-            "name_contains": "Red Gundam",
-            "is_token": true,
-            "traits": [
-              "Clan"
-            ],
-            "ap": 2,
-            "hp": 3
-          },
           "state": "RESTED",
           "type": "DEPLOY_TOKEN",
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "name_contains": "Red Gundam",
+              "is_token": true,
+              "traits": [
+                "Clan"
+              ],
+              "ap": 2,
+              "hp": 3
+            }
           }
         }
       ],

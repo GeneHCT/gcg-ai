@@ -11,12 +11,17 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "PAIRED_PILOT",
-          "value": "ZAFT"
+          "target": {
+            "selector": "PAIRED_PILOT"
+          },
+          "traits": [
+            "ZAFT"
+          ]
         }
       ],
       "actions": [
@@ -24,13 +29,13 @@
           "type": "MODIFY_STAT",
           "stat": "AP",
           "duration": "THIS_TURN",
-          "filters": {
-            "traits": [
-              "ZAFT"
-            ]
-          },
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "ZAFT"
+              ]
+            }
           },
           "modification": "+2"
         }
@@ -51,6 +56,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "DAMAGE_UNIT",
           "amount": {
             "type": "STAT_DIVIDE",
@@ -60,7 +73,7 @@
           },
           "damage_type": "EFFECT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

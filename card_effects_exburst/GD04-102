@@ -43,6 +43,21 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "state": "RESTED",
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        },
+        {
           "type": "SET_ACTIVE",
           "value": false,
           "duration": "THIS_TURN",

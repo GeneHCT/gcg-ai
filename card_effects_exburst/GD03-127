@@ -32,6 +32,19 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "ZAFT"
+              ]
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -42,22 +55,16 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "ZAFT"
-            }
-          ],
-          "modification": {
-            "stat": "AP",
-            "value": 3
-          },
-          "duration": "THIS_TURN",
-          "type": "MODIFY_STAT",
-          "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
               "traits": [
                 "ZAFT"
               ]
             }
+          ],
+          "modification": "+3",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
           },
           "stat": "AP"
         }

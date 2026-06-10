@@ -9,17 +9,13 @@
       ],
       "conditions": [
         {
-          "type": "CHECK_CARD_STATE",
-          "target_selector": "SELECTED_CARD",
-          "operator": "==",
-          "state": "SHIELD"
-        },
-        {
           "type": "CHECK_STAT",
-          "target_selector": "SELECTED_CARD",
           "stat": "damage_type",
           "value": "BATTLE",
-          "operator": "=="
+          "operator": "==",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "actions": [

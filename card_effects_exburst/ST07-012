@@ -40,16 +40,16 @@
             },
             {
               "type": "COUNT_CARDS",
-              "filters": {
-                "link_status": "LINKED",
-                "traits": [
-                  "CB"
-                ]
-              },
               "operator": ">=",
               "value": 1,
               "target": {
-                "selector": "FRIENDLY_UNIT"
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "traits": [
+                    "CB"
+                  ],
+                  "is_linked": true
+                }
               }
             },
             {

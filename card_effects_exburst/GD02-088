@@ -41,18 +41,22 @@
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "Earth Federation",
-                  "operator": "=="
+                  "operator": "==",
+                  "traits": [
+                    "Earth Federation"
+                  ]
                 },
                 {
                   "type": "CHECK_COLOR",
-                  "value": "Green",
-                  "operator": "=="
+                  "operator": "==",
+                  "color": "Green"
                 },
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "Unit",
-                  "operator": "=="
+                  "operator": "==",
+                  "traits": [
+                    "Unit"
+                  ]
                 }
               ],
               "or_conditions": [

@@ -10,9 +10,13 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
-          "value": "Triple Ship Alliance",
-          "operator": "=="
+          "operator": "==",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Triple Ship Alliance"
+          ]
         }
       ],
       "actions": [
@@ -31,8 +35,7 @@
           "duration": "PERMANENT",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

@@ -12,16 +12,17 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "card_type": "UNIT",
-                "traits": [
-                  "Maganac Corps"
-                ]
-              },
               "amount": 1,
               "type": "DEPLOY_FROM_ZONE",
               "target": {
-                "selector": "SELF_HAND"
+                "selector": "SELF_HAND",
+                "filters": {
+                  "card_type": "UNIT",
+                  "traits": [
+                    "Maganac Corps"
+                  ]
+                },
+                "card_type": "UNIT"
               }
             }
           ],

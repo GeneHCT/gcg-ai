@@ -55,6 +55,14 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "REST_UNIT",
           "target": {
             "selector": "SELF"
@@ -64,16 +72,18 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "value": "Academy",
               "target": {
                 "selector": "FRIENDLY_UNIT"
-              }
+              },
+              "traits": [
+                "Academy"
+              ]
             }
           ],
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           },
           "stat": "AP",
           "modification": "-1"

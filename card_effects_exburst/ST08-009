@@ -13,27 +13,21 @@
           "stat": "LEVEL",
           "operator": "<=",
           "value": 2,
-          "filters": {
-            "state": "RESTED"
-          },
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
           }
         }
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "duration": "THIS_TURN",
-          "filters": {
-            "state": "RESTED",
-            "level": {
-              "operator": "<=",
-              "value": 2
-            }
-          },
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "RESTED",
               "level": {
@@ -41,6 +35,13 @@
                 "value": 2
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

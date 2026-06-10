@@ -22,7 +22,7 @@
           "target": {
             "selector": "OTHER_FRIENDLY_UNIT"
           },
-          "modification": "+1"
+          "modification": "+3"
         }
       ],
       "is_supported": true,
@@ -41,12 +41,18 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Coordinator"
+          "traits": [
+            "Coordinator"
+          ]
         },
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
-          "value": "ZAFT"
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
+            "ZAFT"
+          ]
         }
       ],
       "actions": [

@@ -10,7 +10,9 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
           "traits": [
             "League Militaire"
           ]
@@ -18,11 +20,27 @@
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
           "type": "REST_UNIT",
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "trait": "League Militaire"
+              "traits": [
+                "League Militaire"
+              ]
             }
           ],
           "target": {
@@ -40,13 +58,7 @@
             }
           ],
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "hp": {
-                "operator": "<=",
-                "value": 4
-              }
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -81,7 +93,8 @@
       "metadata": {
         "raw_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

@@ -5,8 +5,34 @@
       "effect_id": "GD01-065-E2",
       "effect_type": "PILOT_ABILITY",
       "triggers": [],
-      "conditions": [],
-      "actions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
+      "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "stat": "AP",
+          "modification": "-2",
+          "duration": "THIS_TURN"
+        }
+      ],
       "pilot_stats": {
         "ap": -2,
         "hp": 0,
@@ -31,8 +57,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,
@@ -40,7 +65,8 @@
       "metadata": {
         "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

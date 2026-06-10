@@ -10,26 +10,30 @@
       "conditions": [
         {
           "type": "COUNT_CARDS",
-          "filters": {
-            "trait": "Cyclops Team"
-          },
           "operator": ">=",
           "value": 1,
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Cyclops Team"
+              ]
+            }
           }
         }
       ],
       "actions": [
         {
           "type": "DEPLOY_TOKEN",
-          "selector": "FRIENDLY_UNIT",
           "token_traits": [
             "Cyclops Team"
           ],
           "token_ap": 2,
           "token_hp": 1,
-          "is_rested": true
+          "is_rested": true,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
         }
       ],
       "is_supported": true,

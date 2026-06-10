@@ -40,19 +40,29 @@
         {
           "type": "CHECK_STAT",
           "stat": "LV",
-          "target_selector": "ENEMY_UNIT",
           "operator": "<=",
           "value": {
             "stat": "LV",
             "target_selector": "SELF"
+          },
+          "target": {
+            "selector": "ENEMY_UNIT"
           }
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "REST_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

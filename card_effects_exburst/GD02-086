@@ -31,12 +31,16 @@
       "actions": [
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "trait": "Titans",
-              "selector": "OTHER_FRIENDLY_UNIT"
+              "target": {
+                "selector": "OTHER_FRIENDLY_UNIT"
+              },
+              "traits": [
+                "Titans"
+              ]
             }
           ],
           "duration": "PERMANENT",

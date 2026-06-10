@@ -11,12 +11,12 @@
       "actions": [
         {
           "amount": 1,
-          "filters": {
-            "card_type": "PILOT"
-          },
           "type": "EXILE_CARDS",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "PILOT"
+            }
           }
         },
         {
@@ -48,22 +48,20 @@
       "actions": [
         {
           "duration": "THIS_TURN",
-          "filters": {
-            "state": "ACTIVE",
-            "stat": "AP",
-            "operator": "<=",
-            "value": {
-              "stat": "AP",
-              "target": {
-                "selector": "SELF"
-              }
-            }
-          },
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
             "selector": "ENEMY_UNIT",
             "filters": {
-              "state": "ACTIVE"
+              "state": "ACTIVE",
+              "ap": {
+                "operator": "<=",
+                "value": {
+                  "stat": "AP",
+                  "target": {
+                    "selector": "SELF"
+                  }
+                }
+              }
             }
           }
         }

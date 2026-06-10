@@ -10,20 +10,35 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "card_type": "UNIT",
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        },
+        {
           "conditions": [
             {
-              "condition_type": "CHECK_CARD_STATE",
               "card_type": "Unit",
               "level": {
                 "<=": 5
-              }
+              },
+              "type": "CHECK_CARD_STATE"
             }
           ],
-          "pay_costs": true,
           "type": "DEPLOY_FROM_ZONE",
           "target": {
-            "selector": "SELF_TRASH"
-          }
+            "selector": "SELECTED_CARD"
+          },
+          "pay_cost": true
         }
       ],
       "is_supported": true,

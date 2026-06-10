@@ -10,8 +10,12 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
-          "value": "OZ"
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
+            "OZ"
+          ]
         }
       ],
       "actions": [

@@ -28,20 +28,30 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "AEUG"
+          "traits": [
+            "AEUG"
+          ]
         }
       ],
       "actions": [
         {
-          "type": "RECOVER_HP",
-          "amount": 2,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "AEUG"
               ]
             }
+          }
+        },
+        {
+          "type": "RECOVER_HP",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

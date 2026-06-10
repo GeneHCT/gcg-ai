@@ -10,26 +10,36 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "LEVEL",
           "operator": "<=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
         {
-          "type": "MODIFY_STAT",
-          "stat": "AP",
-          "modification": -2,
-          "duration": "THIS_TURN",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 5
               }
             }
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "-2",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

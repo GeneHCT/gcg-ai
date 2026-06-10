@@ -10,18 +10,25 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "AGE System"
-            ]
-          },
-          "keyword": "HIGH-MANEUVERS",
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "AGE System"
+              ]
+            }
+          }
+        },
+        {
+          "keyword": "HIGH_MANEUVER",
           "duration": "THIS_TURN",
           "type": "GRANT_KEYWORD",
           "target": {
-            "selector": "OTHER_FRIENDLY_UNIT"
-          },
-          "value": null
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

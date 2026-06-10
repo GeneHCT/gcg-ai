@@ -23,7 +23,8 @@
       "effect_id": "GD04-104-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
@@ -35,20 +36,27 @@
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "amount": 2,
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            },
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 2
               }
-            },
-            "variable_count": {
-              "min": 1,
-              "max": 2
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

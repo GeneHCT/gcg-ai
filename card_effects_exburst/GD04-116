@@ -32,44 +32,58 @@
           "type": "MILL",
           "target": {
             "selector": "SELF_DECK"
-          }
-        },
-        {
-          "conditions": [
-            {
-              "type": "COUNT_CARDS",
-              "selector": "SELF_TRASH",
-              "value": 2,
-              "operator": ">="
-            }
-          ],
-          "actions": [
+          },
+          "next_if_success": [
             {
               "conditions": [
                 {
-                  "type": "CHECK_STAT",
-                  "selector": "ENEMY_UNIT",
-                  "stat": "AP",
-                  "value": 4,
-                  "operator": "<="
-                },
-                {
                   "type": "COUNT_CARDS",
-                  "selector": "SELF_TRASH",
-                  "filters": {
-                    "traits": [
-                      "Minerva Squad"
-                    ]
+                  "value": 2,
+                  "operator": ">=",
+                  "target": {
+                    "selector": "SELF_TRASH"
                   }
                 }
               ],
-              "type": "DAMAGE_UNIT",
-              "target": {
-                "selector": "ENEMY_UNIT"
-              }
+              "actions": [
+                {
+                  "conditions": [
+                    {
+                      "type": "CHECK_STAT",
+                      "stat": "AP",
+                      "value": 4,
+                      "operator": "<=",
+                      "target": {
+                        "selector": "ENEMY_UNIT"
+                      }
+                    },
+                    {
+                      "type": "COUNT_CARDS",
+                      "target": {
+                        "selector": "SELF_TRASH",
+                        "filters": {
+                          "traits": [
+                            "Minerva Squad"
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "type": "DAMAGE_UNIT",
+                  "target": {
+                    "selector": "ENEMY_UNIT",
+                    "filters": {
+                      "ap": {
+                        "operator": "<=",
+                        "value": 4
+                      }
+                    }
+                  }
+                }
+              ],
+              "type": "CONDITIONAL_BRANCH"
             }
-          ],
-          "type": "CONDITIONAL_BRANCH"
+          ]
         }
       ],
       "is_supported": true,

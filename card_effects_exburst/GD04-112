@@ -31,7 +31,9 @@
           "stat": "LEVEL",
           "operator": "<=",
           "value": 2,
-          "target_selector": "ENEMY_UNIT"
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [

@@ -129,10 +129,20 @@ class ResourceManager:
         """Return card cost after active cost modifiers."""
         player = game_state.players[player_id]
         cost = getattr(card, "cost", 0)
+        for modifier in ResourceManager._intrinsic_cost_modifiers(game_state, player_id, card, zone):
+            if not ResourceManager._cost_modifier_applies(modifier, card, zone):
+                continue
+            cost = ResourceManager._apply_cost_modification(
+                cost,
+                ResourceManager._resolve_cost_modification(game_state, player_id, modifier),
+            )
         for modifier in getattr(player, "active_cost_modifiers", []):
             if not ResourceManager._cost_modifier_applies(modifier, card, zone):
                 continue
-            cost = ResourceManager._apply_cost_modification(cost, str(modifier.get("modification", "+0")))
+            cost = ResourceManager._apply_cost_modification(
+                cost,
+                ResourceManager._resolve_cost_modification(game_state, player_id, modifier),
+            )
         return max(0, cost)
     
     @staticmethod
@@ -172,6 +182,78 @@ class ResourceManager:
         if modification.startswith("="):
             return int(modification[1:])
         return cost
+
+    @staticmethod
+    def _intrinsic_cost_modifiers(game_state: 'GameState', player_id: int, card: 'Card', zone: str) -> List[Any]:
+        try:
+            from simulator.effect_interpreter import EffectLoader
+        except Exception:
+            return []
+        effect_data = EffectLoader.load_effect(getattr(card, "id", ""))
+        if not effect_data:
+            return []
+        modifiers = []
+        for effect in effect_data.get("continuous_effects", []):
+            if effect.get("is_supported") is False:
+                continue
+            for modifier in [*effect.get("modifiers", effect.get("modifications", [])), *effect.get("actions", [])]:
+                if not isinstance(modifier, dict) or modifier.get("type") != "MODIFY_COST":
+                    continue
+                mod = dict(modifier)
+                mod.setdefault("source", card)
+                mod.setdefault("zone", zone)
+                modifiers.append(mod)
+        return modifiers
+
+    @staticmethod
+    def _resolve_cost_modification(game_state: 'GameState', player_id: int, modifier: Any) -> str:
+        modification = str(modifier.get("modification", "+0"))
+        if "COUNT" not in modification:
+            return modification
+        count = ResourceManager._count_target_cards(game_state, player_id, modifier.get("count_target", {}))
+        if modification.startswith("-"):
+            return f"-{count}"
+        if modification.startswith("+"):
+            return f"+{count}"
+        if modification.startswith("="):
+            return f"={count}"
+        return modification.replace("COUNT_CARDS", str(count)).replace("COUNT_RESULT", str(count))
+
+    @staticmethod
+    def _count_target_cards(game_state: 'GameState', player_id: int, target_spec: Any) -> int:
+        if not isinstance(target_spec, dict):
+            return 0
+        player = game_state.players[player_id]
+        selector = str(target_spec.get("selector", "SELF_TRASH")).upper()
+        if selector in {"SELF_TRASH", "TRASH"}:
+            zone_cards = getattr(player, "trash", [])
+        elif selector in {"SELF_HAND", "HAND"}:
+            zone_cards = getattr(player, "hand", [])
+        elif selector in {"SELF_DECK", "DECK"}:
+            zone_cards = getattr(player, "main_deck", [])
+        else:
+            zone_cards = []
+        filters = target_spec.get("filters", {})
+        return sum(1 for candidate in zone_cards if ResourceManager._card_matches_filters(candidate, filters))
+
+    @staticmethod
+    def _card_matches_filters(card: 'Card', filters: Any) -> bool:
+        if not isinstance(filters, dict):
+            return True
+        if "card_type" in filters and str(getattr(card, "type", "")).upper() != str(filters["card_type"]).upper():
+            return False
+        if "color" in filters and str(getattr(card, "color", "")).lower() != str(filters["color"]).lower():
+            return False
+        if "traits" in filters:
+            traits = filters["traits"]
+            if isinstance(traits, str):
+                traits = [traits]
+            card_traits = getattr(card, "traits", [])
+            if not any(trait in card_traits for trait in traits):
+                return False
+        if "name_contains" in filters and str(filters["name_contains"]).lower() not in str(getattr(card, "name", "")).lower():
+            return False
+        return True
     
     @staticmethod
     def check_lv_condition(game_state: 'GameState', player_id: int, required_lv: int) -> bool:

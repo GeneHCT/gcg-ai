@@ -21,24 +21,33 @@
             "comparison_operator": ">=",
             "value": 1
           }
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
         {
-          "filters": {
-            "traits": [
-              "Militia"
-            ],
-            "count": 1
-          },
-          "type": "SET_ACTIVE",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Militia"
               ]
             }
+          }
+        },
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -61,8 +70,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,
@@ -70,7 +78,8 @@
       "metadata": {
         "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

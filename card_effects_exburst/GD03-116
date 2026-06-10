@@ -5,21 +5,48 @@
       "effect_id": "GD03-116-E1",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "MAIN_PHASE"
+        "MAIN_PHASE",
+        "ACTION_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Vagan",
-          "target": "FRIENDLY_UNIT"
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Vagan"
+          ]
         }
       ],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Vagan"
+              ]
+            }
+          }
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          },
+          "append": true
+        },
+        {
           "type": "DAMAGE_UNIT",
           "amount": 2,
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -34,77 +61,48 @@
       "effect_id": "GD03-116-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ACTION_PHASE"
+        "ACTION_PHASE",
+        "MAIN_PHASE"
       ],
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "value": "Vagan",
-          "target": "FRIENDLY_UNIT"
-        }
-      ],
-      "actions": [
-        {
-          "type": "DAMAGE_UNIT",
-          "amount": 2,
           "target": {
             "selector": "FRIENDLY_UNIT"
-          }
+          },
+          "traits": [
+            "Vagan"
+          ]
         }
       ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "GD03-116-E3",
-      "effect_type": "TRIGGERED",
-      "triggers": [
-        "MAIN_PHASE"
-      ],
-      "conditions": [],
       "actions": [
         {
-          "type": "DAMAGE_UNIT",
-          "amount": 2,
+          "type": "SELECT_TARGET",
           "target": {
-            "selector": "ENEMY_UNIT",
+            "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "traits": [
                 "Vagan"
               ]
             }
           }
-        }
-      ],
-      "is_supported": true,
-      "unhandled_explanation": "",
-      "metadata": {
-        "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
-        "source": "llm"
-      }
-    },
-    {
-      "effect_id": "GD03-116-E4",
-      "effect_type": "TRIGGERED",
-      "triggers": [
-        "ACTION_PHASE"
-      ],
-      "conditions": [],
-      "actions": [
+        },
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          },
+          "append": true
+        },
         {
           "type": "DAMAGE_UNIT",
           "amount": 2,
           "target": {
-            "selector": "ENEMY_UNIT",
-            "filters": {
-              "traits": [
-                "Vagan"
-              ]
-            }
+            "selector": "SELECTED_CARD"
           }
         }
       ],

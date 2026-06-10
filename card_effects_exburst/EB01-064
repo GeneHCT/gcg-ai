@@ -31,7 +31,9 @@
         {
           "type": "CHECK_KEYWORD",
           "keyword": "REPAIR",
-          "target_selector": "SELF"
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [

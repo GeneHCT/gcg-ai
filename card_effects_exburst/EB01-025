@@ -15,20 +15,22 @@
               "type": "CHECK_TRAIT",
               "trait": "G Generation",
               "operator": ">=",
-              "value": 2
+              "traits": [
+                2
+              ]
             }
           ],
           "optional_actions": [
             {
               "amount": 2,
-              "filters": {
-                "traits": [
-                  "G Generation"
-                ]
-              },
               "type": "EXILE_CARDS",
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "G Generation"
+                  ]
+                }
               }
             }
           ],
@@ -61,7 +63,15 @@
       "triggers": [
         "WHILE_PAIRED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
         {
           "duration": "PERMANENT",

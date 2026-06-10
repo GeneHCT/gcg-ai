@@ -33,7 +33,7 @@
       "actions": [
         {
           "stat": "AP",
-          "modification": 1,
+          "modification": "+1",
           "duration": "THIS_TURN",
           "type": "MODIFY_STAT",
           "target": {
@@ -41,7 +41,7 @@
           }
         },
         {
-          "keyword": "HIGH-MANEUVERS",
+          "keyword": "HIGH_MANEUVER",
           "duration": "THIS_TURN",
           "conditions": [
             {
@@ -52,8 +52,7 @@
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,

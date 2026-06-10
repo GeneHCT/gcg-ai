@@ -35,7 +35,7 @@
           "conditions": [
             {
               "type": "CHECK_CARD_STATE",
-              "value": "RESTED"
+              "state": "RESTED"
             }
           ],
           "duration": "THIS_TURN",

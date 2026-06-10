@@ -42,18 +42,19 @@
           "conditions": [
             {
               "type": "CHECK_TURN",
-              "owner": "SELF"
+              "owner": "SELF",
+              "turn_owner": "SELF"
             }
           ],
           "optional_actions": [
             {
               "amount": 1,
-              "filters": {
-                "color": "Red"
-              },
               "type": "DISCARD",
               "target": {
-                "selector": "SELF_HAND"
+                "selector": "SELF_HAND",
+                "filters": {
+                  "color": "Red"
+                }
               }
             }
           ],

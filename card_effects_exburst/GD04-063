@@ -23,15 +23,23 @@
       ],
       "actions": [
         {
-          "type": "DESTROY_CARD",
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 1
               }
             }
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],

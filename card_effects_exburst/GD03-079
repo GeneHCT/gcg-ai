@@ -10,17 +10,24 @@
       "conditions": [
         {
           "type": "CHECK_CARD_STATE",
-          "target_selector": "FRIENDLY_BASE",
           "operator": "==",
-          "state": "RESTED"
+          "state": "RESTED",
+          "target": {
+            "selector": "FRIENDLY_BASE"
+          }
         }
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "target": {
-            "selector": "SELF"
-          }
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "REST_UNIT",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ]
         }
       ],
       "is_supported": true,

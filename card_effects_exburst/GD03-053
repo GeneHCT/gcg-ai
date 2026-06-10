@@ -16,41 +16,58 @@
         },
         {
           "type": "CHECK_TRAIT",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
           "traits": [
             "Tekkadan"
           ]
         },
         {
           "type": "CHECK_TRAIT",
-          "target": "OTHER_FRIENDLY_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
           "traits": [
             "Teiwaz"
           ]
         },
         {
           "type": "CHECK_STAT",
-          "target": "ENEMY_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
           "stat": "LEVEL",
           "operator": "<=",
           "value": 4
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
         {
-          "type": "REST_UNIT",
-          "filters": {
-            "level": 4,
-            "operator": "<="
-          },
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "level": {
                 "operator": "<=",
                 "value": 4
               }
             }
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
           }
         }
       ],
@@ -76,8 +93,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "BLOCKER",
-          "value": null
+          "keyword": "BLOCKER"
         }
       ],
       "is_supported": true,
@@ -85,7 +101,8 @@
       "metadata": {
         "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

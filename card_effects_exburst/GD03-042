@@ -21,15 +21,17 @@
       "actions": [
         {
           "type": "GRANT_ATTACK_TARGETING",
-          "selector": "ENEMY_UNIT",
-          "filters": {
-            "is_active": true,
-            "level": {
-              "operator": "<=",
-              "value": 5
+          "duration": "PERMANENT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 5
+              },
+              "state": "ACTIVE"
             }
-          },
-          "duration": "PERMANENT"
+          }
         }
       ],
       "is_supported": true,

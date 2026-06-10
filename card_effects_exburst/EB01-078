@@ -20,9 +20,13 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "selector": "LOOKED_AT_CARD",
-              "value": "Unit",
-              "operator": "=="
+              "operator": "==",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              },
+              "traits": [
+                "Unit"
+              ]
             }
           ],
           "actions": [

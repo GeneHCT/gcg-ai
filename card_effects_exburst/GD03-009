@@ -10,50 +10,50 @@
       "conditions": [],
       "actions": [
         {
-          "conditions": [
-            {
-              "type": "CHECK_TRAIT",
-              "value": "Titans",
-              "comparison": "found",
-              "target": "SELF_TRASH",
-              "required_count": 2
-            }
-          ],
+          "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
-              "filters": {
-                "traits": [
-                  "Titans"
-                ],
-                "count": 2
-              },
+              "type": "SELECT_TARGET",
+              "target": {
+                "selector": "SELF_TRASH",
+                "selection_method": "CHOOSE",
+                "count": 2,
+                "filters": {
+                  "traits": [
+                    "Titans"
+                  ]
+                }
+              }
+            },
+            {
               "type": "EXILE_CARDS",
               "target": {
-                "selector": "SELF_TRASH"
-              }
-            }
-          ],
-          "next_if_success": [
-            {
-              "conditions": [
+                "selector": "SELECTED_CARD"
+              },
+              "next_if_success": [
                 {
-                  "type": "CHECK_STAT",
-                  "stat": "LEVEL",
-                  "value": 4,
-                  "comparison": "<=",
-                  "target": "ENEMY_UNIT"
+                  "type": "SELECT_TARGET",
+                  "target": {
+                    "selector": "ENEMY_UNIT",
+                    "selection_method": "CHOOSE",
+                    "count": 1,
+                    "filters": {
+                      "level": {
+                        "operator": "<=",
+                        "value": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "REST_UNIT",
+                  "target": {
+                    "selector": "SELECTED_CARD"
+                  }
                 }
-              ],
-              "type": "REST_UNIT",
-              "target": {
-                "selector": "ENEMY_UNIT"
-              }
+              ]
             }
-          ],
-          "type": "OPTIONAL_ACTION",
-          "target": {
-            "selector": "SELF_TRASH"
-          }
+          ]
         }
       ],
       "is_supported": true,

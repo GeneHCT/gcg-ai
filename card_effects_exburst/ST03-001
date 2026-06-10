@@ -7,16 +7,23 @@
       "triggers": [
         "ON_PAIRED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
+        }
+      ],
       "actions": [
         {
-          "keyword": "HIGH-MANEUVER",
+          "keyword": "HIGH_MANEUVER",
           "duration": "PERMANENT",
           "type": "GRANT_KEYWORD",
           "target": {
             "selector": "SELF"
-          },
-          "value": null
+          }
         }
       ],
       "is_supported": true,
@@ -39,17 +46,27 @@
         },
         {
           "type": "CHECK_CARD_STATE",
-          "target_selector": "ENEMY_SHIELDS",
-          "state": "DESTROYED"
+          "state": "DESTROYED",
+          "target": {
+            "selector": "OPPONENT_SHIELDS"
+          }
         }
       ],
       "actions": [
+        {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
         {
           "amount": 2,
           "damage_type": "EFFECT",
           "type": "DAMAGE_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

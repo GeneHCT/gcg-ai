@@ -27,12 +27,20 @@
       "effect_id": "GD04-099-E2",
       "effect_type": "TRIGGERED",
       "triggers": [
-        "ON_LINKED"
+        "ON_LINKED",
+        "ON_ATTACK"
       ],
       "conditions": [
         {
           "type": "CHECK_TURN",
           "value": "ATTACK"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
@@ -40,12 +48,12 @@
           "type": "OPTIONAL_ACTION",
           "actions": [
             {
-              "type": "SELECTED_CARD",
-              "filters": {
-                "card_type": "PILOT"
-              },
+              "type": "SELECT_TARGET",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "card_type": "PILOT"
+                }
               }
             },
             {

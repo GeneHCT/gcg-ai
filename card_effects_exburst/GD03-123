@@ -32,6 +32,20 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -42,10 +56,12 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "trait": "Jupitris",
               "target": {
                 "selector": "FRIENDLY_UNIT"
-              }
+              },
+              "traits": [
+                "Jupitris"
+              ]
             }
           ],
           "actions": [
@@ -60,11 +76,23 @@
               ],
               "type": "REST_UNIT",
               "target": {
-                "selector": "ENEMY_UNIT"
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 3
+                  }
+                }
               }
             }
           ],
           "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

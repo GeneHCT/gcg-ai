@@ -53,12 +53,14 @@
           "conditions": [
             {
               "type": "CHECK_MILLED_TRAITS",
-              "trait": "CB",
               "operator": ">=",
-              "value": 1
+              "value": 1,
+              "traits": [
+                "CB"
+              ]
             }
           ],
-          "success_actions": [
+          "true_actions": [
             {
               "type": "DRAW",
               "amount": 1

@@ -13,6 +13,13 @@
             "selector": "SELF"
           },
           "state": "PAIRED"
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "modifiers": [

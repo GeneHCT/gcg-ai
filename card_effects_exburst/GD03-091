@@ -32,16 +32,16 @@
       "conditions": [],
       "actions": [
         {
-          "filters": {
-            "card_type": "BASE",
-            "traits": [
-              "ZAFT"
-            ]
-          },
           "amount": 1,
           "type": "SELECT_LOOKED_AT_CARD",
           "target": {
-            "selector": "SELF_TRASH"
+            "selector": "SELF_TRASH",
+            "filters": {
+              "card_type": "BASE",
+              "traits": [
+                "ZAFT"
+              ]
+            }
           }
         },
         {

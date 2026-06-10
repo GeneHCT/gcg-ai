@@ -10,10 +10,10 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "value": "White",
           "target": {
             "selector": "FRIENDLY_UNIT"
-          }
+          },
+          "color": "White"
         },
         {
           "type": "CHECK_KEYWORD",
@@ -25,20 +25,11 @@
       ],
       "actions": [
         {
-          "type": "SET_ACTIVE",
-          "filters": [
-            {
-              "state": "RESTED"
-            },
-            {
-              "color": "White"
-            },
-            {
-              "has_keyword": "blocker"
-            }
-          ],
+          "type": "SELECT_TARGET",
           "target": {
             "selector": "FRIENDLY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1,
             "filters": {
               "state": "RESTED",
               "has_keyword": "blocker"
@@ -46,17 +37,18 @@
           }
         },
         {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
           "type": "GRANT_KEYWORD",
           "keyword": "SUPPRESSION",
           "duration": "THIS_TURN",
           "target": {
-            "selector": "FRIENDLY_UNIT",
-            "filters": {
-              "state": "RESTED",
-              "has_keyword": "blocker"
-            }
-          },
-          "value": null
+            "selector": "SELECTED_CARD"
+          }
         }
       ],
       "is_supported": true,

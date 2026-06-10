@@ -12,11 +12,13 @@
           "type": "COUNT_CARDS",
           "value": 3,
           "operator": ">=",
-          "filters": {
-            "trait": "League Militaire"
-          },
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "League Militaire"
+              ]
+            }
           }
         }
       ],

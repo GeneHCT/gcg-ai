@@ -10,22 +10,36 @@
       "conditions": [
         {
           "type": "CHECK_TRAIT",
-          "target_selector": "OTHER_FRIENDLY_UNIT",
           "traits": [
             "Superpower Bloc"
-          ]
+          ],
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
         },
         {
           "type": "CHECK_CARD_STATE",
-          "state": "rested",
-          "target_selector": "SELF"
+          "state": "RESTED",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "CHECK_PAIR_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "PAIRED"
         }
       ],
       "actions": [
         {
           "type": "GRANT_ATTACK_TARGETING",
           "target": {
-            "selector": "SELF"
+            "selector": "SELF",
+            "filters": {
+              "state": "RESTED"
+            }
           }
         }
       ],

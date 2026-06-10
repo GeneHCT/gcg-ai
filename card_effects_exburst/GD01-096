@@ -31,19 +31,20 @@
       "conditions": [
         {
           "type": "CHECK_COLOR",
-          "value": "White",
           "operator": "==",
           "target": {
             "selector": "SELF"
-          }
+          },
+          "color": "White"
         }
       ],
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "SELF",
           "keyword": "BLOCKER",
-          "value": null
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

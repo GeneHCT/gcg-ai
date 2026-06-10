@@ -19,10 +19,12 @@
               "conditions": [
                 {
                   "type": "CHECK_TRAIT",
-                  "value": "CB",
                   "card_type": [
                     "UNIT",
                     "PILOT"
+                  ],
+                  "traits": [
+                    "CB"
                   ]
                 }
               ],

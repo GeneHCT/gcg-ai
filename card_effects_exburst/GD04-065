@@ -17,13 +17,11 @@
         {
           "type": "EXILE_CARDS",
           "amount": 3,
-          "filters": [
-            {
+          "target": {
+            "selector": "SELF_TRASH",
+            "filters": {
               "color": "Blue"
             }
-          ],
-          "target": {
-            "selector": "SELF_TRASH"
           }
         },
         {

@@ -32,6 +32,24 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Vagan"
+              ],
+              "card_type": "UNIT",
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
           "amount": 1,
           "type": "SHIELD_TO_HAND",
           "target": {
@@ -47,24 +65,32 @@
           ],
           "optional_actions": [
             {
-              "filters": {
-                "level": {
-                  "operator": "<=",
-                  "value": 4
-                },
-                "card_type": "UNIT",
-                "traits": [
-                  "Vagan"
-                ]
-              },
-              "cost_payment": true,
               "type": "DEPLOY_FROM_ZONE",
               "target": {
-                "selector": "SELF_TRASH"
-              }
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 4
+                  },
+                  "card_type": "UNIT",
+                  "traits": [
+                    "Vagan"
+                  ]
+                },
+                "card_type": "UNIT"
+              },
+              "pay_cost": true
             }
           ],
           "type": "OPTIONAL_ACTION"
+        },
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "source_zone": "TRASH"
         }
       ],
       "is_supported": true,

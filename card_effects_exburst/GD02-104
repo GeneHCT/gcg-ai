@@ -36,14 +36,16 @@
           "amount": 1,
           "conditions": [
             {
-              "condition_type": "CHECK_TRAIT",
               "trait": "Newtype",
               "operator": ">=",
-              "value": 1,
               "card_type": "Pilot",
               "target": {
                 "selector": "FRIENDLY_UNIT"
-              }
+              },
+              "type": "CHECK_TRAIT",
+              "traits": [
+                1
+              ]
             }
           ],
           "type": "DRAW",

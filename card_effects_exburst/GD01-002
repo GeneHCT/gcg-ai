@@ -12,30 +12,30 @@
         {
           "optional_actions": [
             {
-              "filters": {
-                "card_type": "UNIT",
-                "has_keyword": "link",
-                "name_contains": "Unicorn Mode",
-                "level": 5
-              },
               "type": "DESTROY_CARD",
               "target": {
-                "selector": "FRIENDLY_UNIT"
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "card_type": "UNIT",
+                  "has_keyword": "link",
+                  "name_contains": "Unicorn Mode",
+                  "level": 5
+                }
               }
             }
           ],
           "next_if_success": [
             {
-              "cost": 0,
               "type": "MODIFY_COST",
               "scope": "PLAY",
               "target": {
                 "selector": "SELF"
-              }
+              },
+              "modification": "=0"
             },
             {
               "stat": "LEVEL",
-              "modification": 0,
+              "modification": "+0",
               "type": "MODIFY_STAT",
               "target": {
                 "selector": "SELF"
@@ -61,9 +61,17 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "selection_method": "CHOOSE",
+            "count": 1
+          }
+        },
+        {
           "type": "REST_UNIT",
           "target": {
-            "selector": "ENEMY_UNIT"
+            "selector": "SELECTED_CARD"
           }
         }
       ],

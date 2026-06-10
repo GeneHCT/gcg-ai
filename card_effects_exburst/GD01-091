@@ -33,26 +33,33 @@
         {
           "type": "CHECK_TURN",
           "operator": "==",
-          "value": "YOUR_TURN"
+          "value": "YOUR_TURN",
+          "turn_owner": "SELF"
         },
         {
           "type": "CHECK_KEYWORD",
           "keyword": "BREACH",
-          "target": "SELF"
+          "target": {
+            "selector": "SELF"
+          }
         },
         {
           "type": "CHECK_STAT",
           "stat": "AP",
           "operator": "<=",
           "value": 3,
-          "target": "ENEMY_UNIT"
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         }
       ],
       "actions": [
         {
           "type": "GRANT_PROTECTION",
           "protection_type": "BATTLE_DAMAGE",
-          "target": "SELF",
+          "target": {
+            "selector": "SELF"
+          },
           "duration": "THIS_TURN"
         }
       ],

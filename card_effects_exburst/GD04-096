@@ -32,15 +32,19 @@
       "conditions": [
         {
           "type": "CHECK_STAT",
-          "target_selector": "ENEMY_UNIT",
           "stat": "level",
           "operator": "<=",
-          "value": 5
+          "value": 5,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
         },
         {
           "type": "CHECK_LINK_STATUS",
-          "target_selector": "SELF",
-          "value": true
+          "value": true,
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "actions": [

@@ -13,11 +13,6 @@
           "owner": "SELF",
           "operator": "==",
           "turn_owner": "SELF"
-        },
-        {
-          "type": "CHECK_CARD_STATE",
-          "target": "ENEMY_UNIT",
-          "state": "DESTROYED_BY_BATTLE_DAMAGE"
         }
       ],
       "actions": [
@@ -42,7 +37,15 @@
       "triggers": [
         "WHILE_LINKED"
       ],
-      "conditions": [],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
+        }
+      ],
       "actions": [
         {
           "type": "MODIFY_STAT",

@@ -13,15 +13,21 @@
           "conditions": [
             {
               "type": "CHECK_TRAIT",
-              "target": "SELECTED_CARD",
-              "value": "Earth Federation",
-              "operator": "=="
+              "target": {
+                "selector": "SELECTED_CARD"
+              },
+              "operator": "==",
+              "traits": [
+                "Earth Federation"
+              ]
             },
             {
               "type": "CHECK_COLOR",
-              "target": "SELECTED_CARD",
-              "value": "Green",
-              "operator": "=="
+              "target": {
+                "selector": "SELECTED_CARD"
+              },
+              "operator": "==",
+              "color": "Green"
             }
           ],
           "optional_actions": [

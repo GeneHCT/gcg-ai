@@ -11,12 +11,21 @@
         {
           "type": "CHECK_CARD_STATE",
           "state": "RESTED",
-          "filters": {
-            "trait": "CB"
-          },
           "target": {
-            "selector": "FRIENDLY_UNIT"
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "CB"
+              ]
+            }
           }
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [
@@ -49,8 +58,7 @@
           "target": {
             "selector": "SELF"
           },
-          "keyword": "FIRST_STRIKE",
-          "value": null
+          "keyword": "FIRST_STRIKE"
         }
       ],
       "is_supported": true,
@@ -58,7 +66,8 @@
       "metadata": {
         "raw_text": "<First Strike> (While this Unit is attacking, it deals damage before the enemy Unit.)",
         "source": "known_pattern"
-      }
+      },
+      "triggers": []
     }
   ],
   "metadata": {

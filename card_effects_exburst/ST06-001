@@ -22,10 +22,11 @@
       "actions": [
         {
           "type": "GRANT_KEYWORD",
-          "selector": "SELF",
           "keyword": "FIRST_STRIKE",
           "duration": "THIS_TURN",
-          "value": null
+          "target": {
+            "selector": "SELF"
+          }
         }
       ],
       "is_supported": true,

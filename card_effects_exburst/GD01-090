@@ -35,6 +35,13 @@
           "stat": "AP",
           "modification": "reduce",
           "source": "ENEMY_UNIT"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [

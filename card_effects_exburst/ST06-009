@@ -32,34 +32,41 @@
       "conditions": [],
       "actions": [
         {
-          "amount": 1,
-          "type": "LOOK_AT_DECK"
-        },
-        {
-          "conditions": [
-            {
-              "type": "CHECK_TRAIT",
-              "trait": "Clan",
-              "target": {
-                "selector": "LOOKED_AT_CARD"
-              }
-            }
-          ],
+          "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
-              "type": "SELECT_LOOKED_AT_CARD"
+              "amount": 1,
+              "type": "LOOK_AT_DECK"
             },
             {
-              "type": "ADD_TO_HAND",
-              "target": {
-                "selector": "SELECTED_CARD"
-              }
+              "conditions": [
+                {
+                  "type": "CHECK_TRAIT",
+                  "target": {
+                    "selector": "LOOKED_AT_CARD"
+                  },
+                  "traits": [
+                    "Clan"
+                  ]
+                }
+              ],
+              "optional_actions": [
+                {
+                  "type": "SELECT_LOOKED_AT_CARD"
+                },
+                {
+                  "type": "ADD_TO_HAND",
+                  "target": {
+                    "selector": "SELECTED_CARD"
+                  }
+                }
+              ],
+              "type": "CONDITIONAL_BRANCH"
+            },
+            {
+              "type": "RETURN_LOOKED_TO_BOTTOM"
             }
-          ],
-          "type": "CONDITIONAL_BRANCH"
-        },
-        {
-          "type": "RETURN_LOOKED_TO_BOTTOM"
+          ]
         }
       ],
       "is_supported": true,

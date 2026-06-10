@@ -10,18 +10,31 @@
       "conditions": [],
       "actions": [
         {
+          "type": "SELECT_TARGET",
+          "target": {
+            "selector": "SELF_TRASH",
+            "selection_method": "CHOOSE",
+            "count": 1,
+            "filters": {
+              "traits": [
+                "Vagan"
+              ]
+            }
+          }
+        },
+        {
           "type": "OPTIONAL_ACTION",
           "optional_actions": [
             {
               "type": "EXILE_CARDS",
               "amount": 1,
-              "filters": {
-                "traits": [
-                  "Vagan"
-                ]
-              },
               "target": {
-                "selector": "SELF_TRASH"
+                "selector": "SELF_TRASH",
+                "filters": {
+                  "traits": [
+                    "Vagan"
+                  ]
+                }
               }
             }
           ],
@@ -31,16 +44,25 @@
               "stat": "AP",
               "modification": "+2",
               "duration": "THIS_TURN",
-              "filters": {
-                "traits": [
-                  "Vagan"
-                ]
-              },
               "target": {
-                "selector": "FRIENDLY_UNIT"
+                "selector": "FRIENDLY_UNIT",
+                "filters": {
+                  "traits": [
+                    "Vagan"
+                  ]
+                }
               }
             }
           ]
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "stat": "AP",
+          "modification": "+2",
+          "duration": "THIS_TURN"
         }
       ],
       "is_supported": true,

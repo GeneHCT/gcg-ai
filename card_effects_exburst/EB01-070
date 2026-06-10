@@ -3,9 +3,9 @@
   "effects": [
     {
       "effect_id": "EB01-070-E1",
-      "effect_type": "TRIGGERED",
+      "effect_type": "ACTIVATED",
       "triggers": [
-        "WHILE_LINKED"
+        "ACTIVATE_ACTION"
       ],
       "conditions": [
         {
@@ -13,6 +13,13 @@
           "operator": "==",
           "value": "OPPONENT",
           "turn_owner": "OPPONENT"
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": {
+            "selector": "SELF"
+          },
+          "is_linked": true
         }
       ],
       "actions": [

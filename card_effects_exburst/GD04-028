@@ -1,0 +1,79 @@
+{
+  "card_id": "GD04-028",
+  "effects": [
+    {
+      "effect_id": "GD04-028-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "BLOCKER",
+          "duration": "THIS_TURN",
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "selector": "ENEMY_UNIT",
+              "state": "ACTIVE"
+            }
+          ],
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE"
+            }
+          },
+          "value": null
+        },
+        {
+          "optional_actions": [
+            {
+              "type": "REST_UNIT",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_CARD_STATE",
+                  "selector": "ENEMY_UNIT",
+                  "state": "ACTIVE"
+                }
+              ],
+              "type": "GRANT_ATTACK_TARGETING",
+              "target": {
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "state": "ACTIVE"
+                }
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】Choose 1 active enemy Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】Choose 1 active enemy Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

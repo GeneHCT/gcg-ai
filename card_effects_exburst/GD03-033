@@ -1,0 +1,85 @@
+{
+  "card_id": "GD03-033",
+  "effects": [
+    {
+      "effect_id": "GD03-033-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operator": "==",
+          "value": "YOUR_TURN"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "PAIRED_PILOT",
+          "value": "ZAFT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "duration": "THIS_TURN",
+          "filters": {
+            "traits": [
+              "ZAFT"
+            ]
+          },
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "modification": "+2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair･(ZAFT) Pilot】During your turn, all your (ZAFT) Units get AP+2.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-033-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": {
+            "type": "STAT_DIVIDE",
+            "stat": "AP",
+            "target": "SELF",
+            "divisor": 4
+          },
+          "damage_type": "EFFECT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】Choose 1 enemy Unit. Deal 1 damage to it for each 4 AP this Unit has.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair･(ZAFT) Pilot】During your turn, all your (ZAFT) Units get AP+2.; 【Attack】Choose 1 enemy Unit. Deal 1 damage to it for each 4 AP this Unit has.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

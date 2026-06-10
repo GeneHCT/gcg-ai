@@ -1,0 +1,46 @@
+{
+  "card_id": "GD04-053",
+  "effects": [
+    {
+      "effect_id": "GD04-053-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_RECEIVE_EFFECT_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "REDUCE_DAMAGE",
+          "amount": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Once per Turn】When this Unit receives damage from an enemy, reduce it by 1.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Once per Turn】When this Unit receives damage from an enemy, reduce it by 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

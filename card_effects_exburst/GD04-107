@@ -1,0 +1,69 @@
+{
+  "card_id": "GD04-107",
+  "effects": [
+    {
+      "effect_id": "GD04-107-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-107-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "RESTED"
+            }
+          ],
+          "duration": "THIS_TURN",
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 of your rested Units. During this turn, all enemy Units must choose that Unit as their attack target when attacking.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【Action】Choose 1 of your rested Units. During this turn, all enemy Units must choose that Unit as their attack target when attacking.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

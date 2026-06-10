@@ -143,6 +143,11 @@ class LinkManager:
         
         # Pair pilot with unit
         unit.paired_pilot = pilot_instance
+        pilot_instance.paired_unit = unit
+
+        pilot_hp_bonus = getattr(pilot_card, "hp", 0) or 0
+        if pilot_hp_bonus > 0:
+            unit.current_hp = min(unit.current_hp + pilot_hp_bonus, unit.hp)
         
         # Rule 3-3-8-1: Pilot AP/HP are modifiers (+1, +2, etc.) - applied via unit.ap/hp properties
         # Rule 3-3-9-2: "Below name" text (e.g. 【During Link】AP+1 HP+1) gained by Unit while paired
@@ -269,6 +274,7 @@ class LinkManager:
         
         pilot_card = unit.paired_pilot.card_data
         unit.paired_pilot = None
+        unit.current_hp = min(unit.current_hp, unit.hp)
         
         # Remove pilot-derived bonuses (During Link AP/HP)
         for kw in ["pilot_ap_bonus", "pilot_hp_bonus"]:

@@ -1,0 +1,57 @@
+{
+  "card_id": "GD03-077",
+  "effects": [
+    {
+      "effect_id": "GD03-077-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "condition_type": "CHECK_STAT",
+              "stat": "HP",
+              "operator": "<=",
+              "value": 3
+            }
+          ],
+          "amount": 3,
+          "min": 1,
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            },
+            "variable_count": {
+              "min": 1,
+              "max": 3
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Choose 1 to 3 enemy Units with 3 or less HP. Return them to their owners' hands.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Linked】Choose 1 to 3 enemy Units with 3 or less HP. Return them to their owners' hands.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

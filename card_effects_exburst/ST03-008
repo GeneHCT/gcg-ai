@@ -1,0 +1,40 @@
+{
+  "card_id": "ST03-008",
+  "effects": [
+    {
+      "effect_id": "ST03-008-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "+2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】This Unit gets AP+2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】This Unit gets AP+2 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

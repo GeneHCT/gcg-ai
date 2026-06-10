@@ -1,0 +1,66 @@
+{
+  "card_id": "GD01-090",
+  "effects": [
+    {
+      "effect_id": "GD01-090-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-090-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "modification": "reduce",
+          "source": "ENEMY_UNIT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】This Unit's AP can't be reduced by enemy effects.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【During Link】This Unit's AP can't be reduced by enemy effects.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

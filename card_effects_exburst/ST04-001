@@ -1,0 +1,81 @@
+{
+  "card_id": "ST04-001",
+  "effects": [
+    {
+      "effect_id": "ST04-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "stat": "LEVEL",
+          "operator": ">=",
+          "value": 4
+        }
+      ],
+      "actions": [
+        {
+          "type": "DISCARD",
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "HP",
+              "operator": "<=",
+              "value": 4
+            }
+          ],
+          "destination": "OWNER_HAND",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired･Lv.4 or Higher Pilot】Choose 1 enemy Unit with 4 or less HP. Return it to its owner's hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "ST04-001-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Blocker> (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); 【When Paired･Lv.4 or Higher Pilot】Choose 1 enemy Unit with 4 or less HP. Return it to its owner's hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

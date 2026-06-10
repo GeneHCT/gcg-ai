@@ -11,9 +11,13 @@ class EffectIntegration:
     """Integrates effect system with game manager"""
     
     @staticmethod
-    def initialize():
+    def initialize(effects_dirs=None, strict: bool = False, force_reload: bool = False):
         """Initialize the effect system"""
-        trigger_manager = get_trigger_manager()
+        trigger_manager = get_trigger_manager(
+            strict=strict,
+            effects_dirs=effects_dirs,
+            force_reload=force_reload,
+        )
         print(f"✓ Effect system initialized with {len(trigger_manager.effects_cache)} card effects")
     
     @staticmethod
@@ -126,6 +130,15 @@ class EffectIntegration:
             game_state=game_state,
             source_card=unit,
             source_player_id=unit.owner_id
+        )
+        results.extend(
+            trigger_manager.trigger_event(
+                event_type="ON_PAIR_PILOT",
+                game_state=game_state,
+                source_card=unit,
+                source_player_id=unit.owner_id,
+                paired_pilot=getattr(unit, "paired_pilot", None),
+            )
         )
         
         # Log results

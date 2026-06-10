@@ -1,0 +1,50 @@
+{
+  "card_id": "EB01-070",
+  "effects": [
+    {
+      "effect_id": "EB01-070-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operator": "==",
+          "value": "OPPONENT",
+          "turn_owner": "OPPONENT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "duration": "THIS_BATTLE",
+          "stat": "AP",
+          "modification": "+1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Activate･Action】【Once per Turn】① : If it is your opponent's turn, choose 1 Unit. It gets AP+1 during this battle.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Activate･Action】【Once per Turn】① : If it is your opponent's turn, choose 1 Unit. It gets AP+1 during this battle.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

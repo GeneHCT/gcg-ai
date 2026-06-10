@@ -1,0 +1,88 @@
+{
+  "card_id": "ST03-010",
+  "effects": [
+    {
+      "effect_id": "ST03-010-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST03-010-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": [
+            "Neo Zeon",
+            "Zeon"
+          ],
+          "operator": "=="
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "value": 4,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "DEPLOY_FROM_ZONE",
+              "source_zone": "SELF_HAND",
+              "filters": {
+                "traits": [
+                  "Neo Zeon",
+                  "Zeon"
+                ],
+                "level": 4,
+                "level_operator": "<="
+              },
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】You may deploy 1 (Neo Zeon)/(Zeon) Unit card that is Lv.4 or lower from your hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Paired】You may deploy 1 (Neo Zeon)/(Zeon) Unit card that is Lv.4 or lower from your hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

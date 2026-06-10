@@ -1,0 +1,57 @@
+{
+  "card_id": "GD01-053",
+  "effects": [
+    {
+      "effect_id": "GD01-053-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": "<=",
+          "value": 2,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 1,
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 enemy Unit with 2 or less AP. Deal 1 damage to it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】【Once per Turn】①：Choose 1 enemy Unit with 2 or less AP. Deal 1 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "card_id": "ST05-014",
+  "effects": [
+    {
+      "effect_id": "ST05-014-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 1,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 enemy Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST05-014-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 enemy Unit that is Lv.3 or lower. Destroy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 enemy Unit. Deal 1 damage to it.; 【Main】Choose 1 enemy Unit that is Lv.3 or lower. Destroy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

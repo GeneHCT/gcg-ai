@@ -1,0 +1,45 @@
+{
+  "card_id": "GD02-023",
+  "effects": [
+    {
+      "effect_id": "GD02-023-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PLAYER_LEVEL",
+          "operator": ">=",
+          "value": 7
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "FIRST_STRIKE",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】While you are Lv.7 or higher, this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】While you are Lv.7 or higher, this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

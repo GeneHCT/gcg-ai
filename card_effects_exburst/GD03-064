@@ -1,0 +1,61 @@
+{
+  "card_id": "GD03-064",
+  "effects": [
+    {
+      "effect_id": "GD03-064-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "X-Rounder"
+            }
+          ],
+          "optional_actions": [
+            {
+              "amount": 1,
+              "type": "ADD_TO_HAND",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": 1,
+              "type": "DISCARD",
+              "target": {
+                "selector": "SELF_HAND"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】You may choose 1 (X-Rounder) card from your trash and add it to your hand. If you do, discard 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】You may choose 1 (X-Rounder) card from your trash and add it to your hand. If you do, discard 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

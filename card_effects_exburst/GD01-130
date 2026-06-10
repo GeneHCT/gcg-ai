@@ -1,0 +1,100 @@
+{
+  "card_id": "GD01-130",
+  "effects": [
+    {
+      "effect_id": "GD01-130-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Deploy this card.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-130-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "SHIELD_TO_HAND",
+          "amount": 1,
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Add 1 of your Shields to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-130-E3",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "value": "Academy",
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "stat": "AP",
+          "modification": "-1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】Rest this Base：If a friendly (Academy) Unit is in play, choose 1 enemy Unit. It gets AP-1 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Deploy this card.; 【Deploy】Add 1 of your Shields to your hand.; 【Activate･Main】Rest this Base：If a friendly (Academy) Unit is in play, choose 1 enemy Unit. It gets AP-1 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -163,8 +163,8 @@ while not game_state.is_terminal():
     # Get observation
     obs = manager.get_observation(game_state.turn_player)
     
-    # Get legal actions
-    actions = LegalActionGenerator.get_legal_actions(game_state)
+    # Get legal moves
+    moves = LegalActionGenerator.get_legal_actions(game_state)
     
     # Agent chooses action
     action = agent.choose_action(game_state, actions)
@@ -193,8 +193,8 @@ while not game_state.is_terminal():
 
 ### Detailed Logging
 - All phase transitions
-- Legal actions available
-- Actions taken and results
+- Legal moves available
+- Moves taken and results
 - Game state after each turn
 - Burst effects and trash tracking
 

@@ -1,0 +1,70 @@
+{
+  "card_id": "GD03-085",
+  "effects": [
+    {
+      "effect_id": "GD03-085-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-085-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLAY_FROM_HAND"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TARGET",
+          "target_selector": "PAIRED_PILOT",
+          "filter": {
+            "name_contains": "Gundam NT-1"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_COST",
+          "duration": "THIS_TURN",
+          "scope": "PLAY",
+          "target": {
+            "selector": "SELF"
+          },
+          "modification": "+0"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When playing this card from your hand and pairing it with a Unit with \"Gundam NT-1\" in its card name, play this card as if it has 0 cost.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; When playing this card from your hand and pairing it with a Unit with \"Gundam NT-1\" in its card name, play this card as if it has 0 cost.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

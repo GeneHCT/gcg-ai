@@ -1,0 +1,53 @@
+{
+  "card_id": "GD04-023",
+  "effects": [
+    {
+      "effect_id": "GD04-023-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "paired_with_pilot_trait": "Super Soldier"
+          },
+          "duration": "THIS_TURN",
+          "target_limitations": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "is_active": true,
+              "level": "<=4"
+            }
+          },
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Super Soldier"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your Units paired with a (Super Soldier) Pilot. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 of your Units paired with a (Super Soldier) Pilot. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

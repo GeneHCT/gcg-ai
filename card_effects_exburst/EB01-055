@@ -1,0 +1,58 @@
+{
+  "card_id": "EB01-055",
+  "effects": [
+    {
+      "effect_id": "EB01-055-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "operator": ">=",
+          "value": 2,
+          "target": {
+            "selector": "ENEMY_PLAYER"
+          }
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "RESTED",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "protection_type": "BATTLE_DAMAGE",
+          "source_filter": {
+            "owner": "ENEMY",
+            "card_type": "UNIT"
+          },
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "if there are 2 or more enemy players and this Unit is rested, friendly Shields can't receive battle damage from enemy Units.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "if there are 2 or more enemy players and this Unit is rested, friendly Shields can't receive battle damage from enemy Units.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

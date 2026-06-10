@@ -1,0 +1,98 @@
+{
+  "card_id": "GD01-111",
+  "effects": [
+    {
+      "effect_id": "GD01-111-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 enemy Unit. Deal 2 damage to it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-111-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "<",
+          "value": "MAX_HP"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 damaged enemy Unit. Deal 3 damage to it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-111-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "<",
+          "value": "MAX_HP"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 damaged enemy Unit. Deal 3 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 enemy Unit. Deal 2 damage to it.; 【Main】/【Action】Choose 1 damaged enemy Unit. Deal 3 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

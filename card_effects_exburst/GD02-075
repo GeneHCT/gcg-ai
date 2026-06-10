@@ -1,0 +1,70 @@
+{
+  "card_id": "GD02-075",
+  "effects": [
+    {
+      "effect_id": "GD02-075-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "target": "FRIENDLY_BASE",
+              "state": "ACTIVE"
+            }
+          ],
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "FRIENDLY_BASE",
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        },
+        {
+          "next_if_success": [
+            {
+              "stat": "AP",
+              "modification": -2,
+              "duration": "THIS_BATTLE",
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "target": "ENEMY_UNIT",
+                  "stat": "LV",
+                  "operator": "<=",
+                  "value": 4
+                }
+              ],
+              "type": "MODIFY_STAT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】Choose 1 active friendly Base. Rest it. If you do, choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this battle.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】Choose 1 active friendly Base. Rest it. If you do, choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this battle.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

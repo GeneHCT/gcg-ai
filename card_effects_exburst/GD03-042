@@ -1,0 +1,53 @@
+{
+  "card_id": "GD03-042",
+  "effects": [
+    {
+      "effect_id": "GD03-042-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": ">=",
+          "value": 5,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "selector": "ENEMY_UNIT",
+          "filters": {
+            "is_active": true,
+            "level": {
+              "operator": "<=",
+              "value": 5
+            }
+          },
+          "duration": "PERMANENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this Unit has 5 or more AP, it may choose an active enemy Unit that is Lv.5 or lower as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While this Unit has 5 or more AP, it may choose an active enemy Unit that is Lv.5 or lower as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "card_id": "ST05-005",
+  "effects": [
+    {
+      "effect_id": "ST05-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": "<=",
+          "value": 4
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】Choose 1 enemy Unit with 4 or less AP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Destroyed】Choose 1 enemy Unit with 4 or less AP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

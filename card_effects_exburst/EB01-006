@@ -1,0 +1,40 @@
+{
+  "card_id": "EB01-006",
+  "effects": [
+    {
+      "effect_id": "EB01-006-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "REPAIR",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "value": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your Units. It gains【Repair 1】 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 of your Units. It gains【Repair 1】during this turn. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

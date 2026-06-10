@@ -1,0 +1,83 @@
+{
+  "card_id": "GD03-052",
+  "effects": [
+    {
+      "effect_id": "GD03-052-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "keyword": "SUPPORT",
+          "value": 2,
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-052-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 5
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "FRIENDLY_UNIT",
+          "traits": [
+            "CB"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When this Unit deals battle damage to an enemy Unit that is Lv.5 or lower, if you have a (CB) Pilot in play, destroy that enemy Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.); When this Unit deals battle damage to an enemy Unit that is Lv.5 or lower, if you have a (CB) Pilot in play, destroy that enemy Unit.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "card_id": "GD04-002",
+  "effects": [
+    {
+      "effect_id": "GD04-002-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "stat": "AP",
+          "modification": "+1",
+          "filters": {
+            "traits": [
+              "Earth Federation"
+            ]
+          },
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, all your (Earth Federation) Units get AP+1.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-002-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "traits": [
+              "Earth Federation"
+            ]
+          },
+          "keyword": "ON_UNIT_DESTROYED_BY_DAMAGE",
+          "actions": [
+            {
+              "filters": {
+                "max_hp": 5
+              },
+              "type": "REST_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】During this turn, when one of your (Earth Federation) Units destroys an enemy Unit with battle damage, choose 1 enemy Unit with 5 or less HP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your turn, all your (Earth Federation) Units get AP+1.; 【Deploy】During this turn, when one of your (Earth Federation) Units destroys an enemy Unit with battle damage, choose 1 enemy Unit with 5 or less HP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

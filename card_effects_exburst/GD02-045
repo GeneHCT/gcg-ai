@@ -1,0 +1,51 @@
+{
+  "card_id": "GD02-045",
+  "effects": [
+    {
+      "effect_id": "GD02-045-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "SELF",
+          "stat": "AP",
+          "operator": ">=",
+          "value": 5
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "target_selector": "BATTLING_UNIT",
+          "state": "ENEMY"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】If this Unit has 5 or more AP and it is attacking an enemy Unit, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】If this Unit has 5 or more AP and it is attacking an enemy Unit, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

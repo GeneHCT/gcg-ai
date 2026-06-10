@@ -1,0 +1,56 @@
+{
+  "card_id": "GD04-011",
+  "effects": [
+    {
+      "effect_id": "GD04-011-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "traits": [
+            "League Militaire"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "token_traits": [
+            "League Militaire"
+          ],
+          "token_ap": 1,
+          "token_hp": 1,
+          "token_restrictions": [
+            "GRANT_ATTACK_TARGETING"
+          ],
+          "grant_attack_targeting": {
+            "selector": "ENEMY_UNIT",
+            "allowed": false
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】If another friendly (League Militaire) Unit is in play, deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Destroyed】If another friendly (League Militaire) Unit is in play, deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

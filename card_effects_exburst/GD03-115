@@ -1,0 +1,79 @@
+{
+  "card_id": "GD03-115",
+  "effects": [
+    {
+      "effect_id": "GD03-115-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Yurin L'Ciel]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD03-115-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": "X-Rounder",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_PLAYER_LEVEL",
+          "operator": ">=",
+          "value": 7,
+          "negate": false
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "selector": "FRIENDLY_UNIT",
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "AP",
+              "operator": "<=",
+              "value": 5
+            }
+          ],
+          "duration": "THIS_BATTLE",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 friendly Unit paired with an (X-Rounder) Pilot. It can't receive battle damage from enemy Units with 2 or less AP during this battle. If you are Lv.7 or higher, it can't receive battle damage from enemy Units with 5 or less AP instead.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】Choose 1 friendly Unit paired with an (X-Rounder) Pilot. It can't receive battle damage from enemy Units with 2 or less AP during this battle. If you are Lv.7 or higher, it can't receive battle damage from enemy Units with 5 or less AP instead.; 【Pilot】[Yurin L'Ciel]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "card_id": "ST05-001",
+  "effects": [
+    {
+      "effect_id": "ST05-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "optional": true,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        },
+        {
+          "stat": "AP",
+          "modification": "+1",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your other Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST05-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "damage",
+          "operator": ">",
+          "value": 0,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "keyword": "SUPPRESSION",
+          "duration": "PERMANENT",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this is damaged, it gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 of your other Units. Deal 1 damage to it. It gets AP+1 during this turn.; While this is damaged, it gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

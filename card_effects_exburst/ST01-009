@@ -1,0 +1,60 @@
+{
+  "card_id": "ST01-009",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "ST01-009-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Blocker> (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
+        "source": "known_pattern"
+      }
+    },
+    {
+      "effect_id": "ST01-009-E2",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "This Unit can't choose the enemy player as its attack target.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "CANNOT_TARGET_ENEMY_PLAYER"
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); This Unit can't choose the enemy player as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

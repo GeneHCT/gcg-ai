@@ -1,0 +1,79 @@
+{
+  "card_id": "ST04-011",
+  "effects": [
+    {
+      "effect_id": "ST04-011-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST04-011-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "ACTIVE"
+            },
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 5
+            }
+          ],
+          "duration": "THIS_TURN",
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE",
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】During this turn, this Unit may choose an active enemy Unit that is Lv.5 or lower as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Linked】During this turn, this Unit may choose an active enemy Unit that is Lv.5 or lower as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

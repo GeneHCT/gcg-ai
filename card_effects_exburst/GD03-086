@@ -1,0 +1,67 @@
+{
+  "card_id": "GD03-086",
+  "effects": [
+    {
+      "effect_id": "GD03-086-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-086-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "target_filters": {
+            "trait": "Titans",
+            "level_op": "<=",
+            "level_compare_target": "SELF"
+          },
+          "stat": "AP",
+          "modification": "+1",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】Choose 1 of your (Titans) Units whose Lv. is equal to or lower than this Unit. It gets AP+1 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【Attack】Choose 1 of your (Titans) Units whose Lv. is equal to or lower than this Unit. It gets AP+1 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

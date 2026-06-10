@@ -1,0 +1,58 @@
+{
+  "card_id": "GD02-071",
+  "effects": [
+    {
+      "effect_id": "GD02-071-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "filters": {
+            "color": "White"
+          },
+          "operator": "==",
+          "target": {
+            "selector": "FRIENDLY_BASE"
+          },
+          "state": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "actions": [
+            {
+              "type": "ON_PAIR_PILOT",
+              "selector": "SELF_HAND",
+              "filters": {
+                "traits": [
+                  "AEUG"
+                ],
+                "card_type": "PILOT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】If a friendly white Base is in play, you may pair 1 (AEUG) Pilot card from your hand with this Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】If a friendly white Base is in play, you may pair 1 (AEUG) Pilot card from your hand with this Unit.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

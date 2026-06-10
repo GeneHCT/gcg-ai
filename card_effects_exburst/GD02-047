@@ -1,0 +1,64 @@
+{
+  "card_id": "GD02-047",
+  "effects": [
+    {
+      "effect_id": "GD02-047-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "amount": 1,
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 5
+            }
+          ],
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】Rest this Unit：Destroy this and choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】Rest this Unit：Destroy this and choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "card_id": "ST04-009",
+  "effects": [
+    {
+      "effect_id": "ST04-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "FRIENDLY_UNIT",
+          "operator": ">=",
+          "value": 1,
+          "filters": {
+            "card_type": "UNIT",
+            "has_keyword": "LINK"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Destroyed】If you have another Link Unit in play, draw 1.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST04-009-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "FRIENDLY_UNIT",
+          "operator": ">=",
+          "value": 1,
+          "filters": {
+            "card_type": "UNIT",
+            "has_keyword": "LINK"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Destroyed】If you have another Link Unit in play, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair】【Destroyed】If you have another Link Unit in play, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

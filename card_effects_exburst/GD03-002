@@ -1,0 +1,79 @@
+{
+  "card_id": "GD03-002",
+  "effects": [
+    {
+      "effect_id": "GD03-002-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_OTHER_FRIENDLY_UNIT_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_KEYWORD",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "value": "REPAIR",
+          "operator": ">="
+        },
+        {
+          "type": "CHECK_STAT",
+          "target": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "value": {
+            "target": "OTHER_FRIENDLY_UNIT",
+            "stat": "LEVEL"
+          },
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】When one of your other Units with <Repair> attacks, choose 1 enemy Unit whose Lv. is equal to or lower than that Unit. Rest it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ON_PAIRED"
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-002-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Repair 3> (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "REPAIR",
+          "value": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Repair 3> (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 3> (At the end of your turn, this Unit recovers the specified number of HP.); 【During Pair】When one of your other Units with <Repair> attacks, choose 1 enemy Unit whose Lv. is equal to or lower than that Unit. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

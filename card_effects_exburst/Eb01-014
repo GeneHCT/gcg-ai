@@ -1,0 +1,50 @@
+{
+  "card_id": "Eb01-014",
+  "effects": [
+    {
+      "effect_id": "Eb01-014-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_RECEIVE_EFFECT_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "player": "OPPONENT"
+        },
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "protection_type": "EFFECT_DAMAGE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your opponent's turn, this unit cannot receive effect damage from Enemy Units that are Lv.5 or lower.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your opponent's turn, this unit cannot receive effect damage from Enemy Units that are Lv.5 or lower.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

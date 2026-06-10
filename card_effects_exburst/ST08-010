@@ -1,0 +1,77 @@
+{
+  "card_id": "ST08-010",
+  "effects": [
+    {
+      "effect_id": "ST08-010-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST08-010-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "SELF",
+          "traits": [
+            "Mafty"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "duration": "THIS_TURN",
+          "target_filters": {
+            "trait": "Mafty"
+          },
+          "targeting_override_filters": {
+            "target_filters": {
+              "is_active": true,
+              "is_damaged": true
+            }
+          },
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】If this is a (Mafty) Unit, choose 1 of your (Mafty) Units. During this turn, it may choose a damaged active enemy Unit as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Paired】If this is a (Mafty) Unit, choose 1 of your (Mafty) Units. During this turn, it may choose a damaged active enemy Unit as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

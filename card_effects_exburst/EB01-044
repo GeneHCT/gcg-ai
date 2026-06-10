@@ -1,0 +1,88 @@
+{
+  "card_id": "EB01-044",
+  "effects": [
+    {
+      "effect_id": "EB01-044-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "operator": ">=",
+          "value": 2,
+          "target": {
+            "selector": "ENEMY_PLAYER"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "SELECT_LOOKED_AT_CARD",
+          "selector": "ENEMY_UNIT",
+          "filters": {
+            "most_units_owner": true
+          }
+        },
+        {
+          "type": "RETURN_TO_HAND",
+          "selector": "SELECTED_CARD"
+        }
+      ],
+      "is_supported": false,
+      "unhandled_explanation": "requires target selection by most numerous enemy player owner",
+      "metadata": {
+        "raw_text": "【Deploy】If there are 2 or more enemy players, choose 1 Unit belonging to an enemy player with the most Units. Return it to its owner's hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "EB01-044-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT",
+          "keyword": null,
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Blocker】(Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "【Blocker】(Rest this Unit to change the attack target to it.); 【Deploy】If there are 2 or more enemy players, choose 1 Unit belonging to an enemy player with the most Units. Return it to its owner's hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "unsupported",
+    "validation_issues": [
+      {
+        "path": "effects[0]",
+        "kind": "unsupported_llm_effect",
+        "value": "EB01-044-E2",
+        "message": "requires target selection by most numerous enemy player owner"
+      },
+      {
+        "path": "continuous_effects[0].actions[0].keyword",
+        "kind": "missing_keyword",
+        "value": "None",
+        "message": "Keyword grant must name the granted keyword"
+      }
+    ]
+  }
+}

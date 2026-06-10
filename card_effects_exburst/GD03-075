@@ -1,0 +1,53 @@
+{
+  "card_id": "GD03-075",
+  "effects": [
+    {
+      "effect_id": "GD03-075-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": false,
+          "target_selector": "ENEMY_UNIT",
+          "filters": {
+            "has_paired_pilot": false
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "modification": "-2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Attack】Choose 1 enemy Unit with no paired Pilot. It gets AP-2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Attack】Choose 1 enemy Unit with no paired Pilot. It gets AP-2 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

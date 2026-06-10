@@ -1,0 +1,49 @@
+{
+  "card_id": "EB01-028",
+  "effects": [
+    {
+      "effect_id": "EB01-028-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_OTHER_FRIENDLY_UNIT_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "RESTED",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "selector": "BATTLING_UNIT",
+          "keyword": "BREACH",
+          "value": 2,
+          "duration": "THIS_BATTLE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Once per Turn】When another Unit attacks an enemy Unit, if this Unit is rested, the attacking Unit gains【Breach 2】during this battle. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Once per Turn】When another Unit attacks an enemy Unit, if this Unit is rested, the attacking Unit gains【Breach 2】during this battle. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

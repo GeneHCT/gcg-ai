@@ -1,0 +1,68 @@
+{
+  "card_id": "GD04-020",
+  "effects": [
+    {
+      "effect_id": "GD04-020-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLAY_FROM_HAND"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operator": "==",
+          "value": "YOUR_TURN"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Dawn of Fold",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "ACTIVATED",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "CHECK_COLOR",
+          "value": "COMMAND",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Once per Turn】During your turn, when you play and activate a (Dawn of Fold) Command card using an EX Resource, draw 1.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Once per Turn】During your turn, when you play and activate a (Dawn of Fold) Command card using an EX Resource, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

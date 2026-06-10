@@ -1,0 +1,79 @@
+{
+  "card_id": "GD01-027",
+  "effects": [
+    {
+      "effect_id": "GD01-027-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target": "SELF_TRASH",
+          "operator": ">=",
+          "value": 10,
+          "filters": {
+            "traits": [
+              "Zeon",
+              "Neo Zeon"
+            ],
+            "card_type": "UNIT"
+          }
+        },
+        {
+          "type": "CHECK_KEYWORD",
+          "target": "ENEMY_UNIT",
+          "keyword": "BLOCKER"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】If there are 10 or more (Zeon)/(Neo Zeon) Unit cards in your trash, deal 4 damage to all Units with <Blocker>.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-027-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 4
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 4> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); 【Deploy】If there are 10 or more (Zeon)/(Neo Zeon) Unit cards in your trash, deal 4 damage to all Units with <Blocker>.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

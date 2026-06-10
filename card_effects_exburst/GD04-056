@@ -1,0 +1,61 @@
+{
+  "card_id": "GD04-056",
+  "effects": [
+    {
+      "effect_id": "GD04-056-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "duration": null,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "duration": null,
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "target": "ENEMY_UNIT",
+              "stat": "AP",
+              "operator": "<=",
+              "value": 3
+            }
+          ],
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Deal 1 damage to this Unit. If you do, choose 1 enemy Unit with 3 or less AP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Deal 1 damage to this Unit. If you do, choose 1 enemy Unit with 3 or less AP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

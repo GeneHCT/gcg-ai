@@ -1,0 +1,64 @@
+{
+  "card_id": "GD02-061",
+  "effects": [
+    {
+      "effect_id": "GD02-061-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_COLOR"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "operator": ">=",
+          "value": 3,
+          "filters": {
+            "trait": [
+              "Teiwaz",
+              "Tekkadan"
+            ]
+          }
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": "<=",
+          "value": 3,
+          "target_selector": "ENEMY_UNIT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "ap": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired･Purple Pilot】If there are 3 or more (Teiwaz)/(Tekkadan) cards in your trash, choose 1 enemy Unit with 3 or less AP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired･Purple Pilot】If there are 3 or more (Teiwaz)/(Tekkadan) cards in your trash, choose 1 enemy Unit with 3 or less AP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

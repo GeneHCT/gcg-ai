@@ -1,0 +1,80 @@
+{
+  "card_id": "GD03-084",
+  "effects": [
+    {
+      "effect_id": "GD03-084-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-084-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "REPAIR",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "value": 2
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "Jupitris",
+              "target": {
+                "selector": "OTHER_FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "amount": 1,
+              "type": "DRAW"
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Choose 1 of your other Units. It gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1. (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Linked】Choose 1 of your other Units. It gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

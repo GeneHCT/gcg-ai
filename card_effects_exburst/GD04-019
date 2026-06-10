@@ -1,0 +1,86 @@
+{
+  "card_id": "GD04-019",
+  "effects": [
+    {
+      "effect_id": "GD04-019-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "LOOK_AT_DECK",
+          "amount": 3,
+          "target": "SELF_DECK"
+        },
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "SELECT_LOOKED_AT_CARD",
+              "filters": [
+                {
+                  "card_type": "UNIT",
+                  "level": {
+                    "operator": "<=",
+                    "value": 5
+                  },
+                  "traits": [
+                    "CB"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "ADD_TO_HAND",
+              "target": "SELECTED_CARD"
+            }
+          ]
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "target": "SELF_DECK"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】Look at the top 3 cards of your deck. You may reveal 1 (CB) Unit card that is Lv.5 or lower among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-019-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); 【Destroyed】Look at the top 3 cards of your deck. You may reveal 1 (CB) Unit card that is Lv.5 or lower among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

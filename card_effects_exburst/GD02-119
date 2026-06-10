@@ -1,0 +1,69 @@
+{
+  "card_id": "GD02-119",
+  "effects": [
+    {
+      "effect_id": "GD02-119-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Carta Issue]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD02-119-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "link_status": "LINKED",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Gjallarhorn"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "-3",
+          "duration": "THIS_BATTLE",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】If you have a (Gjallarhorn) Link Unit in play, choose 1 enemy Unit. It gets AP-3 during this battle.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】If you have a (Gjallarhorn) Link Unit in play, choose 1 enemy Unit. It gets AP-3 during this battle.; 【Pilot】[Carta Issue]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

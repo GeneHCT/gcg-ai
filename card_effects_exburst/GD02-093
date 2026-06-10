@@ -1,0 +1,69 @@
+{
+  "card_id": "GD02-093",
+  "effects": [
+    {
+      "effect_id": "GD02-093-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-093-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "SELF",
+          "operator": "==",
+          "turn_owner": "SELF"
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "target": "ENEMY_UNIT",
+          "value": "Newtype"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, when this Unit destroys an enemy Unit paired with a (Newtype) Pilot with battle damage, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; During your turn, when this Unit destroys an enemy Unit paired with a (Newtype) Pilot with battle damage, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

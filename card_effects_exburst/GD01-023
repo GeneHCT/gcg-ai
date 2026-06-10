@@ -1,0 +1,86 @@
+{
+  "card_id": "GD01-023",
+  "effects": [
+    {
+      "effect_id": "GD01-023-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "card_type": "UNIT",
+          "amount": 1,
+          "operator": ">=",
+          "target": {
+            "selector": "SELF_HAND"
+          },
+          "traits": [
+            [
+              "Zeon",
+              "Neo Zeon"
+            ]
+          ]
+        },
+        {
+          "type": "CHECK_LINK_STATUS",
+          "paired": false,
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "card_type": "PILOT",
+          "level": 3,
+          "operator": "<=",
+          "target": {
+            "selector": "SELF_TRASH"
+          },
+          "traits": [
+            "Newtype"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "DISCARD",
+          "selector": "SELF_HAND",
+          "trait": [
+            "Zeon",
+            "Neo Zeon"
+          ],
+          "card_type": "UNIT",
+          "amount": 1
+        },
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "selector": "SELF_TRASH",
+          "trait": "Newtype",
+          "card_type": "PILOT",
+          "level": 3,
+          "operator": "<=",
+          "target": "SELF",
+          "pair": true
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】Discard 1 (Zeon)/(Neo Zeon) Unit card：If a Pilot is not paired with this Unit, choose 1 (Newtype) Pilot card that is Lv.3 or lower from your trash. Pair it with this Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】Discard 1 (Zeon)/(Neo Zeon) Unit card：If a Pilot is not paired with this Unit, choose 1 (Newtype) Pilot card that is Lv.3 or lower from your trash. Pair it with this Unit.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

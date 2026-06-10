@@ -1,0 +1,51 @@
+{
+  "card_id": "GD01-075",
+  "effects": [
+    {
+      "effect_id": "GD01-075-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "==",
+          "value": 1,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "selector": "ENEMY_UNIT",
+          "filters": {
+            "stat": "HP",
+            "operator": "==",
+            "value": 1
+          },
+          "owner": "OPPONENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

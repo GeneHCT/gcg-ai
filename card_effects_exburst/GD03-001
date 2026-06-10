@@ -1,0 +1,83 @@
+{
+  "card_id": "GD03-001",
+  "effects": [
+    {
+      "effect_id": "GD03-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "selector": "ENEMY_UNIT",
+              "value": "RESTED"
+            }
+          ],
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "ON_UNIT_DESTROYED_BY_DAMAGE",
+              "selector": "ENEMY_UNIT"
+            }
+          ],
+          "amount": 1,
+          "type": "DRAW",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】Choose 1 rested enemy Unit. Deal 1 damage to it. When this effect destroys an enemy Unit, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-001-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "REPAIR",
+          "value": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 2> (At the end of your turn, this Unit recovers the specified number of HP.); 【When Paired】Choose 1 rested enemy Unit. Deal 1 damage to it. When this effect destroys an enemy Unit, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

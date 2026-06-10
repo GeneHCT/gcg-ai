@@ -1,0 +1,59 @@
+{
+  "card_id": "EB01-072",
+  "effects": [
+    {
+      "effect_id": "EB01-072-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "is_active": true,
+            "has_keyword": "blocker"
+          },
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "filters": {
+            "level": "<=",
+            "level_value": 4
+          },
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE",
+              "level": {
+                "operator": "<=",
+                "value": 4
+              },
+              "has_keyword": "blocker"
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】Choose 1 active friendly Unit with【Blocker】and 1 enemy Unit that is Lv.4 or lower. Rest them.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired】Choose 1 active friendly Unit with【Blocker】and 1 enemy Unit that is Lv.4 or lower. Rest them.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

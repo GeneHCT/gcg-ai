@@ -1,0 +1,77 @@
+{
+  "card_id": "GD03-072",
+  "effects": [
+    {
+      "effect_id": "GD03-072-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "OTHER_FRIENDLY_UNIT",
+          "operator": ">=",
+          "value": 1,
+          "traits": [
+            "Triple Ship Alliance"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "DRAW",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "amount": 1,
+          "type": "DISCARD",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】If you have another (Triple Ship Alliance) Unit in play, draw 1. Then, discard 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-072-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Blocker> (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); 【Deploy】If you have another (Triple Ship Alliance) Unit in play, draw 1. Then, discard 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

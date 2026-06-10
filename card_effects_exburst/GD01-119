@@ -1,0 +1,76 @@
+{
+  "card_id": "GD01-119",
+  "effects": [
+    {
+      "effect_id": "GD01-119-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Chuatury Panlunch]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD01-119-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "selector": "ENEMY_UNIT",
+          "target": "ENEMY_UNIT",
+          "stat": "LV",
+          "operator": "<=",
+          "value": 4
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "-2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this turn.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ACTION_PHASE"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this turn.; 【Pilot】[Chuatury Panlunch]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

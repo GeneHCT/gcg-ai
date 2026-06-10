@@ -1,0 +1,48 @@
+{
+  "card_id": "GD02-008",
+  "effects": [
+    {
+      "effect_id": "GD02-008-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "selector": "ENEMY_UNIT",
+              "state": "RESTED"
+            }
+          ],
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Choose 1 rested enemy Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Linked】Choose 1 rested enemy Unit. Deal 1 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

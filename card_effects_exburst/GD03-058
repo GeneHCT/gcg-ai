@@ -1,0 +1,44 @@
+{
+  "card_id": "GD03-058",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-058-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "zone": "TRASH",
+          "owner": "FRIENDLY_PLAYER"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_COST",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT",
+          "modification": "-1",
+          "scope": "PLAY"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "This card in your trash gets cost -1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "This card in your trash gets cost -1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

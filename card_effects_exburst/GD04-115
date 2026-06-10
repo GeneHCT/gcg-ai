@@ -1,0 +1,78 @@
+{
+  "card_id": "GD04-115",
+  "effects": [
+    {
+      "effect_id": "GD04-115-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 1,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 enemy Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-115-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "target": "ENEMY_UNIT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 5
+            }
+          ],
+          "actions": [
+            {
+              "type": "DESTROY_CARD",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "trigger": "ON_DEAL_BATTLE_DAMAGE",
+          "type": "CONDITIONAL_BRANCH",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 of your Units. When it deals battle damage to an enemy Unit that is Lv.5 or lower during this turn, destroy that enemy Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 enemy Unit. Deal 1 damage to it.; 【Main】Choose 1 of your Units. When it deals battle damage to an enemy Unit that is Lv.5 or lower during this turn, destroy that enemy Unit.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

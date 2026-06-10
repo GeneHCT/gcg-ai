@@ -1,0 +1,93 @@
+{
+  "card_id": "GD01-122",
+  "effects": [
+    {
+      "effect_id": "GD01-122-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Shaddiq Zenelli]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD01-122-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_KEYWORD",
+              "selector": "FRIENDLY_UNIT",
+              "value": "LINK"
+            }
+          ],
+          "true_actions": [
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "stat": "HP",
+                  "selector": "ENEMY_UNIT",
+                  "operator": "<=",
+                  "value": 4
+                }
+              ],
+              "type": "RETURN_TO_HAND",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "false_actions": [
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "stat": "HP",
+                  "selector": "ENEMY_UNIT",
+                  "operator": "<=",
+                  "value": 2
+                }
+              ],
+              "type": "RETURN_TO_HAND",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand. If you have a Link Unit in play, choose 1 enemy Unit with 4 or less HP instead.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand. If you have a Link Unit in play, choose 1 enemy Unit with 4 or less HP instead.; 【Pilot】[Shaddiq Zenelli]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

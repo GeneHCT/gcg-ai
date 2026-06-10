@@ -1,0 +1,79 @@
+{
+  "card_id": "ST05-013",
+  "effects": [
+    {
+      "effect_id": "ST05-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "stat": "AP",
+          "modification": "+3",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST05-013-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "stat": "AP",
+          "modification": "+3",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

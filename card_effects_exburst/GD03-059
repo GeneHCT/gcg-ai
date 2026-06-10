@@ -1,0 +1,64 @@
+{
+  "card_id": "GD03-059",
+  "effects": [
+    {
+      "effect_id": "GD03-059-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "EXILE_CARDS",
+              "amount": 1,
+              "filters": {
+                "traits": [
+                  "Vagan"
+                ]
+              },
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "MODIFY_STAT",
+              "stat": "AP",
+              "modification": "+2",
+              "duration": "THIS_TURN",
+              "filters": {
+                "traits": [
+                  "Vagan"
+                ]
+              },
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】You may choose 1 (Vagan) card from your trash. Exile it from the game. If you do, choose 1 of your (Vagan) Units. It gets AP+2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】You may choose 1 (Vagan) card from your trash. Exile it from the game. If you do, choose 1 of your (Vagan) Units. It gets AP+2 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

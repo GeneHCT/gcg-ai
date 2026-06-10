@@ -1,0 +1,50 @@
+{
+  "card_id": "GD02-002",
+  "effects": [
+    {
+      "effect_id": "GD02-002-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "value": "YOUR_TURN"
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "DESTROYED_BY_BATTLE_DAMAGE",
+          "target_selector": "ENEMY_UNIT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Once per Turn】During your turn, when one of your Units destroys an enemy Unit with battle damage, set this Unit as active.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Once per Turn】During your turn, when one of your Units destroys an enemy Unit with battle damage, set this Unit as active.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

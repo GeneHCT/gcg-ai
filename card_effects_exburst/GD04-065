@@ -1,0 +1,90 @@
+{
+  "card_id": "GD04-065",
+  "effects": [
+    {
+      "effect_id": "GD04-065-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "EXILE_CARDS",
+          "amount": 3,
+          "filters": [
+            {
+              "color": "Blue"
+            }
+          ],
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        },
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "value": false,
+          "duration": "THIS_TURN",
+          "target_filter": {
+            "selector": "ENEMY_PLAYER"
+          },
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Activate･Main】Exile 3 blue cards from your trash：Set this Unit as active. It can't choose the enemy player as its attack target during this turn.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-065-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "-1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】All enemy Units get AP-1 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Activate･Main】Exile 3 blue cards from your trash：Set this Unit as active. It can't choose the enemy player as its attack target during this turn.; 【Attack】All enemy Units get AP-1 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

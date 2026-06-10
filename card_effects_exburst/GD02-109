@@ -1,0 +1,79 @@
+{
+  "card_id": "GD02-109",
+  "effects": [
+    {
+      "effect_id": "GD02-109-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Shiiko Sugai]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD02-109-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 1,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-109-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 1,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.; 【Pilot】[Shiiko Sugai]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

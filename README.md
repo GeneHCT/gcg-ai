@@ -34,16 +34,34 @@ pip install -r requirements.txt
 ### Run a Game Simulation
 
 ```bash
-# Run a game with sample decks
-python3 -m simulator.run_simulation 42 20 game.log decks/the-o.txt decks/tekkadan.txt
+# Run a game with sample decks (auto-named log in repo root)
+python3 -m simulator.run_simulation 42 20 decks/bg-haste.txt decks/rw-justice.txt
+
+# Structured replay JSON is also written automatically beside the log file
+python3 -m simulator.run_simulation 42 20 decks/bg-haste.txt decks/rw-justice.txt
+
+# Optional explicit log path (must not be under decks/)
+python3 -m simulator.run_simulation 42 20 custom.log decks/bg-haste.txt decks/rw-justice.txt
 ```
 
 **Parameters:**
 - `42` - Random seed (for reproducibility)
 - `20` - Maximum turns
-- `game.log` - Output log file
-- `decks/the-o.txt` - Player 0's deck
-- `decks/tekkadan.txt` - Player 1's deck
+- `decks/bg-haste.txt` - Player 0's deck
+- `decks/rw-justice.txt` - Player 1's deck
+- `game-simulation.json` - Optional structured replay file for the viewer
+- `custom.log` - Optional explicit log path; omitted logs default to `yyyymmdd-hhmm-deck1-vs-deck2.log`
+- Log and replay files cannot be written under `decks/` because those files are source deck lists
+
+### View a Game Replay
+
+```bash
+cd replay-viewer
+npm install
+npm run dev
+```
+
+Open the local Vite URL, then upload the generated simulation `.log` or matching `.json` replay file. The viewer renders both players' Hand, Deck, Trash, Shields, Resource Area, Field, and Exiled zones with a bottom timeline slider and a move/effect sidebar.
 
 ### Use the Simulator Programmatically
 
@@ -62,8 +80,8 @@ game_state = manager.setup_game(deck_p0, deck_p1, res_p0, res_p1)
 # Get observation for RL agent (368 features)
 obs = manager.get_observation(player_id=0)
 
-# Get legal actions
-legal_actions = manager.get_legal_actions(player_id=0)
+# Get legal moves
+legal_moves = manager.get_legal_actions(player_id=0)
 ```
 
 ### Run Validation Tests
@@ -75,6 +93,18 @@ python3 run_validation_tests.py
 # Test with all converted cards (takes longer)
 python3 run_validation_tests.py --all
 ```
+
+### Docker Environment
+
+Use Docker when you want the pinned simulator and ExBurst LLM parser dependencies without installing them locally. Keep your OpenRouter key in `.credentials` or export `OPENROUTER_API_KEY`/`OPEN_ROUTER_API_KEY`.
+
+```bash
+docker compose build
+docker compose run --rm simulator
+docker compose run --rm exburst-llm python convert_card_effects.py --exburst --use-llm --llm-timeout 60 --llm-max-retries 1 GD01-001
+```
+
+ExBurst conversion logs are written to `logs/exburst_conversion.log`.
 
 ## Project Structure
 
@@ -110,8 +140,6 @@ gcg-ai/
 ├── run_validation_tests.py     # Test runner
 │
 ├── gamerules.txt               # Official comprehensive rules (Ver. 1.5.0)
-├── GAME_RULES_QUICK_REFERENCE.md  # Quick rules lookup
-├── IR_SCHEMA_DOCUMENTATION.md  # Card effect schema reference
 ├── TODO.md                     # Current development tasks
 └── README.md                   # This file
 ```
@@ -164,7 +192,7 @@ gcg-ai/
 - **Continuous Effects**: 100% accuracy (static modifiers)
 - **Conditions**: 95%+ accuracy (trait checks, stat checks, etc.)
 
-**IR Schema**: See [`IR_SCHEMA_DOCUMENTATION.md`](IR_SCHEMA_DOCUMENTATION.md) for complete reference.
+**IR Schema**: Effect files are JSON data consumed by `simulator/effect_interpreter.py` and `simulator/action_executor.py`.
 
 **Example Conversion**:
 
@@ -215,7 +243,6 @@ Converted IR:
 - **Win Conditions**: Shield destruction, deck-out detection
 
 **Game Rules**: Based on [Comprehensive Rules Ver. 1.5.0](gamerules.txt)
-- Quick reference: [`GAME_RULES_QUICK_REFERENCE.md`](GAME_RULES_QUICK_REFERENCE.md)
 
 **RL-Ready Features**:
 - **Observation Space**: 368-dimensional feature vector
@@ -275,7 +302,7 @@ Converted IR:
 1. Opponent receives battle damage from a unit while having 0 shields
 2. Opponent's deck is empty when they need to draw
 
-For complete rules, see [`gamerules.txt`](gamerules.txt) or [`GAME_RULES_QUICK_REFERENCE.md`](GAME_RULES_QUICK_REFERENCE.md).
+For complete rules, see [`gamerules.txt`](gamerules.txt).
 
 ## Development
 
@@ -283,9 +310,9 @@ For complete rules, see [`gamerules.txt`](gamerules.txt) or [`GAME_RULES_QUICK_R
 
 - Python 3.8+
 - Dependencies in `requirements.txt`:
-  - `requests` - HTTP requests for scraping
-  - `beautifulsoup4`, `lxml` - HTML parsing
-  - `selenium` - Web automation (optional)
+  - scraping/parsing libraries
+  - simulator numeric utilities
+  - optional LLM parser libraries for ExBurst IR discovery
 
 ### Adding New Cards
 
@@ -301,7 +328,8 @@ For complete rules, see [`gamerules.txt`](gamerules.txt) or [`GAME_RULES_QUICK_R
 python3 -m simulator.run_simulation
 
 # Run with specific parameters
-python3 -m simulator.run_simulation <seed> <max_turns> <log_file> <deck_p0> <deck_p1>
+python3 -m simulator.run_simulation <seed> <max_turns> <deck_p0> <deck_p1> [replay.json]
+python3 -m simulator.run_simulation <seed> <max_turns> <log_file> <deck_p0> <deck_p1> [replay.json]
 
 # Validate card conversions
 python3 run_validation_tests.py
@@ -351,10 +379,8 @@ Create `.txt` files in `decks/` directory:
 - [`README.md`](README.md) - This file (project overview)
 - [`TODO.md`](TODO.md) - Current development tasks
 - [`gamerules.txt`](gamerules.txt) - Official comprehensive rules (Ver. 1.5.0)
-- [`GAME_RULES_QUICK_REFERENCE.md`](GAME_RULES_QUICK_REFERENCE.md) - Quick rules lookup for developers
 
 ### Technical Documentation
-- [`IR_SCHEMA_DOCUMENTATION.md`](IR_SCHEMA_DOCUMENTATION.md) - Card effect IR schema reference
 - [`simulator/README.md`](simulator/README.md) - Detailed simulator documentation
 - [`.cursor/rules/tcg-logic.md`](.cursor/rules/tcg-logic.md) - Development rules for AI coding assistance
 

@@ -1,0 +1,36 @@
+{
+  "card_id": "EB01-054",
+  "effects": [
+    {
+      "effect_id": "EB01-054-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "BLOCKER",
+          "target": "SELF",
+          "duration": "PERMANENT",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Blocker】(Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Blocker】(Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "card_id": "GD03-107",
+  "effects": [
+    {
+      "effect_id": "GD03-107-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Hardie Steiner]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD03-107-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "value": 5,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "COUNT_CARDS",
+          "target": "FRIENDLY_UNIT",
+          "filters": {
+            "is_token": true
+          }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "target": "SELECTED_CARD",
+          "amount": "COUNT_RESULT",
+          "damage_type": "EFFECT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 enemy Unit that is Lv.5 or lower. Deal damage to it equal to the number of friendly Unit tokens in play.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 enemy Unit that is Lv.5 or lower. Deal damage to it equal to the number of friendly Unit tokens in play.; 【Pilot】[Hardie Steiner]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[1].actions[0].type",
+        "kind": "unknown_action",
+        "value": "COUNT_CARDS",
+        "message": "Action is not executed by the runtime"
+      }
+    ]
+  }
+}

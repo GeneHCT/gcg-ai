@@ -1,0 +1,81 @@
+{
+  "card_id": "GD04-037",
+  "effects": [
+    {
+      "effect_id": "GD04-037-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_COLOR"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_COLOR",
+          "value": "Red"
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": "Super Soldier"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "FIRST_STRIKE",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you have a red (Super Soldier) Pilot in play, this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-037-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_COLOR"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_COLOR",
+          "value": "Green"
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": "Super Soldier"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you have a green (Super Soldier) Pilot in play, this Unit gains <Breach 3>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While you have a red (Super Soldier) Pilot in play, this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.); While you have a green (Super Soldier) Pilot in play, this Unit gains <Breach 3>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

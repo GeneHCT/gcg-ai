@@ -1,0 +1,90 @@
+{
+  "card_id": "ST06-013",
+  "effects": [
+    {
+      "effect_id": "ST06-013-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": [
+          "GQ"
+        ]
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Ortega (GQ)]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "ST06-013-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "FRIENDLY_UNIT",
+          "value": "Clan",
+          "operator": "=="
+        },
+        {
+          "type": "CHECK_STAT",
+          "target": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "value": 2,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "amount": 1,
+          "duration": "THIS_TURN",
+          "protection_type": "BATTLE_DAMAGE",
+          "filters": {
+            "min_units": 1,
+            "max_units": 2,
+            "traits": [
+              "Clan"
+            ]
+          },
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Clan"
+              ]
+            },
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 to 2 friendly (Clan) Units. They can't receive battle damage from enemy Units that are Lv.2 or lower during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】Choose 1 to 2 friendly (Clan) Units. They can't receive battle damage from enemy Units that are Lv.2 or lower during this turn.; 【Pilot】[Ortega (GQ)]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

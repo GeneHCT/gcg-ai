@@ -1,0 +1,62 @@
+{
+  "card_id": "GD04-066",
+  "effects": [
+    {
+      "effect_id": "GD04-066-E2",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "stat": "AP",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "modification": "-2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When you activate a Command's 【Main】/【Action】 effect, choose 1 enemy Unit. It gets AP-2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-066-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "SUPPRESSION",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.); When you activate a Command's 【Main】/【Action】 effect, choose 1 enemy Unit. It gets AP-2 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

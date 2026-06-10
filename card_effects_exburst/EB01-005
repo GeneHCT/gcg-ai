@@ -1,0 +1,50 @@
+{
+  "card_id": "EB01-005",
+  "effects": [
+    {
+      "effect_id": "EB01-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "RESTED"
+            }
+          ],
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        },
+        {
+          "amount": 1,
+          "type": "DRAW"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 rested Unit belonging to another player. Set it as active. Draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 rested Unit belonging to another player. Set it as active. Draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

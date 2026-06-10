@@ -1,0 +1,53 @@
+{
+  "card_id": "GD01-025",
+  "effects": [
+    {
+      "effect_id": "GD01-025-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": "Operation Meteor"
+        }
+      ],
+      "actions": [
+        {
+          "amount": 1,
+          "rested": true,
+          "type": "PLACE_RESOURCE",
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
+        },
+        {
+          "keyword": "FIRST_STRIKE",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired･(Operation Meteor) Pilot】Place 1 rested Resource. Then, this Unit gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired･(Operation Meteor) Pilot】Place 1 rested Resource. Then, this Unit gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

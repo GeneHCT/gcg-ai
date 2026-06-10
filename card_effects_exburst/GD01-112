@@ -1,0 +1,72 @@
+{
+  "card_id": "GD01-112",
+  "effects": [
+    {
+      "effect_id": "GD01-112-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Loni Garvey]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD01-112-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 2,
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "ACTIVE"
+            }
+          ],
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "state": "ACTIVE"
+            }
+          }
+        },
+        {
+          "amount": 3,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.; 【Pilot】[Loni Garvey]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "card_id": "ST07-012",
+  "effects": [
+    {
+      "effect_id": "ST07-012-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST07-012-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TURN",
+              "owner": "FRIENDLY",
+              "operator": "=="
+            },
+            {
+              "type": "COUNT_CARDS",
+              "filters": {
+                "link_status": "LINKED",
+                "traits": [
+                  "CB"
+                ]
+              },
+              "operator": ">=",
+              "value": 1,
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            },
+            {
+              "type": "CHECK_STAT",
+              "stat": "AP",
+              "operator": "<=",
+              "value": 3,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "duration": "THIS_TURN",
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, while you have a (CB) Link Unit in play, this Unit can't receive battle damage from enemy Units with 3 or less AP.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; During your turn, while you have a (CB) Link Unit in play, this Unit can't receive battle damage from enemy Units with 3 or less AP.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

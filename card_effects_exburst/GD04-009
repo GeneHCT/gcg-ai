@@ -1,0 +1,64 @@
+{
+  "card_id": "GD04-009",
+  "effects": [
+    {
+      "effect_id": "GD04-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "White Base Team",
+          "op": "==",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "value": 4,
+          "op": ">=",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "selector": "OTHER_FRIENDLY_UNIT",
+          "filters": [
+            {
+              "level": {
+                "op": ">=",
+                "value": 4
+              },
+              "traits": [
+                "White Base Team"
+              ]
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Choose 1 of your other (White Base Team) Units that is Lv.4 or higher. Set it as active.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Linked】Choose 1 of your other (White Base Team) Units that is Lv.4 or higher. Set it as active.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

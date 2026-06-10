@@ -1,0 +1,75 @@
+{
+  "card_id": "GD02-103",
+  "effects": [
+    {
+      "effect_id": "GD02-103-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "card_type": "PILOT",
+            "limit": 1,
+            "traits": [
+              "Asuno Family"
+            ]
+          },
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 (Asuno Family) Pilot card from your trash. Add it to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-103-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "required_count": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "AGE System"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "PLACE_RESOURCE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】If you have an (AGE System) Unit in play, place 1 EX Resource.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 (Asuno Family) Pilot card from your trash. Add it to your hand.; 【Main】If you have an (AGE System) Unit in play, place 1 EX Resource.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

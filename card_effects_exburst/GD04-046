@@ -1,0 +1,69 @@
+{
+  "card_id": "GD04-046",
+  "effects": [
+    {
+      "effect_id": "GD04-046-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "actions": [
+            {
+              "type": "REST_UNIT",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": 2,
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "target": "ENEMY_UNIT",
+                  "stat": "LEVEL",
+                  "operator": "<=",
+                  "value": 3
+                }
+              ],
+              "type": "DAMAGE_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT",
+                "filters": {
+                  "level": {
+                    "operator": "<=",
+                    "value": 3
+                  }
+                }
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】You may rest this Unit. If you do, choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】You may rest this Unit. If you do, choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

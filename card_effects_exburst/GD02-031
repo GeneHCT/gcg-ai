@@ -1,0 +1,41 @@
+{
+  "card_id": "GD02-031",
+  "effects": [
+    {
+      "effect_id": "GD02-031-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_PLAYER_LEVEL",
+          "operator": ">=",
+          "value": 7
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": "SELF",
+          "stat": "AP",
+          "modification": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you are Lv.7 or higher, this Unit gets AP+2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While you are Lv.7 or higher, this Unit gets AP+2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

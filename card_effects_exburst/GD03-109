@@ -1,0 +1,134 @@
+{
+  "card_id": "GD03-109",
+  "effects": [
+    {
+      "effect_id": "GD03-109-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": null,
+          "duration": null,
+          "type": "RESOLVE_COMMAND_EFFECT",
+          "timing": "MAIN_PHASE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Activate this card's 【Main】.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-109-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 4
+        },
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "SELF_TRASH",
+          "operator": ">=",
+          "value": 2,
+          "filters": {
+            "text_contains": "Improved Technique"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "amount": 3,
+          "duration": null,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. Deal 3 damage to it. If there are 2 or more cards with \"Improved Technique\" in their card name in your trash, choose 1 enemy Unit instead.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-109-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 4
+        },
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "SELF_TRASH",
+          "operator": ">=",
+          "value": 2,
+          "filters": {
+            "text_contains": "Improved Technique"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "amount": 3,
+          "duration": null,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. Deal 3 damage to it. If there are 2 or more cards with \"Improved Technique\" in their card name in your trash, choose 1 enemy Unit instead.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Activate this card's 【Main】.; 【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. Deal 3 damage to it. If there are 2 or more cards with \"Improved Technique\" in their card name in your trash, choose 1 enemy Unit instead.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "card_id": "GD03-124",
+  "effects": [
+    {
+      "effect_id": "GD03-124-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Deploy this card.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-124-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "SHIELD_TO_HAND",
+          "amount": 1,
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Add 1 of your Shields to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-124-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PLAYER_LEVEL",
+          "value": 3,
+          "operator": "<="
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "value": 3,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Once per Turn】When you pair a Pilot that is Lv.3 or lower with one of your Units, choose 1 enemy Unit with 3 or less HP. Rest it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Deploy this card.; 【Deploy】Add 1 of your Shields to your hand.; 【Once per Turn】When you pair a Pilot that is Lv.3 or lower with one of your Units, choose 1 enemy Unit with 3 or less HP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

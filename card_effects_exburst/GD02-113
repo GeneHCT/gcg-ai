@@ -1,0 +1,78 @@
+{
+  "card_id": "GD02-113",
+  "effects": [
+    {
+      "effect_id": "GD02-113-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Amida Arca]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD02-113-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "state": "LINKED",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Teiwaz"
+          ]
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": "<=",
+          "value": 2,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "selector": "ENEMY_UNIT",
+          "filters": {
+            "stat": "AP",
+            "operator": "<=",
+            "value": 2
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.; 【Pilot】[Amida Arca]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

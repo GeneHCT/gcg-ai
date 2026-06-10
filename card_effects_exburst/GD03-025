@@ -1,0 +1,50 @@
+{
+  "card_id": "GD03-025",
+  "effects": [
+    {
+      "effect_id": "GD03-025-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "state": "RESTED",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Maganac Corps"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "selector": "FRIENDLY_UNIT",
+          "filter": {
+            "trait": "Maganac Corps",
+            "state": "RESTED"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -145,6 +145,22 @@ def test_link_system():
     assert result, "Pairing should succeed (any pilot can pair)"
     assert unit2.paired_pilot is not None, "Unit should have pilot"
     assert not unit2.is_linked, "Unit should NOT be linked (pilot doesn't match)"
+
+    # Test 5c: Pilot printed HP increases current HP and max HP
+    print("\nTest 2.5c: Pilot HP applies to current and max HP")
+    rick_dom = Card("Rick Dom", "GD01-030", "UNIT", "Green", 3, 2, 3, 3, ["Zeon"], [], [], [])
+    amuro = Card("Amuro Ray", "ST01-010", "PILOT", "Blue", 4, 1, 2, 1, ["Earth Federation"], [], [], [])
+    unit3 = UnitInstance(card_data=rick_dom, owner_id=0, turn_deployed=1)
+    game_state.players[0].battle_area.append(unit3)
+    game_state.players[0].hand.append(amuro)
+
+    result = LinkManager.pair_pilot(game_state, unit3, amuro, trigger_effects=False)
+    print(f"  Pairing result: {result}")
+    print(f"  Rick Dom after pairing: AP{unit3.ap}, HP{unit3.current_hp}/{unit3.hp}")
+    assert result, "Pairing should succeed"
+    assert unit3.ap == 5, "Pilot AP should be added to Unit AP"
+    assert unit3.hp == 4, "Pilot HP should increase max HP"
+    assert unit3.current_hp == 4, "Pilot HP should also increase current HP"
     
     # Test 6: Only Link Units can attack immediately
     print("\nTest 2.6: Link Units can attack immediately, paired units can't")

@@ -1,0 +1,129 @@
+{
+  "card_id": "GD04-106",
+  "effects": [
+    {
+      "effect_id": "GD04-106-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Norea Du Noc]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD04-106-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "target_filters": {
+            "trait": "Academy"
+          },
+          "amount": 1,
+          "duration": "THIS_TURN",
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "target": "ENEMY_UNIT",
+              "trait": "Academy",
+              "operator": "=="
+            },
+            {
+              "type": "CHECK_STAT",
+              "target": "ENEMY_UNIT",
+              "stat": "AP",
+              "operator": "<=",
+              "value": 5
+            },
+            {
+              "type": "CHECK_CARD_STATE",
+              "target": "ENEMY_UNIT",
+              "state": "ACTIVE"
+            }
+          ],
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          }
+        },
+        {
+          "target_filters": {
+            "trait": "Academy"
+          },
+          "amount": 2,
+          "duration": "THIS_TURN",
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "target": "ENEMY_UNIT",
+              "trait": "Academy",
+              "operator": "=="
+            },
+            {
+              "type": "CHECK_STAT",
+              "target": "ENEMY_UNIT",
+              "stat": "AP",
+              "operator": "<=",
+              "value": 5
+            },
+            {
+              "type": "CHECK_CARD_STATE",
+              "target": "ENEMY_UNIT",
+              "state": "ACTIVE"
+            },
+            {
+              "type": "CHECK_PLAYER_LEVEL",
+              "player": "FRIENDLY_PLAYER",
+              "level": "EX_RESOURCE",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "optional_actions": true,
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Academy"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 friendly (Academy) Unit. During this turn, it may choose an active enemy Unit with 5 or less AP as its attack target. If you use an EX Resource to play this card, choose 1 to 2 friendly (Academy) Units instead.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 friendly (Academy) Unit. During this turn, it may choose an active enemy Unit with 5 or less AP as its attack target. If you use an EX Resource to play this card, choose 1 to 2 friendly (Academy) Units instead.; 【Pilot】[Norea Du Noc]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

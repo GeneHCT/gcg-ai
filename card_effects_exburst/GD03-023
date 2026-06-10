@@ -1,0 +1,45 @@
+{
+  "card_id": "GD03-023",
+  "effects": [
+    {
+      "effect_id": "GD03-023-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLACE_EX_RESOURCE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "traits": [
+              "AGE System"
+            ]
+          },
+          "keyword": "HIGH-MANEUVERS",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "card_id": "GD01-103",
+  "effects": [
+    {
+      "effect_id": "GD01-103-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Daguza Mackle]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD01-103-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "FRIENDLY_UNIT",
+          "state": "ACTIVE",
+          "traits": [
+            "Earth Federation"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": "FRIENDLY_UNIT",
+          "filters": {
+            "state": "ACTIVE",
+            "traits": [
+              "Earth Federation"
+            ]
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "target": "ENEMY_UNIT",
+          "filters": {
+            "state": "ACTIVE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 active friendly (Earth Federation) Unit and 1 active enemy Unit. Rest them.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 active friendly (Earth Federation) Unit and 1 active enemy Unit. Rest them.; 【Pilot】[Daguza Mackle]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

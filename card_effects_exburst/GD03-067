@@ -1,0 +1,56 @@
+{
+  "card_id": "GD03-067",
+  "effects": [
+    {
+      "effect_id": "GD03-067-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "optional_actions": [
+            {
+              "amount": 1,
+              "type": "DAMAGE_UNIT",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            },
+            {
+              "stat": "AP",
+              "modification": 1,
+              "duration": "THIS_TURN",
+              "type": "MODIFY_STAT",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】You may choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】You may choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

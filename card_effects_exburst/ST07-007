@@ -1,0 +1,51 @@
+{
+  "card_id": "ST07-007",
+  "effects": [
+    {
+      "effect_id": "ST07-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operand": "==",
+          "value": "PLAYER"
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "operand": "==",
+          "value": "CB"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "+2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, while you have a (CB) Pilot in play, this Unit gets AP+2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your turn, while you have a (CB) Pilot in play, this Unit gets AP+2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

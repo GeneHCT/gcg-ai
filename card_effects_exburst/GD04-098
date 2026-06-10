@@ -1,0 +1,77 @@
+{
+  "card_id": "GD04-098",
+  "effects": [
+    {
+      "effect_id": "GD04-098-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-098-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "RECEIVING_EFFECT_DAMAGE",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "traits": [
+            null
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "selector": "SELF",
+          "stat": "HP",
+          "modification": "+2",
+          "duration": "THIS_TURN"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】When this Unit receives effect damage from an enemy, reduce it by 2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【During Link】When this Unit receives effect damage from an enemy, reduce it by 2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "card_id": "GD03-082",
+  "effects": [
+    {
+      "effect_id": "GD03-082-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "operator": ">=",
+          "value": 2,
+          "filters": {
+            "trait": [
+              "Superpower Bloc",
+              "UN"
+            ]
+          },
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "selector": "SELF",
+          "stat": "COST",
+          "modification": -1,
+          "duration": "PERMANENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you have 2 or more (Superpower Bloc)/(UN) Units in play, this card in your hand gets cost -1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While you have 2 or more (Superpower Bloc)/(UN) Units in play, this card in your hand gets cost -1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

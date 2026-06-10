@@ -1,0 +1,52 @@
+{
+  "card_id": "GD04-007",
+  "effects": [
+    {
+      "effect_id": "GD04-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "ATTACKING",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "token_type": "Parts",
+          "traits": [
+            "League Militaire"
+          ],
+          "ap": 1,
+          "hp": 1,
+          "grant_keywords": [
+            "GRANT_ATTACK_TARGETING"
+          ],
+          "attack_targeting_restriction": "ENEMY_UNIT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】Deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair】【Attack】Deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

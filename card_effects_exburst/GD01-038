@@ -1,0 +1,45 @@
+{
+  "card_id": "GD01-038",
+  "effects": [
+    {
+      "effect_id": "GD01-038-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "ENEMY_UNIT",
+          "operator": ">=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】If 5 or more enemy Units are in play, deal 1 damage to all enemy Units.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】If 5 or more enemy Units are in play, deal 1 damage to all enemy Units.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

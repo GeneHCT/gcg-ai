@@ -1,0 +1,50 @@
+{
+  "card_id": "GD03-074",
+  "effects": [
+    {
+      "effect_id": "GD03-074-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "OTHER_FRIENDLY_UNIT",
+          "traits": [
+            "Superpower Bloc"
+          ]
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "rested",
+          "target_selector": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】While you have another (Superpower Bloc) Unit in play, enemy Units choose this rested Unit as their attack target if possible when attacking.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair】While you have another (Superpower Bloc) Unit in play, enemy Units choose this rested Unit as their attack target if possible when attacking.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

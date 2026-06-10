@@ -6,6 +6,9 @@ import json
 from typing import Dict, List, Any, Optional, Union
 from dataclasses import dataclass
 from pathlib import Path
+from simulator.ir_vocabulary import SUPPORTED_CONDITION_TYPES
+
+DEFAULT_EFFECT_DIRS = ["card_effects_converted", "card_effects_exburst"]
 
 
 @dataclass
@@ -22,7 +25,7 @@ class EffectLoader:
     """Loads card effects from JSON files"""
     
     @staticmethod
-    def load_effect(card_id: str, effects_dir: str = "card_effects_converted") -> Optional[Dict]:
+    def load_effect(card_id: str, effects_dir: str | List[str] | None = None) -> Optional[Dict]:
         """
         Load effect JSON for a card.
         
@@ -33,6 +36,14 @@ class EffectLoader:
         Returns:
             Effect dict or None if not found
         """
+        effects_dir = effects_dir or DEFAULT_EFFECT_DIRS
+        if isinstance(effects_dir, list):
+            for directory in reversed(effects_dir):
+                effect_data = EffectLoader.load_effect(card_id, directory)
+                if effect_data is not None:
+                    return effect_data
+            return None
+        
         effect_path = Path(effects_dir) / card_id
         if not effect_path.exists():
             return None
@@ -45,17 +56,25 @@ class EffectLoader:
             return None
     
     @staticmethod
-    def load_all_effects(effects_dir: str = "card_effects_converted") -> Dict[str, Dict]:
+    def load_all_effects(effects_dir: str | List[str] | None = None) -> Dict[str, Dict]:
         """
         Load all effect JSONs into memory.
         
         Returns:
             Dict mapping card_id to effect dict
         """
+        effects_dir = effects_dir or DEFAULT_EFFECT_DIRS
         effects = {}
+        if isinstance(effects_dir, list):
+            for directory in effects_dir:
+                effects.update(EffectLoader.load_all_effects(directory))
+            return effects
+        
         effects_path = Path(effects_dir)
         
         if not effects_path.exists():
+            if effects_path.name == "card_effects_exburst":
+                print(f"Warning: ExBurst effect directory not found: {effects_path}")
             return effects
             
         for effect_file in effects_path.iterdir():
@@ -83,6 +102,10 @@ class TargetResolver:
         Returns:
             List of resolved targets
         """
+        if isinstance(target_spec, str):
+            target_spec = {"selector": target_spec}
+        if target_spec is None:
+            target_spec = {"selector": "SELF"}
         selector = target_spec.get("selector")
         filters = target_spec.get("filters", {})
         count = target_spec.get("count", 1)
@@ -115,6 +138,12 @@ class TargetResolver:
         if selector == "SELF":
             return [context.source_card]
         
+        elif selector == "FRIENDLY_PLAYER":
+            return [game_state.players[source_player_id]]
+        
+        elif selector == "ALL_PLAYERS":
+            return [game_state.players[0], game_state.players[1]]
+        
         elif selector == "PAIRED_PILOT":
             if hasattr(context.source_card, 'paired_pilot'):
                 return [context.source_card.paired_pilot] if context.source_card.paired_pilot else []
@@ -140,13 +169,21 @@ class TargetResolver:
         elif selector == "ENEMY_PLAYER":
             return [game_state.players[opponent_id]]
         
+        elif selector == "ENEMY_RESOURCE":
+            return game_state.players[opponent_id].resource_area.copy()
+        
         # Contextual selectors
         elif selector == "BATTLING_UNIT":
             # Get the unit being battled (from trigger data)
             return [context.trigger_data.get("battling_unit")] if "battling_unit" in context.trigger_data else []
         
         elif selector == "LOOKED_AT_CARD":
+            if "looked_at_cards" in context.trigger_data:
+                return context.trigger_data["looked_at_cards"].copy()
             return [context.trigger_data.get("looked_at_card")] if "looked_at_card" in context.trigger_data else []
+
+        elif selector == "SELECTED_CARD":
+            return context.trigger_data.get("selected_cards", []).copy()
         
         # Zone selectors
         elif selector == "FRIENDLY_RESOURCE":
@@ -161,7 +198,13 @@ class TargetResolver:
         elif selector == "SELF_SHIELDS":
             return game_state.players[source_player_id].shield_area.copy()
         
+        elif selector == "FRIENDLY_SHIELDS":
+            return game_state.players[source_player_id].shield_area.copy()
+        
         elif selector == "OPPONENT_SHIELDS":
+            return game_state.players[opponent_id].shield_area.copy()
+        
+        elif selector == "ENEMY_SHIELDS":
             return game_state.players[opponent_id].shield_area.copy()
         
         elif selector == "SELF_HAND":
@@ -169,6 +212,9 @@ class TargetResolver:
         
         elif selector == "OPPONENT_HAND":
             return game_state.players[opponent_id].hand.copy()
+        
+        elif selector == "SELF_DECK":
+            return game_state.players[source_player_id].main_deck.copy()
         
         return candidates
     
@@ -192,9 +238,30 @@ class TargetResolver:
         
         # Card type filter
         if "card_type" in filters:
-            if not hasattr(target, 'card_data'):
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            if not hasattr(card_data, 'type'):
                 return False
-            if target.card_data.type != filters["card_type"]:
+            if card_data.type != filters["card_type"]:
+                return False
+        
+        # Color filter
+        if "color" in filters:
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            if not hasattr(card_data, 'color'):
+                return False
+            if str(card_data.color).lower() != str(filters["color"]).lower():
+                return False
+        
+        # Name/text filters
+        if "name_contains" in filters:
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            if str(filters["name_contains"]).lower() not in str(getattr(card_data, 'name', '')).lower():
+                return False
+
+        if "text_contains" in filters:
+            card_data = target.card_data if hasattr(target, 'card_data') else target
+            effect_text = " ".join(getattr(card_data, 'effect', []) or [])
+            if str(filters["text_contains"]).lower() not in effect_text.lower():
                 return False
         
         # Traits filter
@@ -349,7 +416,7 @@ class ConditionEvaluator:
     """Evaluates effect conditions"""
     
     @staticmethod
-    def evaluate_all(context: EffectContext, conditions: List[Dict]) -> bool:
+    def evaluate_all(context: EffectContext, conditions: List[Dict], strict: bool = False) -> bool:
         """
         Evaluate all conditions - all must be true.
         
@@ -364,15 +431,19 @@ class ConditionEvaluator:
             return True
         
         for condition in conditions:
-            if not ConditionEvaluator.evaluate(context, condition):
+            if not ConditionEvaluator.evaluate(context, condition, strict=strict):
                 return False
         
         return True
     
     @staticmethod
-    def evaluate(context: EffectContext, condition: Dict) -> bool:
+    def evaluate(context: EffectContext, condition: Dict, strict: bool = False) -> bool:
         """Evaluate a single condition"""
+        if condition is None:
+            return True
         condition_type = condition.get("type")
+        if strict and condition_type not in SUPPORTED_CONDITION_TYPES:
+            raise ValueError(f"Unknown condition type: {condition_type}")
         
         if condition_type == "COUNT_CARDS":
             return ConditionEvaluator._evaluate_count_cards(context, condition)
@@ -386,6 +457,15 @@ class ConditionEvaluator:
         elif condition_type == "CHECK_CARD_STATE":
             return ConditionEvaluator._evaluate_check_card_state(context, condition)
         
+        elif condition_type == "CHECK_TRAIT":
+            return ConditionEvaluator._evaluate_check_trait(context, condition)
+        
+        elif condition_type == "CHECK_COLOR":
+            return ConditionEvaluator._evaluate_check_color(context, condition)
+        
+        elif condition_type == "CHECK_KEYWORD":
+            return ConditionEvaluator._evaluate_check_keyword(context, condition)
+        
         elif condition_type == "CHECK_PLAYER_LEVEL":
             return ConditionEvaluator._evaluate_check_player_level(context, condition)
         
@@ -395,12 +475,21 @@ class ConditionEvaluator:
         elif condition_type == "CHECK_LINK_STATUS":
             return ConditionEvaluator._evaluate_check_link_status(context, condition)
         
+        elif condition_type == "CHECK_PAIR_STATUS":
+            return ConditionEvaluator._evaluate_check_pair_status(context, condition)
+        
+        elif condition_type == "CHECK_TARGET":
+            return ConditionEvaluator._evaluate_check_target(context, condition)
+        
+        elif condition_type == "CHECK_PAIRED_PILOT_COLOR":
+            return ConditionEvaluator._evaluate_check_paired_pilot_color(context, condition)
+        
         elif condition_type == "CHECK_PAIRED_PILOT_TRAIT":
             return ConditionEvaluator._evaluate_check_paired_pilot_trait(context, condition)
         
         # Add more condition types as needed
         
-        return True  # Unknown condition types pass by default
+        return True  # Unknown condition types pass by default outside strict validation
     
     @staticmethod
     def _evaluate_count_cards(context: EffectContext, condition: Dict) -> bool:
@@ -528,6 +617,57 @@ class ConditionEvaluator:
             return current_player != context.source_player_id
         
         return True
+
+    @staticmethod
+    def _evaluate_check_trait(context: EffectContext, condition: Dict) -> bool:
+        traits = condition.get("traits") or condition.get("required_traits") or []
+        if isinstance(traits, str):
+            traits = [traits]
+        trait_operator = condition.get("trait_operator", "ANY")
+        targets = ConditionEvaluator._condition_targets(context, condition)
+        if not targets:
+            return False
+        return any(
+            ConditionEvaluator._target_has_traits(target, traits, trait_operator)
+            for target in targets
+        )
+
+    @staticmethod
+    def _evaluate_check_color(context: EffectContext, condition: Dict) -> bool:
+        expected_color = str(condition.get("color") or "").lower()
+        targets = ConditionEvaluator._condition_targets(context, condition)
+        if not targets or not expected_color:
+            return False
+        return any(
+            str(getattr(ConditionEvaluator._card_data(target), 'color', '')).lower() == expected_color
+            for target in targets
+        )
+
+    @staticmethod
+    def _evaluate_check_keyword(context: EffectContext, condition: Dict) -> bool:
+        keyword = str(condition.get("keyword") or condition.get("has_keyword") or "").lower()
+        targets = ConditionEvaluator._condition_targets(context, condition)
+        if not targets or not keyword:
+            return False
+        return any(hasattr(target, 'has_keyword') and target.has_keyword(keyword) for target in targets)
+
+    @staticmethod
+    def _condition_targets(context: EffectContext, condition: Dict) -> List[Any]:
+        target_spec = condition.get("target")
+        if target_spec:
+            return TargetResolver.resolve_target(context, target_spec)
+        return [context.source_card]
+
+    @staticmethod
+    def _target_has_traits(target: Any, traits: List[str], trait_operator: str) -> bool:
+        target_traits = getattr(ConditionEvaluator._card_data(target), 'traits', [])
+        if trait_operator == "ALL":
+            return all(trait in target_traits for trait in traits)
+        return any(trait in target_traits for trait in traits)
+
+    @staticmethod
+    def _card_data(target: Any) -> Any:
+        return target.card_data if hasattr(target, 'card_data') else target
     
     @staticmethod
     def _evaluate_check_card_state(context: EffectContext, condition: Dict) -> bool:
@@ -647,6 +787,50 @@ class ConditionEvaluator:
         is_linked = unit.is_linked if hasattr(unit, 'is_linked') else False
         
         return is_linked == expected_linked
+    
+    @staticmethod
+    def _evaluate_check_pair_status(context: EffectContext, condition: Dict) -> bool:
+        target_spec = condition.get("target", {"selector": "SELF"})
+        expected = condition.get("is_paired", condition.get("paired", True))
+        targets = TargetResolver.resolve_target(context, target_spec) if isinstance(target_spec, dict) else [context.source_card]
+        if not targets:
+            return False
+        return any((getattr(target, "paired_pilot", None) is not None) == expected for target in targets)
+    
+    @staticmethod
+    def _evaluate_check_target(context: EffectContext, condition: Dict) -> bool:
+        expected = str(
+            condition.get("target_type")
+            or condition.get("target_selector")
+            or condition.get("attack_target")
+            or condition.get("value")
+            or ""
+        ).upper()
+        if not expected and condition.get("attacking_player") is True:
+            expected = "PLAYER"
+        actual_target = (
+            context.trigger_data.get("target")
+            or context.trigger_data.get("attack_target")
+            or context.trigger_data.get("defender")
+        )
+        if expected in {"PLAYER", "ENEMY_PLAYER", "OPPONENT_PLAYER"}:
+            return actual_target in {"PLAYER", "ENEMY_PLAYER"} or not hasattr(actual_target, "card_data")
+        if expected in {"UNIT", "ENEMY_UNIT"}:
+            return hasattr(actual_target, "card_data")
+        return True
+    
+    @staticmethod
+    def _evaluate_check_paired_pilot_color(context: EffectContext, condition: Dict) -> bool:
+        expected_color = str(condition.get("color") or condition.get("required_color") or "").lower()
+        targets = ConditionEvaluator._condition_targets(context, condition)
+        if not targets or not expected_color:
+            return False
+        for unit in targets:
+            pilot = getattr(unit, "paired_pilot", None)
+            pilot_card = getattr(pilot, "card_data", None)
+            if pilot_card and str(getattr(pilot_card, "color", "")).lower() == expected_color:
+                return True
+        return False
     
     @staticmethod
     def _evaluate_check_paired_pilot_trait(context: EffectContext, condition: Dict) -> bool:

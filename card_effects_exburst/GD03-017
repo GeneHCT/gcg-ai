@@ -1,0 +1,83 @@
+{
+  "card_id": "GD03-017",
+  "effects": [
+    {
+      "effect_id": "GD03-017-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Cyclops Team"
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 (Cyclops Team) Pilot card from your trash. Add it to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-017-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Cyclops Team"
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": "<=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE",
+              "ap": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          },
+          "duration": "THIS_TURN"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired･(Cyclops Team) Pilot】All your (Cyclops Team) Units may choose an active enemy Unit with 5 or less AP as their attack target during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 (Cyclops Team) Pilot card from your trash. Add it to your hand.; 【When Paired･(Cyclops Team) Pilot】All your (Cyclops Team) Units may choose an active enemy Unit with 5 or less AP as their attack target during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

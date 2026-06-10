@@ -1,0 +1,65 @@
+{
+  "card_id": "ST08-009",
+  "effects": [
+    {
+      "effect_id": "ST08-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 2,
+          "filters": {
+            "state": "RESTED"
+          },
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "duration": "THIS_TURN",
+          "filters": {
+            "state": "RESTED",
+            "level": {
+              "operator": "<=",
+              "value": 2
+            }
+          },
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED",
+              "level": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 rested enemy Unit that is Lv.2 or lower. It won' t be set as active during the start phase of your opponent' s next turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 rested enemy Unit that is Lv.2 or lower. It won' t be set as active during the start phase of your opponent' s next turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

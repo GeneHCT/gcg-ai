@@ -1,0 +1,66 @@
+{
+  "card_id": "GD01-114",
+  "effects": [
+    {
+      "effect_id": "GD01-114-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Yonem Kirks]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD01-114-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "operator": ">=",
+          "value": 2,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": "FRIENDLY_UNIT",
+          "stat": "AP",
+          "modification": "+1",
+          "duration": "THIS_TURN",
+          "amount": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 2 friendly Units. They get AP+1 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】Choose 2 friendly Units. They get AP+1 during this turn.; 【Pilot】[Yonem Kirks]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

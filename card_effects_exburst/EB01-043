@@ -1,0 +1,55 @@
+{
+  "card_id": "EB01-043",
+  "effects": [
+    {
+      "effect_id": "EB01-043-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_KEYWORD",
+          "keyword": "BLOCKER",
+          "operator": "==",
+          "value": true,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "selector": "ENEMY_UNIT",
+          "filters": [
+            {
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 5
+            }
+          ],
+          "stat": "AP",
+          "modification": -2,
+          "duration": "THIS_BATTLE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】If a friendly Unit with【Blocker】is in play, choose 1 enemy Unit that is Lv.5 or lower. It gets AP-2 during this battle.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】If a friendly Unit with【Blocker】is in play, choose 1 enemy Unit that is Lv.5 or lower. It gets AP-2 during this battle.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

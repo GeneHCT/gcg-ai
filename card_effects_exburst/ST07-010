@@ -1,0 +1,71 @@
+{
+  "card_id": "ST07-010",
+  "effects": [
+    {
+      "effect_id": "ST07-010-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST07-010-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operator": "==",
+          "value": "OPPONENT_TURN"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "SELF",
+          "value": "CB"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】If it is your opponent's turn and this is a (CB) Unit, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【Destroyed】If it is your opponent's turn and this is a (CB) Unit, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "card_id": "EB01-021",
+  "effects": [
+    {
+      "effect_id": "EB01-021-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target": "SELF",
+          "state": "ATTACKING"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 4,
+          "target": {
+            "selector": "OPPONENT_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Breach 4】(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EB01-021-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "PAIRED_PILOT",
+          "traits": [
+            "G Generation"
+          ]
+        },
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "SELF",
+          "filters": {
+            "trait": "G Generation",
+            "card_type": "UNIT"
+          },
+          "operator": ">=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "amount": 1,
+          "state": "RESTED"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired ･(G Generation) Pilot】If there are 2 or more (G Generation) Unit cards in your trash, place 1 rested Resource.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Breach 4】(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); 【When Paired ･(G Generation) Pilot】If there are 2 or more (G Generation) Unit cards in your trash, place 1 rested Resource.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

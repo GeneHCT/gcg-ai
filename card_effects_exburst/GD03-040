@@ -1,0 +1,45 @@
+{
+  "card_id": "GD03-040",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-040-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "【During Link】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "LINKED"
+        }
+      ],
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "【During Link】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

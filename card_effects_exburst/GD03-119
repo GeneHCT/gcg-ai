@@ -1,0 +1,64 @@
+{
+  "card_id": "GD03-119",
+  "effects": [
+    {
+      "effect_id": "GD03-119-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "RESTED"
+            }
+          ],
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "FRIENDLY_BASE",
+            "filters": {
+              "state": "RESTED"
+            }
+          }
+        },
+        {
+          "stat": "AP",
+          "duration": "THIS_TURN",
+          "conditions": [
+            {
+              "type": "CONDITIONAL_BRANCH",
+              "condition": {
+                "type": "CHECK_ACTION_SUCCESS",
+                "action_index": 0
+              }
+            }
+          ],
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "modification": "-1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 rested friendly Base. Set it as active. If you do, all enemy Units get AP-1 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 rested friendly Base. Set it as active. If you do, all enemy Units get AP-1 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

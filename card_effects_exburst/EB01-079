@@ -1,0 +1,54 @@
+{
+  "card_id": "EB01-079",
+  "effects": [
+    {
+      "effect_id": "EB01-079-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "G Generation"
+              ]
+            }
+          },
+          "protection_conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 3,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "duration": "THIS_TURN"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 friendly (G Generation) Unit. It can't receive battle damage from enemy Units that are Lv.3 or lower during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 friendly (G Generation) Unit. It can't receive battle damage from enemy Units that are Lv.3 or lower during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

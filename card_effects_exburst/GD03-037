@@ -1,0 +1,45 @@
+{
+  "card_id": "GD03-037",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-037-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "【During Link】During your turn, while this Unit is battling an enemy Unit with a 【Destroyed】 effect, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target": {
+            "selector": "SELF"
+          },
+          "state": "LINKED"
+        }
+      ],
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "FIRST_STRIKE",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】During your turn, while this Unit is battling an enemy Unit with a 【Destroyed】 effect, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "【During Link】During your turn, while this Unit is battling an enemy Unit with a 【Destroyed】 effect, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

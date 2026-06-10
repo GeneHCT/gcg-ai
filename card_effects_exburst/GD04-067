@@ -1,0 +1,92 @@
+{
+  "card_id": "GD04-067",
+  "effects": [
+    {
+      "effect_id": "GD04-067-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "target_selector": "SELECTED_CARD",
+          "filters": {
+            "has_keyword": [
+              "REPAIR",
+              "BREACH",
+              "FIRST_STRIKE",
+              "SUPPORT",
+              "HIGH_MANEUVER",
+              "SUPPRESSION",
+              "BLOCKER"
+            ]
+          },
+          "operator": ">=",
+          "value": 1,
+          "owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "source_zone": "SELF_TRASH",
+          "filters": {
+            "has_keyword": "['repair',_'breach',_'first_strike',_'support',_'high_maneuver',_'suppression',_'blocker']"
+          },
+          "max_targets": 1,
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "+1",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": [
+            "REPAIR",
+            "BREACH",
+            "FIRST_STRIKE",
+            "SUPPORT",
+            "HIGH_MANEUVER",
+            "SUPPRESSION",
+            "BLOCKER"
+          ],
+          "duration": "THIS_TURN",
+          "copy_from": "SELECTED_CARD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

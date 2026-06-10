@@ -1,0 +1,57 @@
+{
+  "card_id": "GD04-001",
+  "effects": [
+    {
+      "effect_id": "GD04-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": "LINKED"
+        },
+        {
+          "type": "CHECK_COLOR",
+          "value": "Blue",
+          "target": {
+            "selector": "PAIRED_PILOT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "actions": [
+            {
+              "type": "ADD_TO_HAND",
+              "filters": {
+                "color": "Blue"
+              },
+              "target": {
+                "selector": "PAIRED_PILOT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Attack】If you are attacking an enemy Unit, you may return a blue Pilot paired with this Unit to its owner's hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Attack】If you are attacking an enemy Unit, you may return a blue Pilot paired with this Unit to its owner's hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

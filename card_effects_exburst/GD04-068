@@ -1,0 +1,65 @@
+{
+  "card_id": "GD04-068",
+  "effects": [
+    {
+      "effect_id": "GD04-068-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_RECEIVE_EFFECT_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TARGET",
+          "target_selector": "ENEMY_PLAYER"
+        }
+      ],
+      "actions": [
+        {
+          "type": "REDUCE_DAMAGE",
+          "amount": 3,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When this Unit receives effect damage from an enemy, reduce it by 3.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-068-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Blocker> (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); When this Unit receives effect damage from an enemy, reduce it by 3.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

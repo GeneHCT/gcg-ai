@@ -1,0 +1,53 @@
+{
+  "card_id": "GD04-025",
+  "effects": [
+    {
+      "effect_id": "GD04-025-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "SELF",
+          "operator": "==",
+          "turn_owner": "SELF"
+        },
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "FRIENDLY_UNIT",
+          "filters": {
+            "traits": [
+              "Dawn of Fold"
+            ]
+          },
+          "operator": ">=",
+          "value": 1
+        }
+      ],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "PLACE_RESOURCE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】During your turn, if you have another (Dawn of Fold) Unit in play, place 1 EX Resource.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Destroyed】During your turn, if you have another (Dawn of Fold) Unit in play, place 1 EX Resource.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "card_id": "GD03-007",
+  "effects": [
+    {
+      "effect_id": "GD03-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "ENEMY_UNIT",
+          "stat": "HP",
+          "operator": "<=",
+          "value": 3
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "filters": {
+            "stat": "HP",
+            "operator": "<=",
+            "value": 3
+          },
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】Choose 1 enemy Unit with 3 or less HP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Destroyed】Choose 1 enemy Unit with 3 or less HP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

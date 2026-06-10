@@ -1,0 +1,82 @@
+{
+  "card_id": "GD01-066",
+  "effects": [
+    {
+      "effect_id": "GD01-066-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "token_name": "Fatum-00",
+          "token_traits": [
+            "Triple Ship Alliance"
+          ],
+          "token_ap": 2,
+          "token_hp": 2,
+          "token_keywords": [
+            "BLOCKER"
+          ],
+          "type": "DEPLOY_TOKEN"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Deploy 1 [Fatum-00]((Triple Ship Alliance)･AP2･HP2･<Blocker>) Unit token.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-066-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "is_token": true,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Triple Ship Alliance"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "keyword": "HIGH-MANEUVERS",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELECTED_CARD"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ON_ATTACK"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Deploy 1 [Fatum-00]((Triple Ship Alliance)･AP2･HP2･<Blocker>) Unit token.; 【During Pair】【Attack】Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

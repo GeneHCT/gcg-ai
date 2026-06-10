@@ -1,0 +1,82 @@
+{
+  "card_id": "GD02-116",
+  "effects": [
+    {
+      "effect_id": "GD02-116-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Roybea Loy]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD02-116-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "operator": ">=",
+          "value": 7,
+          "owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "filters": {
+            "traits": [
+              "Vulture"
+            ]
+          },
+          "duration": "THIS_TURN",
+          "attack_target_filters": {
+            "selector": "ENEMY_UNIT",
+            "state": "ACTIVE",
+            "level": {
+              "operator": "<=",
+              "value": 4
+            }
+          },
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "Vulture"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】If there are 7 or more cards in your trash, choose 1 friendly (Vulture) Unit. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】If there are 7 or more cards in your trash, choose 1 friendly (Vulture) Unit. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target.; 【Pilot】[Roybea Loy]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

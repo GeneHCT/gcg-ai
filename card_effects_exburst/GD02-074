@@ -1,0 +1,71 @@
+{
+  "card_id": "GD02-074",
+  "effects": [
+    {
+      "effect_id": "GD02-074-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "card_type": "COMMAND",
+          "operator": ">=",
+          "value": 4,
+          "owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "keyword": "BLOCKER",
+          "duration": "PERMANENT",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】While there are 4 or more Command cards in your trash, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-074-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<High-Maneuver> (This Unit can't be blocked.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<High-Maneuver> (This Unit can't be blocked.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<High-Maneuver> (This Unit can't be blocked.); 【During Pair】While there are 4 or more Command cards in your trash, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

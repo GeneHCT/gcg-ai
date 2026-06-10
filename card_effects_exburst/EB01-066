@@ -1,0 +1,47 @@
+{
+  "card_id": "EB01-066",
+  "effects": [
+    {
+      "effect_id": "EB01-066-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "G Generation"
+              ]
+            }
+          },
+          "filters": {
+            "has_keyword": "blocker",
+            "state": "ACTIVE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】Choose 1 friendly (G Generation) Unit. During this turn, it may choos an active enemy Unit with【Blocker】as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired】Choose 1 friendly (G Generation) Unit. During this turn, it may choos an active enemy Unit with【Blocker】as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

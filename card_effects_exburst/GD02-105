@@ -1,0 +1,63 @@
+{
+  "card_id": "GD02-105",
+  "effects": [
+    {
+      "effect_id": "GD02-105-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Xavier Olivette]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD02-105-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "filters": {
+            "is_token": true
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "duration": "THIS_BATTLE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 of your Unit tokens. It can't receive battle damage from enemy Units during this battle.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】Choose 1 of your Unit tokens. It can't receive battle damage from enemy Units during this battle.; 【Pilot】[Xavier Olivette]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

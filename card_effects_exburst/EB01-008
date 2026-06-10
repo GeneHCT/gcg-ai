@@ -1,0 +1,57 @@
+{
+  "card_id": "EB01-008",
+  "effects": [
+    {
+      "effect_id": "EB01-008-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "optional_actions": [
+            {
+              "amount": 1,
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              },
+              "type": "EXILE_CARDS",
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": 2,
+              "type": "RECOVER_HP",
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy ･ Development 1】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy ･ Development 1】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:; ▫️Choose 1 friendly Unit. It recovers 2 HP.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

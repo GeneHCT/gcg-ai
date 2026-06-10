@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "seed": 42,
+    "createdAt": "2026-06-10T12:00:00",
+    "decks": {
+      "0": "decks/bg-haste.txt",
+      "1": "decks/rw-justice.txt"
+    }
+  },
+  "frames": [
+    {
+      "id": 0,
+      "turn": 1,
+      "phase": "start",
+      "activePlayer": 0,
+      "decisionPlayer": null,
+      "label": "Game start",
+      "cause": {
+        "type": "game_start",
+        "summary": "Initial setup",
+        "action": null,
+        "result": null,
+        "effects": []
+      },
+      "players": {
+        "0": {
+          "playerId": 0,
+          "hand": [
+            {
+              "instanceId": "p0:hand:0:GD01-001",
+              "cardId": "GD01-001",
+              "name": "Freedom Gundam",
+              "type": "UNIT",
+              "color": "Blue",
+              "level": 7,
+              "cost": 1,
+              "ap": 5,
+              "hp": 5
+            }
+          ],
+          "deck": { "count": 39, "resourceDeckCount": 10 },
+          "trash": [],
+          "shields": [
+            {
+              "instanceId": "p0:shield:base:0",
+              "cardId": "EX_BASE",
+              "name": "EX Base",
+              "type": "BASE",
+              "color": "Neutral",
+              "ap": 0,
+              "hp": 3,
+              "currentHp": 3,
+              "maxHp": 3
+            }
+          ],
+          "resourceArea": [],
+          "field": [],
+          "exiled": [],
+          "exResources": 0,
+          "activeResources": 0,
+          "totalResources": 0
+        },
+        "1": {
+          "playerId": 1,
+          "hand": [],
+          "deck": { "count": 39, "resourceDeckCount": 10 },
+          "trash": [],
+          "shields": [],
+          "resourceArea": [],
+          "field": [],
+          "exiled": [],
+          "exResources": 1,
+          "activeResources": 0,
+          "totalResources": 1
+        }
+      }
+    },
+    {
+      "id": 1,
+      "turn": 2,
+      "phase": "main",
+      "activePlayer": 0,
+      "decisionPlayer": null,
+      "label": "Move #1: play_unit",
+      "cause": {
+        "type": "move",
+        "summary": "PLAY_UNIT: Freedom Gundam",
+        "move": {
+          "type": "play_unit",
+          "summary": "PLAY_UNIT: Freedom Gundam",
+          "card": { "cardId": "GD01-001", "name": "Freedom Gundam" }
+        },
+        "action": {
+          "type": "play_unit",
+          "summary": "PLAY_UNIT: Freedom Gundam",
+          "card": { "cardId": "GD01-001", "name": "Freedom Gundam" }
+        },
+        "result": "Deployed Freedom Gundam (AP=7, HP=6)",
+        "effects": []
+      },
+      "players": {
+        "0": {
+          "playerId": 0,
+          "hand": [],
+          "deck": { "count": 38, "resourceDeckCount": 9 },
+          "trash": [],
+          "shields": [],
+          "resourceArea": [
+            {
+              "instanceId": "p0:resource:0:GD01-R01",
+              "cardId": "GD01-R01",
+              "name": "Blue Resource",
+              "type": "RESOURCE",
+              "color": "Blue",
+              "rested": true
+            }
+          ],
+          "field": [
+            {
+              "instanceId": "p0:field:0:GD01-001",
+              "cardId": "GD01-001",
+              "name": "Freedom Gundam",
+              "type": "UNIT",
+              "color": "Blue",
+              "level": 7,
+              "cost": 1,
+              "ap": 7,
+              "hp": 6,
+              "currentHp": 6,
+              "maxHp": 6,
+              "rested": false,
+              "attachedPilot": {
+                "instanceId": "p0:field:0:pilot",
+                "cardId": "ST01-010",
+                "name": "Kira Yamato",
+                "type": "PILOT",
+                "color": "Blue",
+                "ap": 2,
+                "hp": 1
+              }
+            }
+          ],
+          "exiled": [],
+          "exResources": 0,
+          "activeResources": 0,
+          "totalResources": 1
+        },
+        "1": {
+          "playerId": 1,
+          "hand": [],
+          "deck": { "count": 39, "resourceDeckCount": 10 },
+          "trash": [],
+          "shields": [],
+          "resourceArea": [],
+          "field": [],
+          "exiled": [],
+          "exResources": 1,
+          "activeResources": 0,
+          "totalResources": 1
+        }
+      }
+    }
+  ]
+}

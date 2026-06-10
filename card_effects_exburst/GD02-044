@@ -1,0 +1,54 @@
+{
+  "card_id": "GD02-044",
+  "effects": [
+    {
+      "effect_id": "GD02-044-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "filters": {
+            "trait": "New UNE"
+          },
+          "operator": ">=",
+          "value": 1,
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "token_name": "Daughtress",
+          "token_traits": [
+            "New UNE"
+          ],
+          "token_ap": 0,
+          "token_hp": 1,
+          "is_rested": true,
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】If you have another (New UNE) Unit in play, deploy 1 rested [Daughtress]((New UNE)･AP0･HP1) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Destroyed】If you have another (New UNE) Unit in play, deploy 1 rested [Daughtress]((New UNE)･AP0･HP1) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

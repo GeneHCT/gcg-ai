@@ -8,12 +8,17 @@ __pycache__/
 dist/
 build/
 
+# JavaScript
+node_modules/
+replay-viewer/dist/
+
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.credentials
 
 # Game simulation logs
 *.log
@@ -32,3 +37,4 @@ htmlcov/
 venv/
 env/
 ENV/
+

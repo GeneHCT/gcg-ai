@@ -1,0 +1,65 @@
+{
+  "card_id": "GD04-042",
+  "effects": [
+    {
+      "effect_id": "GD04-042-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_OTHER_FRIENDLY_UNIT_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "target": "PAIRED_PILOT",
+          "traits": [
+            "Cyber-Newtype"
+          ]
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": "<=",
+          "value": 5,
+          "target": "ENEMY_UNIT"
+        },
+        {
+          "type": "COUNT_CARDS",
+          "target": "OPPONENT_SHIELDS",
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "target": "ENEMY_UNIT",
+          "amount": 2,
+          "damage_type": "EFFECT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Once per Turn】When damage from one of your Units paired with a (Cyber-Newtype) Pilot destroys an enemy shield area card, choose 1 enemy Unit with 5 or less AP. Deal 2 damage to it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Once per Turn】When damage from one of your Units paired with a (Cyber-Newtype) Pilot destroys an enemy shield area card, choose 1 enemy Unit with 5 or less AP. Deal 2 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

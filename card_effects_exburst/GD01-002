@@ -1,0 +1,101 @@
+{
+  "card_id": "GD01-002",
+  "effects": [
+    {
+      "effect_id": "GD01-002-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLAY_FROM_HAND"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "optional_actions": [
+            {
+              "filters": {
+                "card_type": "UNIT",
+                "has_keyword": "link",
+                "name_contains": "Unicorn Mode",
+                "level": 5
+              },
+              "type": "DESTROY_CARD",
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "cost": 0,
+              "type": "MODIFY_COST",
+              "scope": "PLAY",
+              "target": {
+                "selector": "SELF"
+              }
+            },
+            {
+              "stat": "LEVEL",
+              "modification": 0,
+              "type": "MODIFY_STAT",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When playing this card from your hand, you may destroy 1 of your Link Units with \"Unicorn Mode\" in its card name that is Lv.5. If you do, play this card as if it has 0 Lv. and cost.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-002-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】Choose 1 enemy Unit. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "When playing this card from your hand, you may destroy 1 of your Link Units with \"Unicorn Mode\" in its card name that is Lv.5. If you do, play this card as if it has 0 Lv. and cost.; 【Attack】Choose 1 enemy Unit. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[0].actions[0].next_if_success[0]",
+        "kind": "malformed_cost_modifier",
+        "value": "{'cost': 0, 'type': 'MODIFY_COST', 'scope': 'PLAY', 'target': {'selector': 'SELF'}}",
+        "message": "Cost modifier must include a modification field"
+      },
+      {
+        "path": "effects[0].actions[0].next_if_success[1]",
+        "kind": "malformed_stat_modifier",
+        "value": "{'stat': 'LEVEL', 'modification': 0, 'type': 'MODIFY_STAT', 'target': {'selector': 'SELF'}}",
+        "message": "Stat modifier must include stat and modification fields"
+      }
+    ]
+  }
+}

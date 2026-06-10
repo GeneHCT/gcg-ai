@@ -1,0 +1,45 @@
+{
+  "card_id": "GD02-076",
+  "effects": [
+    {
+      "effect_id": "GD02-076-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "SELF",
+          "stat": "AP",
+          "operator": ">=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "BLOCKER",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

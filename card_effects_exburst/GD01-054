@@ -1,0 +1,45 @@
+{
+  "card_id": "GD01-054",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-054-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "operator": ">=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT",
+          "keyword": "BREACH",
+          "value": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this Unit has 5 or more AP, it gains <Breach 3>.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "While this Unit has 5 or more AP, it gains <Breach 3>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

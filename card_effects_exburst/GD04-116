@@ -1,0 +1,93 @@
+{
+  "card_id": "GD04-116",
+  "effects": [
+    {
+      "effect_id": "GD04-116-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Heine Westenfluss]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD04-116-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 2,
+          "type": "MILL",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "selector": "SELF_TRASH",
+              "value": 2,
+              "operator": ">="
+            }
+          ],
+          "actions": [
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "selector": "ENEMY_UNIT",
+                  "stat": "AP",
+                  "value": 4,
+                  "operator": "<="
+                },
+                {
+                  "type": "COUNT_CARDS",
+                  "selector": "SELF_TRASH",
+                  "filters": {
+                    "traits": [
+                      "Minerva Squad"
+                    ]
+                  }
+                }
+              ],
+              "type": "DAMAGE_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Place the top 2 cards of your deck into your trash. If you do, choose 1 enemy Unit with 4 or less AP. Deal an amount of damage equal to the number of (Minerva Squad) cards placed with this effect to that enemy Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Place the top 2 cards of your deck into your trash. If you do, choose 1 enemy Unit with 4 or less AP. Deal an amount of damage equal to the number of (Minerva Squad) cards placed with this effect to that enemy Unit.; 【Pilot】[Heine Westenfluss]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "card_id": "GD03-045",
+  "effects": [
+    {
+      "effect_id": "GD03-045-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "filters": {
+            "is_token": true
+          },
+          "operator": ">=",
+          "value": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT",
+          "stat": "AP",
+          "modification": "+1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you have a Unit token in play, this Unit gets AP+1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While you have a Unit token in play, this Unit gets AP+1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

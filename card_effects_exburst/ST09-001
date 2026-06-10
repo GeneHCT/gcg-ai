@@ -1,0 +1,58 @@
+{
+  "card_id": "ST09-001",
+  "effects": [
+    {
+      "effect_id": "ST09-001-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": ">=",
+          "value": 4,
+          "filters": {
+            "name_contains": "Impulse Gundam",
+            "card_type": "UNIT"
+          },
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "selector": "SELF_TRASH",
+          "filters": {
+            "name_contains": "Impulse Gundam",
+            "card_type": "UNIT",
+            "level": 4
+          }
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "selector": "SELF"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】②, return this Unit to the bottom of its owner's deck：Choose 1 Unit card with \"Impulse Gundam\" in its card name that is Lv.4 or higher from your trash. Deploy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】②, return this Unit to the bottom of its owner's deck：Choose 1 Unit card with \"Impulse Gundam\" in its card name that is Lv.4 or higher from your trash. Deploy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

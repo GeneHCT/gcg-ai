@@ -1,0 +1,54 @@
+{
+  "card_id": "EXRP-005",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "EXRP-005-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "is_supported": false,
+      "unhandled_explanation": "Game setup effects are not supported in the current vocabulary",
+      "metadata": {
+        "raw_text": "At the start of the game, the second-turn player places 1 active EX Resource into their resource area.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EXRP-005-E2",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "is_supported": false,
+      "unhandled_explanation": "Cost payment replacement effects are not supported in the current vocabulary",
+      "metadata": {
+        "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "(At the start of the game, the second-turn player places 1 active EX Resource into their resource area.) (Rest an EX Resource then exile it from the game when paying a cost.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "unsupported",
+    "validation_issues": [
+      {
+        "path": "continuous_effects[0]",
+        "kind": "unsupported_llm_effect",
+        "value": "EXRP-005-E1",
+        "message": "Game setup effects are not supported in the current vocabulary"
+      },
+      {
+        "path": "continuous_effects[1]",
+        "kind": "unsupported_llm_effect",
+        "value": "EXRP-005-E2",
+        "message": "Cost payment replacement effects are not supported in the current vocabulary"
+      }
+    ]
+  }
+}

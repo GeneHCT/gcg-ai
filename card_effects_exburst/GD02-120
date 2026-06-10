@@ -1,0 +1,66 @@
+{
+  "card_id": "GD02-120",
+  "effects": [
+    {
+      "effect_id": "GD02-120-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Fa Yuiry]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD02-120-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "AEUG"
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 2,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "AEUG"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 of your (AEUG) Units/Bases. It recovers 2 HP.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】Choose 1 of your (AEUG) Units/Bases. It recovers 2 HP.; 【Pilot】[Fa Yuiry]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

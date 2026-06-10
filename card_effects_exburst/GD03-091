@@ -1,0 +1,72 @@
+{
+  "card_id": "GD03-091",
+  "effects": [
+    {
+      "effect_id": "GD03-091-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-091-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "card_type": "BASE",
+            "traits": [
+              "ZAFT"
+            ]
+          },
+          "amount": 1,
+          "type": "SELECT_LOOKED_AT_CARD",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        },
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Choose 1 (ZAFT) Base card from your trash. Add it to your hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Linked】Choose 1 (ZAFT) Base card from your trash. Add it to your hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

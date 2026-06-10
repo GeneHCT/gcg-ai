@@ -1,0 +1,62 @@
+{
+  "card_id": "GD02-003",
+  "effects": [
+    {
+      "effect_id": "GD02-003-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "status": "PAIRED",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "pilot_level": "<=3",
+          "target": {
+            "selector": "PAIRED_PILOT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "actions": [
+            {
+              "type": "DISCARD",
+              "selector": "FRIENDLY_UNIT",
+              "amount": 1
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "ADD_TO_HAND",
+              "selector": "PAIRED_PILOT"
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair･Lv.3 or Lower Pilot】【Destroyed】You may discard 1 Unit card. If you do, return the card paired with this Unit to your hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair･Lv.3 or Lower Pilot】【Destroyed】You may discard 1 Unit card. If you do, return the card paired with this Unit to your hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

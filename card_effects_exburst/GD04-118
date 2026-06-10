@@ -1,0 +1,77 @@
+{
+  "card_id": "GD04-118",
+  "effects": [
+    {
+      "effect_id": "GD04-118-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Alejandro Corner]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD04-118-E2",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "CONDITIONAL_BRANCH",
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "owner": "FRIENDLY_PLAYER",
+              "card_type": "UNIT",
+              "traits": [
+                "UN"
+              ],
+              "operator": ">=",
+              "value": 2
+            }
+          ],
+          "if_true": [
+            {
+              "type": "RETURN_TO_HAND",
+              "filters": {
+                "stat": "HP",
+                "operator": "<=",
+                "value": 5
+              },
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】If 2 or more friendly (UN) Units are in play, choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】If 2 or more friendly (UN) Units are in play, choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand.; 【Pilot】[Alejandro Corner]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

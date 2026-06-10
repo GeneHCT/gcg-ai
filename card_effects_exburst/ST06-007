@@ -1,0 +1,56 @@
+{
+  "card_id": "ST06-007",
+  "effects": [
+    {
+      "effect_id": "ST06-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "value": "Clan"
+            }
+          ],
+          "duration": "THIS_TURN",
+          "attack_target_conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "ACTIVE"
+            },
+            {
+              "type": "CHECK_STAT",
+              "stat": "AP",
+              "operator": "<=",
+              "value": 3
+            }
+          ],
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your other (Clan) Units. During this turn, it may choose an active enemy Unit with 3 or less AP as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 of your other (Clan) Units. During this turn, it may choose an active enemy Unit with 3 or less AP as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

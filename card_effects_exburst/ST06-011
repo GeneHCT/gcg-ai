@@ -1,0 +1,70 @@
+{
+  "card_id": "ST06-011",
+  "effects": [
+    {
+      "effect_id": "ST06-011-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": [
+          "GQ"
+        ]
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Gaia (GQ)]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "ST06-011-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Clan"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "+2",
+          "target": "FRIENDLY_UNIT",
+          "duration": "THIS_TURN",
+          "filters": {
+            "traits": [
+              "Clan"
+            ],
+            "min_targets": 1,
+            "max_targets": 2
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.; 【Pilot】[Gaia (GQ)]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

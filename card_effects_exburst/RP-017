@@ -1,0 +1,35 @@
+{
+  "card_id": "RP-017",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "RP-017-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "is_supported": false,
+      "unhandled_explanation": "requires cost payment hook for resting resources",
+      "metadata": {
+        "raw_text": "(Rest a Resource when paying a cost.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "(Rest a Resource when paying a cost.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "unsupported",
+    "validation_issues": [
+      {
+        "path": "continuous_effects[0]",
+        "kind": "unsupported_llm_effect",
+        "value": "RP-017-E1",
+        "message": "requires cost payment hook for resting resources"
+      }
+    ]
+  }
+}

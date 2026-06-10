@@ -1,0 +1,59 @@
+{
+  "card_id": "GD04-052",
+  "effects": [
+    {
+      "effect_id": "GD04-052-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target_selector": "SELF",
+          "state": "ATTACKING"
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "DAMAGE_UNIT",
+              "amount": 2,
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            },
+            {
+              "type": "DAMAGE_UNIT",
+              "amount": 2,
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】You may choose 1 enemy Unit. Deal 2 damage to it and this Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair】【Attack】You may choose 1 enemy Unit. Deal 2 damage to it and this Unit.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

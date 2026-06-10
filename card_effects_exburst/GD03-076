@@ -1,0 +1,58 @@
+{
+  "card_id": "GD03-076",
+  "effects": [
+    {
+      "effect_id": "GD03-076-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_OTHER_FRIENDLY_UNIT_DEAL_BATTLE_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "SELF",
+          "operator": "==",
+          "turn_owner": "SELF"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "value": "Triple Ship Alliance"
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "actions": [
+            {
+              "type": "DISCARD",
+              "amount": 1,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Once per Turn】During your turn, when your (Triple Ship Alliance) Unit deals battle damage to an enemy Unit, you may return the enemy Unit to its owner's hand.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Once per Turn】During your turn, when your (Triple Ship Alliance) Unit deals battle damage to an enemy Unit, you may return the enemy Unit to its owner's hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

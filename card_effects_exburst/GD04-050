@@ -1,0 +1,78 @@
+{
+  "card_id": "GD04-050",
+  "effects": [
+    {
+      "effect_id": "GD04-050-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "value": "Minerva Squad"
+            },
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "UNIT"
+            }
+          ],
+          "optional_actions": [
+            {
+              "amount": 1,
+              "type": "DEPLOY_FROM_ZONE",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】You may choose 1 (Minerva Squad) Unit card from your trash. Pay its cost to deploy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-050-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<High-Maneuver> (This Unit can't be blocked.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<High-Maneuver> (This Unit can't be blocked.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<High-Maneuver> (This Unit can't be blocked.); 【During Pair】【Attack】You may choose 1 (Minerva Squad) Unit card from your trash. Pay its cost to deploy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

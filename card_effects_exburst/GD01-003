@@ -1,0 +1,64 @@
+{
+  "card_id": "GD01-003",
+  "effects": [
+    {
+      "effect_id": "GD01-003-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "amount": 12,
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        },
+        {
+          "type": "RETURN_LOOKED_TO_TOP",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "FIRST_STRIKE",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Attack】Choose 12 cards from your trash. Return them to their owner's deck and shuffle it. If you do, set this Unit as active. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Attack】Choose 12 cards from your trash. Return them to their owner's deck and shuffle it. If you do, set this Unit as active. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "card_id": "ST09-009",
+  "effects": [
+    {
+      "effect_id": "ST09-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "operator": "==",
+          "state": "ACTIVE"
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "value": 4,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE",
+              "ap": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST09-009-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "operator": "==",
+          "state": "ACTIVE"
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "AP",
+          "value": 4,
+          "operator": "<="
+        }
+      ],
+      "actions": [
+        {
+          "type": "DESTROY_CARD",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE",
+              "ap": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

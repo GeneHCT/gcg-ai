@@ -1,17 +1,15 @@
 {
-  "generated_at": "2026-06-07T17:24:51.829804+00:00",
-  "run_started_at": "2026-06-07T17:24:51.667440+00:00",
+  "generated_at": "2026-06-07T17:46:16.073994+00:00",
+  "run_started_at": "2026-06-07T17:46:15.931022+00:00",
   "output_dir": "card_effects_exburst",
-  "selected_ids": [
-    "GD04-117"
-  ],
+  "selected_ids": [],
   "use_llm": false,
   "model": null,
   "run_summary": {
     "converted": 0,
-    "ignored": 0,
-    "skipped": 1,
-    "no_effect": 0
+    "ignored": 105,
+    "skipped": 628,
+    "no_effect": 111
   },
   "counts": {
     "supported": 618,

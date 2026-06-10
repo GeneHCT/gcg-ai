@@ -1,0 +1,74 @@
+{
+  "card_id": "EB01-027",
+  "effects": [
+    {
+      "effect_id": "EB01-027-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "SELF_TRASH",
+          "filters": {
+            "trait": "G Generation"
+          },
+          "operator": ">=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "EXILE_CARDS",
+              "amount": 2,
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              },
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "GRANT_KEYWORD",
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              },
+              "keyword": "BREACH",
+              "value": 1,
+              "duration": "THIS_TURN",
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:; ▫️Choose a friendly (G Generation) unit. It gains【Breach 1】until the end of this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "card_id": "GD01-120",
+  "effects": [
+    {
+      "effect_id": "GD01-120-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "-3"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 enemy Unit. It gets AP-3 during this turn.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-120-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_KEYWORD",
+          "keyword": "BLOCKER",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "has_keyword": "blocker"
+            }
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "+3"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 friendly Unit with <Blocker>. It gets AP+3 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 enemy Unit. It gets AP-3 during this turn.; 【Action】Choose 1 friendly Unit with <Blocker>. It gets AP+3 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

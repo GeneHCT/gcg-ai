@@ -1,0 +1,84 @@
+{
+  "card_id": "GD03-121",
+  "effects": [
+    {
+      "effect_id": "GD03-121-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Katz Kobayashi]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD03-121-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "HP",
+              "selector": "ENEMY_UNIT",
+              "operator": "<=",
+              "value": 3
+            }
+          ],
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "FRIENDLY_BASE"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "HP",
+              "operator": "<=",
+              "value": 3
+            }
+          ],
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 friendly Base and 1 enemy Unit with 3 or less HP. Rest them.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】Choose 1 friendly Base and 1 enemy Unit with 3 or less HP. Rest them.; 【Pilot】[Katz Kobayashi]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "card_id": "GD03-028",
+  "effects": [
+    {
+      "effect_id": "GD03-028-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target_selector": "ENEMY_UNIT",
+          "state": "BATTLING_UNIT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": 2,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】If you are attacking an enemy Unit, this Unit gets AP+2 during this battle.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】If you are attacking an enemy Unit, this Unit gets AP+2 during this battle.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

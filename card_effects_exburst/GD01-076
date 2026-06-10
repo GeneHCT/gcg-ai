@@ -1,0 +1,52 @@
+{
+  "card_id": "GD01-076",
+  "effects": [
+    {
+      "effect_id": "GD01-076-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "owner": "self",
+          "operator": ">=",
+          "value": 4,
+          "filters": {
+            "card_type": "COMMAND"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": "SELF",
+          "stat": "AP",
+          "modification": "+1"
+        },
+        {
+          "type": "MODIFY_STAT",
+          "target": "SELF",
+          "stat": "HP",
+          "modification": "+1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While there are 4 or more Command cards in your trash, this Unit gets AP+1 and HP+1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While there are 4 or more Command cards in your trash, this Unit gets AP+1 and HP+1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -167,30 +167,137 @@ def test_blocker_mechanic():
     game_state, log = BattleManager.execute_attack_step(game_state, battle_state)
     print(f"  {log}")
     
-    # Get block actions
-    legal_actions = BattleManager.get_block_legal_actions(game_state, battle_state)
-    print(f"\n  Legal block actions: {len(legal_actions)}")
+    # Get block moves
+    legal_moves = BattleManager.get_block_legal_actions(game_state, battle_state)
+    print(f"\n  Legal block moves: {len(legal_moves)}")
     
     # Check that blocker can be activated
-    block_actions = [a for a in legal_actions if a.action_type == ActionType.BLOCK]
-    assert len(block_actions) > 0, "Should have at least one block action available"
+    block_moves = [move for move in legal_moves if move.action_type == ActionType.BLOCK]
+    assert len(block_moves) > 0, "Should have at least one block move available"
     
-    # Find the blocker action
-    blocker_action = next((a for a in block_actions if a.unit == blocker), None)
-    assert blocker_action is not None, "Blocker unit should be in legal actions"
+    # Find the blocker move
+    blocker_move = next((move for move in block_moves if move.unit == blocker), None)
+    assert blocker_move is not None, "Blocker unit should be in legal moves"
     
-    print(f"  ✓ Blocker unit found in legal actions")
+    print(f"  ✓ Blocker unit found in legal moves")
     
     # Execute block
     game_state, log = BattleManager.execute_block(game_state, battle_state, blocker)
     print(f"  {log}")
     
-    # Verify target changed
+    # Verify target changed and blocker rested
     assert battle_state.current_target == blocker, "Attack target should change to blocker"
+    assert blocker.is_rested, "Blocker should be rested when blocking"
     print(f"  ✓ Attack target changed from {target_card.name} to {blocker_card.name}")
     
     print("\n✓ TEST 2 PASSED: Blocker mechanic works correctly")
     return True
+
+
+def test_blocker_can_block_player_attack():
+    """Test that Blocker can block attacks declared against the player."""
+    game_state = GameState()
+    from simulator.game_manager import Player
+    game_state.players = {0: Player(0), 1: Player(1)}
+    game_state.turn_player = 0
+
+    attacker = create_test_unit(create_test_card("Attacker", ap=3, hp=3), owner_id=0, turn_deployed=0)
+    blocker = create_test_unit(create_test_card("Blocker", ap=2, hp=4, has_blocker=True), owner_id=1, turn_deployed=0)
+    blocker.add_keyword("blocker", True, "card_text")
+    game_state.players[0].battle_area.append(attacker)
+    game_state.players[1].battle_area.append(blocker)
+
+    game_state, battle_state = BattleManager.start_battle(game_state, attacker, "PLAYER")
+    battle_state.current_step = BattleStep.BLOCK
+    game_state.battle_state = battle_state
+
+    legal_actions = BattleManager.get_block_legal_actions(game_state, battle_state)
+
+    assert any(action.action_type == ActionType.BLOCK and action.unit is blocker for action in legal_actions)
+
+
+def test_blocked_player_attack_resolves_against_blocker():
+    """Test that a blocked player attack deals unit combat damage to the blocker."""
+    class BlockAgent:
+        def choose_action(self, game_state, legal_actions):
+            return next((action for action in legal_actions if action.action_type == ActionType.BLOCK), legal_actions[0])
+
+    class PassAgent:
+        def choose_action(self, game_state, legal_actions):
+            return next((action for action in legal_actions if action.action_type == ActionType.PASS), legal_actions[0])
+
+    game_state = GameState()
+    from simulator.game_manager import Player
+    game_state.players = {0: Player(0), 1: Player(1)}
+    game_state.turn_player = 0
+
+    attacker = create_test_unit(create_test_card("Attacker", ap=3, hp=3), owner_id=0, turn_deployed=0)
+    blocker = create_test_unit(create_test_card("Blocker", ap=2, hp=4, has_blocker=True), owner_id=1, turn_deployed=0)
+    blocker.add_keyword("blocker", True, "card_text")
+    game_state.players[0].battle_area.append(attacker)
+    game_state.players[1].battle_area.append(blocker)
+    game_state.players[1].shield_area = [create_test_card("Shield")]
+
+    game_state, logs = BattleManager.run_complete_battle(
+        game_state,
+        attacker,
+        target="PLAYER",
+        target_unit=None,
+        agents=[PassAgent(), BlockAgent()],
+    )
+
+    assert any("Blocker blocks" in log for log in logs)
+    assert blocker.is_rested
+    assert blocker.current_hp == 1
+    assert len(game_state.players[1].shield_area) == 1
+
+
+def test_breach_damages_base_instead_of_multiple_shields():
+    """Breach X deals X damage to the first shield-area card, preferring the base."""
+    from simulator.game_manager import EXBase, Player
+
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+
+    attacker = create_test_unit(create_test_card("Rick Dom", ap=4, hp=4), owner_id=0)
+    attacker.add_keyword("breach", 4, "card_text")
+    defender = create_test_unit(create_test_card("Aile Strike Gundam", ap=4, hp=4), owner_id=1)
+    game_state.players[0].battle_area.append(attacker)
+    game_state.players[1].battle_area.append(defender)
+    game_state.players[1].bases.append(EXBase(owner_id=1))
+    game_state.players[1].shield_area = [
+        create_test_card("Shield 1"),
+        create_test_card("Shield 2"),
+    ]
+
+    game_state, logs = BattleManager._resolve_unit_attack(game_state, attacker, defender)
+
+    assert "  BREACH 4: Base HP 3 → 0" in logs
+    assert not game_state.players[1].bases
+    assert len(game_state.players[1].shield_area) == 2
+
+
+def test_breach_destroys_only_top_shield_without_base():
+    """Breach X destroys only the first Shield when no deployed base exists."""
+    from simulator.game_manager import Player
+
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+
+    attacker = create_test_unit(create_test_card("Rick Dom", ap=4, hp=4), owner_id=0)
+    attacker.add_keyword("breach", 4, "card_text")
+    defender = create_test_unit(create_test_card("Aile Strike Gundam", ap=4, hp=4), owner_id=1)
+    shield_1 = create_test_card("Shield 1")
+    shield_2 = create_test_card("Shield 2")
+    game_state.players[0].battle_area.append(attacker)
+    game_state.players[1].battle_area.append(defender)
+    game_state.players[1].shield_area = [shield_1, shield_2]
+
+    game_state, logs = BattleManager._resolve_unit_attack(game_state, attacker, defender)
+
+    assert "  BREACH 4: Destroyed shield Shield 1" in logs
+    assert game_state.players[1].shield_area == [shield_2]
+    assert shield_1 in game_state.players[1].trash
 
 
 def test_player_attack():

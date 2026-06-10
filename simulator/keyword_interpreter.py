@@ -229,17 +229,9 @@ class KeywordInterpreter:
                     destroyed_shields.append(shield)
         else:
             # Standard: Damage only 1 shield
-            # Check for Breach keyword
-            breach_value = attacker.get_keyword_value("breach")
-            num_shields_to_destroy = 1 + breach_value  # Base 1 + breach amount
-            
-            for i in range(num_shields_to_destroy):
-                if defender_player.shield_area:
-                    shield = defender_player.shield_area.pop(0)
-                    destroyed_shields.append(shield)
-                else:
-                    # No more shields - game over condition
-                    break
+            if defender_player.shield_area:
+                shield = defender_player.shield_area.pop(0)
+                destroyed_shields.append(shield)
         
         return destroyed_shields
     
@@ -257,7 +249,7 @@ class KeywordInterpreter:
             defender_player: The player who owns the shields
             game_state: The current game state
         """
-        burst_shields = [s for s in shields if s.has_burst()]
+        burst_shields = [s for s in shields if KeywordInterpreter.card_has_burst(s)]
         
         # Defender chooses order of Burst resolution
         for shield in burst_shields:
@@ -282,13 +274,22 @@ class KeywordInterpreter:
         # TODO: Implement effect execution based on card text
         pass
     
+    @staticmethod
+    def card_has_burst(card) -> bool:
+        """Check if a shield/card has a Burst effect in its text."""
+        effect = getattr(card, "effect", None)
+        if effect:
+            effect_text = " ".join(effect) if isinstance(effect, list) else str(effect)
+            return "Burst" in effect_text or "【Burst】" in effect_text
+        return False
+
     # ============================================================================
     # Breach Damage Resolution
     # ============================================================================
     
     @staticmethod
     def resolve_breach_damage(attacker: UnitInstance, destroyed_unit: UnitInstance,
-                             game_state: 'GameState'):
+                             game_state: 'GameState') -> dict:
         """
         Resolve Breach damage when a unit is destroyed in combat.
         
@@ -300,22 +301,44 @@ class KeywordInterpreter:
             destroyed_unit: The unit that was destroyed
             game_state: The current game state
         """
-        breach_value = attacker.get_keyword_value("breach")
-        
-        if breach_value > 0:
-            # Deal breach damage to shields
-            defender_player = game_state.players[destroyed_unit.owner_id]
-            
-            for i in range(breach_value):
-                if defender_player.shield_area:
-                    shield = defender_player.shield_area.pop(0)
-                    # Check for burst
-                    if shield.has_burst() and defender_player.decide_burst_activation(shield, game_state):
-                        KeywordInterpreter.execute_burst_effect(shield, game_state)
-                    defender_player.trash.append(shield)
-                else:
-                    # No more shields
-                    break
+        breach_value = int(attacker.get_keyword_value("breach") or 0)
+        result = {
+            "damage": breach_value,
+            "target": None,
+            "shield_destroyed": None,
+            "base_destroyed": None,
+        }
+
+        if breach_value <= 0:
+            return result
+
+        defender_player = game_state.players[destroyed_unit.owner_id]
+
+        active_base = next((base for base in defender_player.bases if getattr(base, "current_hp", 0) > 0), None)
+        if active_base is not None:
+            hp_before = active_base.current_hp
+            active_base.take_damage(breach_value)
+            result["target"] = "base"
+            result["base_hp_before"] = hp_before
+            result["base_hp_after"] = active_base.current_hp
+
+            if active_base.current_hp <= 0:
+                defender_player.bases.remove(active_base)
+                base_card = getattr(active_base, "card_data", None)
+                if base_card is not None:
+                    defender_player.trash.append(base_card)
+                result["base_destroyed"] = base_card
+            return result
+
+        if defender_player.shield_area:
+            shield = defender_player.shield_area.pop(0)
+            result["target"] = "shield"
+            result["shield_destroyed"] = shield
+            if KeywordInterpreter.card_has_burst(shield) and defender_player.decide_burst_activation(shield, game_state):
+                KeywordInterpreter.execute_burst_effect(shield, game_state)
+            defender_player.trash.append(shield)
+
+        return result
     
     # ============================================================================
     # Repair Resolution

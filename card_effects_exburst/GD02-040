@@ -1,0 +1,88 @@
+{
+  "card_id": "GD02-040",
+  "effects": [
+    {
+      "effect_id": "GD02-040-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "SUPPORT",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": 2
+        },
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "stat": "AP",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "modification": "+2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-040-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "filters": {
+            "traits": [
+              "New UNE"
+            ]
+          },
+          "protection_filters": {
+            "target": "ENEMY_UNIT",
+            "stat": "HP",
+            "operator": "<=",
+            "value": 2
+          },
+          "duration": "THIS_TURN",
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your other (New UNE) Units. It can't receive battle damage from enemy Units with 2 or less HP during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.); 【Deploy】Choose 1 of your other (New UNE) Units. It can't receive battle damage from enemy Units with 2 or less HP during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

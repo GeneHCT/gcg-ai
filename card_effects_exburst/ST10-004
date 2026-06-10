@@ -1,0 +1,37 @@
+{
+  "card_id": "ST10-004",
+  "effects": [
+    {
+      "effect_id": "ST10-004-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "REPAIR",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Repair 2】(At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Repair 2】(At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

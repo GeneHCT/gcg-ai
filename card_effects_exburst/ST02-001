@@ -1,0 +1,73 @@
+{
+  "card_id": "ST02-001",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "ST02-001-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Breach 5> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 5
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Breach 5> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "known_pattern"
+      }
+    },
+    {
+      "effect_id": "ST02-001-E2",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "ACTIVE",
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "This Unit may choose an active enemy Unit that is Lv.4 or lower as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 5> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); This Unit may choose an active enemy Unit that is Lv.4 or lower as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

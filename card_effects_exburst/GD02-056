@@ -1,0 +1,55 @@
+{
+  "card_id": "GD02-056",
+  "effects": [
+    {
+      "effect_id": "GD02-056-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": "Vulture"
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "filters": [
+            {
+              "value": "Vulture",
+              "card_type": "CHECK_TRAIT"
+            },
+            {
+              "stat": "LEVEL",
+              "operator": ">=",
+              "value": 5,
+              "card_type": "CHECK_STAT"
+            }
+          ],
+          "amount": 1,
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair･(Vulture) Pilot】【Destroyed】Choose 1 (Vulture) Unit card that is Lv.5 or higher from your trash. Add it to your hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair･(Vulture) Pilot】【Destroyed】Choose 1 (Vulture) Unit card that is Lv.5 or higher from your trash. Add it to your hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

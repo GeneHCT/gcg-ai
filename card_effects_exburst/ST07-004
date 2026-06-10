@@ -1,0 +1,48 @@
+{
+  "card_id": "ST07-004",
+  "effects": [
+    {
+      "effect_id": "ST07-004-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "BLOCKER",
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "CB",
+              "card_type": "PILOT",
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "duration": "PERMANENT",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you have a (CB) Pilot in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While you have a (CB) Pilot in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

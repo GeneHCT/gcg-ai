@@ -1,0 +1,93 @@
+{
+  "card_id": "GD03-117",
+  "effects": [
+    {
+      "effect_id": "GD03-117-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "value": 1,
+              "operator": ">=",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            },
+            {
+              "type": "COUNT_CARDS",
+              "value": 4,
+              "operator": "<=",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "success_actions": [
+            {
+              "token_data": {
+                "name": "Graze Custom",
+                "traits": [
+                  "Tekkadan"
+                ],
+                "ap": 2,
+                "hp": 2
+              },
+              "type": "DEPLOY_TOKEN"
+            }
+          ],
+          "fail_actions": [
+            {
+              "conditions": [
+                {
+                  "type": "COUNT_CARDS",
+                  "value": 5,
+                  "operator": ">=",
+                  "target": {
+                    "selector": "ENEMY_UNIT"
+                  }
+                }
+              ],
+              "success_actions": [
+                {
+                  "token_data": {
+                    "name": "Gundam Barbatos 4th Form",
+                    "traits": [
+                      "Tekkadan"
+                    ],
+                    "ap": 4,
+                    "hp": 4
+                  },
+                  "type": "DEPLOY_TOKEN"
+                }
+              ],
+              "type": "CONDITIONAL_BRANCH"
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】If 1 to 4 enemy Units are in play, deploy 1 [Graze Custom]((Tekkadan)･AP2･HP2) Unit token. If 5 or more are in play, deploy 1 [Gundam Barbatos 4th Form]((Tekkadan)･AP4･HP4) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】If 1 to 4 enemy Units are in play, deploy 1 [Graze Custom]((Tekkadan)･AP2･HP2) Unit token. If 5 or more are in play, deploy 1 [Gundam Barbatos 4th Form]((Tekkadan)･AP4･HP4) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

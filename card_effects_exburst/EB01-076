@@ -1,0 +1,91 @@
+{
+  "card_id": "EB01-076",
+  "effects": [
+    {
+      "effect_id": "EB01-076-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": [
+          "G Generation / Durability"
+        ]
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】Lowe Guele (G Generation / Durability).",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "EB01-076-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 3,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "G Generation"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 friendly (G Generation) Unit. It recovers 3 HP.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EB01-076-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 3,
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "G Generation"
+              ]
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 friendly (G Generation) Unit. It recovers 3 HP.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 friendly (G Generation) Unit. It recovers 3 HP.; 【Pilot】Lowe Guele (G Generation / Durability).",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

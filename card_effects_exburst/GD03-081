@@ -1,0 +1,54 @@
+{
+  "card_id": "GD03-081",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-081-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "operator": ">=",
+          "value": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Superpower Bloc"
+          ]
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "operator": ">=",
+          "value": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "UN"
+          ]
+        }
+      ],
+      "actions": [],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "This Unit can only attack during a turn when one of your (Superpower Bloc)/(UN) Units is deployed.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "metadata": {
+    "original_text": "This Unit can only attack during a turn when one of your (Superpower Bloc)/(UN) Units is deployed.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -34,7 +34,7 @@ class ActionStepManager:
     @staticmethod
     def get_action_step_legal_actions(game_state: GameState) -> List[Action]:
         """
-        Get legal actions during action step.
+        Get legal moves during Action Step.
         
         Can activate:
         - 【Action】 Command cards
@@ -44,7 +44,7 @@ class ActionStepManager:
             game_state: Current game state
             
         Returns:
-            List of legal actions
+            List of legal moves
         """
         actions = []
         priority_player_id = game_state.action_step_priority_player
@@ -68,8 +68,8 @@ class ActionStepManager:
                             break
         
         # 2. Can activate 【Activate･Action】 abilities
-        # TODO: Implement activated abilities from units in play
-        # This requires checking units in battle area for ACTIVATE_ACTION triggers
+        for ability in trigger_manager.get_activated_abilities(game_state, priority_player_id):
+            actions.append(Action(ActionType.ACTIVATE_ABILITY, ability_info=ability))
         
         # 3. Can always pass
         actions.append(Action(ActionType.PASS))

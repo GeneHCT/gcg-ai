@@ -1,0 +1,73 @@
+{
+  "card_id": "GD03-050",
+  "effects": [
+    {
+      "effect_id": "GD03-050-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "owner": "SELF",
+          "zone": "TRASH",
+          "filters": {
+            "traits": [
+              "Tekkadan",
+              "Teiwaz"
+            ],
+            "card_type": "UNIT"
+          },
+          "operator": ">=",
+          "value": 3
+        }
+      ],
+      "actions": [
+        {
+          "amount": 3,
+          "filters": {
+            "traits": [
+              "Tekkadan",
+              "Teiwaz"
+            ],
+            "card_type": "UNIT"
+          },
+          "type": "EXILE_CARDS",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        },
+        {
+          "amount": 2,
+          "conditions": [
+            {
+              "type": "ACTION_COMPLETED",
+              "action_index": 0
+            }
+          ],
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

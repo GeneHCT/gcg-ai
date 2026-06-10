@@ -1,0 +1,66 @@
+{
+  "card_id": "ST02-013",
+  "effects": [
+    {
+      "effect_id": "ST02-013-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Quatre Raberba Winner]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "ST02-013-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 4,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "SELF_SHIELDS"
+          },
+          "duration": "THIS_BATTLE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】During this battle, your shield area cards can't receive damage from enemy Units that are Lv.4 or lower.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Action】During this battle, your shield area cards can't receive damage from enemy Units that are Lv.4 or lower.; 【Pilot】[Quatre Raberba Winner]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

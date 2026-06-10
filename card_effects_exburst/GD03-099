@@ -1,0 +1,84 @@
+{
+  "card_id": "GD03-099",
+  "effects": [
+    {
+      "effect_id": "GD03-099-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-099-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "filters": {
+            "color": "White"
+          },
+          "target": {
+            "selector": "FRIENDLY_BASE"
+          },
+          "state": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "SELECT_LOOKED_AT_CARD",
+          "selector": "ENEMY_UNIT",
+          "filters": {
+            "level": {
+              "operator": "<=",
+              "value": "SELF.level"
+            }
+          },
+          "amount": 1
+        },
+        {
+          "type": "ADD_TO_HAND",
+          "selector": "SELECTED_CARD",
+          "owner": "OPPONENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Destroyed】If a friendly white Base is in play, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Return it to its owner's hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【During Link】【Destroyed】If a friendly white Base is in play, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Return it to its owner's hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

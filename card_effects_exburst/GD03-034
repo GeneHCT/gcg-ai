@@ -1,0 +1,60 @@
+{
+  "card_id": "GD03-034",
+  "effects": [
+    {
+      "effect_id": "GD03-034-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 3,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 enemy Unit. Deal 3 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-034-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "SUPPRESSION",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.); 【Deploy】Choose 1 enemy Unit. Deal 3 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

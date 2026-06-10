@@ -1,0 +1,48 @@
+{
+  "card_id": "GD03-061",
+  "effects": [
+    {
+      "effect_id": "GD03-061-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "==",
+          "value": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "selector": "SELF",
+          "keyword": "REPAIR",
+          "value": 3,
+          "duration": "PERMANENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this Unit has 1 HP, it gains <Repair 3>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While this Unit has 1 HP, it gains <Repair 3>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

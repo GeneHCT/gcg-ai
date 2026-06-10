@@ -1,0 +1,68 @@
+{
+  "card_id": "GD01-024",
+  "effects": [
+    {
+      "effect_id": "GD01-024-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 3,
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 5
+            }
+          ],
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Deal 3 damage to all Units that are Lv.5 or lower.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-024-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<High-Maneuver> (This Unit can't be blocked.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<High-Maneuver> (This Unit can't be blocked.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<High-Maneuver> (This Unit can't be blocked.); 【Deploy】Deal 3 damage to all Units that are Lv.5 or lower.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

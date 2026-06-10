@@ -1,0 +1,59 @@
+{
+  "card_id": "GD01-101",
+  "effects": [
+    {
+      "effect_id": "GD01-101-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Lucrezia Noin]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD01-101-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE",
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Link"
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 friendly Link Unit. It recovers 3 HP.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 friendly Link Unit. It recovers 3 HP.; 【Pilot】[Lucrezia Noin]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

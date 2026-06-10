@@ -1,0 +1,108 @@
+{
+  "card_id": "GD04-125",
+  "effects": [
+    {
+      "effect_id": "GD04-125-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Deploy this card.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-125-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "SHIELD_TO_HAND",
+          "amount": 1,
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Add 1 of your Shields to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-125-E3",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "operator": "==",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "CB"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "selector": "FRIENDLY_UNIT",
+          "filters": {
+            "traits": [
+              "CB"
+            ]
+          }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "selector": "ENEMY_UNIT",
+          "amount": 1,
+          "filters": {
+            "level": 5,
+            "operator": "<="
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】【Once per Turn】①, rest 1 friendly (CB) Unit：Choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Deploy this card.; 【Deploy】Add 1 of your Shields to your hand.; 【Activate･Main】【Once per Turn】①, rest 1 friendly (CB) Unit：Choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

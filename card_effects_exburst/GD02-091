@@ -1,0 +1,81 @@
+{
+  "card_id": "GD02-091",
+  "effects": [
+    {
+      "effect_id": "GD02-091-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-091-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_COLOR",
+          "target": "SELF",
+          "value": "Red",
+          "operator": "=="
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "filters": [
+            {
+              "target": "ENEMY_UNIT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": {
+                "type": "CHECK_STAT",
+                "target": "SELF",
+                "stat": "LEVEL"
+              },
+              "card_type": "CHECK_STAT"
+            }
+          ],
+          "amount": 1,
+          "damage_type": "EFFECT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】If this Unit is red, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Paired】If this Unit is red, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Deal 1 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

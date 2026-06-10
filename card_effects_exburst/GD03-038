@@ -1,0 +1,81 @@
+{
+  "card_id": "GD03-038",
+  "effects": [
+    {
+      "effect_id": "GD03-038-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "keyword": "SUPPORT",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "value": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-038-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_RESTED_BY_EFFECT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "FRIENDLY"
+        }
+      ],
+      "actions": [
+        {
+          "stat": "AP",
+          "modification": 2,
+          "duration": "THIS_TURN",
+          "filters": {
+            "traits": [
+              "ZAFT"
+            ]
+          },
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, when this Unit is rested by an effect, choose 1 of your (ZAFT) Units. It gets AP+2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.); During your turn, when this Unit is rested by an effect, choose 1 of your (ZAFT) Units. It gets AP+2 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

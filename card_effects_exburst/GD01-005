@@ -1,0 +1,49 @@
+{
+  "card_id": "GD01-005",
+  "effects": [
+    {
+      "effect_id": "GD01-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "PAIRED_PILOT"
+          }
+        },
+        {
+          "amount": 1,
+          "type": "DISCARD",
+          "target": {
+            "selector": "SELF_HAND"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Destroyed】Return this Unit's paired Pilot to its owner's hand. Then, discard 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Destroyed】Return this Unit's paired Pilot to its owner's hand. Then, discard 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

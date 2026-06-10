@@ -1,0 +1,46 @@
+{
+  "card_id": "GD01-014",
+  "effects": [
+    {
+      "effect_id": "GD01-014-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_ACTION"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 1,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Activate･Action】【Once per Turn】Choose 1 Unit. It recovers 1 HP.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Link】【Activate･Action】【Once per Turn】Choose 1 Unit. It recovers 1 HP.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

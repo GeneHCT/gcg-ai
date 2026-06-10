@@ -1,0 +1,100 @@
+{
+  "card_id": "GD03-118",
+  "effects": [
+    {
+      "effect_id": "GD03-118-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-118-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "value": "RESTED"
+            },
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 4
+            }
+          ],
+          "type": "DISCARD",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "state": "RESTED",
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "zone": "SELF_TRASH",
+              "text_contains": "Awakened Potential",
+              "operator": ">=",
+              "value": 2
+            }
+          ],
+          "optional_actions": [
+            {
+              "keyword": "BLOCKER",
+              "duration": "THIS_TURN",
+              "type": "GRANT_KEYWORD",
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with \"Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【Action】Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with \"Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "card_id": "EB01-023",
+  "effects": [
+    {
+      "effect_id": "EB01-023-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "LOOK_AT_DECK",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "level",
+              "operator": ">=",
+              "value": 5,
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "type": "ADD_TO_HAND",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "target": {
+            "selector": "LOOKED_AT_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】All players each look at the top card of their deck. If it is a card that is Lv. 5 or higher, they may reveal it and add it to their hand. They return any remaining card to the bottom of their deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】All players each look at the top card of their deck. If it is a card that is Lv. 5 or higher, they may reveal it and add it to their hand. They return any remaining card to the bottom of their deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

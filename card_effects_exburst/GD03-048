@@ -1,0 +1,48 @@
+{
+  "card_id": "GD03-048",
+  "effects": [
+    {
+      "effect_id": "GD03-048-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "operator": "<=",
+          "value": 3,
+          "target": {
+            "selector": "OPPONENT_SHIELDS"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "unit_name": "GFreD",
+          "trait": "Zeon",
+          "ap": 4,
+          "hp": 3,
+          "is_rested": true
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】If there are 3 or less enemy Shields, deploy 1 rested [GFreD]((Zeon)･AP4･HP3) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】If there are 3 or less enemy Shields, deploy 1 rested [GFreD]((Zeon)･AP4･HP3) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

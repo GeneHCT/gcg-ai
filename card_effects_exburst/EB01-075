@@ -1,0 +1,95 @@
+{
+  "card_id": "EB01-075",
+  "effects": [
+    {
+      "effect_id": "EB01-075-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "<=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
+            },
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 2 or less HP. Rest them.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EB01-075-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "<=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
+            },
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 2 or less HP. Rest them.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 2 or less HP. Rest them.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

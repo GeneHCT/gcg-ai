@@ -1,0 +1,54 @@
+{
+  "card_id": "GD04-070",
+  "effects": [
+    {
+      "effect_id": "GD04-070-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Ali al-Saachez",
+          "text_contains": "Ali al-Saachez",
+          "target": {
+            "selector": "SELF_HAND"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "ON_PAIR_PILOT",
+          "selector": "SELF_HAND",
+          "filters": {
+            "text_contains": "Ali al-Saachez"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】You may pair 1 Pilot card with \"Ali al-Saachez\" in its card name from your hand with this Unit.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】You may pair 1 Pilot card with \"Ali al-Saachez\" in its card name from your hand with this Unit.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[0].actions[0].type",
+        "kind": "unknown_action",
+        "value": "ON_PAIR_PILOT",
+        "message": "Action is not executed by the runtime"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "card_id": "EB01-017",
+  "effects": [
+    {
+      "effect_id": "EB01-017-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target": "SELF",
+          "state": "DESTROYED_BY_BATTLE_DAMAGE"
+        }
+      ],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "DRAW",
+          "target": {
+            "selector": "FRIENDLY_PLAYER"
+          }
+        },
+        {
+          "amount": 1,
+          "type": "DRAW",
+          "target": {
+            "selector": "ENEMY_PLAYER"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】If this Unit is destroyed with battle damage, you and the player who destroyed this Unit draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Destroyed】If this Unit is destroyed with battle damage, you and the player who destroyed this Unit draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

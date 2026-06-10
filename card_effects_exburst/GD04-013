@@ -1,0 +1,51 @@
+{
+  "card_id": "GD04-013",
+  "effects": [
+    {
+      "effect_id": "GD04-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "traits": [
+            "League Militaire"
+          ]
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "token"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "duration": "PERMANENT",
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this Unit is rested, all your (League Militaire) Unit tokens gain <Blocker>. (Rest this Unit to change the attack target to it.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While this Unit is rested, all your (League Militaire) Unit tokens gain <Blocker>. (Rest this Unit to change the attack target to it.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

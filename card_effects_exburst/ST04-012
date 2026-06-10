@@ -1,0 +1,110 @@
+{
+  "card_id": "ST04-012",
+  "effects": [
+    {
+      "effect_id": "ST04-012-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "FRIENDLY_UNIT",
+          "filters": {
+            "trait": "Earth Alliance",
+            "is_token": true
+          },
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "actions": [
+        {
+          "token_name": "Aile Strike Gundam",
+          "token_traits": [
+            "Earth Alliance"
+          ],
+          "token_ap": 3,
+          "token_hp": 3,
+          "token_keywords": [
+            "BLOCKER"
+          ],
+          "type": "DEPLOY_TOKEN"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Aile Strike Gundam]((Earth Alliance)･AP3･HP3･<Blocker>) Unit token.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST04-012-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "FRIENDLY_UNIT",
+          "filters": {
+            "trait": "Earth Alliance",
+            "is_token": true
+          },
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "actions": [
+        {
+          "optional_actions": [
+            {
+              "token_name": "Sword Strike Gundam",
+              "token_traits": [
+                "Earth Alliance"
+              ],
+              "token_ap": 4,
+              "token_hp": 2,
+              "token_keywords": [
+                "BLOCKER"
+              ],
+              "type": "DEPLOY_TOKEN"
+            },
+            {
+              "token_name": "Launcher Strike Gundam",
+              "token_traits": [
+                "Earth Alliance"
+              ],
+              "token_ap": 2,
+              "token_hp": 4,
+              "token_keywords": [
+                "BLOCKER"
+              ],
+              "type": "DEPLOY_TOKEN"
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Sword Strike Gundam]((Earth Alliance)･AP4･HP2･<Blocker>) or 1 [Launcher Strike Gundam]((Earth Alliance)･AP2･HP4･<Blocker>) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Aile Strike Gundam]((Earth Alliance)･AP3･HP3･<Blocker>) Unit token.; 【Main】If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Sword Strike Gundam]((Earth Alliance)･AP4･HP2･<Blocker>) or 1 [Launcher Strike Gundam]((Earth Alliance)･AP2･HP4･<Blocker>) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

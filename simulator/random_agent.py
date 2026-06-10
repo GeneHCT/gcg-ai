@@ -15,7 +15,7 @@ from simulator.keyword_interpreter import KeywordInterpreter
 
 
 class ActionType(Enum):
-    """Types of actions available in the game"""
+    """Types of player moves available in the game."""
     PASS = "pass"
     PLAY_UNIT = "play_unit"
     PLAY_PILOT = "play_pilot"
@@ -26,6 +26,7 @@ class ActionType(Enum):
     BLOCK = "block"
     BURST_ACTIVATE = "burst_activate"
     BURST_PASS = "burst_pass"
+    ACTIVATE_ABILITY = "activate_ability"
     DISCARD = "discard"
     END_PHASE = "end_phase"
 
@@ -38,6 +39,66 @@ class Action:
     unit: Optional[UnitInstance] = None
     target: Optional[UnitInstance] = None
     cards_to_discard: Optional[List[Card]] = None
+    ability_info: Optional[Dict[str, Any]] = None
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize action metadata for replay output."""
+        def normalize_color(color: str) -> str:
+            value = str(color or "").strip()
+            if not value or value == "-":
+                return "Neutral"
+            return value
+
+        def card_ref(card: Optional[Card]) -> Optional[Dict[str, Any]]:
+            if card is None:
+                return None
+            return {
+                "cardId": card.id,
+                "name": card.name,
+                "type": card.type,
+                "color": normalize_color(card.color),
+                "level": card.level,
+                "cost": card.cost,
+                "ap": card.ap,
+                "hp": card.hp,
+            }
+
+        def unit_ref(unit: Optional[UnitInstance]) -> Optional[Dict[str, Any]]:
+            if unit is None:
+                return None
+            data = {
+                "cardId": unit.card_data.id,
+                "name": unit.card_data.name,
+                "ownerId": unit.owner_id,
+                "ap": unit.ap,
+                "currentHp": unit.current_hp,
+                "maxHp": unit.hp,
+                "rested": unit.is_rested,
+            }
+            instance_id = getattr(unit, "_replay_instance_id", None)
+            if instance_id:
+                data["instanceId"] = instance_id
+            return data
+
+        ability = None
+        if self.ability_info:
+            effect = self.ability_info.get("effect", {})
+            ability_unit = self.ability_info.get("unit")
+            ability = {
+                "effectId": effect.get("effect_id"),
+                "effectType": effect.get("effect_type"),
+                "source": unit_ref(ability_unit),
+            }
+
+        return {
+            "type": self.action_type.value,
+            "summary": str(self),
+            "card": card_ref(self.card),
+            "unit": unit_ref(self.unit),
+            "target": unit_ref(self.target),
+            "cardsToDiscard": [card_ref(card) for card in self.cards_to_discard or []],
+            "ability": ability,
+        }
     
     def __str__(self):
         if self.action_type == ActionType.PASS:
@@ -62,6 +123,11 @@ class Action:
             return "BURST_ACTIVATE"
         elif self.action_type == ActionType.BURST_PASS:
             return "BURST_PASS"
+        elif self.action_type == ActionType.ACTIVATE_ABILITY:
+            effect = self.ability_info.get("effect", {}) if self.ability_info else {}
+            unit = self.ability_info.get("unit") if self.ability_info else None
+            unit_name = unit.card_data.name if unit else "?"
+            return f"ACTIVATE_ABILITY: {unit_name} ({effect.get('effect_id', '?')})"
         elif self.action_type == ActionType.DISCARD:
             n = len(self.cards_to_discard) if self.cards_to_discard else 0
             return f"DISCARD: {n} cards"
@@ -72,7 +138,7 @@ class Action:
 
 class LegalActionGenerator:
     """
-    Generates legal actions for a given game state.
+    Generates legal moves for a given game state.
     Unified entry point for all decision points (Main Phase, Block Step, Action Step, Burst, End Phase discard).
     """
     
@@ -88,15 +154,15 @@ class LegalActionGenerator:
     @staticmethod
     def get_legal_actions(game_state: GameState, player_id: Optional[int] = None) -> List[Action]:
         """
-        Get all legal actions for the current decision point.
+        Get all legal moves for the current decision point.
         
         Args:
             game_state: Current game state
-            player_id: Optional; when provided, returns actions for this player.
+            player_id: Optional; when provided, returns moves for this player.
                        When None, infers from game state (decision_player_id, action_step, turn_player).
             
         Returns:
-            List of legal actions
+            List of legal moves
         """
         decision_player = player_id if player_id is not None else LegalActionGenerator._get_decision_player(game_state)
         player = game_state.players[decision_player]
@@ -155,23 +221,25 @@ class LegalActionGenerator:
                     effect_data = trigger_manager.effects_cache.get(card.id)
                     if effect_data:
                         for effect in effect_data.get("effects", []):
-                            if "MAIN_PHASE" in effect.get("triggers", []):
+                            if trigger_manager.has_timing(effect, "MAIN_PHASE"):
                                 actions.append(Action(ActionType.PLAY_COMMAND, card=card))
                                 break
             
-            # 4e. Attack
+            # 4e. Activate 【Activate･Main】 abilities from cards in play
+            from simulator.trigger_manager import get_trigger_manager
+            trigger_manager = get_trigger_manager()
+            for ability in trigger_manager.get_activated_abilities(game_state, decision_player):
+                actions.append(Action(ActionType.ACTIVATE_ABILITY, ability_info=ability))
+            
+            # 4f. Attack
             for unit in player.battle_area:
                 if LegalActionGenerator._can_attack(unit, game_state):
-                    if opponent.has_bases():
-                        actions.append(Action(ActionType.ATTACK_PLAYER, unit=unit))
-                    else:
-                        if opponent.has_shields():
-                            actions.append(Action(ActionType.ATTACK_PLAYER, unit=unit))
-                        for enemy_unit in opponent.battle_area:
-                            if enemy_unit.is_rested and not enemy_unit.is_destroyed:
-                                actions.append(Action(ActionType.ATTACK_UNIT, unit=unit, target=enemy_unit))
+                    actions.append(Action(ActionType.ATTACK_PLAYER, unit=unit))
+                    for enemy_unit in opponent.battle_area:
+                        if enemy_unit.is_rested and not enemy_unit.is_destroyed:
+                            actions.append(Action(ActionType.ATTACK_UNIT, unit=unit, target=enemy_unit))
             
-            # 4f. End Phase
+            # 4g. End Phase
             actions.append(Action(ActionType.END_PHASE))
             
             # Pass
@@ -222,6 +290,14 @@ class LegalActionGenerator:
         
         return True
 
+    @staticmethod
+    def get_action_player_id(game_state: GameState) -> int:
+        if game_state.decision_player_id is not None:
+            return game_state.decision_player_id
+        if game_state.in_action_step:
+            return game_state.action_step_priority_player
+        return game_state.turn_player
+
 
 class PassAgent:
     """Agent that always passes. Used for RL env when agent attacks (battle sub-steps)."""
@@ -229,9 +305,9 @@ class PassAgent:
     def __init__(self, player_id: int = 0):
         self.player_id = player_id
 
-    def choose_action(self, game_state: 'GameState', legal_actions: List[Action]) -> Action:
-        pass_action = next((a for a in legal_actions if a.action_type == ActionType.PASS), None)
-        return pass_action if pass_action else legal_actions[0]
+    def choose_action(self, game_state: 'GameState', legal_moves: List[Action]) -> Action:
+        pass_move = next((move for move in legal_moves if move.action_type == ActionType.PASS), None)
+        return pass_move if pass_move else legal_moves[0]
 
     def choose_cards_to_discard(self, hand: List[Card], num_to_discard: int) -> List[Card]:
         return hand[:num_to_discard]
@@ -239,7 +315,7 @@ class PassAgent:
 
 class RandomAgent:
     """
-    Agent that picks random legal actions.
+    Agent that picks random legal moves.
     """
     
     def __init__(self, player_id: int, seed: Optional[int] = None):
@@ -253,29 +329,29 @@ class RandomAgent:
         self.player_id = player_id
         self.rng = random.Random(seed)
     
-    def choose_action(self, game_state: GameState, legal_actions: List[Action]) -> Action:
+    def choose_action(self, game_state: GameState, legal_moves: List[Action]) -> Action:
         """
-        Choose a random legal action.
+        Choose a random legal move.
         
         Args:
             game_state: Current game state
-            legal_actions: List of legal actions
+            legal_moves: List of legal moves
             
         Returns:
-            Chosen action
+            Chosen move
         """
-        if not legal_actions:
+        if not legal_moves:
             return Action(ActionType.PASS)
         
-        # Filter out PASS if there are other actions (make game more interesting)
-        non_pass_actions = [a for a in legal_actions if a.action_type != ActionType.PASS]
+        # Filter out PASS if there are other moves (make game more interesting)
+        non_pass_moves = [move for move in legal_moves if move.action_type != ActionType.PASS]
         
-        if non_pass_actions:
-            # 80% chance to take action, 20% chance to pass
+        if non_pass_moves:
+            # 80% chance to make a move, 20% chance to pass
             if self.rng.random() < 0.8:
-                return self.rng.choice(non_pass_actions)
+                return self.rng.choice(non_pass_moves)
         
-        return self.rng.choice(legal_actions)
+        return self.rng.choice(legal_moves)
     
     def choose_cards_to_discard(self, hand: List[Card], num_to_discard: int) -> List[Card]:
         """
@@ -308,8 +384,9 @@ class ActionExecutor:
         Returns:
             Tuple of (updated game_state, result_message)
         """
-        player = game_state.players[game_state.turn_player]
-        opponent = game_state.players[game_state.get_opponent_id(game_state.turn_player)]
+        player_id = LegalActionGenerator.get_action_player_id(game_state)
+        player = game_state.players[player_id]
+        opponent = game_state.players[game_state.get_opponent_id(player_id)]
         
         if action.action_type == ActionType.PASS:
             return game_state, "Pass"
@@ -327,7 +404,7 @@ class ActionExecutor:
             # Check and pay cost using ResourceManager
             if ResourceManager.can_play_card(game_state, player.player_id, card):
                 # Pay cost by resting resources
-                if ResourceManager.pay_cost(game_state, player.player_id, card.cost):
+                if ResourceManager.pay_card_cost(game_state, player.player_id, card):
                     # Remove from hand
                     if card in player.hand:
                         player.hand.remove(card)
@@ -376,7 +453,7 @@ class ActionExecutor:
                     player.hand.remove(card)
                 
                 # Pay cost by resting resources
-                ResourceManager.pay_cost(game_state, player.player_id, card.cost)
+                ResourceManager.pay_card_cost(game_state, player.player_id, card)
                 
                 # Trigger command effect via TriggerManager
                 try:
@@ -411,6 +488,13 @@ class ActionExecutor:
                     return game_state, f"Played {card.name} (error in effect)"
             
             return game_state, "Failed: Cannot afford command card"
+        
+        elif action.action_type == ActionType.ACTIVATE_ABILITY:
+            if not action.ability_info:
+                return game_state, "Failed: Missing ability info"
+            from simulator.trigger_manager import get_trigger_manager
+            results = get_trigger_manager().activate_ability(game_state, action.ability_info)
+            return game_state, "; ".join(results) if results else "Ability resolved"
         
         elif action.action_type == ActionType.BURST_ACTIVATE:
             if game_state.pending_burst_decision:
@@ -461,7 +545,7 @@ class ActionExecutor:
                 from simulator.link_system import LinkManager
                 from simulator.resource_manager import ResourceManager
                 if ResourceManager.can_play_card(game_state, player.player_id, action.card):
-                    if ResourceManager.pay_cost(game_state, player.player_id, action.card.cost):
+                    if ResourceManager.pay_card_cost(game_state, player.player_id, action.card):
                         success = LinkManager.pair_pilot(game_state, action.target, action.card)
                         if success:
                             return game_state, f"Paired {action.card.name} with {action.target.card_data.name}"
@@ -472,7 +556,7 @@ class ActionExecutor:
                 from simulator.base_system import BaseManager
                 from simulator.resource_manager import ResourceManager
                 if ResourceManager.can_play_card(game_state, player.player_id, action.card):
-                    ResourceManager.pay_cost(game_state, player.player_id, action.card.cost)
+                    ResourceManager.pay_card_cost(game_state, player.player_id, action.card)
                     BaseManager.deploy_base(game_state, player.player_id, action.card)
                     return game_state, f"Deployed base {action.card.name}"
             return game_state, "Failed: Cannot deploy base"

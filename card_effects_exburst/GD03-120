@@ -1,0 +1,110 @@
+{
+  "card_id": "GD03-120",
+  "effects": [
+    {
+      "effect_id": "GD03-120-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Patrick Colasour]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD03-120-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "or_traits": [
+            "UN"
+          ],
+          "required": true,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Superpower Bloc"
+          ]
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "required": true,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "traits": [
+            null
+          ]
+        },
+        {
+          "type": "ON_UNIT_DESTROYED_BY_DAMAGE",
+          "required": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "selector": "OTHER_FRIENDLY_UNIT",
+          "conditions": [
+            {
+              "type": "CHECK_KEYWORD",
+              "selector": "SELF",
+              "keyword": "RESTED"
+            },
+            {
+              "type": "CHECK_TRAIT",
+              "selector": "SELF",
+              "trait": "Superpower Bloc",
+              "or_traits": [
+                "UN"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "selector": "OTHER_FRIENDLY_UNIT",
+          "keyword": "CANNOT_ATTACK",
+          "duration": "THIS_TURN",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】During this turn, if a friendly (Superpower Bloc)/(UN) Unit destroys an enemy Unit with battle damage, choose 1 rested friendly (Superpower Bloc)/(UN) Unit. Set it as active. It can't attack during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】During this turn, if a friendly (Superpower Bloc)/(UN) Unit destroys an enemy Unit with battle damage, choose 1 rested friendly (Superpower Bloc)/(UN) Unit. Set it as active. It can't attack during this turn.; 【Pilot】[Patrick Colasour]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[1].conditions[2].type",
+        "kind": "unknown_condition",
+        "value": "ON_UNIT_DESTROYED_BY_DAMAGE",
+        "message": "Condition is not executed by the runtime"
+      }
+    ]
+  }
+}

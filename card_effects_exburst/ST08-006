@@ -1,0 +1,75 @@
+{
+  "card_id": "ST08-006",
+  "effects": [
+    {
+      "effect_id": "ST08-006-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "value": "PAIRED"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Earth Federation",
+          "card_type": "UNIT",
+          "count": 1,
+          "operator": ">=",
+          "target": {
+            "selector": "SELF_HAND"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "LOOK_AT_DECK",
+          "amount": 1,
+          "filters": {
+            "card_type": "UNIT",
+            "traits": [
+              "Earth Federation"
+            ]
+          },
+          "target": {
+            "selector": "SELF_HAND"
+          }
+        },
+        {
+          "type": "SELECT_LOOKED_AT_CARD",
+          "amount": 1
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "next_if_success": [
+            {
+              "type": "DRAW",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】【Once per Turn】If this Unit is attacking the enemy player, reveal 1 (Earth Federation) Unit card from your hand. Return it to the bottom of your deck. If you do, draw 2.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair】【Attack】【Once per Turn】If this Unit is attacking the enemy player, reveal 1 (Earth Federation) Unit card from your hand. Return it to the bottom of your deck. If you do, draw 2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

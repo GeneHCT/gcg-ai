@@ -1,0 +1,37 @@
+{
+  "card_id": "T-022",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "T-022-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "CANNOT_PAIR",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "This Unit can't be paired with a Pilot.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "This Unit can't be paired with a Pilot.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT TOKEN",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

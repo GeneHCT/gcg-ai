@@ -1,0 +1,45 @@
+{
+  "card_id": "GD01-009",
+  "effects": [
+    {
+      "effect_id": "GD01-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "FRIENDLY_UNIT",
+          "value": "White Base Team",
+          "operator": "=="
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": "SELECTED_CARD",
+          "value": "HIGH-MANEUVER",
+          "duration": "THIS_TURN",
+          "keyword": "HIGH_MANEUVER"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your (White Base Team) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 of your (White Base Team) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "card_id": "GD03-006",
+  "effects": [
+    {
+      "effect_id": "GD03-006-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "operator": "<=",
+          "value": 3
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "amount": 2,
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 3
+              }
+            },
+            "variable_count": {
+              "min": 1,
+              "max": 2
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 to 2 enemy Units with 3 or less HP. Rest them.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 to 2 enemy Units with 3 or less HP. Rest them.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

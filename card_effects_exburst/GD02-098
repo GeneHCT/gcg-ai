@@ -1,0 +1,96 @@
+{
+  "card_id": "GD02-098",
+  "effects": [
+    {
+      "effect_id": "GD02-098-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-098-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "SELF",
+          "value": "AEUG"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1,
+          "next_if_success": [
+            {
+              "type": "DISCARD",
+              "amount": 1,
+              "target": {
+                "selector": "FRIENDLY_PLAYER"
+              }
+            }
+          ],
+          "target": {
+            "selector": "FRIENDLY_PLAYER"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】If this is an (AEUG) Unit, draw 1. If you do, discard 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-098-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "is_supported": false,
+      "unhandled_explanation": "requires name alias modifier",
+      "metadata": {
+        "raw_text": "This card's name is also treated as [Char Aznable].",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "This card's name is also treated as [Char Aznable].; 【Burst】Add this card to your hand.; 【When Linked】If this is an (AEUG) Unit, draw 1. If you do, discard 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "unsupported",
+    "validation_issues": [
+      {
+        "path": "continuous_effects[0]",
+        "kind": "unsupported_llm_effect",
+        "value": "GD02-098-E1",
+        "message": "requires name alias modifier"
+      }
+    ]
+  }
+}

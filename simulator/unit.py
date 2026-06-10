@@ -44,6 +44,8 @@ class UnitInstance:
     
     # Track keyword sources for debugging/undo
     keyword_sources: Dict[str, list] = field(default_factory=dict)
+    continuous_effect_values: Dict[str, Dict[str, Any]] = field(default_factory=dict)
+    temporary_effect_values: Dict[str, Dict[str, Any]] = field(default_factory=dict)
     
     def __post_init__(self):
         """Initialize HP and parse base keywords from card"""
@@ -55,21 +57,23 @@ class UnitInstance:
         """Get current AP (can be modified by Support, Pilot bonuses, effects, etc.)"""
         base_ap = self.card_data.ap
         support_bonus = self.keywords.get("support", 0)
+        effect_ap = self.keywords.get("ap_bonus", 0)
         # Rule 3-3-8-1: Pilot AP/HP added to paired Unit
         pilot_ap = self.paired_pilot.card_data.ap if self.paired_pilot else 0
         # During Link effect bonuses (e.g. "This Unit gets AP+1")
         during_link_ap = self.keywords.get("pilot_ap_bonus", 0)
-        return base_ap + support_bonus + pilot_ap + during_link_ap
+        return base_ap + support_bonus + effect_ap + pilot_ap + during_link_ap
     
     @property
     def hp(self) -> int:
         """Get max HP (including Pilot bonuses)"""
         base_hp = self.card_data.hp
+        effect_hp = self.keywords.get("hp_bonus", 0)
         # Rule 3-3-8-1: Pilot AP/HP added to paired Unit
         pilot_hp = self.paired_pilot.card_data.hp if self.paired_pilot else 0
         # During Link effect bonuses (e.g. "This Unit gets HP+1")
         during_link_hp = self.keywords.get("pilot_hp_bonus", 0)
-        return base_hp + pilot_hp + during_link_hp
+        return base_hp + effect_hp + pilot_hp + during_link_hp
     
     @property
     def is_destroyed(self) -> bool:
@@ -130,7 +134,7 @@ class UnitInstance:
             source: Description of the source (for tracking)
         """
         # Additive keywords sum their values
-        if keyword in ["repair", "breach", "support", "pilot_ap_bonus", "pilot_hp_bonus"]:
+        if keyword in ["repair", "breach", "support", "ap_bonus", "hp_bonus", "pilot_ap_bonus", "pilot_hp_bonus"]:
             self.keywords[keyword] = self.keywords.get(keyword, 0) + (value if isinstance(value, (int, float)) else 0)
         else:
             # Boolean keywords are just set to True
@@ -140,6 +144,10 @@ class UnitInstance:
         if keyword not in self.keyword_sources:
             self.keyword_sources[keyword] = []
         self.keyword_sources[keyword].append(source)
+        if source.startswith("continuous:"):
+            self.continuous_effect_values.setdefault(source, {})[keyword] = value
+        if source.startswith("temporary:"):
+            self.temporary_effect_values.setdefault(source, {})[keyword] = value
     
     def remove_keyword(self, keyword: str, value: Any = None):
         """
@@ -150,7 +158,7 @@ class UnitInstance:
             keyword: The keyword name
             value: The value to subtract (for additive keywords)
         """
-        if keyword in ["repair", "breach", "support"] and value is not None:
+        if keyword in ["repair", "breach", "support", "ap_bonus", "hp_bonus", "pilot_ap_bonus", "pilot_hp_bonus"] and value is not None:
             current = self.keywords.get(keyword, 0)
             new_value = max(0, current - value)
             if new_value == 0:
@@ -161,11 +169,40 @@ class UnitInstance:
             if keyword in self.keywords:
                 del self.keywords[keyword]
     
-    def clear_temporary_keywords(self):
-        """Clear keywords that last only for this turn/battle"""
-        # This should be called at appropriate timing windows
-        # Implementation depends on game flow
-        pass
+    def clear_temporary_keywords(self, scope: str | None = None):
+        """Clear keywords that last only for this turn or battle."""
+        prefix = f"temporary:{scope}:" if scope else "temporary:"
+        for source, keyword_values in list(self.temporary_effect_values.items()):
+            if not source.startswith(prefix):
+                continue
+            for keyword, value in keyword_values.items():
+                sources = self.keyword_sources.get(keyword, [])
+                self.keyword_sources[keyword] = [item for item in sources if item != source]
+                if keyword in ["repair", "breach", "support", "ap_bonus", "hp_bonus", "pilot_ap_bonus", "pilot_hp_bonus"]:
+                    current = self.keywords.get(keyword, 0)
+                    self.keywords[keyword] = current - (value if isinstance(value, (int, float)) else 0)
+                    if self.keywords[keyword] <= 0:
+                        self.keywords.pop(keyword, None)
+                elif not self.keyword_sources.get(keyword):
+                    self.keywords.pop(keyword, None)
+                    self.keyword_sources.pop(keyword, None)
+            self.temporary_effect_values.pop(source, None)
+    
+    def clear_continuous_effects(self):
+        """Remove previously applied continuous effect keyword/stat grants."""
+        for source, keyword_values in list(self.continuous_effect_values.items()):
+            for keyword, value in keyword_values.items():
+                sources = self.keyword_sources.get(keyword, [])
+                self.keyword_sources[keyword] = [item for item in sources if item != source]
+                if keyword in ["repair", "breach", "support", "ap_bonus", "hp_bonus", "pilot_ap_bonus", "pilot_hp_bonus"]:
+                    current = self.keywords.get(keyword, 0)
+                    self.keywords[keyword] = current - (value if isinstance(value, (int, float)) else 0)
+                    if self.keywords[keyword] <= 0:
+                        self.keywords.pop(keyword, None)
+                elif not self.keyword_sources.get(keyword):
+                    self.keywords.pop(keyword, None)
+                    self.keyword_sources.pop(keyword, None)
+            self.continuous_effect_values.pop(source, None)
     
     def to_feature_vector(self) -> np.ndarray:
         """

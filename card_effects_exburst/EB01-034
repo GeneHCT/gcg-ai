@@ -1,0 +1,69 @@
+{
+  "card_id": "EB01-034",
+  "effects": [
+    {
+      "effect_id": "EB01-034-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 3,
+          "type": "LOOK_AT_DECK",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "optional_actions": [
+            {
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ],
+                "card_type": "UNIT",
+                "level": 3
+              },
+              "type": "SELECT_LOOKED_AT_CARD",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            },
+            {
+              "type": "ADD_TO_HAND",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        },
+        {
+          "amount": "all",
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "target": {
+            "selector": "LOOKED_AT_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Look at the top 3 cards of your deck. You may reveal 1 (G Generation) Unit card that is Lv.3 among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Linked】Look at the top 3 cards of your deck. You may reveal 1 (G Generation) Unit card that is Lv.3 among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

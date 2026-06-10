@@ -1,0 +1,88 @@
+{
+  "card_id": "GD01-125",
+  "effects": [
+    {
+      "effect_id": "GD01-125-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Deploy this card.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-125-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "SHIELD_TO_HAND",
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TURN",
+              "owner": "SELF"
+            }
+          ],
+          "optional_actions": [
+            {
+              "filters": {
+                "level": {
+                  "operator": "<=",
+                  "value": 4
+                },
+                "card_type": "UNIT",
+                "traits": [
+                  "Zeon"
+                ]
+              },
+              "amount": 1,
+              "type": "DEPLOY_FROM_ZONE",
+              "target": {
+                "selector": "SELF_HAND"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if it is your turn, you may deploy 1 (Zeon) Unit card that is Lv.4 or lower from your hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Deploy this card.; 【Deploy】Add 1 of your Shields to your hand. Then, if it is your turn, you may deploy 1 (Zeon) Unit card that is Lv.4 or lower from your hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

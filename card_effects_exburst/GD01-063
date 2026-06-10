@@ -1,0 +1,53 @@
+{
+  "card_id": "GD01-063",
+  "effects": [
+    {
+      "effect_id": "GD01-063-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operator": "==",
+          "value": "YOUR_TURN"
+        },
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "FIRST_STRIKE",
+          "duration": "THIS_BATTLE",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, while this Unit is battling an enemy Unit that is Lv.2 or lower, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your turn, while this Unit is battling an enemy Unit that is Lv.2 or lower, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

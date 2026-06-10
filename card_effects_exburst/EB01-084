@@ -1,0 +1,68 @@
+{
+  "card_id": "EB01-084",
+  "effects": [
+    {
+      "effect_id": "EB01-084-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": [
+          "G Generation / Attack"
+        ]
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】Demeziere Sonnen (G Generation / Attack).",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "EB01-084-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_KEYWORD",
+          "keyword": "BLOCKER",
+          "target": "SELECTED_CARD"
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "target": "SELECTED_CARD"
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "CANNOT_ATTACK",
+          "target": "SELECTED_CARD",
+          "duration": "THIS_TURN",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 Unit with【Blocker】. Set it as active. It can't attack during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 Unit with【Blocker】. Set it as active. It can't attack during this turn.; 【Pilot】Demeziere Sonnen (G Generation / Attack).",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

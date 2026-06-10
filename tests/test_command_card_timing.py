@@ -1,6 +1,6 @@
 """
 Test suite for Command Card Action Timing Implementation
-Tests trigger extraction, legal actions, and action step flow
+Tests trigger extraction, legal moves, and Action Step flow
 """
 import json
 from pathlib import Path
@@ -53,9 +53,9 @@ def test_trigger_extraction():
     return all_passed
 
 
-def test_legal_actions_main_phase():
-    """Test 2: Verify command cards appear in legal actions during Main Phase"""
-    print("\nTest 2: Legal Actions - Main Phase")
+def test_legal_moves_main_phase():
+    """Test 2: Verify command cards appear in legal moves during Main Phase"""
+    print("\nTest 2: Legal Moves - Main Phase")
     print("-" * 60)
     
     # Create a simple game state
@@ -93,24 +93,24 @@ def test_legal_actions_main_phase():
         game_state.players[0].resource_area = [Card(name="Resource", id="R1", type="UNIT", color="Blue", level=1, cost=0, ap=0, hp=0)]
         game_state.players[0].resource_area.append(Card(name="Resource", id="R2", type="UNIT", color="Blue", level=1, cost=0, ap=0, hp=0))
         
-        # Get legal actions
-        legal_actions = LegalActionGenerator.get_legal_actions(game_state)
+        # Get legal moves
+        legal_moves = LegalActionGenerator.get_legal_actions(game_state)
         
-        # Check if PLAY_COMMAND action exists
-        command_actions = [a for a in legal_actions if a.action_type == ActionType.PLAY_COMMAND]
+        # Check if PLAY_COMMAND move exists
+        command_moves = [move for move in legal_moves if move.action_type == ActionType.PLAY_COMMAND]
         
-        if command_actions:
-            print("✓ PASS: Command card appears in legal actions")
-            print(f"  Found {len(command_actions)} PLAY_COMMAND action(s)")
-            for action in command_actions:
-                print(f"  - {action}")
+        if command_moves:
+            print("✓ PASS: Command card appears in legal moves")
+            print(f"  Found {len(command_moves)} PLAY_COMMAND move(s)")
+            for move in command_moves:
+                print(f"  - {move}")
         else:
-            print("✗ FAIL: No PLAY_COMMAND actions found")
-            print(f"  Available actions: {[str(a) for a in legal_actions]}")
+            print("✗ FAIL: No PLAY_COMMAND moves found")
+            print(f"  Available moves: {[str(move) for move in legal_moves]}")
         
-        print(f"\nTest 2 Result: {'PASS' if command_actions else 'FAIL'}")
+        print(f"\nTest 2 Result: {'PASS' if command_moves else 'FAIL'}")
         print("=" * 60)
-        return bool(command_actions)
+        return bool(command_moves)
         
     except Exception as e:
         print(f"✗ FAIL: Exception during test: {e}")
@@ -304,7 +304,7 @@ def run_all_tests():
     
     results = {
         "Test 1: Trigger Extraction": test_trigger_extraction(),
-        "Test 2: Legal Actions (Main Phase)": test_legal_actions_main_phase(),
+        "Test 2: Legal Moves (Main Phase)": test_legal_moves_main_phase(),
         "Test 3: Action Step Priority": test_action_step_priority(),
         "Test 4: Action Step Pass Handling": test_action_step_pass_handling(),
         "Test 5: Action Step Priority Alternation": test_action_step_priority_alternation(),

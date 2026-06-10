@@ -1,0 +1,53 @@
+{
+  "card_id": "ST08-004",
+  "effects": [
+    {
+      "effect_id": "ST08-004-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "ATTACKING",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "traits": [
+            "UNIT"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "selector": "ENEMY_UNIT",
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】If this Unit is attacking an enemy Unit, choose 1 enemy Unit. Deal 1 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】If this Unit is attacking an enemy Unit, choose 1 enemy Unit. Deal 1 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "card_id": "ST10-013",
+  "effects": [
+    {
+      "effect_id": "ST10-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST10-013-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "FRIENDLY_UNIT",
+          "operator": "==",
+          "traits": [
+            "G Generation"
+          ]
+        },
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "FRIENDLY_UNIT",
+          "stat": "LEVEL",
+          "operator": ">=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "+2",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 (G Generation) Unit that is Lv.5 or higher. It recovers 2 HP and gets AP+2 during this turn.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST10-013-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "FRIENDLY_UNIT",
+          "operator": "==",
+          "traits": [
+            "G Generation"
+          ]
+        },
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "FRIENDLY_UNIT",
+          "stat": "LEVEL",
+          "operator": ">=",
+          "value": 5
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 2,
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "+2",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 (G Generation) Unit that is Lv.5 or higher. It recovers 2 HP and gets AP+2 during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【Main】/【Action】Choose 1 (G Generation) Unit that is Lv.5 or higher. It recovers 2 HP and gets AP+2 during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "card_id": "ST07-001",
+  "effects": [
+    {
+      "effect_id": "ST07-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "filters": {
+            "trait": "CB"
+          },
+          "operator": ">=",
+          "value": 7,
+          "owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "amount": 1,
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "At the end of your turn, if there are 7 or more (CB) cards in your trash, choose 1 of your Resources. Set it as active.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST07-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MILL",
+          "amount": 2,
+          "zone": "SELF_DECK"
+        },
+        {
+          "type": "CONDITIONAL_BRANCH",
+          "conditions": [
+            {
+              "type": "CHECK_MILLED_TRAITS",
+              "trait": "CB",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "success_actions": [
+            {
+              "type": "DRAW",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】Place the top 2 cards of your deck into your trash. If you place a (CB) card with this effect, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "At the end of your turn, if there are 7 or more (CB) cards in your trash, choose 1 of your Resources. Set it as active.; 【When Paired】Place the top 2 cards of your deck into your trash. If you place a (CB) card with this effect, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

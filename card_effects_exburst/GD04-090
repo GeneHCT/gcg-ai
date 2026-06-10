@@ -1,0 +1,99 @@
+{
+  "card_id": "GD04-090",
+  "effects": [
+    {
+      "effect_id": "GD04-090-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-090-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "LINKED",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "CHECK_TURN",
+          "player": "FRIENDLY"
+        }
+      ],
+      "actions": [
+        {
+          "type": "LOOK_AT_DECK",
+          "amount": 1,
+          "zone": "SELF_DECK"
+        },
+        {
+          "type": "CONDITIONAL_BRANCH",
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "selector": "LOOKED_AT_CARD",
+              "trait": "CB"
+            }
+          ],
+          "success": [
+            {
+              "type": "OPTIONAL_ACTION",
+              "actions": [
+                {
+                  "type": "ADD_TO_HAND",
+                  "target": {
+                    "selector": "LOOKED_AT_CARD"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】【Once per Turn】During your turn, when this Unit destroys an enemy Unit with battle damage, look at the top card of your deck. If it is a (CB) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【During Link】【Once per Turn】During your turn, when this Unit destroys an enemy Unit with battle damage, look at the top card of your deck. If it is a (CB) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

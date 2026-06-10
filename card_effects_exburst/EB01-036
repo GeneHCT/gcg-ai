@@ -1,0 +1,46 @@
+{
+  "card_id": "EB01-036",
+  "effects": [
+    {
+      "effect_id": "EB01-036-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "FRIENDLY",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "+1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, all other Lv.3 (G Generation) Units gain AP+1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your turn, all other Lv.3 (G Generation) Units gain AP+1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

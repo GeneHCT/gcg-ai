@@ -1,0 +1,55 @@
+{
+  "card_id": "GD01-039",
+  "effects": [
+    {
+      "effect_id": "GD01-039-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "LOOK_AT_DECK",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "optional_actions": [
+            {
+              "type": "RETURN_LOOKED_TO_TOP",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            },
+            {
+              "type": "RETURN_LOOKED_TO_BOTTOM",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Look at the top card of your deck. Return it to the top or bottom of your deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Look at the top card of your deck. Return it to the top or bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

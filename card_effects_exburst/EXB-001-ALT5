@@ -1,0 +1,35 @@
+{
+  "card_id": "EXB-001-ALT5",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "EXB-001-ALT5-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "is_supported": false,
+      "unhandled_explanation": "requires game setup behavior not represented in runtime vocabulary",
+      "metadata": {
+        "raw_text": "(At the start of the game, place 1 active EX Base as your shield area's base.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "(At the start of the game, place 1 active EX Base as your shield area's base.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "unsupported",
+    "validation_issues": [
+      {
+        "path": "continuous_effects[0]",
+        "kind": "unsupported_llm_effect",
+        "value": "EXB-001-ALT5-E1",
+        "message": "requires game setup behavior not represented in runtime vocabulary"
+      }
+    ]
+  }
+}

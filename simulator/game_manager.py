@@ -18,6 +18,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass, field
 from enum import Enum
 
+from simulator.card_data import load_card_lookup
 from simulator.unit import UnitInstance, Card, PilotInstance
 from simulator.keyword_interpreter import KeywordInterpreter, PlayerState, BattlePhase
 
@@ -59,7 +60,7 @@ class EXBase:
         """
         Apply damage to base. Returns True if destroyed.
         """
-        self.current_hp -= amount
+        self.current_hp = max(0, self.current_hp - amount)
         return self.current_hp <= 0
     
     def rest(self):
@@ -165,7 +166,7 @@ class Player:
     def decide_burst_activation(self, shield_card: Any, game_state: 'GameState') -> bool:
         """
         Decide whether to activate a [Burst] effect when shield is destroyed.
-        Used by damage resolution. Default returns True; RL agents override via legal actions.
+        Used by damage resolution. Default returns True; RL agents override via legal moves.
         """
         return True
 
@@ -203,6 +204,9 @@ class GameState:
     
     # Current decision-maker (overrides turn_player for block/burst steps)
     decision_player_id: Optional[int] = None
+
+    # Activated ability usage tracking for once-per-turn restrictions
+    activated_abilities_used_this_turn: set = field(default_factory=set)
     
     # Game state
     game_result: GameResult = GameResult.ONGOING
@@ -322,7 +326,7 @@ class GameSetup:
     @staticmethod
     def create_game_from_card_ids(card_ids_p0: List[str], card_ids_p1: List[str],
                                   resource_ids_p0: List[str], resource_ids_p1: List[str],
-                                  card_database_path: str = "card_database/all_cards.json",
+                                  card_database_path: Optional[str] = None,
                                   seed: Optional[int] = None) -> GameState:
         """
         Create game from card IDs (loads from database).
@@ -332,19 +336,13 @@ class GameSetup:
             card_ids_p1: List of card IDs for player 1's deck
             resource_ids_p0: List of card IDs for player 0's resource deck
             resource_ids_p1: List of card IDs for player 1's resource deck
-            card_database_path: Path to card database JSON
+            card_database_path: Path to card database JSON. Defaults to ExBurst raw cards.
             seed: Random seed
             
         Returns:
             Initialized GameState
         """
-        import json
-        
-        # Load card database
-        with open(card_database_path, 'r', encoding='utf-8') as f:
-            all_cards = json.load(f)
-        
-        card_dict = {card['ID']: card for card in all_cards}
+        card_dict = load_card_lookup(card_database_path)
         
         # Build deck lists
         deck_p0 = [card_dict[cid] for cid in card_ids_p0 if cid in card_dict]
@@ -420,6 +418,7 @@ class TurnManager:
         # Reset per-turn counters
         player.cards_drawn_this_turn = 0
         player.units_deployed_this_turn = 0
+        game_state.activated_abilities_used_this_turn.clear()
         
         return game_state
     
@@ -871,7 +870,7 @@ class GameManager:
     
     def get_legal_actions(self, player_id: Optional[int] = None) -> List[Any]:
         """
-        Get legal actions for the current decision point.
+        Get legal moves for the current decision point.
         
         Args:
             player_id: Optional player ID; when None, infers from game state.

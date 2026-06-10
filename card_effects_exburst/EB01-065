@@ -1,0 +1,46 @@
+{
+  "card_id": "EB01-065",
+  "effects": [
+    {
+      "effect_id": "EB01-065-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "traits": [
+            "G Generation"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "keyword": "BREACH",
+          "duration": "THIS_TURN",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Choose 1 friendly (G Generation) Unit. it gains【Breach】during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Linked】Choose 1 friendly (G Generation) Unit. it gains【Breach】during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

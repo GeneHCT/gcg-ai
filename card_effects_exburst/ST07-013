@@ -1,0 +1,71 @@
+{
+  "card_id": "ST07-013",
+  "effects": [
+    {
+      "effect_id": "ST07-013-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Draw 1.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST07-013-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "operator": "==",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "CB"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "selector": "ENEMY_UNIT",
+          "target": "FRIENDLY_UNIT",
+          "duration": "THIS_BATTLE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 rested friendly (CB) Unit. Change the attack target of the battling enemy Unit to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Draw 1.; 【Action】Choose 1 rested friendly (CB) Unit. Change the attack target of the battling enemy Unit to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

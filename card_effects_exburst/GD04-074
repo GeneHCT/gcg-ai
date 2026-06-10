@@ -1,0 +1,52 @@
+{
+  "card_id": "GD04-074",
+  "effects": [
+    {
+      "effect_id": "GD04-074-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "optional_actions": [
+            {
+              "amount": 1,
+              "type": "DRAW",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": 1,
+              "type": "DISCARD",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】You may pay ①. If you do, draw 1. Then, discard 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】You may pay ①. If you do, draw 1. Then, discard 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

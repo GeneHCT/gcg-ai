@@ -1,0 +1,107 @@
+{
+  "card_id": "GD01-048",
+  "effects": [
+    {
+      "effect_id": "GD01-048-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "stat": "AP",
+          "duration": "THIS_TURN",
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          },
+          "modification": "+1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-048-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "LOOK_AT_DECK",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "Zeon",
+              "operator": "==",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            },
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "Neo Zeon",
+              "operator": "==",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            }
+          ],
+          "optional_actions": [
+            {
+              "type": "SELECT_LOOKED_AT_CARD"
+            },
+            {
+              "type": "ADD_TO_HAND",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Look at the top card of your deck. If it is a (Zeon)/(Neo Zeon) Unit card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.); 【Deploy】Look at the top card of your deck. If it is a (Zeon)/(Neo Zeon) Unit card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "card_id": "GD04-022",
+  "effects": [
+    {
+      "effect_id": "GD04-022-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "value": false,
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 3
+            },
+            {
+              "type": "CHECK_TRAIT",
+              "operator": "!=",
+              "value": "Unit Token"
+            }
+          ],
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】All Units that are Lv.3 or lower other than Unit tokens are deployed rested.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-022-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Unit Token"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "duration": "PERMANENT",
+          "keyword": "BREACH",
+          "value": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "All your Unit tokens gain <Breach 1>.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "All your Unit tokens gain <Breach 1>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); 【During Link】All Units that are Lv.3 or lower other than Unit tokens are deployed rested.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

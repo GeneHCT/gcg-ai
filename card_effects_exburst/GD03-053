@@ -1,0 +1,100 @@
+{
+  "card_id": "GD03-053",
+  "effects": [
+    {
+      "effect_id": "GD03-053-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "SELF",
+          "operator": "==",
+          "turn_owner": "SELF"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "traits": [
+            "Tekkadan"
+          ]
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "traits": [
+            "Teiwaz"
+          ]
+        },
+        {
+          "type": "CHECK_STAT",
+          "target": "ENEMY_UNIT",
+          "stat": "LEVEL",
+          "operator": "<=",
+          "value": 4
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "filters": {
+            "level": 4,
+            "operator": "<="
+          },
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Once per Turn】During your turn, when one of your (Tekkadan)/(Teiwaz) Units receives effect damage, choose 1 enemy Unit that is Lv.4 or lower. Rest it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-053-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Blocker> (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); 【During Pair】【Once per Turn】During your turn, when one of your (Tekkadan)/(Teiwaz) Units receives effect damage, choose 1 enemy Unit that is Lv.4 or lower. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

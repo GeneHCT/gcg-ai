@@ -1,0 +1,83 @@
+{
+  "card_id": "ST06-009",
+  "effects": [
+    {
+      "effect_id": "ST06-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST06-009-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "LOOK_AT_DECK"
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "Clan",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            }
+          ],
+          "optional_actions": [
+            {
+              "type": "SELECT_LOOKED_AT_CARD"
+            },
+            {
+              "type": "ADD_TO_HAND",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "type": "RETURN_LOOKED_TO_BOTTOM"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked】Look at the top card of your deck. If it is a (Clan) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; 【When Linked】Look at the top card of your deck. If it is a (Clan) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

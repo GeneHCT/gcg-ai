@@ -1,0 +1,57 @@
+{
+  "card_id": "GD02-070",
+  "effects": [
+    {
+      "effect_id": "GD02-070-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "filters": {
+            "trait": "Gjallarhorn"
+          },
+          "operator": ">=",
+          "value": 4,
+          "owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 2,
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "type": "DISCARD",
+          "amount": 2,
+          "next_if_success": true,
+          "target": {
+            "selector": "SELF_HAND"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】If there are 4 or more (Gjallarhorn) cards in your trash, draw 2. If you do, discard 2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】If there are 4 or more (Gjallarhorn) cards in your trash, draw 2. If you do, discard 2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

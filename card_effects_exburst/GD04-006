@@ -1,0 +1,96 @@
+{
+  "card_id": "GD04-006",
+  "effects": [
+    {
+      "effect_id": "GD04-006-E2",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "OTHER_FRIENDLY_UNIT",
+          "traits": [
+            "League Militaire"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "League Militaire"
+            }
+          ],
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "REST_UNIT",
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "HP",
+              "operator": "<=",
+              "value": 4
+            }
+          ],
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】【Once per Turn】Rest 1 of your other (League Militaire) Units：Choose 1 enemy Unit with 4 or less HP. Rest it.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-006-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); 【Activate･Main】【Once per Turn】Rest 1 of your other (League Militaire) Units：Choose 1 enemy Unit with 4 or less HP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

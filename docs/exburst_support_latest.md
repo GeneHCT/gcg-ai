@@ -1,8 +1,8 @@
 # ExBurst Support Status
 
-- Generated: `2026-06-07T17:24:51.829804+00:00`
+- Generated: `2026-06-07T17:46:16.073994+00:00`
 - Output: `card_effects_exburst`
-- Selected IDs: `GD04-117`
+- Selected IDs: `ALL`
 
 ## Counts
 

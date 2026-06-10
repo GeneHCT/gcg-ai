@@ -8,8 +8,10 @@ etc.
 
 Each deck must have exactly 50 cards total.
 """
-import json
-from typing import List, Dict, Tuple
+from typing import List, Dict, Optional, Tuple
+import re
+
+from simulator.card_data import load_card_lookup
 
 
 class DeckLoader:
@@ -18,7 +20,7 @@ class DeckLoader:
     """
     
     @staticmethod
-    def load_deck(deck_file: str, card_database_path: str = "card_database/all_cards.json") -> Tuple[List[Dict], bool]:
+    def load_deck(deck_file: str, card_database_path: Optional[str] = None) -> Tuple[List[Dict], bool]:
         """
         Load a deck from a text file.
         
@@ -29,19 +31,14 @@ class DeckLoader:
         
         Args:
             deck_file: Path to deck text file
-            card_database_path: Path to card database JSON
+            card_database_path: Path to card database JSON. Defaults to ExBurst raw cards.
             
         Returns:
             Tuple of (deck_list, is_valid)
             deck_list: List of card dictionaries
             is_valid: True if deck has exactly 50 cards
         """
-        # Load card database
-        with open(card_database_path, 'r', encoding='utf-8') as f:
-            all_cards = json.load(f)
-        
-        # Create lookup dictionary
-        card_dict = {card['ID']: card for card in all_cards}
+        card_dict = load_card_lookup(card_database_path)
         
         # Parse deck file
         deck = []
@@ -52,18 +49,18 @@ class DeckLoader:
                 line = line.strip()
                 
                 # Skip empty lines and comments
-                if not line or line.startswith('#'):
+                if not line or line.startswith('#') or line.startswith('//'):
                     continue
                 
-                # Parse format: "4x GD01-118"
+                # Parse formats: "4x GD01-118" or "4 GD01-118 Card Name"
                 try:
-                    parts = line.split('x')
-                    if len(parts) != 2:
+                    match = re.match(r"^(\d+)\s*x?\s+([A-Za-z0-9-]+)(?:\s+.*)?$", line)
+                    if not match:
                         print(f"Warning: Invalid format on line {line_num}: {line}")
                         continue
                     
-                    count = int(parts[0].strip())
-                    card_id = parts[1].strip()
+                    count = int(match.group(1))
+                    card_id = match.group(2)
                     
                     # Look up card
                     if card_id not in card_dict:
@@ -88,8 +85,8 @@ class DeckLoader:
         return deck, is_valid
     
     @staticmethod
-    def load_deck_with_resource(deck_file: str, 
-                                card_database_path: str = "card_database/all_cards.json") -> Tuple[List[Dict], List[Dict], bool]:
+    def load_deck_with_resource(deck_file: str,
+                                card_database_path: Optional[str] = None) -> Tuple[List[Dict], List[Dict], bool]:
         """
         Load a deck and create a resource deck from it.
         
@@ -97,7 +94,7 @@ class DeckLoader:
         
         Args:
             deck_file: Path to deck text file
-            card_database_path: Path to card database
+            card_database_path: Path to card database. Defaults to ExBurst raw cards.
             
         Returns:
             Tuple of (main_deck, resource_deck, is_valid)

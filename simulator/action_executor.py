@@ -4,13 +4,14 @@ Executes all action types defined in the schema
 """
 from typing import Dict, List, Any, Optional
 from simulator.effect_interpreter import EffectContext, TargetResolver, ConditionEvaluator
+from simulator.ir_vocabulary import SUPPORTED_ACTION_TYPES
 
 
 class ActionExecutor:
     """Executes effect actions"""
     
     @staticmethod
-    def execute_actions(context: EffectContext, actions: List[Dict]) -> List[str]:
+    def execute_actions(context: EffectContext, actions: List[Dict], strict: bool = False) -> List[str]:
         """
         Execute a list of actions in sequence.
         
@@ -24,7 +25,7 @@ class ActionExecutor:
         results = []
         
         for action in actions:
-            result = ActionExecutor.execute(context, action)
+            result = ActionExecutor.execute(context, action, strict=strict)
             results.append(result)
             
             # Check for conditional_next
@@ -35,15 +36,21 @@ class ActionExecutor:
             if "conditional_actions" in action:
                 if "No valid" not in result and "failed" not in result.lower():
                     for cond_action in action["conditional_actions"]:
-                        cond_result = ActionExecutor.execute(context, cond_action)
+                        cond_result = ActionExecutor.execute(context, cond_action, strict=strict)
                         results.append(cond_result)
         
         return results
     
     @staticmethod
-    def execute(context: EffectContext, action: Dict) -> str:
+    def execute(context: EffectContext, action: Dict, strict: bool = False) -> str:
         """Execute a single action"""
+        if action is None:
+            if strict:
+                raise ValueError("Missing action")
+            return "No action"
         action_type = action.get("type")
+        if strict and action_type not in SUPPORTED_ACTION_TYPES:
+            raise ValueError(f"Unknown action type: {action_type}")
         
         # Check if action is optional
         optional = action.get("optional", False)
@@ -68,8 +75,20 @@ class ActionExecutor:
         elif action_type == "MODIFY_STAT":
             return ActionExecutor._execute_modify_stat(context, action)
         
+        elif action_type == "MODIFY_COST":
+            return ActionExecutor._execute_modify_cost(context, action)
+        
         elif action_type == "RECOVER_HP":
             return ActionExecutor._execute_recover_hp(context, action)
+        
+        elif action_type == "REDUCE_DAMAGE":
+            return ActionExecutor._execute_reduce_damage(context, action)
+        
+        elif action_type == "RETURN_TO_HAND":
+            return ActionExecutor._execute_return_to_hand(context, action)
+        
+        elif action_type == "RESOLVE_COMMAND_EFFECT":
+            return ActionExecutor._execute_resolve_command_effect(context, action)
         
         elif action_type == "GRANT_KEYWORD":
             return ActionExecutor._execute_grant_keyword(context, action)
@@ -101,6 +120,18 @@ class ActionExecutor:
         elif action_type == "GRANT_PROTECTION":
             return ActionExecutor._execute_grant_protection(context, action)
         
+        elif action_type == "LOOK_AT_DECK":
+            return ActionExecutor._execute_look_at_deck(context, action)
+        
+        elif action_type == "SELECT_LOOKED_AT_CARD":
+            return ActionExecutor._execute_select_looked_at_card(context, action)
+        
+        elif action_type == "RETURN_LOOKED_TO_BOTTOM":
+            return ActionExecutor._execute_return_looked_to_deck(context, action, bottom=True)
+        
+        elif action_type == "RETURN_LOOKED_TO_TOP":
+            return ActionExecutor._execute_return_looked_to_deck(context, action, bottom=False)
+        
         elif action_type == "ADD_TO_SHIELDS":
             return ActionExecutor._execute_add_to_shields(context, action)
         
@@ -123,30 +154,30 @@ class ActionExecutor:
         """Execute DRAW action"""
         target = action.get("target", "SELF")
         amount = action.get("amount", 1)
-        
-        # Determine which player draws
-        if target == "SELF":
-            player_id = context.source_player_id
-        else:  # OPPONENT
-            player_id = 1 - context.source_player_id
-        
+
         game_state = context.game_state
-        player = game_state.players[player_id]
-        
-        # Draw cards
-        drawn = 0
-        for _ in range(amount):
-            if player.main_deck:
-                card = player.main_deck.pop(0)
-                player.hand.append(card)
-                drawn += 1
-            else:
-                # Deck empty - handle game over
-                game_state.game_result = "DECK_OUT"
-                game_state.winner = 1 - player_id
-                break
-        
-        return f"Player {player_id} drew {drawn} card(s)"
+        target_selector = target.get("selector") if isinstance(target, dict) else target
+        if target_selector in {"ALL_PLAYERS", "BOTH_PLAYERS"}:
+            player_ids = list(game_state.players.keys()) if isinstance(game_state.players, dict) else list(range(len(game_state.players)))
+        else:
+            player_ids = ActionExecutor._resolve_player_ids(context, target)
+
+        results = []
+        for player_id in player_ids:
+            player = game_state.players[player_id]
+            drawn = 0
+            for _ in range(amount):
+                if player.main_deck:
+                    card = player.main_deck.pop(0)
+                    player.hand.append(card)
+                    drawn += 1
+                else:
+                    game_state.game_result = "DECK_OUT"
+                    game_state.winner = 1 - player_id
+                    break
+            results.append(f"Player {player_id} drew {drawn} card(s)")
+
+        return "; ".join(results)
     
     @staticmethod
     def _execute_discard(context: EffectContext, action: Dict) -> str:
@@ -156,11 +187,8 @@ class ActionExecutor:
         """
         target = action.get("target", "SELF")
         amount = action.get("amount", 1)
-        
-        if target == "SELF":
-            player_id = context.source_player_id
-        else:
-            player_id = 1 - context.source_player_id
+        player_ids = ActionExecutor._resolve_player_ids(context, target)
+        player_id = player_ids[0] if player_ids else context.source_player_id
         
         game_state = context.game_state
         player = game_state.players[player_id]
@@ -180,6 +208,20 @@ class ActionExecutor:
                 discarded.append(name)
         
         return f"Player {player_id} discarded {len(discarded)} card(s)"
+
+    @staticmethod
+    def _resolve_player_ids(context: EffectContext, target: Any) -> List[int]:
+        """Resolve player or player-zone targets to player IDs."""
+        selector = target.get("selector") if isinstance(target, dict) else target
+        if selector in {None, "SELF", "SELF_PLAYER", "FRIENDLY_PLAYER", "SELF_HAND", "SELF_DECK", "SELF_TRASH", "SELF_SHIELDS"}:
+            return [context.source_player_id]
+        if selector in {"ENEMY_PLAYER", "OPPONENT", "OPPONENT_PLAYER", "OPPONENT_HAND", "OPPONENT_DECK", "OPPONENT_TRASH", "OPPONENT_SHIELDS", "ENEMY_SHIELDS"}:
+            return [1 - context.source_player_id]
+        if selector in {"ALL_PLAYERS", "BOTH_PLAYERS"}:
+            players = context.game_state.players
+            return list(players.keys()) if isinstance(players, dict) else list(range(len(players)))
+        resolved = TargetResolver.resolve_target(context, target) if isinstance(target, dict) else []
+        return [player.player_id for player in resolved if hasattr(player, "player_id")]
     
     @staticmethod
     def _execute_damage_unit(context: EffectContext, action: Dict) -> str:
@@ -203,9 +245,13 @@ class ActionExecutor:
         results = []
         for target in targets:
             if hasattr(target, 'current_hp'):
+                original_reductions = list(getattr(target, "damage_reductions", []))
+                ActionExecutor._trigger_receive_effect_damage(context, target, damage_amount, action)
+                actual_damage = ActionExecutor._apply_damage_reduction(target, damage_amount, action)
                 old_hp = target.current_hp
-                target.current_hp = max(0, target.current_hp - damage_amount)
-                results.append(f"{target.card_data.name} took {damage_amount} damage ({old_hp} -> {target.current_hp} HP)")
+                target.current_hp = max(0, target.current_hp - actual_damage)
+                target.damage_reductions = original_reductions
+                results.append(f"{target.card_data.name} took {actual_damage} damage ({old_hp} -> {target.current_hp} HP)")
                 
                 # Check if destroyed
                 if target.current_hp <= 0:
@@ -213,6 +259,31 @@ class ActionExecutor:
                     ActionExecutor._trigger_on_destroyed(context, target)
         
         return "; ".join(results)
+
+    @staticmethod
+    def _trigger_receive_effect_damage(context: EffectContext, target: Any, amount: int, action: Dict) -> None:
+        if amount <= 0:
+            return
+        if str(action.get("damage_type", "EFFECT")).upper() != "EFFECT":
+            return
+        target_owner = getattr(target, "owner_id", None)
+        if target_owner is None:
+            return
+        try:
+            from simulator.trigger_manager import get_trigger_manager
+
+            get_trigger_manager().trigger_event(
+                event_type="ON_RECEIVE_EFFECT_DAMAGE",
+                game_state=context.game_state,
+                source_card=target,
+                source_player_id=target_owner,
+                damage_source=context.source_card,
+                damage_source_player=context.source_player_id,
+                damage_amount=amount,
+                target="ENEMY_PLAYER" if context.source_player_id != target_owner else "FRIENDLY_PLAYER",
+            )
+        except Exception as e:
+            print(f"  [Effect Damage Trigger Error] {e}")
     
     @staticmethod
     def _calculate_damage(context: EffectContext, calculation: Dict) -> int:
@@ -297,6 +368,14 @@ class ActionExecutor:
         stat = action.get("stat")
         modification = action.get("modification")
         duration = action.get("duration", "PERMANENT")
+        source_id = action.get("source_id")
+        if not source_id:
+            if duration == "THIS_BATTLE" or context.trigger_event == "ON_ATTACK":
+                source_id = f"temporary:battle:{id(action)}"
+            elif duration == "THIS_TURN":
+                source_id = f"temporary:turn:{id(action)}"
+            else:
+                source_id = f"effect_{duration}"
         
         targets = TargetResolver.resolve_target(context, target_spec)
         
@@ -325,14 +404,19 @@ class ActionExecutor:
             if stat == "AP":
                 # Add temporary AP bonus via keywords
                 if mod_type == "add":
-                    target.add_keyword("ap_bonus", mod_value, source=f"effect_{duration}")
+                    target.add_keyword("ap_bonus", mod_value, source=source_id)
                     results.append(f"{target.card_data.name} gets AP+{mod_value}")
+                elif mod_type == "subtract":
+                    target.add_keyword("ap_bonus", -mod_value, source=source_id)
+                    results.append(f"{target.card_data.name} gets AP-{mod_value}")
             
             elif stat == "HP":
-                if hasattr(target, 'hp_modifier'):
-                    if mod_type == "add":
-                        target.hp_modifier = getattr(target, 'hp_modifier', 0) + mod_value
-                        results.append(f"{target.card_data.name} gets HP+{mod_value}")
+                if mod_type == "add":
+                    target.add_keyword("hp_bonus", mod_value, source=source_id)
+                    results.append(f"{target.card_data.name} gets HP+{mod_value}")
+                elif mod_type == "subtract":
+                    target.add_keyword("hp_bonus", -mod_value, source=source_id)
+                    results.append(f"{target.card_data.name} gets HP-{mod_value}")
             
             # TODO: Implement duration tracking for temporary modifications
         
@@ -361,12 +445,54 @@ class ActionExecutor:
         return "; ".join(results) if results else "No HP recovered"
     
     @staticmethod
+    def _execute_modify_cost(context: EffectContext, action: Dict) -> str:
+        """Register a temporary effective-cost modifier for the player."""
+        modification = action.get("modification")
+        if modification is None:
+            return "Invalid cost modification"
+        player = context.game_state.players[context.source_player_id]
+        if not hasattr(player, "active_cost_modifiers"):
+            player.active_cost_modifiers = []
+        modifier = {
+            "modification": str(modification),
+            "duration": action.get("duration", "PERMANENT"),
+            "target": action.get("target"),
+            "filters": action.get("filters", {}),
+            "scope": action.get("scope", "PLAY"),
+            "source": context.source_card,
+        }
+        player.active_cost_modifiers.append(modifier)
+        return f"Registered cost modifier {modification}"
+    
+    @staticmethod
+    def _execute_reduce_damage(context: EffectContext, action: Dict) -> str:
+        """Grant damage reduction to matching targets."""
+        target_spec = action.get("target", {"selector": "SELF"})
+        amount = action.get("amount", action.get("value", action.get("reduce_damage_by", 0)))
+        targets = TargetResolver.resolve_target(context, target_spec)
+        if not targets:
+            return "No valid targets for damage reduction"
+        for target in targets:
+            if not hasattr(target, "damage_reductions"):
+                target.damage_reductions = []
+            target.damage_reductions.append(
+                {
+                    "amount": amount,
+                    "duration": action.get("duration", "THIS_TURN"),
+                    "damage_type": action.get("damage_type", "ANY"),
+                    "source_filter": action.get("source_filter", {}),
+                }
+            )
+        return f"Granted damage reduction {amount} to {len(targets)} target(s)"
+    
+    @staticmethod
     def _execute_grant_keyword(context: EffectContext, action: Dict) -> str:
         """Execute GRANT_KEYWORD action"""
         target_spec = action.get("target")
         keyword = action.get("keyword").lower()
         value = action.get("value")
         duration = action.get("duration", "PERMANENT")
+        source_id = action.get("source_id", f"effect_{duration}")
         
         targets = TargetResolver.resolve_target(context, target_spec)
         
@@ -377,10 +503,10 @@ class ActionExecutor:
         for target in targets:
             if hasattr(target, 'add_keyword'):
                 if value is not None:
-                    target.add_keyword(keyword, value, source=f"effect_{duration}")
+                    target.add_keyword(keyword, value, source=source_id)
                     results.append(f"{target.card_data.name} gains <{keyword.title()} {value}> ({duration})")
                 else:
-                    target.add_keyword(keyword, True, source=f"effect_{duration}")
+                    target.add_keyword(keyword, True, source=source_id)
                     results.append(f"{target.card_data.name} gains <{keyword.title()}> ({duration})")
         
         return "; ".join(results) if results else "No keywords granted"
@@ -412,6 +538,92 @@ class ActionExecutor:
                     ActionExecutor._trigger_on_destroyed(context, target)
         
         return "; ".join(results) if results else "No cards destroyed"
+    
+    @staticmethod
+    def _execute_return_to_hand(context: EffectContext, action: Dict) -> str:
+        """Move resolved targets to their owners' hands."""
+        target_spec = action.get("target", {"selector": "SELECTED_CARD"})
+        targets = TargetResolver.resolve_target(context, target_spec)
+        selector = target_spec.get("selector") if isinstance(target_spec, dict) else target_spec
+        if not targets and selector == "SELECTED_CARD":
+            targets = list(context.trigger_data.get("selected_cards", []))
+        if not targets:
+            return "No valid targets to return to hand"
+
+        moved = 0
+        for target in targets:
+            if ActionExecutor._move_target_to_hand(context, target):
+                moved += 1
+        return f"Returned {moved} card(s) to hand"
+    
+    @staticmethod
+    def _execute_resolve_command_effect(context: EffectContext, action: Dict) -> str:
+        """Resolve another timing section of the same command, used by Burst text."""
+        timing = action.get("timing", "MAIN_PHASE")
+        from simulator.trigger_manager import get_trigger_manager
+
+        results = get_trigger_manager().trigger_event(
+            event_type=timing,
+            game_state=context.game_state,
+            source_card=context.source_card,
+            source_player_id=context.source_player_id,
+        )
+        return "; ".join(results) if results else f"Resolved {timing}"
+    
+    @staticmethod
+    def _move_target_to_hand(context: EffectContext, target: Any) -> bool:
+        game_state = context.game_state
+        owner_id = getattr(target, "owner_id", None)
+        if owner_id is None:
+            owner_id = ActionExecutor._find_card_owner(game_state, target)
+        if owner_id is None:
+            return False
+        player = game_state.players[owner_id]
+
+        if hasattr(target, "card_data"):
+            if target in getattr(player, "battle_area", []):
+                player.battle_area.remove(target)
+            elif target in getattr(player, "bases", []):
+                player.bases.remove(target)
+            else:
+                return False
+
+            player.hand.append(target.card_data)
+            paired_pilot = getattr(target, "paired_pilot", None)
+            if paired_pilot:
+                player.hand.append(paired_pilot.card_data)
+                target.paired_pilot = None
+            return True
+
+        for zone_name in ("shield_area", "trash", "resource_area", "main_deck", "hand"):
+            zone = getattr(player, zone_name, [])
+            if target in zone:
+                if zone_name != "hand":
+                    zone.remove(target)
+                    player.hand.append(target)
+                return True
+        return False
+    
+    @staticmethod
+    def _find_card_owner(game_state: Any, card: Any) -> Optional[int]:
+        players = getattr(game_state, "players", {})
+        player_items = players.items() if isinstance(players, dict) else enumerate(players)
+        for player_id, player in player_items:
+            for zone_name in ("hand", "shield_area", "trash", "resource_area", "main_deck"):
+                if card in getattr(player, zone_name, []):
+                    return player_id
+        return None
+    
+    @staticmethod
+    def _apply_damage_reduction(target: Any, amount: int, action: Dict) -> int:
+        reductions = list(getattr(target, "damage_reductions", []))
+        damage_type = str(action.get("damage_type", "EFFECT")).upper()
+        total_reduction = 0
+        for reduction in reductions:
+            reduction_type = str(reduction.get("damage_type", "ANY")).upper()
+            if reduction_type in {"ANY", damage_type}:
+                total_reduction += int(reduction.get("amount", 0) or 0)
+        return max(0, amount - total_reduction)
     
     @staticmethod
     def _execute_deploy_token(context: EffectContext, action: Dict) -> str:
@@ -546,6 +758,20 @@ class ActionExecutor:
                     player.hand.append(card)
                     taken += 1
             return f"Added {taken} card(s) from trash to hand"
+        
+        if source in {"SELECTED_CARD", "LOOKED_AT_CARD"}:
+            selected_cards = list(context.trigger_data.get("selected_cards", []))
+            if source == "LOOKED_AT_CARD" and not selected_cards:
+                selected_cards = list(context.trigger_data.get("looked_at_cards", []))[:count]
+            moved = 0
+            for card in selected_cards[:count]:
+                if card in player.main_deck:
+                    player.main_deck.remove(card)
+                if card not in player.hand:
+                    player.hand.append(card)
+                moved += 1
+            context.trigger_data["selected_cards"] = selected_cards[count:]
+            return f"Added {moved} selected card(s) to hand"
         
         return f"Unknown source for ADD_TO_HAND: {source}"
     
@@ -708,10 +934,11 @@ class ActionExecutor:
         # Check if can pay cost
         if pay_cost:
             from simulator.resource_manager import ResourceManager
-            if not ResourceManager.can_pay_cost(context.game_state, player.player_id, selected_card.cost):
-                return f"Cannot pay cost of {selected_card.cost}"
+            effective_cost = ResourceManager.get_effective_cost(context.game_state, player.player_id, selected_card, zone=source_zone)
+            if not ResourceManager.can_pay_cost(context.game_state, player.player_id, effective_cost):
+                return f"Cannot pay cost of {effective_cost}"
             # Pay the cost
-            ResourceManager.pay_cost(context.game_state, player.player_id, selected_card.cost)
+            ResourceManager.pay_cost(context.game_state, player.player_id, effective_cost)
         
         # Remove from source zone
         zone.remove(selected_card)
@@ -768,6 +995,75 @@ class ActionExecutor:
         player.active_protections.append(protection)
         
         return f"Granted {protection_type} protection ({duration})"
+    
+    @staticmethod
+    def _execute_look_at_deck(context: EffectContext, action: Dict) -> str:
+        """
+        Execute LOOK_AT_DECK - expose top N cards to effect context.
+
+        The current simulator has no decision layer, so this only records the
+        looked-at window for later SELECT/ADD/RETURN actions.
+        """
+        target = action.get("target", "SELF")
+        player_id = context.source_player_id if target in {"SELF", "SELF_DECK"} else 1 - context.source_player_id
+        amount = action.get("amount", action.get("look_at", action.get("count", 1)))
+        player = context.game_state.players[player_id]
+        looked_at = player.main_deck[:amount]
+        context.trigger_data["looked_at_cards"] = looked_at
+        context.trigger_data["looked_at_player_id"] = player_id
+        return f"Looked at {len(looked_at)} card(s) from deck"
+    
+    @staticmethod
+    def _execute_select_looked_at_card(context: EffectContext, action: Dict) -> str:
+        """
+        Execute SELECT_LOOKED_AT_CARD - deterministically choose matching cards.
+        """
+        looked_at = list(context.trigger_data.get("looked_at_cards", []))
+        if not looked_at:
+            return "No looked-at cards to select"
+        
+        filters = action.get("filters", {})
+        matching = [
+            card for card in looked_at
+            if ActionExecutor._card_matches_any_filter(card, filters, context)
+        ]
+        count = action.get("count", action.get("max_select", 1))
+        selected = matching[:count]
+        context.trigger_data["selected_cards"] = selected
+        return f"Selected {len(selected)} looked-at card(s)"
+    
+    @staticmethod
+    def _execute_return_looked_to_deck(context: EffectContext, action: Dict, *, bottom: bool) -> str:
+        """Return unselected looked-at cards to the top or bottom of their deck."""
+        player_id = context.trigger_data.get("looked_at_player_id", context.source_player_id)
+        player = context.game_state.players[player_id]
+        looked_at = list(context.trigger_data.get("looked_at_cards", []))
+        selected = list(context.trigger_data.get("selected_cards", []))
+        remaining = [card for card in looked_at if card not in selected and card not in player.hand]
+        
+        for card in remaining:
+            if card in player.main_deck:
+                player.main_deck.remove(card)
+        
+        if bottom:
+            player.main_deck.extend(remaining)
+            destination = "bottom"
+        else:
+            player.main_deck[:0] = remaining
+            destination = "top"
+        
+        context.trigger_data["looked_at_cards"] = []
+        return f"Returned {len(remaining)} looked-at card(s) to deck {destination}"
+    
+    @staticmethod
+    def _card_matches_any_filter(card: Any, filters: Any, context: EffectContext) -> bool:
+        if not filters:
+            return True
+        if isinstance(filters, list):
+            return any(ActionExecutor._card_matches_any_filter(card, item, context) for item in filters)
+        if not isinstance(filters, dict):
+            return True
+        return TargetResolver._matches_filters(card, filters, context)
     
     @staticmethod
     def _execute_add_to_shields(context: EffectContext, action: Dict) -> str:

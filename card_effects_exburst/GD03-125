@@ -1,0 +1,111 @@
+{
+  "card_id": "GD03-125",
+  "effects": [
+    {
+      "effect_id": "GD03-125-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Deploy this card.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-125-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "SHIELD_TO_HAND",
+          "amount": 1,
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Add 1 of your Shields to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-125-E3",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "FRIENDLY_PLAYER"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "target": "BATTLING_UNIT",
+          "traits": [
+            [
+              "Operation Meteor",
+              "G Team"
+            ]
+          ]
+        },
+        {
+          "type": "CHECK_STAT",
+          "target": "BATTLING_UNIT",
+          "stat": "LEVEL",
+          "operator": ">=",
+          "value": 6
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "RECOVER_HP",
+              "target": "BATTLING_UNIT",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Once per Turn】During your turn, when a friendly (Operation Meteor)/(G Team) Unit that is Lv.6 or higher destroys an enemy Unit with battle damage, that friendly Unit may recover 2 HP.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Deploy this card.; 【Deploy】Add 1 of your Shields to your hand.; 【Once per Turn】During your turn, when a friendly (Operation Meteor)/(G Team) Unit that is Lv.6 or higher destroys an enemy Unit with battle damage, that friendly Unit may recover 2 HP.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

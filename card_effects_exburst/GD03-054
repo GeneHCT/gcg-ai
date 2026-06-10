@@ -1,0 +1,89 @@
+{
+  "card_id": "GD03-054",
+  "effects": [
+    {
+      "effect_id": "GD03-054-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "value": "X-Rounder"
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "EXILE_CARDS",
+              "amount": 4,
+              "filters": {
+                "traits": [
+                  "Vagan"
+                ]
+              },
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "DESTROY_CARD",
+              "filters": {
+                "level": {
+                  "operator": "<=",
+                  "value": 4
+                }
+              },
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired･(X-Rounder) Pilot】You may choose 4 (Vagan) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit that is Lv.4 or lower. Destroy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD03-054-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<High-Maneuver> (This Unit can't be blocked.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "HIGH_MANEUVER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<High-Maneuver> (This Unit can't be blocked.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<High-Maneuver> (This Unit can't be blocked.); 【When Paired･(X-Rounder) Pilot】You may choose 4 (Vagan) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit that is Lv.4 or lower. Destroy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

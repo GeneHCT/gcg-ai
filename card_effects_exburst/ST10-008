@@ -1,0 +1,90 @@
+{
+  "card_id": "ST10-008",
+  "effects": [
+    {
+      "effect_id": "ST10-008-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "zone": "SELF_TRASH",
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              },
+              "operator": ">=",
+              "value": 2
+            }
+          ],
+          "optional_actions": [
+            {
+              "amount": 2,
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              },
+              "type": "EXILE_CARDS",
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": {
+                "type": "COUNT_CARDS",
+                "zone": "ENEMY_PLAYER",
+                "operator": "==",
+                "value": 1
+              },
+              "type": "DRAW",
+              "target": {
+                "selector": "SELF"
+              }
+            },
+            {
+              "amount": {
+                "type": "COUNT_CARDS",
+                "zone": "ENEMY_PLAYER",
+                "operator": "==",
+                "value": 1
+              },
+              "type": "DISCARD",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:; ▫️Draw a number of cards equal to the number of enemy players. Then, discard the same number of cards you drew with this effect.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

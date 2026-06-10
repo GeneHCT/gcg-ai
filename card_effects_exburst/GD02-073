@@ -1,0 +1,54 @@
+{
+  "card_id": "GD02-073",
+  "effects": [
+    {
+      "effect_id": "GD02-073-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "DURING_BATTLE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "operator": "==",
+          "value": "OPPONENT",
+          "turn_owner": "OPPONENT"
+        }
+      ],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_LINK_STATUS",
+              "operator": "==",
+              "value": "BATTLING"
+            }
+          ],
+          "keyword": "FIRST_STRIKE",
+          "duration": "THIS_BATTLE",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your opponent's turn, the enemy Unit battling this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your opponent's turn, the enemy Unit battling this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

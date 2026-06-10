@@ -1,0 +1,50 @@
+{
+  "card_id": "GD02-033",
+  "effects": [
+    {
+      "effect_id": "GD02-033-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "BREACH",
+          "duration": "PERMANENT",
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "Zeon",
+              "link_status": "LINKED",
+              "target": {
+                "selector": "OTHER_FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": 5
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While another friendly (Zeon) Link Unit is in play, this Unit gains <Breach 5>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While another friendly (Zeon) Link Unit is in play, this Unit gains <Breach 5>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

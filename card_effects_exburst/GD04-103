@@ -1,0 +1,40 @@
+{
+  "card_id": "GD04-103",
+  "effects": [
+    {
+      "effect_id": "GD04-103-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "REPAIR",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "value": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 1 of your Units. It gains <Repair 2> during this turn. (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Choose 1 of your Units. It gains <Repair 2> during this turn. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

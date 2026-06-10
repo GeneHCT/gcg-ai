@@ -1,0 +1,76 @@
+{
+  "card_id": "GD03-102",
+  "effects": [
+    {
+      "effect_id": "GD03-102-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 1,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Draw 1.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD03-102-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "link_status": "LINKED",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "traits": [
+            "Titans"
+          ]
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "BATTLING",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "selector": "SELECTED_CARD"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Action】Choose 1 of your (Titans) Link Units battling an enemy Unit. Set it as active.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Draw 1.; 【Action】Choose 1 of your (Titans) Link Units battling an enemy Unit. Set it as active.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

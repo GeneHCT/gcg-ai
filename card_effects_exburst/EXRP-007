@@ -1,0 +1,60 @@
+{
+  "card_id": "EXRP-007",
+  "effects": [
+    {
+      "effect_id": "EXRP-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLACE_EX_RESOURCE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "amount": 1,
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "At the start of the game, the second-turn player places 1 active EX Resource into their resource area.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EXRP-007-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLAY_FROM_HAND"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "(At the start of the game, the second-turn player places 1 active EX Resource into their resource area.) (Rest an EX Resource then exile it from the game when paying a cost.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

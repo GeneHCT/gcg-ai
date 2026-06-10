@@ -1,0 +1,65 @@
+{
+  "card_id": "GD04-101",
+  "effects": [
+    {
+      "effect_id": "GD04-101-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RESOLVE_COMMAND_EFFECT",
+          "target": {
+            "selector": "SELF"
+          },
+          "timing": "MAIN_PHASE"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Activate this card's 【Main】.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-101-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "duration": "THIS_TURN",
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "amount": 1,
+          "type": "DRAW"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】During this turn, friendly Units can't be destroyed by enemy effects. Then, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Activate this card's 【Main】.; 【Main】/【Action】During this turn, friendly Units can't be destroyed by enemy effects. Then, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

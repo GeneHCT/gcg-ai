@@ -6,12 +6,14 @@ to a file for inspection and verification.
 """
 import sys
 from datetime import datetime
+from pathlib import Path
 from typing import TextIO, Optional
 
 from simulator.game_manager import GameManager, TurnManager, Phase, GameResult
 from simulator.random_agent import RandomAgent, LegalActionGenerator, ActionExecutor, Action, ActionType
 from simulator.effect_integration import EffectIntegration, patch_turn_manager
 from simulator.action_step_manager import ActionStepManager
+from simulator.replay_serializer import ReplayRecorder
 
 
 class GameLogger:
@@ -28,7 +30,7 @@ class GameLogger:
         """
         self.log_file = log_file
         self.turn_count = 0
-        self.action_count = 0
+        self.move_count = 0
     
     def log(self, message: str, indent: int = 0):
         """Write a log message"""
@@ -108,44 +110,44 @@ class GameLogger:
         self.log_separator("=", 80)
         self.log("")
     
-    def log_legal_actions(self, legal_actions: list):
-        """Log available legal actions"""
-        self.log(f"Legal Actions Available: {len(legal_actions)}")
+    def log_legal_moves(self, legal_moves: list):
+        """Log available legal moves."""
+        self.log(f"Legal Moves Available: {len(legal_moves)}")
         
         # Group by type
-        action_types = {}
-        for action in legal_actions:
-            action_type = action.action_type.value
-            if action_type not in action_types:
-                action_types[action_type] = []
-            action_types[action_type].append(action)
+        move_types = {}
+        for move in legal_moves:
+            move_type = move.action_type.value
+            if move_type not in move_types:
+                move_types[move_type] = []
+            move_types[move_type].append(move)
         
-        for action_type, actions in action_types.items():
-            self.log(f"  {action_type}: {len(actions)} options", 1)
+        for move_type, moves in move_types.items():
+            self.log(f"  {move_type}: {len(moves)} options", 1)
             
-            # Show details for some action types
-            if action_type == "play_unit" and len(actions) <= 5:
-                for action in actions:
-                    card = action.card
+            # Show details for some move types
+            if move_type == "play_unit" and len(moves) <= 5:
+                for move in moves:
+                    card = move.card
                     self.log(f"    - {card.name} (Lv{card.level}, Cost{card.cost}, AP{card.ap}/HP{card.hp})", 2)
-            elif action_type == "attack_player":
-                for action in actions:
-                    unit = action.unit
+            elif move_type == "attack_player":
+                for move in moves:
+                    unit = move.unit
                     self.log(f"    - {unit.card_data.name} (AP{unit.ap})", 2)
-            elif action_type == "attack_unit" and len(actions) <= 5:
-                for action in actions:
-                    attacker = action.unit
-                    defender = action.target
+            elif move_type == "attack_unit" and len(moves) <= 5:
+                for move in moves:
+                    attacker = move.unit
+                    defender = move.target
                     self.log(f"    - {attacker.card_data.name} -> {defender.card_data.name}", 2)
     
-    def log_action_chosen(self, action: Action):
-        """Log the chosen action"""
-        self.action_count += 1
+    def log_move_chosen(self, move: Action):
+        """Log the chosen move."""
+        self.move_count += 1
         self.log("")
-        self.log(f"→ Action #{self.action_count}: {action}")
+        self.log(f"→ Move #{self.move_count}: {move}")
     
-    def log_action_result(self, result: str):
-        """Log the result of an action"""
+    def log_move_result(self, result: str):
+        """Log the result of a move."""
         self.log(f"  Result: {result}", 1)
         self.log("")
     
@@ -158,7 +160,11 @@ class GameLogger:
             self.log(f"  Player {player_id}:", 1)
             self.log(f"    Hand: {len(player.hand)} cards", 2)
             self.log(f"    Deck: {len(player.main_deck)} cards", 2)
-            self.log(f"    Resources: {player.get_total_resources()}", 2)
+            self.log(
+                f"    Resources: {player.get_total_resources()} "
+                f"(Active: {player.get_active_resources(game_state)}, EX: {player.ex_resources})",
+                2,
+            )
             self.log(f"    Battle Area: {len(player.battle_area)} units", 2)
             
             # Show units in battle
@@ -166,7 +172,16 @@ class GameLogger:
                 status = "RESTED" if unit.is_rested else "ACTIVE"
                 keywords = list(unit.keywords.keys()) if unit.keywords else []
                 keywords_str = f" [{', '.join(keywords)}]" if keywords else ""
-                self.log(f"      [{i+1}] {unit.card_data.name} ({status}, AP{unit.ap}, HP{unit.current_hp}/{unit.hp}){keywords_str}", 3)
+                pilot_str = (
+                    f" Pilot: {unit.paired_pilot.card_data.name} (ID: {unit.paired_pilot.card_data.id})"
+                    if unit.paired_pilot
+                    else ""
+                )
+                self.log(
+                    f"      [{i+1}] {unit.card_data.name} (ID: {unit.card_data.id}) "
+                    f"({status}, AP{unit.ap}, HP{unit.current_hp}/{unit.hp}){keywords_str}{pilot_str}",
+                    3,
+                )
             
             self.log(f"    Shields: {len(player.shield_area)} + {len(player.bases)} bases", 2)
             self.log(f"    Trash: {len(player.trash)} cards", 2)
@@ -182,7 +197,7 @@ class GameLogger:
         self.log(f"Result: {game_state.game_result.value}")
         self.log(f"Winner: Player {game_state.winner}")
         self.log(f"Total Turns: {game_state.turn_number}")
-        self.log(f"Total Actions: {self.action_count}")
+        self.log(f"Total Moves: {self.move_count}")
         self.log("")
         
         # Final state
@@ -241,11 +256,52 @@ def create_test_deck(size: int = 50, prefix: str = "Card") -> list:
     return deck
 
 
-def run_simulation(log_filename: str = "game_simulation.log", 
+def _deck_slug(deck_path: Optional[str], fallback: str) -> str:
+    if not deck_path:
+        return fallback
+    return Path(deck_path).stem
+
+
+def default_log_filename(
+    deck_p0: Optional[str] = None,
+    deck_p1: Optional[str] = None,
+    *,
+    when: Optional[datetime] = None,
+) -> str:
+    """Build yyyymmdd-hhmm-deckname1-vs-deckname2.log from deck paths."""
+    timestamp = (when or datetime.now()).strftime("%Y%m%d-%H%M")
+    deck1 = _deck_slug(deck_p0, "p0")
+    deck2 = _deck_slug(deck_p1, "p1")
+    return f"{timestamp}-{deck1}-vs-{deck2}.log"
+
+
+def default_replay_filename(log_filename: str) -> str:
+    """Build the default structured replay path for a simulation log."""
+    return str(Path(log_filename).with_suffix(".json"))
+
+
+def _looks_like_deck_list(path: str) -> bool:
+    deck_path = Path(path)
+    return deck_path.suffix.lower() == ".txt" and deck_path.parent.name.lower() == "decks"
+
+
+def assert_safe_output_path(path: str, label: str = "Output file") -> str:
+    """Reject writes into decks/, which stores source deck lists."""
+    if "decks" in {part.lower() for part in Path(path).parts}:
+        raise ValueError(
+            f"{label} cannot be written under decks/: {path}. "
+            "Deck lists are source data. Omit the log argument or choose a path outside decks/."
+        )
+    return path
+
+
+def run_simulation(log_filename: Optional[str] = None,
                    seed: Optional[int] = None,
                    max_turns: int = 50,
                    deck_p0: Optional[str] = None,
-                   deck_p1: Optional[str] = None):
+                   deck_p1: Optional[str] = None,
+                   effects_dirs: Optional[list[str]] = None,
+                   replay_filename: Optional[str] = None):
     """
     Run a complete game simulation with random agents.
     
@@ -256,13 +312,21 @@ def run_simulation(log_filename: str = "game_simulation.log",
         deck_p0: Path to Player 0's deck file (optional)
         deck_p1: Path to Player 1's deck file (optional)
     """
+    if log_filename is None:
+        log_filename = default_log_filename(deck_p0, deck_p1)
+    assert_safe_output_path(log_filename, "Log file")
+    if replay_filename is None:
+        replay_filename = default_replay_filename(log_filename)
+    if replay_filename:
+        assert_safe_output_path(replay_filename, "Replay file")
+
     # Open log file
     with open(log_filename, 'w') as log_file:
         logger = GameLogger(log_file)
         
         # Initialize effect system
         logger.log("Initializing effect system...")
-        EffectIntegration.initialize()
+        EffectIntegration.initialize(effects_dirs=effects_dirs)
         patch_turn_manager()
         logger.log("")
         
@@ -297,8 +361,22 @@ def run_simulation(log_filename: str = "game_simulation.log",
         # Setup game
         game_state = manager.setup_game(deck_p0_cards, deck_p1_cards, resource_p0_cards, resource_p1_cards)
         
+        replay = ReplayRecorder(
+            seed=seed,
+            deck_p0=deck_p0,
+            deck_p1=deck_p1,
+            text_log=log_filename,
+        ) if replay_filename else None
+        
         # Log game start
         logger.log_game_start(manager)
+        if replay:
+            replay.record(
+                game_state,
+                label="Game start",
+                cause_type="game_start",
+                summary="Initial setup",
+            )
         
         # Create random agents
         agent_0 = RandomAgent(0, seed=seed)
@@ -321,6 +399,13 @@ def run_simulation(log_filename: str = "game_simulation.log",
             game_state = TurnManager.start_phase(game_state)
             logger.log("All units reset to active", 1)
             logger.log("")
+            if replay:
+                replay.record(
+                    game_state,
+                    label=f"Turn {game_state.turn_number} - Start Phase",
+                    cause_type="phase",
+                    summary="Start phase reset active cards and per-turn counters",
+                )
             
             # DRAW PHASE
             logger.log_phase_transition(game_state, "DRAW PHASE")
@@ -335,6 +420,13 @@ def run_simulation(log_filename: str = "game_simulation.log",
             if card_drawn:
                 logger.log(f"Drew: {card_drawn.name}", 1)
             logger.log("")
+            if replay:
+                replay.record(
+                    game_state,
+                    label=f"Turn {game_state.turn_number} - Draw Phase",
+                    cause_type="phase",
+                    summary=f"Player {current_player} drew {card_drawn.name if card_drawn else 'no card'}",
+                )
             
             # RESOURCE PHASE
             logger.log_phase_transition(game_state, "RESOURCE PHASE")
@@ -345,43 +437,72 @@ def run_simulation(log_filename: str = "game_simulation.log",
             if resource_after > resource_before:
                 logger.log(f"Added resource (Total: {resource_after})", 1)
             logger.log("")
+            if replay:
+                replay.record(
+                    game_state,
+                    label=f"Turn {game_state.turn_number} - Resource Phase",
+                    cause_type="phase",
+                    summary=(
+                        f"Player {current_player} added a resource"
+                        if resource_after > resource_before
+                        else f"Player {current_player} did not add a resource"
+                    ),
+                )
             
             # MAIN PHASE
             logger.log_phase_transition(game_state, "MAIN PHASE")
             game_state.current_phase = Phase.MAIN
+            if replay:
+                replay.record(
+                    game_state,
+                    label=f"Turn {game_state.turn_number} - Main Phase",
+                    cause_type="phase",
+                    summary=f"Player {current_player} entered main phase",
+                )
             
-            # Main phase action loop
-            main_phase_actions = 0
-            max_main_phase_actions = 50  # Prevent infinite loops, but keep sufficient moves for players
+            # Main phase move loop
+            main_phase_moves = 0
+            max_main_phase_moves = 50  # Prevent infinite loops, but keep sufficient moves for players
             
-            while main_phase_actions < max_main_phase_actions:
-                # Get legal actions
-                legal_actions = LegalActionGenerator.get_legal_actions(game_state)
+            while main_phase_moves < max_main_phase_moves:
+                # Get legal moves
+                legal_moves = LegalActionGenerator.get_legal_actions(game_state)
                 
-                logger.log(f"Main Phase Action #{main_phase_actions + 1}")
-                logger.log_legal_actions(legal_actions)
+                logger.log(f"Main Phase Move #{main_phase_moves + 1}")
+                logger.log_legal_moves(legal_moves)
                 
-                # Agent chooses action
-                chosen_action = agent.choose_action(game_state, legal_actions)
-                logger.log_action_chosen(chosen_action)
+                # Agent chooses move
+                chosen_move = agent.choose_action(game_state, legal_moves)
+                logger.log_move_chosen(chosen_move)
                 
                 # End phase if chosen
-                if chosen_action.action_type == ActionType.END_PHASE:
+                if chosen_move.action_type == ActionType.END_PHASE:
                     break
                 
                 # Pass
-                if chosen_action.action_type == ActionType.PASS:
-                    logger.log_action_result("Pass")
+                if chosen_move.action_type == ActionType.PASS:
+                    logger.log_move_result("Pass")
                     # Could allow multiple passes, but let's end phase for simplicity
                     break
                 
-                # Handle battle actions specially (need agent access for block/action steps)
-                if chosen_action.action_type in [ActionType.ATTACK_PLAYER, ActionType.ATTACK_UNIT]:
+                # Handle battle moves specially (need agent access for block/action steps)
+                if chosen_move.action_type in [ActionType.ATTACK_PLAYER, ActionType.ATTACK_UNIT]:
                     from simulator.battlemanager import BattleManager
                     
-                    attacker = chosen_action.unit
-                    target = "PLAYER" if chosen_action.action_type == ActionType.ATTACK_PLAYER else "UNIT"
-                    target_unit = chosen_action.target if target == "UNIT" else None
+                    attacker = chosen_move.unit
+                    target = "PLAYER" if chosen_move.action_type == ActionType.ATTACK_PLAYER else "UNIT"
+                    target_unit = chosen_move.target if target == "UNIT" else None
+
+                    def record_battle_step(step_state, step_log):
+                        if replay:
+                            replay.record(
+                                step_state,
+                                label=f"Battle - {step_log.split(':', 1)[0]}",
+                                cause_type="battle",
+                                summary=step_log,
+                                action=chosen_move,
+                                result=step_log,
+                            )
                     
                     # Run complete battle sequence with agent access
                     game_state, battle_logs = BattleManager.run_complete_battle(
@@ -389,7 +510,8 @@ def run_simulation(log_filename: str = "game_simulation.log",
                         attacker=attacker,
                         target=target,
                         target_unit=target_unit,
-                        agents=[agent_0, agent_1]
+                        agents=[agent_0, agent_1],
+                        replay_callback=record_battle_step,
                     )
                     
                     # Log all battle events
@@ -401,67 +523,118 @@ def run_simulation(log_filename: str = "game_simulation.log",
                         logger.log("GAME OVER after battle!", 1)
                         break
                 else:
-                    # Normal action execution
-                    game_state, result = ActionExecutor.execute_action(game_state, chosen_action)
-                    logger.log_action_result(result)
+                    # Normal move execution
+                    game_state, result = ActionExecutor.execute_action(game_state, chosen_move)
+                    logger.log_move_result(result)
+                    if replay:
+                        replay.record(
+                            game_state,
+                            label=f"Move #{logger.move_count}: {chosen_move.action_type.value}",
+                            cause_type="move",
+                            summary=str(chosen_move),
+                            action=chosen_move,
+                            result=result,
+                        )
                     
                     # Check win condition
                     if game_state.is_terminal():
-                        logger.log("GAME OVER after action!", 1)
+                        logger.log("GAME OVER after move!", 1)
                         break
                 
-                main_phase_actions += 1
+                main_phase_moves += 1
             
-            if main_phase_actions >= max_main_phase_actions:
-                logger.log(f"WARNING: Reached max main phase actions limit", 1)
+            if main_phase_moves >= max_main_phase_moves:
+                logger.log(f"WARNING: Reached max main phase moves limit", 1)
             
             logger.log("")
+
+            if game_state.is_terminal():
+                break
             
             # END PHASE
             logger.log_phase_transition(game_state, "END PHASE")
             game_state = TurnManager.end_phase(game_state)
+            if replay:
+                replay.record(
+                    game_state,
+                    label=f"Turn {game_state.turn_number} - End Phase",
+                    cause_type="phase",
+                    summary=f"Player {current_player} entered end phase",
+                )
             
             # ACTION STEP (Rule 9-1: during end phase)
             logger.log(">>> Action Step (End Phase)", 1)
             game_state = ActionStepManager.enter_action_step(game_state, is_battle=False)
+            if replay:
+                replay.record(
+                    game_state,
+                    label="End Phase Action Step",
+                    cause_type="action_step",
+                    summary="End phase action step began",
+                )
             
             action_step_iterations = 0
             max_action_step_iterations = 20  # Safety limit
             
             while action_step_iterations < max_action_step_iterations:
-                # Get legal actions for player with priority
-                legal_actions = ActionStepManager.get_action_step_legal_actions(game_state)
+                # Get legal moves for player with priority
+                legal_moves = ActionStepManager.get_action_step_legal_actions(game_state)
                 
                 priority_player_id = game_state.action_step_priority_player
                 priority_agent = agents[priority_player_id]
                 
                 logger.log(f"  Priority Player: {priority_player_id}", 2)
                 
-                # Agent chooses action
-                chosen_action = priority_agent.choose_action(game_state, legal_actions)
-                logger.log(f"  Action: {chosen_action}", 2)
+                # Agent chooses move
+                chosen_move = priority_agent.choose_action(game_state, legal_moves)
+                logger.log(f"  Move: {chosen_move}", 2)
                 
                 # Handle pass
-                if chosen_action.action_type == ActionType.PASS:
+                if chosen_move.action_type == ActionType.PASS:
                     game_state, continues = ActionStepManager.handle_action_step_action(
-                        game_state, chosen_action
+                        game_state, chosen_move
                     )
+                    if replay:
+                        replay.record(
+                            game_state,
+                            label=f"Action Step - Player {priority_player_id} pass",
+                            cause_type="action_step",
+                            summary=str(chosen_move),
+                            action=chosen_move,
+                            result="Pass",
+                        )
                     
                     if not continues:
                         logger.log("  Both players passed - Action Step ends", 2)
                         break
                 else:
-                    # Execute action
-                    game_state, result = ActionExecutor.execute_action(game_state, chosen_action)
+                    # Execute move
+                    game_state, result = ActionExecutor.execute_action(game_state, chosen_move)
                     logger.log(f"  Result: {result}", 2)
                     
                     game_state, continues = ActionStepManager.handle_action_step_action(
-                        game_state, chosen_action
+                        game_state, chosen_move
                     )
+                    if replay:
+                        replay.record(
+                            game_state,
+                            label=f"Action Step - Player {priority_player_id} move",
+                            cause_type="action_step",
+                            summary=str(chosen_move),
+                            action=chosen_move,
+                            result=result,
+                        )
                 
                 action_step_iterations += 1
             
             game_state = ActionStepManager.exit_action_step(game_state)
+            if replay:
+                replay.record(
+                    game_state,
+                    label="End Phase Action Step Complete",
+                    cause_type="action_step",
+                    summary="End phase action step ended",
+                )
             
             # Repair
             player = game_state.players[current_player]
@@ -479,11 +652,25 @@ def run_simulation(log_filename: str = "game_simulation.log",
                 cards_to_discard = agent.choose_cards_to_discard(player.hand, num_to_discard)
                 player.discard_to_limit(cards_to_discard)
                 logger.log(f"Discarded {len(cards_to_discard)} cards", 1)
+                if replay:
+                    replay.record(
+                        game_state,
+                        label="Hand Limit Cleanup",
+                        cause_type="cleanup",
+                        summary=f"Player {current_player} discarded {len(cards_to_discard)} card(s)",
+                    )
             
             logger.log("")
             
             # Log state summary
             logger.log_game_state_summary(game_state)
+            if replay:
+                replay.record(
+                    game_state,
+                    label=f"Turn {game_state.turn_number} complete",
+                    cause_type="turn_end",
+                    summary=f"Player {current_player}'s turn ended",
+                )
             
             # Switch turn
             game_state.turn_player = game_state.get_opponent_id(game_state.turn_player)
@@ -498,12 +685,22 @@ def run_simulation(log_filename: str = "game_simulation.log",
         
         # Log game end
         logger.log_game_end(game_state)
+        if replay:
+            replay.record(
+                game_state,
+                label="Game end",
+                cause_type="game_end",
+                summary=f"Game ended: {game_state.game_result.value if hasattr(game_state.game_result, 'value') else game_state.game_result}",
+            )
+            replay.write_json(replay_filename)
         
         # Print to console too
         print(f"\n✓ Game simulation complete!")
         print(f"  Log file: {log_filename}")
+        if replay_filename:
+            print(f"  Replay file: {replay_filename}")
         print(f"  Total turns: {turn_number}")
-        print(f"  Total actions: {logger.action_count}")
+        print(f"  Total moves: {logger.move_count}")
         print(f"  Result: {game_state.game_result.value}")
         if game_state.winner is not None:
             print(f"  Winner: Player {game_state.winner}")
@@ -515,21 +712,37 @@ if __name__ == "__main__":
     
     seed = 42
     max_turns = 30
-    log_file = "game_simulation.log"
+    log_file = None
     deck_p0 = None
     deck_p1 = None
+    replay_file = None
     
     # Parse command line arguments
     if len(sys.argv) > 1:
         seed = int(sys.argv[1])
     if len(sys.argv) > 2:
         max_turns = int(sys.argv[2])
-    if len(sys.argv) > 3:
-        log_file = sys.argv[3]
-    if len(sys.argv) > 4:
-        deck_p0 = sys.argv[4]
-    if len(sys.argv) > 5:
-        deck_p1 = sys.argv[5]
+
+    # Allow: seed max_turns deck_p0 deck_p1 [replay.json]
+    # Or:    seed max_turns log_file deck_p0 deck_p1 [replay.json]
+    if len(sys.argv) > 3 and _looks_like_deck_list(sys.argv[3]):
+        deck_p0 = sys.argv[3]
+        if len(sys.argv) > 4:
+            deck_p1 = sys.argv[4]
+        if len(sys.argv) > 5:
+            replay_file = sys.argv[5]
+        log_file = default_log_filename(deck_p0, deck_p1)
+    else:
+        if len(sys.argv) > 3:
+            log_file = sys.argv[3]
+        if len(sys.argv) > 4:
+            deck_p0 = sys.argv[4]
+        if len(sys.argv) > 5:
+            deck_p1 = sys.argv[5]
+        if len(sys.argv) > 6:
+            replay_file = sys.argv[6]
+        if log_file is None:
+            log_file = default_log_filename(deck_p0, deck_p1)
     
     print("=" * 60)
     print("GUNDAM CARD GAME - SIMULATION")
@@ -537,6 +750,8 @@ if __name__ == "__main__":
     print(f"Running simulation with seed {seed}...")
     print(f"Max turns: {max_turns}")
     print(f"Log file: {log_file}")
+    if replay_file:
+        print(f"Replay file: {replay_file}")
     if deck_p0 and deck_p1:
         print(f"Player 0 deck: {deck_p0}")
         print(f"Player 1 deck: {deck_p1}")
@@ -549,10 +764,13 @@ if __name__ == "__main__":
         seed=seed, 
         max_turns=max_turns,
         deck_p0=deck_p0,
-        deck_p1=deck_p1
+        deck_p1=deck_p1,
+        replay_filename=replay_file
     )
     
     print(f"\nYou can now inspect the log file: {log_file}")
     print(f"  cat {log_file}")
     print(f"  less {log_file}")
     print(f"  head -100 {log_file}")
+    if replay_file:
+        print(f"  Replay JSON: {replay_file}")

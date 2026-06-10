@@ -1,0 +1,65 @@
+{
+  "card_id": "GD01-004",
+  "effects": [
+    {
+      "effect_id": "GD01-004-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 2
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】Choose 1 enemy Unit with 2 or less HP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-004-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "REPAIR",
+          "value": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Repair 1> (At the end of your turn, this Unit recovers the specified number of HP.); 【When Paired】Choose 1 enemy Unit with 2 or less HP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "card_id": "ST10-007",
+  "effects": [
+    {
+      "effect_id": "ST10-007-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "operator": ">=",
+          "value": 2,
+          "target": {
+            "selector": "SELF_TRASH"
+          },
+          "traits": [
+            "G Generation"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "EXILE_CARDS",
+              "selector": "SELF_TRASH",
+              "amount": 2,
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "ADD_TO_HAND",
+              "selector": "SELF_TRASH",
+              "amount": 1,
+              "filters": {
+                "card_type": "COMMAND",
+                "level": {
+                  "operator": "<=",
+                  "value": 4
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Linked ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Linked ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:; ▫️Choose 1 Command card that is Lv.4 or lower from your trash. Add it to your hand.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

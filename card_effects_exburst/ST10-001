@@ -1,0 +1,61 @@
+{
+  "card_id": "ST10-001",
+  "effects": [
+    {
+      "effect_id": "ST10-001-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target_selector": "SELECTED_CARD",
+          "operator": "==",
+          "state": "SHIELD"
+        },
+        {
+          "type": "CHECK_STAT",
+          "target_selector": "SELECTED_CARD",
+          "stat": "damage_type",
+          "value": "BATTLE",
+          "operator": "=="
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "restrictions": [
+            "CANNOT_TARGET_SAME_PLAYER"
+          ],
+          "duration": "THIS_TURN",
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When this Unit destroys an enemy shield area card with battle damage, set it as active. It can't choose the same enemy player or enemy team as its attack target during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "When this Unit destroys an enemy shield area card with battle damage, set it as active. It can't choose the same enemy player or enemy team as its attack target during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

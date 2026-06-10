@@ -1,0 +1,73 @@
+{
+  "card_id": "GD01-001",
+  "effects": [
+    {
+      "effect_id": "GD01-001-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "zone": "BATTLE_AREA",
+          "owner": "SELF",
+          "card_type": "UNIT",
+          "exclude_self": true,
+          "operator": ">=",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "DRAW",
+          "target": "SELF",
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】If you have 2 or more other Units in play, draw 1.",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD01-001-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "All your (White Base Team) Units gain <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "traits": [
+                "White Base Team"
+              ]
+            }
+          },
+          "keyword": "REPAIR",
+          "value": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "All your (White Base Team) Units gain <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "All your (White Base Team) Units gain <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.); 【When Paired】If you have 2 or more other Units in play, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

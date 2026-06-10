@@ -1,0 +1,35 @@
+{
+  "card_id": "EXBP-004",
+  "effects": [],
+  "continuous_effects": [
+    {
+      "effect_id": "EXBP-004-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "is_supported": false,
+      "unhandled_explanation": "Game setup effects are not currently supported in the simulator vocabulary",
+      "metadata": {
+        "raw_text": "At the start of the game, place 1 active EX Base as your shield area's base.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "(At the start of the game, place 1 active EX Base as your shield area's base.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "unsupported",
+    "validation_issues": [
+      {
+        "path": "continuous_effects[0]",
+        "kind": "unsupported_llm_effect",
+        "value": "EXBP-004-E1",
+        "message": "Game setup effects are not currently supported in the simulator vocabulary"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "card_id": "GD02-117",
+  "effects": [
+    {
+      "effect_id": "GD02-117-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "AEUG",
+          "card_type": "BASE"
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "amount": 1,
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 (AEUG) Base card from your trash. Add it to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-117-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 3,
+          "type": "DRAW"
+        },
+        {
+          "amount": 2,
+          "type": "DISCARD"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Draw 3. Then, discard 2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 (AEUG) Base card from your trash. Add it to your hand.; 【Main】Draw 3. Then, discard 2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

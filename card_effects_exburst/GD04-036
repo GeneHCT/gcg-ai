@@ -1,0 +1,82 @@
+{
+  "card_id": "GD04-036",
+  "effects": [
+    {
+      "effect_id": "GD04-036-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "target": "OTHER_FRIENDLY_UNIT",
+              "value": "ACTIVE",
+              "operator": "=="
+            },
+            {
+              "type": "CHECK_TRAIT",
+              "target": "OTHER_FRIENDLY_UNIT",
+              "value": "CB",
+              "operator": "=="
+            }
+          ],
+          "amount": {
+            "min": 1,
+            "max": 2
+          },
+          "optional_actions": [
+            {
+              "type": "REST_UNIT",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            },
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "target": "ENEMY_UNIT",
+                  "stat": "LV",
+                  "value": 6,
+                  "operator": "<="
+                }
+              ],
+              "amount": {
+                "type": "COUNT_SELECTED",
+                "value": "SELECTED_CARD"
+              },
+              "type": "DAMAGE_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

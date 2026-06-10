@@ -1,0 +1,65 @@
+{
+  "card_id": "GD03-106",
+  "effects": [
+    {
+      "effect_id": "GD03-106-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "filters": {
+            "name_contains": "GQuuuuuuX (Omega Psycommu)",
+            "is_token": true,
+            "traits": [
+              "Clan"
+            ],
+            "ap": 3,
+            "hp": 2
+          },
+          "state": "RESTED",
+          "type": "DEPLOY_TOKEN",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "amount": 1,
+          "filters": {
+            "name_contains": "Red Gundam",
+            "is_token": true,
+            "traits": [
+              "Clan"
+            ],
+            "ap": 2,
+            "hp": 3
+          },
+          "state": "RESTED",
+          "type": "DEPLOY_TOKEN",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Deploy 1 rested [GQuuuuuuX (Omega Psycommu)]((Clan)･AP3･HP2) Unit token and 1 rested [Red Gundam]((Clan)･AP2･HP3) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Deploy 1 rested [GQuuuuuuX (Omega Psycommu)]((Clan)･AP3･HP2) Unit token and 1 rested [Red Gundam]((Clan)･AP2･HP3) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

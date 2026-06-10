@@ -1,0 +1,64 @@
+{
+  "card_id": "GD02-057",
+  "effects": [
+    {
+      "effect_id": "GD02-057-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "value": "ATTACK"
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "DESTROY_CARD",
+              "target": {
+                "selector": "OTHER_FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "DAMAGE_UNIT",
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "stat": "LEVEL",
+                  "operator": "<=",
+                  "value": 4
+                }
+              ],
+              "amount": 2,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair】【Attack】You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

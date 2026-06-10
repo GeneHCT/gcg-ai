@@ -1,0 +1,44 @@
+{
+  "card_id": "GD03-079",
+  "effects": [
+    {
+      "effect_id": "GD03-079-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_REST_BASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target_selector": "FRIENDLY_BASE",
+          "operator": "==",
+          "state": "RESTED"
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When you rest your Base with one of your Units' effects, you may rest this Unit instead.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "When you rest your Base with one of your Units' effects, you may rest this Unit instead.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

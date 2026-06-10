@@ -1,0 +1,80 @@
+{
+  "card_id": "EB01-047",
+  "effects": [
+    {
+      "effect_id": "EB01-047-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "value": "G Generation"
+            }
+          ],
+          "optional_actions": [
+            {
+              "type": "EXILE_CARDS"
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired ･ Development 1】You may exile the specified number of (G Generation) cards from your trash from the game.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EB01-047-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "G Generation",
+          "operator": ">=",
+          "amount": 1
+        }
+      ],
+      "actions": [
+        {
+          "keyword": "HIGH-MANEUVER",
+          "duration": "THIS_TURN",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "▫️This Unit gains【High-Maneuver】during this turn.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired ･ Development 1】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:; ▫️This Unit gains【High-Maneuver】during this turn. (This Unit can't be blocked.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

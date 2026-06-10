@@ -1,0 +1,113 @@
+{
+  "card_id": "EB01-025",
+  "effects": [
+    {
+      "effect_id": "EB01-025-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "trait": "G Generation",
+              "operator": ">=",
+              "value": 2
+            }
+          ],
+          "optional_actions": [
+            {
+              "amount": 2,
+              "filters": {
+                "traits": [
+                  "G Generation"
+                ]
+              },
+              "type": "EXILE_CARDS",
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": 1,
+              "resource_type": "EX",
+              "type": "PLACE_RESOURCE",
+              "target": {
+                "selector": "ALL_PLAYERS"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EB01-025-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "duration": "PERMANENT",
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "resource_type": "EX",
+              "operator": ">=",
+              "value": 1,
+              "target": {
+                "selector": "ENEMY_RESOURCE"
+              }
+            },
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 5,
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "protection_type": "BATTLE_DAMAGE",
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】While your opponent has an EX Resource, this Unit can't receive battle damage from enemy Units that are Lv.5 or lower.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy ･ Development 2】You may exile the specified number of (G Generation) cards from your trash from the game. If you do, activate the following effect:; ▫️All players place 1 EX Resource.; 【During Pair】While your opponent has an EX Resource, this Unit can't receive battle damage from enemy Units that are Lv.5 or lower.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

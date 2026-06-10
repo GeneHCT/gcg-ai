@@ -1,0 +1,54 @@
+{
+  "card_id": "GD03-060",
+  "effects": [
+    {
+      "effect_id": "GD03-060-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_RECEIVE_EFFECT_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "SELF",
+          "operator": "==",
+          "turn_owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DEPLOY_TOKEN",
+          "amount": 1,
+          "token_traits": [
+            "Tekkadan"
+          ],
+          "token_ap": 1,
+          "token_hp": 1,
+          "is_rested": true,
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Once per Turn】During your turn, when this Unit receives effect damage, deploy 1 rested [CGS Mobile Worker]((Tekkadan)･AP1･HP1) Unit token.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Once per Turn】During your turn, when this Unit receives effect damage, deploy 1 rested [CGS Mobile Worker]((Tekkadan)･AP1･HP1) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

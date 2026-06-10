@@ -1,0 +1,67 @@
+{
+  "card_id": "EB01-041",
+  "effects": [
+    {
+      "effect_id": "EB01-041-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "RETURN_TO_HAND",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 4
+              }
+            }
+          },
+          "max_targets": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 Unit with 4 or less HP belonging to each enemy player. Return them to their owner's hands.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "EB01-041-E1",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "keyword": "HIGH_MANEUVER",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【High-Maneuver】(This Unit can't be blocked.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "【High-Maneuver】(This Unit can't be blocked.); 【Deploy】Choose 1 Unit with 4 or less HP belonging to each enemy player. Return them to their owner's hands.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

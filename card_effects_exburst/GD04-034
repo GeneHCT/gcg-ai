@@ -1,0 +1,73 @@
+{
+  "card_id": "GD04-034",
+  "effects": [
+    {
+      "effect_id": "GD04-034-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "RESTED",
+          "filters": {
+            "trait": "CB"
+          },
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modification": "+2"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】This Unit gets AP+2 for each of your rested (CB) Units.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-034-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<First Strike> (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "FIRST_STRIKE",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<First Strike> (While this Unit is attacking, it deals damage before the enemy Unit.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<First Strike> (While this Unit is attacking, it deals damage before the enemy Unit.); 【During Link】This Unit gets AP+2 for each of your rested (CB) Units.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

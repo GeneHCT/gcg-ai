@@ -134,9 +134,14 @@ class BaseManager:
         if player.bases:
             old_base = player.bases[0]
             player.bases.clear()
-            # Move old base card to trash (no destroyed effects)
-            player.trash.append(old_base.card_data)
-            print(f"  Old base {old_base.card_data.name} sent to trash (replaced)")
+            # Move real BASE cards to trash. The starter EX Base is a token-like
+            # object and has no card_data to move.
+            old_base_card = getattr(old_base, "card_data", None)
+            if old_base_card is not None:
+                player.trash.append(old_base_card)
+                print(f"  Old base {old_base_card.name} sent to trash (replaced)")
+            else:
+                print("  EX Base removed (replaced)")
         
         # Create new base instance
         base_instance = BaseInstance(
@@ -184,22 +189,26 @@ class BaseManager:
         burst_cards = []
         
         # Check if player has a base
-        if player.bases and player.bases[0].current_hp > 0:
-            base = player.bases[0]
+        active_base = next((base for base in player.bases if getattr(base, "current_hp", 0) > 0), None)
+        if active_base is not None:
+            base = active_base
             hp_before = base.current_hp
             
             # Deal damage to base first
             actual_damage = base.take_damage(damage)
-            print(f"    Base {base.card_data.name} took {actual_damage} damage ({hp_before} -> {base.current_hp} HP)")
+            base_name = getattr(getattr(base, "card_data", None), "name", getattr(base, "name", "EX Base"))
+            print(f"    Base {base_name} took {actual_damage} damage ({hp_before} -> {base.current_hp} HP)")
             
             # Check if base is destroyed
-            if base.is_destroyed:
-                print(f"    [BASE DESTROYED] {base.card_data.name}")
+            if getattr(base, "current_hp", 0) <= 0:
+                print(f"    [BASE DESTROYED] {base_name}")
                 base_destroyed = True
                 
                 # Remove base from play and send to trash
                 player.bases.remove(base)
-                player.trash.append(base.card_data)
+                base_card = getattr(base, "card_data", None)
+                if base_card is not None:
+                    player.trash.append(base_card)
                 
                 # Trigger BASE destroyed effects
                 try:
@@ -208,20 +217,17 @@ class BaseManager:
                 except Exception as e:
                     print(f"    [BASE Destroyed Effect Error] {e}")
         else:
-            # No base or base is already destroyed - damage shields normally
-            for _ in range(damage):
-                if player.shield_area:
-                    shield = player.shield_area.pop(0)
-                    shields_destroyed += 1
-                    
-                    # Check for Burst
-                    if shield.effect and any("【Burst】" in str(e) for e in shield.effect):
-                        burst_cards.append(shield)
-                        print(f"    Burst card revealed: {shield.name}")
-                    else:
-                        player.trash.append(shield)
+            # Damage to a Shield destroys only the first Shield, regardless of excess damage.
+            if damage > 0 and player.shield_area:
+                shield = player.shield_area.pop(0)
+                shields_destroyed += 1
+                
+                # Check for Burst
+                if shield.effect and any("【Burst】" in str(e) for e in shield.effect):
+                    burst_cards.append(shield)
+                    print(f"    Burst card revealed: {shield.name}")
                 else:
-                    break  # No more shields
+                    player.trash.append(shield)
         
         return shields_destroyed, base_destroyed, burst_cards
     

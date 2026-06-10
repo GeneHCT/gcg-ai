@@ -1,0 +1,47 @@
+{
+  "card_id": "EB01-063",
+  "effects": [
+    {
+      "effect_id": "EB01-063-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "OTHER_FRIENDLY_UNIT",
+          "amount": 2,
+          "operator": ">=",
+          "card_state": "RESTED"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "REPAIR",
+          "target": {
+            "selector": "SELF"
+          },
+          "value": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "If there are 2 or more other rested Units in play, this Unit gains【Repair 2】. (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "If there are 2 or more other rested Units in play, this Unit gains【Repair 2】. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

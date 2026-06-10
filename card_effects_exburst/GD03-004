@@ -1,0 +1,71 @@
+{
+  "card_id": "GD03-004",
+  "effects": [
+    {
+      "effect_id": "GD03-004-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "value": 2,
+          "operator": ">=",
+          "filters": {
+            "traits": [
+              "Titans"
+            ]
+          },
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "HP",
+          "value": 5,
+          "operator": "<=",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "REST_UNIT",
+          "filters": {
+            "stat": "HP",
+            "value": 5,
+            "operator": "<="
+          },
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "hp": {
+                "operator": "<=",
+                "value": 5
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Attack】If you have 2 or more other (Titans) Units in play, choose 1 enemy Unit with 5 or less HP. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Attack】If you have 2 or more other (Titans) Units in play, choose 1 enemy Unit with 5 or less HP. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

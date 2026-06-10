@@ -1,0 +1,80 @@
+{
+  "card_id": "GD04-017",
+  "effects": [
+    {
+      "effect_id": "GD04-017-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_PAIRED_PILOT_TRAIT",
+          "traits": [
+            "Newtype"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "amount": 2,
+          "token_traits": [
+            "Zeon"
+          ],
+          "token_ap": 2,
+          "token_hp": 1,
+          "token_restriction": "can't be paired with a Pilot",
+          "type": "DEPLOY_TOKEN",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired･(Newtype) Pilot】Deploy 2 [Wire-Guided Arm]((Zeon)･AP2･HP1・This Unit can't be paired with a Pilot) Unit tokens.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-017-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DESTROYED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "token_traits": [
+            "Zeon"
+          ],
+          "token_ap": 3,
+          "token_hp": 1,
+          "token_state": "rested",
+          "type": "DEPLOY_TOKEN",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Destroyed】Deploy 1 rested [Zeong (Head)]((Zeon)･AP3･HP1) Unit token.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired･(Newtype) Pilot】Deploy 2 [Wire-Guided Arm]((Zeon)･AP2･HP1・This Unit can't be paired with a Pilot) Unit tokens.; 【Destroyed】Deploy 1 rested [Zeong (Head)]((Zeon)･AP3･HP1) Unit token.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

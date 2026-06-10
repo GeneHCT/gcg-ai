@@ -1,0 +1,56 @@
+{
+  "card_id": "EB01-035",
+  "effects": [
+    {
+      "effect_id": "EB01-035-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "G Generation",
+          "operator": "==",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_STAT",
+          "stat": "LEVEL",
+          "value": 3,
+          "operator": "==",
+          "target": {
+            "selector": "OTHER_FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_KEYWORD",
+          "selector": "SELF",
+          "keyword": "BREACH",
+          "value": 1,
+          "duration": "THIS_TURN"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When another friendly (G Generation) Unit that is Lv.3 is deployed, this Unit gains【Breach 1】during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "When another friendly (G Generation) Unit that is Lv.3 is deployed, this Unit gains【Breach 1】during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

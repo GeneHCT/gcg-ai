@@ -1,0 +1,91 @@
+{
+  "card_id": "EB01-022",
+  "effects": [
+    {
+      "effect_id": "EB01-022-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target_selector": "ENEMY_UNIT",
+          "state": "DESTROYED"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 5,
+          "target": {
+            "selector": "OPPONENT_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Breach 5】(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "EB01-022-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "phase": "END"
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "actions": [
+            {
+              "type": "DESTROY_CARD",
+              "target": {
+                "selector": "SELF"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "DEPLOY_TOKEN",
+              "amount": 3,
+              "token_properties": {
+                "name": "Gundam Exia",
+                "card_type": "UNIT",
+                "ap": 2,
+                "hp": 2,
+                "traits": [
+                  "G Generation"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair ･ (G Generation) Pilot】At the end of your turn, you may destroy this Unit. If you do, deploy 3 [Gundam Exia]((G Generation) ･ AP2 ･ HP2) Unit tokens.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Breach 5】(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); 【During Pair ･ (G Generation) Pilot】At the end of your turn, you may destroy this Unit. If you do, deploy 3 [Gundam Exia]((G Generation) ･ AP2 ･ HP2) Unit tokens.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

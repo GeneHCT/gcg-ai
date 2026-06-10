@@ -1,0 +1,70 @@
+{
+  "card_id": "GD04-035",
+  "effects": [
+    {
+      "effect_id": "GD04-035-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "selector": "OTHER_FRIENDLY_UNIT",
+              "trait": "Mafty",
+              "operator": "==",
+              "value": true
+            }
+          ],
+          "actions": [
+            {
+              "keyword": "TRIGGER_ON_UNIT_DESTROYED_BY_DAMAGE",
+              "duration": "THIS_TURN",
+              "conditions": [
+                {
+                  "type": "COUNT_CARDS",
+                  "selector": "SELF_HAND",
+                  "operator": "<=",
+                  "value": 3
+                }
+              ],
+              "actions": [
+                {
+                  "amount": 1,
+                  "type": "DRAW",
+                  "target": {
+                    "selector": "FRIENDLY_PLAYER"
+                  }
+                }
+              ],
+              "type": "GRANT_KEYWORD",
+              "target": {
+                "selector": "OTHER_FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 of your (Mafty) Units. When it destroys an enemy Unit with battle damage during this turn, if you have 3 or less cards in your hand, draw 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 of your (Mafty) Units. When it destroys an enemy Unit with battle damage during this turn, if you have 3 or less cards in your hand, draw 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

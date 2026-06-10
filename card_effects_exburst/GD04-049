@@ -1,0 +1,98 @@
+{
+  "card_id": "GD04-049",
+  "effects": [
+    {
+      "effect_id": "GD04-049-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TARGET",
+          "target_selector": "ENEMY_PLAYER",
+          "operator": "=="
+        }
+      ],
+      "actions": [
+        {
+          "type": "OPTIONAL_ACTION",
+          "optional_actions": [
+            {
+              "type": "EXILE_CARDS",
+              "filters": {
+                "traits": [
+                  "Vulture"
+                ]
+              },
+              "amount": 7,
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "type": "DESTROY_CARD",
+              "filters": {
+                "level": 8,
+                "operator": "<="
+              },
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            },
+            {
+              "type": "DESTROY_CARD",
+              "filters": {
+                "level": 8,
+                "operator": "<="
+              },
+              "target": {
+                "selector": "ENEMY_BASE"
+              }
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair】【Attack】If you are attacking the enemy player, you may choose 7 (Vulture) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit/Base that is Lv.8 or lower. Destroy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-049-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "SUPPRESSION",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Suppression> (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.); 【During Pair】【Attack】If you are attacking the enemy player, you may choose 7 (Vulture) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit/Base that is Lv.8 or lower. Destroy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

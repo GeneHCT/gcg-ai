@@ -1,0 +1,75 @@
+{
+  "card_id": "ST07-005",
+  "effects": [
+    {
+      "effect_id": "ST07-005-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_UNIT_DESTROYED_BY_DAMAGE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "SELF",
+          "operator": "==",
+          "turn_owner": "SELF"
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "target": "ENEMY_UNIT",
+          "state": "DESTROYED_BY_BATTLE_DAMAGE"
+        }
+      ],
+      "actions": [
+        {
+          "type": "RECOVER_HP",
+          "amount": 2,
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, when this Unit destroys an enemy Unit with battle damage, this Unit recovers 2 HP.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST07-005-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_LINKED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "AP",
+          "modification": "+2",
+          "duration": "PERMANENT",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Link】This Unit gets AP+2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your turn, when this Unit destroys an enemy Unit with battle damage, this Unit recovers 2 HP.; 【During Link】This Unit gets AP+2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

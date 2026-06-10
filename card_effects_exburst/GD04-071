@@ -1,0 +1,96 @@
+{
+  "card_id": "GD04-071",
+  "effects": [
+    {
+      "effect_id": "GD04-071-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target_selector": "ENEMY_UNIT",
+          "operator": ">=",
+          "value": 1,
+          "traits": [
+            "CB"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】If an enemy (CB) Unit is in play, add this card to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-071-E2",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "EXILE_CARDS",
+          "filters": {
+            "count": 1,
+            "traits": [
+              "Superpower Bloc"
+            ]
+          },
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        },
+        {
+          "type": "EXILE_CARDS",
+          "filters": {
+            "count": 1,
+            "traits": [
+              "UN"
+            ]
+          },
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        },
+        {
+          "type": "SET_ACTIVE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】Choose 1 (Superpower Bloc) card and 1 (UN) card from your trash. Exile them from the game. If you do, set this Unit as active. It can't attack during this turn.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "NO_ATTACK_THIS_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】If an enemy (CB) Unit is in play, add this card to your hand.; 【Activate･Main】Choose 1 (Superpower Bloc) card and 1 (UN) card from your trash. Exile them from the game. If you do, set this Unit as active. It can't attack during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

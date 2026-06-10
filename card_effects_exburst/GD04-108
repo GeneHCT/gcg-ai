@@ -1,0 +1,83 @@
+{
+  "card_id": "GD04-108",
+  "effects": [
+    {
+      "effect_id": "GD04-108-E1",
+      "effect_type": "PILOT_ABILITY",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "pilot_stats": {
+        "ap": 0,
+        "hp": 0,
+        "traits": []
+      },
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Pilot】[Sophie Pulone]",
+        "source": "pilot_metadata"
+      }
+    },
+    {
+      "effect_id": "GD04-108-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "target": "FRIENDLY_UNIT",
+          "traits": [
+            "Academy"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": "CONDITIONAL_BRANCH",
+          "conditions": [
+            {
+              "type": "CHECK_CARD_STATE",
+              "target": "SELF",
+              "state": "USED_EX_RESOURCE"
+            }
+          ],
+          "true_actions": [
+            {
+              "type": "REDUCE_DAMAGE",
+              "target": "FRIENDLY_UNIT",
+              "amount": 4,
+              "duration": "THIS_TURN"
+            }
+          ],
+          "false_actions": [
+            {
+              "type": "REDUCE_DAMAGE",
+              "target": "FRIENDLY_UNIT",
+              "amount": 2,
+              "duration": "THIS_TURN"
+            }
+          ]
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 friendly (Academy) Unit. During this turn, reduce the next damage it receives by 2. If you use an EX Resource to play this card, reduce by 4 instead.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】/【Action】Choose 1 friendly (Academy) Unit. During this turn, reduce the next damage it receives by 2. If you use an EX Resource to play this card, reduce by 4 instead.; 【Pilot】[Sophie Pulone]",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "card_id": "EB01-078",
+  "effects": [
+    {
+      "effect_id": "EB01-078-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "LOOK_AT_DECK",
+          "target": {
+            "selector": "SELF_DECK"
+          }
+        },
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "selector": "LOOKED_AT_CARD",
+              "value": "Unit",
+              "operator": "=="
+            }
+          ],
+          "actions": [
+            {
+              "optional_actions": [
+                {
+                  "type": "ADD_TO_HAND",
+                  "target": {
+                    "selector": "LOOKED_AT_CARD"
+                  }
+                }
+              ],
+              "type": "OPTIONAL_ACTION"
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "optional": true,
+          "type": "RETURN_LOOKED_TO_TOP",
+          "target": {
+            "selector": "LOOKED_AT_CARD"
+          }
+        },
+        {
+          "optional": true,
+          "type": "RETURN_LOOKED_TO_BOTTOM",
+          "target": {
+            "selector": "LOOKED_AT_CARD"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】All players each look at the top card of their deck. If it is a Unit card, they may reveal it and add it to their hand. They return any remaining card to the top or bottom of their deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】All players each look at the top card of their deck. If it is a Unit card, they may reveal it and add it to their hand. They return any remaining card to the top or bottom of their deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

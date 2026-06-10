@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -8,8 +9,12 @@ from convert_card_effects import ExBurstEffectConverter
 from simulator.action_executor import ActionExecutor
 from simulator.effect_discovery import GameEffect, OpenRouterConfig, ParsedCard, parse_normalized_card_offline, parsed_card_to_ir
 from simulator.effect_interpreter import ConditionEvaluator, EffectContext, EffectLoader
+from simulator.deck_loader import DeckLoader
+from simulator.game_manager import GameState, Phase, Player
 from simulator.ir_validator import validate_ir_effect_data
-from simulator.trigger_manager import TriggerManager
+from simulator.random_agent import ActionExecutor as GameActionExecutor
+from simulator.random_agent import ActionType, LegalActionGenerator
+from simulator.trigger_manager import TriggerManager, get_trigger_manager, reset_trigger_manager
 from simulator.unit import Card, PilotInstance, UnitInstance
 from tools.audit_exburst_conversion import audit_exburst_outputs
 
@@ -826,7 +831,8 @@ def test_continuous_effects_read_modifiers_key_and_exburst_dirs_are_opt_in(tmp_p
                         "effect_type": "CONTINUOUS",
                         "conditions": [],
                         "modifiers": [
-                            {"type": "GRANT_KEYWORD", "target": {"selector": "SELF"}, "keyword": "BLOCKER"}
+                            {"type": "GRANT_KEYWORD", "target": {"selector": "SELF"}, "keyword": "BLOCKER"},
+                            {"type": "GRANT_KEYWORD", "target": {"selector": "SELF"}, "keyword": "REPAIR", "value": 1},
                         ],
                         "is_supported": True,
                     }
@@ -847,8 +853,457 @@ def test_continuous_effects_read_modifiers_key_and_exburst_dirs_are_opt_in(tmp_p
     manager = TriggerManager(effects_dirs=[str(stable_dir), str(exburst_dir)])
     manager.load_effects()
     manager.apply_continuous_effects(game_state)
+    manager.apply_continuous_effects(game_state)
 
     assert unit.has_keyword("blocker") is True
+    assert unit.get_keyword_value("repair") == 1
+
+
+@pytest.mark.parametrize(
+    ("keyword", "value"),
+    [
+        ("BREACH", 2),
+        ("REPAIR", 1),
+        ("SUPPORT", 1),
+    ],
+)
+def test_printed_keyword_continuous_ir_does_not_double_stack_card_text_parser(tmp_path, keyword, value):
+    exburst_dir = tmp_path / "exburst"
+    exburst_dir.mkdir()
+    card_id = f"TEST-{keyword}"
+    raw_text = f"<{keyword.title()} {value}> (Standalone printed keyword.)"
+    (exburst_dir / card_id).write_text(
+        json.dumps(
+            {
+                "card_id": card_id,
+                "effects": [],
+                "continuous_effects": [
+                    {
+                        "effect_id": f"{card_id}-E1",
+                        "effect_type": "CONTINUOUS",
+                        "description": raw_text,
+                        "modifiers": [
+                            {
+                                "type": "GRANT_KEYWORD",
+                                "target": {"selector": "SELF"},
+                                "keyword": keyword,
+                                "value": value,
+                            }
+                        ],
+                        "metadata": {"raw_text": raw_text, "source": "known_pattern"},
+                        "is_supported": True,
+                    }
+                ],
+                "metadata": {"support_status": "supported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    unit = UnitInstance(
+        Card(
+            name=f"{keyword.title()} Unit",
+            id=card_id,
+            type="UNIT",
+            color="Green",
+            level=3,
+            cost=2,
+            ap=3,
+            hp=3,
+            effect=[raw_text],
+        ),
+        owner_id=0,
+    )
+    unit.add_keyword(keyword.lower(), value, "Card base effect")
+    game_state = SimpleNamespace(
+        players=[
+            SimpleNamespace(battle_area=[unit]),
+            SimpleNamespace(battle_area=[]),
+        ]
+    )
+
+    manager = TriggerManager(effects_dirs=[str(exburst_dir)])
+    manager.load_effects()
+    manager.apply_continuous_effects(game_state)
+
+    assert unit.get_keyword_value(keyword.lower()) == value
+
+
+def test_card_state_condition_filters_matching_action_target(tmp_path):
+    effects_dir = tmp_path / "effects"
+    effects_dir.mkdir()
+    (effects_dir / "GD01-008").write_text(
+        json.dumps(
+            {
+                "card_id": "GD01-008",
+                "effects": [
+                    {
+                        "effect_id": "GD01-008-E1",
+                        "effect_type": "TRIGGERED",
+                        "triggers": ["ON_DEPLOY"],
+                        "conditions": [
+                            {
+                                "type": "CHECK_CARD_STATE",
+                                "target": "ENEMY_UNIT",
+                                "value": "RESTED",
+                                "operator": "==",
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "DAMAGE_UNIT",
+                                "amount": 1,
+                                "target": {"selector": "ENEMY_UNIT"},
+                                "damage_type": "EFFECT",
+                            }
+                        ],
+                    }
+                ],
+                "continuous_effects": [],
+                "metadata": {"support_status": "supported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    guntank = UnitInstance(Card("Guntank", "GD01-008", "UNIT", "Blue", 2, 1, 1, 2), owner_id=0)
+    active_enemy = UnitInstance(Card("Silver Bullet", "GD04-068", "UNIT", "Blue", 4, 2, 3, 4), owner_id=1)
+    rested_enemy = UnitInstance(Card("Rested Enemy", "ENEMY-001", "UNIT", "Red", 1, 1, 1, 2), owner_id=1, is_rested=True)
+    game_state.players[1].battle_area = [active_enemy, rested_enemy]
+
+    manager = get_trigger_manager(effects_dirs=[str(effects_dir)], force_reload=True)
+    manager.trigger_event("ON_DEPLOY", game_state, guntank, 0)
+
+    assert active_enemy.current_hp == 4
+    assert rested_enemy.current_hp == 1
+    reset_trigger_manager()
+
+
+def test_receive_effect_damage_reduction_prevents_small_enemy_effect_damage(tmp_path):
+    effects_dir = tmp_path / "effects"
+    effects_dir.mkdir()
+    (effects_dir / "GD04-068").write_text(
+        json.dumps(
+            {
+                "card_id": "GD04-068",
+                "effects": [
+                    {
+                        "effect_id": "GD04-068-E2",
+                        "effect_type": "TRIGGERED",
+                        "triggers": ["ON_RECEIVE_EFFECT_DAMAGE"],
+                        "conditions": [{"type": "CHECK_TARGET", "target_selector": "ENEMY_PLAYER"}],
+                        "actions": [
+                            {
+                                "type": "REDUCE_DAMAGE",
+                                "amount": 3,
+                                "target": {"selector": "SELF"},
+                            }
+                        ],
+                    }
+                ],
+                "continuous_effects": [],
+                "metadata": {"support_status": "supported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    get_trigger_manager(effects_dirs=[str(effects_dir)], force_reload=True)
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    guntank = UnitInstance(Card("Guntank", "GD01-008", "UNIT", "Blue", 2, 1, 1, 2), owner_id=0)
+    silver_bullet = UnitInstance(Card("Silver Bullet", "GD04-068", "UNIT", "Blue", 4, 2, 3, 4), owner_id=1)
+    game_state.players[0].battle_area = [guntank]
+    game_state.players[1].battle_area = [silver_bullet]
+    context = EffectContext(
+        game_state=game_state,
+        source_card=guntank,
+        source_player_id=0,
+        trigger_event="ON_DEPLOY",
+        trigger_data={},
+    )
+
+    result = ActionExecutor.execute(
+        context,
+        {
+            "type": "DAMAGE_UNIT",
+            "amount": 1,
+            "target": {"selector": "ENEMY_UNIT"},
+            "damage_type": "EFFECT",
+        },
+    )
+
+    assert result == "Silver Bullet took 0 damage (4 -> 4 HP)"
+    assert silver_bullet.current_hp == 4
+    reset_trigger_manager()
+
+
+def test_exburst_effects_override_stable_and_unsupported_is_gated(tmp_path):
+    stable_dir = tmp_path / "stable"
+    exburst_dir = tmp_path / "exburst"
+    stable_dir.mkdir()
+    exburst_dir.mkdir()
+
+    (stable_dir / "T-020").write_text(
+        json.dumps(
+            {
+                "card_id": "T-020",
+                "effects": [{"effect_id": "stable", "effect_type": "TRIGGERED", "triggers": ["ON_DEPLOY"], "actions": [{"type": "DRAW", "amount": 1}]}],
+                "continuous_effects": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+    (exburst_dir / "T-020").write_text(
+        json.dumps(
+            {
+                "card_id": "T-020",
+                "effects": [{"effect_id": "exburst", "effect_type": "TRIGGERED", "triggers": ["ON_DEPLOY"], "actions": [{"type": "DRAW", "amount": 2}]}],
+                "continuous_effects": [],
+                "metadata": {"support_status": "supported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    (exburst_dir / "T-021").write_text(
+        json.dumps(
+            {
+                "card_id": "T-021",
+                "effects": [{"effect_id": "unsupported", "effect_type": "TRIGGERED", "triggers": ["ON_DEPLOY"], "actions": [], "is_supported": False}],
+                "continuous_effects": [],
+                "metadata": {"support_status": "partial"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    (exburst_dir / "T-022").write_text(
+        json.dumps(
+            {
+                "card_id": "T-022",
+                "effects": [{"effect_id": "unsupported-card", "effect_type": "TRIGGERED", "triggers": ["ON_DEPLOY"], "actions": []}],
+                "continuous_effects": [],
+                "metadata": {"support_status": "unsupported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    loaded = EffectLoader.load_effect("T-020", [str(stable_dir), str(exburst_dir)])
+    assert loaded["effects"][0]["effect_id"] == "exburst"
+
+    manager = TriggerManager(effects_dirs=[str(stable_dir), str(exburst_dir)])
+    manager.load_effects()
+
+    assert manager.effects_cache["T-020"]["effects"][0]["effect_id"] == "exburst"
+    assert manager.effects_cache["T-021"]["effects"] == []
+    assert "T-022" not in manager.effects_cache
+    assert manager.load_report["skipped_effects"] == 1
+    assert manager.load_report["skipped_cards"] == 1
+
+
+def test_activate_main_ability_is_legal_pays_cost_and_obeys_once_per_turn(tmp_path):
+    reset_trigger_manager()
+    effects_dir = tmp_path / "effects"
+    effects_dir.mkdir()
+    (effects_dir / "T-030").write_text(
+        json.dumps(
+            {
+                "card_id": "T-030",
+                "effects": [
+                    {
+                        "effect_id": "T-030-E1",
+                        "effect_type": "ACTIVATED",
+                        "triggers": ["ACTIVATE_MAIN"],
+                        "restrictions": ["ONCE_PER_TURN"],
+                        "cost": "②",
+                        "actions": [{"type": "DRAW", "target": "SELF", "amount": 1}],
+                    }
+                ],
+                "continuous_effects": [],
+                "metadata": {"support_status": "supported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    get_trigger_manager(effects_dirs=[str(effects_dir)], force_reload=True)
+
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    game_state.turn_player = 0
+    game_state.current_phase = Phase.MAIN
+    player = game_state.players[0]
+    player.battle_area.append(UnitInstance(Card("Activated Unit", "T-030", "UNIT", "Blue", 1, 1, 1, 1), owner_id=0))
+    player.resource_area = [
+        Card("Resource 1", "R-001", "UNIT", "Blue", 0, 0),
+        Card("Resource 2", "R-002", "UNIT", "Blue", 0, 0),
+    ]
+    player.main_deck = [Card("Drawn", "D-001", "UNIT", "Blue", 0, 0)]
+
+    legal_actions = LegalActionGenerator.get_legal_actions(game_state, player_id=0)
+    ability_actions = [action for action in legal_actions if action.action_type == ActionType.ACTIVATE_ABILITY]
+
+    assert len(ability_actions) == 1
+
+    game_state, result = GameActionExecutor.execute_action(game_state, ability_actions[0])
+
+    assert "drew 1 card" in result
+    assert len(player.hand) == 1
+    assert player.get_active_resources(game_state) == 0
+    assert not [
+        action
+        for action in LegalActionGenerator.get_legal_actions(game_state, player_id=0)
+        if action.action_type == ActionType.ACTIVATE_ABILITY
+    ]
+    reset_trigger_manager()
+
+
+def test_activate_action_ability_is_legal_during_action_step(tmp_path):
+    reset_trigger_manager()
+    effects_dir = tmp_path / "effects"
+    effects_dir.mkdir()
+    (effects_dir / "T-031").write_text(
+        json.dumps(
+            {
+                "card_id": "T-031",
+                "effects": [
+                    {
+                        "effect_id": "T-031-E1",
+                        "effect_type": "ACTIVATED",
+                        "triggers": ["ACTIVATE_ACTION"],
+                        "actions": [{"type": "DRAW", "target": "SELF", "amount": 1}],
+                    }
+                ],
+                "continuous_effects": [],
+                "metadata": {"support_status": "supported"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    get_trigger_manager(effects_dirs=[str(effects_dir)], force_reload=True)
+
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    game_state.turn_player = 1
+    game_state.current_phase = Phase.MAIN
+    game_state.in_action_step = True
+    game_state.action_step_priority_player = 0
+    game_state.players[0].battle_area.append(UnitInstance(Card("Action Unit", "T-031", "UNIT", "Blue", 1, 1, 1, 1), owner_id=0))
+
+    legal_actions = LegalActionGenerator.get_legal_actions(game_state, player_id=0)
+
+    assert any(action.action_type == ActionType.ACTIVATE_ABILITY for action in legal_actions)
+    reset_trigger_manager()
+
+
+def test_exburst_self_player_zone_targets_for_overflowing_affection():
+    player0 = Player(0)
+    player1 = Player(1)
+    player0.hand = [Card("P0 Hand", "P0-H", "UNIT", "Blue", 0, 0)]
+    player1.hand = [Card("P1 Hand", "P1-H", "UNIT", "Blue", 0, 0)]
+    player1.main_deck = [
+        Card("Draw 1", "D-001", "UNIT", "Blue", 0, 0),
+        Card("Draw 2", "D-002", "UNIT", "Blue", 0, 0),
+    ]
+    game_state = GameState()
+    game_state.players = {0: player0, 1: player1}
+    context = EffectContext(
+        game_state=game_state,
+        source_card=Card("Overflowing Affection", "GD01-118", "COMMAND", "Blue", 2, 1),
+        source_player_id=1,
+        trigger_event="MAIN_PHASE",
+        trigger_data={},
+    )
+
+    results = ActionExecutor.execute_actions(
+        context,
+        [
+            {"type": "DRAW", "target": {"selector": "SELF"}, "amount": 2},
+            {"type": "DISCARD", "target": {"selector": "SELF_HAND"}, "amount": 1},
+        ],
+    )
+
+    assert results == ["Player 1 drew 2 card(s)", "Player 1 discarded 1 card(s)"]
+    assert len(player0.hand) == 1
+    assert len(player0.trash) == 0
+    assert len(player1.hand) == 2
+    assert len(player1.main_deck) == 0
+    assert len(player1.trash) == 1
+
+
+def test_attack_trigger_stat_bonus_clears_after_battle():
+    unit = UnitInstance(Card("Zaku II", "ST03-008", "UNIT", "Green", 2, 1, 2, 2), owner_id=0)
+    context = EffectContext(
+        game_state=GameState(),
+        source_card=unit,
+        source_player_id=0,
+        trigger_event="ON_ATTACK",
+        trigger_data={},
+    )
+
+    result = ActionExecutor.execute(
+        context,
+        {
+            "type": "MODIFY_STAT",
+            "target": {"selector": "SELF"},
+            "stat": "AP",
+            "modification": "+2",
+            "duration": "THIS_TURN",
+        },
+    )
+
+    assert result == "Zaku II gets AP+2"
+    assert unit.ap == 4
+    assert unit.has_keyword("ap_bonus")
+
+    unit.clear_temporary_keywords("battle")
+
+    assert unit.ap == 2
+    assert not unit.has_keyword("ap_bonus")
+
+
+def test_attack_player_remains_legal_against_blockers_without_shields_or_base():
+    game_state = GameState()
+    game_state.players = {0: Player(0), 1: Player(1)}
+    game_state.current_phase = Phase.MAIN
+    game_state.turn_player = 0
+    attacker = UnitInstance(Card("Attacker", "A-001", "UNIT", "Blue", 1, 1, 2, 2), owner_id=0, turn_deployed=-1)
+    blocker = UnitInstance(Card("Blocker", "B-001", "UNIT", "White", 1, 1, 2, 2), owner_id=1, turn_deployed=-1)
+    blocker.add_keyword("blocker")
+    game_state.players[0].battle_area = [attacker]
+    game_state.players[1].battle_area = [blocker]
+    game_state.players[1].shield_area = []
+    game_state.players[1].bases = []
+
+    legal_actions = LegalActionGenerator.get_legal_actions(game_state, player_id=0)
+
+    assert any(action.action_type == ActionType.ATTACK_PLAYER and action.unit is attacker for action in legal_actions)
+    assert not any(action.action_type == ActionType.ATTACK_UNIT for action in legal_actions)
+
+
+def test_representative_decks_resolve_exburst_cards_and_effect_coverage():
+    project_root = Path(__file__).resolve().parents[1]
+    deck_paths = [
+        project_root / "decks" / "gw-wing.txt",
+        project_root / "decks" / "bp-haste.txt",
+    ]
+    loaded_card_ids = set()
+
+    for deck_path in deck_paths:
+        deck, _is_valid = DeckLoader.load_deck(str(deck_path))
+        assert deck, f"Deck did not load: {deck_path}"
+        loaded_card_ids.update(card["ID"] for card in deck)
+
+    effects_dir = project_root / "card_effects_exburst"
+    if not effects_dir.exists():
+        pytest.skip("card_effects_exburst is generated locally and is not checked in")
+
+    effects = EffectLoader.load_all_effects(str(effects_dir))
+    missing_effect_ids = {
+        card_id
+        for card_id in loaded_card_ids
+        if card_id not in effects and (project_root / "card_effects_exburst" / card_id).exists()
+    }
+
+    assert not missing_effect_ids
 
 
 def test_audit_helper_groups_non_credit_exburst_issues(tmp_path):

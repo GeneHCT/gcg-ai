@@ -1,0 +1,83 @@
+{
+  "card_id": "GD01-069",
+  "effects": [
+    {
+      "effect_id": "GD01-069-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_COLOR",
+          "value": "White",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        },
+        {
+          "type": "CHECK_KEYWORD",
+          "keyword": "BLOCKER",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "SET_ACTIVE",
+          "filters": [
+            {
+              "state": "RESTED"
+            },
+            {
+              "color": "White"
+            },
+            {
+              "has_keyword": "blocker"
+            }
+          ],
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "state": "RESTED",
+              "has_keyword": "blocker"
+            }
+          }
+        },
+        {
+          "type": "GRANT_KEYWORD",
+          "keyword": "SUPPRESSION",
+          "duration": "THIS_TURN",
+          "target": {
+            "selector": "FRIENDLY_UNIT",
+            "filters": {
+              "state": "RESTED",
+              "has_keyword": "blocker"
+            }
+          },
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 of your rested white Units with <Blocker>. Set it as active. It can't attack during this turn.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Main】【Once per Turn】①：Choose 1 of your rested white Units with <Blocker>. Set it as active. It can't attack during this turn.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

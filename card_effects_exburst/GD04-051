@@ -1,0 +1,63 @@
+{
+  "card_id": "GD04-051",
+  "effects": [
+    {
+      "effect_id": "GD04-051-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED_WITH_TRAIT"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Vulture",
+          "target_selector": "PAIRED_PILOT"
+        },
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "operator": ">=",
+          "value": 7,
+          "owner": "SELF"
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "ACTIVE",
+          "target_selector": "ENEMY_UNIT"
+        },
+        {
+          "type": "CHECK_KEYWORD",
+          "target_selector": "ENEMY_UNIT"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "filters": {
+            "has_keyword": "true",
+            "is_active": true
+          },
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【During Pair･(Vulture) Pilot】If there are 7 or more cards in your trash, this Unit may choose an active enemy Unit with a keyword effect as its attack target.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【During Pair･(Vulture) Pilot】If there are 7 or more cards in your trash, this Unit may choose an active enemy Unit with a keyword effect as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

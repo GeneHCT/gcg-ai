@@ -1,0 +1,51 @@
+{
+  "card_id": "GD02-011",
+  "effects": [
+    {
+      "effect_id": "GD02-011-E1",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_ACTION"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_LINK_STATUS",
+          "target": "SELF",
+          "value": "BATTLING"
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 6,
+          "target": {
+            "selector": "ENEMY_BASE"
+          }
+        },
+        {
+          "type": "DAMAGE_UNIT",
+          "amount": 6,
+          "target": {
+            "selector": "OPPONENT_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Action】Destroy this Unit：Choose 1 enemy Base/enemy Shield this Unit is battling. Deal 6 damage to it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Activate･Action】Destroy this Unit：Choose 1 enemy Base/enemy Shield this Unit is battling. Deal 6 damage to it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

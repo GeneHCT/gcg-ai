@@ -1,0 +1,47 @@
+{
+  "card_id": "GD03-070",
+  "effects": [
+    {
+      "effect_id": "GD03-070-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "WHILE_PAIRED"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_CARD_STATE",
+          "target": "SELF",
+          "state": "RESTED"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": {
+            "selector": "SELF_SHIELDS"
+          },
+          "duration": "PERMANENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While this Unit is rested, friendly Shields can't receive battle damage from enemy Units.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While this Unit is rested, friendly Shields can't receive battle damage from enemy Units.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

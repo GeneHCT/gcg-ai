@@ -13,7 +13,7 @@ from simulator.game_manager import GameState
 
 
 def get_legal_actions(game_state: GameState, player_id: Optional[int] = None) -> List[Action]:
-    """Get legal actions for the current decision point. Wrapper for LegalActionGenerator."""
+    """Get legal moves for the current decision point. Wrapper for LegalActionGenerator."""
     return LegalActionGenerator.get_legal_actions(game_state, player_id)
 
 
@@ -22,8 +22,8 @@ def encode_action(legal_actions: List[Action], action: Action) -> int:
     Encode an Action to its index in the legal_actions list.
     
     Args:
-        legal_actions: List of legal actions for current state
-        action: The action to encode
+        legal_actions: List of legal moves for current state
+        action: The move to encode
         
     Returns:
         Index in [0, len(legal_actions)-1], or -1 if action not in list
@@ -39,7 +39,7 @@ def decode_action(legal_actions: List[Action], action_idx: int) -> Optional[Acti
     Decode an integer index to an Action.
     
     Args:
-        legal_actions: List of legal actions for current state
+        legal_actions: List of legal moves for current state
         action_idx: Integer index in [0, len(legal_actions)-1]
         
     Returns:
@@ -62,7 +62,7 @@ def get_action_mask(game_state: GameState, max_actions: int = 512,
         
     Returns:
         Tuple of (mask, legal_actions). Mask is np.ndarray of shape (max_actions,)
-        with 1.0 for legal action indices and 0.0 for illegal/padding.
+        with 1.0 for legal move indices and 0.0 for illegal/padding.
         legal_actions may have fewer than max_actions elements.
     """
     legal_actions = get_legal_actions(game_state, player_id)
@@ -71,7 +71,7 @@ def get_action_mask(game_state: GameState, max_actions: int = 512,
     mask = np.zeros(max_actions, dtype=np.float32)
     mask[:min(n_legal, max_actions)] = 1.0
     
-    # If we have more legal actions than max_actions, all are "legal" (overflow)
+    # If we have more legal moves than max_actions, all are "legal" (overflow)
     if n_legal > max_actions:
         mask[:] = 1.0
     

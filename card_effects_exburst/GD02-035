@@ -1,0 +1,41 @@
+{
+  "card_id": "GD02-035",
+  "effects": [
+    {
+      "effect_id": "GD02-035-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_ATTACK"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "GRANT_ATTACK_TARGETING",
+          "target": {
+            "selector": "SELF"
+          },
+          "duration": "PERMANENT"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "This Unit can't choose the enemy player as its attack target.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ENEMY_PLAYER"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "This Unit can't choose the enemy player as its attack target.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

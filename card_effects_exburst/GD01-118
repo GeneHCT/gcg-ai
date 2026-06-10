@@ -1,0 +1,45 @@
+{
+  "card_id": "GD01-118",
+  "effects": [
+    {
+      "effect_id": "GD01-118-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 2,
+          "type": "DRAW",
+          "target": {
+            "selector": "SELF"
+          }
+        },
+        {
+          "amount": 1,
+          "type": "DISCARD",
+          "target": {
+            "selector": "SELF_HAND"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Draw 2. Then, discard 1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Main】Draw 2. Then, discard 1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

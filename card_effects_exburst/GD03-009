@@ -1,0 +1,77 @@
+{
+  "card_id": "GD03-009",
+  "effects": [
+    {
+      "effect_id": "GD03-009-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_TRAIT",
+              "value": "Titans",
+              "comparison": "found",
+              "target": "SELF_TRASH",
+              "required_count": 2
+            }
+          ],
+          "optional_actions": [
+            {
+              "filters": {
+                "traits": [
+                  "Titans"
+                ],
+                "count": 2
+              },
+              "type": "EXILE_CARDS",
+              "target": {
+                "selector": "SELF_TRASH"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_STAT",
+                  "stat": "LEVEL",
+                  "value": 4,
+                  "comparison": "<=",
+                  "target": "ENEMY_UNIT"
+                }
+              ],
+              "type": "REST_UNIT",
+              "target": {
+                "selector": "ENEMY_UNIT"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】You may choose 2 (Titans) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit that is Lv.4 or lower. Rest it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】You may choose 2 (Titans) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit that is Lv.4 or lower. Rest it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

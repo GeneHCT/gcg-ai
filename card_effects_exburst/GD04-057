@@ -1,0 +1,72 @@
+{
+  "card_id": "GD04-057",
+  "effects": [
+    {
+      "effect_id": "GD04-057-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "CHECK_STAT",
+              "stat": "LEVEL",
+              "operator": "<=",
+              "value": 6
+            }
+          ],
+          "amount": null,
+          "duration": "THIS_TURN",
+          "stat": "AP",
+          "modifier": {
+            "operation": "SUBTRACT",
+            "value": {
+              "source": "COUNT_CARDS",
+              "zone": "SELF_TRASH",
+              "filters": {
+                "card_type": "UNIT",
+                "text_contains": "Gundam Virtue"
+              }
+            }
+          },
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "ENEMY_UNIT",
+            "filters": {
+              "level": {
+                "operator": "<=",
+                "value": 6
+              }
+            }
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Choose 1 enemy Unit that is Lv.6 or lower. During this turn, reduce its AP by an amount equal to the number of Unit cards with \"Gundam Virtue\" in their card names in your trash.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Deploy】Choose 1 enemy Unit that is Lv.6 or lower. During this turn, reduce its AP by an amount equal to the number of Unit cards with \"Gundam Virtue\" in their card names in your trash.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[0].actions[0]",
+        "kind": "malformed_stat_modifier",
+        "value": "{'conditions': [{'type': 'CHECK_STAT', 'stat': 'LEVEL', 'operator': '<=', 'value': 6}], 'amount': None, 'duration': 'THIS_TURN', 'stat': 'AP', 'modifier': {'operation': 'SUBTRACT', 'value': {'source': 'COUNT_CARDS', 'zone': 'SELF_TRASH', 'filters': {'card_type': 'UNIT', 'text_contains': 'Gundam Virtue'}}}, 'type': 'MODIFY_STAT', 'target': {'selector': 'ENEMY_UNIT'}}",
+        "message": "Stat modifier must include stat and modification fields"
+      }
+    ]
+  }
+}

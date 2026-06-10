@@ -11,7 +11,7 @@ Implements resource-related game rules:
 Resources are Card objects placed in the resource area.
 Each resource can be Active (vertical) or Rested (horizontal).
 """
-from typing import TYPE_CHECKING, List, Optional
+from typing import TYPE_CHECKING, Any, List, Optional
 from dataclasses import dataclass, field
 
 if TYPE_CHECKING:
@@ -119,10 +119,59 @@ class ResourceManager:
             return False
         
         # Rule 7-5-2-2-3: Check Cost condition
-        if not ResourceManager.can_pay_cost(game_state, player_id, card.cost):
+        if not ResourceManager.can_pay_cost(game_state, player_id, ResourceManager.get_effective_cost(game_state, player_id, card)):
             return False
         
         return True
+    
+    @staticmethod
+    def get_effective_cost(game_state: 'GameState', player_id: int, card: 'Card', zone: str = "HAND") -> int:
+        """Return card cost after active cost modifiers."""
+        player = game_state.players[player_id]
+        cost = getattr(card, "cost", 0)
+        for modifier in getattr(player, "active_cost_modifiers", []):
+            if not ResourceManager._cost_modifier_applies(modifier, card, zone):
+                continue
+            cost = ResourceManager._apply_cost_modification(cost, str(modifier.get("modification", "+0")))
+        return max(0, cost)
+    
+    @staticmethod
+    def pay_card_cost(game_state: 'GameState', player_id: int, card: 'Card', zone: str = "HAND") -> bool:
+        return ResourceManager.pay_cost(game_state, player_id, ResourceManager.get_effective_cost(game_state, player_id, card, zone=zone))
+    
+    @staticmethod
+    def _cost_modifier_applies(modifier: Any, card: 'Card', zone: str) -> bool:
+        target = modifier.get("target") if isinstance(modifier, dict) else None
+        filters = modifier.get("filters", {}) if isinstance(modifier, dict) else {}
+        modifier_zone = str(modifier.get("zone", zone)).upper() if isinstance(modifier, dict) else zone
+        if modifier_zone not in {str(zone).upper(), "ANY"}:
+            return False
+        if isinstance(target, dict):
+            filters = {**filters, **target.get("filters", {})}
+        if "card_type" in filters and getattr(card, "type", None) != filters["card_type"]:
+            return False
+        if "color" in filters and str(getattr(card, "color", "")).lower() != str(filters["color"]).lower():
+            return False
+        if "traits" in filters:
+            traits = filters["traits"]
+            if isinstance(traits, str):
+                traits = [traits]
+            card_traits = getattr(card, "traits", [])
+            if not any(trait in card_traits for trait in traits):
+                return False
+        if "name_contains" in filters and str(filters["name_contains"]).lower() not in str(getattr(card, "name", "")).lower():
+            return False
+        return True
+    
+    @staticmethod
+    def _apply_cost_modification(cost: int, modification: str) -> int:
+        if modification.startswith("+"):
+            return cost + int(modification[1:])
+        if modification.startswith("-"):
+            return cost - int(modification[1:])
+        if modification.startswith("="):
+            return int(modification[1:])
+        return cost
     
     @staticmethod
     def check_lv_condition(game_state: 'GameState', player_id: int, required_lv: int) -> bool:

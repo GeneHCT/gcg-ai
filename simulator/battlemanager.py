@@ -2,7 +2,7 @@
 Battle Manager for Gundam Card Game
 Handles the complete 5-step battle sequence according to game rules 8-1 through 8-6
 """
-from typing import Optional, Tuple, List, Any
+from typing import Callable, Optional, Tuple, List, Any
 from dataclasses import dataclass, field
 from enum import Enum
 
@@ -120,7 +120,7 @@ class BattleManager:
     @staticmethod
     def get_block_legal_actions(game_state: GameState, battle_state: BattleState) -> List:
         """
-        Get legal actions for Block Step (Rule 8-3).
+        Get legal moves for Block Step (Rule 8-3).
         
         Returns:
             List of actions (BLOCK with blocker unit, or PASS)
@@ -175,6 +175,9 @@ class BattleManager:
         Returns:
             Tuple of (updated game_state, log_message)
         """
+        # Rule 8-3-1: Rest the blocking unit when <Blocker> is activated
+        blocker.is_rested = True
+
         # Change attack target to blocker
         battle_state.current_target = blocker
         battle_state.blocker_used = True
@@ -256,7 +259,14 @@ class BattleManager:
         logs = []
         attacker = battle_state.attacker
         
-        if battle_state.original_target == "PLAYER":
+        if battle_state.current_target is not None:
+            # Rule 8-3: A successful block changes the attack target to the blocker.
+            defender = battle_state.current_target
+            game_state, damage_logs = BattleManager._resolve_unit_attack(
+                game_state, attacker, defender
+            )
+            logs.extend(damage_logs)
+        elif battle_state.original_target == "PLAYER":
             # Rule 8-5-2: Attack on Player
             game_state, damage_logs = BattleManager._resolve_player_attack(
                 game_state, attacker, agents=agents
@@ -391,28 +401,32 @@ class BattleManager:
         # Handle destroyed units
         if defender.is_destroyed:
             logs.append(f"  {defender.card_data.name} DESTROYED!")
-            
-            # Trigger Destroyed effects
+
+            breach_value = attacker.get_keyword_value("breach")
+            if breach_value > 0:
+                result = KeywordInterpreter.resolve_breach_damage(attacker, defender, game_state)
+                if result["target"] == "base":
+                    base_destroyed = result.get("base_destroyed")
+                    logs.append(
+                        f"  BREACH {breach_value}: Base HP "
+                        f"{result['base_hp_before']} → {result['base_hp_after']}"
+                    )
+                    if base_destroyed is not None:
+                        logs.append(f"  {getattr(base_destroyed, 'name', 'Base')} DESTROYED by BREACH!")
+                    elif result["base_hp_after"] <= 0:
+                        logs.append("  EX Base DESTROYED by BREACH!")
+                elif result["target"] == "shield":
+                    shield = result.get("shield_destroyed")
+                    logs.append(f"  BREACH {breach_value}: Destroyed shield {getattr(shield, 'name', 'Unknown')}")
+                else:
+                    logs.append(f"  BREACH {breach_value}: No shield-area card to damage")
+
+            # Trigger Destroyed effects after battle damage keywords resolve.
             try:
                 from simulator.effect_integration import EffectIntegration
                 game_state = EffectIntegration.on_unit_destroyed(game_state, defender, "battle")
             except Exception as e:
                 print(f"  [Destroyed Effect Error] {e}")
-            
-            # Rule: Breach BEFORE Destroyed trigger
-            breach_value = attacker.get_keyword_value("breach")
-            if breach_value > 0:
-                opponent_id = 1 - attacker.owner_id
-                opponent = game_state.players[opponent_id]
-                shields_before = len(opponent.shield_area)
-                
-                KeywordInterpreter.resolve_breach_damage(attacker, defender, game_state)
-                
-                shields_after = len(opponent.shield_area)
-                logs.append(f"  BREACH {breach_value}: Destroyed {shields_before - shields_after} shield(s)")
-                
-                from simulator.game_manager import WinConditionChecker
-                game_state = WinConditionChecker.check_win_conditions(game_state)
             
             # Remove from battle area
             owner = game_state.players[defender.owner_id]
@@ -456,6 +470,9 @@ class BattleManager:
         """
         # Rule 8-6-1: Clear "during this battle" effects
         battle_state.effects_during_battle.clear()
+        for unit in [battle_state.attacker, battle_state.current_target]:
+            if hasattr(unit, "clear_temporary_keywords"):
+                unit.clear_temporary_keywords("battle")
         
         # Clear battle state
         game_state.in_battle = False
@@ -470,7 +487,8 @@ class BattleManager:
     @staticmethod
     def run_complete_battle(game_state: GameState, attacker: UnitInstance,
                            target: str, target_unit: Optional[UnitInstance],
-                           agents: List) -> Tuple[GameState, List[str]]:
+                           agents: List,
+                           replay_callback: Optional[Callable[[GameState, str], None]] = None) -> Tuple[GameState, List[str]]:
         """
         Run complete battle sequence from start to finish.
         
@@ -487,77 +505,83 @@ class BattleManager:
         from simulator.random_agent import ActionType
         
         all_logs = []
+
+        def add_log(log: str) -> None:
+            all_logs.append(log)
+            if replay_callback is not None:
+                replay_callback(game_state, log)
         
         # Start battle
         game_state, battle_state = BattleManager.start_battle(
             game_state, attacker, target, target_unit
         )
-        all_logs.append(f"=== BATTLE START ===")
+        add_log(f"=== BATTLE START ===")
         
         # Step 1: Attack Step
         game_state, log = BattleManager.execute_attack_step(game_state, battle_state)
-        all_logs.append(log)
+        add_log(log)
         
         # Check if should skip to Battle End (Rule 8-2-4)
         if BattleManager.check_units_destroyed_or_moved(battle_state):
-            all_logs.append("Units destroyed/moved - skipping to Battle End")
+            add_log("Units destroyed/moved - skipping to Battle End")
             game_state, log = BattleManager.execute_battle_end_step(game_state, battle_state)
-            all_logs.append(log)
+            add_log(log)
             return game_state, all_logs
         
-        # Step 2: Block Step (only if attacking unit)
-        if battle_state.original_target == "UNIT":
-            battle_state.current_step = BattleStep.BLOCK
-            game_state.battle_state = battle_state
-            game_state.decision_player_id = 1 - game_state.turn_player
-            
-            legal_actions = BattleManager.get_block_legal_actions(game_state, battle_state)
-            
-            standby_player_id = 1 - game_state.turn_player
-            standby_agent = agents[standby_player_id]
-            
-            chosen_action = standby_agent.choose_action(game_state, legal_actions)
-            
-            game_state.decision_player_id = None
-            
-            if chosen_action.action_type == ActionType.BLOCK:
-                game_state, log = BattleManager.execute_block(
-                    game_state, battle_state, chosen_action.unit
-                )
-                all_logs.append(log)
-            else:
-                all_logs.append("Block Step: No block")
-            
-            # Check if should skip to Battle End (Rule 8-3-5)
-            if BattleManager.check_units_destroyed_or_moved(battle_state):
-                all_logs.append("Units destroyed/moved - skipping to Battle End")
-                game_state, log = BattleManager.execute_battle_end_step(game_state, battle_state)
-                all_logs.append(log)
-                return game_state, all_logs
+        # Step 2: Block Step. Blockers can change any attack target to themselves.
+        battle_state.current_step = BattleStep.BLOCK
+        game_state.battle_state = battle_state
+        game_state.decision_player_id = 1 - game_state.turn_player
+        
+        legal_actions = BattleManager.get_block_legal_actions(game_state, battle_state)
+        
+        standby_player_id = 1 - game_state.turn_player
+        standby_agent = agents[standby_player_id]
+        
+        chosen_action = standby_agent.choose_action(game_state, legal_actions)
+        
+        game_state.decision_player_id = None
+        
+        if chosen_action.action_type == ActionType.BLOCK:
+            game_state, log = BattleManager.execute_block(
+                game_state, battle_state, chosen_action.unit
+            )
+            add_log(log)
+        else:
+            add_log("Block Step: No block")
+        
+        # Check if should skip to Battle End (Rule 8-3-5)
+        if BattleManager.check_units_destroyed_or_moved(battle_state):
+            add_log("Units destroyed/moved - skipping to Battle End")
+            game_state, log = BattleManager.execute_battle_end_step(game_state, battle_state)
+            add_log(log)
+            return game_state, all_logs
         
         # Step 3: Action Step
         game_state, action_logs = BattleManager.execute_action_step(
             game_state, battle_state, agents
         )
-        all_logs.extend(action_logs)
+        for log in action_logs:
+            add_log(log)
         
         # Check if should skip to Battle End (Rule 8-4-2)
         if BattleManager.check_units_destroyed_or_moved(battle_state):
-            all_logs.append("Units destroyed/moved - skipping to Battle End")
+            add_log("Units destroyed/moved - skipping to Battle End")
             game_state, log = BattleManager.execute_battle_end_step(game_state, battle_state)
-            all_logs.append(log)
+            add_log(log)
             return game_state, all_logs
         
         # Step 4: Damage Step (pass agents for Burst decision)
         game_state, damage_logs = BattleManager.execute_damage_step(
             game_state, battle_state, agents=agents
         )
-        all_logs.extend(damage_logs)
+        for log in damage_logs:
+            add_log(log)
         
         # Step 5: Battle End Step
         game_state, log = BattleManager.execute_battle_end_step(game_state, battle_state)
-        all_logs.append(log)
-        all_logs.append(f"=== BATTLE END ===")
+        add_log(log)
+        add_log(f"=== BATTLE END ===")
         
         # Clear battle state from game_state
         game_state.battle_state = None

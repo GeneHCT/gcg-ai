@@ -1,0 +1,89 @@
+{
+  "card_id": "ST10-014",
+  "effects": [
+    {
+      "effect_id": "ST10-014-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PLAY_FROM_HAND"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "optional_actions": [
+            {
+              "conditions": [
+                {
+                  "type": "CHECK_TRAIT",
+                  "value": "G Generation",
+                  "target": "SELECTED_CARD"
+                },
+                {
+                  "type": "COUNT_CARDS",
+                  "value": 1,
+                  "operator": "==",
+                  "target": "SELECTED_CARD"
+                }
+              ],
+              "type": "DISCARD",
+              "target": {
+                "selector": "SELF_HAND"
+              }
+            }
+          ],
+          "next_if_success": [
+            {
+              "amount": -2,
+              "type": "MODIFY_COST",
+              "scope": "PLAY"
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "When playing this card from your hand, you may discard 1 (G Generation) Unit card. If you do, play this card as if it has 2Lv. and cost.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST10-014-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DRAW",
+          "amount": 2
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Draw 2.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "When playing this card from your hand, you may discard 1 (G Generation) Unit card. If you do, play this card as if it has 2Lv. and cost.; 【Main】Draw 2.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[0].actions[0].next_if_success[0]",
+        "kind": "malformed_cost_modifier",
+        "value": "{'amount': -2, 'type': 'MODIFY_COST', 'scope': 'PLAY'}",
+        "message": "Cost modifier must include a modification field"
+      }
+    ]
+  }
+}

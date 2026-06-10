@@ -1,0 +1,61 @@
+{
+  "card_id": "GD01-045",
+  "effects": [
+    {
+      "effect_id": "GD01-045-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_PAIRED"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 3,
+          "type": "LOOK_AT_DECK"
+        },
+        {
+          "optional_actions": [
+            {
+              "filters": {
+                "card_type": "UNIT",
+                "level": {
+                  "operator": "<=",
+                  "value": 4
+                },
+                "traits": [
+                  "ZAFT"
+                ]
+              },
+              "amount": 1,
+              "type": "DEPLOY_FROM_ZONE",
+              "target": {
+                "selector": "LOOKED_AT_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        },
+        {
+          "amount": 2,
+          "type": "RETURN_LOOKED_TO_BOTTOM"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【When Paired】Look at the top 3 cards of your deck. You may deploy 1 (ZAFT) Unit card that is Lv.4 or lower among them. Return the remaining cards randomly to the bottom of your deck.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【When Paired】Look at the top 3 cards of your deck. You may deploy 1 (ZAFT) Unit card that is Lv.4 or lower among them. Return the remaining cards randomly to the bottom of your deck.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

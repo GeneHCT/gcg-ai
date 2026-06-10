@@ -1,0 +1,151 @@
+{
+  "card_id": "ST01-015",
+  "effects": [
+    {
+      "effect_id": "ST01-015-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "DEPLOY_FROM_ZONE",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Deploy this card.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST01-015-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "ON_DEPLOY"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "SHIELD_TO_HAND",
+          "amount": 1,
+          "target": {
+            "selector": "SELF_SHIELDS"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Deploy】Add 1 of your Shields to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "ST01-015-E3",
+      "effect_type": "ACTIVATED",
+      "triggers": [
+        "ACTIVATE_MAIN"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "operator": "==",
+              "value": 0,
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "token_name": "Gundam",
+              "token_traits": [
+                "White Base Team"
+              ],
+              "token_ap": 3,
+              "token_hp": 3,
+              "type": "DEPLOY_TOKEN"
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "operator": "==",
+              "value": 1,
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "token_name": "Guncannon",
+              "token_traits": [
+                "White Base Team"
+              ],
+              "token_ap": 2,
+              "token_hp": 2,
+              "type": "DEPLOY_TOKEN"
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        },
+        {
+          "conditions": [
+            {
+              "type": "COUNT_CARDS",
+              "operator": ">=",
+              "value": 2,
+              "target": {
+                "selector": "FRIENDLY_UNIT"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "token_name": "Guntank",
+              "token_traits": [
+                "White Base Team"
+              ],
+              "token_ap": 1,
+              "token_hp": 1,
+              "type": "DEPLOY_TOKEN"
+            }
+          ],
+          "type": "CONDITIONAL_BRANCH"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Activate･Main】【Once per Turn】②：Deploy 1 [Gundam]((White Base Team)･AP3･HP3) Unit token if you have no Units in play, deploy 1 [Guncannon]((White Base Team)･AP2･HP2) Unit token if you have only 1 Unit in play, or deploy 1 [Guntank]((White Base Team)･AP1･HP1) Unit token if you have 2 or more Units in play.",
+        "source": "llm"
+      },
+      "restrictions": [
+        "ONCE_PER_TURN"
+      ]
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Deploy this card.; 【Deploy】Add 1 of your Shields to your hand.; 【Activate･Main】【Once per Turn】②：Deploy 1 [Gundam]((White Base Team)･AP3･HP3) Unit token if you have no Units in play, deploy 1 [Guncannon]((White Base Team)･AP2･HP2) Unit token if you have only 1 Unit in play, or deploy 1 [Guntank]((White Base Team)･AP1･HP1) Unit token if you have 2 or more Units in play.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "BASE",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "card_id": "GD04-083",
+  "effects": [
+    {
+      "effect_id": "GD04-083-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Add this card to your hand.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-083-E2",
+      "effect_type": "CONTINUOUS",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "League Militaire"
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "is_token"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          },
+          "duration": "PERMANENT",
+          "stat": "AP",
+          "modification": "+1"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "All your (League Militaire) Unit tokens get AP+1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "【Burst】Add this card to your hand.; All your (League Militaire) Unit tokens get AP+1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "PILOT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

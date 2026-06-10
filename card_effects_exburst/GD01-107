@@ -1,0 +1,61 @@
+{
+  "card_id": "GD01-107",
+  "effects": [
+    {
+      "effect_id": "GD01-107-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "amount": 1,
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Place 1 EX Resource.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD01-107-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "PLACE_RESOURCE",
+          "amount": 1,
+          "target": {
+            "selector": "FRIENDLY_RESOURCE"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Place 1 rested Resource.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Place 1 EX Resource.; 【Main】Place 1 rested Resource.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

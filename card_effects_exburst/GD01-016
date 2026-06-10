@@ -1,0 +1,48 @@
+{
+  "card_id": "GD01-016",
+  "effects": [
+    {
+      "effect_id": "GD01-016-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "COUNT_CARDS",
+          "target_selector": "FRIENDLY_UNIT",
+          "operator": ">=",
+          "value": 2,
+          "filters": {
+            "trait": "Earth Federation"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "MODIFY_STAT",
+          "stat": "COST",
+          "modification": -1,
+          "duration": "PERMANENT",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While you have 2 or more (Earth Federation) Units in play, this card in your hand gets cost -1.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "While you have 2 or more (Earth Federation) Units in play, this card in your hand gets cost -1.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

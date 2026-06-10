@@ -1,0 +1,4050 @@
+{
+  "total_cards": 733,
+  "strict_validation": {
+    "supported": 622,
+    "partial": 7,
+    "unsupported": 104,
+    "issue_count": 125
+  },
+  "metadata_status": {
+    "supported": 622,
+    "partial": 7,
+    "unsupported": 104,
+    "unknown": 0
+  },
+  "semantic_issue_count": 383,
+  "affected_cards": [
+    "EB01-006",
+    "EB01-017",
+    "EB01-021",
+    "EB01-022",
+    "EB01-024",
+    "EB01-043",
+    "EB01-044",
+    "EB01-045",
+    "EB01-046",
+    "EB01-050",
+    "EB01-052",
+    "EB01-065",
+    "EB01-070",
+    "EB01-072",
+    "EB01-075",
+    "EB01-076",
+    "EB01-084",
+    "EB01-090",
+    "EXR-001",
+    "EXR-001-ALT5",
+    "EXR-002",
+    "EXRP-002",
+    "EXRP-003",
+    "EXRP-004",
+    "EXRP-005",
+    "EXRP-006",
+    "EXRP-007",
+    "EXRP-008",
+    "EXRP-009",
+    "EXRP-010",
+    "EXRP-011",
+    "EXRP-012",
+    "EXRP-013",
+    "GD01-003",
+    "GD01-009",
+    "GD01-015",
+    "GD01-020",
+    "GD01-026",
+    "GD01-027",
+    "GD01-046",
+    "GD01-048",
+    "GD01-049",
+    "GD01-055",
+    "GD01-065",
+    "GD01-066",
+    "GD01-073",
+    "GD01-075",
+    "GD01-076",
+    "GD01-080",
+    "GD01-082",
+    "GD01-089",
+    "GD01-091",
+    "GD01-098",
+    "GD01-099",
+    "GD01-101",
+    "GD01-103",
+    "GD01-108",
+    "GD01-110",
+    "GD01-111",
+    "GD01-112",
+    "GD01-113",
+    "GD01-114",
+    "GD01-115",
+    "GD01-116",
+    "GD01-117",
+    "GD01-119",
+    "GD01-122",
+    "GD01-124",
+    "GD01-127",
+    "GD01-129",
+    "GD01-130",
+    "GD02-002",
+    "GD02-004",
+    "GD02-011",
+    "GD02-014",
+    "GD02-016",
+    "GD02-022",
+    "GD02-024",
+    "GD02-026",
+    "GD02-031",
+    "GD02-036",
+    "GD02-040",
+    "GD02-042",
+    "GD02-045",
+    "GD02-046",
+    "GD02-047",
+    "GD02-053",
+    "GD02-055",
+    "GD02-056",
+    "GD02-057",
+    "GD02-058",
+    "GD02-069",
+    "GD02-071",
+    "GD02-075",
+    "GD02-083",
+    "GD02-086",
+    "GD02-087",
+    "GD02-089",
+    "GD02-090",
+    "GD02-092",
+    "GD02-095",
+    "GD02-096",
+    "GD02-100",
+    "GD02-101",
+    "GD02-109",
+    "GD02-110",
+    "GD02-111",
+    "GD02-113",
+    "GD02-114",
+    "GD02-115",
+    "GD02-117",
+    "GD02-128",
+    "GD02-130",
+    "GD03-002",
+    "GD03-023",
+    "GD03-025",
+    "GD03-028",
+    "GD03-029",
+    "GD03-033",
+    "GD03-037",
+    "GD03-038",
+    "GD03-039",
+    "GD03-042",
+    "GD03-050",
+    "GD03-051",
+    "GD03-056",
+    "GD03-067",
+    "GD03-068",
+    "GD03-074",
+    "GD03-079",
+    "GD03-084",
+    "GD03-086",
+    "GD03-088",
+    "GD03-090",
+    "GD03-091",
+    "GD03-092",
+    "GD03-093",
+    "GD03-094",
+    "GD03-095",
+    "GD03-098",
+    "GD03-099",
+    "GD03-101",
+    "GD03-102",
+    "GD03-103",
+    "GD03-104",
+    "GD03-107",
+    "GD03-109",
+    "GD03-110",
+    "GD03-111",
+    "GD03-112",
+    "GD03-113",
+    "GD03-114",
+    "GD03-115",
+    "GD03-116",
+    "GD03-118",
+    "GD03-119",
+    "GD03-120",
+    "GD03-121",
+    "GD03-123",
+    "GD03-126",
+    "GD03-127",
+    "GD03-130",
+    "GD03-131",
+    "GD04-002",
+    "GD04-006",
+    "GD04-007",
+    "GD04-009",
+    "GD04-011",
+    "GD04-013",
+    "GD04-015",
+    "GD04-020",
+    "GD04-021",
+    "GD04-023",
+    "GD04-028",
+    "GD04-030",
+    "GD04-035",
+    "GD04-036",
+    "GD04-039",
+    "GD04-042",
+    "GD04-049",
+    "GD04-050",
+    "GD04-051",
+    "GD04-052",
+    "GD04-054",
+    "GD04-056",
+    "GD04-060",
+    "GD04-066",
+    "GD04-067",
+    "GD04-070",
+    "GD04-071",
+    "GD04-081",
+    "GD04-083",
+    "GD04-084",
+    "GD04-087",
+    "GD04-088",
+    "GD04-090",
+    "GD04-092",
+    "GD04-093",
+    "GD04-094",
+    "GD04-095",
+    "GD04-097",
+    "GD04-098",
+    "GD04-099",
+    "GD04-101",
+    "GD04-102",
+    "GD04-104",
+    "GD04-108",
+    "GD04-109",
+    "GD04-110",
+    "GD04-111",
+    "GD04-114",
+    "GD04-115",
+    "GD04-116",
+    "GD04-117",
+    "GD04-118",
+    "GD04-119",
+    "GD04-120",
+    "GD04-121",
+    "GD04-122",
+    "GD04-125",
+    "GD04-127",
+    "ST01-014",
+    "ST01-016",
+    "ST02-010",
+    "ST02-014",
+    "ST03-001",
+    "ST03-004",
+    "ST03-011",
+    "ST03-012",
+    "ST03-013",
+    "ST04-001",
+    "ST04-009",
+    "ST04-012",
+    "ST04-013",
+    "ST04-014",
+    "ST04-016",
+    "ST05-001",
+    "ST05-003",
+    "ST05-010",
+    "ST05-011",
+    "ST05-012",
+    "ST05-013",
+    "ST05-015",
+    "ST06-003",
+    "ST06-005",
+    "ST06-007",
+    "ST06-009",
+    "ST06-011",
+    "ST06-014",
+    "ST07-001",
+    "ST07-005",
+    "ST07-009",
+    "ST07-011",
+    "ST07-013",
+    "ST08-004",
+    "ST08-010",
+    "ST08-011",
+    "ST08-012",
+    "ST08-013",
+    "ST08-014",
+    "ST09-001",
+    "ST09-002",
+    "ST09-004",
+    "ST09-006",
+    "ST09-009",
+    "ST10-001",
+    "ST10-006",
+    "ST10-013",
+    "T-014"
+  ],
+  "issues": [
+    {
+      "card_id": "EB01-006",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your Units. It gains【Repair 1】 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "EB01-017",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state DESTROYED_BY_BATTLE_DAMAGE is not supported by ConditionEvaluator.",
+      "raw_text": "【Destroyed】If this Unit is destroyed with battle damage, you and the player who destroyed this Unit draw 1.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "EB01-021",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ATTACKING is not supported by ConditionEvaluator.",
+      "raw_text": "【Breach 4】(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "EB01-022",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state DESTROYED is not supported by ConditionEvaluator.",
+      "raw_text": "【Breach 5】(When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "EB01-024",
+      "path": "effects[0].actions[0].target.filters.has_keyword",
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "message": "Printed target requires filter has_keyword=blocker, but IR has BLOCKER.",
+      "raw_text": "【Attack】Choose 1 enemy Unit with 【Blocker】that is Lv.5 or lower. Deal 2 damage to it.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "EB01-043",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Attack】If a friendly Unit with【Blocker】is in play, choose 1 enemy Unit that is Lv.5 or lower. It gets AP-2 during this battle.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EB01-044",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】If there are 2 or more enemy players, choose 1 Unit belonging to an enemy player with the most Units. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EB01-045",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】Choose 1 enemy Unit with【Repair】. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EB01-046",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】Choose 1 enemy Unit that is Lv.4 or higher. It gets AP-2 during this battle.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-050",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Attack】Place the top card of you deck in your trash. If you placed a card that is Lv.3 or higher with this effect, choose 1 enemy Unit. It gets AP-2 during this battle.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EB01-052",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】If 3 or more enemy Units are in play, choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EB01-065",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】Choose 1 friendly (G Generation) Unit. it gains【Breach】during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EB01-070",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTIVATE_ACTION, but triggers are ['WHILE_LINKED'].",
+      "raw_text": "【During Link】【Activate･Action】【Once per Turn】① : If it is your opponent's turn, choose 1 Unit. It gets AP+1 during this battle.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-072",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【When Paired】Choose 1 active friendly Unit with【Blocker】and 1 enemy Unit that is Lv.4 or lower. Rest them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "EB01-075",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 2 or less HP. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-075",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 2 or less HP. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-076",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (G Generation) Unit. It recovers 3 HP.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-076",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (G Generation) Unit. It recovers 3 HP.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-084",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 Unit with【Blocker】. Set it as active. It can't attack during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "EB01-090",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if it is your turn, choose 1 Unit with 2 or less HHP belonging to each enemy player. Return them to their owner's hands.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "EXR-001",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then remove it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXR-001-ALT5",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXR-002",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-002",
+      "path": "effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-003",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-004",
+      "path": "effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-005",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-006",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-007",
+      "path": "effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-008",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-009",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-010",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-011",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-012",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "EXRP-013",
+      "path": "continuous_effects[1].actions",
+      "kind": "then_clause_review",
+      "severity": "review",
+      "message": "Printed text uses Then; verify the follow-up is represented as ordered actions even if the first part fails.",
+      "raw_text": "Rest an EX Resource then exile it from the game when paying a cost.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-003",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_LINKED'].",
+      "raw_text": "【During Link】【Attack】Choose 12 cards from your trash. Return them to their owner's deck and shuffle it. If you do, set this Unit as active. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-003",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【During Link】【Attack】Choose 12 cards from your trash. Return them to their owner's deck and shuffle it. If you do, set this Unit as active. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD01-009",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Choose 1 of your (White Base Team) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-015",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Attack】Choose 1 of your Units. It recovers 1 HP.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD01-020",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Choose 1 rested enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-026",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_DESTROYED, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Destroyed】Deploy 1 rested [Char's Zaku Ⅱ]((Zeon)･AP3･HP1) Unit token.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-027",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Deploy】If there are 10 or more (Zeon)/(Neo Zeon) Unit cards in your trash, deal 4 damage to all Units with <Blocker>.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-046",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "<Support 3> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-046",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "When you use this Unit's <Support> to increase a (ZAFT) Unit's AP, set this Unit as active.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-046",
+      "path": "effects[1]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<SUPPORT> stacks by value and should normally include a numeric value.",
+      "raw_text": "When you use this Unit's <Support> to increase a (ZAFT) Unit's AP, set this Unit as active.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-048",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-048",
+      "path": "effects[1].actions",
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "message": "Printed text is optional, but IR does not expose an optional action marker.",
+      "raw_text": "【Deploy】Look at the top card of your deck. If it is a (Zeon)/(Neo Zeon) Unit card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-049",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your (ZAFT) Units with 5 or more AP. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD01-055",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-065",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Pair】【Once per Turn】When you pair a Pilot with this Unit or one of your white Units, choose 1 enemy Unit. It gets AP-2 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-066",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Deploy】Deploy 1 [Fatum-00]((Triple Ship Alliance)･AP2･HP2･<Blocker>) Unit token.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-066",
+      "path": "effects[1].actions[0].target.filters.traits",
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "message": "Printed target requires filter traits=['Triple Ship Alliance'], but IR has None.",
+      "raw_text": "【During Pair】【Attack】Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD01-066",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-073",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Link】【Attack】Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-075",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-076",
+      "path": "effects[0].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'type': 'MODIFY_STAT', 'target': 'SELF', 'stat': 'HP', 'modification': '+1'}.",
+      "raw_text": "While there are 4 or more Command cards in your trash, this Unit gets AP+1 and HP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-080",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Destroyed】Choose 1 enemy Unit that is Lv.2 or lower. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-082",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTIVATE_ACTION, but triggers are ['WHILE_PAIRED'].",
+      "raw_text": "【During Pair】【Activate･Action】【Once per Turn】②：Choose 1 enemy Unit. It gets AP-1 during this battle.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-089",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <REPAIR>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "While this Unit has <Repair>, it gets AP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-089",
+      "path": "effects[1]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<REPAIR> stacks by value and should normally include a numeric value.",
+      "raw_text": "While this Unit has <Repair>, it gets AP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-091",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BREACH>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "During your turn, while this Unit has <Breach>, it can't receive battle damage from enemy Units with 3 or less AP.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-091",
+      "path": "effects[1]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<BREACH> stacks by value and should normally include a numeric value.",
+      "raw_text": "During your turn, while this Unit has <Breach>, it can't receive battle damage from enemy Units with 3 or less AP.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-098",
+      "path": "effects[1].actions",
+      "kind": "recover_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed text implies RECOVER_HP, but no matching action was found.",
+      "raw_text": "【Activate･Action】【Once per Turn】If an enemy Unit with 1 or less AP is in play, this Unit recovers 1 HP.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-099",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 3 or less HP. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-099",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units with 3 or less HP. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-101",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】Choose 1 friendly Link Unit. It recovers 3 HP.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-103",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Choose 1 active friendly (Earth Federation) Unit and 1 active enemy Unit. Rest them.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-108",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Main】Deal 2 damage to all Units with <Blocker>.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD01-110",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 Unit that is Lv.4 or higher. During this turn, it may choose an active enemy Unit with 6 or less AP as its attack target.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-111",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 damaged enemy Unit. Deal 3 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-111",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 damaged enemy Unit. Deal 3 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-112",
+      "path": "effects[1].actions[0].target.count",
+      "kind": "target_count_mismatch",
+      "severity": "warning",
+      "message": "Printed text chooses 2 target(s), but IR count is 1.",
+      "raw_text": "【Main】Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.",
+      "recommendation": "Set target.count to match the printed choice count."
+    },
+    {
+      "card_id": "GD01-112",
+      "path": "effects[1].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Main】Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD01-112",
+      "path": "effects[1].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Main】Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD01-113",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (ZAFT) Unit. It gets AP+3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-114",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Action】Choose 2 friendly Units. They get AP+1 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-115",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-115",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-116",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-117",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-119",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD01-122",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand. If you have a Link Unit in play, choose 1 enemy Unit with 4 or less HP instead.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-124",
+      "path": "effects[2].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Base：Choose 1 friendly Unit. It recovers 1 HP.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD01-127",
+      "path": "effects[2].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Activate･Action】Rest this Base：Choose 1 friendly (ZAFT) Unit with 5 or more AP. It gains <Breach 3> during this battle. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-129",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD01-130",
+      "path": "effects[2].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Base：If a friendly (Academy) Unit is in play, choose 1 enemy Unit. It gets AP-1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-002",
+      "path": "effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state DESTROYED_BY_BATTLE_DAMAGE is not supported by ConditionEvaluator.",
+      "raw_text": "【During Link】【Once per Turn】During your turn, when one of your Units destroys an enemy Unit with battle damage, set this Unit as active.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD02-004",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】Choose 1 rested enemy Unit with 3 or less HP. It won't be set as active during the start phase of your opponent's next turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-011",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets ENEMY_BASE.",
+      "raw_text": "【Activate･Action】Destroy this Unit：Choose 1 enemy Base/enemy Shield this Unit is battling. Deal 6 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-011",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets OPPONENT_SHIELDS.",
+      "raw_text": "【Activate･Action】Destroy this Unit：Choose 1 enemy Base/enemy Shield this Unit is battling. Deal 6 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-014",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Choose 1 of your (Titans) Units. It gets AP+1 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-014",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'type': 'MODIFY_STAT', 'target': 'OTHER_FRIENDLY_UNIT', 'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN'}.",
+      "raw_text": "【Deploy】Choose 1 of your (Titans) Units. It gets AP+1 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-016",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your (Titans) Units. It gets AP+1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-016",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'target_filters': {'traits': ['Titans']}, 'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'OTHER_FRIENDLY_UNIT'}}.",
+      "raw_text": "【Deploy】Choose 1 of your (Titans) Units. It gets AP+1 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-022",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Once per Turn】When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <Breach 2> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-024",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【During Link】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-026",
+      "path": "effects[0].actions[0].target.filters.traits",
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "message": "Printed target requires filter traits=['AGE System'], but IR has None.",
+      "raw_text": "【Deploy】If you are Lv.7 or higher, choose 1 of your (AGE System) Units. It gets AP+2 during this turn.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD02-026",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'type': 'MODIFY_STAT', 'stat': 'AP', 'modification': 2, 'duration': 'THIS_TURN', 'target': {'selector': 'SELECTED_CARD'}}.",
+      "raw_text": "【Deploy】If you are Lv.7 or higher, choose 1 of your (AGE System) Units. It gets AP+2 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-031",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'type': 'MODIFY_STAT', 'target': 'SELF', 'stat': 'AP', 'modification': 2}.",
+      "raw_text": "While you are Lv.7 or higher, this Unit gets AP+2.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-036",
+      "path": "effects[1].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state DAMAGED is not supported by ConditionEvaluator.",
+      "raw_text": "【During Pair･(Neo Zeon) Pilot】【Attack】Choose 1 damaged enemy Unit. Deal 2 damage to it.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD02-036",
+      "path": "effects[1].actions[0].target.filters",
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "message": "Printed target requires CHECK_STAT, but the IR has no matching condition/filter.",
+      "raw_text": "【During Pair･(Neo Zeon) Pilot】【Attack】Choose 1 damaged enemy Unit. Deal 2 damage to it.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-040",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your other (New UNE) Units. It can't receive battle damage from enemy Units with 2 or less HP during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-042",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Choose 1 of your (New UNE) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-042",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Deploy】Choose 1 of your (New UNE) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-045",
+      "path": "effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ENEMY is not supported by ConditionEvaluator.",
+      "raw_text": "【Attack】If this Unit has 5 or more AP and it is attacking an enemy Unit, draw 1.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD02-046",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state True is not supported by ConditionEvaluator.",
+      "raw_text": "【Deploy】Choose 1 enemy Unit token. Deal 2 damage to it.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD02-047",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Unit：Destroy this and choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-047",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Unit：Destroy this and choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-053",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'type': 'MODIFY_STAT', 'stat': 'AP', 'modification': 2}.",
+      "raw_text": "【During Link】During your turn, while there are 7 or more cards in your trash, all your other (Vulture) Units get AP+2.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-055",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-056",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Pair･(Vulture) Pilot】【Destroyed】Choose 1 (Vulture) Unit card that is Lv.5 or higher from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-057",
+      "path": "effects[0].actions[0].optional_actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【During Pair】【Attack】You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-057",
+      "path": "effects[0].actions[0].next_if_success[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【During Pair】【Attack】You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-057",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-058",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Deploy】Choose 1 of your Units. Deal 1 damage to it. If you do, draw 1. Then, discard 1.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD02-069",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_BASE, but IR action targets SELF.",
+      "raw_text": "【During Link】【Activate･Main】【Once per Turn】Choose 1 active friendly Base. Rest it. If you do, set this Unit as active. It can't choose the enemy player as its attack target during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-069",
+      "path": "effects[0].actions[2].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_BASE, but IR action targets SELF.",
+      "raw_text": "【During Link】【Activate･Main】【Once per Turn】Choose 1 active friendly Base. Rest it. If you do, set this Unit as active. It can't choose the enemy player as its attack target during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-069",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【During Link】【Activate･Main】【Once per Turn】Choose 1 active friendly Base. Rest it. If you do, set this Unit as active. It can't choose the enemy player as its attack target during this turn.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD02-071",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state True is not supported by ConditionEvaluator.",
+      "raw_text": "【Deploy】If a friendly white Base is in play, you may pair 1 (AEUG) Pilot card from your hand with this Unit.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD02-075",
+      "path": "effects[0].actions[1].next_if_success[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_BASE, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Attack】Choose 1 active friendly Base. Rest it. If you do, choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this battle.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-083",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Destroyed】If it is your opponent's turn, choose 1 of your (Gjallarhorn) Units. Set it as active.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD02-086",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'conditions': [{'type': 'CHECK_TRAIT', 'trait': 'Titans', 'selector': 'OTHER_FRIENDLY_UNIT'}], 'duration': 'PERMANENT', 'type': 'MODIFY_STAT', 'target': {'selector': 'SELF'}}.",
+      "raw_text": "While you have another (Titans) Unit in play, this gets AP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-087",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】If this is a blue Unit, choose 1 enemy Unit with <Blocker>. Rest it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-089",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】Choose 1 of your other (Zeon) Link Units. It gains <Breach 1> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-090",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'type': 'MODIFY_STAT', 'selector': 'SELF', 'stat': 'AP', 'modification': 1, 'duration': 'PERMANENT'}.",
+      "raw_text": "While you have another Unit with <High-Maneuver> in play, this Unit gets AP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-090",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "While you have another Unit with <High-Maneuver> in play, this Unit gets AP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-092",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Link】【Attack】Choose 1 of your (New UNE) Units. It gets AP+2 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-095",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Attack】If this Unit is damaged and Lv.5 or lower, it gains <High-Maneuver> during this battle. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-096",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】You may choose 1 (Vagan) Unit card that is Lv.2 or lower from your trash. Pay its cost to deploy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-100",
+      "path": "effects[1].actions[0].target.filters",
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "message": "Printed target requires CHECK_STAT, but the IR has no matching condition/filter.",
+      "raw_text": "【Main】Choose 1 friendly damaged Unit. It recovers 2 HP. Then, draw 1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD02-101",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-101",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-109",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-109",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-110",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Choose 1 Unit card that is Lv.5 or lower from your trash. Pay its cost to deploy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-111",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Burst】Choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-111",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Choose 6 purple Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Destroy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-111",
+      "path": "effects[1].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Main】Choose 6 purple Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Destroy it.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD02-113",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-113",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-114",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 damaged friendly Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-114",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 damaged friendly Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-115",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vulture) Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD02-117",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Burst】Choose 1 (AEUG) Base card from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-128",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if it is your turn and a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD02-130",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if a friendly (Gjallarhorn) Unit is in play, choose 1 enemy Unit. It gets AP-2 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-002",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <REPAIR>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【During Pair】When one of your other Units with <Repair> attacks, choose 1 enemy Unit whose Lv. is equal to or lower than that Unit. Rest it.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-002",
+      "path": "effects[0]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<REPAIR> stacks by value and should normally include a numeric value.",
+      "raw_text": "【During Pair】When one of your other Units with <Repair> attacks, choose 1 enemy Unit whose Lv. is equal to or lower than that Unit. Rest it.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-023",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-023",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-025",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-028",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state BATTLING_UNIT is not supported by ConditionEvaluator.",
+      "raw_text": "【Attack】If you are attacking an enemy Unit, this Unit gets AP+2 during this battle.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD03-028",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'type': 'MODIFY_STAT', 'stat': 'AP', 'modification': 2, 'target': {'selector': 'SELF'}}.",
+      "raw_text": "【Attack】If you are attacking an enemy Unit, this Unit gets AP+2 during this battle.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-029",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "During your turn, when this Unit destroys an enemy Unit with battle damage, deal 2 damage to all enemy Units with <Blocker>.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-033",
+      "path": "effects[1].actions[0].amount",
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed amount is 1, but IR value is {'type': 'STAT_DIVIDE', 'stat': 'AP', 'target': 'SELF', 'divisor': 4}.",
+      "raw_text": "【Attack】Choose 1 enemy Unit. Deal 1 damage to it for each 4 AP this Unit has.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-037",
+      "path": "continuous_effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_DESTROYED, but triggers are [].",
+      "raw_text": "【During Link】During your turn, while this Unit is battling an enemy Unit with a 【Destroyed】 effect, it gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-038",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "During your turn, when this Unit is rested by an effect, choose 1 of your (ZAFT) Units. It gets AP+2 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-038",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'stat': 'AP', 'modification': 2, 'duration': 'THIS_TURN', 'filters': {'traits': ['ZAFT']}, 'type': 'MODIFY_STAT', 'target': {'selector': 'OTHER_FRIENDLY_UNIT'}}.",
+      "raw_text": "During your turn, when this Unit is rested by an effect, choose 1 of your (ZAFT) Units. It gets AP+2 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-039",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 other active friendly (Clan) Unit. Rest it. If you do, choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-039",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 other active friendly (Clan) Unit. Rest it. If you do, choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-039",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Deploy】Choose 1 other active friendly (Clan) Unit. Rest it. If you do, choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD03-042",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "While this Unit has 5 or more AP, it may choose an active enemy Unit that is Lv.5 or lower as its attack target.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-050",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Activate･Main】Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-050",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Activate･Main】Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD03-051",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】You may choose 1 Unit card that is Lv.4 or lower from your trash. Pay its cost to deploy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-056",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-067",
+      "path": "effects[0].actions[0].optional_actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'SELECTED_CARD'}}.",
+      "raw_text": "【Deploy】You may choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-068",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state IN_PLAY is not supported by ConditionEvaluator.",
+      "raw_text": "While a friendly Base is in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD03-074",
+      "path": "effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state rested is not supported by ConditionEvaluator.",
+      "raw_text": "【During Pair】While you have another (Superpower Bloc) Unit in play, enemy Units choose this rested Unit as their attack target if possible when attacking.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD03-079",
+      "path": "effects[0].actions",
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "message": "Printed text is optional, but IR does not expose an optional action marker.",
+      "raw_text": "When you rest your Base with one of your Units' effects, you may rest this Unit instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-084",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【When Linked】Choose 1 of your other Units. It gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-084",
+      "path": "effects[1].actions",
+      "kind": "draw_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed text implies DRAW, but no matching action was found.",
+      "raw_text": "【When Linked】Choose 1 of your other Units. It gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1. (At the end of your turn, this Unit recovers the specified number of HP.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-086",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Attack】Choose 1 of your (Titans) Units whose Lv. is equal to or lower than this Unit. It gets AP+1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-088",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'type': 'MODIFY_STAT', 'stat': 'AP', 'modification': 1}.",
+      "raw_text": "【During Link】If this is an (AGE System) Unit, it gets AP+1 and <Breach 1>. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-090",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Attack】Choose 1 of your (Cyclops Team) Units. It gains <Breach 1> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-091",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】Choose 1 (ZAFT) Base card from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-092",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】Place the top card of your deck into your trash. If you placed a (Zeon)/(Clan) card with this effect, choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-092",
+      "path": "effects[1].actions",
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed text implies DAMAGE_UNIT, but no matching action was found.",
+      "raw_text": "【When Linked】Place the top card of your deck into your trash. If you placed a (Zeon)/(Clan) card with this effect, choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-093",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'type': 'MODIFY_STAT', 'stat': 'AP', 'modification': 1, 'duration': 'PERMANENT', 'target': {'selector': 'SELF'}}.",
+      "raw_text": "While no enemy Base is in play, this Unit gets AP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-094",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】Place the top 2 cards of your deck into your trash. If you placed a (Vagan) card with this effect, choose 1 enemy Unit. It gets AP-2 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-095",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Once per Turn】When this Unit receives effect damage, choose 1 enemy Unit. It gets AP-1 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-098",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Link】When this rested Unit is set as active by an effect, choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-099",
+      "path": "effects[1].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state True is not supported by ConditionEvaluator.",
+      "raw_text": "【During Link】【Destroyed】If a friendly white Base is in play, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Return it to its owner's hand.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD03-099",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Link】【Destroyed】If a friendly white Base is in play, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-101",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Draw 1. Then, if there are 2 or more cards with \"A Healthy Curiosity\" in their card name in your trash, choose 1 enemy Unit with 4 or less HP. Rest it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-102",
+      "path": "effects[1].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state BATTLING is not supported by ConditionEvaluator.",
+      "raw_text": "【Action】Choose 1 of your (Titans) Link Units battling an enemy Unit. Set it as active.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD03-102",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Action】Choose 1 of your (Titans) Link Units battling an enemy Unit. Set it as active.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-103",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】If 3 or more enemy Units are in play, choose 1 rested enemy Unit. Deal 2 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-103",
+      "path": "effects[1].actions",
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed text implies DAMAGE_UNIT, but no matching action was found.",
+      "raw_text": "【Main】If 3 or more enemy Units are in play, choose 1 rested enemy Unit. Deal 2 damage to it.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-104",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit with 3 or less HP. Rest it. If a friendly (Jupitris) Link Unit is in play, choose 1 to 2 enemy Units with 3 or less HP instead.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-107",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Choose 1 enemy Unit that is Lv.5 or lower. Deal damage to it equal to the number of friendly Unit tokens in play.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-109",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. Deal 3 damage to it. If there are 2 or more cards with \"Improved Technique\" in their card name in your trash, choose 1 enemy Unit instead.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-109",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.4 or lower. Deal 3 damage to it. If there are 2 or more cards with \"Improved Technique\" in their card name in your trash, choose 1 enemy Unit instead.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-110",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets PAIRED_PILOT.",
+      "raw_text": "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-110",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-110",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets PAIRED_PILOT.",
+      "raw_text": "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-110",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 Pilot paired with an enemy Unit that is Lv.5 or lower. Destroy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-111",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Mafty) Unit. It gets AP+3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-111",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Mafty) Unit. It gets AP+3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-112",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】During this turn, all Units paired with a Pilot get AP+2.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-112",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】During this turn, all Units paired with a Pilot get AP+2.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-113",
+      "path": "effects[0].actions[0].next_if_success[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Main】/【Action】Choose 1 active friendly Unit. Rest it. If you do, choose 1 enemy Unit whose Lv. is equal to or lower than the Unit rested with this ability. Deal 3 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-113",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 active friendly Unit. Rest it. If you do, choose 1 enemy Unit whose Lv. is equal to or lower than the Unit rested with this ability. Deal 3 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-113",
+      "path": "effects[1].actions[0].next_if_success[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Main】/【Action】Choose 1 active friendly Unit. Rest it. If you do, choose 1 enemy Unit whose Lv. is equal to or lower than the Unit rested with this ability. Deal 3 damage to it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-113",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 active friendly Unit. Rest it. If you do, choose 1 enemy Unit whose Lv. is equal to or lower than the Unit rested with this ability. Deal 3 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-114",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Action】Choose 1 active enemy Unit that is Lv.2 or lower. Destroy it. If there are 10 or more cards in your trash, choose 1 active enemy Unit that is Lv.4 or lower instead.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-115",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Action】Choose 1 friendly Unit paired with an (X-Rounder) Pilot. It can't receive battle damage from enemy Units with 2 or less AP during this battle. If you are Lv.7 or higher, it can't receive battle damage from enemy Units with 5 or less AP instead.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-116",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-116",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-116",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-116",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-116",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-116",
+      "path": "effects[3].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Vagan) Unit and 1 enemy Unit. Deal 2 damage to them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD03-118",
+      "path": "effects[1].actions[1].optional_actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Action】Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with \"Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-118",
+      "path": "effects[1].actions",
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "message": "Printed text is optional, but IR does not expose an optional action marker.",
+      "raw_text": "【Action】Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with \"Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-119",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_BASE, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Main】Choose 1 rested friendly Base. Set it as active. If you do, all enemy Units get AP-1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-119",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Main】Choose 1 rested friendly Base. Set it as active. If you do, all enemy Units get AP-1 during this turn.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD03-120",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】During this turn, if a friendly (Superpower Bloc)/(UN) Unit destroys an enemy Unit with battle damage, choose 1 rested friendly (Superpower Bloc)/(UN) Unit. Set it as active. It can't attack during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-121",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_BASE.",
+      "raw_text": "【Action】Choose 1 friendly Base and 1 enemy Unit with 3 or less HP. Rest them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD03-123",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if a friendly (Jupitris) Unit is in play, choose 1 enemy Unit that is Lv.3 or lower. Rest it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-126",
+      "path": "effects[2].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'filters': {'is_token': True}, 'type': 'MODIFY_STAT', 'target': {'selector': 'FRIENDLY_UNIT'}}.",
+      "raw_text": "All friendly Unit tokens get AP+1 during your opponent's turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-127",
+      "path": "effects[1].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+3, but IR has {'conditions': [{'type': 'CHECK_TRAIT', 'value': 'ZAFT'}], 'modification': {'stat': 'AP', 'value': 3}, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'FRIENDLY_UNIT', 'filters': {'traits': ['ZAFT']}}, 'stat': 'AP'}.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, Choose 1 friendly (ZAFT) Unit. It gets AP+3 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD03-130",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if it is your turn, you may choose 1 (Vagan) Unit card that is Lv.4 or lower from your trash. Pay its cost to deploy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD03-131",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if you have 2 or more (Triple Ship Alliance) Units in play, choose 1 enemy Unit that is Lv.4 or lower. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-002",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】During this turn, when one of your (Earth Federation) Units destroys an enemy Unit with battle damage, choose 1 enemy Unit with 5 or less HP. Rest it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-006",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Activate･Main】【Once per Turn】Rest 1 of your other (League Militaire) Units：Choose 1 enemy Unit with 4 or less HP. Rest it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-007",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ATTACKING is not supported by ConditionEvaluator.",
+      "raw_text": "【During Pair】【Attack】Deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-007",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Pair】【Attack】Deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-007",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】Deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-009",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】Choose 1 of your other (White Base Team) Units that is Lv.4 or higher. Set it as active.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-011",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Destroyed】If another friendly (League Militaire) Unit is in play, deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-013",
+      "path": "effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state token is not supported by ConditionEvaluator.",
+      "raw_text": "While this Unit is rested, all your (League Militaire) Unit tokens gain <Blocker>. (Rest this Unit to change the attack target to it.)",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-015",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your active (League Militaire) Units and 1 enemy Unit that is Lv.3 or lower. Rest them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-020",
+      "path": "effects[0].conditions[2].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ACTIVATED is not supported by ConditionEvaluator.",
+      "raw_text": "【Once per Turn】During your turn, when you play and activate a (Dawn of Fold) Command card using an EX Resource, draw 1.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-021",
+      "path": "effects[0].conditions[2].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ACTIVATED is not supported by ConditionEvaluator.",
+      "raw_text": "During your turn, when you play and activate a (Dawn of Fold) Command card using an EX Resource, you may pair that card from your trash with one of your Units with \"Gundam Lfrith\" in its card name.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-023",
+      "path": "effects[0].actions[0].target.filters",
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "message": "Printed target requires CHECK_PAIRED_PILOT_TRAIT, but the IR has no matching condition/filter.",
+      "raw_text": "【Deploy】Choose 1 of your Units paired with a (Super Soldier) Pilot. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-028",
+      "path": "effects[0].actions[1].optional_actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Attack】Choose 1 active enemy Unit. It gains <Blocker> during this turn. (Rest this Unit to change the attack target to it.)",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-030",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Attack】Choose 1 of your other (Academy) Units. During this turn, it may choose an active enemy Unit that is Lv.3 or lower as its attack target.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-035",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Choose 1 of your (Mafty) Units. When it destroys an enemy Unit with battle damage during this turn, if you have 3 or less cards in your hand, draw 1.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-035",
+      "path": "effects[0].actions",
+      "kind": "draw_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed text implies DRAW, but no matching action was found.",
+      "raw_text": "【Deploy】Choose 1 of your (Mafty) Units. When it destroys an enemy Unit with battle damage during this turn, if you have 3 or less cards in your hand, draw 1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-036",
+      "path": "effects[0].actions[0].optional_actions[0].target.filters.state",
+      "kind": "target_filter_mismatch",
+      "severity": "fixable",
+      "message": "Printed target requires filter state=ACTIVE, but IR has None.",
+      "raw_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD04-036",
+      "path": "effects[0].actions[0].optional_actions[0].target.filters.traits",
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "message": "Printed target requires filter traits=['CB'], but IR has None.",
+      "raw_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD04-036",
+      "path": "effects[0].actions[0].optional_actions[0].target.variable_count",
+      "kind": "target_variable_count_mismatch",
+      "severity": "warning",
+      "message": "Printed text chooses a target range, but IR variable_count does not match.",
+      "raw_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+      "recommendation": "Represent ranges such as 1 to 2 with variable_count min/max."
+    },
+    {
+      "card_id": "GD04-036",
+      "path": "effects[0].actions[0].optional_actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets ENEMY_UNIT.",
+      "raw_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-036",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Deploy】You may choose 1 to 2 of your other active (CB) Units. Rest them. If you do, deal damage equal to the number of Units rested with this effect to all enemy Units that are Lv.6 or lower.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD04-039",
+      "path": "effects[1].actions[1].amount",
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed amount is 1, but IR value is 3.",
+      "raw_text": "【Deploy】Choose 1 enemy Unit. Deal 1 damage to it. If it has <Repair>, deal 3 damage instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-039",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <REPAIR>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Deploy】Choose 1 enemy Unit. Deal 1 damage to it. If it has <Repair>, deal 3 damage instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-039",
+      "path": "effects[1]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<REPAIR> stacks by value and should normally include a numeric value.",
+      "raw_text": "【Deploy】Choose 1 enemy Unit. Deal 1 damage to it. If it has <Repair>, deal 3 damage instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-042",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Link】【Once per Turn】When damage from one of your Units paired with a (Cyber-Newtype) Pilot destroys an enemy shield area card, choose 1 enemy Unit with 5 or less AP. Deal 2 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-049",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】If you are attacking the enemy player, you may choose 7 (Vulture) cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit/Base that is Lv.8 or lower. Destroy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-050",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Pair】【Attack】You may choose 1 (Minerva Squad) Unit card from your trash. Pay its cost to deploy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-050",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】You may choose 1 (Minerva Squad) Unit card from your trash. Pay its cost to deploy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-051",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【During Pair･(Vulture) Pilot】If there are 7 or more cards in your trash, this Unit may choose an active enemy Unit with a keyword effect as its attack target.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-052",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ATTACKING is not supported by ConditionEvaluator.",
+      "raw_text": "【During Pair】【Attack】You may choose 1 enemy Unit. Deal 2 damage to it and this Unit.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-052",
+      "path": "effects[0].actions[0].optional_actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【During Pair】【Attack】You may choose 1 enemy Unit. Deal 2 damage to it and this Unit.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-052",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Attack】You may choose 1 enemy Unit. Deal 2 damage to it and this Unit.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-054",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state BATTLING is not supported by ConditionEvaluator.",
+      "raw_text": "When this Unit deals battle damage to an enemy Unit, destroy that enemy Unit.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-056",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Deploy】Deal 1 damage to this Unit. If you do, choose 1 enemy Unit with 3 or less AP. Rest it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-056",
+      "path": "effects[0].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Deploy】Deal 1 damage to this Unit. If you do, choose 1 enemy Unit with 3 or less AP. Rest it.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD04-060",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state FROM_TRASH is not supported by ConditionEvaluator.",
+      "raw_text": "【Deploy】If you deploy this Unit from your trash, draw 1.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-066",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, MAIN_PHASE, but triggers are ['ACTIVATE_MAIN'].",
+      "raw_text": "When you activate a Command's 【Main】/【Action】 effect, choose 1 enemy Unit. It gets AP-2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0].actions[2].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BREACH>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<BREACH> stacks by value and should normally include a numeric value.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <FIRST_STRIKE>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "message": "<SUPPORT> stacks by value and should normally include a numeric value.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPRESSION>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-067",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①：Choose 1 Unit card with <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> from your trash. During this turn, this Unit gets AP+1 and all <Repair>/<Breach>/<First Strike>/<Support>/<High-Maneuver>/<Suppression>/<Blocker> on that Unit card.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-070",
+      "path": "effects[0].actions",
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "message": "Printed text is optional, but IR does not expose an optional action marker.",
+      "raw_text": "【Deploy】You may pair 1 Pilot card with \"Ali al-Saachez\" in its card name from your hand with this Unit.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-071",
+      "path": "effects[1].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Activate･Main】Choose 1 (Superpower Bloc) card and 1 (UN) card from your trash. Exile them from the game. If you do, set this Unit as active. It can't attack during this turn.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD04-081",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】If this is a (League Militaire) Unit, deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-083",
+      "path": "continuous_effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state is_token is not supported by ConditionEvaluator.",
+      "raw_text": "All your (League Militaire) Unit tokens get AP+1.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-084",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Attack】Choose 1 of your (White Base Team) Units. It gets AP+1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-084",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'conditions': [{'type': 'CHECK_TRAIT', 'value': 'White Base Team'}], 'type': 'MODIFY_STAT', 'target': {'selector': 'OTHER_FRIENDLY_UNIT'}}.",
+      "raw_text": "【Attack】Choose 1 of your (White Base Team) Units. It gets AP+1 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-087",
+      "path": "effects[1].actions[0].optional_actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【During Link】【Attack】You may choose 1 of your (Academy) Units. During this battle, battle damage this Unit would receive is dealt to that Unit instead.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-088",
+      "path": "effects[1].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state BLOCKING is not supported by ConditionEvaluator.",
+      "raw_text": "When this Unit is blocked by an enemy Unit that is Lv.4 or lower, it can't receive battle damage during this battle.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-090",
+      "path": "effects[1].actions",
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "message": "Printed text is optional, but IR does not expose an optional action marker.",
+      "raw_text": "【During Link】【Once per Turn】During your turn, when this Unit destroys an enemy Unit with battle damage, look at the top card of your deck. If it is a (CB) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-092",
+      "path": "effects[1].actions[0].target.filters",
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "message": "Printed target requires CHECK_STAT, but the IR has no matching condition/filter.",
+      "raw_text": "【When Linked】Choose 1 damaged enemy Unit. Deal 1 damage to it.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-093",
+      "path": "effects[1].actions[0].target.filters.traits",
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "message": "Printed target requires filter traits=['ZAFT'], but IR has None.",
+      "raw_text": "【When Linked】Choose 1 of your (ZAFT) Link Units. During this turn, reduce the next damage it receives by 2.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD04-093",
+      "path": "effects[1].actions[0].target.filters",
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "message": "Printed target requires CHECK_LINK_STATUS, but the IR has no matching condition/filter.",
+      "raw_text": "【When Linked】Choose 1 of your (ZAFT) Link Units. During this turn, reduce the next damage it receives by 2.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "GD04-094",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】Choose 1 purple Unit card with <Suppression> from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-095",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【When Linked】Choose 1 of your (Minerva Squad) Units. During this turn, battle damage it would receive is dealt to this Unit instead.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-097",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Linked】Choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-098",
+      "path": "effects[1].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state RECEIVING_EFFECT_DAMAGE is not supported by ConditionEvaluator.",
+      "raw_text": "【During Link】When this Unit receives effect damage from an enemy, reduce it by 2.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "GD04-099",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_ATTACK, but triggers are ['ON_LINKED'].",
+      "raw_text": "【During Link】【Attack】You may choose 1 enemy Pilot. Return it to its owner's hand.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-101",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】During this turn, friendly Units can't be destroyed by enemy effects. Then, draw 1.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-102",
+      "path": "effects[1].actions[0].target.filters.state",
+      "kind": "target_filter_mismatch",
+      "severity": "fixable",
+      "message": "Printed target requires filter state=RESTED, but IR has None.",
+      "raw_text": "【Main】Choose 1 rested enemy Unit that is Lv.5 or lower. It won't be set as active during the start phase of your opponent's next turn.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD04-102",
+      "path": "effects[1].actions[0].target.filters.level",
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "message": "Printed target requires filter level={'operator': '<=', 'value': 5}, but IR has None.",
+      "raw_text": "【Main】Choose 1 rested enemy Unit that is Lv.5 or lower. It won't be set as active during the start phase of your opponent's next turn.",
+      "recommendation": "Encode printed target qualifications on action.target.filters."
+    },
+    {
+      "card_id": "GD04-104",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-108",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Academy) Unit. During this turn, reduce the next damage it receives by 2. If you use an EX Resource to play this card, reduce by 4 instead.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-108",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Academy) Unit. During this turn, reduce the next damage it receives by 2. If you use an EX Resource to play this card, reduce by 4 instead.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-109",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.6 or lower. Deal 4 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-109",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit that is Lv.6 or lower. Deal 4 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-110",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Deploy 1 EX Base.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-110",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Deploy 1 EX Base.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-111",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 3 of your (CB) Units. They get AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-114",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Burst】Choose 1 Unit card with \"Trans-Am\" in its card name from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-114",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-115",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Choose 1 of your Units. When it deals battle damage to an enemy Unit that is Lv.5 or lower during this turn, destroy that enemy Unit.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-116",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】Place the top 2 cards of your deck into your trash. If you do, choose 1 enemy Unit with 4 or less AP. Deal an amount of damage equal to the number of (Minerva Squad) cards placed with this effect to that enemy Unit.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-116",
+      "path": "effects[1].actions",
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "message": "Printed text uses If you do, but IR does not show an explicit success-gated follow-up.",
+      "raw_text": "【Main】Place the top 2 cards of your deck into your trash. If you do, choose 1 enemy Unit with 4 or less AP. Deal an amount of damage equal to the number of (Minerva Squad) cards placed with this effect to that enemy Unit.",
+      "recommendation": "Represent the follow-up with next_if_success or an equivalent conditional branch."
+    },
+    {
+      "card_id": "GD04-117",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Action】Choose 1 to 2 enemy Units that are Lv.3 or lower. Return them to their owners' hands.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-118",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】If 2 or more friendly (UN) Units are in play, choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-118",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, MAIN_PHASE, but triggers are ['ACTIVATE_MAIN'].",
+      "raw_text": "【Main】/【Action】If 2 or more friendly (UN) Units are in play, choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-119",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly Unit paired with a (Newtype) Pilot. It can't receive effect damage from enemy Units during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-120",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Militia)/(Dianna Counter) Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-120",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly (Militia)/(Dianna Counter) Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "GD04-121",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, during your turn, if a friendly (League Militaire) Unit is in play, deploy 1 [Parts]((League Militaire)･AP1･HP1･This Unit can't choose the enemy player as its attack target) Unit token.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-122",
+      "path": "effects[2].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【Activate･Main】【Once per Turn】Rest 1 of your (Earth Federation) Units：Choose 1 enemy Unit that is Lv.3 or lower. Rest it.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "GD04-125",
+      "path": "effects[2].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Activate･Main】【Once per Turn】①, rest 1 friendly (CB) Unit：Choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "GD04-127",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, if there are 7 or more (Vulture) cards in your trash, choose 1 enemy Unit with 2 or less AP. Destroy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST01-014",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. It gets AP-3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST01-014",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. It gets AP-3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST01-016",
+      "path": "effects[2].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'conditions': [{'type': 'CHECK_KEYWORD', 'keyword': 'LINK', 'value': True}], 'type': 'MODIFY_STAT', 'target': {'selector': 'FRIENDLY_UNIT'}}.",
+      "raw_text": "【Activate･Main】Rest this Base：All friendly Link Units get AP+1 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST02-010",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'type': 'MODIFY_STAT', 'target': {'selector': 'SELF'}}.",
+      "raw_text": "【During Link】This Unit gets AP+1 and HP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST02-010",
+      "path": "effects[1].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'HP', 'modification': 1, 'type': 'MODIFY_STAT', 'target': {'selector': 'SELF'}}.",
+      "raw_text": "【During Link】This Unit gets AP+1 and HP+1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST02-014",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit with 5 or less HP. Rest it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST03-001",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【During Pair】This Unit gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST03-001",
+      "path": "effects[1].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state DESTROYED is not supported by ConditionEvaluator.",
+      "raw_text": "During your turn, when this Unit destroys an enemy shield area card with battle damage, choose 1 enemy Unit. Deal 2 damage to it.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "ST03-004",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】<Support 2> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST03-011",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'SELF'}}.",
+      "raw_text": "【Attack】During this turn, this Unit gets AP+1 and, if it is a Link Unit, it gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST03-011",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Attack】During this turn, this Unit gets AP+1 and, if it is a Link Unit, it gains <High-Maneuver>. (This Unit can't be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST03-012",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST03-012",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly Unit. It gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST03-013",
+      "path": "continuous_effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, MAIN_PHASE, but triggers are [].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 2 damage to it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST04-001",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired･Lv.4 or Higher Pilot】Choose 1 enemy Unit with 4 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST04-009",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ON_DESTROYED, but triggers are ['ON_PAIRED'].",
+      "raw_text": "【During Pair】【Destroyed】If you have another Link Unit in play, draw 1.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST04-012",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Burst】If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Aile Strike Gundam]((Earth Alliance)･AP3･HP3･<Blocker>) Unit token.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST04-012",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <BLOCKER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Main】If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Sword Strike Gundam]((Earth Alliance)･AP4･HP2･<Blocker>) or 1 [Launcher Strike Gundam]((Earth Alliance)･AP2･HP4･<Blocker>) Unit token.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST04-013",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST04-013",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST04-014",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST04-014",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 friendly Unit that is Lv.2 or lower. It gains <First Strike> during this turn. (While this Unit is attacking, it deals damage before the enemy Unit.)",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST04-016",
+      "path": "effects[2].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Base：Choose 1 friendly Unit. It gets AP+1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST04-016",
+      "path": "effects[2].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'FRIENDLY_UNIT'}}.",
+      "raw_text": "【Activate･Main】Rest this Base：Choose 1 friendly Unit. It gets AP+1 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST05-001",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your other Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST05-003",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Unit：Choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST05-010",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies ENEMY_UNIT, but IR action targets FRIENDLY_UNIT.",
+      "raw_text": "【When Paired】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST05-011",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Link】During your turn, when this Unit destroys an enemy Unit with battle damage, choose 1 (Tekkadan) Unit card that is Lv.2 or lower from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST05-012",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】If you have 2 or more other (Gjallarhorn)/(Tekkadan) Units in play, choose 1 enemy Unit with 3 or less HP. Rest it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST05-013",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST05-013",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST05-015",
+      "path": "effects[2].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Base：Choose 1 of your damaged Units. It gets AP+2 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST05-015",
+      "path": "effects[2].actions[1].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Activate･Main】Rest this Base：Choose 1 of your damaged Units. It gets AP+2 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST06-003",
+      "path": "effects[0]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <SUPPORT>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "【Activate･Main】<Support 1> (Rest this Unit. 1 other friendly Unit gets AP+(specified amount) during this turn.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST06-005",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Attack】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST06-005",
+      "path": "effects[0].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'filter': {'trait': 'Clan', 'count': '1-2'}, 'stat': 'AP', 'modification': 2, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'OTHER_FRIENDLY_UNIT'}}.",
+      "raw_text": "【Attack】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST06-007",
+      "path": "effects[0].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【Deploy】Choose 1 of your other (Clan) Units. During this turn, it may choose an active enemy Unit with 3 or less AP as its attack target.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST06-009",
+      "path": "effects[1].actions",
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "message": "Printed text is optional, but IR does not expose an optional action marker.",
+      "raw_text": "【When Linked】Look at the top card of your deck. If it is a (Clan) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST06-011",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST06-011",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST06-014",
+      "path": "effects[2].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets SELF.",
+      "raw_text": "【Activate･Main】Rest this Base：If a friendly (Clan) Link Unit is in play, choose 1 friendly Unit. It gets AP+2 during this turn.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST07-001",
+      "path": "effects[1].actions",
+      "kind": "draw_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed text implies DRAW, but no matching action was found.",
+      "raw_text": "【When Paired】Place the top 2 cards of your deck into your trash. If you place a (CB) card with this effect, draw 1.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST07-005",
+      "path": "effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state DESTROYED_BY_BATTLE_DAMAGE is not supported by ConditionEvaluator.",
+      "raw_text": "During your turn, when this Unit destroys an enemy Unit with battle damage, this Unit recovers 2 HP.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "ST07-009",
+      "path": "effects[1].actions[0]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'conditions': [{'type': 'COUNT_CARDS', 'zone': 'SELF_TRASH', 'owner': 'SELF', 'filters': {'traits': ['CB']}, 'operator': '<', 'value': 7}], 'type': 'MODIFY_STAT', 'target': {'selector': 'SELF'}}.",
+      "raw_text": "【Attack】This Unit gets AP+1 during this turn. If there are 7 or more (CB) cards in your trash, all your (CB) Units get AP+1 instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST07-009",
+      "path": "effects[1].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+1, but IR has {'stat': 'AP', 'modification': 1, 'duration': 'THIS_TURN', 'conditions': [{'type': 'COUNT_CARDS', 'zone': 'SELF_TRASH', 'owner': 'SELF', 'filters': {'traits': ['CB']}, 'operator': '>=', 'value': 7}, {'type': 'CHECK_TRAIT', 'trait': 'CB'}], 'type': 'MODIFY_STAT', 'target': {'selector': 'FRIENDLY_UNIT'}}.",
+      "raw_text": "【Attack】This Unit gets AP+1 during this turn. If there are 7 or more (CB) cards in your trash, all your (CB) Units get AP+1 instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST07-011",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【When Paired】If this is a (CB) Unit, it may choose an active enemy Unit whose Lv. is equal to or lower than this Unit as its attack target during this turn.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST07-013",
+      "path": "effects[1].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Action】Choose 1 rested friendly (CB) Unit. Change the attack target of the battling enemy Unit to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST08-004",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state ATTACKING is not supported by ConditionEvaluator.",
+      "raw_text": "【Attack】If this Unit is attacking an enemy Unit, choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "ST08-004",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Attack】If this Unit is attacking an enemy Unit, choose 1 enemy Unit. Deal 1 damage to it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST08-010",
+      "path": "effects[1].actions[0].target.selector",
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "message": "Printed target implies FRIENDLY_UNIT, but IR action targets OTHER_FRIENDLY_UNIT.",
+      "raw_text": "【When Paired】If this is a (Mafty) Unit, choose 1 of your (Mafty) Units. During this turn, it may choose a damaged active enemy Unit as its attack target.",
+      "recommendation": "Use SELECTED_CARD or the same constrained selector as the printed choice."
+    },
+    {
+      "card_id": "ST08-011",
+      "path": "effects[1]",
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "message": "Printed text references <HIGH_MANEUVER>, but no matching GRANT_KEYWORD IR was found.",
+      "raw_text": "When you draw with an effect, if this is a blue Unit, it gains <High-Maneuver> during this turn. (This Unit can' t be blocked.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST08-012",
+      "path": "effects[1].actions[0].target.filters",
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "message": "Printed target requires CHECK_LINK_STATUS, but the IR has no matching condition/filter.",
+      "raw_text": "【Main】Choose 1 friendly Link Unit. It gains <Breach 1> during this turn. (When this Unit' s attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent' s shield area.)",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST08-013",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it. If a friendly (Mafty) Link Unit is in play, deal 2 damage instead.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST08-013",
+      "path": "effects[0].actions[0].amount",
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed amount is 1, but IR value is 2.",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it. If a friendly (Mafty) Link Unit is in play, deal 2 damage instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST08-013",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it. If a friendly (Mafty) Link Unit is in play, deal 2 damage instead.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST08-013",
+      "path": "effects[1].actions[0].amount",
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "message": "Printed amount is 1, but IR value is 2.",
+      "raw_text": "【Main】/【Action】Choose 1 enemy Unit. Deal 1 damage to it. If a friendly (Mafty) Link Unit is in play, deal 2 damage instead.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST08-014",
+      "path": "effects[1].actions[1]",
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "message": "Printed stat modifier is AP+2, but IR has {'stat': 'AP', 'modification': 2, 'duration': 'THIS_TURN', 'type': 'MODIFY_STAT', 'target': {'selector': 'FRIENDLY_UNIT'}}.",
+      "raw_text": "【Deploy】Add 1 of your Shields to your hand. Then, choose 1 of your Units. It gets AP+2 during this turn.",
+      "recommendation": ""
+    },
+    {
+      "card_id": "ST09-001",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Activate･Main】②, return this Unit to the bottom of its owner's deck：Choose 1 Unit card with \"Impulse Gundam\" in its card name that is Lv.4 or higher from your trash. Deploy it.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST09-002",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【Destroyed】Choose 1 (Minerva Squad) Unit card without \"Force Impulse Gundam\" in its card name from your trash. Add it to your hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST09-004",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state PLAY is not supported by ConditionEvaluator.",
+      "raw_text": "While a friendly Base in play, this Unit gains <Suppression>. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "ST09-006",
+      "path": "effects[0].conditions[0]",
+      "kind": "legacy_check_card_state_value",
+      "severity": "fixable",
+      "message": "CHECK_CARD_STATE uses legacy value instead of state.",
+      "raw_text": "【Deploy】If you deploy this Unit from your trash, choose 1 enemy Unit that is Lv.3 or lower. Destroy it.",
+      "recommendation": "Normalize value to state so ConditionEvaluator checks the state directly."
+    },
+    {
+      "card_id": "ST09-009",
+      "path": "effects[0].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST09-009",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 active enemy Unit with 4 or less AP. Destroy it.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST10-001",
+      "path": "effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state SHIELD is not supported by ConditionEvaluator.",
+      "raw_text": "When this Unit destroys an enemy shield area card with battle damage, set it as active. It can't choose the same enemy player or enemy team as its attack target during this turn.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "ST10-006",
+      "path": "effects[0].actions",
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "message": "Printed text chooses a qualified target, but no target-bearing action was found.",
+      "raw_text": "【During Pair】During your turn, when this Unit destroys an enemy Unit with battle damage, choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand.",
+      "recommendation": "Review whether the effect should act on the chosen target."
+    },
+    {
+      "card_id": "ST10-013",
+      "path": "effects[1].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects ACTION_PHASE, but triggers are ['MAIN_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 (G Generation) Unit that is Lv.5 or higher. It recovers 2 HP and gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "ST10-013",
+      "path": "effects[2].triggers",
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "message": "Printed timing expects MAIN_PHASE, but triggers are ['ACTION_PHASE'].",
+      "raw_text": "【Main】/【Action】Choose 1 (G Generation) Unit that is Lv.5 or higher. It recovers 2 HP and gets AP+2 during this turn.",
+      "recommendation": "Map printed timing markers to supported runtime triggers."
+    },
+    {
+      "card_id": "T-014",
+      "path": "continuous_effects[0].conditions[0].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state CANNOT_BE_ACTIVE is not supported by ConditionEvaluator.",
+      "raw_text": "This Unit can't be set as active or paired with a Pilot.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    },
+    {
+      "card_id": "T-014",
+      "path": "continuous_effects[0].conditions[1].state",
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "message": "CHECK_CARD_STATE state CANNOT_BE_PAIRED is not supported by ConditionEvaluator.",
+      "raw_text": "This Unit can't be set as active or paired with a Pilot.",
+      "recommendation": "Use ACTIVE, RESTED, PAIRED, or LINKED only; model destroyed/damaged/zone checks with another supported condition."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "unsupported_llm_effect",
+      "severity": "validation",
+      "count": 116,
+      "examples": [
+        "EB01-044",
+        "EXB-001",
+        "EXB-001-ALT5",
+        "EXBP-001",
+        "EXBP-002",
+        "EXBP-003",
+        "EXBP-004",
+        "EXBP-005",
+        "EXBP-006",
+        "EXBP-007"
+      ]
+    },
+    {
+      "kind": "timing_trigger_mismatch",
+      "severity": "warning",
+      "count": 84,
+      "examples": [
+        "EB01-046",
+        "EB01-070",
+        "EB01-075",
+        "EB01-076",
+        "EB01-084",
+        "GD01-003",
+        "GD01-026",
+        "GD01-066",
+        "GD01-082",
+        "GD01-099"
+      ]
+    },
+    {
+      "kind": "missing_target_action_for_choice",
+      "severity": "warning",
+      "count": 83,
+      "examples": [
+        "EB01-043",
+        "EB01-044",
+        "EB01-045",
+        "EB01-050",
+        "EB01-052",
+        "EB01-065",
+        "EB01-090",
+        "GD01-009",
+        "GD01-020",
+        "GD01-065"
+      ]
+    },
+    {
+      "kind": "selected_target_selector_mismatch",
+      "severity": "warning",
+      "count": 64,
+      "examples": [
+        "EB01-006",
+        "EB01-072",
+        "GD01-015",
+        "GD01-049",
+        "GD01-112",
+        "GD01-124",
+        "GD01-130",
+        "GD02-011",
+        "GD02-016",
+        "GD02-040"
+      ]
+    },
+    {
+      "kind": "invalid_card_state",
+      "severity": "warning",
+      "count": 30,
+      "examples": [
+        "EB01-017",
+        "EB01-021",
+        "EB01-022",
+        "GD02-002",
+        "GD02-036",
+        "GD02-045",
+        "GD02-046",
+        "GD02-071",
+        "GD03-028",
+        "GD03-068"
+      ]
+    },
+    {
+      "kind": "keyword_missing_from_ir",
+      "severity": "warning",
+      "count": 30,
+      "examples": [
+        "GD01-027",
+        "GD01-046",
+        "GD01-048",
+        "GD01-055",
+        "GD01-066",
+        "GD01-089",
+        "GD01-091",
+        "GD01-108",
+        "GD02-024",
+        "GD02-042"
+      ]
+    },
+    {
+      "kind": "stat_modifier_mismatch",
+      "severity": "warning",
+      "count": 25,
+      "examples": [
+        "GD01-076",
+        "GD02-014",
+        "GD02-016",
+        "GD02-026",
+        "GD02-031",
+        "GD02-053",
+        "GD02-086",
+        "GD02-090",
+        "GD03-028",
+        "GD03-038"
+      ]
+    },
+    {
+      "kind": "then_clause_review",
+      "severity": "review",
+      "count": 15,
+      "examples": [
+        "EXR-001",
+        "EXR-001-ALT5",
+        "EXR-002",
+        "EXRP-002",
+        "EXRP-003",
+        "EXRP-004",
+        "EXRP-005",
+        "EXRP-006",
+        "EXRP-007",
+        "EXRP-008"
+      ]
+    },
+    {
+      "kind": "if_you_do_not_success_gated",
+      "severity": "review",
+      "count": 12,
+      "examples": [
+        "GD01-003",
+        "GD01-112",
+        "GD02-058",
+        "GD02-069",
+        "GD02-111",
+        "GD03-039",
+        "GD03-050",
+        "GD03-119",
+        "GD04-036",
+        "GD04-056"
+      ]
+    },
+    {
+      "kind": "stacking_keyword_missing_value",
+      "severity": "review",
+      "count": 7,
+      "examples": [
+        "GD01-046",
+        "GD01-089",
+        "GD01-091",
+        "GD03-002",
+        "GD04-039",
+        "GD04-067"
+      ]
+    },
+    {
+      "kind": "damage_amount_mismatch",
+      "severity": "warning",
+      "count": 6,
+      "examples": [
+        "GD03-033",
+        "GD03-092",
+        "GD03-103",
+        "GD04-039",
+        "ST08-013"
+      ]
+    },
+    {
+      "kind": "may_effect_not_optional",
+      "severity": "review",
+      "count": 6,
+      "examples": [
+        "GD01-048",
+        "GD03-079",
+        "GD03-118",
+        "GD04-070",
+        "GD04-090",
+        "ST06-009"
+      ]
+    },
+    {
+      "kind": "target_condition_missing",
+      "severity": "review",
+      "count": 6,
+      "examples": [
+        "GD02-036",
+        "GD02-100",
+        "GD04-023",
+        "GD04-092",
+        "GD04-093",
+        "ST08-012"
+      ]
+    },
+    {
+      "kind": "target_filter_mismatch",
+      "severity": "warning",
+      "count": 6,
+      "examples": [
+        "EB01-024",
+        "GD01-066",
+        "GD02-026",
+        "GD04-036",
+        "GD04-093",
+        "GD04-102"
+      ]
+    },
+    {
+      "kind": "draw_amount_mismatch",
+      "severity": "warning",
+      "count": 3,
+      "examples": [
+        "GD03-084",
+        "GD04-035",
+        "ST07-001"
+      ]
+    },
+    {
+      "kind": "unknown_action",
+      "severity": "validation",
+      "count": 3,
+      "examples": [
+        "GD03-107",
+        "GD04-021",
+        "GD04-070"
+      ]
+    },
+    {
+      "kind": "malformed_cost_modifier",
+      "severity": "validation",
+      "count": 2,
+      "examples": [
+        "GD01-002",
+        "ST10-014"
+      ]
+    },
+    {
+      "kind": "malformed_stat_modifier",
+      "severity": "validation",
+      "count": 2,
+      "examples": [
+        "GD01-002",
+        "GD04-057"
+      ]
+    },
+    {
+      "kind": "target_filter_mismatch",
+      "severity": "fixable",
+      "count": 2,
+      "examples": [
+        "GD04-036",
+        "GD04-102"
+      ]
+    },
+    {
+      "kind": "legacy_check_card_state_value",
+      "severity": "fixable",
+      "count": 1,
+      "examples": [
+        "ST09-006"
+      ]
+    },
+    {
+      "kind": "missing_keyword",
+      "severity": "validation",
+      "count": 1,
+      "examples": [
+        "EB01-044"
+      ]
+    },
+    {
+      "kind": "recover_amount_mismatch",
+      "severity": "warning",
+      "count": 1,
+      "examples": [
+        "GD01-098"
+      ]
+    },
+    {
+      "kind": "target_count_mismatch",
+      "severity": "warning",
+      "count": 1,
+      "examples": [
+        "GD01-112"
+      ]
+    },
+    {
+      "kind": "target_variable_count_mismatch",
+      "severity": "warning",
+      "count": 1,
+      "examples": [
+        "GD04-036"
+      ]
+    },
+    {
+      "kind": "unknown_condition",
+      "severity": "validation",
+      "count": 1,
+      "examples": [
+        "GD03-120"
+      ]
+    }
+  ]
+}

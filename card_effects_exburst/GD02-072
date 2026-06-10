@@ -1,0 +1,68 @@
+{
+  "card_id": "GD02-072",
+  "effects": [
+    {
+      "effect_id": "GD02-072-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "condition_type": "CHECK_COLOR",
+          "target_selector": "FRIENDLY_BASE",
+          "color": "White",
+          "operator": "==",
+          "type": "CHECK_COLOR"
+        }
+      ],
+      "actions": [
+        {
+          "keyword": "REPAIR",
+          "value": 1,
+          "duration": "PERMANENT",
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "While a friendly white Base is in play, this Unit gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD02-072-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Blocker> (Rest this Unit to change the attack target to it.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BLOCKER",
+          "value": null
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Blocker> (Rest this Unit to change the attack target to it.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Blocker> (Rest this Unit to change the attack target to it.); While a friendly white Base is in play, this Unit gains <Repair 1>. (At the end of your turn, this Unit recovers the specified number of HP.)",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

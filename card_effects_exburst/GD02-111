@@ -1,0 +1,80 @@
+{
+  "card_id": "GD02-111",
+  "effects": [
+    {
+      "effect_id": "GD02-111-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_STAT",
+          "stat": "level",
+          "operator": "<=",
+          "value": 3,
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "DAMAGE_UNIT",
+          "selector": "ENEMY_UNIT",
+          "amount": 2,
+          "filters": {
+            "operator": "<=",
+            "level": 3
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD02-111-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "type": "EXILE_CARDS",
+          "selector": "SELF_TRASH",
+          "amount": 6,
+          "filters": {
+            "color": "Purple",
+            "card_type": "UNIT"
+          }
+        },
+        {
+          "type": "DESTROY_CARD",
+          "selector": "ENEMY_UNIT",
+          "amount": 1
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】Choose 6 purple Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Destroy it.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it.; 【Main】Choose 6 purple Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Destroy it.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "card_id": "GD04-021",
+  "effects": [
+    {
+      "effect_id": "GD04-021-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE",
+        "ACTION_PHASE"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "owner": "FRIENDLY_PLAYER"
+        },
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Dawn of Fold",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "CHECK_CARD_STATE",
+          "state": "ACTIVATED",
+          "target": {
+            "selector": "SELECTED_CARD"
+          }
+        },
+        {
+          "type": "CHECK_TARGET",
+          "text_contains": "Gundam Lfrith",
+          "target": {
+            "selector": "FRIENDLY_UNIT"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "optional_actions": [
+            {
+              "paired_with": "FRIENDLY_UNIT",
+              "type": "ON_PAIR_PILOT",
+              "target": {
+                "selector": "SELECTED_CARD"
+              }
+            }
+          ],
+          "type": "OPTIONAL_ACTION"
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, when you play and activate a (Dawn of Fold) Command card using an EX Resource, you may pair that card from your trash with one of your Units with \"Gundam Lfrith\" in its card name.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [
+    {
+      "effect_id": "GD04-021-E1",
+      "effect_type": "CONTINUOUS",
+      "description": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+      "modifiers": [
+        {
+          "type": "GRANT_KEYWORD",
+          "target": {
+            "selector": "SELF"
+          },
+          "keyword": "BREACH",
+          "value": 3
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)",
+        "source": "known_pattern"
+      }
+    }
+  ],
+  "metadata": {
+    "original_text": "<Breach 3> (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.); During your turn, when you play and activate a (Dawn of Fold) Command card using an EX Resource, you may pair that card from your trash with one of your Units with \"Gundam Lfrith\" in its card name.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "partial",
+    "validation_issues": [
+      {
+        "path": "effects[0].actions[0].optional_actions[0].type",
+        "kind": "unknown_action",
+        "value": "ON_PAIR_PILOT",
+        "message": "Action is not executed by the runtime"
+      }
+    ]
+  }
+}

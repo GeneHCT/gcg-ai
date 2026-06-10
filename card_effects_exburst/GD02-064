@@ -1,0 +1,51 @@
+{
+  "card_id": "GD02-064",
+  "effects": [
+    {
+      "effect_id": "GD02-064-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [],
+      "conditions": [
+        {
+          "type": "CHECK_TURN",
+          "value": "YOUR_TURN"
+        },
+        {
+          "type": "COUNT_CARDS",
+          "zone": "TRASH",
+          "operator": ">=",
+          "value": 7,
+          "owner": "SELF"
+        }
+      ],
+      "actions": [
+        {
+          "type": "GRANT_PROTECTION",
+          "target": "SELF",
+          "damage_type": "EFFECT",
+          "source_filter": {
+            "card_type": "COMMAND",
+            "owner": "OPPONENT"
+          },
+          "value": true
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "During your turn, while there are 7 or more cards in your trash, this Unit can't receive effect damage from enemy Commands.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "During your turn, while there are 7 or more cards in your trash, this Unit can't receive effect damage from enemy Commands.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "UNIT",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}

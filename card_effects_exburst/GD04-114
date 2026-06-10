@@ -1,0 +1,66 @@
+{
+  "card_id": "GD04-114",
+  "effects": [
+    {
+      "effect_id": "GD04-114-E1",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "BURST"
+      ],
+      "conditions": [
+        {
+          "type": "CHECK_TRAIT",
+          "value": "Trans-Am",
+          "operator": "contains"
+        }
+      ],
+      "actions": [
+        {
+          "type": "ADD_TO_HAND",
+          "target": {
+            "selector": "SELF_TRASH"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Burst】Choose 1 Unit card with \"Trans-Am\" in its card name from your trash. Add it to your hand.",
+        "source": "llm"
+      }
+    },
+    {
+      "effect_id": "GD04-114-E2",
+      "effect_type": "TRIGGERED",
+      "triggers": [
+        "MAIN_PHASE"
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "amount": 1,
+          "type": "DAMAGE_UNIT",
+          "target": {
+            "selector": "ENEMY_UNIT"
+          }
+        }
+      ],
+      "is_supported": true,
+      "unhandled_explanation": "",
+      "metadata": {
+        "raw_text": "【Main】/【Action】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+        "source": "llm"
+      }
+    }
+  ],
+  "continuous_effects": [],
+  "metadata": {
+    "original_text": "【Burst】Choose 1 Unit card with \"Trans-Am\" in its card name from your trash. Add it to your hand.; 【Main】/【Action】Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.",
+    "parsing_version": "exburst-discovery-v1",
+    "card_type": "COMMAND",
+    "llm_model": "deepseek/deepseek-chat-v3-0324",
+    "parser_source": "llm",
+    "support_status": "supported",
+    "validation_issues": []
+  }
+}
